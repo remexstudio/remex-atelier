@@ -1,41 +1,32 @@
-# Handoff S2
+# Handoff S3
 - Status: delivered
-- SHA: 9ea807aa649384e42f33362a94f43ac4fba82d5b
+- SHA: a50161b60a9e43614f4b5ed18352d40cbda35cb2
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
-  - `app/work/page.tsx` — four study cards (Lumen Live; Northline / Kite / Paperline In progress)
-  - `app/work/lumen-atelier/page.tsx` — study template sections + anonymized footer
-  - `app/demo/lumen/**` — hub + consult / try-on / bag / pay / desk
-  - `components/lumen/**` — data helpers + DemoShell/DemoNav + interactive mocks (no `lib/`)
-  - `components/SiteChrome.tsx` — Work nav link
-  - `components/LumenTeaser.tsx` — link to study
-  - `content/studies/lumen-atelier.mdx` — stub note (study rendered as TSX)
-  - `docs/sitemap.md` — S2 routes marked shipped
+  - `app/services/page.tsx` — Agent Apps, Agent Ops, Advisory with Start a brief CTA
+  - `app/approach/page.tsx` — PM vs agent division of labor; Brief → Shape → Build → Molt loop
+  - `app/about/page.tsx` — Remex / Cloud / Studio meaning; Seattle; Jiyuyun Studio LLC; no founder PII
+  - `components/SiteChrome.tsx` — compact nav: Work / Services / Approach / About / Contact
+  - `docs/sitemap.md` — S3 routes marked shipped
   - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - `/work` four cards (Lumen live; others In progress): pass
-  - `/work/lumen-atelier` sections Client card / Brief / Constraints / What shipped / Live prototype / How it runs / Next molt / Start a brief: pass
-  - Study footer `Studio study. Client identity anonymized.`: pass
-  - `/demo/lumen` + consult / try-on / bag / pay / desk reachable: pass
-  - Consult asks skin + occasion → one hero SKU (Softlight Serum Tint / LUM-ST-01): pass
-  - Try-on mock overlay toggle: pass
-  - Bag + Pay mock checkout (no processor): pass
-  - Desk mock shipment for LUM-1042; Request human → session summary: pass
-  - No Chinese; no purple/Inter-slop/neon; no fake %; no real brand logos: pass
-  - `pnpm build`: pass
-  - Playwright smoke on work + demo routes after `pnpm start`: pass
+  - `/services` presents Agent Apps, Agent Ops, Advisory clearly: pass
+  - `/approach` explains how briefs become agents (PM vs agent division of labor): pass
+  - `/about` covers Remex / pinion-feather / cloud / studio meaning in English; Seattle; Jiyuyun Studio LLC: pass
+  - No founder legal name, phone, school list, or resume dump: pass
+  - SiteChrome nav Work / Services / Approach / About / Contact: pass
+  - Editorial atelier tone; apple-design + emil-design-eng applied: pass
+  - No Chinese; `pnpm build` pass: pass
 - Skills used:
-  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, tracking/leading on display type, continuous press feedback)
-  - emil-design-eng (ease-out curves, active scale 0.97, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, interruptible opacity on overlay)
-  - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles)
-  - writing-guidelines (plain active voice; specific labels; mock disclaimers)
-  - web-design-guidelines (labeled fields, focus-visible, aria-live status regions, aria-pressed toggles)
-  - webapp-testing (Playwright smoke via with_server.py on `/work` + `/demo/lumen/**`)
-  - vercel-react-best-practices (client islands only for interactive flows; static RSC pages)
+  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, display tracking/leading, spatial consistency in SiteChrome)
+  - emil-design-eng (ease-out press feedback, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, active scale 0.97, under-300ms UI motion)
+  - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles, no ALL-CAPS eyebrows, hairline dividers over SaaS cards)
+  - writing-guidelines (active voice, sentence-case headings, no em dashes in body, specific offer copy, no banned filler)
+  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, focus-visible, labeled primary nav)
+  - vercel-react-best-practices (static RSC pages; no client islands on these routes; direct imports)
 - Risks:
-  - Study page is TSX (not MDX-rendered); `content/studies/lumen-atelier.mdx` is a stub pointer only
-  - Northline / Kite / Paperline cards are non-link In progress placeholders — no study routes yet
+  - Five-link compact nav may wrap on very narrow widths; intentional atelier tradeoff vs hamburger
+  - About omits “Machine” layer from studio inspiration; brand hints asked Remex / cloud / studio only
   - Vercel Deployment Protection may block anonymous curl of preview
-  - Mock pay discards card fields in-browser; never wire a real processor in this slice
 - Blockers: none
 - DEV verdict: DEV PASS
