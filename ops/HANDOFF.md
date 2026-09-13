@@ -22,6 +22,7 @@
   - `.agents/` local skill copies gitignored; skills-lock.json committed
   - Vercel project under `qinlinj-projects`, not a remexstudio Vercel team (none on this auth)
   - First Vercel deploy aliased to production on that personal project
+  - Vercel Deployment Protection enabled: public curl hits login; content verified via `vercel curl` (Newsreader + Source Sans 3, Remex copy)
   - Second commit updates SHA/STATUS after push (ticket preferred one commit; SHA-in-tree cannot equal its own hash)
 - Blockers: none for GitHub push; Vercel org remexstudio unavailable (documented)
 - DEV verdict: DEV PASS
