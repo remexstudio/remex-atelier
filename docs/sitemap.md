@@ -12,8 +12,8 @@ Planned routes. Shipped routes noted.
 - `/work/paperline` — shipped (S6)
 - `/services` — shipped (S3)
 - `/approach` — shipped (S3)
-- `/lab`
-- `/lab/pulse`
+- `/lab` — shipped (S7)
+- `/lab/pulse` — shipped (S7)
 - `/about` — shipped (S3)
 - `/contact` — shipped (S1)
 

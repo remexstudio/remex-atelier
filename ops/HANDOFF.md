@@ -1,41 +1,42 @@
-# Handoff S6
+# Handoff S7
+
 - Status: delivered
-- SHA: 718423ba17c4754a289c531ec7e6363a67ce7c84
+- SHA: 00bdfb6b460c4456008ee2af975af9ed00ebb89e
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
-  - `app/work/page.tsx` — unchanged structure; Live via `components/lumen/data.ts`
-  - `app/work/paperline/page.tsx` — study template sections + anonymized footer
-  - `app/demo/paperline/**` — hub, queue, case/[id], policy
-  - `components/paperline/**` — data, DemoShell/DemoNav, QueueList, CasePanel, motion CSS
-  - `components/lumen/data.ts` — Paperline status Live + href `/work/paperline`
-  - `content/studies/paperline.mdx` — study pointer
-  - `docs/sitemap.md` — S6 routes marked shipped
+  - `app/lab/page.tsx` — Lab index: Prototypes intro + Pulse card linking to `/lab/pulse`
+  - `app/lab/pulse/page.tsx` — Pulse page shell with SiteChrome + PulseLoop
+  - `components/lab/data.ts` — pulseLoop / pulseRoster / seedPulseEvents
+  - `components/lab/PulseLoop.tsx` — interactive loop: see → notify → log → follow; roster + event log
+  - `components/lab/pulse.css` — step-panel opacity + translateY 200ms `--ease-out`
+  - `components/SiteChrome.tsx` — Lab added to primary nav (after Approach)
+  - `docs/sitemap.md` — `/lab` and `/lab/pulse` marked shipped (S7)
   - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - `/work` marks Paperline Live (all four studies Live): pass
-  - `/work/paperline` study template + `Studio study. Client identity anonymized.`: pass
-  - `/demo/paperline` + queue / case/[id] / policy reachable: pass
-  - Queue shows exactly 6 tickets: pass
-  - Case page has timeline + suggested actions: pass
-  - Refund requires approval; no real payouts: pass
+  - `/lab` exists and links to Pulse: pass
+  - `/lab/pulse` loop see → notify → log → follow: pass
+  - Label `Prototype · not a client engagement`: pass
+  - Not framed as client study / no anonymized-study claim: pass
+  - Nav reaches Lab: pass
   - No Chinese; `pnpm build` pass: pass
-  - webapp-testing smoke after build+start: pass (43/43)
+  - webapp-testing smoke after build+start: pass (23/23)
 - Skills used:
-  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, display tracking/leading, spatial consistency in DemoShell)
+  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion on step panel, display tracking/leading, spatial consistency)
   - emil-design-eng (ease-out press feedback, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, active scale 0.97, under-300ms UI motion)
-  - animate (refund gate status: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible)
-  - animation-vocabulary (named Fade in / Slide in / Press feedback for refund gate decision)
-  - review-animations (transform+opacity only; reduced-motion drops transform; no scale(0); UI <300ms; Approve for gate status)
-  - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles, no ALL-CAPS eyebrows, hairline dividers over SaaS cards)
-  - writing-guidelines (active voice, sentence-case headings, specific product copy, no Chinese; fetched Vercel rules)
-  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on refund gate, focus-visible, labeled demo nav; fetched Vercel rules)
-  - vercel-react-best-practices (static RSC pages where possible; client island only for CasePanel; data under `components/paperline/` not `lib/`; direct imports)
-  - webapp-testing (Playwright smoke via `with_server.py` + `pnpm start`)
-- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to refund-gate status)
+  - animate (step panel: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible)
+  - animation-vocabulary (named Fade in / Slide in / Press feedback for step change)
+  - review-animations (transform+opacity only; reduced-motion drops transform; no scale(0); UI <300ms; Approve for step status)
+  - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles, no ALL-CAPS eyebrows, hairline borders over SaaS cards)
+  - writing-guidelines (active voice, sentence-case headings, specific prototype copy, no Chinese; fetched Vercel rules)
+  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on step detail / completion / log, focus-visible, labeled primary nav; fetched Vercel rules)
+  - vercel-react-best-practices (static RSC pages; client island only for PulseLoop; data under `components/lab/` not `lib/`; direct imports)
+  - webapp-testing (Playwright smoke via `pnpm exec next start -p 3017`)
+- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to step panel)
 - Forbidden skills not read: animate-expo, write-swift, react-native-guidelines
 - Risks:
-  - Refund decision is session-local (React state only); refresh clears Approve/Reject
-  - Motion CSS lives in `components/paperline/paperline.css` (allowed path); globals reduced-motion still zeros all durations site-wide
+  - Pulse event log is session-local (React state only); refresh clears run history back to seed events
+  - Notify roster “Notified” flag is demo-only (Desk A/B after first advance); no real delivery
+  - Motion CSS lives in `components/lab/pulse.css` (allowed path); globals reduced-motion still zeros all durations site-wide
   - Vercel Deployment Protection may block anonymous curl of preview
 - Blockers: none
 - DEV verdict: DEV PASS

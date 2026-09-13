@@ -1,0 +1,20 @@
+/* Pulse step panel — transform + opacity only; state indication on advance */
+.pulse-step-panel {
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+}
+
+.pulse-step-panel[data-entered="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-step-panel {
+    transform: none;
+    transition: opacity 160ms ease;
+  }
+}
