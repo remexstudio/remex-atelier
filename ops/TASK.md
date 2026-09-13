@@ -1,23 +1,30 @@
-# TASK S0
+# TASK S1
 
 ```text
-TASK ID: S0
+TASK ID: S1
 REPO: remexstudio/remex-atelier
-GOAL: Initialize the Remex Studio site repo: Next.js App Router + TypeScript + Tailwind skeleton, constitution docs, English README, ops scaffolding, skills install, and a first green build. Editorial atelier homepage only. No S1–S9 routes.
-COMMIT MESSAGE: chore(repo): initialize studio site
+GOAL: Ship design tokens, refine root layout, expand `/` (offers + Lumen teaser + Start a brief), and add `/contact` with a working success state.
+ALLOWED FILES:
+- app/layout.tsx
+- app/page.tsx
+- app/globals.css
+- app/contact/page.tsx
+- app/contact/**
+- components/**
+- docs/design.md
+- ops/TASK.md
+- ops/HANDOFF.md
+- ops/STATUS.md
+OUT OF SCOPE: /work, studies, demos, /services /approach /about /lab, personal site, new dependencies unless pick-ui-library requires one, Chinese UI.
+ACCEPTANCE:
+- [ ] Design tokens documented and used (paper/ink/muted/rule; type roles)
+- [ ] `/` states three offers (Agent Apps, Agent Ops, Advisory)
+- [ ] `/` includes a Lumen Atelier teaser (not full study) + Start a brief CTA toward /contact
+- [ ] `/contact` has labeled fields and a success state (Formspree, Resend, or explicit mock)
+- [ ] Keyboard focus visible; respects prefers-reduced-motion
+- [ ] No purple gradient / Inter template / neon SaaS
+- [ ] No Chinese on the page
+- [ ] Build passes
+SKILLS TO USE: apple-design, emil-design-eng, frontend-design, writing-guidelines, web-design-guidelines, vercel-react-best-practices, ask-sonner (if toasts)
+COMMIT MESSAGE: feat(site): add home offers and contact
 ```
-
-## Acceptance
-
-- App Router + TypeScript + Tailwind scaffold
-- `pnpm build` (or npm) passes
-- English README pointing at remex-atelier
-- AGENTS.md, docs/brand.md, docs/sitemap.md, docs/design.md
-- ops scaffolding (TASK, HANDOFF, REVIEW, BACKLOG, STATUS)
-- `/` shows REMEX STUDIO, "Agents, built to the brief.", "A Seattle studio.", initializing note
-- English 404
-- No Chinese in committed artifacts
-- No S1–S9 pages, studies, demos, MDX content routes, or component libraries
-- Remote is https://github.com/remexstudio/remex-atelier only
-- Skills packs installed when CLI allows; document blockers otherwise
-- Vercel preview linked when auth allows; document blockers otherwise

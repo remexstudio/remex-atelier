@@ -1,11 +1,11 @@
 # Status
 
-- Phase: S0
-- Current TASK: S0 delivered (pending Leader PASS)
+- Phase: S1
+- Current TASK: S1 (issued after S0 dual PASS)
+- Closed: S0 PASS (delivery SHA 2377b3d7c86c560751f83722c8f98ae4b5a2b455)
 - GitHub identity: remexstudio
 - Repo: https://github.com/remexstudio/remex-atelier
-- HEAD: bd2ec08898fb501482b4450ed53c3bac7562beae
 - Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app)
-- Skills: installed (emilkowalski, vercel-labs/agent-skills, vercel/next.js, anthropics frontend-design + webapp-testing). Skipped/removed: animate-expo, write-swift, vercel-react-native-skills.
-- Note: Vercel project lives under team `qinlinj-projects` (authenticated user qinlinj). No `remexstudio` Vercel team available on this account.
-- Owner hard constraint: UI must follow apple-design + emil-design-eng (applied on S0).
+- Skills: UI slices require apple-design + emil-design-eng in SKILLS TO USE and HANDOFF
+- Note: Vercel under `qinlinj-projects` (no remexstudio Vercel team on current auth)
+- DoD: studio v1 not green
