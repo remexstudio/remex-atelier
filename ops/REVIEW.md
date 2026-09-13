@@ -1,32 +1,28 @@
-# Review S2
+# Review S3
 
 - Verdict: **LEADER PASS**
-- Delivery SHA: `9ea807aa649384e42f33362a94f43ac4fba82d5b`
-- Ops stamp HEAD: `6fc4591`
+- Delivery SHA: `a50161b60a9e43614f4b5ed18352d40cbda35cb2`
+- Ops tip: `8c70ac2`
 - Preview: https://remex-atelier.vercel.app
-- Build: `pnpm build` reproduced — `/work`, `/work/lumen-atelier`, `/demo/lumen/**`
+- Build: `pnpm build` reproduced — `/services`, `/approach`, `/about`
 
 ## Acceptance
 
 | Item | Result |
 |---|---|
-| `/work` four cards (Lumen live; others in progress) | pass |
-| Study template sections + anonymized footer | pass |
-| Demo hub + consult / try-on / bag / pay / desk | pass |
-| Consult skin/occasion → one hero SKU (LUM-ST-01) | pass |
-| Try-on mock overlay | pass |
-| Mock checkout (bag/pay) | pass |
-| Desk LUM-1042 + Request human session summary | pass |
-| apple-design + emil-design-eng + webapp-testing listed | pass |
-| No Chinese / no fake % / no real logos | pass |
-| Build | pass |
+| `/services` three offers | pass |
+| `/approach` PM vs agent + brief loop | pass |
+| `/about` Remex/cloud/studio; Seattle; Jiyuyun Studio LLC | pass |
+| No founder PII / resume dump | pass |
+| Nav Work/Services/Approach/About/Contact | pass |
+| apple-design + emil-design-eng; emilkowalski relevance judgment documented | pass |
+| No Chinese; build | pass |
 
 ## Notes (non-blocking)
 
-- Study is TSX; MDX stub is fine for S2. Prefer MDX only if a later ticket asks.
-- Try-on uses a soft radial skin wash (not purple SaaS chrome) — acceptable.
-- Vercel Protection may still block anonymous curl.
+- “Machine” layer from brand inspiration can appear in a later copy polish; not required to reopen S3.
+- Compact five-link nav wrap on narrow widths is acceptable for now.
 
 ## Next ticket
 
-S3 — `/services` `/approach` `/about`.
+S4 — Northline study + demo family.
