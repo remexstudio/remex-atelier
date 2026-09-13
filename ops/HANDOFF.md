@@ -1,6 +1,6 @@
 # Handoff S6
 - Status: delivered
-- SHA: (pending commit)
+- SHA: 718423ba17c4754a289c531ec7e6363a67ce7c84
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
   - `app/work/page.tsx` — unchanged structure; Live via `components/lumen/data.ts`
