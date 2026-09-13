@@ -1,12 +1,11 @@
 # Status
 
-- Phase: S1
-- Current TASK: S1 (implementation complete; awaiting Leader review)
-- Closed: S0 PASS (delivery SHA 2377b3d7c86c560751f83722c8f98ae4b5a2b455)
-- In handoff: S1 home offers + contact + design tokens
+- Phase: S2
+- Current TASK: S2 (issued after S1 dual PASS)
+- Closed: S0 PASS, S1 PASS (delivery SHA 2d1766c993ca72cbeba53144f56d2c27d5809be4)
 - GitHub identity: remexstudio
 - Repo: https://github.com/remexstudio/remex-atelier
 - Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app)
-- Skills: UI slices require apple-design + emil-design-eng in SKILLS TO USE and HANDOFF
-- Note: Vercel under `qinlinj-projects` (no remexstudio Vercel team on current auth)
+- Skills: UI slices require apple-design + emil-design-eng
+- Note: Vercel under `qinlinj-projects`
 - DoD: studio v1 not green

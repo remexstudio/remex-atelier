@@ -1,30 +1,30 @@
-# Review S0
+# Review S1
 
 - Verdict: **LEADER PASS**
-- Delivery SHA: `2377b3d7c86c560751f83722c8f98ae4b5a2b455`
-- Ops stamp HEAD: `4e3f42f`
-- Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (Deployment Protection; also https://remex-atelier.vercel.app)
-- Build: `pnpm build` reproduced — pass
+- Delivery SHA: `2d1766c993ca72cbeba53144f56d2c27d5809be4`
+- Ops stamp HEAD: `ce9ff1b`
+- Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app)
+- Build: `pnpm build` reproduced — `/`, `/contact`, `/_not-found`
 
 ## Acceptance
 
 | Item | Result |
 |---|---|
-| remexstudio/remex-atelier only remote | pass |
-| Next.js App Router + TS + Tailwind builds | pass |
-| Constitution docs + English README | pass |
-| ops scaffolding | pass |
-| Atelier `/` + English 404 | pass |
-| No Chinese / no S1–S9 routes / no UI kits | pass |
-| Skills packs; forbidden packs absent | pass |
-| apple-design + emil-design-eng listed and applied (tracking, press scale 0.97, reduced-motion, ease-out) | pass |
-| Vercel preview | pass with caveat (qinlinj-projects team) |
+| Design tokens documented + used | pass |
+| `/` three offers | pass |
+| `/` Lumen teaser + anonymized line | pass |
+| Start a brief → `/contact` | pass |
+| `/contact` labeled fields + explicit mock success | pass |
+| Focus-visible; reduced-motion; press scale | pass |
+| apple-design + emil-design-eng listed and applied | pass |
+| No Chinese / no purple-Inter-neon | pass |
+| Build | pass |
 
 ## Notes (non-blocking)
 
-- Prefer one commit per ticket going forward; SHA-in-tree follow-ups are acceptable only for ops stamps.
-- Vercel team remexstudio still unavailable — owner/infra, not a slice blocker for S1.
+- Contact is an explicit mock (allowed). Wire Formspree/Resend later only if a ticket asks.
+- Vercel remains on `qinlinj-projects` with Deployment Protection.
 
 ## Next ticket
 
-S1 — design tokens, richer `/`, `/contact` with success state.
+S2 — `/work` index + Lumen study + `/demo/lumen` family.
