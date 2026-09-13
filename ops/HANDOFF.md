@@ -1,7 +1,7 @@
 # Handoff S7
 
 - Status: delivered
-- SHA: 00bdfb6b460c4456008ee2af975af9ed00ebb89e
+- SHA: e164a455e53052f695a75a2a3501a2b57aff311e
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
   - `app/lab/page.tsx` — Lab index: Prototypes intro + Pulse card linking to `/lab/pulse`
