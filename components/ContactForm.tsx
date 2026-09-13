@@ -93,6 +93,7 @@ export function ContactForm() {
         <textarea
           id={briefId}
           name="brief"
+          autoComplete="off"
           required
           rows={6}
           className="field-input min-h-[9rem] resize-y"

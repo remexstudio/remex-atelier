@@ -3,9 +3,22 @@ import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
-  title: "Northline Analytics",
+  title: 'Northline Analytics',
   description:
-    "Studio study: Ledger Clerk for Northline Analytics — cited answers with Propose not Execute.",
+    'Studio study: Ledger Clerk for Northline Analytics — cited answers with Propose not Execute.',
+  openGraph: {
+    title: "Northline Analytics · Remex Studio",
+    description:
+      'Studio study: Ledger Clerk for Northline Analytics — cited answers with Propose not Execute.',
+    url: "/work/northline",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Northline Analytics · Remex Studio",
+    description:
+      'Studio study: Ledger Clerk for Northline Analytics — cited answers with Propose not Execute.',
+  },
 };
 
 export default function NorthlineStudyPage() {

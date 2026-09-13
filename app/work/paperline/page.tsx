@@ -3,9 +3,22 @@ import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
-  title: "Paperline Retail",
+  title: 'Paperline Retail',
   description:
-    "Studio study: Exception Copilot for Paperline Retail: queue, case, policy, refund approval.",
+    'Studio study: Exception Copilot for Paperline Retail: queue, case, policy, refund approval.',
+  openGraph: {
+    title: "Paperline Retail · Remex Studio",
+    description:
+      'Studio study: Exception Copilot for Paperline Retail: queue, case, policy, refund approval.',
+    url: "/work/paperline",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Paperline Retail · Remex Studio",
+    description:
+      'Studio study: Exception Copilot for Paperline Retail: queue, case, policy, refund approval.',
+  },
 };
 
 export default function PaperlineStudyPage() {

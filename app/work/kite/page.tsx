@@ -3,9 +3,22 @@ import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
-  title: "Kite & Co.",
+  title: 'Kite & Co.',
   description:
-    "Studio study: Morning Remex for Kite & Co. — priority brief without auto-publish.",
+    'Studio study: Morning Remex for Kite & Co. — priority brief without auto-publish.',
+  openGraph: {
+    title: "Kite & Co. · Remex Studio",
+    description:
+      'Studio study: Morning Remex for Kite & Co. — priority brief without auto-publish.',
+    url: "/work/kite",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Kite & Co. · Remex Studio",
+    description:
+      'Studio study: Morning Remex for Kite & Co. — priority brief without auto-publish.',
+  },
 };
 
 export default function KiteStudyPage() {

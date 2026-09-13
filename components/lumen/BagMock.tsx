@@ -28,6 +28,7 @@ export function BagMock() {
             </label>
             <select
               id="qty"
+              name="qty"
               value={qty}
               onChange={(event) => setQty(Number(event.target.value))}
               className="field-input w-auto"

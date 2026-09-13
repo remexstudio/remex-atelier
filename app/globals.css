@@ -66,6 +66,20 @@ body {
   outline-offset: 3px;
 }
 
+/* Interactive controls — explicit ring (links, buttons, fields, toggles) */
+a[href]:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible,
+[role="switch"]:focus-visible,
+[aria-pressed]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -176,15 +190,20 @@ button:active {
   padding: 1.25rem 1.5rem;
 }
 
-/* Apple: reduced motion = gentler opacity, not vestibular slides */
+/* Apple / Emil: reduced motion = drop transform motion; keep short opacity */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* No vestibular press scale; color/opacity feedback may remain short */
+  a[href],
+  button {
+    transition-property: opacity, color, background-color, border-color;
   }
 
   a[href]:active,
@@ -192,8 +211,17 @@ button:active {
     transform: none;
   }
 
+  /* Skip link: opacity reveal instead of translateY slide */
   .skip-link {
-    transition: none;
+    transform: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease;
+  }
+
+  .skip-link:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 

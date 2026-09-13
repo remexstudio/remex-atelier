@@ -38,8 +38,19 @@ CSS classes: `.type-display`, `.type-body`, `.type-meta`.
 
 - `--ease-out: cubic-bezier(0.23, 1, 0.32, 1)` for UI feedback
 - `--ease-in-out: cubic-bezier(0.77, 0, 0.175, 1)` for on-screen movement
+- `--duration-press: 160ms`; `--duration-ui: 200ms`
 - Press duration ~160ms; never `transition: all`
-- Under `prefers-reduced-motion: reduce`, drop scale transforms; keep brief opacity/color if needed
+- Animate `transform` and `opacity` only (GPU-friendly)
+- Under `prefers-reduced-motion: reduce`: drop scale and translate motion sitewide; keep short opacity (~160ms) where state indication still helps; no vestibular slides
+- Demo / lab panels (`kite`, `northline`, `paperline`, `pulse`) mirror the same rule locally so opacity reveals survive the global reduce pass
+- Skip link: slide via transform by default; opacity reveal when reduced
+
+## Accessibility tokens
+
+- Focus: `:focus-visible` ring uses `--accent` at 2px / 3px offset on links, buttons, inputs, selects, textareas, and pressed toggles
+- Forms: visible `.field-label` + matching `htmlFor` / `id`; contact and demo payment fields keep labels
+- Skip link targets `#main`
+- Prefer labels and legends over placeholder-only controls
 
 ## Do not ship
 

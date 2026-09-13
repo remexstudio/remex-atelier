@@ -1,42 +1,42 @@
-# Handoff S7
+# Handoff S8
 
 - Status: delivered
-- SHA: e164a455e53052f695a75a2a3501a2b57aff311e
+- SHA: 086203dd2616a9796bde91ba7240224f197fee1e
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
-  - `app/lab/page.tsx` — Lab index: Prototypes intro + Pulse card linking to `/lab/pulse`
-  - `app/lab/pulse/page.tsx` — Pulse page shell with SiteChrome + PulseLoop
-  - `components/lab/data.ts` — pulseLoop / pulseRoster / seedPulseEvents
-  - `components/lab/PulseLoop.tsx` — interactive loop: see → notify → log → follow; roster + event log
-  - `components/lab/pulse.css` — step-panel opacity + translateY 200ms `--ease-out`
-  - `components/SiteChrome.tsx` — Lab added to primary nav (after Approach)
-  - `docs/sitemap.md` — `/lab` and `/lab/pulse` marked shipped (S7)
+  - `app/globals.css` — stronger `:focus-visible` on interactive controls; reduced-motion drops transform / press scale and skip-link slide; keeps short opacity; no nuclear `transition-duration: 0.01ms`
+  - `app/layout.tsx` — `metadataBase`, richer Open Graph + Twitter for home
+  - `app/not-found.tsx` — SiteChrome-aligned English 404 with home + Work CTAs
+  - `app/work/page.tsx` — Open Graph + Twitter for Work index
+  - `app/work/lumen-atelier/page.tsx`, `kite/page.tsx`, `northline/page.tsx`, `paperline/page.tsx` — study-specific OG + Twitter
+  - `components/ContactForm.tsx` — `autoComplete="off"` on brief
+  - `components/lumen/BagMock.tsx` — `name="qty"` on labeled select
+  - `components/lumen/PayMock.tsx` — ellipsis placeholders + `spellCheck={false}` on mock card fields (labels retained)
+  - `docs/design.md` — a11y / motion token notes
   - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - `/lab` exists and links to Pulse: pass
-  - `/lab/pulse` loop see → notify → log → follow: pass
-  - Label `Prototype · not a client engagement`: pass
-  - Not framed as client study / no anonymized-study claim: pass
-  - Nav reaches Lab: pass
+  - prefers-reduced-motion sitewide (no vestibular slides; opacity kept): pass (globals + lumen/northline/kite/paperline/lab CSS; smoke reduced_motion)
+  - Keyboard focus visible on interactive controls: pass (global + explicit control selectors; contact focus outline solid)
+  - Forms retain labels (contact + demos): pass (ContactForm + PayMock + BagMock audited)
+  - Metadata + Open Graph on home and /work (+ study pages): pass
+  - English 404 atelier-coherent: pass (SiteChrome)
+  - review-animations + web-design-guidelines applied; apple-design + emil-design-eng always: pass
   - No Chinese; `pnpm build` pass: pass
-  - webapp-testing smoke after build+start: pass (23/23)
+  - Playwright smoke `/, /work, /contact, /lab/pulse, /demo/lumen/pay, 404`: pass (46/46)
 - Skills used:
-  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion on step panel, display tracking/leading, spatial consistency)
-  - emil-design-eng (ease-out press feedback, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, active scale 0.97, under-300ms UI motion)
-  - animate (step panel: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible)
-  - animation-vocabulary (named Fade in / Slide in / Press feedback for step change)
-  - review-animations (transform+opacity only; reduced-motion drops transform; no scale(0); UI <300ms; Approve for step status)
-  - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles, no ALL-CAPS eyebrows, hairline borders over SaaS cards)
-  - writing-guidelines (active voice, sentence-case headings, specific prototype copy, no Chinese; fetched Vercel rules)
-  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on step detail / completion / log, focus-visible, labeled primary nav; fetched Vercel rules)
-  - vercel-react-best-practices (static RSC pages; client island only for PulseLoop; data under `components/lab/` not `lib/`; direct imports)
-  - webapp-testing (Playwright smoke via `pnpm exec next start -p 3017`)
-- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to step panel)
+  - apple-design (reduced-motion gentler opacity not slides; focus; press scale gated off when reduced)
+  - emil-design-eng (no `transition: all`; under-300ms; hover gated; transform+opacity only)
+  - review-animations (audit: drop vestibular under reduce; keep opacity state indication; Approve)
+  - web-design-guidelines (fetched Vercel rules: focus-visible, labels, prefers-reduced-motion, skip link)
+  - frontend-design (atelier restraint on 404; tokens shared with SiteChrome)
+  - writing-guidelines (fetched Vercel rules; English sentence-case 404; ellipsis placeholders)
+  - vercel-react-best-practices (static metadata on RSC pages; no new client islands)
+  - webapp-testing (Playwright via `with_server.py` + `next start -p 3018`)
+- Skills judged not applicable this slice: animate, animation-vocabulary (no new motion added; only reduced-motion / a11y polish), pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations
 - Forbidden skills not read: animate-expo, write-swift, react-native-guidelines
 - Risks:
-  - Pulse event log is session-local (React state only); refresh clears run history back to seed events
-  - Notify roster “Notified” flag is demo-only (Desk A/B after first advance); no real delivery
-  - Motion CSS lives in `components/lab/pulse.css` (allowed path); globals reduced-motion still zeros all durations site-wide
+  - Skip-link under reduced motion uses opacity 0 (not off-DOM); still keyboard-focusable
+  - Study OG uses `type: "article"`; no custom OG images yet (summary card only)
   - Vercel Deployment Protection may block anonymous curl of preview
 - Blockers: none
 - DEV verdict: DEV PASS

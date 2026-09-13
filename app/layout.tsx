@@ -14,7 +14,10 @@ const sans = Source_Sans_3({
   display: "swap",
 });
 
+const siteUrl = "https://remex-atelier.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Remex Studio",
     template: "%s · Remex Studio",
@@ -22,8 +25,16 @@ export const metadata: Metadata = {
   description: "Agents, built to the brief. A Seattle studio.",
   openGraph: {
     title: "Remex Studio",
-    description: "Agents, built to the brief.",
+    description: "Agents, built to the brief. A Seattle studio.",
+    url: "/",
+    siteName: "Remex Studio",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Remex Studio",
+    description: "Agents, built to the brief. A Seattle studio.",
   },
 };
 

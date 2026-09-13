@@ -6,6 +6,17 @@ import { workStudies } from "@/components/lumen/data";
 export const metadata: Metadata = {
   title: "Work",
   description: "Studio studies from Remex Studio — anonymized client work.",
+  openGraph: {
+    title: "Work · Remex Studio",
+    description: "Studio studies from Remex Studio — anonymized client work.",
+    url: "/work",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Work · Remex Studio",
+    description: "Studio studies from Remex Studio — anonymized client work.",
+  },
 };
 
 export default function WorkPage() {

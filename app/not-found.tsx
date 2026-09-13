@@ -1,21 +1,30 @@
 import Link from "next/link";
+import { SiteChrome } from "@/components/SiteChrome";
 
 export default function NotFound() {
   return (
-    <main className="mx-auto flex min-h-full w-full max-w-2xl flex-col justify-center px-6 py-24 sm:px-10">
-      <p className="font-serif text-sm tracking-[0.14em] text-muted">404</p>
-      <h1 className="mt-8 font-serif text-3xl leading-[1.1] tracking-[-0.02em] text-accent">
-        Page not found
-      </h1>
-      <p className="mt-4 max-w-md leading-relaxed text-muted">
-        That route is not on the map yet.
-      </p>
-      <Link
-        href="/"
-        className="mt-10 inline-flex w-fit text-sm text-accent no-underline"
-      >
-        Back to Remex Studio
-      </Link>
-    </main>
+    <SiteChrome>
+      <main id="main">
+        <p className="type-meta mt-14 sm:mt-16">404</p>
+        <h1 className="type-display mt-3 text-4xl text-accent sm:text-5xl">
+          Page not found
+        </h1>
+        <p className="type-body mt-4 max-w-md text-muted">
+          That route is not on the map yet. Head home, or open Work for live
+          studies.
+        </p>
+        <p className="mt-10 flex flex-wrap gap-3">
+          <Link href="/" className="btn-primary no-underline">
+            Back home
+          </Link>
+          <Link
+            href="/work"
+            className="inline-flex items-center border border-rule px-5 py-2.5 text-sm text-accent no-underline"
+          >
+            Browse work
+          </Link>
+        </p>
+      </main>
+    </SiteChrome>
   );
 }

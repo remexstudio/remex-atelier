@@ -4,9 +4,22 @@ import { SiteChrome } from "@/components/SiteChrome";
 import { heroSku } from "@/components/lumen/data";
 
 export const metadata: Metadata = {
-  title: "Lumen Atelier",
+  title: 'Lumen Atelier',
   description:
-    "Studio study: Atelier Concierge for Lumen Atelier — consult to aftercare.",
+    'Studio study: Atelier Concierge for Lumen Atelier — consult to aftercare.',
+  openGraph: {
+    title: "Lumen Atelier · Remex Studio",
+    description:
+      'Studio study: Atelier Concierge for Lumen Atelier — consult to aftercare.',
+    url: "/work/lumen-atelier",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Lumen Atelier · Remex Studio",
+    description:
+      'Studio study: Atelier Concierge for Lumen Atelier — consult to aftercare.',
+  },
 };
 
 export default function LumenAtelierStudyPage() {

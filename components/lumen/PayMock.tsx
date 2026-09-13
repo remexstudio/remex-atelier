@@ -57,7 +57,8 @@ export function PayMock() {
           required
           autoComplete="cc-name"
           className="field-input"
-          placeholder="Guest name"
+          placeholder="Alex Rivera…"
+          spellCheck={false}
         />
       </div>
 
@@ -73,7 +74,8 @@ export function PayMock() {
           inputMode="numeric"
           autoComplete="cc-number"
           className="field-input"
-          placeholder="4242 · mock only"
+          placeholder="4242 4242 4242 4242…"
+          spellCheck={false}
         />
       </div>
 
@@ -89,7 +91,8 @@ export function PayMock() {
             required
             autoComplete="cc-exp"
             className="field-input"
-            placeholder="MM/YY"
+            placeholder="12/28…"
+            spellCheck={false}
           />
         </div>
         <div>
@@ -103,7 +106,8 @@ export function PayMock() {
             required
             autoComplete="cc-csc"
             className="field-input"
-            placeholder="123"
+            placeholder="123…"
+            spellCheck={false}
           />
         </div>
       </div>
