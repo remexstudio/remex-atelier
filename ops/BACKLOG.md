@@ -7,6 +7,6 @@
 - [x] S4 feat(northline): study + demo family
 - [x] S5 feat(kite): study + demo family
 - [x] S6 feat(paperline): study + demo family
-- [ ] S7 feat(lab): /lab + /lab/pulse
+- [x] S7 feat(lab): /lab + /lab/pulse
 - [ ] S8 feat(site): motion + a11y + metadata + 404 polish
 - [ ] S9 docs(site): production README, STATUS green, deploy sanity

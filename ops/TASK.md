@@ -1,28 +1,32 @@
-# TASK S7
+# TASK S8
 
 ```text
-TASK ID: S7
+TASK ID: S8
 REPO: remexstudio/remex-atelier
-GOAL: Ship /lab index and /lab/pulse prototype — see metric → notify roster → log event → follow up rest — labeled Prototype · not a client engagement.
+GOAL: Sitewide polish — motion respects prefers-reduced-motion, keyboard focus visible, form labels, metadata + OG on home and work pages, English 404 polish; review against review-animations and web-design-guidelines.
 ALLOWED FILES:
-- app/lab/page.tsx
-- app/lab/pulse/page.tsx
-- app/lab/**
+- app/layout.tsx
+- app/page.tsx
+- app/globals.css
+- app/not-found.tsx
+- app/work/page.tsx
+- app/work/**/page.tsx
+- app/**/layout.tsx
 - components/**
-- components/SiteChrome.tsx
+- docs/design.md
 - docs/sitemap.md
 - ops/TASK.md
 - ops/HANDOFF.md
 - ops/STATUS.md
-OUT OF SCOPE: personal site, fifth client study, Chinese UI, fake conversion %, real brand logos, new deps unless pick-ui-library requires one.
+OUT OF SCOPE: personal site, new client studies, Chinese UI, new product routes beyond polish, new deps unless pick-ui-library requires one.
 ACCEPTANCE:
-- [x] /lab exists and links to Pulse
-- [x] /lab/pulse shows the loop: see metric → notify roster → log event → follow up rest
-- [x] Clear label: Prototype · not a client engagement
-- [x] Not presented as a client study; no study anonymized-client claim as if it were Lumen-class work
-- [x] Nav can reach Lab
-- [x] apple-design + emil-design-eng always; other emilkowalski if relevant; webapp-testing if interactive
-- [x] No Chinese; build passes
-SKILLS TO USE: apple-design, emil-design-eng, frontend-design, writing-guidelines, web-design-guidelines, vercel-react-best-practices (+ relevant emilkowalski / webapp-testing)
-COMMIT MESSAGE: feat(lab): add pulse prototype
+- [ ] prefers-reduced-motion respected sitewide (no vestibular motion when reduced)
+- [ ] Keyboard focus visible on interactive controls
+- [ ] Forms retain labels (contact + demos)
+- [ ] Metadata + Open Graph on home and /work (and preferably study pages)
+- [ ] English 404 remains coherent with atelier system
+- [ ] review-animations + web-design-guidelines applied; apple-design + emil-design-eng always
+- [ ] No Chinese; build passes; smoke key routes if interactive polish touched
+SKILLS TO USE: apple-design, emil-design-eng, review-animations, animate (if adding motion), animation-vocabulary (if naming motion), web-design-guidelines, frontend-design, writing-guidelines, vercel-react-best-practices, webapp-testing (if smoke needed)
+COMMIT MESSAGE: feat(site): polish motion a11y and metadata
 ```
