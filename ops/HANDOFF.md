@@ -1,6 +1,6 @@
 # Handoff S0
 - Status: delivered
-- SHA: (see latest fix commit after push)
+- SHA: 2377b3d7c86c560751f83722c8f98ae4b5a2b455
 - Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app
 - Files changed: Next.js 16 App Router + TypeScript + Tailwind (pnpm); atelier home + 404; AGENTS.md; docs/brand.md, docs/sitemap.md, docs/design.md; ops/*; README; skills-lock.json; public/.gitkeep; S0 UI refine (apple-design + emil-design-eng)
 - Acceptance self-check:
