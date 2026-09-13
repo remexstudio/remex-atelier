@@ -141,10 +141,10 @@ export const workStudies = [
     slug: "paperline",
     client: "Paperline Retail",
     product: "Exception Copilot",
-    status: "in-progress" as const,
+    status: "live" as const,
     blurb:
-      "Exception queue with timeline, suggested actions, and refund approval — no real payouts.",
-    href: null,
+      "Exception queue with timeline, suggested actions, and refund approval. No real payouts.",
+    href: "/work/paperline",
   },
 ] as const;
 

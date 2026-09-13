@@ -1,40 +1,41 @@
-# Handoff S5
+# Handoff S6
 - Status: delivered
-- SHA: 06b694e9fe288ea860cca2ef4b28a6b4d06d3ede
+- SHA: (pending commit)
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
-  - `app/work/kite/page.tsx` — study template sections + anonymized footer
-  - `app/demo/kite/**` — hub, brief, thread/[id], digest
-  - `components/kite/**` — data, DemoShell/DemoNav, BriefBoard, ThreadDraft, DigestPanel, motion CSS
-  - `components/lumen/data.ts` — Kite status Live + href `/work/kite`
-  - `content/studies/kite.mdx` — study pointer
-  - `docs/sitemap.md` — S5 routes marked shipped
+  - `app/work/page.tsx` — unchanged structure; Live via `components/lumen/data.ts`
+  - `app/work/paperline/page.tsx` — study template sections + anonymized footer
+  - `app/demo/paperline/**` — hub, queue, case/[id], policy
+  - `components/paperline/**` — data, DemoShell/DemoNav, QueueList, CasePanel, motion CSS
+  - `components/lumen/data.ts` — Paperline status Live + href `/work/paperline`
+  - `content/studies/paperline.mdx` — study pointer
+  - `docs/sitemap.md` — S6 routes marked shipped
   - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - `/work` marks Kite Live (Lumen + Northline still Live; Paperline In progress): pass
-  - `/work/kite` study template + `Studio study. Client identity anonymized.`: pass
-  - `/demo/kite` + brief / thread/[id] / digest reachable: pass
-  - Brief triage shows Priority / Watch / Noise: pass
-  - Draft two tones; escalate draft path: pass
-  - Never auto-publish; synthetic posts only; no Publish button: pass
+  - `/work` marks Paperline Live (all four studies Live): pass
+  - `/work/paperline` study template + `Studio study. Client identity anonymized.`: pass
+  - `/demo/paperline` + queue / case/[id] / policy reachable: pass
+  - Queue shows exactly 6 tickets: pass
+  - Case page has timeline + suggested actions: pass
+  - Refund requires approval; no real payouts: pass
   - No Chinese; `pnpm build` pass: pass
-  - webapp-testing smoke after build+start: pass (34/34)
+  - webapp-testing smoke after build+start: pass (43/43)
 - Skills used:
   - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, display tracking/leading, spatial consistency in DemoShell)
   - emil-design-eng (ease-out press feedback, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, active scale 0.97, under-300ms UI motion)
-  - animate (tone swap + escalate status: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible)
-  - animation-vocabulary (named Fade in / Slide in / Press feedback for draft and escalate)
-  - review-animations (transform+opacity only; reduced-motion drops transform; no scale(0); UI <300ms; Approve for draft/escalate feedback)
+  - animate (refund gate status: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible)
+  - animation-vocabulary (named Fade in / Slide in / Press feedback for refund gate decision)
+  - review-animations (transform+opacity only; reduced-motion drops transform; no scale(0); UI <300ms; Approve for gate status)
   - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles, no ALL-CAPS eyebrows, hairline dividers over SaaS cards)
-  - writing-guidelines (active voice, sentence-case headings, specific product copy, no Chinese)
-  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on draft/escalate, focus-visible, labeled demo nav)
-  - vercel-react-best-practices (static RSC pages where possible; client island only for ThreadDraft; data under `components/kite/` not `lib/`; direct imports)
+  - writing-guidelines (active voice, sentence-case headings, specific product copy, no Chinese; fetched Vercel rules)
+  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on refund gate, focus-visible, labeled demo nav; fetched Vercel rules)
+  - vercel-react-best-practices (static RSC pages where possible; client island only for CasePanel; data under `components/paperline/` not `lib/`; direct imports)
   - webapp-testing (Playwright smoke via `with_server.py` + `pnpm start`)
-- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to draft tone swap and escalate feedback)
+- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to refund-gate status)
 - Forbidden skills not read: animate-expo, write-swift, react-native-guidelines
 - Risks:
-  - Escalate state is session-local (React state only); refresh clears escalation
-  - Motion CSS lives in `components/kite/kite.css` (allowed path); globals reduced-motion still zeros all durations site-wide
+  - Refund decision is session-local (React state only); refresh clears Approve/Reject
+  - Motion CSS lives in `components/paperline/paperline.css` (allowed path); globals reduced-motion still zeros all durations site-wide
   - Vercel Deployment Protection may block anonymous curl of preview
 - Blockers: none
 - DEV verdict: DEV PASS
