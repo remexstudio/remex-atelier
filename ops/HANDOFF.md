@@ -1,6 +1,6 @@
 # Handoff S5
 - Status: delivered
-- SHA: (pending commit)
+- SHA: 06b694e9fe288ea860cca2ef4b28a6b4d06d3ede
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
   - `app/work/kite/page.tsx` — study template sections + anonymized footer
