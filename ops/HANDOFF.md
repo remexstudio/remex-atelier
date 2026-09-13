@@ -1,7 +1,7 @@
 # Handoff S9
 
 - Status: delivered
-- SHA: pending stamp
+- SHA: 9f7ff95b23764b62b8b0e4795e97cd8984bdb608
 - Preview: https://remex-atelier.vercel.app
 - Vercel: project under `qinlinj-projects`; team-scoped URLs may SSO via Deployment Protection; public alias documented
 - Files changed:
