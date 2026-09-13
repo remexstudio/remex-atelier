@@ -1,35 +1,41 @@
-# Handoff S1
+# Handoff S2
 - Status: delivered
-- SHA: 2d1766c993ca72cbeba53144f56d2c27d5809be4
-- Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app). GitHub push to `main` should auto-deploy on the existing Vercel project; refresh preview URL after deploy if the team alias updates.
+- SHA: (pending commit)
+- Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
-  - `app/globals.css` — paper/ink/muted/rule tokens, type roles, ease-out, press scale, hover media, reduced-motion
-  - `app/layout.tsx` — skip link, paper/ink body classes
-  - `app/page.tsx` — offers, Lumen teaser, Start a brief CTA
-  - `app/contact/page.tsx` — contact route
-  - `components/SiteChrome.tsx`, `Offers.tsx`, `LumenTeaser.tsx`, `ContactForm.tsx`
-  - `docs/design.md` — token + type-role documentation
+  - `app/work/page.tsx` — four study cards (Lumen Live; Northline / Kite / Paperline In progress)
+  - `app/work/lumen-atelier/page.tsx` — study template sections + anonymized footer
+  - `app/demo/lumen/**` — hub + consult / try-on / bag / pay / desk
+  - `components/lumen/**` — data helpers + DemoShell/DemoNav + interactive mocks (no `lib/`)
+  - `components/SiteChrome.tsx` — Work nav link
+  - `components/LumenTeaser.tsx` — link to study
+  - `content/studies/lumen-atelier.mdx` — stub note (study rendered as TSX)
+  - `docs/sitemap.md` — S2 routes marked shipped
   - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - Design tokens documented (`docs/design.md`) and used (paper/ink/muted/rule; display/body/meta): pass
-  - `/` states three offers (Agent Apps, Agent Ops, Advisory), English, short, specific: pass
-  - `/` Lumen Atelier teaser + Atelier Concierge one-liner + anonymized disclaimer: pass
-  - `/` Start a brief → `/contact`: pass
-  - `/contact` labeled Name / Email / Brief + inline mock success (“This is a studio mock — no message was sent.”): pass
-  - Focus visible (`:focus-visible`); prefers-reduced-motion; press `scale(0.97)`; ease-out tokens; hover behind `(hover: hover) and (pointer: fine)`: pass
-  - No purple gradient / Inter template / neon SaaS / Chinese: pass
+  - `/work` four cards (Lumen live; others In progress): pass
+  - `/work/lumen-atelier` sections Client card / Brief / Constraints / What shipped / Live prototype / How it runs / Next molt / Start a brief: pass
+  - Study footer `Studio study. Client identity anonymized.`: pass
+  - `/demo/lumen` + consult / try-on / bag / pay / desk reachable: pass
+  - Consult asks skin + occasion → one hero SKU (Softlight Serum Tint / LUM-ST-01): pass
+  - Try-on mock overlay toggle: pass
+  - Bag + Pay mock checkout (no processor): pass
+  - Desk mock shipment for LUM-1042; Request human → session summary: pass
+  - No Chinese; no purple/Inter-slop/neon; no fake %; no real brand logos: pass
   - `pnpm build`: pass
+  - Playwright smoke on work + demo routes after `pnpm start`: pass
 - Skills used:
-  - apple-design (press feedback, reduced-motion, tracking/leading, skip link, focus)
-  - emil-design-eng (ease-out curves, active scale 0.97, hover media query, no transition:all)
-  - frontend-design (editorial atelier restraint, type roles, no template tells)
-  - writing-guidelines (short specific offer copy; active voice)
-  - web-design-guidelines (labeled forms, focus-visible, aria-live success, autocomplete)
-  - vercel-react-best-practices (client island only for form; static pages)
+  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, tracking/leading on display type, continuous press feedback)
+  - emil-design-eng (ease-out curves, active scale 0.97, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, interruptible opacity on overlay)
+  - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles)
+  - writing-guidelines (plain active voice; specific labels; mock disclaimers)
+  - web-design-guidelines (labeled fields, focus-visible, aria-live status regions, aria-pressed toggles)
+  - webapp-testing (Playwright smoke via with_server.py on `/work` + `/demo/lumen/**`)
+  - vercel-react-best-practices (client islands only for interactive flows; static RSC pages)
 - Risks:
-  - Contact success is an explicit client mock; no Formspree/Resend keys
-  - Vercel project remains under `qinlinj-projects` with Deployment Protection; public curl may hit login
-  - Preview URL may lag until auto-deploy finishes after push
-  - `app/not-found.tsx` left untouched (outside S1 allowed set); still uses prior S0 styles
+  - Study page is TSX (not MDX-rendered); `content/studies/lumen-atelier.mdx` is a stub pointer only
+  - Northline / Kite / Paperline cards are non-link In progress placeholders — no study routes yet
+  - Vercel Deployment Protection may block anonymous curl of preview
+  - Mock pay discards card fields in-browser; never wire a real processor in this slice
 - Blockers: none
 - DEV verdict: DEV PASS

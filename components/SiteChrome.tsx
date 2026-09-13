@@ -14,7 +14,10 @@ export function SiteChrome({ children }: SiteChromeProps) {
         >
           REMEX STUDIO
         </Link>
-        <nav aria-label="Primary" className="type-meta">
+        <nav aria-label="Primary" className="type-meta flex gap-5">
+          <Link href="/work" className="text-muted no-underline">
+            Work
+          </Link>
           <Link href="/contact" className="text-muted no-underline">
             Contact
           </Link>

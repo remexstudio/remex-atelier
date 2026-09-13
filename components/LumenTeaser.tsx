@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function LumenTeaser() {
   return (
     <aside
@@ -14,6 +16,14 @@ export function LumenTeaser() {
       <p className="type-body mt-3 max-w-prose text-base text-muted">
         Atelier Concierge drafts fitting-room notes and follow-ups so the floor
         team stays with the client.
+      </p>
+      <p className="mt-5">
+        <Link
+          href="/work/lumen-atelier"
+          className="text-sm text-accent no-underline"
+        >
+          Open study
+        </Link>
       </p>
       <p className="type-meta mt-5">
         Studio study. Client identity anonymized.
