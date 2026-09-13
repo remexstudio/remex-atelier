@@ -1,0 +1,20 @@
+/* Ask→answer state indication — transform + opacity only */
+.nl-answer {
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+}
+
+.nl-answer[data-entered="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nl-answer {
+    transform: none;
+    transition: opacity 160ms ease;
+  }
+}

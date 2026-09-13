@@ -123,10 +123,10 @@ export const workStudies = [
     slug: "northline",
     client: "Northline Analytics",
     product: "Ledger Clerk",
-    status: "in-progress" as const,
+    status: "live" as const,
     blurb:
       "Cited answers over the books, with a human gate before any change lands.",
-    href: null,
+    href: "/work/northline",
   },
   {
     slug: "kite",

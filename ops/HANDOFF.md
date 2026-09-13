@@ -1,33 +1,38 @@
-# Handoff S3
+# Handoff S4
 - Status: delivered
-- SHA: a50161b60a9e43614f4b5ed18352d40cbda35cb2
+- SHA: (pending commit)
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
-  - `app/services/page.tsx` — Agent Apps, Agent Ops, Advisory with Start a brief CTA
-  - `app/approach/page.tsx` — PM vs agent division of labor; Brief → Shape → Build → Molt loop
-  - `app/about/page.tsx` — Remex / Cloud / Studio meaning; Seattle; Jiyuyun Studio LLC; no founder PII
-  - `components/SiteChrome.tsx` — compact nav: Work / Services / Approach / About / Contact
-  - `docs/sitemap.md` — S3 routes marked shipped
+  - `app/work/northline/page.tsx` — study template sections + anonymized footer
+  - `app/demo/northline/**` — hub, ask, source, change, log + layout provider
+  - `components/northline/**` — data, DemoShell/DemoNav, Ask/Change/Log panels, provider, motion CSS
+  - `components/lumen/data.ts` — Northline status Live + href `/work/northline`
+  - `content/studies/northline.mdx` — study pointer
+  - `docs/sitemap.md` — S4 routes marked shipped
   - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - `/services` presents Agent Apps, Agent Ops, Advisory clearly: pass
-  - `/approach` explains how briefs become agents (PM vs agent division of labor): pass
-  - `/about` covers Remex / pinion-feather / cloud / studio meaning in English; Seattle; Jiyuyun Studio LLC: pass
-  - No founder legal name, phone, school list, or resume dump: pass
-  - SiteChrome nav Work / Services / Approach / About / Contact: pass
-  - Editorial atelier tone; apple-design + emil-design-eng applied: pass
+  - `/work` marks Northline Live (Lumen still Live; Kite/Paperline In progress): pass
+  - `/work/northline` study template + `Studio study. Client identity anonymized.`: pass
+  - `/demo/northline` + ask / source / change / log reachable: pass
+  - Answers include citations: pass
+  - Propose not Execute; Approve/Reject mock gate: pass
   - No Chinese; `pnpm build` pass: pass
+  - webapp-testing smoke after build+start: pass (27/27)
 - Skills used:
-  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, display tracking/leading, spatial consistency in SiteChrome)
+  - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, display tracking/leading, spatial consistency in DemoShell)
   - emil-design-eng (ease-out press feedback, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, active scale 0.97, under-300ms UI motion)
+  - animate (ask→answer entrance: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible; no keyboard animation)
+  - animation-vocabulary (named Fade in / Slide in / Press feedback for ask and gate)
+  - review-animations (removed noop badge opacity styles; moved motion CSS into `components/northline/northline.css`; reduced-motion drops transform)
   - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles, no ALL-CAPS eyebrows, hairline dividers over SaaS cards)
-  - writing-guidelines (active voice, sentence-case headings, no em dashes in body, specific offer copy, no banned filler)
-  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, focus-visible, labeled primary nav)
-  - vercel-react-best-practices (static RSC pages; no client islands on these routes; direct imports)
-- Skills judged not applicable this slice (emilkowalski pack): animate, animation-vocabulary, review-animations, pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (static marketing pages; no motion, kit, or toasts)
+  - writing-guidelines (active voice, sentence-case headings, no em dashes as punctuation in body, specific product copy)
+  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on answers/gates, focus-visible, labeled demo nav)
+  - vercel-react-best-practices (static RSC pages where possible; client islands only for ask/change/log state; data under `components/northline/` not `lib/`; direct imports)
+  - webapp-testing (Playwright smoke via `with_server.py` + `pnpm start`)
+- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to ask→answer and gate feedback)
 - Risks:
-  - Five-link compact nav may wrap on very narrow widths; intentional atelier tradeoff vs hamburger
-  - About omits “Machine” layer from studio inspiration; brand hints asked Remex / cloud / studio only
+  - Demo state persists in `localStorage` (`northline-ledger-demo-v1`); seed log can look “already approved” until cleared
+  - Motion CSS lives in component CSS (allowed path); globals reduced-motion still zeros all durations site-wide
   - Vercel Deployment Protection may block anonymous curl of preview
 - Blockers: none
 - DEV verdict: DEV PASS
