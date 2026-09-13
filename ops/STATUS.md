@@ -1,50 +1,49 @@
 # Status
 
-- Phase: S9 delivered (pending Leader PASS)
-- Current TASK: S9
-- S9 delivery SHA: 9f7ff95b23764b62b8b0e4795e97cd8984bdb608
-- Closed: S0–S8 PASS (S8 delivery SHA 4e19568cab745096b1fe15c5bf7c442b66643bef)
+- Phase: **Studio v1 CLOSED** — DoD green
+- Closed slices: S0–S9 (both DEV PASS + LEADER PASS)
+- Final content SHA: 9f7ff95b23764b62b8b0e4795e97cd8984bdb608
+- Tip: f75579a (ops stamp) + Leader S9 PASS docs
 - Repo: https://github.com/remexstudio/remex-atelier
-- Preview: https://remex-atelier.vercel.app
-- Vercel team: `qinlinj-projects` (no remexstudio Vercel team on deploy auth)
-- DoD: studio v1 **green** (checklist below)
+- Preview / production alias: https://remex-atelier.vercel.app
+- Production deployment: dpl_98DJoTtpvD3Dg1snyLPVKxwR7kob
+- Vercel team: `qinlinj-projects` (no remexstudio Vercel team on deploy auth; GitHub auto-deploy not linked — `repo_no_access`)
+- Standby: yes. Personal site: not opened.
 
 ## Studio v1 definition of done
-
-Checked against repo + local `pnpm build` / smoke on S9. Live alias may lag or sit behind Deployment Protection; see Preview notes.
 
 ### Marketing routes
 
 | Route | Result |
 | --- | --- |
-| `/` | green |
-| `/work` | green |
-| `/work/lumen-atelier` | green |
-| `/work/northline` | green |
-| `/work/kite` | green |
-| `/work/paperline` | green |
-| `/services` | green |
-| `/approach` | green |
-| `/lab` | green |
-| `/lab/pulse` | green |
-| `/about` | green |
-| `/contact` | green |
+| `/` | green (local + live) |
+| `/work` | green (local + live) |
+| `/work/lumen-atelier` | green (local + live) |
+| `/work/northline` | green (local + live) |
+| `/work/kite` | green (local + live) |
+| `/work/paperline` | green (local + live) |
+| `/services` | green (local + live) |
+| `/approach` | green (local + live) |
+| `/lab` | green (local + live) |
+| `/lab/pulse` | green (local + live) |
+| `/about` | green (local + live) |
+| `/contact` | green (local + live) |
 
 ### Demo families
 
 | Family | Result |
 | --- | --- |
-| Lumen (`/demo/lumen` + consult, try-on, bag, pay, desk) | green |
-| Northline (`/demo/northline` + ask, source, change, log) | green |
-| Kite (`/demo/kite` + brief, thread/[id], digest) | green |
-| Paperline (`/demo/paperline` + queue, case/[id], policy) | green |
+| Lumen (`/demo/lumen` + consult, try-on, bag, pay, desk) | green (local + live) |
+| Northline (`/demo/northline` + ask, source, change, log) | green (local + live) |
+| Kite (`/demo/kite` + brief, thread/[id], digest) | green (local + live) |
+| Paperline (`/demo/paperline` + queue, case/[id], policy) | green (local + live) |
 
 ### Product / content locks
 
 | Item | Result |
 | --- | --- |
 | English UI only | green |
-| Study footer: `Studio study. Client identity anonymized.` | green |
+| Study footer: `Studio study. Client identity anonymized.` | green (live verified) |
 | No founder PII | green |
 | No fake % | green |
 | No purple / neon SaaS chrome | green |
@@ -63,10 +62,11 @@ Checked against repo + local `pnpm build` / smoke on S9. Live alias may lag or s
 
 | Item | Result |
 | --- | --- |
-| Preview URL documented (`https://remex-atelier.vercel.app`) | green |
+| Preview URL live (`https://remex-atelier.vercel.app`) | green |
 | `qinlinj-projects` + Deployment Protection caveat documented | green |
-| `pnpm build` passes | green (S9) |
+| `pnpm build` passes | green |
+| Production README | green |
 
 ### vercel-optimize (optional)
 
-No metric-backed audit this slice (CLI not linked in the S9 box; Observability not in scope). Ship is a static marketing + demo App Router site. No invented cost or performance claims. Revisit with `vercel-optimize` after production traffic and a linked CLI session.
+Deferred — no metric-backed audit; no invented cost or performance claims.
