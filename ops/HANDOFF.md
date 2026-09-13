@@ -1,6 +1,6 @@
 # Handoff S0
 - Status: delivered
-- SHA: f7679f7f8b75d990eba88b1eed1f3fba9a644b49
+- SHA: bd2ec08898fb501482b4450ed53c3bac7562beae
 - Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app
 - Files changed: Next.js 16 App Router + TypeScript + Tailwind (pnpm); atelier home + 404; AGENTS.md; docs/brand.md, docs/sitemap.md, docs/design.md; ops/*; README; skills-lock.json; public/.gitkeep
 - Acceptance self-check:
@@ -22,5 +22,6 @@
   - `.agents/` local skill copies gitignored; skills-lock.json committed
   - Vercel project under `qinlinj-projects`, not a remexstudio Vercel team (none on this auth)
   - First Vercel deploy aliased to production on that personal project
+  - Second commit updates SHA/STATUS after push (ticket preferred one commit; SHA-in-tree cannot equal its own hash)
 - Blockers: none for GitHub push; Vercel org remexstudio unavailable (documented)
 - DEV verdict: DEV PASS
