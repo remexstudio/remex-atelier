@@ -1,7 +1,7 @@
 # Handoff S8
 
 - Status: delivered
-- SHA: 086203dd2616a9796bde91ba7240224f197fee1e
+- SHA: 4e19568cab745096b1fe15c5bf7c442b66643bef
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
   - `app/globals.css` — stronger `:focus-visible` on interactive controls; reduced-motion drops transform / press scale and skip-link slide; keeps short opacity; no nuclear `transition-duration: 0.01ms`
