@@ -1,28 +1,29 @@
-# Review S3
+# Review S4
 
 - Verdict: **LEADER PASS**
-- Delivery SHA: `a50161b60a9e43614f4b5ed18352d40cbda35cb2`
-- Ops tip: `8c70ac2`
+- Delivery SHA: `7dff11cbaf2720c96a08808850ccb22c03fb72cf`
+- Ops tip: `92e0bbc`
 - Preview: https://remex-atelier.vercel.app
-- Build: `pnpm build` reproduced — `/services`, `/approach`, `/about`
+- Build: `pnpm build` reproduced — Northline study + demo family
 
 ## Acceptance
 
 | Item | Result |
 |---|---|
-| `/services` three offers | pass |
-| `/approach` PM vs agent + brief loop | pass |
-| `/about` Remex/cloud/studio; Seattle; Jiyuyun Studio LLC | pass |
-| No founder PII / resume dump | pass |
-| Nav Work/Services/Approach/About/Contact | pass |
-| apple-design + emil-design-eng; emilkowalski relevance judgment documented | pass |
+| `/work` Northline Live | pass |
+| Study template + anonymized footer | pass |
+| Demo hub + ask/source/change/log | pass |
+| Answers with citations | pass |
+| Propose not Execute; Approve/Reject | pass |
+| apple-design + emil-design-eng; animate/review-animations used for interactive motion | pass |
+| webapp-testing smoke reported | pass |
 | No Chinese; build | pass |
 
 ## Notes (non-blocking)
 
-- “Machine” layer from brand inspiration can appear in a later copy polish; not required to reopen S3.
-- Compact five-link nav wrap on narrow widths is acceptable for now.
+- localStorage persistence is fine for demo; document clear path if guests get confused.
+- Keep Propose-not-Execute language on future ops demos.
 
 ## Next ticket
 
-S4 — Northline study + demo family.
+S5 — Kite & Co. study + Morning Remex demo family.

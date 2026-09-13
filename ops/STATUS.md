@@ -1,10 +1,9 @@
 # Status
 
-- Phase: S4
-- Current TASK: S4 delivered (awaiting Leader REVIEW)
-- Closed: S0–S3 PASS; S4 handoff pending REVIEW
-- GitHub identity: remexstudio
+- Phase: S5
+- Current TASK: S5 (issued after S4 dual PASS)
+- Closed: S0–S4 PASS (S4 delivery SHA 7dff11cbaf2720c96a08808850ccb22c03fb72cf)
 - Repo: https://github.com/remexstudio/remex-atelier
 - Preview: https://remex-atelier.vercel.app
-- Skills: every slice requires apple-design + emil-design-eng; evaluate full emilkowalski pack for relevance
-- DoD: studio v1 not green (Kite + Paperline remain)
+- Skills: apple-design + emil-design-eng always; full emilkowalski pack evaluated per slice
+- DoD: studio v1 not green

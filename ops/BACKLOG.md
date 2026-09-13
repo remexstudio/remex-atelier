@@ -4,7 +4,7 @@
 - [x] S1 feat(site): design tokens, root layout, `/` and `/contact`
 - [x] S2 feat(lumen): study + /demo/lumen family
 - [x] S3 feat(site): /services /approach /about
-- [ ] S4 feat(northline): study + demo family
+- [x] S4 feat(northline): study + demo family
 - [ ] S5 feat(kite): study + demo family
 - [ ] S6 feat(paperline): study + demo family
 - [ ] S7 feat(lab): /lab + /lab/pulse
