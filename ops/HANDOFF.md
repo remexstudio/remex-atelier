@@ -1,6 +1,6 @@
 # Handoff S4
 - Status: delivered
-- SHA: (pending commit)
+- SHA: 7dff11cbaf2720c96a08808850ccb22c03fb72cf
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
   - `app/work/northline/page.tsx` — study template sections + anonymized footer
