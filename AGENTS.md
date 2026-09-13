@@ -5,6 +5,8 @@ This repository is built by two Grok Bots:
 - **Remex Leader** owns the Studio v1 definition of done, writes one TASK at a time, reviews handoffs, and never invents extra pages.
 - **Remex Dev** implements exactly one TASK ID, English artifacts only, one commit per slice, then writes `ops/HANDOFF.md`.
 
+Studio v1 routes and DoD live in `docs/sitemap.md` and `ops/STATUS.md`. Brand and design locks live in `docs/brand.md` and `docs/design.md`.
+
 ## Language
 
 | Channel | Language |

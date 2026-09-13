@@ -1,42 +1,67 @@
-# Handoff S8
+# Handoff S9
 
 - Status: delivered
-- SHA: 4e19568cab745096b1fe15c5bf7c442b66643bef
-- Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
+- SHA: pending stamp
+- Preview: https://remex-atelier.vercel.app
+- Vercel: project under `qinlinj-projects`; team-scoped URLs may SSO via Deployment Protection; public alias documented
 - Files changed:
-  - `app/globals.css` — stronger `:focus-visible` on interactive controls; reduced-motion drops transform / press scale and skip-link slide; keeps short opacity; no nuclear `transition-duration: 0.01ms`
-  - `app/layout.tsx` — `metadataBase`, richer Open Graph + Twitter for home
-  - `app/not-found.tsx` — SiteChrome-aligned English 404 with home + Work CTAs
-  - `app/work/page.tsx` — Open Graph + Twitter for Work index
-  - `app/work/lumen-atelier/page.tsx`, `kite/page.tsx`, `northline/page.tsx`, `paperline/page.tsx` — study-specific OG + Twitter
-  - `components/ContactForm.tsx` — `autoComplete="off"` on brief
-  - `components/lumen/BagMock.tsx` — `name="qty"` on labeled select
-  - `components/lumen/PayMock.tsx` — ellipsis placeholders + `spellCheck={false}` on mock card fields (labels retained)
-  - `docs/design.md` — a11y / motion token notes
-  - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
-- Acceptance self-check:
-  - prefers-reduced-motion sitewide (no vestibular slides; opacity kept): pass (globals + lumen/northline/kite/paperline/lab CSS; smoke reduced_motion)
-  - Keyboard focus visible on interactive controls: pass (global + explicit control selectors; contact focus outline solid)
-  - Forms retain labels (contact + demos): pass (ContactForm + PayMock + BagMock audited)
-  - Metadata + Open Graph on home and /work (+ study pages): pass
-  - English 404 atelier-coherent: pass (SiteChrome)
-  - review-animations + web-design-guidelines applied; apple-design + emil-design-eng always: pass
-  - No Chinese; `pnpm build` pass: pass
-  - Playwright smoke `/, /work, /contact, /lab/pulse, /demo/lumen/pay, 404`: pass (46/46)
-- Skills used:
-  - apple-design (reduced-motion gentler opacity not slides; focus; press scale gated off when reduced)
-  - emil-design-eng (no `transition: all`; under-300ms; hover gated; transform+opacity only)
-  - review-animations (audit: drop vestibular under reduce; keep opacity state indication; Approve)
-  - web-design-guidelines (fetched Vercel rules: focus-visible, labels, prefers-reduced-motion, skip link)
-  - frontend-design (atelier restraint on 404; tokens shared with SiteChrome)
-  - writing-guidelines (fetched Vercel rules; English sentence-case 404; ellipsis placeholders)
-  - vercel-react-best-practices (static metadata on RSC pages; no new client islands)
-  - webapp-testing (Playwright via `with_server.py` + `next start -p 3018`)
-- Skills judged not applicable this slice: animate, animation-vocabulary (no new motion added; only reduced-motion / a11y polish), pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations
-- Forbidden skills not read: animate-expo, write-swift, react-native-guidelines
-- Risks:
-  - Skip-link under reduced motion uses opacity 0 (not off-DOM); still keyboard-focusable
-  - Study OG uses `type: "article"`; no custom OG images yet (summary card only)
-  - Vercel Deployment Protection may block anonymous curl of preview
-- Blockers: none
-- DEV verdict: DEV PASS
+  - `README.md` — production English README (stack, scripts, voice, constitution links, routes table, preview + protection caveat, Seattle / LLC)
+  - `docs/sitemap.md` — shipped S0–S8 reality (marketing + demo families + 404)
+  - `ops/STATUS.md` — studio v1 DoD checklist marked green vs reality
+  - `ops/BACKLOG.md` — S9 checked done
+  - `AGENTS.md` — light refresh (pointers to sitemap / STATUS / brand / design)
+  - `ops/HANDOFF.md`, `ops/TASK.md` (handoff only; TASK unchanged scope)
+- Build: `pnpm build` pass (43 static routes generated)
+- Smoke: Playwright via `with_server.py` + `pnpm exec next start -p 3019` — **50/50** (12 marketing + 19 demos + landmarks/disclaimer/labels/OG/reduced-motion + English 404)
+- Live alias note: anonymous GET `/` on `remex-atelier.vercel.app` returned 200; `/work` returned app 404 at S9 verify time (alias may lag GitHub `main`). Team URLs `*-qinlinj-projects.vercel.app` redirected to Vercel SSO (Deployment Protection still true).
+
+## DoD self-check
+
+| Item | Result |
+| --- | --- |
+| Marketing routes `/` `/work` `/work/lumen-atelier` `/work/northline` `/work/kite` `/work/paperline` `/services` `/approach` `/lab` `/lab/pulse` `/about` `/contact` | pass (local 200) |
+| Demos lumen / northline / kite / paperline families | pass (local 200; kite-01, PL-2401) |
+| English UI only | pass (smoke + source spot-check) |
+| Study footer disclaimer | pass (`/work/lumen-atelier`) |
+| No founder PII | pass |
+| No fake % | pass |
+| No purple / neon | pass (tokens paper/ink) |
+| focus-visible | pass (prior S8 + globals) |
+| Form labels | pass (`/contact`) |
+| metadata / OG | pass (home og:title) |
+| prefers-reduced-motion | pass (btn transitionProperty) |
+| Vercel preview documented + protection / qinlinj-projects caveat | pass (README + STATUS) |
+| `pnpm build` | pass |
+| Production README (no Chinese, no fake %) | pass |
+| sitemap reflects shipped reality | pass |
+
+## Skills used
+
+- writing-guidelines (fetched Vercel rules; README/STATUS/sitemap English, sentence-case headings, no banned fillers / fake %)
+- frontend-design (docs tone only: atelier restraint in README voice; no UI code)
+- webapp-testing (`with_server.py` + Playwright DoD route smoke)
+- vercel-optimize (deploy sanity notes only; no metric audit / no cost claims)
+
+## Skills judged N/A
+
+- apple-design, emil-design-eng: docs-only closeout; no UI touch
+- animate, animation-vocabulary, review-animations, improve-animations, find-animation-opportunities, pick-ui-library, ask-sonner, prototype
+
+## Forbidden skills not read
+
+animate-expo, write-swift, react-native-guidelines
+
+## Risks
+
+- Deployment Protection on `qinlinj-projects` team previews (SSO for anonymous clients)
+- Production alias may lag or diverge from `main` until Vercel redeploys / re-aliases
+- No `remexstudio` Vercel team on current deploy auth
+- vercel-optimize not run (no linked CLI / Observability in this box)
+
+## Blockers
+
+none for GitHub docs closeout
+
+## DEV verdict
+
+**DEV PASS**
