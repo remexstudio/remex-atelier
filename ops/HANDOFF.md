@@ -1,34 +1,35 @@
-# Handoff S0
+# Handoff S1
 - Status: delivered
-- SHA: 2377b3d7c86c560751f83722c8f98ae4b5a2b455
-- Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app
-- Files changed: Next.js 16 App Router + TypeScript + Tailwind (pnpm); atelier home + 404; AGENTS.md; docs/brand.md, docs/sitemap.md, docs/design.md; ops/*; README; skills-lock.json; public/.gitkeep; S0 UI refine (apple-design + emil-design-eng)
+- SHA: (pending commit — stamped after push)
+- Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app). GitHub push to `main` should auto-deploy on the existing Vercel project; refresh preview URL after deploy if the team alias updates.
+- Files changed:
+  - `app/globals.css` — paper/ink/muted/rule tokens, type roles, ease-out, press scale, hover media, reduced-motion
+  - `app/layout.tsx` — skip link, paper/ink body classes
+  - `app/page.tsx` — offers, Lumen teaser, Start a brief CTA
+  - `app/contact/page.tsx` — contact route
+  - `components/SiteChrome.tsx`, `Offers.tsx`, `LumenTeaser.tsx`, `ContactForm.tsx`
+  - `docs/design.md` — token + type-role documentation
+  - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - App Router + TypeScript + Tailwind: pass
-  - Build (`pnpm build`): pass
-  - English README (remex-atelier): pass
-  - Constitution docs (AGENTS, brand, sitemap, design): pass
-  - Ops scaffolding: pass
-  - Homepage REMEX STUDIO / one-liner / Seattle / initializing note: pass
-  - English 404: pass
-  - No Chinese artifacts: pass
-  - No S1–S9 routes / MDX / component libs: pass
-  - Remote remex-atelier only: pass
-  - Skills install: pass (forbidden packs removed)
-  - Vercel preview: pass with caveat (qinlinj-projects team, not remexstudio)
-  - apple-design + emil-design-eng applied to home/404/globals: pass
+  - Design tokens documented (`docs/design.md`) and used (paper/ink/muted/rule; display/body/meta): pass
+  - `/` states three offers (Agent Apps, Agent Ops, Advisory), English, short, specific: pass
+  - `/` Lumen Atelier teaser + Atelier Concierge one-liner + anonymized disclaimer: pass
+  - `/` Start a brief → `/contact`: pass
+  - `/contact` labeled Name / Email / Brief + inline mock success (“This is a studio mock — no message was sent.”): pass
+  - Focus visible (`:focus-visible`); prefers-reduced-motion; press `scale(0.97)`; ease-out tokens; hover behind `(hover: hover) and (pointer: fine)`: pass
+  - No purple gradient / Inter template / neon SaaS / Chinese: pass
+  - `pnpm build`: pass
 - Skills used:
-  - frontend-design (read before code)
-  - writing-guidelines (read before code)
-  - vercel-react-best-practices (read before code)
-  - next-dev-loop (read before code)
-  - apple-design (read; applied tracking/leading, press feedback, reduced-motion, reduced-transparency)
-  - emil-design-eng (read; applied ease-out tokens, active scale 0.97, hover media query, no purple/Inter/neon)
+  - apple-design (press feedback, reduced-motion, tracking/leading, skip link, focus)
+  - emil-design-eng (ease-out curves, active scale 0.97, hover media query, no transition:all)
+  - frontend-design (editorial atelier restraint, type roles, no template tells)
+  - writing-guidelines (short specific offer copy; active voice)
+  - web-design-guidelines (labeled forms, focus-visible, aria-live success, autocomplete)
+  - vercel-react-best-practices (client island only for form; static pages)
 - Risks:
-  - Scaffold extras retained: eslint.config.mjs, next-env.d.ts (gitignored), app/favicon.ico, pnpm-workspace.yaml
-  - `.agents/` local skill copies gitignored; skills-lock.json committed
-  - Vercel project under `qinlinj-projects`, not a remexstudio Vercel team
-  - Vercel Deployment Protection enabled: public curl hits login; content verified via `vercel curl`
-  - Follow-up commits after initial S0 for SHA/STATUS and owner skill hard-constraint UI refine
-- Blockers: none for GitHub push; Vercel org remexstudio unavailable (documented)
+  - Contact success is an explicit client mock; no Formspree/Resend keys
+  - Vercel project remains under `qinlinj-projects` with Deployment Protection; public curl may hit login
+  - Preview URL may lag until auto-deploy finishes after push
+  - `app/not-found.tsx` left untouched (outside S1 allowed set); still uses prior S0 styles
+- Blockers: none
 - DEV verdict: DEV PASS

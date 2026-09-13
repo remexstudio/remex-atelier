@@ -33,8 +33,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} h-full`}>
-      <body className="min-h-full bg-background font-sans text-foreground antialiased">
+    <html
+      lang="en"
+      className={`${serif.variable} ${sans.variable} h-full`}
+    >
+      <body className="type-body min-h-full bg-paper text-ink antialiased">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         {children}
       </body>
     </html>
