@@ -24,6 +24,7 @@
   - writing-guidelines (active voice, sentence-case headings, no em dashes in body, specific offer copy, no banned filler)
   - web-design-guidelines (skip link target `#main`, aria-labelledby sections, focus-visible, labeled primary nav)
   - vercel-react-best-practices (static RSC pages; no client islands on these routes; direct imports)
+- Skills judged not applicable this slice (emilkowalski pack): animate, animation-vocabulary, review-animations, pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (static marketing pages; no motion, kit, or toasts)
 - Risks:
   - Five-link compact nav may wrap on very narrow widths; intentional atelier tradeoff vs hamburger
   - About omits “Machine” layer from studio inspiration; brand hints asked Remex / cloud / studio only
