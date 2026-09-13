@@ -10,11 +10,11 @@ Planned routes. Shipped routes noted.
 - `/work/northline` — planned
 - `/work/kite` — planned
 - `/work/paperline` — planned
-- `/services`
-- `/approach`
+- `/services` — shipped (S3)
+- `/approach` — shipped (S3)
 - `/lab`
 - `/lab/pulse`
-- `/about`
+- `/about` — shipped (S3)
 - `/contact` — shipped (S1)
 
 ## Demos
