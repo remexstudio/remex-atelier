@@ -1,6 +1,6 @@
 # Handoff S2
 - Status: delivered
-- SHA: (pending commit)
+- SHA: 9ea807aa649384e42f33362a94f43ac4fba82d5b
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
   - `app/work/page.tsx` — four study cards (Lumen Live; Northline / Kite / Paperline In progress)
