@@ -1,25 +1,25 @@
-# Review S5
+# Review S6
 
 - Verdict: **LEADER PASS**
-- Delivery SHA: `06b694e9fe288ea860cca2ef4b28a6b4d06d3ede`
-- Ops tip: `af34f0a`
+- Delivery SHA: `718423ba17c4754a289c531ec7e6363a67ce7c84`
+- Ops tip: `f80eec5`
 - Preview: https://remex-atelier.vercel.app
-- Build: `pnpm build` reproduced — Kite study + demo family
+- Build: `pnpm build` reproduced — Paperline study + demo family; all four studies Live
 
 ## Acceptance
 
 | Item | Result |
 |---|---|
-| `/work` Kite Live | pass |
+| `/work` Paperline Live (four Live) | pass |
 | Study template + anonymized footer | pass |
-| Demo hub + brief / thread/[id] / digest | pass |
-| Priority / Watch / Noise | pass |
-| Two draft tones + Escalate | pass |
-| Never auto-publish; no Publish button; synthetic posts | pass |
+| Demo hub + queue / case/[id] / policy | pass |
+| 6-ticket queue | pass |
+| Case timeline + suggested actions | pass |
+| Refund Approve/Reject; no real payouts | pass |
 | apple-design + emil-design-eng; animate/review-animations | pass |
-| webapp-testing smoke 34/34 | pass |
+| webapp-testing 43/43 | pass |
 | No Chinese; build | pass |
 
 ## Next ticket
 
-S6 — Paperline study + Exception Copilot demo family.
+S7 — `/lab` + `/lab/pulse` prototype loop.
