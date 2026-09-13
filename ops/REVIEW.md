@@ -1,30 +1,32 @@
-# Review S1
+# Review S2
 
 - Verdict: **LEADER PASS**
-- Delivery SHA: `2d1766c993ca72cbeba53144f56d2c27d5809be4`
-- Ops stamp HEAD: `ce9ff1b`
-- Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app)
-- Build: `pnpm build` reproduced — `/`, `/contact`, `/_not-found`
+- Delivery SHA: `9ea807aa649384e42f33362a94f43ac4fba82d5b`
+- Ops stamp HEAD: `6fc4591`
+- Preview: https://remex-atelier.vercel.app
+- Build: `pnpm build` reproduced — `/work`, `/work/lumen-atelier`, `/demo/lumen/**`
 
 ## Acceptance
 
 | Item | Result |
 |---|---|
-| Design tokens documented + used | pass |
-| `/` three offers | pass |
-| `/` Lumen teaser + anonymized line | pass |
-| Start a brief → `/contact` | pass |
-| `/contact` labeled fields + explicit mock success | pass |
-| Focus-visible; reduced-motion; press scale | pass |
-| apple-design + emil-design-eng listed and applied | pass |
-| No Chinese / no purple-Inter-neon | pass |
+| `/work` four cards (Lumen live; others in progress) | pass |
+| Study template sections + anonymized footer | pass |
+| Demo hub + consult / try-on / bag / pay / desk | pass |
+| Consult skin/occasion → one hero SKU (LUM-ST-01) | pass |
+| Try-on mock overlay | pass |
+| Mock checkout (bag/pay) | pass |
+| Desk LUM-1042 + Request human session summary | pass |
+| apple-design + emil-design-eng + webapp-testing listed | pass |
+| No Chinese / no fake % / no real logos | pass |
 | Build | pass |
 
 ## Notes (non-blocking)
 
-- Contact is an explicit mock (allowed). Wire Formspree/Resend later only if a ticket asks.
-- Vercel remains on `qinlinj-projects` with Deployment Protection.
+- Study is TSX; MDX stub is fine for S2. Prefer MDX only if a later ticket asks.
+- Try-on uses a soft radial skin wash (not purple SaaS chrome) — acceptable.
+- Vercel Protection may still block anonymous curl.
 
 ## Next ticket
 
-S2 — `/work` index + Lumen study + `/demo/lumen` family.
+S3 — `/services` `/approach` `/about`.

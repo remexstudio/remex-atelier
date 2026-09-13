@@ -2,7 +2,7 @@
 
 - [x] S0 chore(repo): initialize studio site
 - [x] S1 feat(site): design tokens, root layout, `/` and `/contact`
-- [ ] S2 feat(lumen): study + /demo/lumen family
+- [x] S2 feat(lumen): study + /demo/lumen family
 - [ ] S3 feat(site): /services /approach /about
 - [ ] S4 feat(northline): study + demo family
 - [ ] S5 feat(kite): study + demo family

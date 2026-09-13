@@ -1,37 +1,29 @@
-# TASK S2
+# TASK S3
 
 ```text
-TASK ID: S2
+TASK ID: S3
 REPO: remexstudio/remex-atelier
-GOAL: Ship the /work index, Lumen Atelier study page, and the full /demo/lumen family with mock interactive flows.
+GOAL: Ship /services, /approach, and /about — three offers, PM/agent division of labor, studio meaning — without a resume dump.
 ALLOWED FILES:
-- app/work/page.tsx
-- app/work/lumen-atelier/page.tsx
-- app/demo/lumen/**
-- content/studies/lumen-atelier.mdx
-- content/**
+- app/services/page.tsx
+- app/approach/page.tsx
+- app/about/page.tsx
 - components/**
-- mdx-components.tsx
-- next.config.ts
-- next.config.mjs
-- package.json
-- pnpm-lock.yaml
+- components/SiteChrome.tsx
+- docs/brand.md
 - docs/sitemap.md
 - ops/TASK.md
 - ops/HANDOFF.md
 - ops/STATUS.md
-OUT OF SCOPE: Northline, Kite, Paperline, /services /approach /about /lab, personal site, Chinese UI, real payments, real brand logos, fake conversion %.
+OUT OF SCOPE: Northline/Kite/Paperline demos, /lab, personal site, founder legal name, phone, school list, GitHub green wall, fake metrics, Chinese UI, new dependencies unless pick-ui-library requires one.
 ACCEPTANCE:
-- [ ] /work lists four cards (Lumen live; others may be "in progress")
-- [ ] /work/lumen-atelier follows study template: Client card / Brief / Constraints / What shipped / Live prototype / How it runs / Next molt / Start a brief
-- [ ] Footer line on study: Studio study. Client identity anonymized.
-- [ ] /demo/lumen and routes consult / try-on / bag / pay / desk are reachable
-- [ ] Consult asks skin/occasion and recommends one hero SKU
-- [ ] Try-on overlay works (mock)
-- [ ] Mock checkout path exists
-- [ ] Aftercare / desk returns mock shipment for order LUM-1042
-- [ ] Request-human shows a session summary
-- [ ] No Chinese; no purple/Inter-slop/neon; build passes
-SKILLS TO USE: apple-design, emil-design-eng, frontend-design, writing-guidelines, web-design-guidelines, webapp-testing, vercel-react-best-practices
-COMMIT MESSAGE: feat(lumen): add atelier concierge demo
+- [ ] /services presents Agent Apps, Agent Ops, Advisory clearly
+- [ ] /approach explains how briefs become agents (PM vs agent division of labor)
+- [ ] /about covers Remex / pinion-feather / cloud / studio meaning in English; Seattle; Jiyuyun Studio LLC
+- [ ] No founder legal name, phone, school list, or resume dump
+- [ ] SiteChrome or nav links Work / Services / Approach / About / Contact as appropriate
+- [ ] Editorial atelier tone; apple-design + emil-design-eng applied
+- [ ] No Chinese; build passes
+SKILLS TO USE: apple-design, emil-design-eng, frontend-design, writing-guidelines, web-design-guidelines, vercel-react-best-practices
+COMMIT MESSAGE: feat(site): add services approach about
 ```
