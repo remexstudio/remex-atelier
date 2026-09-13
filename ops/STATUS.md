@@ -8,3 +8,4 @@
 - Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app)
 - Skills: installed (emilkowalski, vercel-labs/agent-skills, vercel/next.js, anthropics frontend-design + webapp-testing). Skipped/removed: animate-expo, write-swift, vercel-react-native-skills.
 - Note: Vercel project lives under team `qinlinj-projects` (authenticated user qinlinj). No `remexstudio` Vercel team available on this account.
+- Owner hard constraint: UI must follow apple-design + emil-design-eng (applied on S0).

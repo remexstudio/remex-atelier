@@ -1,8 +1,8 @@
 # Handoff S0
 - Status: delivered
-- SHA: bd2ec08898fb501482b4450ed53c3bac7562beae
+- SHA: (see latest fix commit after push)
 - Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app
-- Files changed: Next.js 16 App Router + TypeScript + Tailwind (pnpm); atelier home + 404; AGENTS.md; docs/brand.md, docs/sitemap.md, docs/design.md; ops/*; README; skills-lock.json; public/.gitkeep
+- Files changed: Next.js 16 App Router + TypeScript + Tailwind (pnpm); atelier home + 404; AGENTS.md; docs/brand.md, docs/sitemap.md, docs/design.md; ops/*; README; skills-lock.json; public/.gitkeep; S0 UI refine (apple-design + emil-design-eng)
 - Acceptance self-check:
   - App Router + TypeScript + Tailwind: pass
   - Build (`pnpm build`): pass
@@ -16,13 +16,19 @@
   - Remote remex-atelier only: pass
   - Skills install: pass (forbidden packs removed)
   - Vercel preview: pass with caveat (qinlinj-projects team, not remexstudio)
-- Skills used: frontend-design, writing-guidelines, vercel-react-best-practices, next-dev-loop (read before code); project packs via `npx skills add`
+  - apple-design + emil-design-eng applied to home/404/globals: pass
+- Skills used:
+  - frontend-design (read before code)
+  - writing-guidelines (read before code)
+  - vercel-react-best-practices (read before code)
+  - next-dev-loop (read before code)
+  - apple-design (read; applied tracking/leading, press feedback, reduced-motion, reduced-transparency)
+  - emil-design-eng (read; applied ease-out tokens, active scale 0.97, hover media query, no purple/Inter/neon)
 - Risks:
   - Scaffold extras retained: eslint.config.mjs, next-env.d.ts (gitignored), app/favicon.ico, pnpm-workspace.yaml
   - `.agents/` local skill copies gitignored; skills-lock.json committed
-  - Vercel project under `qinlinj-projects`, not a remexstudio Vercel team (none on this auth)
-  - First Vercel deploy aliased to production on that personal project
-  - Vercel Deployment Protection enabled: public curl hits login; content verified via `vercel curl` (Newsreader + Source Sans 3, Remex copy)
-  - Second commit updates SHA/STATUS after push (ticket preferred one commit; SHA-in-tree cannot equal its own hash)
+  - Vercel project under `qinlinj-projects`, not a remexstudio Vercel team
+  - Vercel Deployment Protection enabled: public curl hits login; content verified via `vercel curl`
+  - Follow-up commits after initial S0 for SHA/STATUS and owner skill hard-constraint UI refine
 - Blockers: none for GitHub push; Vercel org remexstudio unavailable (documented)
 - DEV verdict: DEV PASS

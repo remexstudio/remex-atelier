@@ -1,10 +1,10 @@
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-full w-full max-w-2xl flex-col justify-center px-6 py-24 sm:px-10">
-      <p className="font-serif text-sm tracking-[0.18em] text-accent">
+      <p className="font-serif text-sm tracking-[0.14em] text-accent">
         REMEX STUDIO
       </p>
-      <h1 className="mt-10 font-serif text-4xl leading-[1.15] tracking-tight text-accent sm:text-5xl">
+      <h1 className="mt-10 font-serif text-4xl leading-[1.05] tracking-[-0.02em] text-accent sm:text-5xl">
         Agents, built to the brief.
       </h1>
       <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
