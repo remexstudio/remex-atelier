@@ -1,6 +1,6 @@
 # Handoff S1
 - Status: delivered
-- SHA: (pending commit — stamped after push)
+- SHA: 2d1766c993ca72cbeba53144f56d2c27d5809be4
 - Preview: https://remex-atelier-3xfjjoki8-qinlinj-projects.vercel.app (also https://remex-atelier.vercel.app). GitHub push to `main` should auto-deploy on the existing Vercel project; refresh preview URL after deploy if the team alias updates.
 - Files changed:
   - `app/globals.css` — paper/ink/muted/rule tokens, type roles, ease-out, press scale, hover media, reduced-motion
