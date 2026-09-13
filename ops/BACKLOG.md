@@ -5,7 +5,7 @@
 - [x] S2 feat(lumen): study + /demo/lumen family
 - [x] S3 feat(site): /services /approach /about
 - [x] S4 feat(northline): study + demo family
-- [ ] S5 feat(kite): study + demo family
+- [x] S5 feat(kite): study + demo family
 - [ ] S6 feat(paperline): study + demo family
 - [ ] S7 feat(lab): /lab + /lab/pulse
 - [ ] S8 feat(site): motion + a11y + metadata + 404 polish
