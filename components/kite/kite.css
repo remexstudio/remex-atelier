@@ -1,0 +1,34 @@
+/* Draft tone swap + escalate status — transform + opacity only */
+.kite-draft {
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+}
+
+.kite-draft[data-entered="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kite-escalate {
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+}
+
+.kite-escalate[data-entered="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kite-draft,
+  .kite-escalate {
+    transform: none;
+    transition: opacity 160ms ease;
+  }
+}

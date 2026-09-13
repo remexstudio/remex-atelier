@@ -1,38 +1,40 @@
-# Handoff S4
+# Handoff S5
 - Status: delivered
-- SHA: 7dff11cbaf2720c96a08808850ccb22c03fb72cf
+- SHA: (pending commit)
 - Preview: https://remex-atelier.vercel.app (GitHub push to `main` should auto-deploy; refresh preview URL after deploy if the team alias updates)
 - Files changed:
-  - `app/work/northline/page.tsx` — study template sections + anonymized footer
-  - `app/demo/northline/**` — hub, ask, source, change, log + layout provider
-  - `components/northline/**` — data, DemoShell/DemoNav, Ask/Change/Log panels, provider, motion CSS
-  - `components/lumen/data.ts` — Northline status Live + href `/work/northline`
-  - `content/studies/northline.mdx` — study pointer
-  - `docs/sitemap.md` — S4 routes marked shipped
+  - `app/work/kite/page.tsx` — study template sections + anonymized footer
+  - `app/demo/kite/**` — hub, brief, thread/[id], digest
+  - `components/kite/**` — data, DemoShell/DemoNav, BriefBoard, ThreadDraft, DigestPanel, motion CSS
+  - `components/lumen/data.ts` — Kite status Live + href `/work/kite`
+  - `content/studies/kite.mdx` — study pointer
+  - `docs/sitemap.md` — S5 routes marked shipped
   - `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`
 - Acceptance self-check:
-  - `/work` marks Northline Live (Lumen still Live; Kite/Paperline In progress): pass
-  - `/work/northline` study template + `Studio study. Client identity anonymized.`: pass
-  - `/demo/northline` + ask / source / change / log reachable: pass
-  - Answers include citations: pass
-  - Propose not Execute; Approve/Reject mock gate: pass
+  - `/work` marks Kite Live (Lumen + Northline still Live; Paperline In progress): pass
+  - `/work/kite` study template + `Studio study. Client identity anonymized.`: pass
+  - `/demo/kite` + brief / thread/[id] / digest reachable: pass
+  - Brief triage shows Priority / Watch / Noise: pass
+  - Draft two tones; escalate draft path: pass
+  - Never auto-publish; synthetic posts only; no Publish button: pass
   - No Chinese; `pnpm build` pass: pass
-  - webapp-testing smoke after build+start: pass (27/27)
+  - webapp-testing smoke after build+start: pass (34/34)
 - Skills used:
   - apple-design (press scale 0.97 via globals, focus-visible, reduced-motion, display tracking/leading, spatial consistency in DemoShell)
   - emil-design-eng (ease-out press feedback, hover behind `(hover: hover) and (pointer: fine)`, no `transition: all`, active scale 0.97, under-300ms UI motion)
-  - animate (ask→answer entrance: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible; no keyboard animation)
-  - animation-vocabulary (named Fade in / Slide in / Press feedback for ask and gate)
-  - review-animations (removed noop badge opacity styles; moved motion CSS into `components/northline/northline.css`; reduced-motion drops transform)
+  - animate (tone swap + escalate status: opacity + translateY 200ms `--ease-out`; gate purpose = state indication; CSS transition interruptible)
+  - animation-vocabulary (named Fade in / Slide in / Press feedback for draft and escalate)
+  - review-animations (transform+opacity only; reduced-motion drops transform; no scale(0); UI <300ms; Approve for draft/escalate feedback)
   - frontend-design (editorial atelier restraint, paper/ink tokens, Newsreader + Source Sans roles, no ALL-CAPS eyebrows, hairline dividers over SaaS cards)
-  - writing-guidelines (active voice, sentence-case headings, no em dashes as punctuation in body, specific product copy)
-  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on answers/gates, focus-visible, labeled demo nav)
-  - vercel-react-best-practices (static RSC pages where possible; client islands only for ask/change/log state; data under `components/northline/` not `lib/`; direct imports)
+  - writing-guidelines (active voice, sentence-case headings, specific product copy, no Chinese)
+  - web-design-guidelines (skip link target `#main`, aria-labelledby sections, aria-live on draft/escalate, focus-visible, labeled demo nav)
+  - vercel-react-best-practices (static RSC pages where possible; client island only for ThreadDraft; data under `components/kite/` not `lib/`; direct imports)
   - webapp-testing (Playwright smoke via `with_server.py` + `pnpm start`)
-- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to ask→answer and gate feedback)
+- Skills judged not applicable this slice (emilkowalski pack): pick-ui-library, ask-sonner, prototype, find-animation-opportunities, improve-animations (no new deps/toasts; motion scoped to draft tone swap and escalate feedback)
+- Forbidden skills not read: animate-expo, write-swift, react-native-guidelines
 - Risks:
-  - Demo state persists in `localStorage` (`northline-ledger-demo-v1`); seed log can look “already approved” until cleared
-  - Motion CSS lives in component CSS (allowed path); globals reduced-motion still zeros all durations site-wide
+  - Escalate state is session-local (React state only); refresh clears escalation
+  - Motion CSS lives in `components/kite/kite.css` (allowed path); globals reduced-motion still zeros all durations site-wide
   - Vercel Deployment Protection may block anonymous curl of preview
 - Blockers: none
 - DEV verdict: DEV PASS

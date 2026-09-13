@@ -132,10 +132,10 @@ export const workStudies = [
     slug: "kite",
     client: "Kite & Co.",
     product: "Morning Remex",
-    status: "in-progress" as const,
+    status: "live" as const,
     blurb:
       "A morning brief that threads overnight signals into Priority, Watch, and Noise — never auto-publish.",
-    href: null,
+    href: "/work/kite",
   },
   {
     slug: "paperline",

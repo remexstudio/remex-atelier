@@ -18,14 +18,14 @@ ALLOWED FILES:
 - ops/STATUS.md
 OUT OF SCOPE: Paperline, /lab, personal site, Chinese UI, real social posting, real brand logos, fake %, new deps unless pick-ui-library requires one.
 ACCEPTANCE:
-- [ ] /work marks Kite Live (Lumen + Northline still live; Paperline may stay in progress)
-- [ ] /work/kite study template + Studio study. Client identity anonymized.
-- [ ] /demo/kite + /brief /thread/[id] /digest reachable
-- [ ] Brief triage shows Priority / Watch / Noise
-- [ ] Draft two tones; escalate draft path exists
-- [ ] Never auto-publish; synthetic posts only
-- [ ] apple-design + emil-design-eng always; other emilkowalski skills if relevant; webapp-testing smoke
-- [ ] No Chinese; build passes
+- [x] /work marks Kite Live (Lumen + Northline still live; Paperline may stay in progress)
+- [x] /work/kite study template + Studio study. Client identity anonymized.
+- [x] /demo/kite + /brief /thread/[id] /digest reachable
+- [x] Brief triage shows Priority / Watch / Noise
+- [x] Draft two tones; escalate draft path exists
+- [x] Never auto-publish; synthetic posts only
+- [x] apple-design + emil-design-eng always; other emilkowalski skills if relevant; webapp-testing smoke
+- [x] No Chinese; build passes
 SKILLS TO USE: apple-design, emil-design-eng, frontend-design, writing-guidelines, web-design-guidelines, webapp-testing, vercel-react-best-practices (+ relevant emilkowalski e.g. animate/review-animations)
 COMMIT MESSAGE: feat(kite): add morning remex demo
 ```
