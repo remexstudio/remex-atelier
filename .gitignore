@@ -42,3 +42,5 @@ next-env.d.ts
 
 # local agent skill copies (lockfile committed)
 .agents/
+.vercel/
+.env.local
