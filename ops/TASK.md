@@ -1,32 +1,28 @@
-# TASK S8
+# TASK S9
 
 ```text
-TASK ID: S8
+TASK ID: S9
 REPO: remexstudio/remex-atelier
-GOAL: Sitewide polish — motion respects prefers-reduced-motion, keyboard focus visible, form labels, metadata + OG on home and work pages, English 404 polish; review against review-animations and web-design-guidelines.
+GOAL: Close studio v1 — production README, ops/STATUS.md green against the studio Definition of Done, deploy sanity against the live preview, English-only ship checklist.
 ALLOWED FILES:
-- app/layout.tsx
-- app/page.tsx
-- app/globals.css
-- app/not-found.tsx
-- app/work/page.tsx
-- app/work/**/page.tsx
-- app/**/layout.tsx
-- components/**
-- docs/design.md
-- docs/sitemap.md
+- README.md
+- AGENTS.md
+- docs/**
 - ops/TASK.md
 - ops/HANDOFF.md
 - ops/STATUS.md
-OUT OF SCOPE: personal site, new client studies, Chinese UI, new product routes beyond polish, new deps unless pick-ui-library requires one.
+- ops/BACKLOG.md
+- ops/REVIEW.md
+- package.json
+- public/**
+OUT OF SCOPE: personal site, new features/routes, Chinese UI, brand changes, scope beyond DoD verification + docs.
 ACCEPTANCE:
-- [ ] prefers-reduced-motion respected sitewide (no vestibular motion when reduced)
-- [ ] Keyboard focus visible on interactive controls
-- [ ] Forms retain labels (contact + demos)
-- [ ] Metadata + Open Graph on home and /work (and preferably study pages)
-- [ ] English 404 remains coherent with atelier system
-- [ ] review-animations + web-design-guidelines applied; apple-design + emil-design-eng always
-- [ ] No Chinese; build passes; smoke key routes if interactive polish touched
-SKILLS TO USE: apple-design, emil-design-eng, review-animations, animate (if adding motion), animation-vocabulary (if naming motion), web-design-guidelines, frontend-design, writing-guidelines, vercel-react-best-practices, webapp-testing (if smoke needed)
-COMMIT MESSAGE: feat(site): polish motion a11y and metadata
+- [ ] README.md is production-ready English (stack, scripts, brand voice, links to constitution docs, preview note)
+- [ ] ops/STATUS.md marks studio v1 DoD items checked against reality (routes, studies, demos, lab/pulse, contact, English UI, footer disclaimer, no founder PII, no fake %, responsive intent, focus/labels, metadata/OG, reduced-motion, Vercel preview)
+- [ ] All checklist routes respond (no 404 on DoD routes) — verify via build and/or smoke
+- [ ] Preview URL documented; Deployment Protection caveat OK if still present
+- [ ] No new Chinese; build passes
+- [ ] HANDOFF declares DEV PASS with DoD self-check table
+SKILLS TO USE: writing-guidelines, frontend-design (docs tone), webapp-testing (route smoke), vercel-optimize (if deploy sanity), apple-design + emil-design-eng (if any UI touch — prefer docs-only)
+COMMIT MESSAGE: docs(site): production readme and status green
 ```

@@ -1,8 +1,8 @@
 # Status
 
-- Phase: S8
-- Current TASK: S8 (delivered; awaiting Leader REVIEW)
-- Closed: S0–S7 PASS (S7 delivery SHA e164a455e53052f695a75a2a3501a2b57aff311e)
+- Phase: S9
+- Current TASK: S9 (issued after S8 dual PASS)
+- Closed: S0–S8 PASS (S8 delivery SHA 4e19568cab745096b1fe15c5bf7c442b66643bef)
 - Repo: https://github.com/remexstudio/remex-atelier
 - Preview: https://remex-atelier.vercel.app
-- DoD: studio v1 not green
+- DoD: studio v1 not green (pending S9)

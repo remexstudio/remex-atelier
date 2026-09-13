@@ -1,24 +1,23 @@
-# Review S7
+# Review S8
 
 - Verdict: **LEADER PASS**
-- Delivery SHA: `e164a455e53052f695a75a2a3501a2b57aff311e`
-- Ops tip: `eec9588`
+- Delivery SHA: `4e19568cab745096b1fe15c5bf7c442b66643bef`
+- Ops tip: `a45cbfb`
 - Preview: https://remex-atelier.vercel.app
-- Build: `pnpm build` reproduced — `/lab`, `/lab/pulse`
+- Build: `pnpm build` reproduced
 
 ## Acceptance
 
 | Item | Result |
 |---|---|
-| `/lab` links to Pulse | pass |
-| Pulse loop see → notify → log → follow | pass |
-| Label Prototype · not a client engagement | pass |
-| Not framed as client study | pass |
-| Nav Lab | pass |
-| apple-design + emil-design-eng; animate/review-animations | pass |
-| webapp-testing 23/23 | pass |
-| No Chinese; build | pass |
+| prefers-reduced-motion sitewide | pass |
+| focus-visible on controls | pass |
+| Form labels retained | pass |
+| Metadata + OG home / work / studies | pass |
+| English atelier 404 | pass |
+| review-animations + web-design-guidelines; apple-design + emil-design-eng | pass |
+| Smoke 46/46; no Chinese; build | pass |
 
 ## Next ticket
 
-S8 — motion + a11y + metadata + 404 polish across the site.
+S9 — production README, STATUS green against studio DoD, deploy sanity.

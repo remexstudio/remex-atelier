@@ -8,5 +8,5 @@
 - [x] S5 feat(kite): study + demo family
 - [x] S6 feat(paperline): study + demo family
 - [x] S7 feat(lab): /lab + /lab/pulse
-- [ ] S8 feat(site): motion + a11y + metadata + 404 polish
+- [x] S8 feat(site): motion + a11y + metadata + 404 polish
 - [ ] S9 docs(site): production README, STATUS green, deploy sanity
