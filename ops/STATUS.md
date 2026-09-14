@@ -6,3 +6,7 @@
 - Repo: https://github.com/remexstudio/remex-atelier
 - Live: https://remex-atelier.vercel.app
 - Rule: three PM + Leader; no idle; no six-clone pins
+
+## V3-2 REWORK — gate static on narrow
+
+- State: DEV PASS (await UX)

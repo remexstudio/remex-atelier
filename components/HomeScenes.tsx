@@ -92,20 +92,31 @@ export function HomeScenes() {
         {
           reduce: "(prefers-reduced-motion: reduce)",
           pinOk:
-            "(prefers-reduced-motion: no-preference) and (min-height: 520px)",
+            "(prefers-reduced-motion: no-preference) and (min-height: 520px) and (min-width: 720px)",
           motionOk:
             "(prefers-reduced-motion: no-preference)",
+          narrow:
+            "(max-width: 719px)",
         },
         (context) => {
-          const { reduce, pinOk, motionOk } = context.conditions as {
+          const { reduce, pinOk, motionOk, narrow } = context.conditions as {
             reduce: boolean;
             pinOk: boolean;
             motionOk: boolean;
+            narrow: boolean;
           };
 
           if (reduce || !motionOk) {
             showStatic();
             return;
+          }
+
+          /* Narrow: never hide gate copy/steps — three bullets visible without scrub */
+          if (narrow || !pinOk) {
+            gsap.set(
+              "#home-gate [data-reveal], #home-gate [data-gate-step], #home-gate [data-gate-chip], #home-gate .home-gate__still",
+              { clearProps: "transform,opacity,visibility", autoAlpha: 1 },
+            );
           }
 
           /* ——— Shallow once-reveals (no pin) ——— */
