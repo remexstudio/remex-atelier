@@ -1,7 +1,7 @@
 # Handoff V3-6 Exception Copilot
 
 - Status: delivered
-- SHA: (uncommitted — parent commit `feat(work): exception copilot unique chapter`)
+- SHA: cfaa802
 - Preview: https://remex-atelier.vercel.app
 - Commit msg (parent): `feat(work): exception copilot unique chapter`
 
