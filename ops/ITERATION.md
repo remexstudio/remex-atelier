@@ -17,6 +17,10 @@ Synthesized from Apple / UX / Vision post-V3-15 KEEP/KILL/ADD. Vision: payload d
 2. **Chapter noise / CTA density** — trim decorative noise on Concierge / Ledger / Morning / Exception; keep labeled payload rows (`__row` with text OK). Product CTA ≥44 and clear, not crowded.
 3. **Hard stay** — locked score lines verbatim; no 机羽云/refuse move; no new pins; no Lenis; no BRIEF_ASKS local copies.
 
+## V3-16 delivery
+
+Dev delivered craft polish only. Coordinator: `vercel deploy --prod` after merge. No V3-17 until PASS.
+
 ## Hard bans (unchanged)
 
 - No English-products market claims; no founder name; no CumuLabs/outsourcing; no Lenis/normalizeScroll/body lock; H3-only pin with pinOk; locked copy verbatim.

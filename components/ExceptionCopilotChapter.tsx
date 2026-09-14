@@ -337,7 +337,7 @@ export function ExceptionCopilotChapter() {
           <h2 id="ec-cta-h" className="ec-headline" data-ec-reveal>
             Start a brief.
           </h2>
-          <p className="ec-cta-wrap" data-ec-reveal>
+          <p className="ec-cta-wrap chapter-cta" data-ec-reveal>
             <Link href="/contact" className="home-cta">
               Start a brief.
             </Link>

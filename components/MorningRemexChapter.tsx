@@ -147,19 +147,15 @@ export function MorningRemexChapter() {
           </h2>
           <div className="mr-mail-stack" data-mr-reveal aria-hidden="true">
             <div className="mr-thread mr-thread--a">
-              <span className="mr-thread__dot" />
               <span className="still-fact">Overnight</span>
             </div>
             <div className="mr-thread mr-thread--b">
-              <span className="mr-thread__dot" />
               <span className="still-fact still-fact--muted">No brief</span>
             </div>
             <div className="mr-thread mr-thread--c">
-              <span className="mr-thread__dot" />
               <span className="still-fact still-fact--muted">Unread</span>
             </div>
             <div className="mr-thread mr-thread--d">
-              <span className="mr-thread__dot" />
               <span className="still-fact still-fact--muted">Noise</span>
             </div>
           </div>
@@ -186,11 +182,9 @@ export function MorningRemexChapter() {
               <span className="mr-triage__lane mr-triage__lane--pri">P</span>
               <p className="mr-pwn__name">Priority</p>
               <div className="mr-thread mr-thread--a">
-                <span className="mr-thread__dot" />
                 <span className="still-fact">Needs operator</span>
               </div>
               <div className="mr-thread mr-thread--b">
-                <span className="mr-thread__dot" />
                 <span className="still-fact still-fact--muted">Escalate</span>
               </div>
             </div>
@@ -198,7 +192,6 @@ export function MorningRemexChapter() {
               <span className="mr-triage__lane mr-triage__lane--watch">W</span>
               <p className="mr-pwn__name">Watch</p>
               <div className="mr-thread mr-thread--c">
-                <span className="mr-thread__dot" />
                 <span className="still-fact still-fact--muted">Hold</span>
               </div>
             </div>
@@ -206,7 +199,6 @@ export function MorningRemexChapter() {
               <span className="mr-triage__lane mr-triage__lane--noise">N</span>
               <p className="mr-pwn__name">Noise</p>
               <div className="mr-thread mr-thread--d">
-                <span className="mr-thread__dot" />
                 <span className="still-fact still-fact--muted">Archive</span>
               </div>
             </div>
@@ -344,7 +336,7 @@ export function MorningRemexChapter() {
           <h2 id="mr-cta-h" className="mr-headline" data-mr-reveal>
             Start a brief.
           </h2>
-          <p className="mr-cta-wrap" data-mr-reveal>
+          <p className="mr-cta-wrap chapter-cta" data-mr-reveal>
             <Link href="/contact" className="home-cta">
               Start a brief.
             </Link>

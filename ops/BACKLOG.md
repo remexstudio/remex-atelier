@@ -9,4 +9,4 @@
 - [x] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding
 - [x] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo
 - [x] V3-15 BRIEF_ASKS single source + four-chapter still/beat density (`d2c9f3f` + `0b680a2` / merge `6da887d` / tip `b1e279c`)
-- [ ] V3-16 visual polish — still-fact type + chapter noise/CTA density (issued)
+- [x] V3-16 visual polish — still-fact type + chapter noise/CTA density (delivered; await PM + Leader)
