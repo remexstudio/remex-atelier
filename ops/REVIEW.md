@@ -11,4 +11,4 @@
 | UX PM | PASS |
 | Leader | **PASS** |
 
-V3-12 closed. Next loop pending PM KEEP/KILL/ADD from `ops/ITERATION.md`. Do not issue V3-13 until those reviews land.
+V3-12 closed. Open V3-13 root canvas and film orphans.

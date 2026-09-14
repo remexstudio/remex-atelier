@@ -6,4 +6,4 @@
 - [x] V3-11 break four-chapter isomorphic layout grammars (0247605 / merge 6fab6cd / tip 9ffe1ea)
 - [x] V3-12 Services/Lab/About film canvas (03d5281 / merge fc0673f / tip 8ef5e18)
 - [x] Orphan demo components cleanup (`components/{lumen,kite,northline,paperline}` unused leftovers)
-- [ ] V3-13 TBD from ITERATION
+- [ ] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding (this slice)
