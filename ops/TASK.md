@@ -1,29 +1,51 @@
-# TASK V3-2 — REWORK
+# TASK V3-3
 
-TASK ID: V3-2
+TASK ID: V3-3
 REPO: remexstudio/remex-atelier
-MODE: REWORK (narrow UX)
 
-SKILLS: /apple-design-web /gsap-scrolltrigger /zero-jank-scroll /emil-design-eng
+SKILLS TO USE (before edits):
+/apple-design /apple-design-web /apple-design-motion /emil-design-eng
+/gsap-scrolltrigger /gsap-timeline /gsap-react
+/cinematic-scroll-storytelling /zero-jank-scroll /review-animations /writing-guidelines
 
-GOAL: Fix 375/narrow gate visibility. Pin only on wide viewports.
+GOAL:
+Rebuild `/work/atelier-concierge` as a **unique** product chapter — not the shared five-beat StoryScenes empty grammar. Every line from `docs/scroll-score-v3.md` § Atelier Concierge must appear. Distinct Concierge still DNA (skin/occasion → hero → try-on → bag → human pay).
 
 ALLOWED:
-- components/HomeScenes.tsx
-- app/globals.css (only if needed for static gate visibility)
+- app/work/atelier-concierge/**
+- components/* only if a Concierge-specific component is required (do not reuse shared StoryScenes as the sole structure unless heavily specialized and Vision uniqueness holds)
+- app/globals.css (concierge styles)
 - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 
-FIX:
-1. `pinOk` / matchMedia must require `(min-width: 720px)` AND `(min-height: 520px)` AND no-preference motion. Below 720px width: no pin, static full-facts path (same as short/reduce).
-2. On narrow path: never set gate copy/steps to `autoAlpha: 0` at start — all three Propose/Approve/Record bullets visible without scrub.
-3. Do not open V3-3. Do not change locked copy.
+OUT OF SCOPE:
+- Other three product routes (V3-4…V3-6)
+- Home nine modules (closed)
+- /demo rebuild, live widgets, fake charge, invent catalog
+- Personal / founder name
 
-COMMIT: `fix(home): gate static on narrow viewports`
+REQUIRED MODULES (exact lines from scroll-score-v3):
+- Job + user: Concierge desk for high-touch retail clients who expect one clear next step.
+- Pain: Skin, occasion, and fit notes scatter across fittings, holds, and aftercare.
+- Ability 1: Map skin and occasion to one hero SKU.
+- Ability 2: Stage a try-on still for the stylist desk.
+- Ability 3: Draft the bag for human review before pay.
+- Gate: Human at pay. A stylist approves; nothing charges without that person.
+- Record: Consult thread stays with ticket LUM-1042.
+- Refusal: Will not invent catalog SKUs. Will not charge without approval.
+- CTA: Start a brief. → `/contact`
+- Footer: Studio study. Client identity anonymized.
+
+MOTION / UX:
+- Default pin:no (shallow/stagger). If any pin, end_max ≤ +=80% and only ≥720px wide.
+- Transform/opacity only; no Lenis / normalizeScroll / body lock
+- 375 readable stack; reduced-motion full lines visible
+- Canvas #ffffff / gutter #f5f5f7; film SiteChrome OK
 
 ACCEPTANCE:
-- [ ] Width <720: no ScrollTrigger pin on `#home-gate`
-- [ ] Width <720: gate bullets visible without scrub
-- [ ] Width ≥720 + tall + no RM: pin end still ≤ +=80%
+- [ ] Skills in HANDOFF
+- [ ] All exact lines present; page not interchangeable with Ledger/Morning/Exception
+- [ ] No Open demo toy CTA
 - [ ] pnpm build PASS
+- [ ] Commit: `feat(work): atelier concierge unique chapter`
 
-After push: HANDOFF. Await UX re-PASS.
+After push: HANDOFF + DEV PASS. Await three PM + Leader. Do not open V3-4 until PASS.
