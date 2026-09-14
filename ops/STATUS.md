@@ -1,8 +1,8 @@
 # Status
 
-- Phase: Atelier v2 — R3 closed (approach + contact); awaiting owner R4 prompt
+- Phase: Atelier v2 — R4 in progress (motion a11y + copy cleanup)
 - Closed: R0 (91b0afd), R1 (70a6e4c), R2 (7836383), R3 (780233b)
-- Open: none
+- Open: R4
 - Repo: https://github.com/remexstudio/remex-atelier
 - Live: https://remex-atelier.vercel.app
-- Rule: dual PASS; no next slice until owner prompt
+- Rule: dual PASS then stop
