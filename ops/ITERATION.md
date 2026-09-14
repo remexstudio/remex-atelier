@@ -19,7 +19,7 @@ Synthesized from Apple / UX / Vision post-V3-15 KEEP/KILL/ADD. Vision: payload d
 
 ## V3-16 delivery
 
-Dev delivered craft polish only. Coordinator: `vercel deploy --prod` after merge. No V3-17 until PASS.
+Dev delivered craft polish only. PM board lock: still-fact 0.8125–0.875rem at 375; four-chapter noise trimmed; CTAs ≥44; ability×3 / gate / record / refusal stay visible and verbatim; canvas / shallow / RM unchanged. Coordinator: `vercel deploy --prod` after merge. No V3-17 until PASS.
 
 ## Hard bans (unchanged)
 
