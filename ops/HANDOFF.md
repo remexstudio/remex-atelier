@@ -1,8 +1,9 @@
 # Handoff V3-10
 
 - Status: delivered
-- SHA: 1e57b13 (content); merge tip 3f56512 on main
-- Preview / Production: https://remex-atelier.vercel.app (deploy in progress / see follow-up)
+- SHA: 1e57b13 (content); merge tip 3f56512 on main; handoff tip follow-up
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: `dpl_87idhNEeSZZ2EoQqQztTzSZpKdW6` → aliased https://remex-atelier.vercel.app
 - Files changed (ALLOWED only):
   - `components/HomeScenes.tsx` — hero Concierge/Gate: LUM-1042 + Skin → hero → try-on → bag → pay + Propose → Approve → Record. No chrome dots or gray bars. Job stills: LUM-1042 / Propose≠Execute + cite / P · W · N / queue · policy.
   - `app/work/page.tsx` — `/work` still-a…d carry the same readable facts. Locked card titles/ledes untouched. No Open demo.
@@ -16,9 +17,9 @@
   - [x] 375 information-readable; CTA / job cards ≥44px
   - [x] Locked chapter copy untouched; isomorphism left for V3-11
   - [x] `pnpm build` green
-  - [ ] `vercel deploy --prod` — updating after this HANDOFF SHA fix
+  - [x] `vercel deploy --prod` — production alias refreshed
 - Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, zero-jank-scroll, review-animations, cinematic-scroll-storytelling, writing-guidelines
 - Risks:
   - Stills are static CSS/HTML facts — no live widgets.
 - Blockers:
-  - None for code. Await three PM + Leader. No V3-11 until PASS.
+  - None. Await three PM + Leader. No V3-11 until PASS.
