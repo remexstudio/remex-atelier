@@ -68,7 +68,7 @@ export default function NorthlineStudyPage() {
               Constraints
             </h2>
             <p className="type-body mt-4 text-muted">
-              English only. No real bank connections. No fake conversion
+              Studio study only. No real bank connections. No fake conversion
               metrics. Agents may Propose; they must not Execute. Rejected
               tickets stay visible.
             </p>

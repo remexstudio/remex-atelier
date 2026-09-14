@@ -10,8 +10,8 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="type-body mt-4 max-w-md text-muted">
-          That route is not on the map yet. Head home, or open Work for live
-          studies.
+          That route is not on the map. Return home, or open Work for the
+          product stories.
         </p>
         <p className="mt-10 flex flex-wrap gap-3">
           <Link href="/" className="btn-primary no-underline">

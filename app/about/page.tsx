@@ -36,8 +36,8 @@ export default function AboutPage() {
         </p>
         <p className="type-body mt-6 max-w-prose text-muted">
           We turn one painful workflow into a working agent, then keep molting
-          it. A Seattle studio. Not a foundation-model company, not an
-          outsourcing shop, not a speech lab.
+          it. A Seattle atelier — one brief at a time, with craft and a human
+          gate. Not a foundation-model company, not a speech lab.
         </p>
 
         <section className="mt-14" aria-labelledby="name">

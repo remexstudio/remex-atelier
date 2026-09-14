@@ -15,109 +15,154 @@ const JOBS = [
   { href: "/work/exception-copilot", label: "Exception Copilot" },
 ] as const;
 
+const MOTION_SEL =
+  ".home-scene__stage, [data-scene-copy], [data-method-beat], [data-job-card], [data-gate-chip], [data-job-title]";
+
+function showStatic() {
+  gsap.set(MOTION_SEL, { clearProps: "transform,opacity,visibility", autoAlpha: 1 });
+}
+
 export function HomeScenes() {
   const rootRef = useRef<HTMLElement>(null);
 
   useGSAP(
     () => {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const scenes = gsap.utils.toArray<HTMLElement>(".home-scene");
+      const mm = gsap.matchMedia();
 
-      if (reduce) {
-        // No pin theater — static stack; content remains fully visible.
-        gsap.set(".home-scene__stage, [data-scene-copy], [data-method-beat], [data-job-card], [data-gate-chip], [data-job-title]", {
-          clearProps: "all",
-          autoAlpha: 1,
-        });
-        return;
-      }
+      // Prefer native scroll + static stack when motion is reduced or viewport is short.
+      mm.add(
+        {
+          reduce: "(prefers-reduced-motion: reduce)",
+          short: "(max-height: 519px)",
+          pinOk:
+            "(prefers-reduced-motion: no-preference) and (min-height: 520px)",
+        },
+        (context) => {
+          const { reduce, short, pinOk } = context.conditions as {
+            reduce: boolean;
+            short: boolean;
+            pinOk: boolean;
+          };
 
-      scenes.forEach((scene) => {
-        const stage = scene.querySelector<HTMLElement>(".home-scene__stage");
-        const copy = scene.querySelectorAll<HTMLElement>("[data-scene-copy]");
-        const beats = scene.querySelectorAll<HTMLElement>("[data-method-beat]");
-        const cards = scene.querySelectorAll<HTMLElement>("[data-job-card]");
-        const gate = scene.querySelectorAll<HTMLElement>("[data-gate-chip]");
-        const jobTitle = scene.querySelector<HTMLElement>("[data-job-title]");
+          if (reduce || short || !pinOk) {
+            showStatic();
+            return;
+          }
 
-        const tl = gsap.timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: {
-            trigger: scene,
-            start: "top top",
-            end: "+=120%",
-            pin: true,
-            scrub: 1,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-          },
-        });
+          const scenes = gsap.utils.toArray<HTMLElement>(".home-scene");
 
-        if (stage) {
-          tl.fromTo(
-            stage,
-            { autoAlpha: 0, y: 28, scale: 0.98 },
-            { autoAlpha: 1, y: 0, scale: 1, duration: 0.35 },
-            0,
-          );
-        }
+          scenes.forEach((scene) => {
+            const stage = scene.querySelector<HTMLElement>(".home-scene__stage");
+            const copy = scene.querySelectorAll<HTMLElement>("[data-scene-copy]");
+            const beats = scene.querySelectorAll<HTMLElement>("[data-method-beat]");
+            const cards = scene.querySelectorAll<HTMLElement>("[data-job-card]");
+            const gate = scene.querySelectorAll<HTMLElement>("[data-gate-chip]");
+            const jobTitle = scene.querySelector<HTMLElement>("[data-job-title]");
 
-        if (copy.length) {
-          tl.fromTo(
-            copy,
-            { autoAlpha: 0, y: 24 },
-            { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
-            0.1,
-          );
-        }
+            const animated: HTMLElement[] = [];
+            if (stage) animated.push(stage);
+            copy.forEach((el) => animated.push(el));
+            beats.forEach((el) => animated.push(el));
+            cards.forEach((el) => animated.push(el));
+            gate.forEach((el) => animated.push(el));
+            if (jobTitle) animated.push(jobTitle);
 
-        if (jobTitle) {
-          tl.fromTo(
-            jobTitle,
-            { autoAlpha: 0.22 },
-            { autoAlpha: 1, duration: 0.5 },
-            0.35,
-          );
-        }
+            // Compositor-only prep; autoAlpha keeps unfocused until scrubbed in.
+            gsap.set(animated, { autoAlpha: 0 });
 
-        if (gate.length) {
-          tl.fromTo(
-            gate,
-            { autoAlpha: 0, y: 16 },
-            { autoAlpha: 1, y: 0, stagger: 0.18, duration: 0.35 },
-            0.28,
-          );
-        }
+            const tl = gsap.timeline({
+              defaults: { ease: "none" },
+              scrollTrigger: {
+                trigger: scene,
+                start: "top top",
+                // Keep pin short enough to read without scroll hijack.
+                end: "+=90%",
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+              },
+            });
 
-        if (cards.length) {
-          tl.fromTo(
-            cards,
-            { autoAlpha: 0, y: 20 },
-            { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.35 },
-            0.22,
-          );
-        }
+            if (stage) {
+              tl.fromTo(
+                stage,
+                { autoAlpha: 0, y: 28, scale: 0.98 },
+                { autoAlpha: 1, y: 0, scale: 1, duration: 0.35 },
+                0,
+              );
+            }
 
-        if (beats.length) {
-          tl.fromTo(
-            beats,
-            { autoAlpha: 0, y: 22 },
-            { autoAlpha: 1, y: 0, stagger: 0.24, duration: 0.4 },
-            0.15,
-          );
-        }
+            if (copy.length) {
+              tl.fromTo(
+                copy,
+                { autoAlpha: 0, y: 24 },
+                { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
+                0.1,
+              );
+            }
 
-        tl.to({}, { duration: 0.25 });
-      });
+            if (jobTitle) {
+              tl.fromTo(
+                jobTitle,
+                { autoAlpha: 0.22 },
+                { autoAlpha: 1, duration: 0.5 },
+                0.35,
+              );
+            }
 
-      const onLoad = () => ScrollTrigger.refresh();
-      window.addEventListener("load", onLoad);
-      if (document.fonts?.ready) {
-        void document.fonts.ready.then(() => ScrollTrigger.refresh());
-      }
+            if (gate.length) {
+              tl.fromTo(
+                gate,
+                { autoAlpha: 0, y: 16 },
+                { autoAlpha: 1, y: 0, stagger: 0.18, duration: 0.35 },
+                0.28,
+              );
+            }
+
+            if (cards.length) {
+              tl.fromTo(
+                cards,
+                { autoAlpha: 0, y: 20 },
+                { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.35 },
+                0.22,
+              );
+            }
+
+            if (beats.length) {
+              tl.fromTo(
+                beats,
+                { autoAlpha: 0, y: 22 },
+                { autoAlpha: 1, y: 0, stagger: 0.24, duration: 0.4 },
+                0.15,
+              );
+            }
+
+            // Brief hold so the last beat stays readable before unpin.
+            tl.to({}, { duration: 0.2 });
+          });
+
+          const refresh = () => ScrollTrigger.refresh();
+          window.addEventListener("load", refresh);
+          let fontsReady = false;
+          if (document.fonts?.ready) {
+            void document.fonts.ready.then(() => {
+              fontsReady = true;
+              refresh();
+            });
+          }
+
+          return () => {
+            window.removeEventListener("load", refresh);
+            if (fontsReady) {
+              // no-op; refresh already applied
+            }
+          };
+        },
+      );
 
       return () => {
-        window.removeEventListener("load", onLoad);
+        mm.revert();
       };
     },
     { scope: rootRef },

@@ -313,6 +313,7 @@ button:active {
 /* ——— Home film ——— */
 .home-film {
   background: var(--gutter);
+  overflow-x: clip;
 }
 
 .home-scene {
@@ -329,9 +330,16 @@ button:active {
   display: grid;
   width: min(100%, 68rem);
   margin-inline: auto;
-  padding: calc(var(--nav-height) + 1.5rem) 1.25rem 3rem;
-  gap: 2.5rem;
+  padding: calc(var(--nav-height) + 1.25rem) 1rem 2.75rem;
+  gap: 2rem;
   align-items: center;
+  min-width: 0;
+}
+
+@media (min-width: 375px) {
+  .home-scene__inner {
+    padding-inline: 1.25rem;
+  }
 }
 
 @media (min-width: 900px) {
@@ -359,7 +367,7 @@ button:active {
 .home-headline {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-optical-sizing: auto;
-  font-size: clamp(2.25rem, 5.5vw, 4.25rem);
+  font-size: clamp(2rem, 5.5vw, 4.25rem);
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--ink);
@@ -595,6 +603,7 @@ button:active {
 /* ——— Product story film ——— */
 .story-film {
   background: var(--gutter);
+  overflow-x: clip;
 }
 
 .story-scene {
@@ -611,9 +620,16 @@ button:active {
   display: grid;
   width: min(100%, 68rem);
   margin-inline: auto;
-  padding: calc(var(--nav-height) + 1.5rem) 1.25rem 3rem;
-  gap: 2.5rem;
+  padding: calc(var(--nav-height) + 1.25rem) 1rem 2.75rem;
+  gap: 2rem;
   align-items: center;
+  min-width: 0;
+}
+
+@media (min-width: 375px) {
+  .story-scene__inner {
+    padding-inline: 1.25rem;
+  }
 }
 
 @media (min-width: 900px) {
@@ -645,7 +661,7 @@ button:active {
 .story-headline {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-optical-sizing: auto;
-  font-size: clamp(1.85rem, 4.2vw, 3.25rem);
+  font-size: clamp(1.7rem, 4.2vw, 3.25rem);
   line-height: 1.12;
   letter-spacing: -0.022em;
   color: var(--ink);
@@ -908,6 +924,7 @@ button:active {
   .home-scene__stage,
   .home-headline,
   .home-support,
+  .home-cta-wrap,
   .job-card,
   .gate-chip,
   .job-title-light,
@@ -917,8 +934,24 @@ button:active {
   .story-headline,
   .story-kicker,
   .story-still,
-  .story-still__note {
+  .story-still__note,
+  [data-scene-copy],
+  [data-method-beat],
+  [data-job-card],
+  [data-gate-chip],
+  [data-job-title],
+  [data-story-chip] {
     transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Avoid leftover compositor hints from prior GSAP pins */
+  .home-scene,
+  .story-scene,
+  .home-scene__stage,
+  .story-scene__stage {
+    will-change: auto !important;
   }
 }
 

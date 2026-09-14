@@ -67,7 +67,7 @@ export default function PaperlineStudyPage() {
               Constraints
             </h2>
             <p className="type-body mt-4 text-muted">
-              English only. No payment processor. No fake recovery percentages.
+              Studio study only. No payment processor. No fake recovery percentages.
               Policy page stays readable.
             </p>
           </section>

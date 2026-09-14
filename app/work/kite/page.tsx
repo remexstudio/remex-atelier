@@ -68,7 +68,7 @@ export default function KiteStudyPage() {
               Constraints
             </h2>
             <p className="type-body mt-4 text-muted">
-              English only. No real social networks. No fake engagement
+              Studio study only. No real social networks. No fake engagement
               percentages. Two draft tones. Escalate is explicit.
             </p>
           </section>

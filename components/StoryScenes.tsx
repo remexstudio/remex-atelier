@@ -22,6 +22,13 @@ export type StoryScenesProps = {
   scenes: readonly StoryScene[];
 };
 
+const MOTION_SEL =
+  ".story-scene__stage, [data-scene-copy], [data-story-chip], .story-still";
+
+function showStatic() {
+  gsap.set(MOTION_SEL, { clearProps: "transform,opacity,visibility", autoAlpha: 1 });
+}
+
 function Still({ beat, productName }: { beat: StoryBeat; productName: string }) {
   if (beat === "pain") {
     return (
@@ -112,73 +119,97 @@ export function StoryScenes({ productName, scenes }: StoryScenesProps) {
 
   useGSAP(
     () => {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const sceneEls = gsap.utils.toArray<HTMLElement>(".story-scene");
+      const mm = gsap.matchMedia();
 
-      if (reduce) {
-        gsap.set(
-          ".story-scene__stage, [data-scene-copy], [data-story-chip], .story-still",
-          { clearProps: "all", autoAlpha: 1 },
-        );
-        return;
-      }
+      mm.add(
+        {
+          reduce: "(prefers-reduced-motion: reduce)",
+          short: "(max-height: 519px)",
+          pinOk:
+            "(prefers-reduced-motion: no-preference) and (min-height: 520px)",
+        },
+        (context) => {
+          const { reduce, short, pinOk } = context.conditions as {
+            reduce: boolean;
+            short: boolean;
+            pinOk: boolean;
+          };
 
-      sceneEls.forEach((scene) => {
-        const stage = scene.querySelector<HTMLElement>(".story-scene__stage");
-        const copy = scene.querySelectorAll<HTMLElement>("[data-scene-copy]");
-        const chips = scene.querySelectorAll<HTMLElement>("[data-story-chip]");
+          if (reduce || short || !pinOk) {
+            showStatic();
+            return;
+          }
 
-        const tl = gsap.timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: {
-            trigger: scene,
-            start: "top top",
-            end: "+=120%",
-            pin: true,
-            scrub: 1,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-          },
-        });
+          const sceneEls = gsap.utils.toArray<HTMLElement>(".story-scene");
 
-        if (stage) {
-          tl.fromTo(
-            stage,
-            { autoAlpha: 0, y: 28, scale: 0.98 },
-            { autoAlpha: 1, y: 0, scale: 1, duration: 0.35 },
-            0,
-          );
-        }
+          sceneEls.forEach((scene) => {
+            const stage = scene.querySelector<HTMLElement>(".story-scene__stage");
+            const copy = scene.querySelectorAll<HTMLElement>("[data-scene-copy]");
+            const chips = scene.querySelectorAll<HTMLElement>("[data-story-chip]");
 
-        if (copy.length) {
-          tl.fromTo(
-            copy,
-            { autoAlpha: 0, y: 24 },
-            { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
-            0.1,
-          );
-        }
+            const animated: HTMLElement[] = [];
+            if (stage) animated.push(stage);
+            copy.forEach((el) => animated.push(el));
+            chips.forEach((el) => animated.push(el));
+            gsap.set(animated, { autoAlpha: 0 });
 
-        if (chips.length) {
-          tl.fromTo(
-            chips,
-            { autoAlpha: 0, y: 16 },
-            { autoAlpha: 1, y: 0, stagger: 0.18, duration: 0.35 },
-            0.28,
-          );
-        }
+            const tl = gsap.timeline({
+              defaults: { ease: "none" },
+              scrollTrigger: {
+                trigger: scene,
+                start: "top top",
+                end: "+=90%",
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+              },
+            });
 
-        tl.to({}, { duration: 0.25 });
-      });
+            if (stage) {
+              tl.fromTo(
+                stage,
+                { autoAlpha: 0, y: 28, scale: 0.98 },
+                { autoAlpha: 1, y: 0, scale: 1, duration: 0.35 },
+                0,
+              );
+            }
 
-      const onLoad = () => ScrollTrigger.refresh();
-      window.addEventListener("load", onLoad);
-      if (document.fonts?.ready) {
-        void document.fonts.ready.then(() => ScrollTrigger.refresh());
-      }
+            if (copy.length) {
+              tl.fromTo(
+                copy,
+                { autoAlpha: 0, y: 24 },
+                { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
+                0.1,
+              );
+            }
+
+            if (chips.length) {
+              tl.fromTo(
+                chips,
+                { autoAlpha: 0, y: 16 },
+                { autoAlpha: 1, y: 0, stagger: 0.18, duration: 0.35 },
+                0.28,
+              );
+            }
+
+            tl.to({}, { duration: 0.2 });
+          });
+
+          const refresh = () => ScrollTrigger.refresh();
+          window.addEventListener("load", refresh);
+          if (document.fonts?.ready) {
+            void document.fonts.ready.then(() => refresh());
+          }
+
+          return () => {
+            window.removeEventListener("load", refresh);
+          };
+        },
+      );
 
       return () => {
-        window.removeEventListener("load", onLoad);
+        mm.revert();
       };
     },
     { scope: rootRef },

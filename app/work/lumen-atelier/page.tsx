@@ -69,9 +69,9 @@ export default function LumenAtelierStudyPage() {
               Constraints
             </h2>
             <p className="type-body mt-4 text-muted">
-              English only. No real brand logos. No fake conversion percentages.
+              Fictional brands only. No real logos. No fake conversion percentages.
               No live payments. Prefer editorial restraint over dashboard
-              chrome. One hero product for the demo catalog.
+              chrome. One hero product for the study catalog.
             </p>
           </section>
 
