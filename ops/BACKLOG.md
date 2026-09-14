@@ -4,4 +4,6 @@
 - [x] R1 feat(home): add pinned product scenes (SHA 70a6e4c)
 - [x] R2 feat(work): add scroll product stories (SHA 7836383)
 - [x] R3 feat(site): add approach and contact (SHA 780233b)
-- [x] R4 feat(site): motion a11y and copy cleanup (SHA pending — not committed this turn)
+- [x] R4 feat(site): motion a11y and copy cleanup (SHA 596aa52)
+
+**Campaign stop.** No R5 until owner prompt.

@@ -1,25 +1,27 @@
-# Review R3
+# Review R4
 
-- TASK ID: R3
-- Delivery SHA: 780233b (`feat(site): add approach and contact`)
-- Handoff tip: 4078321
-- Preview: https://remex-atelier.vercel.app (CLI prod refresh after Git lag)
+- TASK ID: R4
+- Delivery SHA: 596aa52 (`feat(site): motion a11y and copy cleanup`)
+- Handoff tip: ec86862
+- Preview: https://remex-atelier.vercel.app (Git auto-deploy may lag; CLI refresh if needed)
 
 ## Checks
 
-- [x] `/approach` three blocks only; headlines exact: Design the job / Build the gate / Keep the record
-- [x] Supporting copy covers propose / approve / log; no outsourcing; no English-first / English products
-- [x] `/contact`: `Start a brief.` + ContactForm success + `hello@remexstudio.com`
-- [x] No founder name, phone, school, pricing
+- [x] Home `#home-s1`…`#home-s6` + stories `#story-s1`…`#story-s5`: matchMedia skips reduce / short viewport; `pin` + `scrub: 1`; transform/opacity only; `fonts.ready` refresh; no Lenis / normalizeScroll; no per-frame setState
+- [x] UI purged of English-first / English products / English only / outsourcing claims in `app/` + `components/` (docs/copy-locks constitution retained)
+- [x] Primary nav: no `/demo/*`; `/work` index: no Open demo
+- [x] `not-found.tsx` on-brand; metadata on key routes; `:focus-visible`; ContactForm labels
+- [x] `prefers-reduced-motion` + CSS floors for ~375 / ~1280
 - [x] `pnpm build` PASS
-- [x] Production smoke shows three method titles + contact email
 
 ## Notes
 
-- ContactForm remains studio mock (no message sent) — acceptable for this slice.
+- Legacy study pages may still link into `/demo/*` (allowed; out of primary nav + work index).
+- Runtime FPS / pin feel not browser-profiled — accepted with residual risk noted.
+- Production alias may lag Git until a CLI or Git-linked deploy lands.
 
 ## Verdict
 
 **LEADER: PASS**
 
-R3 closed. Do not start R4 until owner prompt.
+R4 closed. **Stop.** No further slices until owner says otherwise.
