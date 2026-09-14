@@ -1,7 +1,7 @@
-# Review V3-3
+# Review V3-4
 
-- Content SHA: d7a232f (`feat(work): atelier concierge unique chapter`)
-- Handoff tip: bb1f237
+- Content SHA: 9cd861c (`feat(work): ledger clerk unique chapter`)
+- Handoff tip: b68cd73
 
 | Voice | Verdict |
 | --- | --- |
@@ -10,4 +10,4 @@
 | UX PM | PASS |
 | Leader | **PASS** |
 
-V3-3 closed. Open V3-4 Ledger Clerk unique chapter.
+V3-4 closed. Open V3-5 Morning Remex unique chapter.
