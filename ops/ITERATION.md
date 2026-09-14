@@ -15,4 +15,4 @@ V3-17 closed: content `71d8fef` / merge `b3aefea` / tip `5a89e93`. Unanimous PM 
 - No BRIEF_ASKS / 机羽云 / refuse / pins / Lenis / HomeScenes / Services / About / Contact.
 - No empty gray-bar return.
 
-Await three PM + Leader. No V3-19 until PASS.
+PM board lock checked on PR #10. Await three PM + Leader. No V3-19 until PASS.
