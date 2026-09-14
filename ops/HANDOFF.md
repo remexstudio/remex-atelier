@@ -1,7 +1,7 @@
 # Handoff V3-17
 
 - Status: delivered
-- Content SHA: `cd5d240`
+- Content SHA: `71d8fef`
 - Base: `0c1a5a9` on main
 - Preview: https://remex-atelier.vercel.app
 - Deploy: coordinator `vercel deploy --prod` after merge (not this slice)
