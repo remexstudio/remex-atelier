@@ -1,7 +1,7 @@
 # Handoff V3-0
 
 - Status: delivered
-- SHA: pending
+- SHA: 9158191
 - Preview: n/a (docs only)
 - Cite: `ops/pm/V3-0-REJECT.md` (Apple / UX / Vision reject of live draft)
 
