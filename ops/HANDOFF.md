@@ -1,6 +1,7 @@
 # Handoff V3-8
 
-- Status: delivered (uncommitted — parent commits)
+- Status: delivered
+- SHA: 45c891a
 - Preview: https://remex-atelier.vercel.app
 - Commit msg for parent: `feat(site): v3 motion a11y and residual cleanup`
 
