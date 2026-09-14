@@ -3,7 +3,7 @@
 - Status: delivered
 - SHA: 03d5281 (content); merge tip fc0673f on main
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: in progress / see follow-up
+- Deploy: `dpl_GSHEP9gxQ7x5Ki1SJ8CFmb834b1o` → aliased https://remex-atelier.vercel.app
 - Files changed (ALLOWED only):
   - `app/services/page.tsx` — film SiteChrome; Agent Apps / Agent Ops / Advisory; Start a brief → `/contact`; Read the approach → `/approach`
   - `app/lab/page.tsx` — film canvas; large `Prototype · not a client engagement` banner
@@ -20,7 +20,7 @@
   - [x] Services substance + approach/contact links
   - [x] Orphan demo components deleted
   - [x] `pnpm build` green
-  - [ ] `vercel deploy --prod` — updating
+  - [x] `vercel deploy --prod` — production alias refreshed
 - Skills used: apple-design, apple-design-web, emil-design-eng, writing-guidelines, web-design-guidelines
 - Risks:
   - `components/lab/PulseLoop.tsx` outside ALLOWED; film CSS remaps paper utilities.
