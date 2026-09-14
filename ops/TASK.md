@@ -1,52 +1,41 @@
-# TASK V3-7
+# TASK V3-8
 
-TASK ID: V3-7
+TASK ID: V3-8
 REPO: remexstudio/remex-atelier
 
 SKILLS (before edits):
 /apple-design /apple-design-web /apple-design-motion /emil-design-eng
 /gsap-scrolltrigger /gsap-timeline /gsap-react
-/cinematic-scroll-storytelling /zero-jank-scroll /review-animations /writing-guidelines
+/cinematic-scroll-storytelling /zero-jank-scroll /review-animations /web-design-guidelines
 
 GOAL:
-Bring `/approach` and `/contact` to V3 payload depth per `docs/ia-v3.md` and `docs/copy-locks.md`. Apple chapter grammar (light canvas, large type, hairlines, frosted film nav ok). No founder name, phone, school, pricing, personal bio. No English-products market claims.
+Site-wide motion + a11y pass for V3. Kill jank, scroll traps, leftover empty StoryScenes coupling, and banned copy. Verify prefers-reduced-motion keeps full facts. Keep product uniqueness chapters intact.
 
 ALLOWED:
-- app/approach/**
-- app/contact/**
-- components/ContactForm.tsx (if needed for labels/success)
-- app/globals.css (approach/contact styles only)
-- components/SiteChrome.tsx only if required for film/default chrome consistency on these routes
+- app/** (a11y/metadata/404/layout polish only — no IA rewrite)
+- components/** (motion/a11y; may delete or unlink dead StoryScenes if unused)
+- app/globals.css
+- app/work/page.tsx (stills index polish; no Open demo)
 - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 
 OUT OF SCOPE:
-- Home nine modules rewrite
-- Product story pages
-- /demo, personal site, Lab rebuild as sold product
+- Rewriting unique product chapter copy locks
+- New marketing slogans
+- Personal site
+- Reintroducing Lenis / normalizeScroll / body overflow lock during pin
 
-## `/approach` REQUIRED
-- Method three with substance: Design the job / Build the gate / Keep the record (deeper than home summary; may use Propose/Approve/Record mechanism lines from copy-locks)
-- Name meaning **once only** (Chinese glyphs only here):
-  - 机 = machine
-  - 羽 = remex flight feather (control surface)
-  - 云 = work runs in the cloud
-  - Remex = remiges
-- Legal: Jiyuyun Studio LLC
-- Seattle studio. Global clients. (verbatim SAY)
-- What we do not sell (locked list from copy-locks, verbatim bullets)
-- Roadmap Now / Next / Later with detail (may expand home three-beat; do not invent English-first claims). Prefer locked home supporting facts as base:
-  - Now: ship gated agents for one workflow at a time.
-  - Next: deepen records and chapter wayfinding across the four jobs.
-  - Later: broaden seats only after gates and records hold.
-- Canvas #fff / gutter #f5f5f7; display negative tracking; ≥44px hits; labeled content; 375 readable
-- No founder name / phone / school / pricing table / CumuLabs / outsourcing language
+ACCEPTANCE:
+- [ ] Audit every ScrollTrigger: home gate pin only when pinOk (min-width 720 + height + no reduced-motion); product chapters once-reveal only; no long story pins
+- [ ] prefers-reduced-motion: no pin theater; all module facts visible (CSS + matchMedia)
+- [ ] No Lenis, no normalizeScroll, no body overflow lock during pin
+- [ ] Transform/opacity only for motion; kill layout thrash / scroll hijack
+- [ ] Strip leftover “English-first” / “English products” / CumuLabs / founder name if any remain in UI
+- [ ] /work index: four story stills, no Open demo launch buttons; study disclaimer where required
+- [ ] StoryScenes: if unused by any live route, remove imports or delete file; four unique chapters remain sole product UI
+- [ ] 404, metadata, 375 and 1280 readable; visible :focus-visible; forms labeled; CTA/inputs ≥44px
+- [ ] Keep /demo/* unlinked from primary nav if files remain
+- [ ] pnpm build PASS
 
-## `/contact` REQUIRED
-- Headline: Start a brief. (verbatim)
-- Form: Start a brief (labeled fields; success state)
-- Email: hello@remexstudio.com
-- No founder name
+COMMIT: `feat(site): v3 motion a11y and residual cleanup`
 
-COMMIT: `feat(site): v3 approach and contact`
-
-After push: write ops/HANDOFF.md. Await three PM + Leader. Do not start V3-8 until PASS.
+After push: write ops/HANDOFF.md. Await three PM + Leader. Do not announce campaign complete; after PASS Leader will open next iteration loop.
