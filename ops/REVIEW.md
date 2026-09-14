@@ -1,10 +1,11 @@
-# Review V3-14
+# Review V3-15
 
-- TASK ID: V3-14
-- Content SHA: `d2e3e1b`
-- Merge: `7b5ae0c`
-- HANDOFF tip: `ccba927`
-- Prod: https://remex-atelier.vercel.app (`dpl_2mzC8WhX8hiJsusYwh4WmbtrW4nJ`)
+- TASK ID: V3-15
+- Content SHA: `d2c9f3f`
+- Follow-up: `0b680a2` (kill leftover chapter gray-bar chrome)
+- Merge: `6da887d`
+- HANDOFF tip: `b1e279c`
+- Prod: https://remex-atelier.vercel.app (`dpl_BTqFg4D4uMRCuF5ArX4WhUJkqW1W`)
 
 ## Verdicts
 
@@ -18,20 +19,16 @@
 
 ## Checks
 
-- H2 hire-still: One seat / One job / One painful workflow + Human gate.
-- H7 MethodGlyph: job / gate / record — empty glyph killed.
-- Home Ledger still: `Propose≠Execute` + `§12.4 · Close pack`.
-- Contact: BRIEF_ASKS four strings as labels + checklist; ≥44 + focus-visible.
-- Services: three non-interchangeable gate/record nails.
-- About: SAY `One painful workflow. One agent. A human gate.`; no 机羽云/refuse move.
-- Canvas / pinOk / no Lenis; build green; prod refreshed.
+- `lib/brief-asks.ts` single source; HomeScenes / ContactForm / contact page import only.
+- Four chapters: ability×3 + gate + record + refusal verbatim; `still-fact` DNA; `__bar` gray chrome = 0.
+- H2 hire-still PAR microchips; canvas / pinOk / no Lenis; build + prod green.
 
-## Non-blocking ADD → V3-15
+## Non-blocking ADD → V3-16
 
-- DRY `BRIEF_ASKS` to one shared constant (Home / ContactForm / contact page).
-- Four product chapter still / beat density (locked score lines verbatim).
-- Soft: hire-still Propose→Approve→Record microchips (optional).
+- Soft polish: bump `.still-fact` type slightly for 375 readability.
+- Trim chapter visual noise / product CTA density without moving locked copy landings.
+- Vision: density checklist loop closed; next loop is Apple/UX craft, not payload relocation.
 
 ## Decision
 
-Close V3-14. Issue V3-15. Continuous overnight loop continues.
+Close V3-15. Issue V3-16. Continuous overnight loop continues.

@@ -1,24 +1,6 @@
-# Handoff V3-15
+# Handoff V3-16
 
-- Status: delivered
-- Content SHA: d2c9f3f (`feat(site): v3 brief-asks dry and chapter still density`)
-- Follow-up: 0b680a2 (kill leftover chapter gray-bar chrome)
-- Merge tip: 6da887d on main
-- Preview / Production: https://remex-atelier.vercel.app
-- Deploy: `dpl_BTqFg4D4uMRCuF5ArX4WhUJkqW1W` → aliased https://remex-atelier.vercel.app
-- Files (ALLOWED only):
-  - `lib/brief-asks.ts` — single BRIEF_ASKS source
-  - `components/HomeScenes.tsx` — H6 import + H2 PAR microchips
-  - `components/ContactForm.tsx`, `app/contact/page.tsx`
-  - Four `*Chapter.tsx` — denser still DNA; gray-bar chrome killed
-  - `app/globals.css` — hire-still / chapter still-fact helpers
-  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
-- Acceptance:
-  - [x] BRIEF_ASKS once; three consumers import
-  - [x] Ability×3 / gate / record / refusal visible; no empty gray-bar chrome
-  - [x] Locked lines verbatim; shallow once-reveal; no new pins
-  - [x] No 机羽云 / refuse move
-  - [x] `pnpm build` PASS
-  - [x] `vercel deploy --prod` — production alias refreshed
-- Skills: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
-- Blockers: None. Await three PM + Leader. No V3-16 until PASS.
+- Status: issued — await Dev
+- Prior closed: V3-15 PASS (`d2c9f3f` + `0b680a2` / merge `6da887d` / tip `b1e279c`)
+- Preview: https://remex-atelier.vercel.app
+- Notes: See `ops/TASK.md`. Craft polish only. No V3-17 until PASS.
