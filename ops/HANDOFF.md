@@ -1,8 +1,8 @@
 # Handoff V3-3 Atelier Concierge
 
-- Status: delivered (await PM review)
-- SHA: pending (do not commit from executor)
-- Preview: local / pending parent push
+- Status: delivered
+- SHA: d7a232f
+- Preview: https://remex-atelier.vercel.app
 - Commit msg (parent): `feat(work): atelier concierge unique chapter`
 
 ## Skills used
