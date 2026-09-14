@@ -1,25 +1,31 @@
-# Handoff V3-10
+# Handoff V3-11
 
 - Status: delivered
-- SHA: 1e57b13 (content); merge tip 3f56512 on main; handoff tip follow-up
+- SHA: 40a28f7 (`feat(work): v3 break four chapter isomorphic layouts`), rebased onto main `6b5bc01`
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: `dpl_87idhNEeSZZ2EoQqQztTzSZpKdW6` → aliased https://remex-atelier.vercel.app
+- Deploy: Vercel CLI is logged out in this environment. Coordinator should `vercel deploy --prod` after merge so remex-atelier.vercel.app serves tip.
 - Files changed (ALLOWED only):
-  - `components/HomeScenes.tsx` — hero Concierge/Gate: LUM-1042 + Skin → hero → try-on → bag → pay + Propose → Approve → Record. No chrome dots or gray bars. Job stills: LUM-1042 / Propose≠Execute + cite / P · W · N / queue · policy.
-  - `app/work/page.tsx` — `/work` still-a…d carry the same readable facts. Locked card titles/ledes untouched. No Open demo.
-  - `app/globals.css` — fact-led still type at card size (375 readable). Chapter layout CSS unchanged.
+  - `components/AtelierConciergeChapter.tsx` — horizontal merchandising runway + overlapping try-on stack; scatter field; pay-stage counter; LUM-1042 ribbon. No split clone.
+  - `components/LedgerClerkChapter.tsx` — cite stack (spine + hanging slips) + Propose ≠ Execute table; register rows for the audit log.
+  - `components/MorningRemexChapter.tsx` — P/W/N triage lanes + dual-tone draft columns; overnight mail stack; linked packet beads.
+  - `components/ExceptionCopilotChapter.tsx` — ranked exception queue + policy sidebar dock; case timeline spine.
+  - `app/globals.css` — `.cq-*` `.lc-*` `.mr-*` `.ec-*` grammar CSS only. Home / work still atoms and SiteChrome untouched.
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
 - Acceptance self-check:
-  - [x] Hero has no `product-frame__chrome` dots or gray-bar chatbot chrome
-  - [x] Hero reads Concierge/Gate DNA (LUM-1042 + Propose→Approve→Record)
-  - [x] Four home stills read unique facts at a glance
-  - [x] Four `/work` stills match those facts
-  - [x] 375 information-readable; CTA / job cards ≥44px
-  - [x] Locked chapter copy untouched; isomorphism left for V3-11
-  - [x] `pnpm build` green
-  - [x] `vercel deploy --prod` — production alias refreshed
-- Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, zero-jank-scroll, review-animations, cinematic-scroll-storytelling, writing-guidelines
+  - [x] Each chapter has ≥2 unique layout grammars (not a restyled split/pipeline clone)
+  - [x] Concierge: pipeline runway + try-on stack
+  - [x] Ledger: cite stack + Propose ≠ Execute table
+  - [x] Morning: dual-tone columns + P/W/N triage
+  - [x] Exception: exception queue + policy sidebar
+  - [x] Locked score / existing chapter strings verbatim (no paraphrase, shorten, or reorder of 01–03)
+  - [x] No StoryScenes; no long pin runway; once-reveal only; no Lenis / normalizeScroll / body lock
+  - [x] Canvas `#fff` / `#f5f5f7`; CTA ≥44; 375 stacks readable; reduced-motion keeps full facts
+  - [x] Home stills / SiteChrome / redirects untouched
+  - [x] `pnpm build` green (Next.js 16.3.5; 15 static routes)
+  - [ ] Coordinator `vercel deploy --prod` after merge (CLI logged out here)
+- Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, cinematic-scroll-storytelling, zero-jank-scroll, review-animations, react-best-practices, writing-guidelines
 - Risks:
-  - Stills are static CSS/HTML facts — no live widgets.
+  - Skill files for the Apple/Emil/GSAP set are not in this workspace; applied from `docs/design.md`, `docs/ia-v3.md`, `docs/scroll-score-v3.md`, and prior V3 chapter motion contract.
+  - Shared still atoms (`.cq-tryon`, `.mr-triage`, `.ec-ticket`, etc.) stay for home/work cards — chapter layouts wrap them, they are not restyled as the only change.
 - Blockers:
-  - None. Await three PM + Leader. No V3-11 until PASS.
+  - None. Await three PM + Leader. No V3-12 until PASS.

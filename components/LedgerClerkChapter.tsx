@@ -19,10 +19,15 @@ function showStatic(root: HTMLElement) {
     clearProps: "transform,opacity,visibility",
     autoAlpha: 1,
   });
-  gsap.set(root.querySelectorAll(".lc-still, .lc-flow__step, .lc-pipeline"), {
-    clearProps: "transform,opacity,visibility",
-    autoAlpha: 1,
-  });
+  gsap.set(
+    root.querySelectorAll(
+      ".lc-still, .lc-cite-stack, .lc-cite-stack__item, .lc-pe, .lc-register",
+    ),
+    {
+      clearProps: "transform,opacity,visibility",
+      autoAlpha: 1,
+    },
+  );
 }
 
 export function LedgerClerkChapter() {
@@ -127,135 +132,159 @@ export function LedgerClerkChapter() {
         </div>
       </section>
 
-      {/* Pain */}
+      {/* Pain — hanging source slips on a cite spine (not a split) */}
       <section
         id="lc-pain"
         data-lc-mod
         className="lc-mod lc-mod--pain"
         aria-labelledby="lc-pain-h"
       >
-        <div className="lc-mod__inner lc-mod__inner--split">
-          <div className="lc-mod__copy">
-            <h2 id="lc-pain-h" className="lc-headline lc-headline--sm" data-lc-reveal>
-              The same source hunt buries the team every close.
-            </h2>
-          </div>
-          <div className="lc-still lc-still--scatter" data-lc-reveal aria-hidden="true">
-            <div className="lc-sheet lc-sheet--a">GL extract</div>
-            <div className="lc-sheet lc-sheet--b">Trial balance</div>
-            <div className="lc-sheet lc-sheet--c">Close memo</div>
-            <div className="lc-sheet lc-sheet--d">Prior cite</div>
-          </div>
+        <div className="lc-mod__inner lc-mod__inner--cites">
+          <h2 id="lc-pain-h" className="lc-headline lc-headline--sm" data-lc-reveal>
+            The same source hunt buries the team every close.
+          </h2>
+          <ol className="lc-cite-stack lc-cite-stack--sources" aria-label="Source hunt">
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-sheet lc-sheet--a">GL extract</div>
+            </li>
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-sheet lc-sheet--b">Trial balance</div>
+            </li>
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-sheet lc-sheet--c">Close memo</div>
+            </li>
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-sheet lc-sheet--d">Prior cite</div>
+            </li>
+          </ol>
         </div>
       </section>
 
-      {/* Flow DNA: corpus cite → Propose package → Approve/Reject → audit log */}
+      {/* Grammar 1: cite stack — corpus slips, not a pipeline */}
       <section
         id="lc-flow"
         data-lc-mod
         className="lc-mod lc-mod--flow"
         aria-labelledby="lc-flow-h"
       >
-        <div className="lc-mod__inner">
+        <div className="lc-mod__inner lc-mod__inner--cites">
           <h2 id="lc-flow-h" className="lc-eyebrow" data-lc-reveal>
             Cite before books move
           </h2>
 
-          <ol className="lc-pipeline" aria-label="Ledger Clerk flow">
-            <li className="lc-flow__step" data-lc-reveal>
-              <div className="lc-flow__still lc-flow__still--corpus" aria-hidden="true">
-                <div className="lc-corpus">
-                  <span className="lc-corpus__spine" />
-                  <span className="lc-corpus__page" />
-                  <span className="lc-corpus__page lc-corpus__page--mid" />
+          <ol className="lc-cite-stack lc-cite-stack--flow" aria-label="Ledger Clerk flow">
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-cite-stack__body">
+                <div className="lc-flow__still lc-flow__still--corpus" aria-hidden="true">
+                  <div className="lc-corpus">
+                    <span className="lc-corpus__spine" />
+                    <span className="lc-corpus__page" />
+                    <span className="lc-corpus__page lc-corpus__page--mid" />
+                  </div>
                 </div>
+                <p className="lc-flow__label">Corpus cite</p>
               </div>
-              <p className="lc-flow__label">Corpus cite</p>
             </li>
-            <li className="lc-flow__arrow" aria-hidden="true" data-lc-reveal>
-              →
-            </li>
-            <li className="lc-flow__step" data-lc-reveal>
-              <div className="lc-flow__still lc-flow__still--propose" aria-hidden="true">
-                <div className="lc-propose">
-                  <span className="lc-propose__mark">Propose</span>
-                  <span className="lc-propose__bar" />
-                  <span className="lc-propose__bar lc-propose__bar--short" />
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-cite-stack__body">
+                <div className="lc-flow__still lc-flow__still--propose" aria-hidden="true">
+                  <div className="lc-propose">
+                    <span className="lc-propose__mark">Propose</span>
+                    <span className="lc-propose__bar" />
+                    <span className="lc-propose__bar lc-propose__bar--short" />
+                  </div>
                 </div>
+                <p className="lc-flow__label">Propose package</p>
               </div>
-              <p className="lc-flow__label">Propose package</p>
             </li>
-            <li className="lc-flow__arrow" aria-hidden="true" data-lc-reveal>
-              →
-            </li>
-            <li className="lc-flow__step" data-lc-reveal>
-              <div className="lc-flow__still lc-flow__still--gate" aria-hidden="true">
-                <div className="lc-gate-pair">
-                  <span className="lc-gate-pair__btn lc-gate-pair__btn--ok">Approve</span>
-                  <span className="lc-gate-pair__btn lc-gate-pair__btn--no">Reject</span>
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-cite-stack__body">
+                <div className="lc-flow__still lc-flow__still--gate" aria-hidden="true">
+                  <div className="lc-gate-pair">
+                    <span className="lc-gate-pair__btn lc-gate-pair__btn--ok">Approve</span>
+                    <span className="lc-gate-pair__btn lc-gate-pair__btn--no">Reject</span>
+                  </div>
                 </div>
+                <p className="lc-flow__label">Approve / Reject</p>
               </div>
-              <p className="lc-flow__label">Approve / Reject</p>
             </li>
-            <li className="lc-flow__arrow" aria-hidden="true" data-lc-reveal>
-              →
-            </li>
-            <li className="lc-flow__step" data-lc-reveal>
-              <div className="lc-flow__still lc-flow__still--audit" aria-hidden="true">
-                <div className="lc-audit-mini">
-                  <span className="lc-audit-mini__row" />
-                  <span className="lc-audit-mini__row lc-audit-mini__row--mid" />
-                  <span className="lc-audit-mini__row lc-audit-mini__row--ink" />
+            <li className="lc-cite-stack__item" data-lc-reveal>
+              <span className="lc-cite-stack__ref">§</span>
+              <div className="lc-cite-stack__body">
+                <div className="lc-flow__still lc-flow__still--audit" aria-hidden="true">
+                  <div className="lc-audit-mini">
+                    <span className="lc-audit-mini__row" />
+                    <span className="lc-audit-mini__row lc-audit-mini__row--mid" />
+                    <span className="lc-audit-mini__row lc-audit-mini__row--ink" />
+                  </div>
                 </div>
+                <p className="lc-flow__label">Audit log</p>
               </div>
-              <p className="lc-flow__label">Audit log</p>
             </li>
           </ol>
 
-          <ul className="lc-abilities">
-            <li data-lc-reveal>
+          <ol className="lc-cite-stack lc-cite-stack--abilities" aria-label="Ledger Clerk abilities">
+            <li className="lc-cite-stack__item lc-cite-stack__item--copy" data-lc-reveal>
               <span className="lc-abilities__n">01</span>
               <p>Answer from the corpus only.</p>
             </li>
-            <li data-lc-reveal>
+            <li className="lc-cite-stack__item lc-cite-stack__item--copy" data-lc-reveal>
               <span className="lc-abilities__n">02</span>
               <p>Attach citations before the answer is shown.</p>
             </li>
-            <li data-lc-reveal>
-              <span className="lc-abilities__n">03</span>
-              <p>Package a Propose draft. Never Execute.</p>
-            </li>
-          </ul>
+          </ol>
         </div>
       </section>
 
-      {/* Gate — named controller */}
+      {/* Grammar 2: Propose ≠ Execute table */}
       <section
         id="lc-gate"
         data-lc-mod
         className="lc-mod lc-mod--gate"
         aria-labelledby="lc-gate-h"
       >
-        <div className="lc-mod__inner lc-mod__inner--split">
-          <div className="lc-mod__copy">
-            <h2 id="lc-gate-h" className="lc-headline lc-headline--sm" data-lc-reveal>
-              Approve or Reject by a named controller before books move.
-            </h2>
-          </div>
-          <div className="lc-still lc-still--controller" data-lc-reveal aria-hidden="true">
-            <div className="lc-controller">
-              <div className="lc-controller__draft">
+        <div className="lc-mod__inner lc-mod__inner--pe">
+          <div className="lc-pe" role="table" aria-label="Propose not Execute">
+            <div className="lc-pe__col lc-pe__col--propose" role="row">
+              <p className="lc-pe__head" data-lc-reveal>
+                Propose
+              </p>
+              <div className="lc-pe__cell" data-lc-reveal>
+                <span className="lc-abilities__n">03</span>
+                <p>Package a Propose draft. Never Execute.</p>
+              </div>
+              <h2 id="lc-gate-h" className="lc-headline lc-headline--sm" data-lc-reveal>
+                Approve or Reject by a named controller before books move.
+              </h2>
+              <div className="lc-controller__draft" data-lc-reveal aria-hidden="true">
                 <span className="lc-controller__cite">§12.4 · Close pack</span>
                 <span className="lc-controller__bar" />
                 <span className="lc-controller__bar lc-controller__bar--mid" />
               </div>
-              <div className="lc-controller__gate">
+              <div className="lc-controller__gate" data-lc-reveal aria-hidden="true">
                 <span className="lc-controller__chip">Propose</span>
                 <span className="lc-controller__arrow" />
                 <span className="lc-controller__chip lc-controller__chip--name">
                   Controller
                 </span>
-                <span className="lc-controller__arrow" />
+              </div>
+            </div>
+            <div className="lc-pe__col lc-pe__col--execute" role="row">
+              <p className="lc-pe__head" data-lc-reveal>
+                Execute
+              </p>
+              <div className="lc-pe__cell lc-pe__cell--held" data-lc-reveal aria-hidden="true">
+                <div className="lc-gate-pair">
+                  <span className="lc-gate-pair__btn lc-gate-pair__btn--ok">Approve</span>
+                  <span className="lc-gate-pair__btn lc-gate-pair__btn--no">Reject</span>
+                </div>
                 <span className="lc-controller__chip lc-controller__chip--hold">
                   Books held
                 </span>
@@ -265,40 +294,31 @@ export function LedgerClerkChapter() {
         </div>
       </section>
 
-      {/* Record */}
+      {/* Record — ledger register, not a split card */}
       <section
         id="lc-record"
         data-lc-mod
         className="lc-mod lc-mod--record"
         aria-labelledby="lc-record-h"
       >
-        <div className="lc-mod__inner lc-mod__inner--split">
-          <div className="lc-still lc-still--log" data-lc-reveal aria-hidden="true">
-            <div className="lc-log">
-              <div className="lc-log__chrome">
-                <span />
-                <span />
-                <span />
-              </div>
-              <p className="lc-log__title">Audit log</p>
-              <div className="lc-log__row">
-                <span className="lc-log__key">Ask</span>
-                <span className="lc-log__bar lc-log__bar--wide" />
-              </div>
-              <div className="lc-log__row">
-                <span className="lc-log__key">Citation</span>
-                <span className="lc-log__bar" />
-              </div>
-              <div className="lc-log__row">
-                <span className="lc-log__key lc-log__key--ink">Decision</span>
-                <span className="lc-log__bar lc-log__bar--mid" />
-              </div>
+        <div className="lc-mod__inner lc-mod__inner--register">
+          <h2 id="lc-record-h" className="lc-headline lc-headline--sm" data-lc-reveal>
+            Ask, citation, and decision sit in one audit log.
+          </h2>
+          <div className="lc-register" data-lc-reveal aria-hidden="true">
+            <p className="lc-log__title">Audit log</p>
+            <div className="lc-register__row">
+              <span className="lc-log__key">Ask</span>
+              <span className="lc-log__bar lc-log__bar--wide" />
             </div>
-          </div>
-          <div className="lc-mod__copy">
-            <h2 id="lc-record-h" className="lc-headline lc-headline--sm" data-lc-reveal>
-              Ask, citation, and decision sit in one audit log.
-            </h2>
+            <div className="lc-register__row">
+              <span className="lc-log__key">Citation</span>
+              <span className="lc-log__bar" />
+            </div>
+            <div className="lc-register__row">
+              <span className="lc-log__key lc-log__key--ink">Decision</span>
+              <span className="lc-log__bar lc-log__bar--mid" />
+            </div>
           </div>
         </div>
       </section>

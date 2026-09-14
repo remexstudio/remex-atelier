@@ -19,10 +19,15 @@ function showStatic(root: HTMLElement) {
     clearProps: "transform,opacity,visibility",
     autoAlpha: 1,
   });
-  gsap.set(root.querySelectorAll(".mr-still, .mr-flow__step, .mr-pipeline"), {
-    clearProps: "transform,opacity,visibility",
-    autoAlpha: 1,
-  });
+  gsap.set(
+    root.querySelectorAll(
+      ".mr-still, .mr-mail-stack, .mr-pwn, .mr-pwn__lane, .mr-dual, .mr-dual__col, .mr-packet",
+    ),
+    {
+      clearProps: "transform,opacity,visibility",
+      autoAlpha: 1,
+    },
+  );
 }
 
 export function MorningRemexChapter() {
@@ -128,20 +133,18 @@ export function MorningRemexChapter() {
         </div>
       </section>
 
-      {/* Pain */}
+      {/* Pain — overnight mail stack, not a split */}
       <section
         id="mr-pain"
         data-mr-mod
         className="mr-mod mr-mod--pain"
         aria-labelledby="mr-pain-h"
       >
-        <div className="mr-mod__inner mr-mod__inner--split">
-          <div className="mr-mod__copy">
-            <h2 id="mr-pain-h" className="mr-headline mr-headline--sm" data-mr-reveal>
-              Overnight mail arrives without a single readable brief.
-            </h2>
-          </div>
-          <div className="mr-still mr-still--inbox" data-mr-reveal aria-hidden="true">
+        <div className="mr-mod__inner mr-mod__inner--mail">
+          <h2 id="mr-pain-h" className="mr-headline mr-headline--sm" data-mr-reveal>
+            Overnight mail arrives without a single readable brief.
+          </h2>
+          <div className="mr-mail-stack" data-mr-reveal aria-hidden="true">
             <div className="mr-thread mr-thread--a">
               <span className="mr-thread__dot" />
               <span className="mr-thread__bar mr-thread__bar--wide" />
@@ -162,144 +165,142 @@ export function MorningRemexChapter() {
         </div>
       </section>
 
-      {/* Flow DNA: Priority/Watch/Noise → two-tone drafts → escalate → never auto-publish */}
+      {/* Grammar 1: P / W / N triage lanes */}
       <section
         id="mr-flow"
         data-mr-mod
         className="mr-mod mr-mod--flow"
         aria-labelledby="mr-flow-h"
       >
-        <div className="mr-mod__inner">
+        <div className="mr-mod__inner mr-mod__inner--pwn">
           <h2 id="mr-flow-h" className="mr-eyebrow" data-mr-reveal>
             Triage before send
           </h2>
+          <p className="mr-flow__label mr-flow__label--lead" data-mr-reveal>
+            Priority / Watch / Noise
+          </p>
 
-          <ol className="mr-pipeline" aria-label="Morning Remex flow">
-            <li className="mr-flow__step" data-mr-reveal>
-              <div className="mr-flow__still mr-flow__still--triage" aria-hidden="true">
-                <div className="mr-triage">
-                  <span className="mr-triage__lane mr-triage__lane--pri">P</span>
-                  <span className="mr-triage__lane mr-triage__lane--watch">W</span>
-                  <span className="mr-triage__lane mr-triage__lane--noise">N</span>
-                </div>
+          <div className="mr-pwn" aria-label="Morning Remex triage">
+            <div className="mr-pwn__lane mr-pwn__lane--pri" data-mr-reveal>
+              <span className="mr-triage__lane mr-triage__lane--pri">P</span>
+              <p className="mr-pwn__name">Priority</p>
+              <div className="mr-thread mr-thread--a">
+                <span className="mr-thread__dot" />
+                <span className="mr-thread__bar mr-thread__bar--wide" />
               </div>
-              <p className="mr-flow__label">Priority / Watch / Noise</p>
-            </li>
-            <li className="mr-flow__arrow" aria-hidden="true" data-mr-reveal>
-              →
-            </li>
-            <li className="mr-flow__step" data-mr-reveal>
-              <div className="mr-flow__still mr-flow__still--tones" aria-hidden="true">
-                <div className="mr-tones">
-                  <span className="mr-tones__card mr-tones__card--a">Tone A</span>
-                  <span className="mr-tones__card mr-tones__card--b">Tone B</span>
-                </div>
+              <div className="mr-thread mr-thread--b">
+                <span className="mr-thread__dot" />
+                <span className="mr-thread__bar" />
               </div>
-              <p className="mr-flow__label">Two-tone drafts</p>
-            </li>
-            <li className="mr-flow__arrow" aria-hidden="true" data-mr-reveal>
-              →
-            </li>
-            <li className="mr-flow__step" data-mr-reveal>
-              <div className="mr-flow__still mr-flow__still--escalate" aria-hidden="true">
-                <div className="mr-escalate">
-                  <span className="mr-escalate__flag">Escalate</span>
-                  <span className="mr-escalate__bar" />
-                  <span className="mr-escalate__bar mr-escalate__bar--short" />
-                </div>
+            </div>
+            <div className="mr-pwn__lane mr-pwn__lane--watch" data-mr-reveal>
+              <span className="mr-triage__lane mr-triage__lane--watch">W</span>
+              <p className="mr-pwn__name">Watch</p>
+              <div className="mr-thread mr-thread--c">
+                <span className="mr-thread__dot" />
+                <span className="mr-thread__bar mr-thread__bar--mid" />
               </div>
-              <p className="mr-flow__label">Escalate</p>
-            </li>
-            <li className="mr-flow__arrow" aria-hidden="true" data-mr-reveal>
-              →
-            </li>
-            <li className="mr-flow__step" data-mr-reveal>
-              <div className="mr-flow__still mr-flow__still--hold" aria-hidden="true">
-                <div className="mr-hold">
-                  <span className="mr-hold__lock" />
-                  <span className="mr-hold__label">Held</span>
-                </div>
+            </div>
+            <div className="mr-pwn__lane mr-pwn__lane--noise" data-mr-reveal>
+              <span className="mr-triage__lane mr-triage__lane--noise">N</span>
+              <p className="mr-pwn__name">Noise</p>
+              <div className="mr-thread mr-thread--d">
+                <span className="mr-thread__dot" />
+                <span className="mr-thread__bar mr-thread__bar--short" />
               </div>
-              <p className="mr-flow__label">Never auto-publish</p>
-            </li>
-          </ol>
+            </div>
+          </div>
 
-          <ul className="mr-abilities">
-            <li data-mr-reveal>
-              <span className="mr-abilities__n">01</span>
-              <p>Sort threads into Priority, Watch, and Noise.</p>
-            </li>
-            <li data-mr-reveal>
-              <span className="mr-abilities__n">02</span>
-              <p>Draft in two tones for the operator to choose.</p>
-            </li>
-            <li data-mr-reveal>
-              <span className="mr-abilities__n">03</span>
-              <p>Escalate threads that need a human before send.</p>
-            </li>
-          </ul>
+          <div className="mr-pwn__ability" data-mr-reveal>
+            <span className="mr-abilities__n">01</span>
+            <p>Sort threads into Priority, Watch, and Noise.</p>
+          </div>
         </div>
       </section>
 
-      {/* Gate — never auto-publish */}
+      {/* Grammar 2: dual-tone draft columns */}
       <section
         id="mr-gate"
         data-mr-mod
         className="mr-mod mr-mod--gate"
         aria-labelledby="mr-gate-h"
       >
-        <div className="mr-mod__inner mr-mod__inner--split">
-          <div className="mr-mod__copy">
-            <h2 id="mr-gate-h" className="mr-headline mr-headline--sm" data-mr-reveal>
-              Never auto-publish. An operator edits before anything goes out.
-            </h2>
-          </div>
-          <div className="mr-still mr-still--operator" data-mr-reveal aria-hidden="true">
-            <div className="mr-operator">
-              <div className="mr-operator__drafts">
-                <div className="mr-operator__tone mr-operator__tone--a">
-                  <span className="mr-operator__tag">Tone A</span>
-                  <span className="mr-operator__line" />
-                  <span className="mr-operator__line mr-operator__line--mid" />
-                </div>
-                <div className="mr-operator__tone mr-operator__tone--b">
-                  <span className="mr-operator__tag">Tone B</span>
-                  <span className="mr-operator__line" />
-                  <span className="mr-operator__line mr-operator__line--short" />
-                </div>
-              </div>
-              <div className="mr-operator__gate">
-                <span className="mr-operator__chip">Draft</span>
-                <span className="mr-operator__arrow" />
-                <span className="mr-operator__chip mr-operator__chip--name">
-                  Operator
-                </span>
-                <span className="mr-operator__arrow" />
-                <span className="mr-operator__chip mr-operator__chip--hold">
-                  Send held
-                </span>
-              </div>
+        <div className="mr-mod__inner mr-mod__inner--dual">
+          <p className="mr-flow__label mr-flow__label--lead" data-mr-reveal>
+            Two-tone drafts
+          </p>
+
+          <div className="mr-dual">
+            <div className="mr-dual__col mr-dual__col--a" data-mr-reveal>
+              <span className="mr-operator__tag">Tone A</span>
+              <span className="mr-tones__card mr-tones__card--a">Tone A</span>
+              <span className="mr-operator__line" />
+              <span className="mr-operator__line mr-operator__line--mid" />
             </div>
+            <div className="mr-dual__col mr-dual__col--b" data-mr-reveal>
+              <span className="mr-operator__tag">Tone B</span>
+              <span className="mr-tones__card mr-tones__card--b">Tone B</span>
+              <span className="mr-operator__line" />
+              <span className="mr-operator__line mr-operator__line--short" />
+            </div>
+          </div>
+
+          <div className="mr-dual__ability" data-mr-reveal>
+            <span className="mr-abilities__n">02</span>
+            <p>Draft in two tones for the operator to choose.</p>
+          </div>
+
+          <div className="mr-pwn__flags" data-mr-reveal>
+            <div className="mr-escalate">
+              <span className="mr-escalate__flag">Escalate</span>
+              <span className="mr-escalate__bar" />
+              <span className="mr-escalate__bar mr-escalate__bar--short" />
+            </div>
+            <p className="mr-flow__label">Escalate</p>
+            <div className="mr-hold">
+              <span className="mr-hold__lock" />
+              <span className="mr-hold__label">Held</span>
+            </div>
+            <p className="mr-flow__label">Never auto-publish</p>
+          </div>
+
+          <div className="mr-dual__ability" data-mr-reveal>
+            <span className="mr-abilities__n">03</span>
+            <p>Escalate threads that need a human before send.</p>
+          </div>
+
+          <h2 id="mr-gate-h" className="mr-headline mr-headline--sm" data-mr-reveal>
+            Never auto-publish. An operator edits before anything goes out.
+          </h2>
+
+          <div className="mr-operator__gate" data-mr-reveal aria-hidden="true">
+            <span className="mr-operator__chip">Draft</span>
+            <span className="mr-operator__arrow" />
+            <span className="mr-operator__chip mr-operator__chip--name">
+              Operator
+            </span>
+            <span className="mr-operator__arrow" />
+            <span className="mr-operator__chip mr-operator__chip--hold">
+              Send held
+            </span>
           </div>
         </div>
       </section>
 
-      {/* Record */}
+      {/* Record — linked morning packet strip */}
       <section
         id="mr-record"
         data-mr-mod
         className="mr-mod mr-mod--record"
         aria-labelledby="mr-record-h"
       >
-        <div className="mr-mod__inner mr-mod__inner--split">
-          <div className="mr-still mr-still--packet" data-mr-reveal aria-hidden="true">
-            <div className="mr-packet">
-              <div className="mr-packet__chrome">
-                <span />
-                <span />
-                <span />
-              </div>
-              <p className="mr-packet__title">Morning packet</p>
+        <div className="mr-mod__inner mr-mod__inner--packet">
+          <h2 id="mr-record-h" className="mr-headline mr-headline--sm" data-mr-reveal>
+            Brief, draft, and escalate decision stay linked.
+          </h2>
+          <div className="mr-packet mr-packet--linked" data-mr-reveal aria-hidden="true">
+            <p className="mr-packet__title">Morning packet</p>
+            <div className="mr-packet__beads">
               <div className="mr-packet__row">
                 <span className="mr-packet__key">Brief</span>
                 <span className="mr-packet__bar mr-packet__bar--wide" />
@@ -313,11 +314,6 @@ export function MorningRemexChapter() {
                 <span className="mr-packet__bar mr-packet__bar--mid" />
               </div>
             </div>
-          </div>
-          <div className="mr-mod__copy">
-            <h2 id="mr-record-h" className="mr-headline mr-headline--sm" data-mr-reveal>
-              Brief, draft, and escalate decision stay linked.
-            </h2>
           </div>
         </div>
       </section>

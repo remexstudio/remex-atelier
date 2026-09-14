@@ -19,10 +19,15 @@ function showStatic(root: HTMLElement) {
     clearProps: "transform,opacity,visibility",
     autoAlpha: 1,
   });
-  gsap.set(root.querySelectorAll(".cq-still, .cq-flow__step, .cq-pipeline"), {
-    clearProps: "transform,opacity,visibility",
-    autoAlpha: 1,
-  });
+  gsap.set(
+    root.querySelectorAll(
+      ".cq-still, .cq-flow__step, .cq-pipeline, .cq-tryon-stack, .cq-tryon-stack__layer, .cq-paystage, .cq-scatter-field",
+    ),
+    {
+      clearProps: "transform,opacity,visibility",
+      autoAlpha: 1,
+    },
+  );
 }
 
 export function AtelierConciergeChapter() {
@@ -103,7 +108,7 @@ export function AtelierConciergeChapter() {
       className="cq-film"
       aria-label="Atelier Concierge"
     >
-      {/* Job + user */}
+      {/* Job + user — merchandising hero, not a shared desk clone */}
       <section
         id="cq-job"
         data-cq-mod
@@ -127,20 +132,18 @@ export function AtelierConciergeChapter() {
         </div>
       </section>
 
-      {/* Pain */}
+      {/* Pain — scatter field (not a 50/50 split) */}
       <section
         id="cq-pain"
         data-cq-mod
         className="cq-mod cq-mod--pain"
         aria-labelledby="cq-pain-h"
       >
-        <div className="cq-mod__inner cq-mod__inner--split">
-          <div className="cq-mod__copy">
-            <h2 id="cq-pain-h" className="cq-headline cq-headline--sm" data-cq-reveal>
-              Skin, occasion, and fit notes scatter across fittings, holds, and aftercare.
-            </h2>
-          </div>
-          <div className="cq-still cq-still--scatter" data-cq-reveal aria-hidden="true">
+        <div className="cq-mod__inner cq-mod__inner--scatter">
+          <h2 id="cq-pain-h" className="cq-headline cq-headline--sm" data-cq-reveal>
+            Skin, occasion, and fit notes scatter across fittings, holds, and aftercare.
+          </h2>
+          <div className="cq-scatter-field" data-cq-reveal aria-hidden="true">
             <div className="cq-note cq-note--a">Skin</div>
             <div className="cq-note cq-note--b">Occasion</div>
             <div className="cq-note cq-note--c">Fit</div>
@@ -149,19 +152,19 @@ export function AtelierConciergeChapter() {
         </div>
       </section>
 
-      {/* Flow DNA: skin → hero → try-on → bag (+ abilities) */}
+      {/* Grammar 1: horizontal merchandising pipeline */}
       <section
         id="cq-flow"
         data-cq-mod
         className="cq-mod cq-mod--flow"
         aria-labelledby="cq-flow-h"
       >
-        <div className="cq-mod__inner">
+        <div className="cq-mod__inner cq-mod__inner--runway">
           <h2 id="cq-flow-h" className="cq-eyebrow" data-cq-reveal>
             From skin to bag
           </h2>
 
-          <ol className="cq-pipeline" aria-label="Concierge flow">
+          <ol className="cq-pipeline cq-pipeline--runway" aria-label="Concierge flow">
             <li className="cq-flow__step" data-cq-reveal>
               <div className="cq-flow__still cq-flow__still--skin" aria-hidden="true">
                 <span className="cq-swatch cq-swatch--warm" />
@@ -208,38 +211,71 @@ export function AtelierConciergeChapter() {
               <p className="cq-flow__label">Bag draft</p>
             </li>
           </ol>
-
-          <ul className="cq-abilities">
-            <li data-cq-reveal>
-              <span className="cq-abilities__n">01</span>
-              <p>Map skin and occasion to one hero SKU.</p>
-            </li>
-            <li data-cq-reveal>
-              <span className="cq-abilities__n">02</span>
-              <p>Stage a try-on still for the stylist desk.</p>
-            </li>
-            <li data-cq-reveal>
-              <span className="cq-abilities__n">03</span>
-              <p>Draft the bag for human review before pay.</p>
-            </li>
-          </ul>
         </div>
       </section>
 
-      {/* Gate — human at pay */}
+      {/* Grammar 2: try-on stack (叠层试穿) — abilities as overlapping layers */}
+      <section
+        id="cq-tryon-stack"
+        data-cq-mod
+        className="cq-mod cq-mod--stack"
+        aria-label="Concierge abilities"
+      >
+        <div className="cq-mod__inner cq-mod__inner--stack">
+          <ol className="cq-tryon-stack">
+            <li className="cq-tryon-stack__layer cq-tryon-stack__layer--hero" data-cq-reveal>
+              <div className="cq-tryon-stack__still" aria-hidden="true">
+                <div className="cq-sku">
+                  <span className="cq-sku__mark" />
+                  <span className="cq-sku__bar" />
+                </div>
+              </div>
+              <div className="cq-tryon-stack__copy">
+                <span className="cq-abilities__n">01</span>
+                <p>Map skin and occasion to one hero SKU.</p>
+              </div>
+            </li>
+            <li className="cq-tryon-stack__layer cq-tryon-stack__layer--tryon" data-cq-reveal>
+              <div className="cq-tryon-stack__still" aria-hidden="true">
+                <div className="cq-tryon">
+                  <span className="cq-tryon__figure" />
+                  <span className="cq-tryon__frame" />
+                </div>
+              </div>
+              <div className="cq-tryon-stack__copy">
+                <span className="cq-abilities__n">02</span>
+                <p>Stage a try-on still for the stylist desk.</p>
+              </div>
+            </li>
+            <li className="cq-tryon-stack__layer cq-tryon-stack__layer--bag" data-cq-reveal>
+              <div className="cq-tryon-stack__still" aria-hidden="true">
+                <div className="cq-bag">
+                  <span className="cq-bag__row" />
+                  <span className="cq-bag__row cq-bag__row--mid" />
+                  <span className="cq-bag__row cq-bag__row--short" />
+                </div>
+              </div>
+              <div className="cq-tryon-stack__copy">
+                <span className="cq-abilities__n">03</span>
+                <p>Draft the bag for human review before pay.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* Gate — pay stage (counter), not a split */}
       <section
         id="cq-gate"
         data-cq-mod
         className="cq-mod cq-mod--gate"
         aria-labelledby="cq-gate-h"
       >
-        <div className="cq-mod__inner cq-mod__inner--split">
-          <div className="cq-mod__copy">
-            <h2 id="cq-gate-h" className="cq-headline cq-headline--sm" data-cq-reveal>
-              Human at pay. A stylist approves; nothing charges without that person.
-            </h2>
-          </div>
-          <div className="cq-still cq-still--pay" data-cq-reveal aria-hidden="true">
+        <div className="cq-mod__inner cq-mod__inner--paystage">
+          <h2 id="cq-gate-h" className="cq-headline cq-headline--sm" data-cq-reveal>
+            Human at pay. A stylist approves; nothing charges without that person.
+          </h2>
+          <div className="cq-paystage" data-cq-reveal aria-hidden="true">
             <div className="cq-pay">
               <div className="cq-pay__bag">
                 <span className="cq-pay__row" />
@@ -259,41 +295,37 @@ export function AtelierConciergeChapter() {
         </div>
       </section>
 
-      {/* Record */}
+      {/* Record — consult ticket ribbon */}
       <section
         id="cq-record"
         data-cq-mod
         className="cq-mod cq-mod--record"
         aria-labelledby="cq-record-h"
       >
-        <div className="cq-mod__inner cq-mod__inner--split">
-          <div className="cq-still cq-still--ticket" data-cq-reveal aria-hidden="true">
-            <div className="cq-ticket">
-              <div className="cq-ticket__chrome">
-                <span />
-                <span />
-                <span />
-              </div>
-              <p className="cq-ticket__id">LUM-1042</p>
-              <div className="cq-ticket__thread">
-                <span className="cq-ticket__dot" />
-                <span className="cq-ticket__bar cq-ticket__bar--wide" />
-              </div>
-              <div className="cq-ticket__thread">
-                <span className="cq-ticket__dot" />
-                <span className="cq-ticket__bar" />
-              </div>
-              <div className="cq-ticket__thread">
-                <span className="cq-ticket__dot cq-ticket__dot--ink" />
-                <span className="cq-ticket__bar cq-ticket__bar--mid" />
-              </div>
+        <div className="cq-mod__inner cq-mod__inner--ribbon">
+          <div className="cq-ticket cq-ticket--ribbon" data-cq-reveal aria-hidden="true">
+            <div className="cq-ticket__chrome">
+              <span />
+              <span />
+              <span />
+            </div>
+            <p className="cq-ticket__id">LUM-1042</p>
+            <div className="cq-ticket__thread">
+              <span className="cq-ticket__dot" />
+              <span className="cq-ticket__bar cq-ticket__bar--wide" />
+            </div>
+            <div className="cq-ticket__thread">
+              <span className="cq-ticket__dot" />
+              <span className="cq-ticket__bar" />
+            </div>
+            <div className="cq-ticket__thread">
+              <span className="cq-ticket__dot cq-ticket__dot--ink" />
+              <span className="cq-ticket__bar cq-ticket__bar--mid" />
             </div>
           </div>
-          <div className="cq-mod__copy">
-            <h2 id="cq-record-h" className="cq-headline cq-headline--sm" data-cq-reveal>
-              Consult thread stays with ticket LUM-1042.
-            </h2>
-          </div>
+          <h2 id="cq-record-h" className="cq-headline cq-headline--sm" data-cq-reveal>
+            Consult thread stays with ticket LUM-1042.
+          </h2>
         </div>
       </section>
 
