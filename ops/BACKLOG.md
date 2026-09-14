@@ -9,3 +9,4 @@
 - [x] V3-6 Exception Copilot unique chapter (cfaa802)
 - [x] V3-7 approach + contact (3920f1f / rework 5b2cb41)
 - [ ] V3-8 motion + a11y
+- [ ] V3-8 board PASS — then stop or next owner prompt

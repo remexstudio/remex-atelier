@@ -5,3 +5,8 @@
 - Open: V3-8 motion + a11y
 - Repo: https://github.com/remexstudio/remex-atelier
 - Preview: https://remex-atelier.vercel.app
+
+## V3-8 — Motion + a11y
+
+- State: DEV PASS (await board)
+- Content commit pending

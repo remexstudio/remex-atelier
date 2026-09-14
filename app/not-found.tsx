@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  description:
+    "That route is not on the map. Return home, or open Work for the product stories.",
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (
@@ -17,10 +25,7 @@ export default function NotFound() {
           <Link href="/" className="btn-primary no-underline">
             Back home
           </Link>
-          <Link
-            href="/work"
-            className="inline-flex items-center border border-rule px-5 py-2.5 text-sm text-accent no-underline"
-          >
+          <Link href="/work" className="btn-secondary no-underline">
             Browse work
           </Link>
         </p>

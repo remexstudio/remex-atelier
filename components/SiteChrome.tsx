@@ -8,6 +8,7 @@ type SiteChromeProps = {
   footerLine?: string;
 };
 
+/** Primary nav — marketing routes only. Never link /demo/* here. */
 const NAV = [
   { href: "/work", label: "Work" },
   { href: "/services", label: "Services" },

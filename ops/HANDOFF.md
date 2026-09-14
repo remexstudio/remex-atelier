@@ -1,19 +1,39 @@
-# Handoff V3-7 REWORK
+# Handoff V3-8
 
-- Status: delivered
-- SHA: 5b2cb41
+- Status: delivered (uncommitted — parent commits)
 - Preview: https://remex-atelier.vercel.app
-- Commit: `fix(site): v3 contact input 44px hit targets`
+- Commit msg for parent: `feat(site): v3 motion a11y and residual cleanup`
+
+## Skills read
+- review-animations
+- apple-design-motion
+- gsap-performance
+- zero-jank-scroll
+- web-design-guidelines
+- gsap-scrolltrigger
+- emil-design-eng
+- apple-design-web
 
 ## Files
-- `app/globals.css` — `.contact-input` `box-sizing: border-box` + `min-height: var(--hit-target-min)`; `.contact-mail a` min-height 44px
+- `components/StoryScenes.tsx` — **deleted** (unused by any route; long `+=420%` pin runway)
+- `components/HomeScenes.tsx` — hard ban comment; pin only `#home-gate` when `pinOk` (min-width 720 + min-height 520 + no RM); end `+=80%`
+- `components/{AtelierConcierge,LedgerClerk,MorningRemex,ExceptionCopilot}Chapter.tsx` — once-reveal only annotations; no pins
+- `components/SiteChrome.tsx` — primary nav comment: never `/demo/*`
+- `app/globals.css` — removed dead story-film CSS; scroll-stack HARD BAN; RM full-facts (no story selectors); `.btn-secondary` ≥44 hit
+- `app/not-found.tsx` — metadata + secondary CTA uses `.btn-secondary` (≥44)
 - ops HANDOFF / STATUS / BACKLOG
 
-## Acceptance
-- [x] Contact inputs ≥44px hit
-- [x] Mailto link ≥44px hit
-- [x] No V3-8 / scope expansion
-- [x] Skills: apple-design-web, emil-design-eng, web-design-guidelines
+## Acceptance checklist
+- [x] Home gate pin only when pinOk; product pages once-reveal only; no long pins
+- [x] prefers-reduced-motion: no pin theater; all facts visible (CSS + GSAP showStatic)
+- [x] No Lenis / normalizeScroll / body overflow lock; hard ban kept in HomeScenes + globals
+- [x] No English-first / English products / English-speaking / CumuLabs / founder real name in rendered UI
+- [x] `/work` index: four stills only; no Open demo buttons
+- [x] StoryScenes deleted; four unique chapters remain
+- [x] not-found + metadata on key routes; focus-visible; form labels; ≥44 hit targets
+- [x] Primary nav: no `/demo/*` links
+- [x] pnpm build PASS
+- [x] No commit/push; no V3-9 opened
 
 ## DEV: PASS
-Await UX re-PASS.
+Await three PM + Leader.

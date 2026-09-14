@@ -8,6 +8,9 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+/* Product chapter motion: once-reveal only. No pin / no long scrub runway.
+ * prefers-reduced-motion → showStatic; all module facts stay visible. */
+
 const REVEAL_SEL = "[data-ec-reveal]";
 
 function showStatic(root: HTMLElement) {

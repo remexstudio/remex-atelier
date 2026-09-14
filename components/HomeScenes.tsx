@@ -8,6 +8,14 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+/*
+ * HARD BAN (scroll stack): no Lenis, no ScrollTrigger.normalizeScroll(),
+ * no body/html overflow lock while pinned — native scroll only (zero-jank).
+ * Pin contract: ONLY #home-gate, and only when pinOk
+ * (prefers-reduced-motion: no-preference) and (min-height: 520px) and (min-width: 720px).
+ * End ceiling: +=80%. Reduced motion / narrow / short → static stack, all facts visible.
+ */
+
 const JOBS = [
   { href: "/work/atelier-concierge", label: "Atelier Concierge", tone: "concierge" },
   { href: "/work/ledger-clerk", label: "Ledger Clerk", tone: "ledger" },
