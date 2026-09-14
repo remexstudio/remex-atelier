@@ -24,15 +24,15 @@ export const metadata: Metadata = {
 const offers = [
   {
     name: "Agent Apps",
-    body: "Shippable agent products that own one painful workflow end to end, from the first brief through a path guests or operators can use.",
+    body: "A shippable agent that owns one workflow. The product proposes the next action. A named person approves before it ships, posts, charges, or moves money.",
   },
   {
     name: "Agent Ops",
-    body: "Citations, approvals, evals, and human handoff. The operating layer that keeps an agent accountable after launch.",
+    body: "The operating layer after launch. Citations, evals, and handoff sit in one record. Proposal, decision, and outcome stay linked so the team can reopen them.",
   },
   {
     name: "Advisory",
-    body: "Whether the thing should be an agent at all. Scope the brief, name the constraints, and walk away if a smaller tool is honest.",
+    body: "Whether the thing should be an agent at all. We name who approves and what the agent may never do before any product is hired. If a smaller tool is honest, we walk away.",
   },
 ] as const;
 

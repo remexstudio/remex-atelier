@@ -162,7 +162,7 @@ button:active {
 
   .btn-primary:hover {
     background-color: var(--ink);
-    color: var(--paper);
+    color: #fff;
     text-decoration-line: none;
   }
 
@@ -188,7 +188,7 @@ button:active {
   min-height: var(--hit-target-min);
   border: 1px solid var(--accent);
   background: var(--accent);
-  color: var(--paper);
+  color: #fff;
   padding: 0.625rem 1.125rem;
   font-size: 0.9375rem;
   line-height: 1.25;
@@ -668,10 +668,31 @@ button:active {
   background: var(--gutter);
   border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
   border-radius: 1rem;
-  padding: 2rem 1.5rem;
+  padding: 1.15rem;
   display: grid;
   gap: 0.85rem;
   max-width: 28rem;
+}
+
+.hire-still__card {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.35rem 1.25rem 1.2rem 2.85rem;
+  background: var(--canvas);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  border-radius: 0.75rem;
+}
+
+.hire-still__lamp {
+  position: absolute;
+  left: 1.1rem;
+  top: 1.45rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: var(--ink);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ink) 14%, transparent);
 }
 
 .hire-still__seat {
@@ -682,25 +703,43 @@ button:active {
   color: var(--muted);
 }
 
-.hire-still__job {
+.hire-still__meta {
   margin: 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hire-still__job {
+  margin: 0.35rem 0 0;
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   letter-spacing: -0.02em;
   color: var(--ink);
+  text-wrap: pretty;
 }
 
 .hire-still__gate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   min-height: var(--hit-target-min);
   width: fit-content;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 0.85rem;
   border-radius: 999px;
   background: var(--ink);
-  color: var(--canvas);
+  color: #fff;
   font-size: 0.875rem;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.hire-still__gate-lamp {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #fff;
 }
 
 /* H3 pin-stage gate */
@@ -1007,15 +1046,114 @@ button:active {
 }
 
 .home-method-col__glyph {
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 0.55rem;
-  background: linear-gradient(
-    145deg,
-    var(--canvas),
-    color-mix(in srgb, var(--gutter) 40%, #d2d2d7)
-  );
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 4.5rem;
+  border-radius: 0.65rem;
+  background: var(--canvas);
   border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  padding: 0.55rem;
+}
+
+.home-method-col__glyph--job {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.method-glyph__chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.35rem 0.2rem;
+  border-radius: 0.4rem;
+  background: var(--gutter);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink);
+}
+
+.method-glyph__chip--done {
+  background: var(--ink);
+  color: #fff;
+}
+
+.home-method-col__glyph--gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.method-glyph__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--gutter);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+
+.method-glyph__step--human {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.method-glyph__arrow {
+  width: 0.75rem;
+  height: 1px;
+  background: color-mix(in srgb, var(--muted) 55%, var(--ink));
+}
+
+.home-method-col__glyph--record {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2rem;
+  padding-inline: 0.7rem;
+}
+
+.method-glyph__bead {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.method-glyph__dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.method-glyph__bead-label {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+
+.method-glyph__link {
+  flex: 1 1 auto;
+  height: 1px;
+  min-width: 0.75rem;
+  margin-bottom: 1.15rem;
+  background: color-mix(in srgb, var(--muted) 50%, var(--ink));
 }
 
 .home-method-col__title {
@@ -1379,8 +1517,13 @@ button:active {
   justify-content: center;
 }
 
+.job-card__still .lc-controller__cite,
 .work-story-card__still .lc-controller__cite {
   font-size: 0.8125rem;
+}
+
+.job-card__still .lc-controller__cite {
+  font-size: 0.6875rem;
 }
 
 .still-dna__stage {
@@ -4975,8 +5118,46 @@ button:active {
   text-underline-offset: 3px;
 }
 
+.contact-asks {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  display: grid;
+  gap: 0.45rem;
+  background: var(--gutter);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.9rem;
+}
+
+.contact-asks li {
+  position: relative;
+  min-height: var(--hit-target-min);
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0.35rem 0.55rem 1.55rem;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.contact-asks li::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 0.15rem;
+  border: 1.5px solid color-mix(in srgb, var(--muted) 40%, var(--ink));
+  background: var(--canvas);
+}
+
 .contact-form-wrap {
   margin-top: 1.75rem;
+}
+
+.contact-input--ask {
+  min-height: 5.5rem;
 }
 
 .contact-form {
@@ -5300,12 +5481,6 @@ button:active {
   display: none;
 }
 
-.lab-loop .btn-primary,
-.lab-loop .btn-secondary {
-  min-height: var(--hit-target-min);
-  min-width: var(--hit-target-min);
-}
-
 .about-facts {
   margin: 1.25rem 0 0;
   display: grid;
@@ -5338,6 +5513,10 @@ button:active {
   color: var(--ink);
 }
 
+.about-say {
+  color: var(--ink);
+}
+
 @media (prefers-reduced-transparency: reduce) {
   .approach-hero,
   .approach-section,
@@ -5355,7 +5534,11 @@ button:active {
   .approach-studio__fact,
   .approach-refuse__list li,
   .approach-roadmap__row,
-  .contact-success {
+  .contact-success,
+  .contact-asks,
+  .hire-still__card,
+  .home-method-col__glyph,
+  .method-glyph__chip {
     background: var(--canvas);
   }
 
