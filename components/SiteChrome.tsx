@@ -2,6 +2,8 @@ import Link from "next/link";
 
 type SiteChromeProps = {
   children: React.ReactNode;
+  /** Full-bleed marketing film shell for `/`. */
+  variant?: "default" | "film";
 };
 
 const NAV = [
@@ -13,29 +15,53 @@ const NAV = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export function SiteChrome({ children }: SiteChromeProps) {
+export function SiteChrome({ children, variant = "default" }: SiteChromeProps) {
+  const isFilm = variant === "film";
+
   return (
-    <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-6 py-16 sm:px-10 sm:py-24">
-      <header className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3">
-        <Link
-          href="/"
-          className="font-serif text-sm tracking-[0.14em] text-accent no-underline"
-        >
-          REMEX STUDIO
-        </Link>
-        <nav
-          aria-label="Primary"
-          className="type-meta flex flex-wrap justify-end gap-x-4 gap-y-2 sm:gap-x-5"
-        >
-          {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="text-muted no-underline">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+    <div
+      className={
+        isFilm
+          ? "site-shell site-shell--film"
+          : "site-shell site-shell--default"
+      }
+    >
+      <header className="site-nav">
+        <div className="site-nav__inner">
+          <Link
+            href="/"
+            className="site-nav__mark font-serif text-sm tracking-[0.14em] text-accent no-underline"
+          >
+            REMEX STUDIO
+          </Link>
+          <nav
+            aria-label="Primary"
+            className="type-meta site-nav__links flex flex-wrap justify-end gap-x-4 gap-y-2 sm:gap-x-5"
+          >
+            {NAV.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-muted no-underline"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </header>
-      <div className="flex-1">{children}</div>
-      <footer className="mt-20 border-t border-rule pt-6">
+
+      <div className={isFilm ? "site-shell__film-body" : "site-shell__body"}>
+        {children}
+      </div>
+
+      <footer
+        className={
+          isFilm
+            ? "site-footer site-footer--film"
+            : "site-footer site-footer--default"
+        }
+      >
         <p className="type-meta">A Seattle studio.</p>
       </footer>
     </div>

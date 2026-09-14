@@ -1,26 +1,42 @@
-# Handoff R0
+# Handoff R1
 
 - Status: delivered
-- SHA: 91b0afd
-- Preview: n/a (docs only; no deploy required)
+- SHA: c5a9fcd
+- Preview: local `pnpm build` only until parent push; production URL after deploy: https://remex-atelier.vercel.app
 - Files changed:
-  - docs/copy-locks.md (new)
-  - docs/scroll-score.md (new)
-  - ops/HANDOFF.md
-  - ops/STATUS.md
+  - app/page.tsx (SiteChrome film + HomeScenes; Offers/LumenTeaser removed from home)
+  - app/globals.css (canvas/gutter tokens, sticky nav, home film, reduced-motion)
+  - components/SiteChrome.tsx (sticky translucent nav ~46px; `variant="film"|"default"`)
+  - components/HomeScenes.tsx (new client — six pinned scenes `#home-s1`…`#home-s6`)
+  - package.json / pnpm-lock.yaml (gsap, @gsap/react; Lenis skipped)
+  - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 - Acceptance self-check:
-  - [x] copy-locks SAY / DO NOT SAY / Approved headlines verbatim
-  - [x] scroll-score Home S1–S6 pin, visual, exact headline, exact support
-  - [x] Four product stories × five scenes; slug `exception-copilot`
-  - [x] No app/**; no personal site; no founder name
-  - [x] Commit message exact: `docs(site): lock copy and scroll score`
-- Skills used:
+  - [x] `/` six full-viewport scenes with pin targets `#home-s1`…`#home-s6`
+  - [x] Headlines/supports match scroll-score exactly (S5 three lines sequential)
+  - [x] GSAP ScrollTrigger `pin: true`, `scrub: 1`; animate only transform/opacity
+  - [x] Canvas `#ffffff` / gutter `#f5f5f7`; one accent (`--cta` blue) on CTA only
+  - [x] Sticky translucent nav height 46px (44–48px band) with backdrop blur
+  - [x] No purple mesh / Inter-slop / chatbot; no English-first claims
+  - [x] `prefers-reduced-motion`: no pin theater; static stack, transform suppressed
+  - [x] `pnpm build` passes
+  - [x] Commit: `feat(home): add pinned product scenes`
+- Skills used (all ten):
+  - apple-design
   - apple-design-web
-  - writing-guidelines
+  - apple-design-motion
+  - emil-design-eng
+  - gsap-scrolltrigger
+  - gsap-timeline
+  - gsap-react
   - cinematic-scroll-storytelling
-  - (available, tone only) apple-design, apple-design-motion, emil-design-eng
-- Risks:
-  - S4 / S6 supporting lines are score-locked specifics not listed under Approved headlines; they avoid market-English claims
-  - Product story beat lines are new score copy; not in SAY list — keep them until Leader REWORK asks otherwise
+  - zero-jank-scroll
+  - gsap-web
+- Reduced-motion note: `matchMedia('(prefers-reduced-motion: reduce)')` skips all ScrollTrigger pins/timelines; CSS also forces `transform: none` on home scene elements. Content remains a readable static stack (no scrub theater).
+- Motion notes: native document scroll preserved; no Lenis (avoid ScrollTrigger sync risk); no per-frame React setState — GSAP refs via `useGSAP` + auto cleanup.
+- Exact copy present: S1–S6 headlines/supports per scroll-score; S6 CTA label `Start a brief.` → `/contact`; S4 links to `/work/atelier-concierge`, `/work/ledger-clerk`, `/work/morning-remex`, `/work/exception-copilot` (pages not created).
+- Risks/blockers:
+  - S4 work story routes 404 until a later ticket builds them (links intentional)
+  - Pin + scrub feel not browser-traced here (build-only verification); refresh after fonts via `document.fonts.ready`
+  - Sticky nav change applies site-wide — default pages keep editorial paper shell; film home uses canvas/gutter
 - Blockers: none
 - DEV: PASS
