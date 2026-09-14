@@ -23,6 +23,54 @@ const JOBS = [
   { href: "/work/exception-copilot", label: "Exception Copilot", tone: "exception" },
 ] as const;
 
+type JobTone = (typeof JOBS)[number]["tone"];
+
+function JobStill({ tone }: { tone: JobTone }) {
+  if (tone === "concierge") {
+    return (
+      <div className="job-card__still still-dna still-dna--cq still-dna--facts" aria-hidden="true">
+        <p className="still-dna__fact">LUM-1042</p>
+        <p className="still-dna__sub">skin → hero → try-on → bag → pay</p>
+      </div>
+    );
+  }
+
+  if (tone === "ledger") {
+    return (
+      <div className="job-card__still still-dna still-dna--lc still-dna--facts" aria-hidden="true">
+        <p className="still-dna__fact">Propose≠Execute</p>
+        <p className="still-dna__sub">cite</p>
+      </div>
+    );
+  }
+
+  if (tone === "morning") {
+    return (
+      <div className="job-card__still still-dna still-dna--mr still-dna--facts" aria-hidden="true">
+        <p className="still-dna__fact">P · W · N</p>
+        <div className="mr-triage" aria-hidden="true">
+          <span className="mr-triage__lane mr-triage__lane--pri">P</span>
+          <span className="mr-triage__lane mr-triage__lane--watch">W</span>
+          <span className="mr-triage__lane mr-triage__lane--noise">N</span>
+        </div>
+        <p className="still-dna__sub">Priority · Watch · Noise</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="job-card__still still-dna still-dna--ec still-dna--facts" aria-hidden="true">
+      <p className="still-dna__fact">queue · policy</p>
+      <div className="ec-desk">
+        <span className="ec-desk__chip ec-desk__chip--u1">U1</span>
+        <span className="ec-desk__chip ec-desk__chip--u2">U2</span>
+        <span className="ec-desk__chip ec-desk__chip--u3">U3</span>
+        <span className="ec-desk__chip ec-desk__chip--policy">Policy</span>
+      </div>
+    </div>
+  );
+}
+
 const REFUSE = [
   "An hours factory or staffed body shop",
   "A generic chatbot or chatbot widget",
@@ -261,16 +309,19 @@ export function HomeScenes() {
             </p>
           </div>
           <div className="home-mod__stage" data-parallax aria-hidden="true">
-            <div className="product-frame">
-              <div className="product-frame__chrome">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="product-frame__body">
-                <div className="product-frame__row product-frame__row--quiet" />
-                <div className="product-frame__row product-frame__row--mid" />
-                <div className="product-frame__row product-frame__row--short" />
+            <div className="product-frame product-frame--gate">
+              <div className="product-frame__stage">
+                <p className="product-frame__id">LUM-1042</p>
+                <p className="product-frame__flow">Skin → hero → try-on → bag → pay</p>
+                <div className="cq-pay product-frame__pay">
+                  <div className="cq-pay__gate">
+                    <span className="cq-pay__chip">Propose</span>
+                    <span className="cq-pay__arrow" />
+                    <span className="cq-pay__chip cq-pay__chip--approve">Approve</span>
+                    <span className="cq-pay__arrow" />
+                    <span className="cq-pay__chip product-frame__record">Record</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -376,7 +427,7 @@ export function HomeScenes() {
                 data-job-card
                 role="listitem"
               >
-                <span className="job-card__still" aria-hidden="true" />
+                <JobStill tone={job.tone} />
                 <span className="job-card__label">{job.label}</span>
               </Link>
             ))}
