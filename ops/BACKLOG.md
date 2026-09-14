@@ -1,15 +1,5 @@
 # Backlog (Atelier V3)
 
-- [x] V3-0…V3-8 first loop
-- [x] V3-9 kill legacy demos + dual work routes + chapter-map IA
-- [x] V3-10 home/work still fidelity + kill chatbot chrome frames
-- [x] V3-11 break four-chapter isomorphic layout grammars
-- [x] V3-12 Services/Lab/About film canvas
-- [x] Orphan demo components cleanup
-- [x] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding
-- [x] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo
-- [x] V3-15 BRIEF_ASKS single source + four-chapter still/beat density
-- [x] V3-16 visual polish — still-fact type + chapter noise/CTA
-- [x] V3-17 375 short still-fact labels
-- [x] V3-18 register/ribbon short decorative chips (`f504ca9` / tip `a66e4ee`)
-- [ ] V3-19+ — await board KEEP/KILL/ADD (short-label craft loop closed)
+- [x] V3-0…V3-18 (through short-label craft)
+- [ ] V3-19 chrome scroll-margin + SiteChrome film mark + chapter display H1 (issued)
+- [ ] V3-20 chapter CTA de-isomorphism + /work product wall (held)

@@ -1,6 +1,6 @@
-# Handoff
+# Handoff V3-19
 
-- Status: V3-18 closed PASS — await next board KEEP/KILL/ADD
-- Last content: `f504ca9` / tip `a66e4ee`
+- Status: issued — await Dev
+- Prior closed: V3-18 PASS; board KEEP/KILL/ADD synthesized
 - Preview: https://remex-atelier.vercel.app
-- Notes: Short-label craft loop closed. No V3-19 until Leader issues TASK.
+- Notes: See `ops/TASK.md`. No V3-20 until PASS.
