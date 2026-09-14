@@ -3,7 +3,7 @@
 - Status: delivered
 - SHA: d2e3e1b (content); merge tip 7b5ae0c on main
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: in progress / see follow-up
+- Deploy: `dpl_2mzC8WhX8hiJsusYwh4WmbtrW4nJ` → aliased https://remex-atelier.vercel.app
 - Files changed (ALLOWED only):
   - `components/HomeScenes.tsx` — H2 hire-still; H7 concrete method glyphs; Ledger still `§12.4 · Close pack`
   - `app/globals.css` — hire/method/contact helpers; `.btn-primary` text `#fff`; dead `.lab-loop` remap trimmed
@@ -20,7 +20,7 @@
   - [x] About hire SAY line
   - [x] No 机羽云/refuse move; no English-products
   - [x] ≥44; no new pins; build green
-  - [ ] `vercel deploy --prod` — updating
+  - [x] `vercel deploy --prod` — production alias refreshed
 - Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
 - Risks:
   - Hire-still and method glyphs are static stills.
