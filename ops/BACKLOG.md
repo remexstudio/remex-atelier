@@ -1,10 +1,7 @@
 # Backlog (Atelier V3)
 
-- [x] V3-0 docs
-- [x] V3-1 tokens/nav/type
-- [x] V3-2 nine module home
-- [x] V3-3…V3-6 four unique product chapters
-- [x] V3-7 approach + contact
-- [x] V3-8 motion + a11y (45c891a)
-- [ ] V3-9 legacy routes + nav IA + still fidelity (from ITERATION)
-- [ ] V3-10+ continuous polish loop
+- [x] V3-0…V3-8 first loop
+- [ ] V3-9 kill legacy demos + dual work routes + chapter-map IA
+- [ ] V3-10 home/work still fidelity + kill chatbot chrome frames
+- [ ] V3-11 break four-chapter isomorphic layout grammars
+- [ ] V3-12 Services/Lab/About film canvas (or demote)
