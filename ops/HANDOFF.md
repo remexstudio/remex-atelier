@@ -1,7 +1,7 @@
 # Handoff R4
 
 - Status: delivered
-- SHA: pending (do not commit from this slice — owner/agent commit separately)
+- SHA: 596aa52
 - Commit message (ready): `feat(site): motion a11y and copy cleanup`
 - Preview: https://remex-atelier.vercel.app
 - Local build: `pnpm build` PASS (Next.js 16.3.5)
@@ -59,7 +59,7 @@
 - [x] Visible `:focus-visible`; contact form fields labeled
 - [x] `prefers-reduced-motion`: no pin theater (matchMedia + CSS)
 - [x] `pnpm build` PASS
-- [ ] Commit: `feat(site): motion a11y and copy cleanup` — SHA pending (explicitly not committed this turn)
+- [x] Commit: `feat(site): motion a11y and copy cleanup`
 
 ## Residual risks
 - Runtime scroll FPS / pin feel not profiled in browser harness (daemon unavailable); static + build evidence only

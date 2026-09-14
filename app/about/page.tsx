@@ -82,7 +82,7 @@ export default function AboutPage() {
 
         <p className="mt-14">
           <Link href="/contact" className="btn-primary no-underline">
-            Start a brief
+            Start a brief.
           </Link>
         </p>
       </main>
