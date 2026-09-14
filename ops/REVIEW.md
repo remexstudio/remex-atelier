@@ -1,16 +1,12 @@
 # Review V3-1
 
-- SHA: 81234b7
-- Handoff tip: 3635a2d
+- SHA under review: 81234b7 (REWORK open)
 
 | Voice | Verdict |
 | --- | --- |
 | Vision PM | PASS |
-| Apple PM | pending |
-| UX PM | **REWORK** |
-| Leader | **REWORK** (follow UX) |
+| UX PM | REWORK — chapter hit ~20px |
+| Apple PM | REWORK — film nav grew past 44–48px with stacked chapters |
+| Leader | REWORK — merged fix |
 
-## UX defect
-`app/globals.css` `.site-nav__chapters a { min-height: 1.25rem }` — chapter map hit area ~20px, must be ≥ `--hit-target-min` (44px). Prefer padding so hairline look stays. Also raise primary `.site-nav__links a` to ≥44px if short.
-
-Same TASK ID. No nine modules.
+Merged REWORK: 44px hits **inside** a single ≤48px frosted bar.
