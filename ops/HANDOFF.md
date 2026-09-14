@@ -1,9 +1,9 @@
 # Handoff R4 REWORK
 
-- Status: delivered (uncommitted — SHA pending)
-- SHA: pending (do not commit/push from this agent)
+- Status: delivered
+- SHA: 59cdfc6
 - Commit message (ready): `fix(site): apple chapter pin and scrub feel`
-- Preview: https://remex-atelier.vercel.app (prior deploy; this rework not pushed)
+- Preview: https://remex-atelier.vercel.app (after deploy)
 - Local build: `pnpm build` PASS (Next.js 16.3.5)
 
 ## Skills used
@@ -37,7 +37,7 @@
 - [x] Story beat A: no productName kicker
 - [x] prefers-reduced-motion / short viewport: no pin; static stack
 - [x] `pnpm build` PASS
-- [ ] Commit/push — **deferred** (agent instructed Do NOT commit/push); SHA pending
+- [x] Commit: `fix(site): apple chapter pin and scrub feel`
 
 ## DEV
 PASS
