@@ -82,3 +82,19 @@ Verdict: **FAIL** — do not polish; restage as V3 information architecture.
 ## Board decision
 
 Current live site = **failed draft**. Open V3-0 docs only, then V3-1… without polishing the old six-pin slogan film.
+
+---
+
+## Apple PM confirm (2026-09-14)
+
+AGREE reject. Do not polish old six-pin film.
+
+**Extra KILL**
+- `docs/scroll-score.md` six-pin home contract must NOT carry into V3 implementation
+- `docs/design.md` + paper `#f4f0e8` atelier stack must not remain the product-page default (canvas `#fff` / `#f5f5f7`)
+- No “lengthen runway” rework of `HomeScenes` / `StoryScenes` — replace module DNA in V3 tickets
+
+**Extra ADD for V3-0 docs**
+- Module-level pin+scrub only; forbid N× identical home pins
+- Module DNA list locked in scroll-score-v3
+- Skill gate on every build ticket
