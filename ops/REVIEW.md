@@ -1,13 +1,13 @@
-# Review V3-2
+# Review V3-3
 
-- Content SHA: 18acfe0 (`fix(home): gate static on narrow viewports`) — prior e45869e nine modules
-- Handoff tip: aabaf54
+- Content SHA: d7a232f (`feat(work): atelier concierge unique chapter`)
+- Handoff tip: bb1f237
 
 | Voice | Verdict |
 | --- | --- |
 | Vision PM | PASS |
 | Apple PM | PASS |
-| UX PM | PASS (18acfe0) |
+| UX PM | PASS |
 | Leader | **PASS** |
 
-V3-2 closed. Open V3-3 Atelier Concierge unique product page.
+V3-3 closed. Open V3-4 Ledger Clerk unique chapter.
