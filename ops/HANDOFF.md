@@ -1,40 +1,29 @@
-# Handoff V3-8
+# Handoff V3-9
 
 - Status: delivered
-- SHA: 45c891a
-- Preview: https://remex-atelier.vercel.app
-- Commit msg for parent: `feat(site): v3 motion a11y and residual cleanup`
-
-## Skills read
-- review-animations
-- apple-design-motion
-- gsap-performance
-- zero-jank-scroll
-- web-design-guidelines
-- gsap-scrolltrigger
-- emil-design-eng
-- apple-design-web
-
-## Files
-- `components/StoryScenes.tsx` — **deleted** (unused by any route; long `+=420%` pin runway)
-- `components/HomeScenes.tsx` — hard ban comment; pin only `#home-gate` when `pinOk` (min-width 720 + min-height 520 + no RM); end `+=80%`
-- `components/{AtelierConcierge,LedgerClerk,MorningRemex,ExceptionCopilot}Chapter.tsx` — once-reveal only annotations; no pins
-- `components/SiteChrome.tsx` — primary nav comment: never `/demo/*`
-- `app/globals.css` — removed dead story-film CSS; scroll-stack HARD BAN; RM full-facts (no story selectors); `.btn-secondary` ≥44 hit
-- `app/not-found.tsx` — metadata + secondary CTA uses `.btn-secondary` (≥44)
-- ops HANDOFF / STATUS / BACKLOG
-
-## Acceptance checklist
-- [x] Home gate pin only when pinOk; product pages once-reveal only; no long pins
-- [x] prefers-reduced-motion: no pin theater; all facts visible (CSS + GSAP showStatic)
-- [x] No Lenis / normalizeScroll / body overflow lock; hard ban kept in HomeScenes + globals
-- [x] No English-first / English products / English-speaking / CumuLabs / founder real name in rendered UI
-- [x] `/work` index: four stills only; no Open demo buttons
-- [x] StoryScenes deleted; four unique chapters remain
-- [x] not-found + metadata on key routes; focus-visible; form labels; ≥44 hit targets
-- [x] Primary nav: no `/demo/*` links
-- [x] pnpm build PASS
-- [x] No commit/push; no V3-9 opened
-
-## DEV: PASS
-Await three PM + Leader.
+- SHA: e2c2e70 (branch tip of `cursor/v3-kill-legacy-demos-3560`)
+- Preview: https://remex-atelier.vercel.app (production alias; this branch after Vercel preview)
+- Files changed (ALLOWED only):
+  - `next.config.ts` — 301: four legacy work routes → unique chapters; `/demo/{lumen,northline,kite,paperline}(/*)` → `/lab`
+  - Deleted dual work pages: `app/work/{lumen-atelier,northline,kite,paperline}`
+  - Deleted `app/demo/**` (unlinked; leftover demo component trees not shipped)
+  - Deleted unused `components/LumenTeaser.tsx`
+  - `components/SiteChrome.tsx` — primary Work / Approach / Lab / Contact; Services/About demoted; chapter map via `usePathname() === "/"` only
+  - `app/globals.css` — chapter wrap display/overflow on `site-shell--home-chapters`
+  - `docs/sitemap.md` — V3 routes + 301 table
+  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
+- Acceptance self-check: pass/fail per bullet
+  - [x] 301s for four legacy work routes
+  - [x] No Open demo / /demo/* CTAs on marketing surface
+  - [x] SiteChrome chapters only on home
+  - [x] LumenTeaser removed
+  - [x] Four unique chapters copy untouched
+  - [x] Primary nav: Work, Approach, Lab (Prototype page), Contact — no /demo/*
+  - [x] pnpm build green
+- Skills used: apple-design, apple-design-web (principles), emil-design-eng, writing-guidelines, web-design-guidelines, zero-jank-scroll
+- Risks:
+  - `components/{lumen,kite,northline,paperline}` restored as unused orphans (not in ALLOWED to delete). `app/demo/**` gone; those URLs 301 to `/lab`.
+  - `/demo` exact (no family) has no page and no redirect — 404 is intended.
+  - Services / About remain as thin stub routes, off primary nav (V3-12).
+- Blockers:
+  - None. Await three PM + Leader. No V3-10 until PASS.
