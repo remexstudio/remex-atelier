@@ -17,6 +17,14 @@ const NAV = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+/** Home film chapter map — targets land with V3-2 nine modules. */
+const CHAPTERS = [
+  { href: "/#home-gate", label: "Gate" },
+  { href: "/#home-jobs", label: "Jobs" },
+  { href: "/#home-brief", label: "Brief" },
+  { href: "/#home-roadmap", label: "Roadmap" },
+] as const;
+
 export function SiteChrome({
   children,
   variant = "default",
@@ -40,20 +48,33 @@ export function SiteChrome({
           >
             REMEX STUDIO
           </Link>
-          <nav
-            aria-label="Primary"
-            className="type-meta site-nav__links flex flex-wrap justify-end gap-x-4 gap-y-2 sm:gap-x-5"
-          >
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-muted no-underline"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="site-nav__cluster">
+            <nav
+              aria-label="Primary"
+              className="type-meta site-nav__links flex flex-wrap justify-end gap-x-4 gap-y-2 sm:gap-x-5"
+            >
+              {NAV.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-muted no-underline"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            {isFilm ? (
+              <nav aria-label="Home chapters">
+                <ul className="site-nav__chapters">
+                  {CHAPTERS.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href}>{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ) : null}
+          </div>
         </div>
       </header>
 

@@ -16,6 +16,7 @@ Restage reason: `ops/pm/V3-0-REJECT.md`. This file **replaces** the six-pin home
 - **Banned:** six isomorphic full-bleed pin chapters on home (the old `#home-s1`…`#home-s6` clone film).
 - **Required:** ≥3 distinct layout grammars across the nine home modules.
 - Motion: transform/opacity only. Nav and footer always reachable. No scroll hijack.
+- **Hard ban (scroll stack):** no Lenis, no ScrollTrigger `normalizeScroll`, no `body` / `html` overflow lock while pinned — preserve native scroll (zero-jank).
 
 ## UX defaults (Leader align)
 

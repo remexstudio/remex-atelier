@@ -8,17 +8,26 @@
   --rule: #e5dfd4;
   --accent: #292524;
 
-  /* Marketing film tokens (home) */
-  --canvas: #ffffff;
-  --gutter: #f5f5f7;
-  --cta: #1d4ed8; /* restrained blue — CTA only */
+  /* Product / film shell defaults (V3) — Apple PM locked */
+  --canvas: #ffffff; /* product stage / page canvas */
+  --gutter: #f5f5f7; /* section gutters, rails, soft bands */
+  --cta: #1d4ed8; /* restrained blue — CTA only; never as page wash */
 
   /* Aliases for theme wiring */
   --background: var(--paper);
   --foreground: var(--ink);
 
-  /* Chrome */
+  /* Chrome — sticky frosted nav (Apple ~44–48px) */
   --nav-height: 46px;
+  --hit-target-min: 44px;
+
+  /* Display type tokens (V3-2 ready) — large sizes want negative tracking */
+  --tracking-display: -0.025em;
+  --tracking-display-tight: -0.03em;
+  --leading-display: 1.05;
+  --size-display: clamp(2.25rem, 6vw, 4.5rem);
+  --size-display-lg: clamp(2.75rem, 7vw, 5.5rem);
+  --size-display-sm: clamp(1.75rem, 4vw, 3rem);
 
   /* Motion — Emil strong ease-out; Apple press feedback */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -44,6 +53,10 @@
   --ease-in-out: var(--ease-in-out);
 }
 
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
 body {
   background: var(--paper);
   color: var(--ink);
@@ -53,8 +66,18 @@ body {
 .type-display {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-optical-sizing: auto;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-size: var(--size-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+.type-display-lg {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: var(--size-display-lg);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display-tight);
   text-wrap: balance;
 }
 
@@ -157,6 +180,7 @@ button:active {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: var(--hit-target-min);
   border: 1px solid var(--accent);
   background: var(--accent);
   color: var(--paper);
@@ -235,8 +259,10 @@ button:active {
 }
 
 .site-shell--film {
+  /* Film/product shell: gutter wash; stages paint --canvas (#ffffff) */
   background: var(--gutter);
   color: var(--ink);
+  --background: var(--canvas);
 }
 
 .site-shell--film .site-shell__film-body {
@@ -255,6 +281,64 @@ button:active {
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent);
+}
+
+
+/* Primary routes stay in .site-nav__links; film adds hairline chapter map */
+.site-nav__cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.site-nav__chapters {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.15rem 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 100%;
+}
+
+.site-shell--film .site-nav__chapters {
+  display: flex;
+}
+
+.site-nav__chapters a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.25rem;
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--muted) 85%, var(--ink));
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav__chapters a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-nav__chapters a:hover {
+    color: var(--ink);
+    border-bottom-color: color-mix(in srgb, var(--rule) 70%, var(--muted));
+    text-decoration-line: none;
+  }
+}
+
+/* Film nav may grow slightly when chapter map shows — keep sticky + frost */
+.site-shell--film .site-nav {
+  height: auto;
+  min-height: var(--nav-height);
+  padding-block: 0.35rem;
 }
 
 .site-shell--default .site-nav {
@@ -367,9 +451,9 @@ button:active {
 .home-headline {
   font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-optical-sizing: auto;
-  font-size: clamp(2rem, 5.5vw, 4.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  font-size: var(--size-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
   color: var(--ink);
   text-wrap: balance;
   margin: 0;
@@ -532,6 +616,7 @@ button:active {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  min-height: var(--hit-target-min);
   text-decoration: none;
   color: inherit;
   padding: 0.65rem;
@@ -586,6 +671,7 @@ button:active {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: var(--hit-target-min);
   background: var(--cta);
   color: #fff;
   border: 1px solid var(--cta);

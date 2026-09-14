@@ -3,7 +3,7 @@
 ## Principles
 
 - Editorial atelier, not a dashboard kit
-- Light paper ground, stone ink, restrained accent
+- Product canvas `#ffffff` / gutter `#f5f5f7` on film; legacy paper on inner pages; stone ink; CTA-only accent
 - Large serif display, clean sans body
 - Visible focus rings; labeled forms
 - Motion: transform and opacity only; respect `prefers-reduced-motion`
@@ -12,27 +12,46 @@
 
 ## Palette
 
-Named tokens used in `app/globals.css` and components:
+Named tokens used in `app/globals.css` and components.
+
+### Product / film shell (V3 default)
 
 | Token | Role | Hex |
 | --- | --- | --- |
-| `--paper` | Page ground | `#f4f0e8` |
+| `--canvas` | Product stage / page canvas | `#ffffff` |
+| `--gutter` | Section gutters, rails, soft bands | `#f5f5f7` |
+| `--cta` | CTA fill only (never page wash) | `#1d4ed8` |
+
+Film and product routes use `SiteChrome variant="film"`: outer wash `--gutter`, stages paint `--canvas`. Accent for marketing CTAs is `--cta` only.
+
+### Legacy editorial paper (inner pages only)
+
+| Token | Role | Hex |
+| --- | --- | --- |
+| `--paper` | Legacy page ground (Approach, About, Services, Contact, etc.) | `#f4f0e8` |
 | `--ink` | Primary text / body ink | `#1c1917` |
 | `--muted` | Secondary text | `#78716c` |
 | `--rule` | Hairline dividers, borders | `#e5dfd4` |
 | `--accent` | Strong ink for wordmark, buttons, focus | `#292524` |
 
-Aliases: `--background` → paper, `--foreground` → ink. Tailwind theme maps `bg-paper`, `text-ink`, `text-muted`, `border-rule`, `bg-background`, `text-foreground`, `text-accent`.
+Aliases: `--background` → paper on default shell; film shell remaps `--background` → canvas. `--foreground` → ink. Tailwind theme maps `bg-paper`, `text-ink`, `text-muted`, `border-rule`, `bg-background`, `text-foreground`, `text-accent`, plus `bg-canvas` / `bg-gutter` / `bg-cta`.
 
 ## Type roles
 
 | Role | Face | Use |
 | --- | --- | --- |
-| `display` | Newsreader (serif) | Wordmark, page titles, offer names. Tight leading (~1.05), negative tracking (~-0.02em) |
+| `display` | Newsreader (serif) | Wordmark, page titles, offer names. Tokens: `--size-display`, `--leading-display`, `--tracking-display` (negative) |
+| `display-lg` | Newsreader (serif) | Hero-scale display for V3 home. Tokens: `--size-display-lg`, `--tracking-display-tight` |
 | `body` | Source Sans 3 (sans) | Paragraphs, form controls. Leading ~1.6, tracking near 0 |
 | `meta` | Source Sans 3 (sans) | Captions, disclaimers, location. Smaller size, muted color |
 
-CSS classes: `.type-display`, `.type-body`, `.type-meta`.
+CSS classes: `.type-display`, `.type-display-lg`, `.type-body`, `.type-meta`. Large display uses negative tracking; body stays near `0`.
+
+## Chrome
+
+- Sticky frosted nav: `--nav-height: 46px` (~44–48px band), `backdrop-filter: blur(20px) saturate(180%)`, translucent canvas/paper mix
+- Hit target floor: `--hit-target-min: 44px` on primary CTAs and job cards
+- Film chrome: primary route nav + hairline chapter map (`#home-gate` / `#home-jobs` / `#home-brief` / `#home-roadmap`)
 
 ## Motion
 

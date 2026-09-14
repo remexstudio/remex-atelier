@@ -1,42 +1,68 @@
-# Handoff V3-0
+# Handoff V3-1
 
-- Status: delivered
-- SHA: 9158191
-- Preview: n/a (docs only)
-- Cite: `ops/pm/V3-0-REJECT.md` (Apple / UX / Vision reject of live draft)
+- Status: delivered (await PM + Leader before V3-2)
+- SHA: pending (no commit/push per task instruction)
+- Preview: https://remex-atelier.vercel.app (local `pnpm build` required for DEV PASS)
+- Commit message when allowed: `feat(site): v3 tokens nav and type`
 
 ## Files changed
-- `docs/copy-locks.md` (extended SAY / DO NOT SAY / mechanism / refuse / name meaning / CumuLabs ban)
-- `docs/ia-v3.md` (NEW — routes, nine home modules, product uniqueness, Vision checklist map, canvas tokens)
-- `docs/scroll-score-v3.md` (NEW — per-module grammar + pin/end/375/RM annotations; four non-interchangeable product scores)
+- `app/globals.css` — product canvas/gutter as film shell defaults; display type tokens (`--tracking-display`, `--size-display*`, `--leading-display`); `--hit-target-min: 44px`; sticky frosted nav retained (`--nav-height: 46px`, backdrop-filter); chapter-map styles; scroll-padding-top for hash jumps
+- `app/layout.tsx` — scroll-padding utility on body for sticky-nav chapter targets
+- `components/SiteChrome.tsx` — film variant: primary route nav + secondary hairline chapter map (`/#home-gate`, `/#home-jobs`, `/#home-brief`, `/#home-roadmap`)
+- `docs/design.md` — product canvas `#ffffff` / gutter `#f5f5f7` vs legacy paper; type + chrome tokens documented
+- `AGENTS.md` — skill-gate paragraph (ten skills before UI tickets)
+- `docs/scroll-score-v3.md` — one-line hard ban: no Lenis, no normalizeScroll, no body overflow lock while pinned (module facts untouched)
 - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
 
-## App code
-- No `app/` or `components/` changes
-
-## Hard aligns locked in docs
-1. Vision: each product ability×3 + unique gate + unique record + unique refusal (Concierge / Ledger / Morning / Exception per REJECT)
-2. UX: every home module annotates pin allowed?, end ceiling, 375 stack, reduced-motion full-facts; default shallow scroll
-3. Apple: ban six isomorphic pins; canvas `#ffffff` / gutter `#f5f5f7`
+## Chapter map exposure
+On `SiteChrome variant="film"` (home + film product shells): secondary nav `aria-label="Home chapters"` under primary routes. Hairline uppercase links:
+- Gate → `/#home-gate`
+- Jobs → `/#home-jobs`
+- Brief → `/#home-brief`
+- Roadmap → `/#home-roadmap`
+Targets may not exist until V3-2; links are present in chrome now. Default (non-film) shell keeps primary routes only.
 
 ## Acceptance self-check
-- [x] Three PM reject doc present and cited
-- [x] Three English files as specified
-- [x] Vision payload checklist mapped to routes/modules
-- [x] Four products non-interchangeable copy plans
-- [x] No app code changed
-- [x] Commit: `docs(site): lock v3 ia copy and scroll score`
+- [x] Skills invoked before edits (listed below)
+- [x] Product canvas `#ffffff`, gutter `#f5f5f7` as film/product tokens
+- [x] Sticky frosted nav ~46px (`--nav-height`), backdrop-filter blur + translucent
+- [x] Chapter map links in film chrome
+- [x] Large display negative-tracking tokens ready for V3-2
+- [x] Focus-visible + 44px CTA/hit floor preserved (`--hit-target-min`)
+- [x] Explicit ban: no Lenis / normalizeScroll / body overflow lock while pinned
+- [x] Skill gate in `AGENTS.md`
+- [x] `design.md` palette aligned (product canvas vs legacy paper)
+- [x] `pnpm build` PASS (Next.js 16.3.5)
+- [ ] Commit/push deferred — SHA pending
 
-## Skills used
-- apple-design-web
-- writing-guidelines
-- cinematic-scroll-storytelling
-- emil-design-eng
+## Skills used (all ten — skill gate)
+1. apple-design
+2. apple-design-web
+3. apple-design-motion
+4. emil-design-eng
+5. gsap-scrolltrigger
+6. gsap-timeline
+7. gsap-react
+8. cinematic-scroll-storytelling
+9. zero-jank-scroll
+10. review-animations
 
-## Risks
-- `docs/scroll-score.md` kept as historical; implementers must use `scroll-score-v3.md`
-- Vision PASS was on workspace draft; board still needs Leader + Apple + UX PASS before V3-1
+## Reduced-motion note
+Existing `@media (prefers-reduced-motion: reduce)` and `prefers-reduced-transparency` rules kept: nav frost falls back to solid canvas/paper; no transform press scale; home/story scenes force opacity 1 / transform none. V3-1 did not add motion libraries.
 
-## Blockers: none
+## Out of scope (not touched)
+- HomeScenes nine modules (V3-2)
+- Product story rebuilds
+- /demo, personal site
+- Six isomorphic pins restore
+- V3-0 constitution payload (copy-locks / ia-v3 module facts / scroll-score module lines)
+
+## Blockers
+- None for V3-1 chrome
+- Await Apple / UX / Vision + Leader PASS before V3-2
 - DEV: PASS
-- Do not start V3-1 until Leader + PM board PASS
+
+## DEV
+- `pnpm build` PASS
+- Preview URL: https://remex-atelier.vercel.app
+- Reduced-motion: existing CSS reduce paths preserved; no Lenis/body-lock introduced
