@@ -1,8 +1,9 @@
 # Status
 
-- Phase: Atelier v2 — R4 REWORK closed; **STOPPED**
-- Closed: R0 (91b0afd), R1 (70a6e4c), R2 (7836383), R3 (780233b), R4 (59cdfc6 rework)
-- Open: none
+- Phase: Atelier V3 overnight — V3-0 docs in progress
+- Prior: v2 R0–R4 closed (rejected as live draft for V3 restage)
+- Open: V3-0
 - Repo: https://github.com/remexstudio/remex-atelier
-- Live: https://remex-atelier.vercel.app
-- Rule: dual PASS then stop — awaiting owner only
+- Live: https://remex-atelier.vercel.app (fail draft until V3 ships)
+- Board: Remex Apple PM / UX PM / Vision PM + Remex Dev
+- Rule: three PM written reviews before Dev build; dual PASS then next slice; no idle

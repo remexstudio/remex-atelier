@@ -1,44 +1,94 @@
-# TASK R4 — REWORK
+# TASK V3-0
 
-TASK ID: R4
+TASK ID: V3-0
 REPO: remexstudio/remex-atelier
-MODE: REWORK (same TASK ID; no scope expansion)
 
-SKILLS TO USE (invoke BEFORE touching files):
-/apple-design-web /review-animations /gsap-scrolltrigger
+SKILLS TO USE (invoke before writing):
+/apple-design-web /writing-guidelines /cinematic-scroll-storytelling /emil-design-eng
 
 GOAL:
-Make `/` and the four product stories feel like apple.com product chapters: pinned stage, one idea per scene, copy already locked in docs/scroll-score.md and docs/copy-locks.md. Fix only the defects listed in ops/REVIEW.md.
+Docs-only restage. Current live site is REJECTED (see ops/pm/V3-0-REJECT.md). Write the V3 constitution docs that later tickets will implement. No app pages.
 
 ALLOWED:
-- components/HomeScenes.tsx
-- components/StoryScenes.tsx
-- app/globals.css (film/chapter typography and layout only)
-- app/work/{atelier-concierge,ledger-clerk,morning-remex,exception-copilot}/page.tsx (only if needed to pass props / remove kicker)
+- docs/copy-locks.md (replace/extend — keep English as build law; expand SAY/DO NOT SAY and approved wayfinding headlines; never market-claim English)
+- docs/ia-v3.md (NEW — information architecture)
+- docs/scroll-score-v3.md (NEW — home ≥9 distinct modules + four unique product scores)
 - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
+- ops/pm/V3-0-REJECT.md (already present; do not delete)
 
 OUT OF SCOPE:
-- New pages or routes
-- Paraphrasing locked copy
+- Any app/, components/ UI
+- Personal site / founder name
+- Polishing old HomeScenes / StoryScenes layouts
 - /demo rebuild
-- Personal / founder content
 
-DEFECTS TO FIX:
-1. Stories: one pinned stage + five scrubbing copy beats (not five separate full pins)
-2. Home: longer pin runway (~140–160%) with readable hold
-3. No blank-slide autoAlpha:0 blackouts — stage stays present
-4. S2: replace literal “Job title” with lit job-name still
-5. S5: headline vs support hierarchy for three method lines
-6. Story beat A: copy column = locked pain line only (no productName kicker)
+## docs/copy-locks.md must include (English)
+
+SAY (verbatim blocks as appropriate):
+- Remex Studio designs custom AI agents as products.
+- One painful workflow. One agent. A human gate.
+- The agent proposes. A person approves. The record stays.
+- Agents, built to the brief.
+- Seattle studio. Global clients.
+- Legal: Jiyuyun Studio LLC (for chrome/about/approach as specified in IA)
+- Mechanism lines for Propose / Approve / Record
+- What we do not sell (hours factory, generic chatbot, ChatGPT for X, cloud-migration mill, replacing the client team)
+
+DO NOT SAY:
+- English-first / English products / English-speaking markets / we build English products
+- Cloud migration factory / outsourcing / body shop
+- Chatbot widget / ChatGPT for X
+- Fake percentages, fake logos, founder legal name, school list
+- Employment at Lumen / Northline / Kite / Paperline
+- We replace your team
+- CumuLabs
+
+Approved wayfinding headlines (not the only copy on six scenes):
+- Agents, built to the brief.
+- One workflow. One agent. A human still decides.
+- We design the job an agent is allowed to do — and the gate it cannot cross.
+- Start a brief.
+
+Name meaning (Approach once only): 机 = machine; 羽 = remex flight feather (control surface); 云 = work runs in the cloud; Remex = remiges.
+
+## docs/ia-v3.md must map
+
+Routes and which payload lands where:
+- `/` — nine+ modules listed below (titles + fact each module must carry)
+- `/work` — four distinct stills, no toy Open demo
+- `/work/atelier-concierge` `/work/ledger-clerk` `/work/morning-remex` `/work/exception-copilot` — each: job+user, concrete pain, three unique abilities, unique gate, unique record, unique refusal, CTA
+- `/approach` — methods + name meaning once + legal/Seattle/global + what we refuse + roadmap Now/Next/Later
+- `/contact` — Start a brief form + hello@remexstudio.com
+- Lab/Pulse note as prototype only
+- Vision checklist mirrored as acceptance map
+
+Home modules (minimum 9, each a different fact):
+1 Hero
+2 The hire
+3 The gate
+4 Four jobs stills rail
+5 For whom / not for whom
+6 What a brief asks
+7 Method three
+8 Roadmap three
+9 Start a brief
+
+Layout diversity rule: same page must use ≥3 distinct layout grammars (not six identical pins).
+
+## docs/scroll-score-v3.md must specify
+
+For each home module: id, layout grammar (hero / pin-stage / shallow-deep / bento / horizontal rail / method columns / footer map / etc.), visual still, exact headline, exact supporting facts (not slogan-only).
+
+For each of four products: scene/module list with UNIQUE lines for abilities, gate, record, refusal (no shared five empty sentences). Footer: Studio study. Client identity anonymized.
+
+Motion notes: pin+scrub allowed only where UX accepts; transform/opacity only; reduced-motion keeps full payload readable.
 
 ACCEPTANCE:
-- [ ] Re-read docs/copy-locks.md + docs/scroll-score.md; all locked lines still exact
-- [ ] Skills invoked before edits
-- [ ] Story pages: single pin + five scrub copy beats; stage morphs; transform/opacity only
-- [ ] Home: six chapter pins with longer runway; one idea per scene; no blank slides
-- [ ] S2 / S5 / story kicker defects cleared
-- [ ] prefers-reduced-motion: no pin theater
-- [ ] pnpm build PASS
-- [ ] Commit: `fix(site): apple chapter pin and scrub feel` (or `feat(site):` if preferred; one commit)
+- [ ] Three PM reject doc present and cited
+- [ ] Three files written in English as specified
+- [ ] Vision payload checklist fully mapped to routes/modules
+- [ ] Four products have non-interchangeable copy plans
+- [ ] No app code changed
+- [ ] Commit: `docs(site): lock v3 ia copy and scroll score`
 
-After push: HANDOFF + DEV PASS or DEV REWORK. Both bots PASS again. Then stop.
+After push: HANDOFF + DEV PASS/REWORK. Do not start V3-1 until Leader + PM board PASS.
