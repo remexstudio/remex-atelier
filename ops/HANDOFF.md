@@ -5,7 +5,7 @@
 - Follow-up: 0b680a2 (kill leftover chapter gray-bar chrome)
 - Merge tip: 6da887d on main
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: in progress / see follow-up
+- Deploy: `dpl_BTqFg4D4uMRCuF5ArX4WhUJkqW1W` → aliased https://remex-atelier.vercel.app
 - Files (ALLOWED only):
   - `lib/brief-asks.ts` — single BRIEF_ASKS source
   - `components/HomeScenes.tsx` — H6 import + H2 PAR microchips
@@ -19,6 +19,6 @@
   - [x] Locked lines verbatim; shallow once-reveal; no new pins
   - [x] No 机羽云 / refuse move
   - [x] `pnpm build` PASS
-  - [ ] `vercel deploy --prod` — updating
+  - [x] `vercel deploy --prod` — production alias refreshed
 - Skills: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
 - Blockers: None. Await three PM + Leader. No V3-16 until PASS.
