@@ -21,7 +21,7 @@ function showStatic(root: HTMLElement) {
   });
   gsap.set(
     root.querySelectorAll(
-      ".mr-still, .mr-mail-stack, .mr-pwn, .mr-pwn__lane, .mr-dual, .mr-dual__col, .mr-packet",
+      ".mr-still, .mr-mail-stack, .mr-pwn, .mr-pwn__lane, .mr-dual, .mr-dual__col, .mr-packet, .mr-cta-rail",
     ),
     {
       clearProps: "transform,opacity,visibility",
@@ -325,22 +325,48 @@ export function MorningRemexChapter() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — horizontal triage rail + CTA; never auto-publish */}
       <section
         id="mr-cta"
         data-mr-mod
         className="mr-mod mr-mod--cta"
         aria-labelledby="mr-cta-h"
       >
-        <div className="mr-mod__inner mr-mod__inner--cta">
-          <h2 id="mr-cta-h" className="mr-headline" data-mr-reveal>
-            Start a brief.
-          </h2>
-          <p className="mr-cta-wrap chapter-cta" data-mr-reveal>
-            <Link href="/contact" className="home-cta">
+        <div className="mr-mod__inner mr-mod__inner--cta-rail">
+          <div className="mr-cta-rail" data-mr-reveal aria-hidden="true">
+            <div className="mr-cta-rail__lanes">
+              <div className="mr-cta-rail__lane mr-cta-rail__lane--pri">
+                <span className="mr-triage__lane mr-triage__lane--pri">P</span>
+                <p className="mr-pwn__name">Priority</p>
+                <p className="still-fact">Drafts</p>
+              </div>
+              <div className="mr-cta-rail__lane mr-cta-rail__lane--watch">
+                <span className="mr-triage__lane mr-triage__lane--watch">W</span>
+                <p className="mr-pwn__name">Watch</p>
+                <p className="still-fact still-fact--muted">Hold</p>
+              </div>
+              <div className="mr-cta-rail__lane mr-cta-rail__lane--noise">
+                <span className="mr-triage__lane mr-triage__lane--noise">N</span>
+                <p className="mr-pwn__name">Noise</p>
+                <p className="still-fact still-fact--muted">Archive</p>
+              </div>
+            </div>
+            <div className="mr-escalate mr-cta-rail__flag">
+              <span className="mr-escalate__flag">Escalate</span>
+              <p className="still-fact">Human before send</p>
+              <p className="still-fact still-fact--muted">Never auto-publish</p>
+            </div>
+          </div>
+          <div className="mr-cta-copy">
+            <h2 id="mr-cta-h" className="mr-headline" data-mr-reveal>
               Start a brief.
-            </Link>
-          </p>
+            </h2>
+            <p className="mr-cta-wrap chapter-cta" data-mr-reveal>
+              <Link href="/contact" className="home-cta">
+                Start a brief.
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </main>

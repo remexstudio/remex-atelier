@@ -21,7 +21,7 @@ function showStatic(root: HTMLElement) {
   });
   gsap.set(
     root.querySelectorAll(
-      ".ec-still, .ec-queue, .ec-queue__item, .ec-dock, .ec-dock__policy, .ec-spine",
+      ".ec-still, .ec-queue, .ec-queue__item, .ec-dock, .ec-dock__policy, .ec-spine, .ec-cta-stack",
     ),
     {
       clearProps: "transform,opacity,visibility",
@@ -326,22 +326,45 @@ export function ExceptionCopilotChapter() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — ticket stack + CTA; queue rank → policy cite → refund hold */}
       <section
         id="ec-cta"
         data-ec-mod
         className="ec-mod ec-mod--cta"
         aria-labelledby="ec-cta-h"
       >
-        <div className="ec-mod__inner ec-mod__inner--cta">
-          <h2 id="ec-cta-h" className="ec-headline" data-ec-reveal>
-            Start a brief.
-          </h2>
-          <p className="ec-cta-wrap chapter-cta" data-ec-reveal>
-            <Link href="/contact" className="home-cta">
+        <div className="ec-mod__inner ec-mod__inner--cta-stack">
+          <div className="ec-cta-stack" data-ec-reveal aria-hidden="true">
+            <div className="ec-ticket ec-ticket--a">
+              <span className="ec-queue__rank ec-rank__row ec-rank__row--hot">
+                1
+              </span>
+              <span className="ec-ticket__badge">EX-441</span>
+              <span className="still-fact">Refund hold</span>
+            </div>
+            <div className="ec-ticket ec-ticket--b">
+              <span className="ec-queue__rank ec-rank__row ec-rank__row--mid">
+                2
+              </span>
+              <span className="ec-cite__mark">§4.2</span>
+              <span className="still-fact">Policy cite</span>
+            </div>
+            <div className="ec-ticket ec-ticket--c">
+              <span className="ec-queue__rank ec-rank__row">3</span>
+              <span className="ec-ticket__badge">EX-429</span>
+              <span className="still-fact still-fact--muted">Case note</span>
+            </div>
+          </div>
+          <div className="ec-cta-copy">
+            <h2 id="ec-cta-h" className="ec-headline" data-ec-reveal>
               Start a brief.
-            </Link>
-          </p>
+            </h2>
+            <p className="ec-cta-wrap chapter-cta" data-ec-reveal>
+              <Link href="/contact" className="home-cta">
+                Start a brief.
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </main>
