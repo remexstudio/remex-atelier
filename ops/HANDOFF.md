@@ -1,7 +1,7 @@
 # Handoff V3-2 UX REWORK
 
 - Status: delivered
-- SHA: pending
+- SHA: 18acfe0
 - Preview: https://remex-atelier.vercel.app
 - Commit: `fix(home): gate static on narrow viewports`
 
