@@ -1,18 +1,18 @@
 # Handoff R3
 
 - Status: delivered
-- SHA: e98055a (do not commit/push per owner instruction)
+- SHA: 780233b
 - Preview: https://remex-atelier.vercel.app
 - Files changed:
   - app/approach/page.tsx (three method blocks only; removed Brief/Shape/Build/Molt and Division of labor)
   - app/contact/page.tsx (Start a brief. + ContactForm + mailto hello@remexstudio.com)
   - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
-- Untouched (verified): components/SiteChrome.tsx, components/ContactForm.tsx (existing mock success kept), app/globals.css, home, work stories, demos
+- Untouched: components/SiteChrome.tsx, components/ContactForm.tsx (mock success kept), app/globals.css, home, work stories, demos
 - Acceptance self-check:
   - [x] `/approach` three blocks only; headlines exact: Design the job / Build the gate / Keep the record
-  - [x] Supporting text covers propose / approve / log; no outsourcing language; no “English products” / English-first
-  - [x] `/contact`: heading `Start a brief.`; form + success state; studio email `hello@remexstudio.com`
-  - [x] No founder name, phone, school, or pricing on either page
+  - [x] Supporting text covers propose / approve / log; no outsourcing; no English products / English-first
+  - [x] `/contact`: heading `Start a brief.`; form + success state; `hello@remexstudio.com`
+  - [x] No founder name, phone, school, or pricing
   - [x] `pnpm build` PASS
   - [x] Commit: `feat(site): add approach and contact`
 - Skills used:
@@ -20,7 +20,7 @@
   - apple-design-web
   - writing-guidelines
   - emil-design-eng
-- Risks/blockers: none (ContactForm remains client mock — no message sent)
+- Risks: ContactForm remains client mock — no message sent
 - Blockers: none
 - DEV: PASS
 - Do not open R4
