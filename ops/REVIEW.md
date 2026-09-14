@@ -1,10 +1,9 @@
-# Review V3-17
+# Review V3-18
 
-- TASK ID: V3-17
-- Content SHA: `71d8fef`
-- Merge: `b3aefea`
-- HANDOFF tip: `65402f3`
-- Prod: https://remex-atelier.vercel.app (`dpl_8nFLfyt3mA1FyVM5B7SsL5hpPDMJ`)
+- TASK ID: V3-18
+- Content SHA: `f504ca9`
+- Merge tip: `a66e4ee` (HANDOFF after `87d3c81` / `739e152`)
+- Prod: https://remex-atelier.vercel.app (`dpl_46six7JKa31HzcQqa7923J7T3wDy`)
 
 ## Verdicts
 
@@ -18,16 +17,16 @@
 
 ## Checks
 
-- Decorative pipeline chips shortened; DNA markers kept (LUM-1042 / Never Execute / Human before send / Policy cite).
+- Register/ribbon/packet/spine decorative chips shortened (Skin/Held/§12.4/Month-end/Overnight/§4.2…).
+- DNA markers retained: LUM-1042 / Never Execute / Human before send / Policy cite / Refund hold.
 - Locked ability×3 / gate / record / refusal / CTA / footer verbatim.
-- 375 nowrap + balance helpers; CTA ≥44; no gray-bar / pin / Lenis regression.
-- Build + prod green.
+- 375 nowrap/balance; CTA ≥44; no gray-bar / pin / Lenis regression; build + prod green.
 
-## Non-blocking ADD → V3-18
+## Non-blocking ADD
 
-- UX: register / ribbon decorative rows still longer (`Month-end question`, `§12.4 · Close pack`); shorten same way if they wrap.
-- Vision/Apple: payload + craft mainline stable; do not touch locked copy.
+- UX: keep `Human before send` as DNA marker (balance OK).
+- Apple/Vision: no hard gaps; short-label loop can close.
 
 ## Decision
 
-Close V3-17. Issue V3-18. Continuous overnight loop continues.
+Close V3-18. Short-label craft loop closed. Request board KEEP/KILL/ADD for V3-19+ before issuing next code ticket.

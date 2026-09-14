@@ -10,5 +10,6 @@
 - [x] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo
 - [x] V3-15 BRIEF_ASKS single source + four-chapter still/beat density
 - [x] V3-16 visual polish — still-fact type + chapter noise/CTA
-- [x] V3-17 375 short still-fact labels (`71d8fef` / merge `b3aefea`; tip `5a89e93`)
-- [x] V3-18 register/ribbon short decorative labels (delivered; await PASS)
+- [x] V3-17 375 short still-fact labels
+- [x] V3-18 register/ribbon short decorative chips (`f504ca9` / tip `a66e4ee`)
+- [ ] V3-19+ — await board KEEP/KILL/ADD (short-label craft loop closed)

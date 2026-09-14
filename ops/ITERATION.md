@@ -1,18 +1,16 @@
-# Iteration after V3-18 delivery
+# Iteration after V3-18 PASS
 
 Live preview: https://remex-atelier.vercel.app
-V3-17 closed: content `71d8fef` / merge `b3aefea` / tip `5a89e93`. Unanimous PM + Leader PASS.
+V3-18 closed: content `f504ca9` / tip `a66e4ee`. Unanimous PM + Leader PASS.
 
-## Closed in V3-18 (this slice)
+## Closed in V3-18
 
-1. Register / ribbon / packet / spine decorative chips shortened at 375.
-2. DNA markers kept: LUM-1042 / Never Execute / Human before send / Policy cite / Refund hold.
-3. nowrap / balance helpers; spine stays 3-col at 375; no type shrink below 0.8125rem.
+1. Register/ribbon/packet/spine decorative chips shortened at 375.
+2. DNA identity markers retained; locked score lines untouched.
+3. Apple/Vision: no hard gaps — short-label craft loop closed.
 
-## Hard stay
+## Next loop (V3-19+)
 
-- Locked score lines verbatim (job/pain/ability×3/gate/record/refusal/CTA/footer).
-- No BRIEF_ASKS / 机羽云 / refuse / pins / Lenis / HomeScenes / Services / About / Contact.
-- No empty gray-bar return.
-
-PM board lock checked on PR #10. Await three PM + Leader. No V3-19 until PASS.
+Leader requests fresh KEEP/KILL/ADD from Apple / UX / Vision before issuing V3-19.
+Do not invent another micro chip ticket without board signal.
+Hard bans unchanged: locked copy verbatim; no 机羽云/refuse move; no Lenis; H3-only pinOk; no empty gray bars.
