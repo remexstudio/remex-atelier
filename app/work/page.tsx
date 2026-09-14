@@ -26,25 +26,25 @@ const STORIES = [
     href: "/work/atelier-concierge",
     name: "Atelier Concierge",
     still: "still-a" as const,
-    line: "Client threads, fittings, and aftercare.",
+    dna: "LUM-1042",
   },
   {
     href: "/work/ledger-clerk",
     name: "Ledger Clerk",
     still: "still-b" as const,
-    line: "Month-end questions and cited answers.",
+    dna: "Never Execute",
   },
   {
     href: "/work/morning-remex",
     name: "Morning Remex",
     still: "still-c" as const,
-    line: "Overnight threads into a morning packet.",
+    dna: "Human before send",
   },
   {
     href: "/work/exception-copilot",
     name: "Exception Copilot",
     still: "still-d" as const,
-    line: "Exception queue and disposition drafts.",
+    dna: "Refund hold",
   },
 ] as const;
 
@@ -55,12 +55,19 @@ function WorkStill({ still }: { still: (typeof STORIES)[number]["still"] }) {
         className="work-story-card__still work-story-card__still--still-a still-dna still-dna--cq still-dna--facts"
         aria-hidden="true"
       >
-        <p className="still-dna__fact">LUM-1042</p>
-        <p className="still-dna__sub">skin → hero → try-on → bag → pay</p>
-        <div className="cq-pay__gate">
-          <span className="cq-pay__chip">Propose</span>
-          <span className="cq-pay__arrow" />
-          <span className="cq-pay__chip cq-pay__chip--approve">Approve</span>
+        <div className="cq-pay cq-pay--wall">
+          <div className="cq-pay__bag">
+            <p className="still-fact still-fact--kicker">Bag · before pay</p>
+            <p className="cq-ticket__id">LUM-1042</p>
+            <p className="still-fact still-fact--muted">
+              skin → hero → try-on → bag → pay
+            </p>
+          </div>
+          <div className="cq-pay__gate">
+            <span className="cq-pay__chip">Propose</span>
+            <span className="cq-pay__arrow" />
+            <span className="cq-pay__chip cq-pay__chip--approve">Approve</span>
+          </div>
         </div>
       </div>
     );
@@ -72,9 +79,11 @@ function WorkStill({ still }: { still: (typeof STORIES)[number]["still"] }) {
         className="work-story-card__still work-story-card__still--still-b still-dna still-dna--lc still-dna--facts"
         aria-hidden="true"
       >
-        <p className="still-dna__fact">Propose≠Execute</p>
-        <p className="still-dna__sub">cite</p>
-        <span className="lc-controller__cite">§12.4 · Close pack</span>
+        <div className="lc-cta-still__mark lc-cta-still__mark--wall">
+          <span className="lc-propose__mark">Propose</span>
+          <p className="work-wall__never">Never Execute</p>
+          <span className="lc-controller__cite">§12.4 · Close pack</span>
+        </div>
       </div>
     );
   }
@@ -85,12 +94,21 @@ function WorkStill({ still }: { still: (typeof STORIES)[number]["still"] }) {
         className="work-story-card__still work-story-card__still--still-c still-dna still-dna--mr still-dna--facts"
         aria-hidden="true"
       >
-        <div className="mr-triage">
-          <span className="mr-triage__lane mr-triage__lane--pri">Priority</span>
-          <span className="mr-triage__lane mr-triage__lane--watch">Watch</span>
-          <span className="mr-triage__lane mr-triage__lane--noise">Noise</span>
+        <div className="mr-cta-rail__lanes mr-cta-rail__lanes--wall">
+          <div className="mr-cta-rail__lane mr-cta-rail__lane--pri">
+            <span className="mr-triage__lane mr-triage__lane--pri">P</span>
+            <p className="mr-pwn__name">Priority</p>
+          </div>
+          <div className="mr-cta-rail__lane mr-cta-rail__lane--watch">
+            <span className="mr-triage__lane mr-triage__lane--watch">W</span>
+            <p className="mr-pwn__name">Watch</p>
+          </div>
+          <div className="mr-cta-rail__lane mr-cta-rail__lane--noise">
+            <span className="mr-triage__lane mr-triage__lane--noise">N</span>
+            <p className="mr-pwn__name">Noise</p>
+          </div>
         </div>
-        <p className="still-dna__sub">P · W · N</p>
+        <p className="still-dna__sub">Human before send</p>
       </div>
     );
   }
@@ -100,12 +118,15 @@ function WorkStill({ still }: { still: (typeof STORIES)[number]["still"] }) {
       className="work-story-card__still work-story-card__still--still-d still-dna still-dna--ec still-dna--facts"
       aria-hidden="true"
     >
-      <p className="still-dna__fact">queue · policy</p>
-      <div className="ec-desk">
-        <span className="ec-desk__chip ec-desk__chip--u1">U1</span>
-        <span className="ec-desk__chip ec-desk__chip--u2">U2</span>
-        <span className="ec-desk__chip ec-desk__chip--u3">U3</span>
-        <span className="ec-desk__chip ec-desk__chip--policy">Policy</span>
+      <div className="ec-cta-stack ec-cta-stack--wall">
+        <div className="ec-ticket ec-ticket--a">
+          <span className="ec-ticket__badge">EX-441</span>
+          <span className="still-fact">Refund hold</span>
+        </div>
+        <div className="ec-ticket ec-ticket--b">
+          <span className="ec-cite__mark">§4.2</span>
+          <span className="still-fact">Policy cite</span>
+        </div>
       </div>
     </div>
   );
@@ -131,7 +152,7 @@ export default function WorkPage() {
                 <WorkStill still={story.still} />
                 <span className="work-story-card__body">
                   <span className="work-story-card__name">{story.name}</span>
-                  <span className="work-story-card__line">{story.line}</span>
+                  <span className="work-story-card__line">{story.dna}</span>
                 </span>
               </Link>
             </li>

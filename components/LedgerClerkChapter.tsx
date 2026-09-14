@@ -21,7 +21,7 @@ function showStatic(root: HTMLElement) {
   });
   gsap.set(
     root.querySelectorAll(
-      ".lc-still, .lc-cite-stack, .lc-cite-stack__item, .lc-pe, .lc-register",
+      ".lc-still, .lc-cite-stack, .lc-cite-stack__item, .lc-pe, .lc-register, .lc-cta-stage, .lc-cta-still",
     ),
     {
       clearProps: "transform,opacity,visibility",
@@ -342,22 +342,48 @@ export function LedgerClerkChapter() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — still-behind / copy overlay; Propose ≠ Execute registry */}
       <section
         id="lc-cta"
         data-lc-mod
         className="lc-mod lc-mod--cta"
         aria-labelledby="lc-cta-h"
       >
-        <div className="lc-mod__inner lc-mod__inner--cta">
-          <h2 id="lc-cta-h" className="lc-headline" data-lc-reveal>
-            Start a brief.
-          </h2>
-          <p className="lc-cta-wrap chapter-cta" data-lc-reveal>
-            <Link href="/contact" className="home-cta">
-              Start a brief.
-            </Link>
-          </p>
+        <div className="lc-mod__inner lc-mod__inner--cta-overlay">
+          <div className="lc-cta-stage">
+            <div className="lc-cta-still" data-lc-reveal aria-hidden="true">
+              <div className="lc-cta-still__mark">
+                <span className="lc-propose__mark">Propose</span>
+                <p className="lc-cta-still__never">Never Execute</p>
+                <span className="lc-controller__cite">§12.4 · Close pack</span>
+              </div>
+              <div className="lc-register lc-cta-still__log">
+                <p className="lc-log__title">Audit log</p>
+                <div className="lc-register__row">
+                  <span className="lc-log__key">Ask</span>
+                  <span className="still-fact">Month-end</span>
+                </div>
+                <div className="lc-register__row">
+                  <span className="lc-log__key">Citation</span>
+                  <span className="still-fact">Corpus cite</span>
+                </div>
+                <div className="lc-register__row">
+                  <span className="lc-log__key lc-log__key--ink">Decision</span>
+                  <span className="still-fact still-fact--ink">Held</span>
+                </div>
+              </div>
+            </div>
+            <div className="lc-cta-copy">
+              <h2 id="lc-cta-h" className="lc-headline" data-lc-reveal>
+                Start a brief.
+              </h2>
+              <p className="lc-cta-wrap chapter-cta" data-lc-reveal>
+                <Link href="/contact" className="home-cta">
+                  Start a brief.
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

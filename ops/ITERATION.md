@@ -1,13 +1,13 @@
-# Iteration after V3-19 PASS
+# Iteration after V3-20 delivery
 
 Live preview: https://remex-atelier.vercel.app
-V3-19 closed: content `bd45df8` / tip `ae6f870`. Unanimous PM + Leader PASS.
+Prior closed: V3-19 `bd45df8` / tip `ae6f870`.
 
-## V3-20 ticket (this loop)
+## V3-20 shipped (this loop)
 
-From Apple board ADD (held through V3-19) + UX/Vision guardrails:
+1. **CTA de-iso** — Concierge split pay/bag still; Ledger overlay Never Execute registry; Morning P/W/N rail; Exception ticket stack. Locked `Start a brief.` kept. DNA markers stay on their chapters.
+2. **`/work` wall** — larger stills, less card chrome, one DNA cue per card (LUM-1042 / Never Execute / Human before send / Refund hold). 375 stacks.
+3. **Scroll offset** — removed `html { scroll-padding-top }`; kept module `scroll-margin-top`.
+4. Hard stay: locked score lines; no Lenis; no new pins; no 机羽云/refuse move; no prod deploy from Dev.
 
-1. **CTA curtain de-iso** — four `*Chapter.tsx` CTA finales must not share the same curtain grammar (`*-mod--cta` + identical `chapter-cta`/`home-cta` layout). Each gets a product-unique large still beside/above CTA. Locked string `Start a brief.` may stay.
-2. **`/work` product wall** — `app/work/page.tsx` + `.work-story-card*`: larger stills, less padded brochure cards; closer to Apple product grid.
-3. Soft: if sticky jump headroom feels double (~92px), keep either `scroll-padding-top` or `scroll-margin`, not both stacked aggressively.
-4. Hard stay: locked score lines; DNA markers; 机羽云/refuse landings; no Lenis; H3-only pinOk; no empty gray bars.
+Await three PM + Leader. No V3-21 until PASS.

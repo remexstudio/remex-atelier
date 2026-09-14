@@ -21,7 +21,7 @@ function showStatic(root: HTMLElement) {
   });
   gsap.set(
     root.querySelectorAll(
-      ".cq-still, .cq-flow__step, .cq-pipeline, .cq-tryon-stack, .cq-tryon-stack__layer, .cq-paystage, .cq-scatter-field",
+      ".cq-still, .cq-flow__step, .cq-pipeline, .cq-tryon-stack, .cq-tryon-stack__layer, .cq-paystage, .cq-scatter-field, .cq-cta-still",
     ),
     {
       clearProps: "transform,opacity,visibility",
@@ -328,22 +328,44 @@ export function AtelierConciergeChapter() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — split still-left / copy-right; pay gate + bag still */}
       <section
         id="cq-cta"
         data-cq-mod
         className="cq-mod cq-mod--cta"
         aria-labelledby="cq-cta-h"
       >
-        <div className="cq-mod__inner cq-mod__inner--cta">
-          <h2 id="cq-cta-h" className="cq-headline" data-cq-reveal>
-            Start a brief.
-          </h2>
-          <p className="cq-cta-wrap chapter-cta" data-cq-reveal>
-            <Link href="/contact" className="home-cta">
+        <div className="cq-mod__inner cq-mod__inner--cta-split">
+          <div className="cq-cta-still" data-cq-reveal aria-hidden="true">
+            <div className="cq-pay cq-cta-still__pay">
+              <div className="cq-pay__bag">
+                <p className="still-fact still-fact--kicker">Bag · before pay</p>
+                <p className="cq-ticket__id">LUM-1042</p>
+                <p className="still-fact still-fact--muted">
+                  skin → hero → try-on → bag → pay
+                </p>
+              </div>
+              <div className="cq-pay__gate">
+                <span className="cq-pay__chip">Propose</span>
+                <span className="cq-pay__arrow" />
+                <span className="cq-pay__chip cq-pay__chip--approve">
+                  Stylist
+                </span>
+                <span className="cq-pay__arrow" />
+                <span className="cq-pay__chip cq-pay__chip--hold">Pay held</span>
+              </div>
+            </div>
+          </div>
+          <div className="cq-cta-copy">
+            <h2 id="cq-cta-h" className="cq-headline" data-cq-reveal>
               Start a brief.
-            </Link>
-          </p>
+            </h2>
+            <p className="cq-cta-wrap chapter-cta" data-cq-reveal>
+              <Link href="/contact" className="home-cta">
+                Start a brief.
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </main>
