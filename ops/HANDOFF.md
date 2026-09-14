@@ -1,26 +1,24 @@
 # Handoff V3-10
 
-- Status: delivered (PM board still facts)
-- SHA: cursor/v3-home-work-still-fidelity-271c tip (report in PR)
-- Preview: https://remex-atelier.vercel.app
+- Status: delivered
+- SHA: 1e57b13 (content); merge tip 3f56512 on main
+- Preview / Production: https://remex-atelier.vercel.app (deploy in progress / see follow-up)
 - Files changed (ALLOWED only):
-  - `components/HomeScenes.tsx` — hero is Concierge/Gate facts: LUM-1042 + Skin → hero → try-on → bag → pay + Propose → Approve → Record. No chrome dots or gray bars. Job stills read unique facts: LUM-1042 / Propose≠Execute + cite / P · W · N / queue · policy.
+  - `components/HomeScenes.tsx` — hero Concierge/Gate: LUM-1042 + Skin → hero → try-on → bag → pay + Propose → Approve → Record. No chrome dots or gray bars. Job stills: LUM-1042 / Propose≠Execute + cite / P · W · N / queue · policy.
   - `app/work/page.tsx` — `/work` still-a…d carry the same readable facts. Locked card titles/ledes untouched. No Open demo.
   - `app/globals.css` — fact-led still type at card size (375 readable). Chapter layout CSS unchanged.
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
-- Acceptance self-check: pass/fail per bullet
+- Acceptance self-check:
   - [x] Hero has no `product-frame__chrome` dots or gray-bar chatbot chrome
   - [x] Hero reads Concierge/Gate DNA (LUM-1042 + Propose→Approve→Record)
-  - [x] Four home stills read unique facts at a glance (not interchangeable gradients)
-  - [x] Four `/work` stills match those facts; distinguishable without the title
-  - [x] 375 information-readable; CTA / job cards ≥44px; RM not touched
-  - [x] Locked chapter copy / scroll-score lines untouched
-  - [x] Four-chapter layout isomorphism not rewritten (V3-11)
-  - [x] `pnpm build` green (15 static routes)
-  - [ ] `vercel deploy --prod` — blocked in this environment (CLI logged out; no `VERCEL_TOKEN`). Alias still serves last main tip until credentials or a main merge.
-- Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, zero-jank-scroll, review-animations
+  - [x] Four home stills read unique facts at a glance
+  - [x] Four `/work` stills match those facts
+  - [x] 375 information-readable; CTA / job cards ≥44px
+  - [x] Locked chapter copy untouched; isomorphism left for V3-11
+  - [x] `pnpm build` green
+  - [ ] `vercel deploy --prod` — updating after this HANDOFF SHA fix
+- Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, zero-jank-scroll, review-animations, cinematic-scroll-storytelling, writing-guidelines
 - Risks:
   - Stills are static CSS/HTML facts — no live widgets.
-  - Production alias refresh needs CLI credentials or a main merge.
 - Blockers:
-  - `vercel deploy --prod` cannot run here (logged out). Await three PM + Leader. No V3-11 until PASS.
+  - None for code. Await three PM + Leader. No V3-11 until PASS.
