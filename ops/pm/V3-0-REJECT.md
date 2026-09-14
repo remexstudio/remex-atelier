@@ -98,3 +98,27 @@ AGREE reject. Do not polish old six-pin film.
 - Module-level pin+scrub only; forbid N× identical home pins
 - Module DNA list locked in scroll-score-v3
 - Skill gate on every build ticket
+
+---
+
+## Vision PM confirm (2026-09-14)
+
+AGREE FAIL. Payload gaps locked for V3-0 docs.
+
+Checklist: 机羽云 once on approach MISSING; legal/Seattle/global PARTIAL; mechanism+methods PARTIAL; four unique ability/gate/record/refusal FAIL; refuse/brief asks/roadmap MISSING; Start a brief + study disclaimer + no English-products PASS.
+
+Four products locked (abilities×3 / gate / record / refusal) as in Vision message — must appear verbatim-planned in `docs/ia-v3.md` + `docs/scroll-score-v3.md`.
+
+---
+
+## UX PM confirm (2026-09-14)
+
+AGREE FAIL. Do not polish six-pin film.
+
+**Hard constraints for V3-0 docs**
+- Each home module: stable `id`; chapter jump from nav or hairline map
+- `scroll-score-v3.md`: per module — may pin? `end` cap; 375 stack order; reduced-motion full-fact list
+- Pin+scrub only where UX accepts; default shallow scroll
+- No Lenis / normalizeScroll / body overflow lock
+- Story pages: scannable, escapable; no shared empty five-beat scroll prison
+- Unlabeled pin rules in scroll-score-v3 = automatic UX REWORK on later builds
