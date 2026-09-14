@@ -1,3 +1,3 @@
 # TASK
 
-No open code TASK. V3-20 PASS. Await board KEEP/KILL/ADD for V3-21 synthesis.
+No open TASK. Overnight V3 craft DoD green. Dev standby until owner or Leader issues a new TASK ID.
