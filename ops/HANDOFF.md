@@ -1,38 +1,28 @@
 # Handoff V3-14
 
-- Status: delivered — PM board lock aligned
-- SHA: 0594cb5
+- Status: delivered
+- SHA: d2e3e1b (content); merge tip 7b5ae0c on main
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: `vercel` CLI logged out in this environment. Coordinator `vercel deploy --prod` after merge.
+- Deploy: in progress / see follow-up
 - Files changed (ALLOWED only):
-  - `components/HomeScenes.tsx` — H2 hire-still as one seat / one job / human-gate lamp; H7 concrete method glyphs; home Ledger still aligned to `§12.4 · Close pack` (Apple soft). Locked headlines and method titles/bodies verbatim.
-  - `app/globals.css` — hire/method glyph + contact checklist helpers; job-card `§12.4` cite size; `.btn-primary` text `#fff`; dead `.lab-loop` button remap removed. `.lab-loop .pulse-notice` hide kept.
-  - `components/ContactForm.tsx` — `BRIEF_ASKS` as field labels; Name + Email kept; success state kept; inputs/CTA ≥44 and `:focus-visible`.
-  - `app/contact/page.tsx` — checklist band maps the same `BRIEF_ASKS` strings verbatim.
-  - `app/services/page.tsx` — Agent Apps / Agent Ops / Advisory each nail a distinct gate or record fact.
-  - `app/about/page.tsx` — SAY echo `One painful workflow. One agent. A human gate.` Legal + Seattle / global kept.
+  - `components/HomeScenes.tsx` — H2 hire-still; H7 concrete method glyphs; Ledger still `§12.4 · Close pack`
+  - `app/globals.css` — hire/method/contact helpers; `.btn-primary` text `#fff`; dead `.lab-loop` remap trimmed
+  - `components/ContactForm.tsx` — BRIEF_ASKS as labels; Name+Email; ≥44 + focus-visible
+  - `app/contact/page.tsx` — checklist band verbatim BRIEF_ASKS
+  - `app/services/page.tsx` — three non-interchangeable gate/record nails
+  - `app/about/page.tsx` — SAY `One painful workflow. One agent. A human gate.`
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
-- PM board lock:
-  - [x] Contact: four asks verbatim `BRIEF_ASKS` with labels + ≥44 + focus-visible
-  - [x] Services: three offers each nail a non-interchangeable gate/record fact
-  - [x] About: verbatim `One painful workflow. One agent. A human gate.`
-  - [x] H2 hire-still + H7 three concrete glyphs; locked titles/bodies unchanged
-  - [x] Apple soft: home Ledger still `§12.4 · Close pack` (HomeScenes allowed)
-  - [x] UX: 375/RM full facts; shallow scroll; no new pin
-  - [x] Vision: no 机羽云/refuse move; no English-products
 - Acceptance self-check:
-  - [x] H7 glyphs non-empty and visually distinct per column
-  - [x] H2 hire-still readable as one seat / one job / human gate
-  - [x] Contact surfaces all four brief-ask strings verbatim
-  - [x] Services three offers not interchangeable on gate/record
-  - [x] About contains exact hire SAY line
-  - [x] No locked home/product headlines changed; no 机羽云/refuse move
-  - [x] Hit targets ≥44; RM/375 not regressed; no new pins / Lenis / body lock
-  - [x] `pnpm build` green
-  - [ ] `vercel deploy --prod` — coordinator after merge
-- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations (no new home motion; existing once-reveal / H3 pin untouched)
+  - [x] H7 glyphs non-empty and distinct
+  - [x] H2 hire-still one seat / one job / human gate
+  - [x] Contact four brief-ask strings verbatim
+  - [x] Services offers not interchangeable
+  - [x] About hire SAY line
+  - [x] No 机羽云/refuse move; no English-products
+  - [x] ≥44; no new pins; build green
+  - [ ] `vercel deploy --prod` — updating
+- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
 - Risks:
-  - Hire-still lamp and method glyphs are static stills (no pulse loop) so reduced-motion keeps full facts.
-  - `.lab-loop .pulse-notice` hide remains because PulseLoop still renders the notice inside the page banner wrapper.
+  - Hire-still and method glyphs are static stills.
 - Blockers:
   - None. Await three PM + Leader. No V3-15 until PASS.
