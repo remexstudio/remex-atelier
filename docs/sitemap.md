@@ -1,57 +1,37 @@
-# Sitemap (Studio v1)
+# Sitemap (Atelier V3)
 
-Shipped routes after S0–S8. No planned-only entries remain for Studio v1.
+Shipped marketing routes after V3-9. Legacy dual work pages are gone; old work URLs 301 to unique product chapters. Demo families 301 to `/lab` (Prototype).
 
 ## Marketing
 
-| Route | Slice |
+| Route | Notes |
 | --- | --- |
-| `/` | S1 |
-| `/work` | S2 |
-| `/work/lumen-atelier` | S2 |
-| `/work/northline` | S4 |
-| `/work/kite` | S5 |
-| `/work/paperline` | S6 |
-| `/services` | S3 |
-| `/approach` | S3 |
-| `/lab` | S7 |
-| `/lab/pulse` | S7 |
-| `/about` | S3 |
-| `/contact` | S1 |
+| `/` | Home (nine modules; Gate / Jobs / Brief / Roadmap chapter map) |
+| `/work` | Four stills → unique product chapters |
+| `/work/atelier-concierge` | Unique product chapter |
+| `/work/ledger-clerk` | Unique product chapter |
+| `/work/morning-remex` | Unique product chapter |
+| `/work/exception-copilot` | Unique product chapter |
+| `/services` | Offers |
+| `/approach` | Methods + name meaning + refuse + roadmap |
+| `/lab` | Prototype index |
+| `/lab/pulse` | Pulse prototype (not a client engagement) |
+| `/about` | Studio + legal |
+| `/contact` | Start a brief |
 
-## Demos
+## Permanent redirects (301)
 
-### Lumen (S2)
-
-- `/demo/lumen`
-- `/demo/lumen/consult`
-- `/demo/lumen/try-on`
-- `/demo/lumen/bag`
-- `/demo/lumen/pay`
-- `/demo/lumen/desk`
-
-### Northline (S4)
-
-- `/demo/northline`
-- `/demo/northline/ask`
-- `/demo/northline/source`
-- `/demo/northline/change`
-- `/demo/northline/log`
-
-### Kite (S5)
-
-- `/demo/kite`
-- `/demo/kite/brief`
-- `/demo/kite/thread/[id]` (static params from synthetic morning items, e.g. `kite-01`)
-- `/demo/kite/digest`
-
-### Paperline (S6)
-
-- `/demo/paperline`
-- `/demo/paperline/queue`
-- `/demo/paperline/case/[id]` (static params from queue tickets, e.g. `PL-2401`)
-- `/demo/paperline/policy`
+| From | To |
+| --- | --- |
+| `/work/lumen-atelier` | `/work/atelier-concierge` |
+| `/work/northline` | `/work/ledger-clerk` |
+| `/work/kite` | `/work/morning-remex` |
+| `/work/paperline` | `/work/exception-copilot` |
+| `/demo/lumen`, `/demo/lumen/:path*` | `/lab` |
+| `/demo/northline`, `/demo/northline/:path*` | `/lab` |
+| `/demo/kite`, `/demo/kite/:path*` | `/lab` |
+| `/demo/paperline`, `/demo/paperline/:path*` | `/lab` |
 
 ## Other
 
-- Custom `not-found` (English atelier 404) — S8
+- Custom `not-found` (English atelier 404)

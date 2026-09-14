@@ -373,7 +373,7 @@ button:active {
   min-width: 0;
 }
 
-.site-shell--film .site-nav__chapters-wrap {
+.site-shell--home-chapters .site-nav__chapters-wrap {
   display: flex;
 }
 
@@ -438,19 +438,19 @@ button:active {
 }
 
 /* 375: chapter hairlines scroll horizontally inside the 46px bar */
-.site-shell--film .site-nav__chapters-wrap {
+.site-shell--home-chapters .site-nav__chapters-wrap {
   overflow-x: auto;
   overflow-y: hidden;
   max-width: min(42vw, 14rem);
   scrollbar-width: none;
 }
 
-.site-shell--film .site-nav__chapters-wrap::-webkit-scrollbar {
+.site-shell--home-chapters .site-nav__chapters-wrap::-webkit-scrollbar {
   display: none;
 }
 
 @media (min-width: 900px) {
-  .site-shell--film .site-nav__chapters-wrap {
+  .site-shell--home-chapters .site-nav__chapters-wrap {
     max-width: none;
     overflow-x: visible;
   }

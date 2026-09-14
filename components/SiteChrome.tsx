@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type SiteChromeProps = {
   children: React.ReactNode;
@@ -8,13 +11,14 @@ type SiteChromeProps = {
   footerLine?: string;
 };
 
-/** Primary nav — marketing routes only. Never link /demo/* here. */
+/**
+ * Primary nav — marketing routes only. Never link /demo/* here.
+ * Services / About stay as thin stubs off-primary (V3-12). Lab is Prototype-labeled.
+ */
 const NAV = [
   { href: "/work", label: "Work" },
-  { href: "/services", label: "Services" },
   { href: "/approach", label: "Approach" },
   { href: "/lab", label: "Lab" },
-  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -31,15 +35,19 @@ export function SiteChrome({
   variant = "default",
   footerLine = "A Seattle studio.",
 }: SiteChromeProps) {
+  const pathname = usePathname();
+  const showHomeChapters = pathname === "/";
   const isFilm = variant === "film";
 
   return (
     <div
-      className={
-        isFilm
-          ? "site-shell site-shell--film"
-          : "site-shell site-shell--default"
-      }
+      className={[
+        "site-shell",
+        isFilm ? "site-shell--film" : "site-shell--default",
+        showHomeChapters ? "site-shell--home-chapters" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       <header className="site-nav">
         <div className="site-nav__inner">
@@ -64,7 +72,7 @@ export function SiteChrome({
                 </Link>
               ))}
             </nav>
-            {isFilm ? (
+            {showHomeChapters ? (
               <nav aria-label="Home chapters" className="site-nav__chapters-wrap">
                 <ul className="site-nav__chapters">
                   {CHAPTERS.map((item) => (
