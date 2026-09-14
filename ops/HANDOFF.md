@@ -1,28 +1,28 @@
 # Handoff V3-11
 
 - Status: delivered
-- SHA: 0247605 (content); merge tip 6fab6cd on main
+- SHA: 0247605 (content); merge tip 6fab6cd on main; handoff tip follow-up
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: see follow-up after `vercel deploy --prod`
+- Deploy: `dpl_9Bdy1KEMxunfWT6mUwexwN6vD5Ny` → aliased https://remex-atelier.vercel.app
 - Files changed (ALLOWED only):
-  - `components/AtelierConciergeChapter.tsx` — horizontal merchandising runway + overlapping try-on stack; scatter field; pay-stage counter; LUM-1042 ribbon.
-  - `components/LedgerClerkChapter.tsx` — cite stack + Propose ≠ Execute table; register rows for the audit log.
-  - `components/MorningRemexChapter.tsx` — P/W/N triage lanes + dual-tone draft columns; overnight mail stack; linked packet beads.
-  - `components/ExceptionCopilotChapter.tsx` — ranked exception queue + policy sidebar dock; case timeline spine.
-  - `app/globals.css` — `.cq-*` `.lc-*` `.mr-*` `.ec-*` grammar CSS only. Home / work still atoms and SiteChrome untouched.
+  - `components/AtelierConciergeChapter.tsx` — horizontal merchandising runway + overlapping try-on stack
+  - `components/LedgerClerkChapter.tsx` — cite stack + Propose ≠ Execute table
+  - `components/MorningRemexChapter.tsx` — P/W/N triage lanes + dual-tone draft columns
+  - `components/ExceptionCopilotChapter.tsx` — ranked exception queue + policy sidebar dock
+  - `app/globals.css` — `.cq-*` `.lc-*` `.mr-*` `.ec-*` grammar CSS only
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
 - Acceptance self-check:
-  - [x] Each chapter has ≥2 unique layout grammars
+  - [x] Each chapter ≥2 unique layout grammars
   - [x] Concierge: pipeline runway + try-on stack
   - [x] Ledger: cite stack + Propose ≠ Execute table
   - [x] Morning: dual-tone columns + P/W/N triage
-  - [x] Exception: exception queue + policy sidebar
+  - [x] Exception: queue + policy sidebar
   - [x] Locked score / chapter strings verbatim
-  - [x] No StoryScenes; no long pin; once-reveal only; no Lenis
-  - [x] Canvas `#fff` / `#f5f5f7`; CTA ≥44; 375 + RM full facts
+  - [x] No StoryScenes; no long pin; once-reveal; no Lenis
+  - [x] Canvas `#fff`/`#f5f5f7`; CTA ≥44; 375 + RM full facts
   - [x] Home stills / SiteChrome / redirects untouched
   - [x] `pnpm build` green
-  - [ ] `vercel deploy --prod` — in progress
+  - [x] `vercel deploy --prod` — production alias refreshed
 - Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, cinematic-scroll-storytelling, zero-jank-scroll, review-animations, react-best-practices, writing-guidelines
 - Risks:
   - Shared still atoms stay for home/work cards — chapter layouts wrap them.
