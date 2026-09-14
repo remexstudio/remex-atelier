@@ -1,7 +1,7 @@
 # Handoff V3-7 approach + contact
 
 - Status: delivered
-- SHA: uncommitted (parent commit msg: `feat(site): v3 approach and contact`)
+- SHA: 3920f1f
 - Preview: https://remex-atelier.vercel.app
 - Commit msg (parent): `feat(site): v3 approach and contact`
 
