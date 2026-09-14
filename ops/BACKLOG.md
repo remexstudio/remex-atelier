@@ -1,8 +1,8 @@
 # Backlog (Atelier V3)
 
 - [x] V3-0 docs(site): lock v3 ia copy and scroll score (SHA 9158191)
-- [x] V3-1 feat(site): v3 tokens nav and type (SHA pending — no commit/push this turn)
-- [ ] V3-2 home nine modules
+- [x] V3-1 feat/fix(site): v3 tokens nav and type (SHA b80df5a)
+- [ ] V3-2 feat(home): add v3 nine module film
 - [ ] V3-3 Atelier Concierge unique product page
 - [ ] V3-4 Ledger Clerk unique product page
 - [ ] V3-5 Morning Remex unique product page

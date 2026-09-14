@@ -1,32 +1,57 @@
-# TASK V3-1 — REWORK (merged UX + Apple)
+# TASK V3-2
 
-TASK ID: V3-1
+TASK ID: V3-2
 REPO: remexstudio/remex-atelier
-MODE: REWORK
 
-SKILLS (before edits):
-/apple-design /apple-design-web /emil-design-eng /zero-jank-scroll
+SKILLS TO USE (invoke BEFORE any edit — skill gate):
+/apple-design /apple-design-web /apple-design-motion /emil-design-eng
+/gsap-scrolltrigger /gsap-timeline /gsap-react
+/cinematic-scroll-storytelling /zero-jank-scroll /review-animations
 
 GOAL:
-Fix film sticky nav: (1) chapter + primary hit targets ≥44px, (2) frosted sticky bar measured height ≤48px (target 46px). Chapters must live in the **same** 46px band as primary — not a second stacked row that grows the bar.
+Replace the failed six-pin HomeScenes film with **nine distinct home modules** from `docs/scroll-score-v3.md` + `docs/ia-v3.md`. Verbatim locked lines. ≥3 layout grammars. Not six clones of one pin.
 
 ALLOWED:
-- app/globals.css
-- components/SiteChrome.tsx
+- components/HomeScenes.tsx (rewrite or replace)
+- app/page.tsx
+- app/globals.css (home module styles only as needed)
+- components/SiteChrome.tsx (only if 375 chapter overflow-x needed)
 - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 
-FIX:
-1. UX: `.site-nav__chapters a` and primary `.site-nav__links a` hit area ≥ `var(--hit-target-min)` (44px). Prefer padding / invisible expand; keep hairline look.
-2. Apple: Remove film `.site-nav { height: auto; min-height; padding-block }` growth. Sticky frosted header **≤48px** (lock `--nav-height: 46px` as actual bar height). Put chapter hairline **inline** with primary (same row / trailing micro type), not a second stacked row.
-3. `scroll-padding-top` stays tied to `--nav-height`.
-4. No nine-module HomeScenes. No Lenis.
+OUT OF SCOPE:
+- Product story pages (V3-3…V3-6)
+- /approach /contact rewrite (V3-7)
+- /demo rebuild, personal site
+- Restoring six isomorphic pins
+- Changing copy-locks / product uniqueness tables
 
-COMMIT: `fix(site): v3 nav 44px hits in 46px bar`
+HOME MODULES (ids + grammars from scroll-score-v3 — implement all nine):
+1. `#home-hero` — hero — Agents, built to the brief. + locked supports — **pin:no**
+2. `#home-hire` — shallow-deep — One painful workflow… + Seattle studio. Global clients. — **pin:no**
+3. `#home-gate` — pin-stage — Propose/Approve/Record — **pin:yes end_max +=80% only**
+4. `#home-jobs` — horizontal rail (375 = vertical stack) — four job cards → product routes — **pin:no**
+5. `#home-for` — bento — wayfinding headline + For / Not for (refuse list) — **pin:no**
+6. `#home-brief` — specs cluster — What a brief asks. + four questions — **pin:no**
+7. `#home-method` — method columns — Design the job / Build the gate / Keep the record (+ substance) — **pin:no**
+8. `#home-roadmap` — timeline — Now / Next / Later — **pin:no**
+9. `#home-close` — footer map — Start a brief. → /contact + chapter hairlines — **pin:no**
+
+HARD RULES:
+- Copy exact from scroll-score-v3 / copy-locks — no paraphrase
+- ≥3 distinct layout grammars on the page
+- Transform/opacity only; no Lenis / normalizeScroll / body overflow lock
+- prefers-reduced-motion: full payload visible (all reduced_motion_facts)
+- Chapter map targets must exist for gate/jobs/brief/roadmap
+- 375 first-class; job cards + CTA ≥44px
+- Canvas #ffffff / gutter #f5f5f7
 
 ACCEPTANCE:
-- [ ] Chapter + primary links ≥44px hit
-- [ ] Film sticky nav computed height ≤48px
-- [ ] Four chapter anchors unchanged
+- [ ] Skills listed in HANDOFF
+- [ ] Nine modules with correct ids and verbatim copy
+- [ ] Only H3 pins; end ≤ +=80%
+- [ ] No six-clone pin film
+- [ ] reduced-motion full facts
 - [ ] pnpm build PASS
+- [ ] Commit: `feat(home): add v3 nine module film`
 
-After push: HANDOFF. Await UX + Apple re-PASS.
+After push: HANDOFF + DEV PASS. Await Apple/UX/Vision + Leader. Do not open V3-3 until PASS.
