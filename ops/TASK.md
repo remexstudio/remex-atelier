@@ -1,23 +1,42 @@
-# TASK V3-0 — REWORK
+# TASK V3-1
 
-TASK ID: V3-0
+TASK ID: V3-1
 REPO: remexstudio/remex-atelier
-MODE: REWORK (docs only)
 
-SKILLS: /apple-design-web /writing-guidelines /cinematic-scroll-storytelling /emil-design-eng
+SKILLS TO USE (invoke BEFORE any file touch — skill gate):
+/apple-design /apple-design-web /apple-design-motion /emil-design-eng
+/gsap-scrolltrigger /gsap-timeline /gsap-react
+/cinematic-scroll-storytelling /zero-jank-scroll /review-animations
 
-GOAL: Close UX hard constraints on V3-0 docs. No app/.
+GOAL:
+Establish V3 product chrome: canvas tokens, type, sticky frosted nav with chapter map. No full home nine-module build yet (that is V3-2). No product story rebuild yet.
 
-ALLOWED: docs/copy-locks.md, docs/ia-v3.md, docs/scroll-score-v3.md, ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
+ALLOWED:
+- app/globals.css
+- app/layout.tsx
+- components/SiteChrome.tsx
+- docs/design.md (align product canvas to #ffffff / #f5f5f7; note if paper remains for legacy inner pages only)
+- docs/ia-v3.md or AGENTS.md (add skill-gate paragraph if missing)
+- docs/scroll-score-v3.md (optional one-line Lenis/normalizeScroll/body-lock hard ban if not explicit)
+- ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 
-FIX (from UX REWORK):
-1. Every home module in scroll-score-v3: columns `pin` (yes/no) | `end_max` (`none` or e.g. `+=80%`) | `375_stack` | `reduced_motion_facts` (full list)
-2. H3/H4/H8: no soft “optional pin/scrub” — hard pin:no or pin:yes with numeric end_max ≤ +=100%
-3. Whole-home pin budget ≲ two viewports; ban +=150%×6 and +=420% story traps in V3 contract
-4. Four product modules: each row gets 375 + rm:all lines visible; default motion static/stagger; **default pin:no**
-5. ia-v3: SiteChrome chapter map must link `#home-gate` `#home-jobs` `#home-brief` `#home-roadmap` (hero/close optional)
-6. Explicit ban Lenis / normalizeScroll / body overflow lock during pin
-7. Commit + push: `docs(site): lock v3 ia copy and scroll score` (or `docs(site): tighten v3 scroll ux contracts` if already committed once)
-8. Write ops/HANDOFF.md for V3-0
+OUT OF SCOPE:
+- Rebuilding HomeScenes nine modules (V3-2)
+- Product story pages (V3-3…V3-6)
+- /demo rebuild, personal site, founder name
+- Restoring six isomorphic pins
 
-ACCEPTANCE: UX can PASS only when every module has the four columns and chapter-map contract is explicit.
+ACCEPTANCE:
+- [ ] Skills invoked before edits (list in HANDOFF)
+- [ ] Product canvas `#ffffff`, gutter `#f5f5f7` as default film/product tokens
+- [ ] Sticky frosted nav ~44–48px
+- [ ] Chapter map links present: `#home-gate` `#home-jobs` `#home-brief` `#home-roadmap` (targets may 404-ish until V3-2 lands — links must exist in nav/chrome)
+- [ ] Large display type negative tracking tokens ready for V3-2
+- [ ] Focus-visible + 44px CTA/hit target floor preserved
+- [ ] Explicit ban documented: no Lenis, no normalizeScroll, no body overflow lock while pinned
+- [ ] Skill gate written into ia-v3 or AGENTS.md
+- [ ] design.md palette aligned or scoped
+- [ ] pnpm build PASS
+- [ ] Commit: `feat(site): v3 tokens nav and type`
+
+After push: HANDOFF + DEV PASS. Await Apple/UX/Vision + Leader before V3-2.
