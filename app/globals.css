@@ -560,16 +560,21 @@ button:active {
   padding: 0 0.15rem 0.25rem;
 }
 
-/* Method beats */
+/* Method beats — line 1 headline; lines 2–3 support */
 .home-method {
   display: grid;
-  gap: 1.25rem;
+  gap: 1rem;
   width: 100%;
+}
+
+.home-method .home-headline {
+  margin: 0;
 }
 
 .home-method__line {
   margin: 0;
-  color: color-mix(in srgb, var(--ink) 78%, var(--muted));
+  max-width: 28rem;
+  color: var(--muted);
 }
 
 /* Close CTA — sole accent color */
@@ -606,17 +611,16 @@ button:active {
   overflow-x: clip;
 }
 
-.story-scene {
+.story-chapter {
   position: relative;
   min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--canvas);
-  border-bottom: 1px solid color-mix(in srgb, var(--gutter) 80%, #d2d2d7);
 }
 
-.story-scene__inner {
+.story-chapter__inner {
   display: grid;
   width: min(100%, 68rem);
   margin-inline: auto;
@@ -624,38 +628,56 @@ button:active {
   gap: 2rem;
   align-items: center;
   min-width: 0;
+  min-height: calc(100svh - var(--nav-height));
 }
 
 @media (min-width: 375px) {
-  .story-scene__inner {
+  .story-chapter__inner {
     padding-inline: 1.25rem;
   }
 }
 
 @media (min-width: 900px) {
-  .story-scene__inner {
+  .story-chapter__inner {
     grid-template-columns: 1.05fr 0.95fr;
     gap: 3.5rem;
     padding-inline: 2rem;
   }
-
-  .story-scene__inner--cta {
-    grid-template-columns: 1fr;
-    justify-items: start;
-    max-width: 44rem;
-    margin-inline: auto;
-    width: 100%;
-  }
 }
 
-.story-kicker {
-  margin: 0 0 0.85rem;
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: 0.9375rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 400;
+.story-chapter__copy {
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.story-beat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Motion mode: absolute stacked beats inside one pinned chapter */
+.story-film--motion .story-chapter__copy {
+  min-height: 14rem;
+  display: block;
+}
+
+.story-film--motion .story-beat {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.story-film--motion .story-beat--cta {
+  pointer-events: auto;
+}
+
+.story-film--motion .story-beat--cta .home-cta-wrap {
+  pointer-events: auto;
 }
 
 .story-headline {
@@ -669,8 +691,55 @@ button:active {
   margin: 0;
 }
 
-.story-scene__stage {
+.story-chapter__stage {
   width: 100%;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.story-stage-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 28rem;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.story-stage-chrome__label {
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.story-stage-stack {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.story-stage-layer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-film--motion .story-stage-stack {
+  min-height: 12rem;
+  display: block;
+}
+
+.story-film--motion .story-stage-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.story-film--motion .story-stage-layer:first-child {
+  position: relative;
 }
 
 .story-still {
@@ -749,7 +818,20 @@ button:active {
 
 .story-still--cta .product-frame {
   max-width: 28rem;
-  margin-inline: 0;
+  margin-inline: auto;
+}
+
+/* Non-motion: collapse chapter to a readable vertical stack */
+.story-film:not(.story-film--motion) .story-chapter {
+  min-height: 0;
+  display: block;
+}
+
+.story-film:not(.story-film--motion) .story-chapter__inner {
+  min-height: 0;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 4rem;
 }
 
 /* ——— Work index (four story stills) ——— */
@@ -929,18 +1011,19 @@ button:active {
   .gate-chip,
   .job-title-light,
   .home-method__line,
-  .story-scene,
-  .story-scene__stage,
+  .story-chapter,
+  .story-chapter__stage,
+  .story-beat,
+  .story-stage-layer,
   .story-headline,
-  .story-kicker,
+  .story-stage-chrome__label,
   .story-still,
   .story-still__note,
   [data-scene-copy],
   [data-method-beat],
   [data-job-card],
   [data-gate-chip],
-  [data-job-title],
-  [data-story-chip] {
+  [data-job-title] {
     transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -948,9 +1031,9 @@ button:active {
 
   /* Avoid leftover compositor hints from prior GSAP pins */
   .home-scene,
-  .story-scene,
+  .story-chapter,
   .home-scene__stage,
-  .story-scene__stage {
+  .story-chapter__stage {
     will-change: auto !important;
   }
 }

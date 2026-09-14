@@ -22,13 +22,6 @@ export type StoryScenesProps = {
   scenes: readonly StoryScene[];
 };
 
-const MOTION_SEL =
-  ".story-scene__stage, [data-scene-copy], [data-story-chip], .story-still";
-
-function showStatic() {
-  gsap.set(MOTION_SEL, { clearProps: "transform,opacity,visibility", autoAlpha: 1 });
-}
-
 function Still({ beat, productName }: { beat: StoryBeat; productName: string }) {
   if (beat === "pain") {
     return (
@@ -65,13 +58,9 @@ function Still({ beat, productName }: { beat: StoryBeat; productName: string }) 
     return (
       <div className="story-still" aria-hidden="true">
         <div className="gate-still">
-          <div className="gate-chip" data-story-chip>
-            Propose
-          </div>
+          <div className="gate-chip">Propose</div>
           <div className="gate-arrow" aria-hidden="true" />
-          <div className="gate-chip gate-chip--approve" data-story-chip>
-            Approve
-          </div>
+          <div className="gate-chip gate-chip--approve">Approve</div>
         </div>
       </div>
     );
@@ -108,9 +97,21 @@ function Still({ beat, productName }: { beat: StoryBeat; productName: string }) 
   return (
     <div className="story-still story-still--cta" aria-hidden="true">
       <div className="product-frame product-frame--job">
-        <p className="job-title-meta">One painful workflow. One agent. A human gate.</p>
+        <p className="job-title-meta">
+          One painful workflow. One agent. A human gate.
+        </p>
       </div>
     </div>
+  );
+}
+
+function showStatic(root: HTMLElement) {
+  root.classList.remove("story-film--motion");
+  gsap.set(
+    root.querySelectorAll(
+      ".story-beat, .story-stage-layer, .story-chapter__stage, [data-scene-copy]",
+    ),
+    { clearProps: "transform,opacity,visibility", autoAlpha: 1 },
   );
 }
 
@@ -119,6 +120,9 @@ export function StoryScenes({ productName, scenes }: StoryScenesProps) {
 
   useGSAP(
     () => {
+      const root = rootRef.current;
+      if (!root) return;
+
       const mm = gsap.matchMedia();
 
       mm.add(
@@ -136,65 +140,78 @@ export function StoryScenes({ productName, scenes }: StoryScenesProps) {
           };
 
           if (reduce || short || !pinOk) {
-            showStatic();
+            showStatic(root);
             return;
           }
 
-          const sceneEls = gsap.utils.toArray<HTMLElement>(".story-scene");
+          root.classList.add("story-film--motion");
 
-          sceneEls.forEach((scene) => {
-            const stage = scene.querySelector<HTMLElement>(".story-scene__stage");
-            const copy = scene.querySelectorAll<HTMLElement>("[data-scene-copy]");
-            const chips = scene.querySelectorAll<HTMLElement>("[data-story-chip]");
+          const chapter = root.querySelector<HTMLElement>(".story-chapter");
+          const stage = root.querySelector<HTMLElement>(".story-chapter__stage");
+          const beats = gsap.utils.toArray<HTMLElement>(".story-beat");
+          const layers = gsap.utils.toArray<HTMLElement>(".story-stage-layer");
 
-            const animated: HTMLElement[] = [];
-            if (stage) animated.push(stage);
-            copy.forEach((el) => animated.push(el));
-            chips.forEach((el) => animated.push(el));
-            gsap.set(animated, { autoAlpha: 0 });
+          if (!chapter || beats.length === 0) return;
 
-            const tl = gsap.timeline({
-              defaults: { ease: "none" },
-              scrollTrigger: {
-                trigger: scene,
-                start: "top top",
-                end: "+=90%",
-                pin: true,
-                scrub: 1,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-              },
-            });
+          // Stage shell always present — never black out the chapter.
+          if (stage) gsap.set(stage, { autoAlpha: 1 });
 
-            if (stage) {
-              tl.fromTo(
-                stage,
-                { autoAlpha: 0, y: 28, scale: 0.98 },
-                { autoAlpha: 1, y: 0, scale: 1, duration: 0.35 },
-                0,
-              );
-            }
+          gsap.set(beats, { autoAlpha: 0, y: 18 });
+          gsap.set(beats[0], { autoAlpha: 1, y: 0 });
 
-            if (copy.length) {
-              tl.fromTo(
-                copy,
-                { autoAlpha: 0, y: 24 },
-                { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
-                0.1,
-              );
-            }
+          if (layers.length) {
+            gsap.set(layers, { autoAlpha: 0 });
+            gsap.set(layers[0], { autoAlpha: 1 });
+          }
 
-            if (chips.length) {
-              tl.fromTo(
-                chips,
-                { autoAlpha: 0, y: 16 },
-                { autoAlpha: 1, y: 0, stagger: 0.18, duration: 0.35 },
-                0.28,
-              );
-            }
-
-            tl.to({}, { duration: 0.2 });
+          const tl = gsap.timeline({
+            defaults: { ease: "none" },
+            scrollTrigger: {
+              trigger: chapter,
+              start: "top top",
+              // Five copy beats × ~80–90% viewport → one long pin runway.
+              end: "+=420%",
+              pin: true,
+              scrub: 1,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+            },
           });
+
+          const hold = 0.85;
+          const cross = 0.55;
+
+          for (let i = 0; i < beats.length; i++) {
+            // Linger on the current idea.
+            tl.to({}, { duration: hold });
+
+            if (i < beats.length - 1) {
+              tl.to(
+                beats[i],
+                { autoAlpha: 0, y: -14, duration: cross },
+                ">",
+              );
+              tl.fromTo(
+                beats[i + 1],
+                { autoAlpha: 0, y: 18 },
+                { autoAlpha: 1, y: 0, duration: cross },
+                "<",
+              );
+
+              if (layers[i] && layers[i + 1]) {
+                tl.to(layers[i], { autoAlpha: 0, duration: cross }, "<");
+                tl.fromTo(
+                  layers[i + 1],
+                  { autoAlpha: 0, scale: 0.985 },
+                  { autoAlpha: 1, scale: 1, duration: cross },
+                  "<",
+                );
+              }
+            }
+          }
+
+          // Final hold so CTA stays readable before unpin.
+          tl.to({}, { duration: hold });
 
           const refresh = () => ScrollTrigger.refresh();
           window.addEventListener("load", refresh);
@@ -204,6 +221,7 @@ export function StoryScenes({ productName, scenes }: StoryScenesProps) {
 
           return () => {
             window.removeEventListener("load", refresh);
+            root.classList.remove("story-film--motion");
           };
         },
       );
@@ -212,53 +230,70 @@ export function StoryScenes({ productName, scenes }: StoryScenesProps) {
         mm.revert();
       };
     },
-    { scope: rootRef },
+    { scope: rootRef, dependencies: [productName, scenes] },
   );
 
   return (
-    <main id="main" ref={rootRef} className="story-film">
-      {scenes.map((scene, index) => {
-        const isCta = scene.beat === "cta";
-        const headingId = `${scene.id}-h`;
+    <main
+      id="main"
+      ref={rootRef}
+      className="story-film"
+      aria-label={productName}
+    >
+      <div className="story-chapter">
+        <div className="story-chapter__inner">
+          <div className="story-chapter__copy">
+            {scenes.map((scene, index) => {
+              const isCta = scene.beat === "cta";
+              const headingId = `${scene.id}-h`;
+              const HeadingTag = index === 0 ? "h1" : "h2";
 
-        return (
-          <section
-            key={scene.id}
-            id={scene.id}
-            className="story-scene"
-            aria-labelledby={headingId}
-          >
-            <div
-              className={
-                isCta
-                  ? "story-scene__inner story-scene__inner--cta"
-                  : "story-scene__inner"
-              }
-            >
-              <div className="story-scene__copy">
-                {index === 0 ? (
-                  <h1 className="story-kicker" data-scene-copy>
-                    {productName}
-                  </h1>
-                ) : null}
-                <h2 id={headingId} className="story-headline" data-scene-copy>
-                  {scene.line}
-                </h2>
-                {isCta ? (
-                  <p className="home-cta-wrap" data-scene-copy>
-                    <Link href="/contact" className="home-cta">
-                      Start a brief.
-                    </Link>
-                  </p>
-                ) : null}
-              </div>
-              <div className="story-scene__stage">
-                <Still beat={scene.beat} productName={productName} />
-              </div>
+              return (
+                <div
+                  key={scene.id}
+                  id={scene.id}
+                  className={
+                    isCta ? "story-beat story-beat--cta" : "story-beat"
+                  }
+                  aria-labelledby={headingId}
+                >
+                  <HeadingTag
+                    id={headingId}
+                    className="story-headline"
+                    data-scene-copy
+                  >
+                    {scene.line}
+                  </HeadingTag>
+                  {isCta ? (
+                    <p className="home-cta-wrap" data-scene-copy>
+                      <Link href="/contact" className="home-cta">
+                        Start a brief.
+                      </Link>
+                    </p>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="story-chapter__stage" aria-hidden="true">
+            <div className="story-stage-chrome">
+              <span className="story-stage-chrome__label">{productName}</span>
             </div>
-          </section>
-        );
-      })}
+            <div className="story-stage-stack">
+              {scenes.map((scene) => (
+                <div
+                  key={`still-${scene.id}`}
+                  className="story-stage-layer"
+                  data-story-still={scene.beat}
+                >
+                  <Still beat={scene.beat} productName={productName} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

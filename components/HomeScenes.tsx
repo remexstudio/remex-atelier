@@ -16,10 +16,17 @@ const JOBS = [
 ] as const;
 
 const MOTION_SEL =
-  ".home-scene__stage, [data-scene-copy], [data-method-beat], [data-job-card], [data-gate-chip], [data-job-title]";
+  "[data-scene-copy], [data-method-beat], [data-job-card], [data-gate-chip], [data-job-title]";
 
 function showStatic() {
-  gsap.set(MOTION_SEL, { clearProps: "transform,opacity,visibility", autoAlpha: 1 });
+  gsap.set(MOTION_SEL, {
+    clearProps: "transform,opacity,visibility",
+    autoAlpha: 1,
+  });
+  gsap.set(".home-scene__stage", {
+    clearProps: "transform,opacity,visibility",
+    autoAlpha: 1,
+  });
 }
 
 export function HomeScenes() {
@@ -29,7 +36,6 @@ export function HomeScenes() {
     () => {
       const mm = gsap.matchMedia();
 
-      // Prefer native scroll + static stack when motion is reduced or viewport is short.
       mm.add(
         {
           reduce: "(prefers-reduced-motion: reduce)",
@@ -59,24 +65,24 @@ export function HomeScenes() {
             const gate = scene.querySelectorAll<HTMLElement>("[data-gate-chip]");
             const jobTitle = scene.querySelector<HTMLElement>("[data-job-title]");
 
-            const animated: HTMLElement[] = [];
-            if (stage) animated.push(stage);
-            copy.forEach((el) => animated.push(el));
-            beats.forEach((el) => animated.push(el));
-            cards.forEach((el) => animated.push(el));
-            gate.forEach((el) => animated.push(el));
-            if (jobTitle) animated.push(jobTitle);
+            // Stage stays present on first paint — soft lift only, never autoAlpha 0.
+            if (stage) {
+              gsap.set(stage, { autoAlpha: 1, y: 18, scale: 0.985 });
+            }
 
-            // Compositor-only prep; autoAlpha keeps unfocused until scrubbed in.
-            gsap.set(animated, { autoAlpha: 0 });
+            if (copy.length) gsap.set(copy, { autoAlpha: 0, y: 20 });
+            if (beats.length) gsap.set(beats, { autoAlpha: 0, y: 18 });
+            if (cards.length) gsap.set(cards, { autoAlpha: 0, y: 16 });
+            if (gate.length) gsap.set(gate, { autoAlpha: 0, y: 14 });
+            if (jobTitle) gsap.set(jobTitle, { autoAlpha: 0.18 });
 
             const tl = gsap.timeline({
               defaults: { ease: "none" },
               scrollTrigger: {
                 trigger: scene,
                 start: "top top",
-                // Keep pin short enough to read without scroll hijack.
-                end: "+=90%",
+                // Longer apple-chapter runway (~140–160%).
+                end: "+=150%",
                 pin: true,
                 scrub: 1,
                 anticipatePin: 1,
@@ -85,61 +91,48 @@ export function HomeScenes() {
             });
 
             if (stage) {
-              tl.fromTo(
-                stage,
-                { autoAlpha: 0, y: 28, scale: 0.98 },
-                { autoAlpha: 1, y: 0, scale: 1, duration: 0.35 },
-                0,
-              );
+              tl.to(stage, { y: 0, scale: 1, duration: 0.4 }, 0);
             }
 
             if (copy.length) {
-              tl.fromTo(
+              tl.to(
                 copy,
-                { autoAlpha: 0, y: 24 },
-                { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
-                0.1,
+                { autoAlpha: 1, y: 0, stagger: 0.14, duration: 0.45 },
+                0.08,
               );
             }
 
             if (jobTitle) {
-              tl.fromTo(
-                jobTitle,
-                { autoAlpha: 0.22 },
-                { autoAlpha: 1, duration: 0.5 },
-                0.35,
-              );
+              tl.to(jobTitle, { autoAlpha: 1, duration: 0.55 }, 0.28);
             }
 
             if (gate.length) {
-              tl.fromTo(
+              tl.to(
                 gate,
-                { autoAlpha: 0, y: 16 },
-                { autoAlpha: 1, y: 0, stagger: 0.18, duration: 0.35 },
-                0.28,
-              );
-            }
-
-            if (cards.length) {
-              tl.fromTo(
-                cards,
-                { autoAlpha: 0, y: 20 },
-                { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.35 },
+                { autoAlpha: 1, y: 0, stagger: 0.2, duration: 0.4 },
                 0.22,
               );
             }
 
-            if (beats.length) {
-              tl.fromTo(
-                beats,
-                { autoAlpha: 0, y: 22 },
-                { autoAlpha: 1, y: 0, stagger: 0.24, duration: 0.4 },
-                0.15,
+            if (cards.length) {
+              tl.to(
+                cards,
+                { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
+                0.18,
               );
             }
 
-            // Brief hold so the last beat stays readable before unpin.
-            tl.to({}, { duration: 0.2 });
+            if (beats.length) {
+              // Sequential method beats — headline first, then support lines.
+              tl.to(
+                beats,
+                { autoAlpha: 1, y: 0, stagger: 0.32, duration: 0.45 },
+                0.12,
+              );
+            }
+
+            // Longer hold so one idea lingers before unpin.
+            tl.to({}, { duration: 0.55 });
           });
 
           const refresh = () => ScrollTrigger.refresh();
@@ -155,7 +148,7 @@ export function HomeScenes() {
           return () => {
             window.removeEventListener("load", refresh);
             if (fontsReady) {
-              // no-op; refresh already applied
+              // refresh already applied
             }
           };
         },
@@ -212,9 +205,8 @@ export function HomeScenes() {
           <div className="home-scene__stage" aria-hidden="true">
             <div className="product-frame product-frame--job">
               <p className="job-title-light" data-job-title>
-                Job title
+                Atelier Concierge
               </p>
-              <p className="job-title-meta">One brief. One seat.</p>
             </div>
           </div>
         </div>
@@ -272,17 +264,17 @@ export function HomeScenes() {
         </div>
       </section>
 
-      {/* S5 — Method: three sequential beats */}
+      {/* S5 — Method: headline + sequential support */}
       <section id="home-s5" className="home-scene" aria-labelledby="home-s5-h">
         <div className="home-scene__inner home-scene__inner--method">
           <div className="home-scene__stage home-method">
             <h2 id="home-s5-h" className="home-headline" data-method-beat>
               Design the job.
             </h2>
-            <p className="home-headline home-method__line" data-method-beat>
+            <p className="home-support home-method__line" data-method-beat>
               Build the gate.
             </p>
-            <p className="home-headline home-method__line" data-method-beat>
+            <p className="home-support home-method__line" data-method-beat>
               Keep the record.
             </p>
           </div>
