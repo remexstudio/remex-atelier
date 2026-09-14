@@ -2,8 +2,9 @@
 
 - Status: delivered
 - Content SHA: bd45df8
-- Tip: 6b5b4ee
-- Preview: https://remex-atelier.vercel.app
+- Merge tip: 31e624f on main (HANDOFF stamp follows)
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: dpl_Ehz6Ro1EqCJFp6JcB4v8HmMBAqq7 READY
 - Files changed:
   - `components/SiteChrome.tsx` — default `footerLine` SAY; mark class only
   - `app/globals.css` — `.site-nav__mark` film CSS ≥44; `scroll-margin-top` on `.home-mod[id]` + `[data-*-mod]`; four chapter job H1s `--size-display`; footer link `:focus-visible`
@@ -11,15 +12,15 @@
   - `components/HomeScenes.tsx` / `app/approach/page.tsx` — import only; landings stay home H5 + approach
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
 - Acceptance self-check:
-  - [x] Default footerLine matches `Seattle studio. Global clients.` (home / `/work` / `/approach` measured)
-  - [x] Nav mark film-only CSS; 143.8×44, min-height/min-width 44px
-  - [x] Home + chapter anchors `scroll-margin-top: 46px`; Gate/Jobs/Brief/Roadmap headings clear sticky nav (1280 + 375)
-  - [x] Four chapter job H1s `--size-display` (72px at 1280); `--sm` titles stay ~37.6px
+  - [x] Default footerLine matches `Seattle studio. Global clients.`
+  - [x] Nav mark film-only CSS; ≥44
+  - [x] Home + chapter anchors clear sticky nav via scroll-margin
+  - [x] Four chapter job H1s at `--size-display` (not display-sm)
   - [x] Locked copy / 机羽云 / refuse landings unchanged; no Lenis; no new pins
   - [x] `pnpm build` PASS
-  - [ ] Prod refreshed — coordinator (`vercel deploy --prod` not run)
+  - [x] `vercel deploy --prod` dpl_Ehz6Ro1EqCJFp6JcB4v8HmMBAqq7
 - Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
 - Risks:
-  - Existing `html { scroll-padding-top: var(--nav-height) }` plus new scroll-margin stacks (~92px from viewport top / ~46px below nav). Headings still clear. Did not remove scroll-padding (covers other ids).
-  - `.site-shell--default` / `.site-footer--default` kept: `SiteChrome` still applies those classes for `variant="default"` even though all live routes use film.
+  - `html { scroll-padding-top }` plus new scroll-margin stacks (~92px from viewport top). Headings still clear.
+  - `.site-shell--default` kept: default variant still references those classes.
 - Blockers: Await three PM + Leader. No V3-20 until PASS.
