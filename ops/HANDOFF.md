@@ -1,7 +1,7 @@
 # Handoff R2
 
 - Status: delivered
-- SHA: aa01652
+- SHA: 7836383
 - Preview: https://remex-atelier.vercel.app
 - Files changed:
   - components/StoryScenes.tsx (new client — five pinned scrub scenes `#story-s1`…`#story-s5`)
