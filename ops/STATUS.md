@@ -1,8 +1,8 @@
 # Status
 
-- Phase: Atelier v2 — R4 REWORK delivered on disk (SHA pending)
-- Closed pending commit: R4 REWORK (apple chapter pin/scrub feel)
-- Prior closed: R0–R3; prior R4 delivery 596aa52 superseded by this rework
-- Open: commit `fix(site): apple chapter pin and scrub feel` + dual PASS
+- Phase: Atelier v2 — R4 REWORK closed; **STOPPED**
+- Closed: R0 (91b0afd), R1 (70a6e4c), R2 (7836383), R3 (780233b), R4 (59cdfc6 rework)
+- Open: none
 - Repo: https://github.com/remexstudio/remex-atelier
-- Rule: same TASK ID; dual PASS then stop
+- Live: https://remex-atelier.vercel.app
+- Rule: dual PASS then stop — awaiting owner only

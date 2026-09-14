@@ -1,41 +1,22 @@
-# Review R4 — REWORK
+# Review R4 REWORK
 
-- TASK ID: R4 (same ID; no new pages)
-- Prior delivery SHA: 596aa52
-- Verdict: **LEADER: REWORK**
+- TASK ID: R4
+- Delivery SHA: 59cdfc6 (`fix(site): apple chapter pin and scrub feel`)
+- Handoff tip: a3b642b
+- Preview: https://remex-atelier.vercel.app (Git/CLI deploy may lag)
 
-## Defects (must fix)
+## Defect re-check
 
-1. **Story film grammar is wrong for Apple product chapters.**  
-   Score + owner: one **pinned product stage** + **five copy scenes that scrub in**.  
-   Current: five independent full-viewport pins, each fading its own still.  
-   Fix: per story route, **one** ScrollTrigger pin on a persistent stage; scrub five copy beats (A–E); stage still morphs pain → agent → gate → record → CTA via transform/opacity only. No new routes.
+- [x] Stories: single `.story-chapter` pin (`+=420%`) + five scrub beats; stage morphs; stage shell not blanked
+- [x] Home pins `+=150%` with longer hold
+- [x] Home stage stays present (no full autoAlpha:0 blackout)
+- [x] S2 lit **Atelier Concierge** (no literal “Job title”)
+- [x] S5: “Design the job.” headline; “Build the gate.” / “Keep the record.” as `home-support`
+- [x] Story beat A: copy column = locked line only; productName on stage chrome
+- [x] Locked copy intact; `pnpm build` PASS; reduced-motion path retained
 
-2. **Home pin runway too short (`end: "+=90%"`).**  
-   Chapters feel rushed, not apple.com breath.  
-   Fix: longer pin distance (≈ `+=140%`–`+=160%`) with a readable hold; one idea per scene must linger. Keep scrub:1; no Lenis/normalizeScroll.
+## Verdict
 
-3. **Blank-slide entrances.**  
-   `gsap.set(..., autoAlpha: 0)` on stage+copy at each pin start → empty frames.  
-   Fix: keep stage present; evolve stage state + crossfade copy. Do not black out the chapter.
+**LEADER: PASS**
 
-4. **S2 stage shows literal “Job title”.**  
-   Looks like a placeholder, not “the job title lights up.”  
-   Fix: light up a concrete job-name still (craft visual). No new slogans; no paraphrasing locked headlines.
-
-5. **S5 method hierarchy vs scroll-score.**  
-   Score: line 1 = headline; lines 2–3 = supporting sequential beats.  
-   Current: three equal display headlines.  
-   Fix: typographic hierarchy (headline vs support) while keeping the three exact lines and sequential scrub.
-
-6. **Story scene-1 productName kicker dilutes one idea per scene.**  
-   Pain beat must be the locked sentence alone in the copy column.  
-   Fix: move product name to stage/chrome/metadata; copy column = locked line (+ CTA only on beat E).
-
-## Skills required before edits
-
-`/apple-design-web` `/review-animations` `/gsap-scrolltrigger`
-
-## Out of scope
-
-New pages, new routes, new slogans, /demo rebuild, personal site.
+R4 closed. **Stop.** No further slices until owner says otherwise.
