@@ -2,7 +2,7 @@
 
 - Status: delivered
 - Content SHA: bd45df8
-- Tip: fae3666
+- Tip: 6b5b4ee
 - Preview: https://remex-atelier.vercel.app
 - Files changed:
   - `components/SiteChrome.tsx` — default `footerLine` SAY; mark class only
