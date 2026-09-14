@@ -1,6 +1,6 @@
-# TASK V3-6
+# TASK V3-7
 
-TASK ID: V3-6
+TASK ID: V3-7
 REPO: remexstudio/remex-atelier
 
 SKILLS (before edits):
@@ -9,36 +9,44 @@ SKILLS (before edits):
 /cinematic-scroll-storytelling /zero-jank-scroll /review-animations /writing-guidelines
 
 GOAL:
-Rebuild `/work/exception-copilot` as a **unique** product chapter — not StoryScenes five-beat empty grammar. Exact lines from `docs/scroll-score-v3.md` § Exception Copilot. Distinct still DNA: exception queue rank → policy disposition + cite → case note draft → human for refunds/irreversible money → case timeline record.
+Bring `/approach` and `/contact` to V3 payload depth per `docs/ia-v3.md` and `docs/copy-locks.md`. Apple chapter grammar (light canvas, large type, hairlines, frosted film nav ok). No founder name, phone, school, pricing, personal bio. No English-products market claims.
 
 ALLOWED:
-- app/work/exception-copilot/**
-- components/ExceptionCopilotChapter.tsx (or equivalent unique component; NOT StoryScenes)
-- app/globals.css (exception-copilot styles only)
+- app/approach/**
+- app/contact/**
+- components/ContactForm.tsx (if needed for labels/success)
+- app/globals.css (approach/contact styles only)
+- components/SiteChrome.tsx only if required for film/default chrome consistency on these routes
 - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 
 OUT OF SCOPE:
-- Concierge / Ledger / Morning pages
-- Home, /demo, personal site
-- StoryScenes as sole structure
+- Home nine modules rewrite
+- Product story pages
+- /demo, personal site, Lab rebuild as sold product
 
-REQUIRED (exact from scroll-score-v3):
-- Job + user: Ops lead clearing exception queues against written policy.
-- Pain: Exceptions pile faster than policy can be reread.
-- Ability 1: Rank the exception queue by urgency and policy fit.
-- Ability 2: Suggest a policy disposition with the cite attached.
-- Ability 3: Draft the case note for the lead.
-- Gate: A human handles refunds and irreversible money moves.
-- Record: Case timeline keeps policy cite and decision together.
-- Refusal: Will not issue refunds or move money without a human.
-- CTA: Start a brief. → `/contact`
-- Footer: Studio study. Client identity anonymized.
+## `/approach` REQUIRED
+- Method three with substance: Design the job / Build the gate / Keep the record (deeper than home summary; may use Propose/Approve/Record mechanism lines from copy-locks)
+- Name meaning **once only** (Chinese glyphs only here):
+  - 机 = machine
+  - 羽 = remex flight feather (control surface)
+  - 云 = work runs in the cloud
+  - Remex = remiges
+- Legal: Jiyuyun Studio LLC
+- Seattle studio. Global clients. (verbatim SAY)
+- What we do not sell (locked list from copy-locks, verbatim bullets)
+- Roadmap Now / Next / Later with detail (may expand home three-beat; do not invent English-first claims). Prefer locked home supporting facts as base:
+  - Now: ship gated agents for one workflow at a time.
+  - Next: deepen records and chapter wayfinding across the four jobs.
+  - Later: broaden seats only after gates and records hold.
+- Canvas #fff / gutter #f5f5f7; display negative tracking; ≥44px hits; labeled content; 375 readable
+- No founder name / phone / school / pricing table / CumuLabs / outsourcing language
 
-MOTION/UX: pin:no default; once-reveal OK; transform/opacity; no Lenis / normalizeScroll / body overflow lock; 375+RM full lines visible; canvas #fff / gutter #f5f5f7; film SiteChrome; CTA ≥44px; no Open demo.
+## `/contact` REQUIRED
+- Headline: Start a brief. (verbatim)
+- Form: Start a brief (labeled fields; success state)
+- Email: hello@remexstudio.com
+- No founder name
 
-VISUAL DNA (must not look like Concierge skin/try-on/bag, Ledger corpus/Propose sheets, or Morning P/W/N triage chips):
-ranked exception queue → policy cite disposition card → case note draft → human money gate → case timeline spine.
+COMMIT: `feat(site): v3 approach and contact`
 
-COMMIT: `feat(work): exception copilot unique chapter`
-
-After push: write ops/HANDOFF.md. Await three PM + Leader. Do not start V3-7 until PASS.
+After push: write ops/HANDOFF.md. Await three PM + Leader. Do not start V3-8 until PASS.
