@@ -1,7 +1,7 @@
 # Handoff V3-1
 
-- Status: delivered (await PM + Leader before V3-2)
-- SHA: pending (no commit/push per task instruction)
+- Status: delivered
+- SHA: 81234b7
 - Preview: https://remex-atelier.vercel.app (local `pnpm build` required for DEV PASS)
 - Commit message when allowed: `feat(site): v3 tokens nav and type`
 
@@ -33,7 +33,7 @@ Targets may not exist until V3-2; links are present in chrome now. Default (non-
 - [x] Skill gate in `AGENTS.md`
 - [x] `design.md` palette aligned (product canvas vs legacy paper)
 - [x] `pnpm build` PASS (Next.js 16.3.5)
-- [ ] Commit/push deferred — SHA pending
+- [x] Commit: `feat(site): v3 tokens nav and type`
 
 ## Skills used (all ten — skill gate)
 1. apple-design
