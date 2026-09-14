@@ -1,82 +1,81 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
-import { workStudies } from "@/components/lumen/data";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Studio studies from Remex Studio — anonymized client work.",
+  description:
+    "Four product stories from Remex Studio — agents built to the brief.",
   openGraph: {
     title: "Work · Remex Studio",
-    description: "Studio studies from Remex Studio — anonymized client work.",
+    description:
+      "Four product stories from Remex Studio — agents built to the brief.",
     url: "/work",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "Work · Remex Studio",
-    description: "Studio studies from Remex Studio — anonymized client work.",
+    description:
+      "Four product stories from Remex Studio — agents built to the brief.",
   },
 };
 
+const STORIES = [
+  {
+    href: "/work/atelier-concierge",
+    name: "Atelier Concierge",
+    still: "still-a" as const,
+    line: "Client threads, fittings, and aftercare.",
+  },
+  {
+    href: "/work/ledger-clerk",
+    name: "Ledger Clerk",
+    still: "still-b" as const,
+    line: "Month-end questions and cited answers.",
+  },
+  {
+    href: "/work/morning-remex",
+    name: "Morning Remex",
+    still: "still-c" as const,
+    line: "Overnight threads into a morning packet.",
+  },
+  {
+    href: "/work/exception-copilot",
+    name: "Exception Copilot",
+    still: "still-d" as const,
+    line: "Exception queue and disposition drafts.",
+  },
+] as const;
+
 export default function WorkPage() {
   return (
-    <SiteChrome>
-      <main id="main">
-        <p className="type-meta mt-14 sm:mt-16">Work</p>
-        <h1 className="type-display mt-3 text-4xl text-accent sm:text-5xl">
-          Studies
-        </h1>
-        <p className="type-body mt-4 max-w-prose text-muted">
-          Four briefs. Live studies open as they ship. Client identity
-          anonymized on every page.
-        </p>
+    <SiteChrome variant="film">
+      <main id="main" className="work-index">
+        <div className="work-index__intro">
+          <p className="type-meta">Work</p>
+          <h1 className="work-index__title">Product stories</h1>
+          <p className="work-index__lede">
+            Four jobs we know how to hire an agent for. Marketing stills —
+            scroll each story for the gate and the record.
+          </p>
+        </div>
 
-        <ul className="mt-14 grid gap-5 sm:grid-cols-2">
-          {workStudies.map((study) => {
-            const live = study.status === "live";
-            const card = (
-              <article className="teaser-card flex h-full flex-col border border-rule px-5 py-5">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="type-meta">{study.product}</p>
-                  <span
-                    className={
-                      live
-                        ? "border border-accent bg-accent px-2 py-0.5 text-[11px] tracking-wide text-paper"
-                        : "border border-rule px-2 py-0.5 text-[11px] tracking-wide text-muted"
-                    }
-                  >
-                    {live ? "Live" : "In progress"}
-                  </span>
-                </div>
-                <h2 className="type-display mt-4 text-2xl text-accent">
-                  {study.client}
-                </h2>
-                <p className="type-body mt-3 flex-1 text-sm text-muted">
-                  {study.blurb}
-                </p>
-                {live ? (
-                  <p className="mt-6 text-sm text-accent">Open study</p>
-                ) : (
-                  <p className="type-meta mt-6">Study landing soon</p>
-                )}
-              </article>
-            );
-
-            return (
-              <li key={study.slug}>
-                {study.href ? (
-                  <Link href={study.href} className="group block h-full no-underline">
-                    {card}
-                  </Link>
-                ) : (
-                  <div className="h-full opacity-90" aria-disabled="true">
-                    {card}
-                  </div>
-                )}
-              </li>
-            );
-          })}
+        <ul className="work-index__grid">
+          {STORIES.map((story) => (
+            <li key={story.href}>
+              <Link href={story.href} className="work-story-card">
+                <span
+                  className={`work-story-card__still work-story-card__still--${story.still}`}
+                  aria-hidden="true"
+                />
+                <span className="work-story-card__body">
+                  <span className="work-story-card__name">{story.name}</span>
+                  <span className="work-story-card__line">{story.line}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </main>
     </SiteChrome>

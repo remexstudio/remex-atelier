@@ -2,8 +2,10 @@ import Link from "next/link";
 
 type SiteChromeProps = {
   children: React.ReactNode;
-  /** Full-bleed marketing film shell for `/`. */
+  /** Full-bleed marketing film shell for `/` and product stories. */
   variant?: "default" | "film";
+  /** Optional footer line (e.g. story pages). Defaults to studio mark. */
+  footerLine?: string;
 };
 
 const NAV = [
@@ -15,7 +17,11 @@ const NAV = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export function SiteChrome({ children, variant = "default" }: SiteChromeProps) {
+export function SiteChrome({
+  children,
+  variant = "default",
+  footerLine = "A Seattle studio.",
+}: SiteChromeProps) {
   const isFilm = variant === "film";
 
   return (
@@ -62,7 +68,7 @@ export function SiteChrome({ children, variant = "default" }: SiteChromeProps) {
             : "site-footer site-footer--default"
         }
       >
-        <p className="type-meta">A Seattle studio.</p>
+        <p className="type-meta">{footerLine}</p>
       </footer>
     </div>
   );

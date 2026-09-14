@@ -1,26 +1,32 @@
-# Handoff R1
+# Handoff R2
 
 - Status: delivered
-- SHA: 70a6e4c
-- Preview: https://remex-atelier.vercel.app (Git auto-deploy may lag; CLI deploy if needed)
+- SHA: aa01652
+- Preview: https://remex-atelier.vercel.app
 - Files changed:
-  - app/page.tsx (SiteChrome film + HomeScenes; Offers/LumenTeaser removed from home)
-  - app/globals.css (canvas/gutter tokens, sticky nav, home film, reduced-motion)
-  - components/SiteChrome.tsx (sticky translucent nav ~46px; `variant="film"|"default"`)
-  - components/HomeScenes.tsx (new client — six pinned scenes `#home-s1`…`#home-s6`)
-  - package.json / pnpm-lock.yaml (gsap, @gsap/react; Lenis skipped)
+  - components/StoryScenes.tsx (new client — five pinned scrub scenes `#story-s1`…`#story-s5`)
+  - app/work/atelier-concierge/page.tsx (new product story)
+  - app/work/ledger-clerk/page.tsx (new product story)
+  - app/work/morning-remex/page.tsx (new product story)
+  - app/work/exception-copilot/page.tsx (new product story)
+  - app/work/page.tsx (index: four story stills; no Open demo / toy launch)
+  - components/SiteChrome.tsx (`footerLine` prop; primary NAV verified — no `/demo/*`; Work kept)
+  - app/globals.css (story film + work index styles; reduced-motion covers story scenes)
   - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 - Acceptance self-check:
-  - [x] `/` six full-viewport scenes with pin targets `#home-s1`…`#home-s6`
-  - [x] Headlines/supports match scroll-score exactly (S5 three lines sequential)
+  - [x] Routes live: `/work`, `/work/atelier-concierge`, `/work/ledger-clerk`, `/work/morning-remex`, `/work/exception-copilot`
+  - [x] Each story: pinned stage + five scrub scenes A–E (pain → agent → gate → record → Start a brief.)
+  - [x] Exact scroll-score lines (no paraphrase); CTA Link `/contact` label `Start a brief.`
   - [x] GSAP ScrollTrigger `pin: true`, `scrub: 1`; animate only transform/opacity
-  - [x] Canvas `#ffffff` / gutter `#f5f5f7`; one accent (`--cta` blue) on CTA only
-  - [x] Sticky translucent nav height 46px (44–48px band) with backdrop blur
-  - [x] No purple mesh / Inter-slop / chatbot; no English-first claims
-  - [x] `prefers-reduced-motion`: no pin theater; static stack, transform suppressed
+  - [x] Marketing stills / quiet product frames only — no live widgets
+  - [x] Footer line exact: `Studio study. Client identity anonymized.`
+  - [x] Work index lists four stories with stills; no Open demo buttons
+  - [x] Primary nav has no `/demo/*` links
+  - [x] No employment claims at study brands
+  - [x] Home (R1) untouched except SiteChrome (footerLine optional; NAV unchanged)
   - [x] `pnpm build` passes
-  - [x] Commit: `feat(home): add pinned product scenes`
-- Skills used (all ten):
+  - [x] Commit: `feat(work): add scroll product stories`
+- Skills used (all listed + craft):
   - apple-design
   - apple-design-web
   - apple-design-motion
@@ -30,13 +36,13 @@
   - gsap-react
   - cinematic-scroll-storytelling
   - zero-jank-scroll
-  - gsap-web
-- Reduced-motion note: `matchMedia('(prefers-reduced-motion: reduce)')` skips all ScrollTrigger pins/timelines; CSS also forces `transform: none` on home scene elements. Content remains a readable static stack (no scrub theater).
-- Motion notes: native document scroll preserved; no Lenis (avoid ScrollTrigger sync risk); no per-frame React setState — GSAP refs via `useGSAP` + auto cleanup.
-- Exact copy present: S1–S6 headlines/supports per scroll-score; S6 CTA label `Start a brief.` → `/contact`; S4 links to `/work/atelier-concierge`, `/work/ledger-clerk`, `/work/morning-remex`, `/work/exception-copilot` (pages not created).
+  - writing-guidelines
+- Reduced-motion note: `matchMedia('(prefers-reduced-motion: reduce)')` skips all ScrollTrigger pins/timelines on story pages; CSS forces `transform: none` on story scene elements. Content remains a readable static stack (no scrub theater).
+- Motion notes: native document scroll preserved; no Lenis; no per-frame React setState — GSAP via `useGSAP` + auto cleanup; stills only (transform/opacity).
+- Exact copy present: all twenty locked lines from docs/scroll-score.md across the four products; Morning Remex S4 = `Brief, thread, and send decision stay linked.`
 - Risks/blockers:
-  - S4 work story routes 404 until a later ticket builds them (links intentional)
+  - Old study routes still exist (`/work/lumen-atelier`, `/work/northline`, `/work/kite`, `/work/paperline`) and still link into `/demo/*` — intentionally left; work index no longer surfaces them
+  - S4 home links now resolve to the four new story routes
   - Pin + scrub feel not browser-traced here (build-only verification); refresh after fonts via `document.fonts.ready`
-  - Sticky nav change applies site-wide — default pages keep editorial paper shell; film home uses canvas/gutter
 - Blockers: none
 - DEV: PASS
