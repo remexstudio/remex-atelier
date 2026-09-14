@@ -1,8 +1,8 @@
 # Handoff V3-9
 
 - Status: delivered
-- SHA: e2c2e70 (branch tip of `cursor/v3-kill-legacy-demos-3560`)
-- Preview: https://remex-atelier.vercel.app (production alias; this branch after Vercel preview)
+- SHA: 2a2c02a (content); merge tip c882e69 on main
+- Preview: https://remex-atelier.vercel.app
 - Files changed (ALLOWED only):
   - `next.config.ts` — 301: four legacy work routes → unique chapters; `/demo/{lumen,northline,kite,paperline}(/*)` → `/lab`
   - Deleted dual work pages: `app/work/{lumen-atelier,northline,kite,paperline}`
@@ -20,10 +20,10 @@
   - [x] Four unique chapters copy untouched
   - [x] Primary nav: Work, Approach, Lab (Prototype page), Contact — no /demo/*
   - [x] pnpm build green
-- Skills used: apple-design, apple-design-web (principles), emil-design-eng, writing-guidelines, web-design-guidelines, zero-jank-scroll
+- Skills used: apple-design, apple-design-web, emil-design-eng, writing-guidelines, web-design-guidelines, zero-jank-scroll
 - Risks:
-  - `components/{lumen,kite,northline,paperline}` restored as unused orphans (not in ALLOWED to delete). `app/demo/**` gone; those URLs 301 to `/lab`.
+  - `components/{lumen,kite,northline,paperline}` remain as unused orphans (not in ALLOWED to delete). `app/demo/**` gone; those URLs 301 to `/lab`.
   - `/demo` exact (no family) has no page and no redirect — 404 is intended.
-  - Services / About remain as thin stub routes, off primary nav (V3-12).
+  - Services / About remain as thin stub routes, off primary nav (V3-11+).
 - Blockers:
   - None. Await three PM + Leader. No V3-10 until PASS.
