@@ -51,7 +51,7 @@ export function SiteChrome({
           <div className="site-nav__cluster">
             <nav
               aria-label="Primary"
-              className="type-meta site-nav__links flex flex-wrap justify-end gap-x-4 gap-y-2 sm:gap-x-5"
+              className="type-meta site-nav__links"
             >
               {NAV.map((item) => (
                 <Link
@@ -64,7 +64,7 @@ export function SiteChrome({
               ))}
             </nav>
             {isFilm ? (
-              <nav aria-label="Home chapters">
+              <nav aria-label="Home chapters" className="site-nav__chapters-wrap">
                 <ul className="site-nav__chapters">
                   {CHAPTERS.map((item) => (
                     <li key={item.href}>

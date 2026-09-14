@@ -12,3 +12,7 @@
 ## V3-1 REWORK — 44px nav hits
 
 - State: DEV PASS (await UX re-PASS)
+
+## V3-1 REWORK — 44px hits in 46px bar
+
+- State: DEV PASS (await Apple + UX)
