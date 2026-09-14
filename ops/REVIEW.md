@@ -1,22 +1,17 @@
-# Review R4 REWORK
+# Review V3-0
 
-- TASK ID: R4
-- Delivery SHA: 59cdfc6 (`fix(site): apple chapter pin and scrub feel`)
-- Handoff tip: a3b642b
-- Preview: https://remex-atelier.vercel.app (Git/CLI deploy may lag)
+## Vision PM: PASS (payload map)
+## Apple PM: pending
+## UX PM: **REWORK**
+## Leader: **REWORK** (follow UX hard constraints)
 
-## Defect re-check
+### UX defects (same TASK ID V3-0)
+1. Home modules missing closed contract columns: `pin` yes/no | `end_max` | `375_stack` | `reduced_motion_facts`
+2. H3/H4/H8 pin language too soft (“optional”) — must hard-cap or pin:no
+3. Product scores lack per-module pin/end/375/rm; default **pin:no**
+4. SiteChrome chapter map contract missing (`#home-gate` `#home-jobs` `#home-brief` `#home-roadmap`)
+5. Explicit ban: Lenis / normalizeScroll / body scroll lock while pinned
+6. Home total pin budget: end_max ≤ +=100% per pin module; whole-home pin sum ≲ two viewports; never +=150%×6 or +=420%
 
-- [x] Stories: single `.story-chapter` pin (`+=420%`) + five scrub beats; stage morphs; stage shell not blanked
-- [x] Home pins `+=150%` with longer hold
-- [x] Home stage stays present (no full autoAlpha:0 blackout)
-- [x] S2 lit **Atelier Concierge** (no literal “Job title”)
-- [x] S5: “Design the job.” headline; “Build the gate.” / “Keep the record.” as `home-support`
-- [x] Story beat A: copy column = locked line only; productName on stage chrome
-- [x] Locked copy intact; `pnpm build` PASS; reduced-motion path retained
-
-## Verdict
-
-**LEADER: PASS**
-
-R4 closed. **Stop.** No further slices until owner says otherwise.
+### Next
+Dev amends docs only, commit + HANDOFF V3-0, then UX/Apple/Vision re-PASS.
