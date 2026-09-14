@@ -8,4 +8,4 @@
 - [x] Orphan demo components cleanup
 - [x] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding
 - [x] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo (`d2e3e1b` / merge `7b5ae0c` / tip `ccba927`)
-- [ ] V3-15 BRIEF_ASKS single source + four-chapter still/beat density (issued)
+- [x] V3-15 BRIEF_ASKS single source + four-chapter still/beat density (delivered; await PASS)

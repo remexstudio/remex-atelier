@@ -742,6 +742,39 @@ button:active {
   background: #fff;
 }
 
+.hire-still__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+}
+
+.hire-still__par {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hire-still__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--canvas);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hire-still__chip--record {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--ink) 28%, white);
+}
+
 /* H3 pin-stage gate */
 .home-mod--gate {
   min-height: 100svh;
@@ -2447,6 +2480,14 @@ button:active {
   grid-column: 2;
 }
 
+.lc-corpus__pages {
+  display: grid;
+  gap: 0.3rem;
+  align-content: center;
+  grid-column: 2;
+  min-width: 0;
+}
+
 .lc-corpus__page--mid {
   width: 78%;
   height: 1.15rem;
@@ -4097,7 +4138,8 @@ button:active {
   align-items: center;
 }
 
-.cq-ticket--ribbon .cq-ticket__chrome {
+.cq-ticket--ribbon .cq-ticket__chrome,
+.cq-ticket--ribbon .still-fact--kicker {
   grid-column: 1 / -1;
 }
 
@@ -5515,6 +5557,78 @@ button:active {
 
 .about-say {
   color: var(--ink);
+}
+
+/* V3-15 chapter still / hire-still helpers */
+.still-fact {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.still-fact--muted {
+  color: var(--muted);
+}
+
+.still-fact--ink {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.still-fact--kicker {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cq-flow__still,
+.lc-flow__still {
+  gap: 0.35rem;
+}
+
+.cq-flow__still--tryon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cq-ticket__thread .still-fact,
+.mr-thread .still-fact,
+.ec-ticket .still-fact,
+.lc-register__row .still-fact,
+.mr-packet__row .still-fact,
+.ec-spine__row .still-fact {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.lc-audit-mini .still-fact,
+.lc-corpus__pages .still-fact,
+.cq-bag .still-fact,
+.cq-sku .still-fact,
+.cq-pay__bag .still-fact,
+.cq-tryon-stack__still .still-fact,
+.ec-cite .still-fact,
+.ec-note .still-fact {
+  text-align: center;
+}
+
+@media (max-width: 719px) {
+  .cq-flow__still .still-fact,
+  .lc-flow__still .still-fact,
+  .cq-tryon-stack__still .still-fact {
+    font-size: 0.625rem;
+  }
+
+  .cq-flow__still--tryon .cq-tryon {
+    width: 42%;
+  }
 }
 
 @media (prefers-reduced-transparency: reduce) {

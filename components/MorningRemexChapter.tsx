@@ -128,6 +128,7 @@ export function MorningRemexChapter() {
               <span className="mr-desk__chip mr-desk__chip--watch">Watch</span>
               <span className="mr-desk__chip mr-desk__chip--noise">Noise</span>
               <span className="mr-desk__chip mr-desk__chip--ink">Packet</span>
+              <span className="mr-desk__chip">Never auto-publish</span>
             </div>
           </div>
         </div>
@@ -147,19 +148,19 @@ export function MorningRemexChapter() {
           <div className="mr-mail-stack" data-mr-reveal aria-hidden="true">
             <div className="mr-thread mr-thread--a">
               <span className="mr-thread__dot" />
-              <span className="mr-thread__bar mr-thread__bar--wide" />
+              <span className="still-fact">Overnight</span>
             </div>
             <div className="mr-thread mr-thread--b">
               <span className="mr-thread__dot" />
-              <span className="mr-thread__bar" />
+              <span className="still-fact still-fact--muted">No brief</span>
             </div>
             <div className="mr-thread mr-thread--c">
               <span className="mr-thread__dot" />
-              <span className="mr-thread__bar mr-thread__bar--mid" />
+              <span className="still-fact still-fact--muted">Unread</span>
             </div>
             <div className="mr-thread mr-thread--d">
               <span className="mr-thread__dot" />
-              <span className="mr-thread__bar mr-thread__bar--short" />
+              <span className="still-fact still-fact--muted">Noise</span>
             </div>
           </div>
         </div>
@@ -186,11 +187,11 @@ export function MorningRemexChapter() {
               <p className="mr-pwn__name">Priority</p>
               <div className="mr-thread mr-thread--a">
                 <span className="mr-thread__dot" />
-                <span className="mr-thread__bar mr-thread__bar--wide" />
+                <span className="still-fact">Needs operator</span>
               </div>
               <div className="mr-thread mr-thread--b">
                 <span className="mr-thread__dot" />
-                <span className="mr-thread__bar" />
+                <span className="still-fact still-fact--muted">Escalate</span>
               </div>
             </div>
             <div className="mr-pwn__lane mr-pwn__lane--watch" data-mr-reveal>
@@ -198,7 +199,7 @@ export function MorningRemexChapter() {
               <p className="mr-pwn__name">Watch</p>
               <div className="mr-thread mr-thread--c">
                 <span className="mr-thread__dot" />
-                <span className="mr-thread__bar mr-thread__bar--mid" />
+                <span className="still-fact still-fact--muted">Hold</span>
               </div>
             </div>
             <div className="mr-pwn__lane mr-pwn__lane--noise" data-mr-reveal>
@@ -206,7 +207,7 @@ export function MorningRemexChapter() {
               <p className="mr-pwn__name">Noise</p>
               <div className="mr-thread mr-thread--d">
                 <span className="mr-thread__dot" />
-                <span className="mr-thread__bar mr-thread__bar--short" />
+                <span className="still-fact still-fact--muted">Archive</span>
               </div>
             </div>
           </div>
@@ -234,14 +235,12 @@ export function MorningRemexChapter() {
             <div className="mr-dual__col mr-dual__col--a" data-mr-reveal>
               <span className="mr-operator__tag">Tone A</span>
               <span className="mr-tones__card mr-tones__card--a">Tone A</span>
-              <span className="mr-operator__line" />
-              <span className="mr-operator__line mr-operator__line--mid" />
+              <p className="still-fact still-fact--muted">Operator chooses</p>
             </div>
             <div className="mr-dual__col mr-dual__col--b" data-mr-reveal>
               <span className="mr-operator__tag">Tone B</span>
               <span className="mr-tones__card mr-tones__card--b">Tone B</span>
-              <span className="mr-operator__line" />
-              <span className="mr-operator__line mr-operator__line--short" />
+              <p className="still-fact still-fact--muted">Send held</p>
             </div>
           </div>
 
@@ -253,8 +252,7 @@ export function MorningRemexChapter() {
           <div className="mr-pwn__flags" data-mr-reveal>
             <div className="mr-escalate">
               <span className="mr-escalate__flag">Escalate</span>
-              <span className="mr-escalate__bar" />
-              <span className="mr-escalate__bar mr-escalate__bar--short" />
+              <p className="still-fact">Human before send</p>
             </div>
             <p className="mr-flow__label">Escalate</p>
             <div className="mr-hold">
@@ -303,15 +301,15 @@ export function MorningRemexChapter() {
             <div className="mr-packet__beads">
               <div className="mr-packet__row">
                 <span className="mr-packet__key">Brief</span>
-                <span className="mr-packet__bar mr-packet__bar--wide" />
+                <span className="still-fact">Overnight packet</span>
               </div>
               <div className="mr-packet__row">
                 <span className="mr-packet__key">Draft</span>
-                <span className="mr-packet__bar" />
+                <span className="still-fact">Two tones</span>
               </div>
               <div className="mr-packet__row">
                 <span className="mr-packet__key mr-packet__key--ink">Escalate</span>
-                <span className="mr-packet__bar mr-packet__bar--mid" />
+                <span className="still-fact still-fact--ink">Human before send</span>
               </div>
             </div>
           </div>

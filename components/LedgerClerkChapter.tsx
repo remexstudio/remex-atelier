@@ -127,6 +127,7 @@ export function LedgerClerkChapter() {
               <span className="lc-desk__chip">Corpus</span>
               <span className="lc-desk__chip">Month-end</span>
               <span className="lc-desk__chip lc-desk__chip--ink">Controller</span>
+              <span className="lc-desk__chip">§12.4</span>
             </div>
           </div>
         </div>
@@ -183,8 +184,10 @@ export function LedgerClerkChapter() {
                 <div className="lc-flow__still lc-flow__still--corpus" aria-hidden="true">
                   <div className="lc-corpus">
                     <span className="lc-corpus__spine" />
-                    <span className="lc-corpus__page" />
-                    <span className="lc-corpus__page lc-corpus__page--mid" />
+                    <div className="lc-corpus__pages">
+                      <p className="still-fact">Corpus only</p>
+                      <p className="still-fact still-fact--muted">Cite first</p>
+                    </div>
                   </div>
                 </div>
                 <p className="lc-flow__label">Corpus cite</p>
@@ -196,8 +199,7 @@ export function LedgerClerkChapter() {
                 <div className="lc-flow__still lc-flow__still--propose" aria-hidden="true">
                   <div className="lc-propose">
                     <span className="lc-propose__mark">Propose</span>
-                    <span className="lc-propose__bar" />
-                    <span className="lc-propose__bar lc-propose__bar--short" />
+                    <p className="still-fact">Never Execute</p>
                   </div>
                 </div>
                 <p className="lc-flow__label">Propose package</p>
@@ -220,9 +222,9 @@ export function LedgerClerkChapter() {
               <div className="lc-cite-stack__body">
                 <div className="lc-flow__still lc-flow__still--audit" aria-hidden="true">
                   <div className="lc-audit-mini">
-                    <span className="lc-audit-mini__row" />
-                    <span className="lc-audit-mini__row lc-audit-mini__row--mid" />
-                    <span className="lc-audit-mini__row lc-audit-mini__row--ink" />
+                    <p className="still-fact">Ask</p>
+                    <p className="still-fact">Citation</p>
+                    <p className="still-fact still-fact--ink">Decision</p>
                   </div>
                 </div>
                 <p className="lc-flow__label">Audit log</p>
@@ -265,8 +267,7 @@ export function LedgerClerkChapter() {
               </h2>
               <div className="lc-controller__draft" data-lc-reveal aria-hidden="true">
                 <span className="lc-controller__cite">§12.4 · Close pack</span>
-                <span className="lc-controller__bar" />
-                <span className="lc-controller__bar lc-controller__bar--mid" />
+                <p className="still-fact">Corpus cite</p>
               </div>
               <div className="lc-controller__gate" data-lc-reveal aria-hidden="true">
                 <span className="lc-controller__chip">Propose</span>
@@ -307,17 +308,18 @@ export function LedgerClerkChapter() {
           </h2>
           <div className="lc-register" data-lc-reveal aria-hidden="true">
             <p className="lc-log__title">Audit log</p>
+            <p className="still-fact still-fact--muted">§12.4 · Close pack</p>
             <div className="lc-register__row">
               <span className="lc-log__key">Ask</span>
-              <span className="lc-log__bar lc-log__bar--wide" />
+              <span className="still-fact">Month-end question</span>
             </div>
             <div className="lc-register__row">
               <span className="lc-log__key">Citation</span>
-              <span className="lc-log__bar" />
+              <span className="still-fact">Corpus cite</span>
             </div>
             <div className="lc-register__row">
               <span className="lc-log__key lc-log__key--ink">Decision</span>
-              <span className="lc-log__bar lc-log__bar--mid" />
+              <span className="still-fact still-fact--ink">Approve / Reject</span>
             </div>
           </div>
         </div>
