@@ -1,7 +1,7 @@
 # Handoff V3-4 Ledger Clerk
 
 - Status: delivered
-- SHA: (uncommitted — parent to commit)
+- SHA: 9cd861c
 - Preview: https://remex-atelier.vercel.app
 - Commit msg (parent): `feat(work): ledger clerk unique chapter`
 
