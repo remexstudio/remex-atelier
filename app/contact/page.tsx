@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
-
-const BRIEF_ASKS = [
-  "Which workflow hurts.",
-  "Who approves.",
-  "What the agent may never do.",
-  "What record you must keep.",
-] as const;
 import { SiteChrome } from "@/components/SiteChrome";
+import { BRIEF_ASKS } from "@/lib/brief-asks";
 
 export const metadata: Metadata = {
   title: "Contact",

@@ -148,19 +148,19 @@ export function ExceptionCopilotChapter() {
           <div className="ec-still--pile" data-ec-reveal aria-hidden="true">
             <div className="ec-ticket ec-ticket--a">
               <span className="ec-ticket__badge">EX-441</span>
-              <span className="ec-ticket__bar ec-ticket__bar--wide" />
+              <span className="still-fact">Refund hold</span>
             </div>
             <div className="ec-ticket ec-ticket--b">
               <span className="ec-ticket__badge">EX-438</span>
-              <span className="ec-ticket__bar" />
+              <span className="still-fact still-fact--muted">Restock</span>
             </div>
             <div className="ec-ticket ec-ticket--c">
               <span className="ec-ticket__badge">EX-429</span>
-              <span className="ec-ticket__bar ec-ticket__bar--mid" />
+              <span className="still-fact still-fact--muted">Policy reread</span>
             </div>
             <div className="ec-ticket ec-ticket--d">
               <span className="ec-ticket__badge">EX-417</span>
-              <span className="ec-ticket__bar ec-ticket__bar--short" />
+              <span className="still-fact still-fact--muted">Queue</span>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ export function ExceptionCopilotChapter() {
               <span className="ec-queue__rank ec-rank__row ec-rank__row--hot">1</span>
               <div className="ec-ticket ec-ticket--a">
                 <span className="ec-ticket__badge">EX-441</span>
-                <span className="ec-ticket__bar ec-ticket__bar--wide" />
+                <span className="still-fact">Refund hold</span>
               </div>
               <span className="ec-desk__chip ec-desk__chip--u1">U1</span>
             </li>
@@ -194,7 +194,7 @@ export function ExceptionCopilotChapter() {
               <span className="ec-queue__rank ec-rank__row ec-rank__row--mid">2</span>
               <div className="ec-ticket ec-ticket--b">
                 <span className="ec-ticket__badge">EX-438</span>
-                <span className="ec-ticket__bar" />
+                <span className="still-fact still-fact--muted">Restock</span>
               </div>
               <span className="ec-desk__chip ec-desk__chip--u2">U2</span>
             </li>
@@ -202,7 +202,7 @@ export function ExceptionCopilotChapter() {
               <span className="ec-queue__rank ec-rank__row">3</span>
               <div className="ec-ticket ec-ticket--c">
                 <span className="ec-ticket__badge">EX-429</span>
-                <span className="ec-ticket__bar ec-ticket__bar--mid" />
+                <span className="still-fact still-fact--muted">Policy reread</span>
               </div>
               <span className="ec-desk__chip ec-desk__chip--u3">U3</span>
             </li>
@@ -230,8 +230,7 @@ export function ExceptionCopilotChapter() {
               </p>
               <div className="ec-cite" data-ec-reveal aria-hidden="true">
                 <span className="ec-cite__mark">§4.2</span>
-                <span className="ec-cite__bar" />
-                <span className="ec-cite__bar ec-cite__bar--short" />
+                <p className="still-fact">Restock window</p>
               </div>
               <div className="ec-lead__disposition" data-ec-reveal aria-hidden="true">
                 <span className="ec-lead__cite">§4.2 · Restock window</span>
@@ -251,9 +250,7 @@ export function ExceptionCopilotChapter() {
               </p>
               <div className="ec-note" data-ec-reveal aria-hidden="true">
                 <span className="ec-note__label">Case note</span>
-                <span className="ec-note__line" />
-                <span className="ec-note__line ec-note__line--mid" />
-                <span className="ec-note__line ec-note__line--short" />
+                <p className="still-fact">Draft for lead</p>
               </div>
               <div className="ec-dock__ability" data-ec-reveal>
                 <span className="ec-abilities__n">03</span>
@@ -297,17 +294,17 @@ export function ExceptionCopilotChapter() {
             <div className="ec-spine__row">
               <span className="ec-timeline__dot" />
               <span className="ec-timeline__key">Policy cite</span>
-              <span className="ec-timeline__bar ec-timeline__bar--wide" />
+              <span className="still-fact">§4.2 · Restock window</span>
             </div>
             <div className="ec-spine__row">
               <span className="ec-timeline__dot" />
               <span className="ec-timeline__key">Disposition</span>
-              <span className="ec-timeline__bar" />
+              <span className="still-fact">Refund held</span>
             </div>
             <div className="ec-spine__row">
               <span className="ec-timeline__dot ec-timeline__dot--ink" />
               <span className="ec-timeline__key ec-timeline__key--ink">Decision</span>
-              <span className="ec-timeline__bar ec-timeline__bar--mid" />
+              <span className="still-fact still-fact--ink">Ops lead</span>
             </div>
           </div>
         </div>

@@ -127,6 +127,7 @@ export function AtelierConciergeChapter() {
               <span className="cq-desk__chip">Skin</span>
               <span className="cq-desk__chip">Occasion</span>
               <span className="cq-desk__chip cq-desk__chip--ink">Next step</span>
+              <span className="cq-desk__chip">LUM-1042</span>
             </div>
           </div>
         </div>
@@ -169,6 +170,7 @@ export function AtelierConciergeChapter() {
               <div className="cq-flow__still cq-flow__still--skin" aria-hidden="true">
                 <span className="cq-swatch cq-swatch--warm" />
                 <span className="cq-swatch cq-swatch--cool" />
+                <span className="cq-tag">Skin</span>
                 <span className="cq-tag">Occasion</span>
               </div>
               <p className="cq-flow__label">Skin + occasion</p>
@@ -180,7 +182,7 @@ export function AtelierConciergeChapter() {
               <div className="cq-flow__still cq-flow__still--hero" aria-hidden="true">
                 <div className="cq-sku">
                   <span className="cq-sku__mark" />
-                  <span className="cq-sku__bar" />
+                  <p className="still-fact">Hero SKU</p>
                 </div>
               </div>
               <p className="cq-flow__label">One hero</p>
@@ -194,6 +196,7 @@ export function AtelierConciergeChapter() {
                   <span className="cq-tryon__figure" />
                   <span className="cq-tryon__frame" />
                 </div>
+                <p className="still-fact">Try-on still</p>
               </div>
               <p className="cq-flow__label">Try-on</p>
             </li>
@@ -203,9 +206,8 @@ export function AtelierConciergeChapter() {
             <li className="cq-flow__step" data-cq-reveal>
               <div className="cq-flow__still cq-flow__still--bag" aria-hidden="true">
                 <div className="cq-bag">
-                  <span className="cq-bag__row" />
-                  <span className="cq-bag__row cq-bag__row--mid" />
-                  <span className="cq-bag__row cq-bag__row--short" />
+                  <p className="still-fact">Bag draft</p>
+                  <p className="still-fact still-fact--muted">Human review</p>
                 </div>
               </div>
               <p className="cq-flow__label">Bag draft</p>
@@ -225,10 +227,7 @@ export function AtelierConciergeChapter() {
           <ol className="cq-tryon-stack">
             <li className="cq-tryon-stack__layer cq-tryon-stack__layer--hero" data-cq-reveal>
               <div className="cq-tryon-stack__still" aria-hidden="true">
-                <div className="cq-sku">
-                  <span className="cq-sku__mark" />
-                  <span className="cq-sku__bar" />
-                </div>
+                <p className="still-fact">Hero SKU</p>
               </div>
               <div className="cq-tryon-stack__copy">
                 <span className="cq-abilities__n">01</span>
@@ -237,10 +236,7 @@ export function AtelierConciergeChapter() {
             </li>
             <li className="cq-tryon-stack__layer cq-tryon-stack__layer--tryon" data-cq-reveal>
               <div className="cq-tryon-stack__still" aria-hidden="true">
-                <div className="cq-tryon">
-                  <span className="cq-tryon__figure" />
-                  <span className="cq-tryon__frame" />
-                </div>
+                <p className="still-fact">Try-on still</p>
               </div>
               <div className="cq-tryon-stack__copy">
                 <span className="cq-abilities__n">02</span>
@@ -249,11 +245,7 @@ export function AtelierConciergeChapter() {
             </li>
             <li className="cq-tryon-stack__layer cq-tryon-stack__layer--bag" data-cq-reveal>
               <div className="cq-tryon-stack__still" aria-hidden="true">
-                <div className="cq-bag">
-                  <span className="cq-bag__row" />
-                  <span className="cq-bag__row cq-bag__row--mid" />
-                  <span className="cq-bag__row cq-bag__row--short" />
-                </div>
+                <p className="still-fact">Bag draft</p>
               </div>
               <div className="cq-tryon-stack__copy">
                 <span className="cq-abilities__n">03</span>
@@ -278,8 +270,8 @@ export function AtelierConciergeChapter() {
           <div className="cq-paystage" data-cq-reveal aria-hidden="true">
             <div className="cq-pay">
               <div className="cq-pay__bag">
-                <span className="cq-pay__row" />
-                <span className="cq-pay__row cq-pay__row--mid" />
+                <p className="still-fact">Bag · before pay</p>
+                <p className="still-fact still-fact--muted">Stylist gate</p>
               </div>
               <div className="cq-pay__gate">
                 <span className="cq-pay__chip">Propose</span>
@@ -304,23 +296,19 @@ export function AtelierConciergeChapter() {
       >
         <div className="cq-mod__inner cq-mod__inner--ribbon">
           <div className="cq-ticket cq-ticket--ribbon" data-cq-reveal aria-hidden="true">
-            <div className="cq-ticket__chrome">
-              <span />
-              <span />
-              <span />
-            </div>
+            <p className="still-fact still-fact--kicker">Consult thread</p>
             <p className="cq-ticket__id">LUM-1042</p>
             <div className="cq-ticket__thread">
               <span className="cq-ticket__dot" />
-              <span className="cq-ticket__bar cq-ticket__bar--wide" />
+              <span className="still-fact">Skin + occasion</span>
             </div>
             <div className="cq-ticket__thread">
               <span className="cq-ticket__dot" />
-              <span className="cq-ticket__bar" />
+              <span className="still-fact still-fact--muted">Fit note</span>
             </div>
             <div className="cq-ticket__thread">
               <span className="cq-ticket__dot cq-ticket__dot--ink" />
-              <span className="cq-ticket__bar cq-ticket__bar--mid" />
+              <span className="still-fact">Held with ticket</span>
             </div>
           </div>
           <h2 id="cq-record-h" className="cq-headline cq-headline--sm" data-cq-reveal>

@@ -1,21 +1,14 @@
-# Iteration after V3-14 PASS
+# Iteration after V3-15 delivery
 
 Live preview: https://remex-atelier.vercel.app
-V3-14 closed: content `d2e3e1b` / merge `7b5ae0c` / tip `ccba927`. Unanimous PM + Leader PASS.
+V3-14 closed: content `d2e3e1b` / merge `7b5ae0c` / tip `ccba927`.
+V3-15 delivered: BRIEF_ASKS DRY + four-chapter still density. Await three PM + Leader. No V3-16 until PASS.
 
-## Closed in V3-14
+## Closed in V3-15
 
-1. Home H2 hire-still + H7 concrete method glyphs; LC still `§12.4 · Close pack`.
-2. Contact BRIEF_ASKS as labeled fields + checklist.
-3. Services three non-interchangeable gate/record nails; About SAY echo.
-
-## V3-15 ticket (this loop)
-
-Synthesized from Apple / UX / Vision post-V3-14 KEEP/KILL/ADD (non-blocking ADD).
-
-1. **DRY BRIEF_ASKS** — one shared English constant imported by HomeScenes H6, ContactForm, and `app/contact/page.tsx`. Strings stay exact.
-2. **Four-chapter still / beat density** — raise readable DNA on Concierge / Ledger / Morning / Exception chapter stills and beat modules without changing locked score lines. Prefer concrete facts already in `docs/scroll-score-v3.md` (abilities, gate, record, refusal) visible in still chrome; no chatbot chrome; no new pins; no isomorphic re-merge.
-3. **Soft (same slice if cheap)** — H2 hire-still may add Propose→Approve→Record microchips beside Human gate lamp.
+1. **DRY BRIEF_ASKS** — one exported constant in `lib/brief-asks.ts`. HomeScenes H6, ContactForm labels, and contact page checklist import the same module. Strings stay exact.
+2. **Four-chapter still density** — Concierge / Ledger / Morning / Exception stills show product-specific readable DNA (not empty bars, not chatbot chrome). Gate + record cues stay distinct per score DNA. Locked module lines verbatim. Shallow once-reveal only.
+3. **Soft** — H2 hire-still Propose→Approve→Record microchips beside Human gate.
 
 ## Hard bans (unchanged)
 

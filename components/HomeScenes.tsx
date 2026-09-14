@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import { BRIEF_ASKS } from "@/lib/brief-asks";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -78,13 +79,6 @@ const REFUSE = [
   "“ChatGPT for X” wrappers",
   "A cloud-migration mill",
   "Replacing the client team",
-] as const;
-
-const BRIEF_ASKS = [
-  "Which workflow hurts.",
-  "Who approves.",
-  "What the agent may never do.",
-  "What record you must keep.",
 ] as const;
 
 const METHOD = [
@@ -400,9 +394,18 @@ export function HomeScenes() {
                 <p className="hire-still__meta">One job</p>
                 <p className="hire-still__job">One painful workflow</p>
               </div>
-              <div className="hire-still__gate">
-                <span className="hire-still__gate-lamp" />
-                Human gate
+              <div className="hire-still__row">
+                <div className="hire-still__gate">
+                  <span className="hire-still__gate-lamp" />
+                  Human gate
+                </div>
+                <div className="hire-still__par" aria-hidden="true">
+                  <span className="hire-still__chip">Propose</span>
+                  <span className="hire-still__chip">Approve</span>
+                  <span className="hire-still__chip hire-still__chip--record">
+                    Record
+                  </span>
+                </div>
               </div>
             </div>
           </div>

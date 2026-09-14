@@ -1,15 +1,9 @@
 "use client";
 
 import { FormEvent, useEffect, useId, useRef, useState } from "react";
+import { BRIEF_ASKS } from "@/lib/brief-asks";
 
 type Status = "idle" | "success";
-
-const BRIEF_ASKS = [
-  "Which workflow hurts.",
-  "Who approves.",
-  "What the agent may never do.",
-  "What record you must keep.",
-] as const;
 
 const BRIEF_FIELDS = [
   {

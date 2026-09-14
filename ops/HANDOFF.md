@@ -1,6 +1,29 @@
 # Handoff V3-15
 
-- Status: issued — await Dev
-- Prior closed: V3-14 PASS (`d2e3e1b` / merge `7b5ae0c` / tip `ccba927`)
-- Preview: https://remex-atelier.vercel.app
-- Notes: See `ops/TASK.md`. DRY + chapter still density. No V3-16 until PASS.
+- Status: delivered
+- SHA: 3196066
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: coordinator `vercel deploy --prod` after merge (not run in this slice)
+- Files changed (ALLOWED only):
+  - `lib/brief-asks.ts` — single `BRIEF_ASKS` source
+  - `components/HomeScenes.tsx` — H6 import; H2 hire-still Propose→Approve→Record microchips
+  - `components/ContactForm.tsx` — labels from shared `BRIEF_ASKS`
+  - `app/contact/page.tsx` — checklist from shared `BRIEF_ASKS`
+  - `components/AtelierConciergeChapter.tsx` — still DNA (LUM-1042, hero/try-on/bag, consult thread)
+  - `components/LedgerClerkChapter.tsx` — still DNA (§12.4, corpus only, ask/cite/decision)
+  - `components/MorningRemexChapter.tsx` — still DNA (P/W/N facts, two tones, linked packet)
+  - `components/ExceptionCopilotChapter.tsx` — still DNA (queue/refund hold, §4.2, case timeline)
+  - `app/globals.css` — hire-still PAR + chapter `still-fact` helpers
+  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
+- Acceptance self-check:
+  - [x] BRIEF_ASKS defined once; HomeScenes H6 + ContactForm + contact page import it
+  - [x] Four chapter stills denser with product-specific DNA; locked lines unchanged
+  - [x] No new pins; no Lenis; no 机羽云/refuse move; no English-products
+  - [x] Hit targets ≥44 where touched (form/CTA unchanged); decorative still chips aria-hidden
+  - [x] `pnpm build` PASS
+  - [ ] prod refresh — coordinator after merge
+- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
+- Risks:
+  - Chapter still labels are chrome DNA, not new score lines. Keep them short so 375 stills do not clip.
+- Blockers:
+  - None. Await three PM + Leader. No V3-16 until PASS.
