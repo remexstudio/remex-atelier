@@ -9,21 +9,73 @@ import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const JOBS = [
-  { href: "/work/atelier-concierge", label: "Atelier Concierge" },
-  { href: "/work/ledger-clerk", label: "Ledger Clerk" },
-  { href: "/work/morning-remex", label: "Morning Remex" },
-  { href: "/work/exception-copilot", label: "Exception Copilot" },
+  { href: "/work/atelier-concierge", label: "Atelier Concierge", tone: "concierge" },
+  { href: "/work/ledger-clerk", label: "Ledger Clerk", tone: "ledger" },
+  { href: "/work/morning-remex", label: "Morning Remex", tone: "morning" },
+  { href: "/work/exception-copilot", label: "Exception Copilot", tone: "exception" },
 ] as const;
 
-const MOTION_SEL =
-  "[data-scene-copy], [data-method-beat], [data-job-card], [data-gate-chip], [data-job-title]";
+const REFUSE = [
+  "An hours factory or staffed body shop",
+  "A generic chatbot or chatbot widget",
+  "“ChatGPT for X” wrappers",
+  "A cloud-migration mill",
+  "Replacing the client team",
+] as const;
+
+const BRIEF_ASKS = [
+  "Which workflow hurts.",
+  "Who approves.",
+  "What the agent may never do.",
+  "What record you must keep.",
+] as const;
+
+const METHOD = [
+  {
+    title: "Design the job.",
+    body: "Name the seat, the inputs, and the done state.",
+  },
+  {
+    title: "Build the gate.",
+    body: "Decide what requires a human before ship, post, charge, or money move.",
+  },
+  {
+    title: "Keep the record.",
+    body: "Link proposal, decision, and outcome so the team can reopen it.",
+  },
+] as const;
+
+const ROADMAP = [
+  {
+    label: "Now",
+    body: "Now: ship gated agents for one workflow at a time.",
+  },
+  {
+    label: "Next",
+    body: "Next: deepen records and chapter wayfinding across the four jobs.",
+  },
+  {
+    label: "Later",
+    body: "Later: broaden seats only after gates and records hold.",
+  },
+] as const;
+
+const CLOSE_CHAPTERS = [
+  { href: "#home-gate", label: "Gate" },
+  { href: "#home-jobs", label: "Jobs" },
+  { href: "#home-brief", label: "Brief" },
+  { href: "#home-roadmap", label: "Roadmap" },
+] as const;
+
+const STATIC_SEL =
+  "[data-reveal], [data-gate-step], [data-job-card], [data-bento-pane], [data-spec-row], [data-method-col], [data-road-row], [data-close-map] a";
 
 function showStatic() {
-  gsap.set(MOTION_SEL, {
-    clearProps: "transform,opacity,visibility",
+  gsap.set(STATIC_SEL, {
+    clearProps: "transform,opacity,visibility,filter",
     autoAlpha: 1,
   });
-  gsap.set(".home-scene__stage", {
+  gsap.set(".home-mod__stage, .home-gate__still, .home-jobs-rail", {
     clearProps: "transform,opacity,visibility",
     autoAlpha: 1,
   });
@@ -39,50 +91,87 @@ export function HomeScenes() {
       mm.add(
         {
           reduce: "(prefers-reduced-motion: reduce)",
-          short: "(max-height: 519px)",
           pinOk:
             "(prefers-reduced-motion: no-preference) and (min-height: 520px)",
+          motionOk:
+            "(prefers-reduced-motion: no-preference)",
         },
         (context) => {
-          const { reduce, short, pinOk } = context.conditions as {
+          const { reduce, pinOk, motionOk } = context.conditions as {
             reduce: boolean;
-            short: boolean;
             pinOk: boolean;
+            motionOk: boolean;
           };
 
-          if (reduce || short || !pinOk) {
+          if (reduce || !motionOk) {
             showStatic();
             return;
           }
 
-          const scenes = gsap.utils.toArray<HTMLElement>(".home-scene");
+          /* ——— Shallow once-reveals (no pin) ——— */
+          gsap.utils
+            .toArray<HTMLElement>("[data-mod]:not(#home-gate)")
+            .forEach((mod) => {
+              const items = mod.querySelectorAll<HTMLElement>(
+                "[data-reveal], [data-job-card], [data-bento-pane], [data-spec-row], [data-method-col], [data-road-row]",
+              );
+              if (!items.length) return;
 
-          scenes.forEach((scene) => {
-            const stage = scene.querySelector<HTMLElement>(".home-scene__stage");
-            const copy = scene.querySelectorAll<HTMLElement>("[data-scene-copy]");
-            const beats = scene.querySelectorAll<HTMLElement>("[data-method-beat]");
-            const cards = scene.querySelectorAll<HTMLElement>("[data-job-card]");
-            const gate = scene.querySelectorAll<HTMLElement>("[data-gate-chip]");
-            const jobTitle = scene.querySelector<HTMLElement>("[data-job-title]");
+              gsap.set(items, { autoAlpha: 0, y: 28 });
 
-            // Stage stays present on first paint — soft lift only, never autoAlpha 0.
-            if (stage) {
-              gsap.set(stage, { autoAlpha: 1, y: 18, scale: 0.985 });
-            }
+              gsap.to(items, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.85,
+                ease: "power3.out",
+                stagger: 0.08,
+                scrollTrigger: {
+                  trigger: mod,
+                  start: "top 78%",
+                  once: true,
+                  invalidateOnRefresh: true,
+                },
+              });
+            });
 
-            if (copy.length) gsap.set(copy, { autoAlpha: 0, y: 20 });
-            if (beats.length) gsap.set(beats, { autoAlpha: 0, y: 18 });
-            if (cards.length) gsap.set(cards, { autoAlpha: 0, y: 16 });
-            if (gate.length) gsap.set(gate, { autoAlpha: 0, y: 14 });
-            if (jobTitle) gsap.set(jobTitle, { autoAlpha: 0.18 });
+          /* Soft stage lift on hero / hire (transform only) */
+          gsap.utils
+            .toArray<HTMLElement>(".home-mod__stage[data-parallax]")
+            .forEach((stage) => {
+              gsap.fromTo(
+                stage,
+                { y: 18 },
+                {
+                  y: 0,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: stage.closest("[data-mod]") || stage,
+                    start: "top bottom",
+                    end: "top 35%",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                  },
+                },
+              );
+            });
+
+          /* ——— ONLY pin: #home-gate, end ≤ +=80% ——— */
+          const gate = document.getElementById("home-gate");
+          if (gate && pinOk) {
+            const steps = gate.querySelectorAll<HTMLElement>("[data-gate-step]");
+            const chips = gate.querySelectorAll<HTMLElement>("[data-gate-chip]");
+            const copy = gate.querySelectorAll<HTMLElement>("[data-reveal]");
+
+            gsap.set(copy, { autoAlpha: 0, y: 20 });
+            gsap.set(steps, { autoAlpha: 0, y: 16 });
+            gsap.set(chips, { autoAlpha: 0.35, scale: 0.97 });
 
             const tl = gsap.timeline({
               defaults: { ease: "none" },
               scrollTrigger: {
-                trigger: scene,
+                trigger: gate,
                 start: "top top",
-                // Longer apple-chapter runway (~140–160%).
-                end: "+=150%",
+                end: "+=80%",
                 pin: true,
                 scrub: 1,
                 anticipatePin: 1,
@@ -90,66 +179,36 @@ export function HomeScenes() {
               },
             });
 
-            if (stage) {
-              tl.to(stage, { y: 0, scale: 1, duration: 0.4 }, 0);
-            }
-
-            if (copy.length) {
-              tl.to(
-                copy,
-                { autoAlpha: 1, y: 0, stagger: 0.14, duration: 0.45 },
-                0.08,
-              );
-            }
-
-            if (jobTitle) {
-              tl.to(jobTitle, { autoAlpha: 1, duration: 0.55 }, 0.28);
-            }
-
-            if (gate.length) {
-              tl.to(
-                gate,
-                { autoAlpha: 1, y: 0, stagger: 0.2, duration: 0.4 },
-                0.22,
-              );
-            }
-
-            if (cards.length) {
-              tl.to(
-                cards,
-                { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 },
-                0.18,
-              );
-            }
-
-            if (beats.length) {
-              // Sequential method beats — headline first, then support lines.
-              tl.to(
-                beats,
-                { autoAlpha: 1, y: 0, stagger: 0.32, duration: 0.45 },
-                0.12,
-              );
-            }
-
-            // Longer hold so one idea lingers before unpin.
-            tl.to({}, { duration: 0.55 });
-          });
+            tl.to(copy, { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.35 }, 0)
+              .to(
+                chips,
+                { autoAlpha: 1, scale: 1, stagger: 0.18, duration: 0.4 },
+                0.15,
+              )
+              .to(
+                steps,
+                { autoAlpha: 1, y: 0, stagger: 0.22, duration: 0.4 },
+                0.28,
+              )
+              .to({}, { duration: 0.2 });
+          } else if (gate) {
+            /* Short viewport: no pin; full gate facts stay static */
+            gsap.set(
+              gate.querySelectorAll(
+                "[data-reveal], [data-gate-step], [data-gate-chip]",
+              ),
+              { clearProps: "transform,opacity,visibility", autoAlpha: 1 },
+            );
+          }
 
           const refresh = () => ScrollTrigger.refresh();
           window.addEventListener("load", refresh);
-          let fontsReady = false;
           if (document.fonts?.ready) {
-            void document.fonts.ready.then(() => {
-              fontsReady = true;
-              refresh();
-            });
+            void document.fonts.ready.then(refresh);
           }
 
           return () => {
             window.removeEventListener("load", refresh);
-            if (fontsReady) {
-              // refresh already applied
-            }
           };
         },
       );
@@ -163,18 +222,26 @@ export function HomeScenes() {
 
   return (
     <main id="main" ref={rootRef} className="home-film">
-      {/* S1 — Promise */}
-      <section id="home-s1" className="home-scene" aria-labelledby="home-s1-h">
-        <div className="home-scene__inner">
-          <div className="home-scene__copy">
-            <h1 id="home-s1-h" className="home-headline" data-scene-copy>
+      {/* H1 — hero */}
+      <section
+        id="home-hero"
+        data-mod
+        className="home-mod home-mod--hero"
+        aria-labelledby="home-hero-h"
+      >
+        <div className="home-mod__inner home-mod__inner--hero">
+          <div className="home-mod__copy home-mod__copy--center">
+            <h1 id="home-hero-h" className="home-headline home-headline--lg" data-reveal>
               Agents, built to the brief.
             </h1>
-            <p className="home-support" data-scene-copy>
+            <p className="home-support" data-reveal>
+              Remex Studio designs custom AI agents as products.
+            </p>
+            <p className="home-support" data-reveal>
               One workflow. One agent. A human still decides.
             </p>
           </div>
-          <div className="home-scene__stage" aria-hidden="true">
+          <div className="home-mod__stage" data-parallax aria-hidden="true">
             <div className="product-frame">
               <div className="product-frame__chrome">
                 <span />
@@ -191,70 +258,104 @@ export function HomeScenes() {
         </div>
       </section>
 
-      {/* S2 — The job */}
-      <section id="home-s2" className="home-scene" aria-labelledby="home-s2-h">
-        <div className="home-scene__inner">
-          <div className="home-scene__copy">
-            <h2 id="home-s2-h" className="home-headline" data-scene-copy>
-              Most tools answer.
-            </h2>
-            <p className="home-support" data-scene-copy>
-              Ours is hired for one job.
-            </p>
-          </div>
-          <div className="home-scene__stage" aria-hidden="true">
-            <div className="product-frame product-frame--job">
-              <p className="job-title-light" data-job-title>
-                Atelier Concierge
-              </p>
+      {/* H2 — shallow-deep hire */}
+      <section
+        id="home-hire"
+        data-mod
+        className="home-mod home-mod--hire"
+        aria-labelledby="home-hire-h"
+      >
+        <div className="home-mod__inner home-mod__inner--split">
+          <div className="home-mod__stage" data-parallax aria-hidden="true">
+            <div className="hire-still">
+              <p className="hire-still__seat">One seat</p>
+              <p className="hire-still__job">One painful workflow</p>
+              <div className="hire-still__gate">Human gate</div>
             </div>
+          </div>
+          <div className="home-mod__copy">
+            <h2 id="home-hire-h" className="home-headline" data-reveal>
+              One painful workflow. One agent. A human gate.
+            </h2>
+            <p className="home-support" data-reveal>
+              Most tools answer everything. We hire an agent for one job.
+            </p>
+            <p className="home-support home-support--meta" data-reveal>
+              Seattle studio. Global clients.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* S3 — The gate */}
-      <section id="home-s3" className="home-scene" aria-labelledby="home-s3-h">
-        <div className="home-scene__inner">
-          <div className="home-scene__copy">
-            <h2 id="home-s3-h" className="home-headline" data-scene-copy>
-              The agent proposes.
+      {/* H3 — pin-stage gate (ONLY pin) */}
+      <section
+        id="home-gate"
+        data-mod
+        className="home-mod home-mod--gate"
+        aria-labelledby="home-gate-h"
+      >
+        <div className="home-mod__inner home-mod__inner--gate">
+          <div className="home-mod__copy">
+            <h2 id="home-gate-h" className="home-headline" data-reveal>
+              The agent proposes. A person approves. The record stays.
             </h2>
-            <p className="home-support" data-scene-copy>
-              A person approves. The record stays.
-            </p>
           </div>
-          <div className="home-scene__stage" aria-hidden="true">
-            <div className="gate-still">
-              <div className="gate-chip" data-gate-chip>
-                Propose
-              </div>
-              <div className="gate-arrow" aria-hidden="true" />
-              <div className="gate-chip gate-chip--approve" data-gate-chip>
-                Approve
-              </div>
+          <div className="home-gate__still" aria-hidden="true">
+            <div className="gate-chip" data-gate-chip>
+              Propose
+            </div>
+            <div className="gate-arrow" />
+            <div className="gate-chip gate-chip--approve" data-gate-chip>
+              Approve
+            </div>
+            <div className="gate-arrow" />
+            <div className="gate-chip gate-chip--record" data-gate-chip>
+              Record
             </div>
           </div>
+          <ul className="home-gate__steps">
+            <li data-gate-step>
+              <strong>Propose.</strong> The agent drafts the next action,
+              recommendation, or disposition. It does not execute irreversible
+              work on its own.
+            </li>
+            <li data-gate-step>
+              <strong>Approve.</strong> A named person on the client side
+              accepts, edits, or rejects before anything ships, posts, charges,
+              or moves money.
+            </li>
+            <li data-gate-step>
+              <strong>Record.</strong> The proposal, decision, and outcome stay
+              linked in an auditable log the team can reopen later.
+            </li>
+          </ul>
         </div>
       </section>
 
-      {/* S4 — Four jobs */}
-      <section id="home-s4" className="home-scene" aria-labelledby="home-s4-h">
-        <div className="home-scene__inner home-scene__inner--wide">
-          <div className="home-scene__copy">
-            <h2 id="home-s4-h" className="home-headline" data-scene-copy>
+      {/* H4 — horizontal rail */}
+      <section
+        id="home-jobs"
+        data-mod
+        className="home-mod home-mod--jobs"
+        aria-labelledby="home-jobs-h"
+      >
+        <div className="home-mod__inner home-mod__inner--rail">
+          <div className="home-mod__copy">
+            <h2 id="home-jobs-h" className="home-headline" data-reveal>
               Four jobs we know how to hire an agent for.
             </h2>
-            <p className="home-support" data-scene-copy>
+            <p className="home-support" data-reveal>
               Atelier Concierge. Ledger Clerk. Morning Remex. Exception Copilot.
             </p>
           </div>
-          <div className="home-scene__stage home-jobs">
+          <div className="home-jobs-rail" role="list">
             {JOBS.map((job) => (
               <Link
                 key={job.href}
                 href={job.href}
-                className="job-card"
+                className={`job-card job-card--${job.tone}`}
                 data-job-card
+                role="listitem"
               >
                 <span className="job-card__still" aria-hidden="true" />
                 <span className="job-card__label">{job.label}</span>
@@ -264,39 +365,139 @@ export function HomeScenes() {
         </div>
       </section>
 
-      {/* S5 — Method: headline + sequential support */}
-      <section id="home-s5" className="home-scene" aria-labelledby="home-s5-h">
-        <div className="home-scene__inner home-scene__inner--method">
-          <div className="home-scene__stage home-method">
-            <h2 id="home-s5-h" className="home-headline" data-method-beat>
-              Design the job.
-            </h2>
-            <p className="home-support home-method__line" data-method-beat>
-              Build the gate.
-            </p>
-            <p className="home-support home-method__line" data-method-beat>
-              Keep the record.
-            </p>
+      {/* H5 — bento for / not for */}
+      <section
+        id="home-for"
+        data-mod
+        className="home-mod home-mod--bento"
+        aria-labelledby="home-for-h"
+      >
+        <div className="home-mod__inner home-mod__inner--bento">
+          <h2 id="home-for-h" className="home-headline" data-reveal>
+            We design the job an agent is allowed to do — and the gate it cannot cross.
+          </h2>
+          <div className="home-bento">
+            <div className="home-bento__pane home-bento__pane--fit" data-bento-pane>
+              <h3 className="home-bento__label">For</h3>
+              <p className="home-bento__body">
+                Teams with one painful workflow and a human who must stay in the loop.
+              </p>
+            </div>
+            <div
+              className="home-bento__pane home-bento__pane--refuse"
+              data-bento-pane
+            >
+              <h3 className="home-bento__label">Not for</h3>
+              <p className="home-bento__lede">What we do not sell</p>
+              <ul className="home-bento__list">
+                {REFUSE.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* S6 — Close */}
-      <section id="home-s6" className="home-scene" aria-labelledby="home-s6-h">
-        <div className="home-scene__inner home-scene__inner--close">
-          <div className="home-scene__copy">
-            <h2 id="home-s6-h" className="home-headline" data-scene-copy>
+      {/* H6 — specs cluster */}
+      <section
+        id="home-brief"
+        data-mod
+        className="home-mod home-mod--specs"
+        aria-labelledby="home-brief-h"
+      >
+        <div className="home-mod__inner home-mod__inner--specs">
+          <h2 id="home-brief-h" className="home-headline" data-reveal>
+            What a brief asks.
+          </h2>
+          <ol className="home-specs">
+            {BRIEF_ASKS.map((ask, i) => (
+              <li key={ask} className="home-specs__row" data-spec-row>
+                <span className="home-specs__n" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="home-specs__q">{ask}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* H7 — method columns */}
+      <section
+        id="home-method"
+        data-mod
+        className="home-mod home-mod--method"
+        aria-labelledby="home-method-h"
+      >
+        <div className="home-mod__inner home-mod__inner--method">
+          <h2 id="home-method-h" className="home-headline home-headline--method" data-reveal>
+            Design the job. Build the gate. Keep the record.
+          </h2>
+          <div className="home-method-cols">
+            {METHOD.map((col) => (
+              <article key={col.title} className="home-method-col" data-method-col>
+                <div className="home-method-col__glyph" aria-hidden="true" />
+                <h3 className="home-method-col__title">{col.title}</h3>
+                <p className="home-method-col__body">{col.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* H8 — timeline */}
+      <section
+        id="home-roadmap"
+        data-mod
+        className="home-mod home-mod--timeline"
+        aria-labelledby="home-roadmap-h"
+      >
+        <div className="home-mod__inner home-mod__inner--timeline">
+          <h2 id="home-roadmap-h" className="home-headline" data-reveal>
+            Now. Next. Later.
+          </h2>
+          <ol className="home-timeline">
+            {ROADMAP.map((row) => (
+              <li key={row.label} className="home-timeline__row" data-road-row>
+                <span className="home-timeline__label">{row.label}</span>
+                <p className="home-timeline__body">{row.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* H9 — footer map close */}
+      <section
+        id="home-close"
+        data-mod
+        className="home-mod home-mod--close"
+        aria-labelledby="home-close-h"
+      >
+        <div className="home-mod__inner home-mod__inner--close">
+          <div className="home-mod__copy">
+            <h2 id="home-close-h" className="home-headline" data-reveal>
               Start a brief.
             </h2>
-            <p className="home-support" data-scene-copy>
+            <p className="home-support" data-reveal>
               Tell us the painful workflow. We design the agent and the gate.
             </p>
-            <p className="home-cta-wrap" data-scene-copy>
+            <p className="home-cta-wrap" data-reveal>
               <Link href="/contact" className="home-cta">
                 Start a brief.
               </Link>
             </p>
           </div>
+          <nav className="home-close-map" data-close-map aria-label="Home chapters">
+            <ul>
+              {CLOSE_CHAPTERS.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </section>
     </main>
