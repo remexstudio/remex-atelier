@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
+import { ExceptionCopilotChapter } from "@/components/ExceptionCopilotChapter";
 import { SiteChrome } from "@/components/SiteChrome";
-import { StoryScenes } from "@/components/StoryScenes";
 
 export const metadata: Metadata = {
   title: "Exception Copilot",
   description:
-    "Product story: Exception Copilot — rank the queue with a lead gate.",
+    "Product story: Exception Copilot — queue rank, policy cite disposition, case note, human for refunds, case timeline.",
   openGraph: {
     title: "Exception Copilot · Remex Studio",
     description:
-      "Product story: Exception Copilot — rank the queue with a lead gate.",
+      "Product story: Exception Copilot — queue rank, policy cite disposition, case note, human for refunds, case timeline.",
     url: "/work/exception-copilot",
     type: "article",
   },
@@ -17,37 +17,9 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Exception Copilot · Remex Studio",
     description:
-      "Product story: Exception Copilot — rank the queue with a lead gate.",
+      "Product story: Exception Copilot — queue rank, policy cite disposition, case note, human for refunds, case timeline.",
   },
 };
-
-const SCENES = [
-  {
-    id: "story-s1",
-    beat: "pain" as const,
-    line: "Exceptions pile up faster than policy can be reread.",
-  },
-  {
-    id: "story-s2",
-    beat: "agent" as const,
-    line: "Exception Copilot ranks the queue and drafts a disposition.",
-  },
-  {
-    id: "story-s3",
-    beat: "gate" as const,
-    line: "A lead approves before inventory or credit moves.",
-  },
-  {
-    id: "story-s4",
-    beat: "record" as const,
-    line: "Case, policy cite, and decision stay on the ticket.",
-  },
-  {
-    id: "story-s5",
-    beat: "cta" as const,
-    line: "Start a brief.",
-  },
-] as const;
 
 export default function ExceptionCopilotStoryPage() {
   return (
@@ -55,7 +27,7 @@ export default function ExceptionCopilotStoryPage() {
       variant="film"
       footerLine="Studio study. Client identity anonymized."
     >
-      <StoryScenes productName="Exception Copilot" scenes={SCENES} />
+      <ExceptionCopilotChapter />
     </SiteChrome>
   );
 }
