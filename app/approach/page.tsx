@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
+import { REFUSE } from "@/lib/refuse";
 
 export const metadata: Metadata = {
   title: "Approach",
@@ -54,14 +55,6 @@ const METHODS = [
     lead: "Link proposal, decision, and outcome so the team can reopen it.",
     body: "Every proposal, approval, and outcome stays on one thread the team can reopen later. The brief, the gate, and the result stay linked — so the desk can explain what happened without hunting across tools.",
   },
-] as const;
-
-const REFUSE = [
-  "An hours factory or staffed body shop",
-  "A generic chatbot or chatbot widget",
-  "“ChatGPT for X” wrappers",
-  "A cloud-migration mill",
-  "Replacing the client team",
 ] as const;
 
 const ROADMAP = [

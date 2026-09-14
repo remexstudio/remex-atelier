@@ -1,11 +1,23 @@
-# Iteration after board KEEP/KILL/ADD (post V3-18)
+# Iteration after V3-19 delivery
 
-## Board synthesis → V3-19
+Live preview: https://remex-atelier.vercel.app
+V3-19 content: `bd45df8`. Await three PM + Leader. Coordinator owns prod refresh.
 
-1. **Vision** — SiteChrome default footerLine → `Seattle studio. Global clients.`; optional `lib/refuse.ts` DRY; no payload relocation.
-2. **UX** — scroll-margin-top for home/chapter anchors; SiteChrome mark film CSS; kill unused default paper shell CSS; footer focus-visible.
-3. **Apple (partial this slice)** — chapter job H1 bump to `--size-display`; hold CTA curtain de-iso + /work wall for V3-20.
+## Closed in this slice
 
-## Hard bans
+1. SiteChrome default footerLine → `Seattle studio. Global clients.`
+2. Nav mark film CSS only; hit ≥44.
+3. `scroll-margin-top: var(--nav-height)` on home `.home-mod[id]` and four-chapter `[data-*-mod]`.
+4. Four chapter job H1s at `--size-display`; secondary `--sm` unchanged.
+5. Optional `lib/refuse.ts` DRY; landings stay home H5 + `/approach`.
+6. Footer secondary `:focus-visible` outline.
 
-Locked copy verbatim; no 机羽云/refuse move; no Lenis; H3-only pinOk; no empty gray bars; no short-chip micro tickets.
+## Held for V3-20
+
+CTA curtain de-isomorphism / unique CTA stills; `/work` product-wall still upgrade.
+
+## Hard bans (unchanged)
+
+- No English-products market claims; no founder name; no CumuLabs/outsourcing; no Lenis/normalizeScroll/body lock; H3-only pin with pinOk; locked copy verbatim.
+- Do not move 机羽云 or the refuse list.
+- No `/demo` marketing CTAs; no long pins; no empty gray-bar chrome return.
