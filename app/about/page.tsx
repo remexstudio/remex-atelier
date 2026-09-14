@@ -29,6 +29,9 @@ export default function AboutPage() {
           <p className="film-kicker">About</p>
           <h1 className="film-title">Remex Studio</h1>
           <p className="film-lede">Agents, built to the brief.</p>
+          <p className="film-lede about-say">
+            One painful workflow. One agent. A human gate.
+          </p>
           <p className="film-place">Seattle studio. Global clients.</p>
         </header>
 

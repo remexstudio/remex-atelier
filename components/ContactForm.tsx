@@ -4,11 +4,48 @@ import { FormEvent, useEffect, useId, useRef, useState } from "react";
 
 type Status = "idle" | "success";
 
+const BRIEF_ASKS = [
+  "Which workflow hurts.",
+  "Who approves.",
+  "What the agent may never do.",
+  "What record you must keep.",
+] as const;
+
+const BRIEF_FIELDS = [
+  {
+    name: "workflow",
+    label: BRIEF_ASKS[0],
+    kind: "area",
+    autoComplete: "off",
+    placeholder: "The weekly close, overnight mail, exception queue…",
+  },
+  {
+    name: "approver",
+    label: BRIEF_ASKS[1],
+    kind: "text",
+    autoComplete: "off",
+    placeholder: "Named person on the client side…",
+  },
+  {
+    name: "never",
+    label: BRIEF_ASKS[2],
+    kind: "area",
+    autoComplete: "off",
+    placeholder: "Charge, post, execute, refund…",
+  },
+  {
+    name: "record",
+    label: BRIEF_ASKS[3],
+    kind: "area",
+    autoComplete: "off",
+    placeholder: "Proposal, decision, and outcome stay linked…",
+  },
+] as const;
+
 export function ContactForm() {
   const formId = useId();
   const nameId = `${formId}-name`;
   const emailId = `${formId}-email`;
-  const briefId = `${formId}-brief`;
   const successId = `${formId}-success`;
   const successRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<Status>("idle");
@@ -86,20 +123,37 @@ export function ContactForm() {
           placeholder="alex@studio.example…"
         />
       </div>
-      <div className="contact-field">
-        <label htmlFor={briefId} className="contact-label">
-          Brief
-        </label>
-        <textarea
-          id={briefId}
-          name="brief"
-          autoComplete="off"
-          required
-          rows={6}
-          className="contact-input contact-input--area"
-          placeholder="What workflow hurts, who owns it, and what success looks like…"
-        />
-      </div>
+      {BRIEF_FIELDS.map((field) => {
+        const fieldId = `${formId}-${field.name}`;
+        return (
+          <div key={field.name} className="contact-field">
+            <label htmlFor={fieldId} className="contact-label">
+              {field.label}
+            </label>
+            {field.kind === "text" ? (
+              <input
+                id={fieldId}
+                name={field.name}
+                type="text"
+                autoComplete={field.autoComplete}
+                required
+                className="contact-input"
+                placeholder={field.placeholder}
+              />
+            ) : (
+              <textarea
+                id={fieldId}
+                name={field.name}
+                autoComplete={field.autoComplete}
+                required
+                rows={3}
+                className="contact-input contact-input--area contact-input--ask"
+                placeholder={field.placeholder}
+              />
+            )}
+          </div>
+        );
+      })}
       <div className="contact-actions">
         <button type="submit" className="contact-cta">
           Send brief

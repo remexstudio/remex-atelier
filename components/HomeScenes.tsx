@@ -40,6 +40,7 @@ function JobStill({ tone }: { tone: JobTone }) {
       <div className="job-card__still still-dna still-dna--lc still-dna--facts" aria-hidden="true">
         <p className="still-dna__fact">Propose≠Execute</p>
         <p className="still-dna__sub">cite</p>
+        <span className="lc-controller__cite">§12.4 · Close pack</span>
       </div>
     );
   }
@@ -90,16 +91,71 @@ const METHOD = [
   {
     title: "Design the job.",
     body: "Name the seat, the inputs, and the done state.",
+    glyph: "job",
   },
   {
     title: "Build the gate.",
     body: "Decide what requires a human before ship, post, charge, or money move.",
+    glyph: "gate",
   },
   {
     title: "Keep the record.",
     body: "Link proposal, decision, and outcome so the team can reopen it.",
+    glyph: "record",
   },
 ] as const;
+
+type MethodGlyphKind = (typeof METHOD)[number]["glyph"];
+
+function MethodGlyph({ kind }: { kind: MethodGlyphKind }) {
+  if (kind === "job") {
+    return (
+      <div
+        className="home-method-col__glyph home-method-col__glyph--job"
+        aria-hidden="true"
+      >
+        <span className="method-glyph__chip">Seat</span>
+        <span className="method-glyph__chip">Inputs</span>
+        <span className="method-glyph__chip method-glyph__chip--done">Done</span>
+      </div>
+    );
+  }
+
+  if (kind === "gate") {
+    return (
+      <div
+        className="home-method-col__glyph home-method-col__glyph--gate"
+        aria-hidden="true"
+      >
+        <span className="method-glyph__step">Propose</span>
+        <span className="method-glyph__arrow" />
+        <span className="method-glyph__step method-glyph__step--human">Human</span>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="home-method-col__glyph home-method-col__glyph--record"
+      aria-hidden="true"
+    >
+      <span className="method-glyph__bead">
+        <span className="method-glyph__dot" />
+        <span className="method-glyph__bead-label">Proposal</span>
+      </span>
+      <span className="method-glyph__link" />
+      <span className="method-glyph__bead">
+        <span className="method-glyph__dot" />
+        <span className="method-glyph__bead-label">Decision</span>
+      </span>
+      <span className="method-glyph__link" />
+      <span className="method-glyph__bead">
+        <span className="method-glyph__dot" />
+        <span className="method-glyph__bead-label">Outcome</span>
+      </span>
+    </div>
+  );
+}
 
 const ROADMAP = [
   {
@@ -338,9 +394,16 @@ export function HomeScenes() {
         <div className="home-mod__inner home-mod__inner--split">
           <div className="home-mod__stage" data-parallax aria-hidden="true">
             <div className="hire-still">
-              <p className="hire-still__seat">One seat</p>
-              <p className="hire-still__job">One painful workflow</p>
-              <div className="hire-still__gate">Human gate</div>
+              <div className="hire-still__card">
+                <span className="hire-still__lamp" />
+                <p className="hire-still__seat">One seat</p>
+                <p className="hire-still__meta">One job</p>
+                <p className="hire-still__job">One painful workflow</p>
+              </div>
+              <div className="hire-still__gate">
+                <span className="hire-still__gate-lamp" />
+                Human gate
+              </div>
             </div>
           </div>
           <div className="home-mod__copy">
@@ -507,7 +570,7 @@ export function HomeScenes() {
           <div className="home-method-cols">
             {METHOD.map((col) => (
               <article key={col.title} className="home-method-col" data-method-col>
-                <div className="home-method-col__glyph" aria-hidden="true" />
+                <MethodGlyph kind={col.glyph} />
                 <h3 className="home-method-col__title">{col.title}</h3>
                 <p className="home-method-col__body">{col.body}</p>
               </article>
