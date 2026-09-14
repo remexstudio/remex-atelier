@@ -1,34 +1,37 @@
-# Handoff V3-6 Exception Copilot
+# Handoff V3-7 approach + contact
 
 - Status: delivered
-- SHA: cfaa802
+- SHA: uncommitted (parent commit msg: `feat(site): v3 approach and contact`)
 - Preview: https://remex-atelier.vercel.app
-- Commit msg (parent): `feat(work): exception copilot unique chapter`
+- Commit msg (parent): `feat(site): v3 approach and contact`
 
 ## Skills used
 - apple-design, apple-design-web, apple-design-motion
 - emil-design-eng
-- gsap-scrolltrigger, gsap-timeline, gsap-react
-- cinematic-scroll-storytelling, zero-jank-scroll
-- review-animations, writing-guidelines
-- docs/scroll-score-v3.md Exception Copilot
+- writing-guidelines, web-design-guidelines
+- docs/ia-v3.md approach/contact
+- docs/copy-locks.md (SAY, mechanism, refuse, name meaning)
+- docs/scroll-score-v3.md Now/Next/Later intent
 
 ## Files
-- `components/ExceptionCopilotChapter.tsx` — unique Exception chapter (NOT StoryScenes)
-- `app/work/exception-copilot/page.tsx` — film SiteChrome + Exception chapter
-- `app/globals.css` — `.ec-*` Exception styles + reduced-motion visibility
+- `app/approach/page.tsx` — V3 approach: methods + Propose/Approve/Record, name meaning once (机/羽/云/Remex), legal, Seattle/global, refuse×5, Now/Next/Later detail, CTA
+- `app/contact/page.tsx` — Start a brief. + mailto + form
+- `components/ContactForm.tsx` — labeled fields + success state (film canvas styles)
+- `app/globals.css` — `.approach-*` / `.contact-*` page styles only
 - ops HANDOFF / STATUS / BACKLOG
 
 ## Acceptance
-- [x] Unique still DNA: queue rank → policy cite disposition → case note → human for refunds/irreversible money → case timeline
-- [x] Exact lines: job, pain, abilities×3, human refunds/money gate, case timeline record, refuse refunds/money without human, CTA, study footer
-- [x] StoryScenes **not** imported on this page
-- [x] Visually distinct from Concierge (no skin/try-on/bag), Ledger (no corpus/Propose≠Execute sheets), Morning (no P/W/N triage chips) — ranked tickets, §cite disposition, case note, money held gate, case timeline spine
-- [x] Shallow once-reveal only; pin:no; transform/opacity; no Lenis
-- [x] 375 stack + reduced-motion: all facts visible (`[data-ec-reveal]`)
-- [x] Canvas #fff / gutter #f5f5f7; SiteChrome variant=film; CTA ≥44px; no Open demo
-- [x] pnpm build PASS (see STATUS)
+- [x] Method three with substance; Build the gate embeds Propose/Approve/Record verbatim from copy-locks
+- [x] Name meaning once only; Chinese glyphs only in that section (机/羽/云 + Remex = remiges)
+- [x] Legal: Jiyuyun Studio LLC
+- [x] Seattle studio. Global clients. (verbatim)
+- [x] What we do not sell — five locked bullets verbatim
+- [x] Now / Next / Later expand home supporting facts; no English-first claims
+- [x] Canvas #fff / gutter #f5f5f7 via film SiteChrome; display negative tracking; CTA ≥44px → /contact
+- [x] Contact: Start a brief. headline; labeled form + success; hello@remexstudio.com
+- [x] No founder name / phone / school / pricing / CumuLabs / English-products
+- [x] pnpm build PASS
 
 ## DEV: PASS
 Await Vision / Apple / UX PM + Leader.
-Do not open V3-7 until PASS.
+Do not open V3-8 until PASS.

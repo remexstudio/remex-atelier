@@ -7,5 +7,5 @@
 - [x] V3-4 Ledger Clerk unique chapter (9cd861c)
 - [x] V3-5 Morning Remex unique chapter (c88ff40)
 - [x] V3-6 Exception Copilot unique chapter (cfaa802)
-- [ ] V3-7 approach + contact
+- [x] V3-7 approach + contact (pending parent commit)
 - [ ] V3-8 motion + a11y

@@ -28,23 +28,23 @@ export function ContactForm() {
     return (
       <div
         ref={successRef}
-        className="success-banner"
+        className="contact-success"
         role="status"
         aria-live="polite"
         aria-atomic="true"
         id={successId}
         tabIndex={-1}
       >
-        <h2 className="type-display text-2xl text-accent">Brief received</h2>
-        <p className="type-body mt-3 text-base text-muted">
+        <h2 className="contact-success__title">Brief received</h2>
+        <p className="contact-success__body">
           Thanks. We&rsquo;ll read it and reply when a fit is clear.
         </p>
-        <p className="type-meta mt-5">
+        <p className="contact-success__meta">
           This is a studio mock — no message was sent.
         </p>
         <button
           type="button"
-          className="btn-primary mt-6"
+          className="contact-cta"
           onClick={() => setStatus("idle")}
         >
           Send another brief
@@ -54,9 +54,9 @@ export function ContactForm() {
   }
 
   return (
-    <form className="mt-2 flex flex-col gap-5" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor={nameId} className="field-label">
+    <form className="contact-form" onSubmit={handleSubmit} noValidate={false}>
+      <div className="contact-field">
+        <label htmlFor={nameId} className="contact-label">
           Name
         </label>
         <input
@@ -66,12 +66,12 @@ export function ContactForm() {
           autoComplete="name"
           required
           spellCheck={false}
-          className="field-input"
+          className="contact-input"
           placeholder="Alex Rivera…"
         />
       </div>
-      <div>
-        <label htmlFor={emailId} className="field-label">
+      <div className="contact-field">
+        <label htmlFor={emailId} className="contact-label">
           Email
         </label>
         <input
@@ -82,12 +82,12 @@ export function ContactForm() {
           inputMode="email"
           required
           spellCheck={false}
-          className="field-input"
+          className="contact-input"
           placeholder="alex@studio.example…"
         />
       </div>
-      <div>
-        <label htmlFor={briefId} className="field-label">
+      <div className="contact-field">
+        <label htmlFor={briefId} className="contact-label">
           Brief
         </label>
         <textarea
@@ -96,12 +96,12 @@ export function ContactForm() {
           autoComplete="off"
           required
           rows={6}
-          className="field-input min-h-[9rem] resize-y"
+          className="contact-input contact-input--area"
           placeholder="What workflow hurts, who owns it, and what success looks like…"
         />
       </div>
-      <div className="pt-2">
-        <button type="submit" className="btn-primary">
+      <div className="contact-actions">
+        <button type="submit" className="contact-cta">
           Send brief
         </button>
       </div>

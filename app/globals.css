@@ -3759,6 +3759,558 @@ button:active {
   }
 }
 
+
+/* ——— Approach / Contact (V3-7) ——— */
+.approach-page,
+.contact-page {
+  background: var(--gutter);
+  color: var(--ink);
+  min-height: calc(100svh - var(--nav-height));
+  padding: 2.5rem 1.25rem 4.5rem;
+}
+
+@media (min-width: 640px) {
+  .approach-page,
+  .contact-page {
+    padding-inline: 2rem;
+  }
+}
+
+.approach-hero,
+.approach-section,
+.contact-panel {
+  max-width: 44rem;
+  margin-inline: auto;
+  background: var(--canvas);
+  border: 1px solid color-mix(in srgb, #d2d2d7 65%, white);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .approach-hero,
+  .approach-section,
+  .contact-panel {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.approach-section {
+  margin-top: 1rem;
+}
+
+.approach-kicker,
+.contact-kicker {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+.approach-title,
+.contact-title {
+  margin: 0.65rem 0 0;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: clamp(2.1rem, 5.2vw, 3.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.approach-lede,
+.contact-lede {
+  margin: 1rem 0 0;
+  max-width: 36rem;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--muted) 55%, var(--ink));
+  text-wrap: pretty;
+}
+
+.approach-place {
+  margin: 1.15rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.approach-section__title {
+  margin: 0;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: clamp(1.55rem, 3.4vw, 2.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.approach-method-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.approach-method {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+}
+
+.approach-method:last-child {
+  padding-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .approach-method {
+    grid-template-columns: 3.25rem 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.approach-method__n {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding-top: 0.35rem;
+}
+
+.approach-method__title {
+  margin: 0;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: clamp(1.35rem, 2.8vw, 1.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.approach-method__lead {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.approach-method__copy {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+  text-wrap: pretty;
+}
+
+.approach-mechanism {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.approach-mechanism__item {
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  border-radius: 0.65rem;
+  background: var(--gutter);
+  padding: 0.9rem 1rem;
+}
+
+.approach-mechanism__label {
+  display: block;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.approach-mechanism__text {
+  margin: 0.4rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.approach-name__intro {
+  margin: 1rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+  text-wrap: pretty;
+}
+
+.approach-name__list {
+  list-style: none;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.approach-name__row {
+  display: grid;
+  grid-template-columns: 4.5rem 1.25rem 1fr;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.65rem;
+  background: var(--gutter);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+}
+
+.approach-name__glyph {
+  font-family: var(--font-serif), ui-serif, "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+  font-size: 1.55rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.approach-name__glyph--latin {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.approach-name__eq {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.approach-name__gloss {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.approach-studio__facts {
+  margin: 1.25rem 0 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.approach-studio__fact {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.95rem 1rem;
+  border-radius: 0.65rem;
+  background: var(--gutter);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+}
+
+.approach-studio__fact dt {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.approach-studio__fact dd {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.approach-refuse__list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.approach-refuse__list li {
+  position: relative;
+  padding: 0.85rem 1rem 0.85rem 1.85rem;
+  border-radius: 0.65rem;
+  background: var(--gutter);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.approach-refuse__list li::before {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  top: 1.2rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--muted) 70%, var(--ink));
+}
+
+.approach-roadmap__list {
+  list-style: none;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.approach-roadmap__row {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.1rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--gutter);
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+}
+
+@media (min-width: 640px) {
+  .approach-roadmap__row {
+    grid-template-columns: 5rem 1fr;
+    gap: 1.15rem;
+    padding: 1.25rem 1.15rem;
+  }
+}
+
+.approach-roadmap__label {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.approach-roadmap__base {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.approach-roadmap__detail {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+  text-wrap: pretty;
+}
+
+.approach-close__title {
+  margin: 0;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.approach-close__lede {
+  margin: 0.9rem 0 0;
+  max-width: 30rem;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+}
+
+.approach-close__cta-wrap {
+  margin: 1.5rem 0 0;
+}
+
+.approach-cta,
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--hit-target-min);
+  min-width: var(--hit-target-min);
+  background: var(--cta);
+  color: #fff;
+  border: 1px solid var(--cta);
+  padding: 0.7rem 1.25rem;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--duration-press) var(--ease-out),
+    background-color var(--duration-ui) var(--ease-out);
+}
+
+.approach-cta:active,
+.contact-cta:active {
+  transform: scale(0.97);
+}
+
+.approach-cta:focus-visible,
+.contact-cta:focus-visible {
+  outline: 2px solid var(--cta);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .approach-cta:hover,
+  .contact-cta:hover {
+    background-color: color-mix(in srgb, var(--cta) 88%, black);
+    text-decoration-line: none;
+  }
+}
+
+.contact-panel {
+  max-width: 32rem;
+}
+
+.contact-mail {
+  margin: 1rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+}
+
+.contact-mail a {
+  color: var(--ink);
+  font-weight: 560;
+  text-underline-offset: 3px;
+}
+
+.contact-form-wrap {
+  margin-top: 1.75rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-label {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.contact-input {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, #d2d2d7 80%, #a1a1a6);
+  background: var(--canvas);
+  color: var(--ink);
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+  line-height: 1.4;
+  border-radius: 0.4rem;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color var(--duration-ui) var(--ease-out),
+    background-color var(--duration-ui) var(--ease-out);
+}
+
+.contact-input--area {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.contact-input:focus-visible {
+  outline: 2px solid var(--cta);
+  outline-offset: 2px;
+  border-color: var(--cta);
+}
+
+.contact-input::placeholder {
+  color: color-mix(in srgb, var(--muted) 75%, white);
+}
+
+.contact-actions {
+  padding-top: 0.25rem;
+}
+
+.contact-success {
+  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  background: var(--gutter);
+  border-radius: 0.75rem;
+  padding: 1.35rem 1.25rem;
+}
+
+.contact-success__title {
+  margin: 0;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.contact-success__body {
+  margin: 0.7rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+}
+
+.contact-success__meta {
+  margin: 1rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.contact-success .contact-cta {
+  margin-top: 1.25rem;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .approach-hero,
+  .approach-section,
+  .contact-panel,
+  .approach-mechanism__item,
+  .approach-name__row,
+  .approach-studio__fact,
+  .approach-refuse__list li,
+  .approach-roadmap__row,
+  .contact-success {
+    background: var(--canvas);
+  }
+
+  .contact-input {
+    background: var(--canvas);
+  }
+}
+
 /* Apple / Emil: reduced motion = drop transform motion; keep short opacity */
 @media (prefers-reduced-motion: reduce) {
   *,
