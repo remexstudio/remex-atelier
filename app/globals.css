@@ -4702,7 +4702,7 @@ button:active {
   }
 
   .ec-spine__row {
-    grid-template-columns: 0.7rem 1fr;
+    grid-template-columns: 0.7rem auto minmax(0, 1fr);
   }
 
   .ec-spine__row .ec-timeline__bar {
@@ -5669,6 +5669,25 @@ button:active {
     width: 100%;
     min-height: 0;
     gap: 0.2rem;
+  }
+
+  /* V3-18: 375 register / ribbon / packet / spine — single-line chips; no type shrink */
+  .lc-register > .still-fact,
+  .lc-register__row .still-fact,
+  .cq-ticket--ribbon .still-fact,
+  .mr-packet__row .still-fact,
+  .ec-spine__row .still-fact {
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  .mr-packet__row .still-fact--ink {
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  .lc-register__row {
+    grid-template-columns: 5.25rem minmax(0, 1fr);
   }
 }
 

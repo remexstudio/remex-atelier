@@ -308,10 +308,10 @@ export function LedgerClerkChapter() {
           </h2>
           <div className="lc-register" data-lc-reveal aria-hidden="true">
             <p className="lc-log__title">Audit log</p>
-            <p className="still-fact still-fact--muted">§12.4 · Close pack</p>
+            <p className="still-fact still-fact--muted">§12.4</p>
             <div className="lc-register__row">
               <span className="lc-log__key">Ask</span>
-              <span className="still-fact">Month-end question</span>
+              <span className="still-fact">Month-end</span>
             </div>
             <div className="lc-register__row">
               <span className="lc-log__key">Citation</span>

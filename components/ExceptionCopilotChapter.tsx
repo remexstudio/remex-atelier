@@ -293,7 +293,7 @@ export function ExceptionCopilotChapter() {
             <div className="ec-spine__row">
               <span className="ec-timeline__dot" />
               <span className="ec-timeline__key">Policy cite</span>
-              <span className="still-fact">§4.2 · Restock window</span>
+              <span className="still-fact">§4.2</span>
             </div>
             <div className="ec-spine__row">
               <span className="ec-timeline__dot" />

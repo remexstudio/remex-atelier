@@ -293,7 +293,7 @@ export function MorningRemexChapter() {
             <div className="mr-packet__beads">
               <div className="mr-packet__row">
                 <span className="mr-packet__key">Brief</span>
-                <span className="still-fact">Overnight packet</span>
+                <span className="still-fact">Overnight</span>
               </div>
               <div className="mr-packet__row">
                 <span className="mr-packet__key">Draft</span>

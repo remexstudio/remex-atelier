@@ -296,13 +296,13 @@ export function AtelierConciergeChapter() {
             <p className="still-fact still-fact--kicker">Consult thread</p>
             <p className="cq-ticket__id">LUM-1042</p>
             <div className="cq-ticket__thread">
-              <span className="still-fact">Skin + occasion</span>
+              <span className="still-fact">Skin</span>
             </div>
             <div className="cq-ticket__thread">
               <span className="still-fact still-fact--muted">Fit note</span>
             </div>
             <div className="cq-ticket__thread">
-              <span className="still-fact">Held with ticket</span>
+              <span className="still-fact">Held</span>
             </div>
           </div>
           <h2 id="cq-record-h" className="cq-headline cq-headline--sm" data-cq-reveal>
