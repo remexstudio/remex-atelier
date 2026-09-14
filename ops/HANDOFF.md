@@ -1,30 +1,28 @@
 # Handoff V3-13
 
 - Status: delivered
-- SHA: 1e1af30 (content)
+- SHA: 1e1af30 (content); merge tip 4b080bd on main
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: Coordinator will `vercel deploy --prod` after merge. No V3-14.
+- Deploy: see follow-up after prod deploy
 - Files changed (ALLOWED only):
-  - `app/layout.tsx` — drop `bg-paper` on `<body>`; lock `bg-gutter` (`#f5f5f7`). Nav height remains 46px.
-  - `app/globals.css` — root `--background` → `--canvas`; body paints `--gutter` (including `prefers-reduced-transparency`); footer secondary ≥44; film/lab/not-found helpers; drop PulseLoop paper remaps.
-  - `app/not-found.tsx` — `SiteChrome variant="film"`; film title/panel grammar; `btn-primary` / `btn-secondary` (≥44).
-  - `components/lab/PulseLoop.tsx` — native film classes; no `bg-paper*` utilities; Prototype loop, focus-visible, RM facts unchanged.
-  - `components/lab/pulse.css` — canvas / gutter / hairline surfaces.
-  - `components/SiteChrome.tsx` — footer secondary `/services` + `/about` (wayfinding labels only, ≥44); Lab `aria-label="Lab prototypes"`; primary nav still Work / Approach / Lab / Contact.
-  - Deleted unused `components/Offers.tsx` (no remaining imports).
+  - `app/layout.tsx` — drop `bg-paper`; lock `bg-gutter` (`#f5f5f7`). Nav height 46px.
+  - `app/globals.css` — root canvas/gutter; footer secondary ≥44; film/lab/not-found helpers.
+  - `app/not-found.tsx` — film SiteChrome; film grammar; CTAs ≥44.
+  - `components/lab/PulseLoop.tsx` — film classes; no `bg-paper*`.
+  - `components/lab/pulse.css` — canvas / gutter / hairline.
+  - `components/SiteChrome.tsx` — footer `/services` + `/about` wayfinding; Lab `aria-label="Lab prototypes"`.
+  - Deleted `components/Offers.tsx`.
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
 - Acceptance self-check:
-  - [x] Body does not paint legacy paper; canvas/gutter `#fff` / `#f5f5f7`
-  - [x] 404 is film, not `mt-14` paper stub; CTAs ≥44
-  - [x] PulseLoop has no `bg-paper*`; buttons ≥44
-  - [x] Offers.tsx gone; no imports left
-  - [x] Footer Services + About wayfinding only; not stuffed into primary nav
-  - [x] Lab aria-label conveys prototypes
-  - [x] 46px nav / shallow scroll kept; no new pins
-  - [x] 机羽云 and refuse list not moved; no Contact BRIEF_ASKS / Services density
-  - [x] Locked product / home copy untouched; no `/demo` CTAs
+  - [x] Body no paper; canvas/gutter `#fff` / `#f5f5f7`
+  - [x] 404 film; CTAs ≥44
+  - [x] PulseLoop no `bg-paper*`
+  - [x] Offers gone
+  - [x] Footer Services + About wayfinding only
+  - [x] Lab aria-label prototypes
+  - [x] No new pins; no 机羽云/refuse move; no V3-14 scope
   - [x] `pnpm build` green
-  - [ ] `vercel deploy --prod` — Coordinator after merge
+  - [ ] `vercel deploy --prod` — updating
 - Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
 - Risks:
   - Default SiteChrome CSS remains unused; shipped routes are film.
