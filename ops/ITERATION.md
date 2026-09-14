@@ -1,23 +1,13 @@
-# Iteration after V3-19 delivery
+# Iteration after V3-19 PASS
 
 Live preview: https://remex-atelier.vercel.app
-V3-19 content: `bd45df8`. Await three PM + Leader. Coordinator owns prod refresh.
+V3-19 closed: content `bd45df8` / tip `ae6f870`. Unanimous PM + Leader PASS.
 
-## Closed in this slice
+## V3-20 ticket (this loop)
 
-1. SiteChrome default footerLine → `Seattle studio. Global clients.`
-2. Nav mark film CSS only; hit ≥44.
-3. `scroll-margin-top: var(--nav-height)` on home `.home-mod[id]` and four-chapter `[data-*-mod]`.
-4. Four chapter job H1s at `--size-display`; secondary `--sm` unchanged.
-5. Optional `lib/refuse.ts` DRY; landings stay home H5 + `/approach`.
-6. Footer secondary `:focus-visible` outline.
+From Apple board ADD (held through V3-19) + UX/Vision guardrails:
 
-## Held for V3-20
-
-CTA curtain de-isomorphism / unique CTA stills; `/work` product-wall still upgrade.
-
-## Hard bans (unchanged)
-
-- No English-products market claims; no founder name; no CumuLabs/outsourcing; no Lenis/normalizeScroll/body lock; H3-only pin with pinOk; locked copy verbatim.
-- Do not move 机羽云 or the refuse list.
-- No `/demo` marketing CTAs; no long pins; no empty gray-bar chrome return.
+1. **CTA curtain de-iso** — four `*Chapter.tsx` CTA finales must not share the same curtain grammar (`*-mod--cta` + identical `chapter-cta`/`home-cta` layout). Each gets a product-unique large still beside/above CTA. Locked string `Start a brief.` may stay.
+2. **`/work` product wall** — `app/work/page.tsx` + `.work-story-card*`: larger stills, less padded brochure cards; closer to Apple product grid.
+3. Soft: if sticky jump headroom feels double (~92px), keep either `scroll-padding-top` or `scroll-margin`, not both stacked aggressively.
+4. Hard stay: locked score lines; DNA markers; 机羽云/refuse landings; no Lenis; H3-only pinOk; no empty gray bars.

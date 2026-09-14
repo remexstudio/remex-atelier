@@ -1,26 +1,6 @@
-# Handoff V3-19
+# Handoff V3-20
 
-- Status: delivered
-- Content SHA: bd45df8
-- Merge tip: 31e624f on main (HANDOFF stamp follows)
-- Preview / Production: https://remex-atelier.vercel.app
-- Deploy: dpl_Ehz6Ro1EqCJFp6JcB4v8HmMBAqq7 READY
-- Files changed:
-  - `components/SiteChrome.tsx` — default `footerLine` SAY; mark class only
-  - `app/globals.css` — `.site-nav__mark` film CSS ≥44; `scroll-margin-top` on `.home-mod[id]` + `[data-*-mod]`; four chapter job H1s `--size-display`; footer link `:focus-visible`
-  - `lib/refuse.ts` — locked refuse list (exact strings)
-  - `components/HomeScenes.tsx` / `app/approach/page.tsx` — import only; landings stay home H5 + approach
-  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
-- Acceptance self-check:
-  - [x] Default footerLine matches `Seattle studio. Global clients.`
-  - [x] Nav mark film-only CSS; ≥44
-  - [x] Home + chapter anchors clear sticky nav via scroll-margin
-  - [x] Four chapter job H1s at `--size-display` (not display-sm)
-  - [x] Locked copy / 机羽云 / refuse landings unchanged; no Lenis; no new pins
-  - [x] `pnpm build` PASS
-  - [x] `vercel deploy --prod` dpl_Ehz6Ro1EqCJFp6JcB4v8HmMBAqq7
-- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
-- Risks:
-  - `html { scroll-padding-top }` plus new scroll-margin stacks (~92px from viewport top). Headings still clear.
-  - `.site-shell--default` kept: default variant still references those classes.
-- Blockers: Await three PM + Leader. No V3-20 until PASS.
+- Status: issued — await Dev
+- Prior closed: V3-19 PASS (`bd45df8` / tip `ae6f870`)
+- Preview: https://remex-atelier.vercel.app
+- Notes: See `ops/TASK.md`. CTA de-iso + /work wall. No V3-21 until PASS.

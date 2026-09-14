@@ -1,9 +1,6 @@
 # Status
 
-- Phase: Atelier V3 overnight loop 2 — V3-19 delivered (chrome + scroll-margin + chapter display)
-- Closed: V3-0…V3-18 (short chips; `f504ca9` / tip `a66e4ee`; board close tip `997fb7f`)
-- Open: V3-19 — await three PM + Leader
-- Held: V3-20 CTA de-iso + /work product wall
+- Phase: Atelier V3 overnight loop 2 — V3-20 open (CTA de-iso + /work product wall)
+- Closed: V3-0…V3-19 (chrome/scroll-margin/display; `bd45df8` / tip `ae6f870`)
+- Open: V3-20 — await Dev delivery + three PM + Leader
 - Preview: https://remex-atelier.vercel.app
-- Content SHA: `bd45df8`
-- Prod: coordinator will `vercel deploy --prod` (not run in this slice)
