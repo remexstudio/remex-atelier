@@ -3,7 +3,7 @@
 - Status: delivered
 - SHA: 1e1af30 (content); merge tip 4b080bd on main
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: see follow-up after prod deploy
+- Deploy: `dpl_D9EGSraenJce8yrHQQamBVYbxFKC` → aliased https://remex-atelier.vercel.app
 - Files changed (ALLOWED only):
   - `app/layout.tsx` — drop `bg-paper`; lock `bg-gutter` (`#f5f5f7`). Nav height 46px.
   - `app/globals.css` — root canvas/gutter; footer secondary ≥44; film/lab/not-found helpers.
@@ -22,7 +22,7 @@
   - [x] Lab aria-label prototypes
   - [x] No new pins; no 机羽云/refuse move; no V3-14 scope
   - [x] `pnpm build` green
-  - [ ] `vercel deploy --prod` — updating
+  - [x] `vercel deploy --prod` — production alias refreshed
 - Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
 - Risks:
   - Default SiteChrome CSS remains unused; shipped routes are film.
