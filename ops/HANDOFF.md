@@ -2,7 +2,7 @@
 
 - Status: delivered — PM board lock
 - Content SHA: d2c9f3f
-- Tip SHA: d2f838e
+- Tip SHA: 0b680a2
 - Preview / Production: https://remex-atelier.vercel.app
 - Deploy: coordinator `vercel deploy --prod` after merge
 - PR: https://github.com/remexstudio/remex-atelier/pull/7
