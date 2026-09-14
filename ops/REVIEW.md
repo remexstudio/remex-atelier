@@ -1,14 +1,14 @@
-# Review V3-9
+# Review V3-10
 
-- Content SHA: 2a2c02a (`feat(site): v3 kill legacy demos and dual work routes`)
-- Merge: c882e69
-- Handoff tip: ee0dddb
+- Content SHA: 1e57b13 (`feat(site): v3 home and work still fidelity`)
+- Merge: 3f56512
+- Handoff tip: 2936a7c
 
 | Voice | Verdict |
 | --- | --- |
 | Vision PM | PASS |
-| Apple PM | PASS (code; refresh Vercel for live 301 smoke) |
+| Apple PM | PASS |
 | UX PM | PASS |
 | Leader | **PASS** |
 
-V3-9 closed. Open V3-10 home/work still fidelity.
+V3-10 closed. Open V3-11 break four-chapter isomorphic layouts.
