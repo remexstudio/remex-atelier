@@ -1,27 +1,30 @@
-# Review R0
+# Review R1
 
-- TASK ID: R0
-- Delivery SHA: 91b0afdc17b2b5fcbb8d07df269f08075b923b60
-- Commit: `docs(site): lock copy and scroll score`
+- TASK ID: R1
+- Delivery SHA: 70a6e4c (`feat(home): add pinned product scenes`)
+- Handoff tip: 8f9b3b4
+- Preview: https://remex-atelier.vercel.app (CLI prod refresh after Git lag)
 
-## Acceptance
+## Checks
 
-| Criterion | Result |
-| --- | --- |
-| SAY / DO NOT SAY / Approved headlines verbatim | PASS |
-| Home S1–S6 pin + visual + exact headline/support | PASS |
-| S5 three lines Design / Build / Keep | PASS |
-| Four stories × five scenes; slug `exception-copilot` | PASS |
-| No app/**; no personal; no founder name | PASS |
-| Commit message exact | PASS |
+- [x] `/` six full-viewport scenes `#home-s1`…`#home-s6`
+- [x] Headlines and supports match `docs/scroll-score.md` (incl. S5 three beats; S6 CTA `Start a brief.`)
+- [x] GSAP ScrollTrigger `pin: true`, `scrub: 1`; motion via transform/opacity (`autoAlpha` / `y` / `scale`)
+- [x] Canvas `#ffffff` / gutter `#f5f5f7`; CTA accent only (`--cta`)
+- [x] Sticky translucent nav height 46px
+- [x] `prefers-reduced-motion`: no pin theater (JS skip + CSS transform suppress)
+- [x] No English-first / purple mesh / chatbot on home
+- [x] `pnpm build` PASS
+- [x] Production HTML shows `home-film` + `home-s1`…`home-s6` (Offers/LumenTeaser gone)
 
 ## Notes
 
-- S4/S6 supporting lines and product-story beat sentences are score locks, not items on the Approved headlines list — acceptable and correctly flagged in HANDOFF.
-- English-as-build-constraint note present in copy-locks.
+- S4 story routes intentionally 404 until later tickets (allowed by R1 scope).
+- Lenis omitted — acceptable (optional in R1).
+- Sticky nav applies site-wide; film vs default shells remain distinct.
 
 ## Verdict
 
-**LEADER PASS**
+**LEADER: PASS**
 
-R0 closed. Do **not** issue R1 until the owner sends the next prompt.
+R1 closed. Do not start R2 until owner prompt.
