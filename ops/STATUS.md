@@ -8,3 +8,7 @@
 - Live: https://remex-atelier.vercel.app
 - Board: Apple / UX / Vision + Leader review V3-1 before V3-2
 - Rule: three PM reviews + Leader; no idle
+
+## V3-1 REWORK — 44px nav hits
+
+- State: DEV PASS (await UX re-PASS)
