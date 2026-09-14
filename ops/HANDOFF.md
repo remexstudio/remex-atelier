@@ -1,8 +1,8 @@
 # Handoff R1
 
 - Status: delivered
-- SHA: c5a9fcd
-- Preview: local `pnpm build` only until parent push; production URL after deploy: https://remex-atelier.vercel.app
+- SHA: 70a6e4c
+- Preview: https://remex-atelier.vercel.app (Git auto-deploy may lag; CLI deploy if needed)
 - Files changed:
   - app/page.tsx (SiteChrome film + HomeScenes; Offers/LumenTeaser removed from home)
   - app/globals.css (canvas/gutter tokens, sticky nav, home film, reduced-motion)
