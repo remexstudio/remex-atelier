@@ -1,30 +1,6 @@
-# Handoff V3-13
+# Handoff V3-14
 
-- Status: delivered
-- SHA: 1e1af30 (content); merge tip 4b080bd on main
-- Preview / Production: https://remex-atelier.vercel.app
-- Deploy: `dpl_D9EGSraenJce8yrHQQamBVYbxFKC` → aliased https://remex-atelier.vercel.app
-- Files changed (ALLOWED only):
-  - `app/layout.tsx` — drop `bg-paper`; lock `bg-gutter` (`#f5f5f7`). Nav height 46px.
-  - `app/globals.css` — root canvas/gutter; footer secondary ≥44; film/lab/not-found helpers.
-  - `app/not-found.tsx` — film SiteChrome; film grammar; CTAs ≥44.
-  - `components/lab/PulseLoop.tsx` — film classes; no `bg-paper*`.
-  - `components/lab/pulse.css` — canvas / gutter / hairline.
-  - `components/SiteChrome.tsx` — footer `/services` + `/about` wayfinding; Lab `aria-label="Lab prototypes"`.
-  - Deleted `components/Offers.tsx`.
-  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
-- Acceptance self-check:
-  - [x] Body no paper; canvas/gutter `#fff` / `#f5f5f7`
-  - [x] 404 film; CTAs ≥44
-  - [x] PulseLoop no `bg-paper*`
-  - [x] Offers gone
-  - [x] Footer Services + About wayfinding only
-  - [x] Lab aria-label prototypes
-  - [x] No new pins; no 机羽云/refuse move; no V3-14 scope
-  - [x] `pnpm build` green
-  - [x] `vercel deploy --prod` — production alias refreshed
-- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
-- Risks:
-  - Default SiteChrome CSS remains unused; shipped routes are film.
-- Blockers:
-  - None. Await three PM + Leader. No V3-14.
+- Status: issued — await Dev
+- Prior closed: V3-13 PASS (`1e1af30` / merge `4b080bd` / tip `e8c6cbd`)
+- Preview: https://remex-atelier.vercel.app
+- Notes: See `ops/TASK.md`. Density only. No new pins. No V3-15 until PASS.

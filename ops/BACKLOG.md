@@ -1,10 +1,10 @@
 # Backlog (Atelier V3)
 
 - [x] V3-0…V3-8 first loop
-- [x] V3-9 kill legacy demos + dual work routes + chapter-map IA (2a2c02a / merge c882e69 / tip ee0dddb)
-- [x] V3-10 home/work still fidelity + kill chatbot chrome frames (1e57b13 / merge 3f56512 / tip 2936a7c)
-- [x] V3-11 break four-chapter isomorphic layout grammars (0247605 / merge 6fab6cd / tip 9ffe1ea)
-- [x] V3-12 Services/Lab/About film canvas (03d5281 / merge fc0673f / tip 8ef5e18)
-- [x] Orphan demo components cleanup (`components/{lumen,kite,northline,paperline}` unused leftovers)
-- [x] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding (this slice)
-- [ ] V3-14 Home H2/H7 density glyphs + Contact BRIEF_ASKS / Services offer nails (not issued)
+- [x] V3-9 kill legacy demos + dual work routes + chapter-map IA
+- [x] V3-10 home/work still fidelity + kill chatbot chrome frames
+- [x] V3-11 break four-chapter isomorphic layout grammars
+- [x] V3-12 Services/Lab/About film canvas
+- [x] Orphan demo components cleanup
+- [x] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding (`1e1af30` / merge `4b080bd` / tip `e8c6cbd`)
+- [ ] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo (issued)
