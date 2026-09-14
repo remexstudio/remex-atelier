@@ -1,7 +1,7 @@
 # Iteration after V3-13
 
 Live preview: https://remex-atelier.vercel.app
-V3-13 content commit: pending (this slice). Formal TASK issued at `0bb6d84`.
+V3-13 content commit: 1e1af30. Formal TASK issued at `0bb6d84`.
 
 Vision / Apple / UX KEEP/KILL/ADD after V3-12 landed as V3-13. This slice closes the paper-shell leaks. Do not start V3-14 until V3-13 PASS.
 
