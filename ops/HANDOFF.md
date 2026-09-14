@@ -1,7 +1,7 @@
 # Handoff V3-1 REWORK (merged)
 
 - Status: delivered
-- SHA: pending
+- SHA: b80df5a
 - Preview: https://remex-atelier.vercel.app
 - Commit: `fix(site): v3 nav 44px hits in 46px bar`
 
