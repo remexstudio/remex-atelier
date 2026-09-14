@@ -1,29 +1,26 @@
-# Handoff V3-9
+# Handoff V3-10
 
-- Status: delivered
-- SHA: 2a2c02a (content); merge tip c882e69 on main
+- Status: delivered (PM board still facts)
+- SHA: cursor/v3-home-work-still-fidelity-271c tip (report in PR)
 - Preview: https://remex-atelier.vercel.app
 - Files changed (ALLOWED only):
-  - `next.config.ts` — 301: four legacy work routes → unique chapters; `/demo/{lumen,northline,kite,paperline}(/*)` → `/lab`
-  - Deleted dual work pages: `app/work/{lumen-atelier,northline,kite,paperline}`
-  - Deleted `app/demo/**` (unlinked; leftover demo component trees not shipped)
-  - Deleted unused `components/LumenTeaser.tsx`
-  - `components/SiteChrome.tsx` — primary Work / Approach / Lab / Contact; Services/About demoted; chapter map via `usePathname() === "/"` only
-  - `app/globals.css` — chapter wrap display/overflow on `site-shell--home-chapters`
-  - `docs/sitemap.md` — V3 routes + 301 table
+  - `components/HomeScenes.tsx` — hero is Concierge/Gate facts: LUM-1042 + Skin → hero → try-on → bag → pay + Propose → Approve → Record. No chrome dots or gray bars. Job stills read unique facts: LUM-1042 / Propose≠Execute + cite / P · W · N / queue · policy.
+  - `app/work/page.tsx` — `/work` still-a…d carry the same readable facts. Locked card titles/ledes untouched. No Open demo.
+  - `app/globals.css` — fact-led still type at card size (375 readable). Chapter layout CSS unchanged.
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
 - Acceptance self-check: pass/fail per bullet
-  - [x] 301s for four legacy work routes
-  - [x] No Open demo / /demo/* CTAs on marketing surface
-  - [x] SiteChrome chapters only on home
-  - [x] LumenTeaser removed
-  - [x] Four unique chapters copy untouched
-  - [x] Primary nav: Work, Approach, Lab (Prototype page), Contact — no /demo/*
-  - [x] pnpm build green
-- Skills used: apple-design, apple-design-web, emil-design-eng, writing-guidelines, web-design-guidelines, zero-jank-scroll
+  - [x] Hero has no `product-frame__chrome` dots or gray-bar chatbot chrome
+  - [x] Hero reads Concierge/Gate DNA (LUM-1042 + Propose→Approve→Record)
+  - [x] Four home stills read unique facts at a glance (not interchangeable gradients)
+  - [x] Four `/work` stills match those facts; distinguishable without the title
+  - [x] 375 information-readable; CTA / job cards ≥44px; RM not touched
+  - [x] Locked chapter copy / scroll-score lines untouched
+  - [x] Four-chapter layout isomorphism not rewritten (V3-11)
+  - [x] `pnpm build` green (15 static routes)
+  - [ ] `vercel deploy --prod` — blocked in this environment (CLI logged out; no `VERCEL_TOKEN`). Alias still serves last main tip until credentials or a main merge.
+- Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, zero-jank-scroll, review-animations
 - Risks:
-  - `components/{lumen,kite,northline,paperline}` remain as unused orphans (not in ALLOWED to delete). `app/demo/**` gone; those URLs 301 to `/lab`.
-  - `/demo` exact (no family) has no page and no redirect — 404 is intended.
-  - Services / About remain as thin stub routes, off primary nav (V3-11+).
+  - Stills are static CSS/HTML facts — no live widgets.
+  - Production alias refresh needs CLI credentials or a main merge.
 - Blockers:
-  - None. Await three PM + Leader. No V3-10 until PASS.
+  - `vercel deploy --prod` cannot run here (logged out). Await three PM + Leader. No V3-11 until PASS.

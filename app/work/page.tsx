@@ -48,6 +48,69 @@ const STORIES = [
   },
 ] as const;
 
+function WorkStill({ still }: { still: (typeof STORIES)[number]["still"] }) {
+  if (still === "still-a") {
+    return (
+      <div
+        className="work-story-card__still work-story-card__still--still-a still-dna still-dna--cq still-dna--facts"
+        aria-hidden="true"
+      >
+        <p className="still-dna__fact">LUM-1042</p>
+        <p className="still-dna__sub">skin → hero → try-on → bag → pay</p>
+        <div className="cq-pay__gate">
+          <span className="cq-pay__chip">Propose</span>
+          <span className="cq-pay__arrow" />
+          <span className="cq-pay__chip cq-pay__chip--approve">Approve</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (still === "still-b") {
+    return (
+      <div
+        className="work-story-card__still work-story-card__still--still-b still-dna still-dna--lc still-dna--facts"
+        aria-hidden="true"
+      >
+        <p className="still-dna__fact">Propose≠Execute</p>
+        <p className="still-dna__sub">cite</p>
+        <span className="lc-controller__cite">§12.4 · Close pack</span>
+      </div>
+    );
+  }
+
+  if (still === "still-c") {
+    return (
+      <div
+        className="work-story-card__still work-story-card__still--still-c still-dna still-dna--mr still-dna--facts"
+        aria-hidden="true"
+      >
+        <div className="mr-triage">
+          <span className="mr-triage__lane mr-triage__lane--pri">Priority</span>
+          <span className="mr-triage__lane mr-triage__lane--watch">Watch</span>
+          <span className="mr-triage__lane mr-triage__lane--noise">Noise</span>
+        </div>
+        <p className="still-dna__sub">P · W · N</p>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="work-story-card__still work-story-card__still--still-d still-dna still-dna--ec still-dna--facts"
+      aria-hidden="true"
+    >
+      <p className="still-dna__fact">queue · policy</p>
+      <div className="ec-desk">
+        <span className="ec-desk__chip ec-desk__chip--u1">U1</span>
+        <span className="ec-desk__chip ec-desk__chip--u2">U2</span>
+        <span className="ec-desk__chip ec-desk__chip--u3">U3</span>
+        <span className="ec-desk__chip ec-desk__chip--policy">Policy</span>
+      </div>
+    </div>
+  );
+}
+
 export default function WorkPage() {
   return (
     <SiteChrome variant="film">
@@ -65,10 +128,7 @@ export default function WorkPage() {
           {STORIES.map((story) => (
             <li key={story.href}>
               <Link href={story.href} className="work-story-card">
-                <span
-                  className={`work-story-card__still work-story-card__still--${story.still}`}
-                  aria-hidden="true"
-                />
+                <WorkStill still={story.still} />
                 <span className="work-story-card__body">
                   <span className="work-story-card__name">{story.name}</span>
                   <span className="work-story-card__line">{story.line}</span>
