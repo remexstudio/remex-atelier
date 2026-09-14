@@ -53,11 +53,12 @@
   --ease-in-out: var(--ease-in-out);
 }
 
-/* V3-20: keep module scroll-margin only — do not stack html scroll-padding (~92px). */
+/* V3-20: keep module scroll-margin only — neutralize body/html scroll-padding (~92px stack). */
 
 body {
   background: var(--gutter);
   color: var(--ink);
+  scroll-padding-top: 0;
 }
 
 /* HARD BAN (scroll stack — zero-jank):
@@ -5780,7 +5781,8 @@ button:active {
 
 .cq-cta-still .cq-pay__bag {
   padding: 1.15rem 1.2rem;
-  min-height: 9.5rem;
+  min-height: 0;
+  align-content: start;
 }
 
 .cq-cta-still .cq-ticket__id {
@@ -5838,6 +5840,13 @@ button:active {
   display: grid;
   gap: 0.75rem;
   align-content: start;
+  justify-items: start;
+}
+
+.lc-cta-still__mark .lc-propose__mark,
+.lc-cta-still__mark--wall .lc-propose__mark {
+  justify-self: start;
+  width: auto;
 }
 
 .lc-cta-still__never {
@@ -6037,8 +6046,9 @@ button:active {
 }
 
 .work-story-card__still--still-a .cq-pay__bag {
-  min-height: 7.5rem;
+  min-height: 0;
   padding: 1rem 1.05rem;
+  align-content: start;
 }
 
 .work-story-card__still--still-a .cq-ticket__id {

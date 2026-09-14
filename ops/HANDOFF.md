@@ -1,7 +1,7 @@
 # Handoff V3-20
 - Status: delivered
-- Content SHA: `9ca3628`
-- Tip: `9ca3628` (pre-merge; coordinator stamps merge tip)
+- Content SHA: `29a9a58`
+- Tip: `29a9a58` (pre-merge; coordinator stamps merge tip)
 - Preview: https://remex-atelier.vercel.app
 - Files changed:
   - `components/AtelierConciergeChapter.tsx` — CTA split still-left / copy-right; pay + bag + LUM-1042
@@ -16,7 +16,7 @@
   - [x] `/work` reads as product wall, not thin brochure grid
   - [x] Locked score lines + Start a brief + DNA markers intact
   - [x] CTA ≥44; no Lenis; no gray-bar return; no 机羽云/refuse move
-  - [ ] Build green; prod refreshed (coordinator)
+  - [x] Build green (`pnpm build` PASS). Prod refresh is coordinator — not run here.
 - Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
 - Risks: overlay CTA on Ledger needs 375 stack check; work wall stills reuse chapter atoms
 - Blockers: Await three PM + Leader. No V3-21 until PASS.
