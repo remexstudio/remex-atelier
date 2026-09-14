@@ -1,7 +1,7 @@
-# Review V3-4
+# Review V3-5
 
-- Content SHA: 9cd861c (`feat(work): ledger clerk unique chapter`)
-- Handoff tip: b68cd73
+- Content SHA: c88ff40 (`feat(work): morning remex unique chapter`)
+- Handoff tip: b35e283
 
 | Voice | Verdict |
 | --- | --- |
@@ -10,4 +10,4 @@
 | UX PM | PASS |
 | Leader | **PASS** |
 
-V3-4 closed. Open V3-5 Morning Remex unique chapter.
+V3-5 closed. Open V3-6 Exception Copilot unique chapter.

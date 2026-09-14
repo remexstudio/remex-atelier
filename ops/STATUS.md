@@ -1,8 +1,7 @@
 # Status
 
-- Phase: Atelier V3 overnight — V3-5 delivered (Morning Remex; uncommitted; pnpm build PASS)
-- Closed: V3-0…V3-4 (Ledger Clerk 9cd861c)
-- Open: V3-5 ready for parent commit `feat(work): morning remex unique chapter`; await three PM + Leader
-- Next: V3-6 Exception Copilot (after PASS)
+- Phase: Atelier V3 overnight — V3-5 PASS; V3-6 issued (Exception Copilot)
+- Closed: V3-0…V3-5 (Morning Remex c88ff40)
+- Open: V3-6 Exception Copilot unique chapter
 - Repo: https://github.com/remexstudio/remex-atelier
 - Preview: https://remex-atelier.vercel.app
