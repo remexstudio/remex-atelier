@@ -1,8 +1,8 @@
 # Status
 
-- Phase: Atelier v2 — R2 delivered (await parent commit)
-- Closed: R0 (SHA 91b0afd), R1 (SHA 70a6e4c)
-- Open: R2 (DEV PASS; SHA pending)
+- Phase: Atelier v2 — R2 closed; R3 issued (approach + contact)
+- Closed: R0 (91b0afd), R1 (70a6e4c), R2 (7836383)
+- Open: R3
 - Repo: https://github.com/remexstudio/remex-atelier
 - Live: https://remex-atelier.vercel.app
-- Rule: dual PASS; no R3 until owner prompt
+- Rule: dual PASS; no R4 until owner prompt
