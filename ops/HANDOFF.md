@@ -1,48 +1,26 @@
-# Handoff R2
+# Handoff R3
 
 - Status: delivered
-- SHA: 7836383
+- SHA: e98055a (do not commit/push per owner instruction)
 - Preview: https://remex-atelier.vercel.app
 - Files changed:
-  - components/StoryScenes.tsx (new client — five pinned scrub scenes `#story-s1`…`#story-s5`)
-  - app/work/atelier-concierge/page.tsx (new product story)
-  - app/work/ledger-clerk/page.tsx (new product story)
-  - app/work/morning-remex/page.tsx (new product story)
-  - app/work/exception-copilot/page.tsx (new product story)
-  - app/work/page.tsx (index: four story stills; no Open demo / toy launch)
-  - components/SiteChrome.tsx (`footerLine` prop; primary NAV verified — no `/demo/*`; Work kept)
-  - app/globals.css (story film + work index styles; reduced-motion covers story scenes)
+  - app/approach/page.tsx (three method blocks only; removed Brief/Shape/Build/Molt and Division of labor)
+  - app/contact/page.tsx (Start a brief. + ContactForm + mailto hello@remexstudio.com)
   - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
+- Untouched (verified): components/SiteChrome.tsx, components/ContactForm.tsx (existing mock success kept), app/globals.css, home, work stories, demos
 - Acceptance self-check:
-  - [x] Routes live: `/work`, `/work/atelier-concierge`, `/work/ledger-clerk`, `/work/morning-remex`, `/work/exception-copilot`
-  - [x] Each story: pinned stage + five scrub scenes A–E (pain → agent → gate → record → Start a brief.)
-  - [x] Exact scroll-score lines (no paraphrase); CTA Link `/contact` label `Start a brief.`
-  - [x] GSAP ScrollTrigger `pin: true`, `scrub: 1`; animate only transform/opacity
-  - [x] Marketing stills / quiet product frames only — no live widgets
-  - [x] Footer line exact: `Studio study. Client identity anonymized.`
-  - [x] Work index lists four stories with stills; no Open demo buttons
-  - [x] Primary nav has no `/demo/*` links
-  - [x] No employment claims at study brands
-  - [x] Home (R1) untouched except SiteChrome (footerLine optional; NAV unchanged)
-  - [x] `pnpm build` passes
-  - [x] Commit: `feat(work): add scroll product stories`
-- Skills used (all listed + craft):
+  - [x] `/approach` three blocks only; headlines exact: Design the job / Build the gate / Keep the record
+  - [x] Supporting text covers propose / approve / log; no outsourcing language; no “English products” / English-first
+  - [x] `/contact`: heading `Start a brief.`; form + success state; studio email `hello@remexstudio.com`
+  - [x] No founder name, phone, school, or pricing on either page
+  - [x] `pnpm build` PASS
+  - [x] Commit: `feat(site): add approach and contact`
+- Skills used:
   - apple-design
   - apple-design-web
-  - apple-design-motion
-  - emil-design-eng
-  - gsap-scrolltrigger
-  - gsap-timeline
-  - gsap-react
-  - cinematic-scroll-storytelling
-  - zero-jank-scroll
   - writing-guidelines
-- Reduced-motion note: `matchMedia('(prefers-reduced-motion: reduce)')` skips all ScrollTrigger pins/timelines on story pages; CSS forces `transform: none` on story scene elements. Content remains a readable static stack (no scrub theater).
-- Motion notes: native document scroll preserved; no Lenis; no per-frame React setState — GSAP via `useGSAP` + auto cleanup; stills only (transform/opacity).
-- Exact copy present: all twenty locked lines from docs/scroll-score.md across the four products; Morning Remex S4 = `Brief, thread, and send decision stay linked.`
-- Risks/blockers:
-  - Old study routes still exist (`/work/lumen-atelier`, `/work/northline`, `/work/kite`, `/work/paperline`) and still link into `/demo/*` — intentionally left; work index no longer surfaces them
-  - S4 home links now resolve to the four new story routes
-  - Pin + scrub feel not browser-traced here (build-only verification); refresh after fonts via `document.fonts.ready`
+  - emil-design-eng
+- Risks/blockers: none (ContactForm remains client mock — no message sent)
 - Blockers: none
 - DEV: PASS
+- Do not open R4
