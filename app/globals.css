@@ -13,8 +13,8 @@
   --gutter: #f5f5f7; /* section gutters, rails, soft bands */
   --cta: #1d4ed8; /* restrained blue — CTA only; never as page wash */
 
-  /* Aliases for theme wiring */
-  --background: var(--paper);
+  /* Aliases for theme wiring — root locked to film canvas, not legacy paper */
+  --background: var(--canvas);
   --foreground: var(--ink);
 
   /* Chrome — sticky frosted nav (Apple ~44–48px) */
@@ -58,7 +58,7 @@ html {
 }
 
 body {
-  background: var(--paper);
+  background: var(--gutter);
   color: var(--ink);
 }
 
@@ -507,6 +507,40 @@ button:active {
   max-width: 72rem;
   margin-inline: auto;
   width: 100%;
+}
+
+.site-footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem 1.25rem;
+}
+
+.site-footer__row > p {
+  margin: 0;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.1rem 0.15rem;
+  margin: 0;
+}
+
+.site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: var(--hit-target-min);
+  min-width: var(--hit-target-min);
+  padding-inline: 0.55rem;
+  color: var(--muted);
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ——— Home film ——— */
@@ -5261,35 +5295,13 @@ button:active {
   color: var(--ink);
 }
 
-/* PulseLoop still ships paper/Tailwind utilities — remap to film on this route. */
-.lab-loop {
-  --rule: color-mix(in srgb, #d2d2d7 70%, white);
-}
-
-.lab-loop > div > p:first-of-type {
-  /* Page banner is the unmistakable label; drop the buried paper stub. */
+/* Pulse page already carries the Prototype banner; hide the in-loop notice. */
+.lab-loop .pulse-notice {
   display: none;
 }
 
-.lab-loop .border {
-  border-color: color-mix(in srgb, #d2d2d7 70%, white);
-  border-radius: 0.65rem;
-}
-
-.lab-loop .bg-paper,
-.lab-loop .bg-paper\/70,
-.lab-loop .bg-paper\/50,
-.lab-loop [class*="bg-paper"] {
-  background: var(--gutter);
-}
-
-.lab-loop .type-display {
-  font-size: clamp(1.55rem, 3.4vw, 2.1rem);
-  letter-spacing: -0.02em;
-  line-height: 1.12;
-}
-
-.lab-loop button {
+.lab-loop .btn-primary,
+.lab-loop .btn-secondary {
   min-height: var(--hit-target-min);
   min-width: var(--hit-target-min);
 }
@@ -5333,6 +5345,10 @@ button:active {
   .film-panel,
   .lab-card__flag,
   .lab-still,
+  .pulse-notice,
+  .pulse-panel,
+  .pulse-seat,
+  .pulse-event,
   .about-fact,
   .approach-mechanism__item,
   .approach-name__row,
@@ -5484,7 +5500,7 @@ button:active {
 
 @media (prefers-reduced-transparency: reduce) {
   body {
-    background: #f7f4ee;
+    background: var(--gutter);
   }
 
   .field-input,

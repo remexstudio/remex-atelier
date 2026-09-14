@@ -48,7 +48,7 @@ export default function RootLayout({
       lang="en"
       className={`${serif.variable} ${sans.variable} h-full`}
     >
-      <body className="type-body min-h-full bg-paper text-ink antialiased [scroll-padding-top:var(--nav-height)]">
+      <body className="type-body min-h-full bg-gutter text-ink antialiased [scroll-padding-top:var(--nav-height)]">
         <a href="#main" className="skip-link">
           Skip to content
         </a>

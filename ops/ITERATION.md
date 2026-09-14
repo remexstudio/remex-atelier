@@ -1,24 +1,41 @@
-# Iteration after V3-12
+# Iteration after V3-13
 
 Live preview: https://remex-atelier.vercel.app
-Tip at close: 8ef5e18 / content 03d5281 / merge fc0673f
+V3-13 content commit: pending (this slice). Formal TASK issued at `0bb6d84`.
 
-Vision / Apple / UX / Leader PASS on V3-12. Overnight loop continues. V3-13 stays TBD until three PM KEEP/KILL/ADD reviews of the gaps below.
+Vision / Apple / UX KEEP/KILL/ADD after V3-12 landed as V3-13. This slice closes the paper-shell leaks. Do not start V3-14 until V3-13 PASS.
 
-## Still thin / leftover canvas / product-call risks
+## Closed in V3-13
 
-1. **Root canvas not locked** — `body` still uses the `bg-paper` utility. Film pages (`/services`, `/lab`, `/lab/pulse`, `/about`, plus approach/contact) sit on the film canvas, but the document root is not locked to `#fff` / `#f5f5f7`.
-2. **PulseLoop still remapped via CSS** — `components/lab/PulseLoop.tsx` still ships paper/Tailwind utilities; V3-12 remaps them under `.lab-loop`. Native film classes on PulseLoop are pending (outside V3-12 ALLOWED).
-3. **Services off primary nav** — `/services` has a film page, but Services stays off SiteChrome primary nav. Product call: restore to primary, keep off-nav, or treat as a deep link only.
-4. **Soft density** — chapter beat skeleton is still shared across product pages after the V3-11 grammar break. Hire-still polish remains soft (hairlines, type scale, still staging) — not new slogans, not six-clone pins.
+1. **Root canvas locked** — `body` no longer uses `bg-paper`. Document root paints `--gutter` (`#f5f5f7`); `--background` aliases `--canvas` (`#ffffff`). 46px nav and shallow scroll kept.
+2. **PulseLoop native film** — paper/Tailwind utilities removed; film/gutter/hairline classes in `PulseLoop.tsx` + `pulse.css`. Prototype behavior unchanged.
+3. **Services / About wayfinding** — footer secondary links to `/services` and `/about` (≥44). Labels are wayfinding only, not product-sell copy. Primary nav stays Work / Approach / Lab / Contact. Lab `aria-label="Lab prototypes"`.
+4. **404 film** — `SiteChrome variant="film"` + film panel grammar; `btn-primary` / `btn-secondary`.
+5. **Offers stub deleted** — unused `components/Offers.tsx` removed.
+
+## Held for V3-14 (out of scope here)
+
+- Home H2/H7 density glyphs
+- Contact BRIEF_ASKS checklist
+- Services offer nails / About SAY echo
+- Soft chapter-beat density (hairlines, type scale, still staging) — not new slogans, not six-clone pins
 
 ## Hard bans (unchanged)
 
 - No English-products market claims; no founder name; no CumuLabs/outsourcing; no Lenis/normalizeScroll/body lock; H3-only pin with pinOk; locked copy verbatim.
+- Do not move 机羽云 or the refuse list.
+- No `/demo` marketing CTAs; no long pins.
 
-## Next tickets (intent)
+## Prior loop (after V3-12) — historical
 
-- V3-13: TBD from three PM KEEP/KILL/ADD on the gaps above. Leader issues the ticket only after those reviews. Do not start implementation on standby.
+Tip at close: 8ef5e18 / content 03d5281 / merge fc0673f
+
+### Still thin / leftover canvas / product-call risks (pre-V3-13)
+
+1. **Root canvas not locked** — closed in V3-13.
+2. **PulseLoop still remapped via CSS** — closed in V3-13.
+3. **Services off primary nav** — resolved as footer wayfinding, not restored to primary.
+4. **Soft density** — remains for V3-14.
 
 ## Prior loop (after V3-8) — historical
 

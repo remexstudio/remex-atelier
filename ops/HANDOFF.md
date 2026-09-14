@@ -1,28 +1,32 @@
-# Handoff V3-12
+# Handoff V3-13
 
 - Status: delivered
-- SHA: 03d5281 (content); merge tip fc0673f on main
+- SHA: pending (this commit)
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: `dpl_GSHEP9gxQ7x5Ki1SJ8CFmb834b1o` → aliased https://remex-atelier.vercel.app
+- Deploy: Coordinator will `vercel deploy --prod` after merge. No V3-14.
 - Files changed (ALLOWED only):
-  - `app/services/page.tsx` — film SiteChrome; Agent Apps / Agent Ops / Advisory; Start a brief → `/contact`; Read the approach → `/approach`
-  - `app/lab/page.tsx` — film canvas; large `Prototype · not a client engagement` banner
-  - `app/lab/pulse/page.tsx` — same banner; Pulse stays a prototype
-  - `app/about/page.tsx` — `Jiyuyun Studio LLC` + `Seattle studio. Global clients.`; no Chinese glyphs; no refuse list; no founder name
-  - `app/globals.css` — `.film-*` / `.svc-*` / `.lab-*` / `.about-*` only
-  - `components/SiteChrome.tsx` — comment only
-  - Deleted unused `components/{lumen,kite,northline,paperline}/**`
-  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
+  - `app/layout.tsx` — drop `bg-paper` on `<body>`; lock `bg-gutter` (`#f5f5f7`). Nav height remains 46px.
+  - `app/globals.css` — root `--background` → `--canvas`; body paints `--gutter` (including `prefers-reduced-transparency`); footer secondary ≥44; film/lab/not-found helpers; drop PulseLoop paper remaps.
+  - `app/not-found.tsx` — `SiteChrome variant="film"`; film title/panel grammar; `btn-primary` / `btn-secondary` (≥44).
+  - `components/lab/PulseLoop.tsx` — native film classes; no `bg-paper*` utilities; Prototype loop, focus-visible, RM facts unchanged.
+  - `components/lab/pulse.css` — canvas / gutter / hairline surfaces.
+  - `components/SiteChrome.tsx` — footer secondary `/services` + `/about` (wayfinding labels only, ≥44); Lab `aria-label="Lab prototypes"`; primary nav still Work / Approach / Lab / Contact.
+  - Deleted unused `components/Offers.tsx` (no remaining imports).
+  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
 - Acceptance self-check:
-  - [x] Four routes `SiteChrome variant="film"`
-  - [x] Lab Prototype banner unmistakable
-  - [x] About LLC + Seattle studio. Global clients.; no 机羽云
-  - [x] Services substance + approach/contact links
-  - [x] Orphan demo components deleted
+  - [x] Body does not paint legacy paper; canvas/gutter `#fff` / `#f5f5f7`
+  - [x] 404 is film, not `mt-14` paper stub; CTAs ≥44
+  - [x] PulseLoop has no `bg-paper*`; buttons ≥44
+  - [x] Offers.tsx gone; no imports left
+  - [x] Footer Services + About wayfinding only; not stuffed into primary nav
+  - [x] Lab aria-label conveys prototypes
+  - [x] 46px nav / shallow scroll kept; no new pins
+  - [x] 机羽云 and refuse list not moved; no Contact BRIEF_ASKS / Services density
+  - [x] Locked product / home copy untouched; no `/demo` CTAs
   - [x] `pnpm build` green
-  - [x] `vercel deploy --prod` — production alias refreshed
-- Skills used: apple-design, apple-design-web, emil-design-eng, writing-guidelines, web-design-guidelines
+  - [ ] `vercel deploy --prod` — Coordinator after merge
+- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
 - Risks:
-  - `components/lab/PulseLoop.tsx` outside ALLOWED; film CSS remaps paper utilities.
+  - Default SiteChrome CSS remains unused; shipped routes are film.
 - Blockers:
-  - None. Await three PM + Leader. No next circle until PASS.
+  - None. Await three PM + Leader. No V3-14.

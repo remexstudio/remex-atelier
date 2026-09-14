@@ -68,55 +68,42 @@ export function PulseLoop() {
       : new Set<string>();
 
   return (
-    <div className="space-y-10">
-      <p className="border border-rule bg-paper/70 px-4 py-3 text-sm text-muted">
-        Prototype · not a client engagement
-      </p>
+    <div className="pulse-loop">
+      <p className="pulse-notice">Prototype · not a client engagement</p>
 
-      <section
-        aria-labelledby="loop-step"
-        className="border border-rule bg-paper/70 px-5 py-6"
-      >
-        <div className="flex flex-wrap items-center justify-between gap-3">
+      <section aria-labelledby="loop-step" className="pulse-panel">
+        <div className="pulse-panel__meta">
           <p className="type-meta">Loop step · {progressLabel}</p>
           {completed ? (
-            <p className="type-meta text-accent" aria-live="polite">
+            <p className="type-meta pulse-panel__done" aria-live="polite">
               Loop complete
             </p>
           ) : null}
         </div>
         <div
-          className="pulse-step-panel mt-3"
+          className="pulse-step-panel"
           data-entered={stepEntered ? "true" : "false"}
         >
-          <h2 id="loop-step" className="type-display text-2xl text-accent">
+          <h2 id="loop-step" className="pulse-step-title">
             {step.title}
           </h2>
-          <p className="type-body mt-4 text-sm text-muted" aria-live="polite">
+          <p className="pulse-step-detail" aria-live="polite">
             {step.detail}
           </p>
         </div>
-        <ol className="mt-6 flex flex-wrap gap-2">
+        <ol className="pulse-chips">
           {pulseLoop.map((item, i) => {
             const active = i === index && !completed;
             const done = completed || i < index;
+            const state = active ? "active" : done ? "done" : "idle";
             return (
-              <li
-                key={item.id}
-                className={
-                  active
-                    ? "border border-accent bg-accent px-3 py-1.5 text-xs tracking-wide text-paper"
-                    : done
-                      ? "border border-rule bg-paper px-3 py-1.5 text-xs tracking-wide text-ink"
-                      : "border border-rule px-3 py-1.5 text-xs tracking-wide text-muted"
-                }
-              >
+              <li key={item.id} className={`pulse-chip pulse-chip--${state}`}>
                 {item.title}
               </li>
             );
           })}
         </ol>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="pulse-actions">
           <button
             type="button"
             onClick={advance}
@@ -125,11 +112,7 @@ export function PulseLoop() {
           >
             {completed ? "Loop finished" : "Run step"}
           </button>
-          <button
-            type="button"
-            onClick={reset}
-            className="inline-flex items-center border border-rule bg-transparent px-4 py-2.5 text-sm font-medium text-accent"
-          >
+          <button type="button" onClick={reset} className="btn-secondary">
             Reset loop
           </button>
         </div>
@@ -139,17 +122,14 @@ export function PulseLoop() {
         <h3 id="roster" className="type-meta">
           Notify roster
         </h3>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+        <ul className="pulse-roster">
           {pulseRoster.map((seat) => {
             const isNotified = notified.has(seat.id);
             return (
-              <li
-                key={seat.id}
-                className="border border-rule bg-paper/50 px-4 py-4"
-              >
-                <p className="text-sm font-medium text-accent">{seat.name}</p>
-                <p className="type-meta mt-1">{seat.role}</p>
-                <p className="type-meta mt-3">
+              <li key={seat.id} className="pulse-seat">
+                <p className="pulse-seat__name">{seat.name}</p>
+                <p className="type-meta">{seat.role}</p>
+                <p className="type-meta pulse-seat__state">
                   {isNotified ? "Notified" : "Waiting"}
                 </p>
               </li>
@@ -162,16 +142,16 @@ export function PulseLoop() {
         <h3 id="log" className="type-meta">
           Event log
         </h3>
-        <ol className="mt-4 space-y-3" aria-live="polite">
+        <ol className="pulse-log" aria-live="polite">
           {events.map((event) => (
-            <li key={event.id} className="border border-rule px-4 py-3">
-              <div className="flex flex-wrap items-center justify-between gap-2">
+            <li key={event.id} className="pulse-event">
+              <div className="pulse-event__meta">
                 <span className="type-meta">{event.step}</span>
                 <time dateTime={event.at} className="type-meta tabular-nums">
                   {formatEventTime(event.at)}
                 </time>
               </div>
-              <p className="type-body mt-2 text-sm text-muted">{event.summary}</p>
+              <p className="pulse-event__summary">{event.summary}</p>
             </li>
           ))}
         </ol>
