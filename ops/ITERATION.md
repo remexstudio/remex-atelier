@@ -1,28 +1,24 @@
-# Iteration after V3-15 PASS
+# Iteration after V3-16 PASS
 
 Live preview: https://remex-atelier.vercel.app
-V3-15 closed: content `d2c9f3f` + gray-bar `0b680a2` / merge `6da887d` / tip `b1e279c`. Unanimous PM + Leader PASS.
+V3-16 closed: content `04c535d` / merge `a4626d2` / tip `1992f62`. Unanimous PM + Leader PASS.
 
-## Closed in V3-15
+## Closed in V3-16
 
-1. BRIEF_ASKS single source at `lib/brief-asks.ts`.
-2. Four-chapter still density with `still-fact` DNA; empty gray-bar chrome killed.
-3. H2 hire-still PAR microchips.
+1. `.still-fact` readable type at 375 / desktop.
+2. Four-chapter quieter chrome + CTA ≥44.
+3. Locked DNA preserved; no gray-bar return.
 
-## V3-16 ticket (this loop)
+## V3-17 ticket (this loop)
 
-Synthesized from Apple / UX / Vision post-V3-15 KEEP/KILL/ADD. Vision: payload density checklist is closed — this loop is craft polish only.
+Synthesized from Apple / UX / Vision post-V3-16 KEEP/KILL/ADD.
 
-1. **still-fact type** — bump `.still-fact` slightly for 375 readability (UX); keep hierarchy under chapter titles.
-2. **Chapter noise / CTA density** — trim decorative noise on Concierge / Ledger / Morning / Exception; keep labeled payload rows (`__row` with text OK). Product CTA ≥44 and clear, not crowded.
-3. **Hard stay** — locked score lines verbatim; no 机羽云/refuse move; no new pins; no Lenis; no BRIEF_ASKS local copies.
-
-## V3-16 delivery
-
-Dev delivered craft polish only. PM board lock: still-fact 0.8125–0.875rem at 375; four-chapter noise trimmed; CTAs ≥44; ability×3 / gate / record / refusal stay visible and verbatim; canvas / shallow / RM unchanged. Coordinator: `vercel deploy --prod` after merge. No V3-17 until PASS.
+1. **375 short labels** — where pipeline / flow still-facts wrap awkwardly after the type bump, shorten *decorative* still-fact chips only (e.g. keep meaning, fewer words). Do **not** edit locked module score lines (job/pain/ability/gate/record/refusal/CTA/footer).
+2. **Residual craft** — spacing / wrap on chapter still bands only; no new modules; no payload relocation.
+3. Vision stay: payload mainline closed; no 机羽云/refuse move; BRIEF_ASKS stays single-source.
 
 ## Hard bans (unchanged)
 
 - No English-products market claims; no founder name; no CumuLabs/outsourcing; no Lenis/normalizeScroll/body lock; H3-only pin with pinOk; locked copy verbatim.
 - Do not move 机羽云 or the refuse list.
-- No `/demo` marketing CTAs; no long pins; no six-clone film; no empty gray-bar chrome return.
+- No `/demo` marketing CTAs; no long pins; no empty gray-bar chrome return.

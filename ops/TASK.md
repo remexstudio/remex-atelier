@@ -1,44 +1,43 @@
-# TASK V3-16
+# TASK V3-17
 
-TASK ID: V3-16
+TASK ID: V3-17
 REPO: remexstudio/remex-atelier
 
-SKILLS: /apple-design /apple-design-web /emil-design-eng /web-design-guidelines /writing-guidelines /review-animations
+SKILLS: /apple-design /apple-design-web /emil-design-eng /web-design-guidelines /writing-guidelines
 
 GOAL:
-Visual craft polish only. Improve `.still-fact` readability at 375 and trim chapter visual noise / CTA crowding. Do not move locked copy landings or reopen density payload work.
+Residual craft after V3-16 type bump. Shorten wrapping decorative still-fact chips at 375 where pipelines break. Do not edit locked score lines or move payload landings.
 
-Cite: Apple/UX/Vision post-V3-15 KEEP/KILL/ADD (non-blocking ADD). Vision: density checklist closed.
+Cite: Apple/UX/Vision post-V3-16 KEEP/KILL/ADD. Vision: payload mainline closed.
 
 ALLOWED:
-- app/globals.css (`.still-fact` type scale; chapter still/CTA spacing helpers)
-- components/AtelierConciergeChapter.tsx
-- components/LedgerClerkChapter.tsx
-- components/MorningRemexChapter.tsx
-- components/ExceptionCopilotChapter.tsx
-- components/HomeScenes.tsx (only if needed for hire-still / still-fact shared styles — no copy edits)
+- components/AtelierConciergeChapter.tsx (decorative still-fact chip text / layout only)
+- components/LedgerClerkChapter.tsx (same)
+- components/MorningRemexChapter.tsx (same)
+- components/ExceptionCopilotChapter.tsx (same)
+- app/globals.css (still-fact / flow still wrap helpers only)
 - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md, ops/ITERATION.md
 
 OUT OF SCOPE:
-- Changing locked score lines (job/pain/ability/gate/record/refusal/CTA/footer)
-- BRIEF_ASKS string edits or relocating the module
+- Changing locked score lines (job / pain / ability×3 / gate / record / refusal / CTA / study footer)
+- BRIEF_ASKS edits
 - Moving 机羽云 or refuse list
 - New pins, Lenis, normalizeScroll, body overflow lock
-- Services/About/Contact copy rewrites
-- Reintroducing empty `__bar` gray chrome
+- HomeScenes copy; Services/About/Contact copy
+- Reintroducing empty gray-bar chrome
 
 REQUIRED:
-1. **still-fact type** — raise `.still-fact` from ~0.75rem toward ~0.8125–0.875rem (or equivalent) so 375 remains readable without competing with module titles.
-2. **Chapter polish** — on all four chapters: reduce decorative noise; keep text-bearing rows; ensure primary `Start a brief` / chapter CTAs stay ≥44, focus-visible, and not stacked into a crowded band.
-3. Preserve: still-fact DNA labels, ability×3/gate/record/refusal verbatim, shallow once-reveal, RM `showStatic`, pinOk home-only.
+1. Audit four chapter flow/pipeline still-fact chips at ~375 width. Where labels wrap awkwardly after 0.8125rem, shorten decorative chips only (keep product DNA meaning: Propose≠Execute, Never Execute, Human before send, Policy cite, LUM-1042, etc.).
+2. Optional CSS: allow still chips to stay single-line or wrap cleanly without colliding (white-space / max-width / gap) — do not shrink below readable size.
+3. Locked module body copy stays verbatim.
 4. `pnpm build` PASS; `vercel deploy --prod`; record deploy id in HANDOFF.
 
 ACCEPTANCE:
-- [ ] `.still-fact` more readable at 375; hierarchy under titles intact
-- [ ] Four chapters quieter visually; CTAs ≥44; no empty gray-bar return
-- [ ] Locked lines unchanged; no 机羽云/refuse move; BRIEF_ASKS stays single-source
+- [ ] 375 pipeline still-facts no longer awkward-wrap (or intentionally wrap cleanly)
+- [ ] Locked ability×3 / gate / record / refusal / CTA / footer unchanged
+- [ ] CTA ≥44; no gray-bar return; no 机羽云/refuse move
 - [ ] Build green; prod refreshed
 
-COMMIT: `feat(site): v3 visual polish still-fact and chapter cta`
+COMMIT: `feat(site): v3 short still-fact labels at 375`
 
-Await three PM + Leader. No V3-17 until PASS.
+Await three PM + Leader. No V3-18 until PASS.
