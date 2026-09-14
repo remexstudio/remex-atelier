@@ -168,8 +168,6 @@ export function AtelierConciergeChapter() {
           <ol className="cq-pipeline cq-pipeline--runway" aria-label="Concierge flow">
             <li className="cq-flow__step" data-cq-reveal>
               <div className="cq-flow__still cq-flow__still--skin" aria-hidden="true">
-                <span className="cq-swatch cq-swatch--warm" />
-                <span className="cq-swatch cq-swatch--cool" />
                 <span className="cq-tag">Skin</span>
                 <span className="cq-tag">Occasion</span>
               </div>
@@ -181,7 +179,6 @@ export function AtelierConciergeChapter() {
             <li className="cq-flow__step" data-cq-reveal>
               <div className="cq-flow__still cq-flow__still--hero" aria-hidden="true">
                 <div className="cq-sku">
-                  <span className="cq-sku__mark" />
                   <p className="still-fact">Hero SKU</p>
                 </div>
               </div>
@@ -299,15 +296,12 @@ export function AtelierConciergeChapter() {
             <p className="still-fact still-fact--kicker">Consult thread</p>
             <p className="cq-ticket__id">LUM-1042</p>
             <div className="cq-ticket__thread">
-              <span className="cq-ticket__dot" />
               <span className="still-fact">Skin + occasion</span>
             </div>
             <div className="cq-ticket__thread">
-              <span className="cq-ticket__dot" />
               <span className="still-fact still-fact--muted">Fit note</span>
             </div>
             <div className="cq-ticket__thread">
-              <span className="cq-ticket__dot cq-ticket__dot--ink" />
               <span className="still-fact">Held with ticket</span>
             </div>
           </div>
@@ -345,7 +339,7 @@ export function AtelierConciergeChapter() {
           <h2 id="cq-cta-h" className="cq-headline" data-cq-reveal>
             Start a brief.
           </h2>
-          <p className="cq-cta-wrap" data-cq-reveal>
+          <p className="cq-cta-wrap chapter-cta" data-cq-reveal>
             <Link href="/contact" className="home-cta">
               Start a brief.
             </Link>

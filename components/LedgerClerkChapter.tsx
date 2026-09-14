@@ -353,7 +353,7 @@ export function LedgerClerkChapter() {
           <h2 id="lc-cta-h" className="lc-headline" data-lc-reveal>
             Start a brief.
           </h2>
-          <p className="lc-cta-wrap" data-lc-reveal>
+          <p className="lc-cta-wrap chapter-cta" data-lc-reveal>
             <Link href="/contact" className="home-cta">
               Start a brief.
             </Link>
