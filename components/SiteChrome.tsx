@@ -38,7 +38,7 @@ const CHAPTERS = [
 export function SiteChrome({
   children,
   variant = "default",
-  footerLine = "A Seattle studio.",
+  footerLine = "Seattle studio. Global clients.",
 }: SiteChromeProps) {
   const pathname = usePathname();
   const showHomeChapters = pathname === "/";
@@ -58,7 +58,7 @@ export function SiteChrome({
         <div className="site-nav__inner">
           <Link
             href="/"
-            className="site-nav__mark font-serif text-sm tracking-[0.14em] text-accent no-underline"
+            className="site-nav__mark"
           >
             REMEX STUDIO
           </Link>

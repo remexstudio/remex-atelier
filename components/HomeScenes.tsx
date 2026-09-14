@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
 import { BRIEF_ASKS } from "@/lib/brief-asks";
+import { REFUSE } from "@/lib/refuse";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -72,14 +73,6 @@ function JobStill({ tone }: { tone: JobTone }) {
     </div>
   );
 }
-
-const REFUSE = [
-  "An hours factory or staffed body shop",
-  "A generic chatbot or chatbot widget",
-  "“ChatGPT for X” wrappers",
-  "A cloud-migration mill",
-  "Replacing the client team",
-] as const;
 
 const METHOD = [
   {
