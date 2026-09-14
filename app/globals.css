@@ -4195,6 +4195,11 @@ button:active {
 }
 
 .contact-mail a {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: var(--hit-target-min);
+  padding-block: 0.55rem;
   color: var(--ink);
   font-weight: 560;
   text-underline-offset: 3px;
@@ -4224,7 +4229,9 @@ button:active {
 }
 
 .contact-input {
+  box-sizing: border-box;
   width: 100%;
+  min-height: var(--hit-target-min);
   border: 1px solid color-mix(in srgb, #d2d2d7 80%, #a1a1a6);
   background: var(--canvas);
   color: var(--ink);

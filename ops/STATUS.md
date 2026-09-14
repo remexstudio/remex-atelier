@@ -6,3 +6,7 @@
 - Next: V3-8 motion + a11y (after PASS — do not open yet)
 - Repo: https://github.com/remexstudio/remex-atelier
 - Preview: https://remex-atelier.vercel.app
+
+## V3-7 REWORK — contact 44px inputs
+
+- State: DEV PASS (await UX)
