@@ -5629,6 +5629,47 @@ button:active {
   .cq-flow__still--tryon .cq-tryon {
     width: 42%;
   }
+
+  /* V3-17: 375 flow stills — single-line chips; no type shrink */
+  .cq-flow__still,
+  .lc-cite-stack .lc-flow__still,
+  .cq-tryon-stack__still {
+    padding: 0.4rem 0.35rem;
+    gap: 0.2rem;
+  }
+
+  .cq-flow__still .still-fact,
+  .lc-flow__still .still-fact,
+  .cq-tryon-stack__still .still-fact,
+  .cq-sku .still-fact,
+  .cq-bag .still-fact,
+  .lc-corpus__pages .still-fact,
+  .lc-audit-mini .still-fact,
+  .mr-pwn .still-fact,
+  .ec-queue .still-fact,
+  .ec-cite .still-fact,
+  .ec-note .still-fact {
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  .lc-flow__still--propose .still-fact,
+  .mr-escalate .still-fact {
+    white-space: normal;
+    text-wrap: balance;
+    text-align: center;
+    max-width: 6.75rem;
+  }
+
+  .cq-sku,
+  .cq-bag,
+  .lc-corpus,
+  .lc-propose,
+  .lc-audit-mini {
+    width: 100%;
+    min-height: 0;
+    gap: 0.2rem;
+  }
 }
 
 @media (min-width: 720px) {

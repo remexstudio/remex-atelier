@@ -185,8 +185,8 @@ export function LedgerClerkChapter() {
                   <div className="lc-corpus">
                     <span className="lc-corpus__spine" />
                     <div className="lc-corpus__pages">
-                      <p className="still-fact">Corpus only</p>
-                      <p className="still-fact still-fact--muted">Cite first</p>
+                      <p className="still-fact">Corpus</p>
+                      <p className="still-fact still-fact--muted">Cite</p>
                     </div>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export function LedgerClerkChapter() {
                 <div className="lc-flow__still lc-flow__still--audit" aria-hidden="true">
                   <div className="lc-audit-mini">
                     <p className="still-fact">Ask</p>
-                    <p className="still-fact">Citation</p>
+                    <p className="still-fact">Cite</p>
                     <p className="still-fact still-fact--ink">Decision</p>
                   </div>
                 </div>

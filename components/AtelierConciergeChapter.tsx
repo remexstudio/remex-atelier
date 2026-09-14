@@ -179,7 +179,7 @@ export function AtelierConciergeChapter() {
             <li className="cq-flow__step" data-cq-reveal>
               <div className="cq-flow__still cq-flow__still--hero" aria-hidden="true">
                 <div className="cq-sku">
-                  <p className="still-fact">Hero SKU</p>
+                  <p className="still-fact">Hero</p>
                 </div>
               </div>
               <p className="cq-flow__label">One hero</p>
@@ -193,7 +193,7 @@ export function AtelierConciergeChapter() {
                   <span className="cq-tryon__figure" />
                   <span className="cq-tryon__frame" />
                 </div>
-                <p className="still-fact">Try-on still</p>
+                <p className="still-fact">Try-on</p>
               </div>
               <p className="cq-flow__label">Try-on</p>
             </li>
@@ -203,8 +203,8 @@ export function AtelierConciergeChapter() {
             <li className="cq-flow__step" data-cq-reveal>
               <div className="cq-flow__still cq-flow__still--bag" aria-hidden="true">
                 <div className="cq-bag">
-                  <p className="still-fact">Bag draft</p>
-                  <p className="still-fact still-fact--muted">Human review</p>
+                  <p className="still-fact">Bag</p>
+                  <p className="still-fact still-fact--muted">Human</p>
                 </div>
               </div>
               <p className="cq-flow__label">Bag draft</p>
@@ -224,7 +224,7 @@ export function AtelierConciergeChapter() {
           <ol className="cq-tryon-stack">
             <li className="cq-tryon-stack__layer cq-tryon-stack__layer--hero" data-cq-reveal>
               <div className="cq-tryon-stack__still" aria-hidden="true">
-                <p className="still-fact">Hero SKU</p>
+                <p className="still-fact">Hero</p>
               </div>
               <div className="cq-tryon-stack__copy">
                 <span className="cq-abilities__n">01</span>
@@ -233,7 +233,7 @@ export function AtelierConciergeChapter() {
             </li>
             <li className="cq-tryon-stack__layer cq-tryon-stack__layer--tryon" data-cq-reveal>
               <div className="cq-tryon-stack__still" aria-hidden="true">
-                <p className="still-fact">Try-on still</p>
+                <p className="still-fact">Try-on</p>
               </div>
               <div className="cq-tryon-stack__copy">
                 <span className="cq-abilities__n">02</span>
@@ -242,7 +242,7 @@ export function AtelierConciergeChapter() {
             </li>
             <li className="cq-tryon-stack__layer cq-tryon-stack__layer--bag" data-cq-reveal>
               <div className="cq-tryon-stack__still" aria-hidden="true">
-                <p className="still-fact">Bag draft</p>
+                <p className="still-fact">Bag</p>
               </div>
               <div className="cq-tryon-stack__copy">
                 <span className="cq-abilities__n">03</span>
