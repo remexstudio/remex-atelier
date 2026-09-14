@@ -234,8 +234,7 @@ export function ExceptionCopilotChapter() {
               </div>
               <div className="ec-lead__disposition" data-ec-reveal aria-hidden="true">
                 <span className="ec-lead__cite">§4.2 · Restock window</span>
-                <span className="ec-lead__bar" />
-                <span className="ec-lead__bar ec-lead__bar--mid" />
+                <p className="still-fact">Policy cite</p>
                 <span className="ec-lead__amount">Refund held</span>
               </div>
               <div className="ec-dock__ability" data-ec-reveal>

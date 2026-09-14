@@ -1,29 +1,44 @@
 # Handoff V3-15
 
-- Status: delivered
-- SHA: d2c9f3f
+- Status: delivered — PM board lock
+- Content SHA: d2c9f3f
+- Tip SHA: d2f838e
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: coordinator `vercel deploy --prod` after merge (not run in this slice)
-- Files changed (ALLOWED only):
-  - `lib/brief-asks.ts` — single `BRIEF_ASKS` source
-  - `components/HomeScenes.tsx` — H6 import; H2 hire-still Propose→Approve→Record microchips
-  - `components/ContactForm.tsx` — labels from shared `BRIEF_ASKS`
-  - `app/contact/page.tsx` — checklist from shared `BRIEF_ASKS`
-  - `components/AtelierConciergeChapter.tsx` — still DNA (LUM-1042, hero/try-on/bag, consult thread)
-  - `components/LedgerClerkChapter.tsx` — still DNA (§12.4, corpus only, ask/cite/decision)
-  - `components/MorningRemexChapter.tsx` — still DNA (P/W/N facts, two tones, linked packet)
-  - `components/ExceptionCopilotChapter.tsx` — still DNA (queue/refund hold, §4.2, case timeline)
-  - `app/globals.css` — hire-still PAR + chapter `still-fact` helpers
-  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
-- Acceptance self-check:
-  - [x] BRIEF_ASKS defined once; HomeScenes H6 + ContactForm + contact page import it
-  - [x] Four chapter stills denser with product-specific DNA; locked lines unchanged
-  - [x] No new pins; no Lenis; no 机羽云/refuse move; no English-products
-  - [x] Hit targets ≥44 where touched (form/CTA unchanged); decorative still chips aria-hidden
-  - [x] `pnpm build` PASS
-  - [ ] prod refresh — coordinator after merge
-- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
-- Risks:
-  - Chapter still labels are chrome DNA, not new score lines. Keep them short so 375 stills do not clip.
-- Blockers:
-  - None. Await three PM + Leader. No V3-16 until PASS.
+- Deploy: coordinator `vercel deploy --prod` after merge
+- PR: https://github.com/remexstudio/remex-atelier/pull/7
+
+## Board lock
+
+| Lock | Evidence |
+| --- | --- |
+| BRIEF_ASKS single source (Home H6 + ContactForm + contact page) | `lib/brief-asks.ts` only. Three consumers import `@/lib/brief-asks`. Exact four strings. |
+| Four chapter stills: readable product DNA | Ability×3 / gate / record / refusal stay as locked copy in document order. Still chrome uses product facts (LUM-1042, §12.4, P/W/N, EX-441 / §4.2). Empty gray-bar chatbot chrome killed. |
+| Locked score lines verbatim | Job / pain / ability×3 / gate / record / refusal / CTA unchanged from `docs/scroll-score-v3.md`. |
+| Shallow scroll; RM/375 full facts; no new pins | Chapters: once-reveal only; `prefers-reduced-motion` → `showStatic`. Home pin still H3-only (`+=80%`). No Lenis. |
+| No 机羽云 / refuse move | Approach name-meaning and Home H5 refuse list untouched. |
+
+## Files (ALLOWED only)
+
+- `lib/brief-asks.ts`
+- `components/HomeScenes.tsx` (H6 import + H2 PAR microchips)
+- `components/ContactForm.tsx`, `app/contact/page.tsx`
+- Four `*Chapter.tsx`
+- `app/globals.css` (hire-still / chapter still-fact helpers)
+- `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
+
+## Acceptance
+
+- [x] BRIEF_ASKS defined once; three consumers import it
+- [x] Ability×3 / gate / record / refusal visible per chapter; no empty gray-bar chatbot chrome
+- [x] Locked lines verbatim; shallow once-reveal; no new pins
+- [x] No 机羽云 / refuse move
+- [x] `pnpm build` PASS
+- [ ] prod refresh — coordinator after merge
+
+## Skills
+
+apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
+
+## Blockers
+
+None. Await three PM + Leader. No V3-16 until PASS.

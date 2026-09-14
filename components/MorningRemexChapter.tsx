@@ -252,8 +252,7 @@ export function MorningRemexChapter() {
           <div className="mr-pwn__flags" data-mr-reveal>
             <div className="mr-escalate">
               <span className="mr-escalate__flag">Escalate</span>
-              <span className="mr-escalate__bar" />
-              <span className="mr-escalate__bar mr-escalate__bar--short" />
+              <p className="still-fact">Human before send</p>
             </div>
             <p className="mr-flow__label">Escalate</p>
             <div className="mr-hold">

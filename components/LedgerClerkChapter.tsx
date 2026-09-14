@@ -199,8 +199,7 @@ export function LedgerClerkChapter() {
                 <div className="lc-flow__still lc-flow__still--propose" aria-hidden="true">
                   <div className="lc-propose">
                     <span className="lc-propose__mark">Propose</span>
-                    <span className="lc-propose__bar" />
-                    <span className="lc-propose__bar lc-propose__bar--short" />
+                    <p className="still-fact">Never Execute</p>
                   </div>
                 </div>
                 <p className="lc-flow__label">Propose package</p>
@@ -268,8 +267,7 @@ export function LedgerClerkChapter() {
               </h2>
               <div className="lc-controller__draft" data-lc-reveal aria-hidden="true">
                 <span className="lc-controller__cite">§12.4 · Close pack</span>
-                <span className="lc-controller__bar" />
-                <span className="lc-controller__bar lc-controller__bar--mid" />
+                <p className="still-fact">Corpus cite</p>
               </div>
               <div className="lc-controller__gate" data-lc-reveal aria-hidden="true">
                 <span className="lc-controller__chip">Propose</span>
