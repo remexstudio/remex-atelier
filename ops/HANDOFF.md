@@ -1,28 +1,6 @@
-# Handoff V3-14
+# Handoff V3-15
 
-- Status: delivered
-- SHA: d2e3e1b (content); merge tip 7b5ae0c on main
-- Preview / Production: https://remex-atelier.vercel.app
-- Deploy: `dpl_2mzC8WhX8hiJsusYwh4WmbtrW4nJ` → aliased https://remex-atelier.vercel.app
-- Files changed (ALLOWED only):
-  - `components/HomeScenes.tsx` — H2 hire-still; H7 concrete method glyphs; Ledger still `§12.4 · Close pack`
-  - `app/globals.css` — hire/method/contact helpers; `.btn-primary` text `#fff`; dead `.lab-loop` remap trimmed
-  - `components/ContactForm.tsx` — BRIEF_ASKS as labels; Name+Email; ≥44 + focus-visible
-  - `app/contact/page.tsx` — checklist band verbatim BRIEF_ASKS
-  - `app/services/page.tsx` — three non-interchangeable gate/record nails
-  - `app/about/page.tsx` — SAY `One painful workflow. One agent. A human gate.`
-  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
-- Acceptance self-check:
-  - [x] H7 glyphs non-empty and distinct
-  - [x] H2 hire-still one seat / one job / human gate
-  - [x] Contact four brief-ask strings verbatim
-  - [x] Services offers not interchangeable
-  - [x] About hire SAY line
-  - [x] No 机羽云/refuse move; no English-products
-  - [x] ≥44; no new pins; build green
-  - [x] `vercel deploy --prod` — production alias refreshed
-- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
-- Risks:
-  - Hire-still and method glyphs are static stills.
-- Blockers:
-  - None. Await three PM + Leader. No V3-15 until PASS.
+- Status: issued — await Dev
+- Prior closed: V3-14 PASS (`d2e3e1b` / merge `7b5ae0c` / tip `ccba927`)
+- Preview: https://remex-atelier.vercel.app
+- Notes: See `ops/TASK.md`. DRY + chapter still density. No V3-16 until PASS.

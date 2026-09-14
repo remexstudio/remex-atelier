@@ -6,5 +6,6 @@
 - [x] V3-11 break four-chapter isomorphic layout grammars
 - [x] V3-12 Services/Lab/About film canvas
 - [x] Orphan demo components cleanup
-- [x] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding (`1e1af30` / merge `4b080bd` / tip `e8c6cbd`)
-- [x] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo (delivered; await PASS)
+- [x] V3-13 root canvas, 404 film shell, PulseLoop film classes, Offers stub, footer wayfinding
+- [x] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo (`d2e3e1b` / merge `7b5ae0c` / tip `ccba927`)
+- [ ] V3-15 BRIEF_ASKS single source + four-chapter still/beat density (issued)

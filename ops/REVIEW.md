@@ -1,10 +1,10 @@
-# Review V3-13
+# Review V3-14
 
-- TASK ID: V3-13
-- Content SHA: `1e1af30`
-- Merge: `4b080bd`
-- HANDOFF tip: `e8c6cbd`
-- Prod: https://remex-atelier.vercel.app (`dpl_D9EGSraenJce8yrHQQamBVYbxFKC`)
+- TASK ID: V3-14
+- Content SHA: `d2e3e1b`
+- Merge: `7b5ae0c`
+- HANDOFF tip: `ccba927`
+- Prod: https://remex-atelier.vercel.app (`dpl_2mzC8WhX8hiJsusYwh4WmbtrW4nJ`)
 
 ## Verdicts
 
@@ -18,22 +18,20 @@
 
 ## Checks
 
-- Root body: `bg-gutter` (`#f5f5f7`); no `bg-paper` on layout / PulseLoop / not-found.
-- 404: `SiteChrome variant="film"` + film panel; CTAs ≥44.
-- PulseLoop + pulse.css: film/gutter/hairline; Prototype behavior unchanged.
-- `components/Offers.tsx` deleted; no imports remain.
-- Footer secondary: `/services` + `/about` wayfinding only (≥44); Lab `aria-label="Lab prototypes"`.
-- 机羽云 / refuse list not moved; no English-products / CumuLabs / founder.
-- HomeScenes pinOk + no Lenis unchanged; `pnpm build` green; prod alias refreshed.
+- H2 hire-still: One seat / One job / One painful workflow + Human gate.
+- H7 MethodGlyph: job / gate / record — empty glyph killed.
+- Home Ledger still: `Propose≠Execute` + `§12.4 · Close pack`.
+- Contact: BRIEF_ASKS four strings as labels + checklist; ≥44 + focus-visible.
+- Services: three non-interchangeable gate/record nails.
+- About: SAY `One painful workflow. One agent. A human gate.`; no 机羽云/refuse move.
+- Canvas / pinOk / no Lenis; build green; prod refreshed.
 
-## Non-blocking ADD → V3-14
+## Non-blocking ADD → V3-15
 
-- Home H2 hire-still + H7 concrete method glyphs (empty glyph kill).
-- Contact form aligned to brief asks (workflow / approver / never-do / record).
-- Services three offers each nail non-interchangeable gate/record facts.
-- About echo SAY: `One painful workflow. One agent. A human gate.`
-- Soft: `.lab-loop` dead remap; optional `.btn-primary` ink `#fff` instead of `var(--paper)`.
+- DRY `BRIEF_ASKS` to one shared constant (Home / ContactForm / contact page).
+- Four product chapter still / beat density (locked score lines verbatim).
+- Soft: hire-still Propose→Approve→Record microchips (optional).
 
 ## Decision
 
-Close V3-13. Issue V3-14. Continuous overnight loop continues.
+Close V3-14. Issue V3-15. Continuous overnight loop continues.

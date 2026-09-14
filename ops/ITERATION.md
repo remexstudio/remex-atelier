@@ -1,25 +1,24 @@
-# Iteration after V3-14 delivery
+# Iteration after V3-14 PASS
 
 Live preview: https://remex-atelier.vercel.app
-V3-13 closed: content `1e1af30` / merge `4b080bd` / tip `a68a3b9`.
-V3-14 delivered: density slice. Await three PM + Leader. No V3-15 until PASS.
+V3-14 closed: content `d2e3e1b` / merge `7b5ae0c` / tip `ccba927`. Unanimous PM + Leader PASS.
 
-## Closed in V3-13
+## Closed in V3-14
 
-1. Root canvas locked (`bg-gutter`; no page-wash `bg-paper`).
-2. 404 film shell; PulseLoop native film; Offers stub deleted.
-3. Footer secondary Services/About wayfinding; Lab `aria-label="Lab prototypes"`.
+1. Home H2 hire-still + H7 concrete method glyphs; LC still `§12.4 · Close pack`.
+2. Contact BRIEF_ASKS as labeled fields + checklist.
+3. Services three non-interchangeable gate/record nails; About SAY echo.
 
-## V3-14 delivered (this loop)
+## V3-15 ticket (this loop)
 
-1. **Home density** — H2 hire-still reads as one seat lighting up; H7 method columns get concrete still glyphs (job / human gate / linked record). Home Ledger still aligned to `§12.4 · Close pack`. Locked headlines verbatim.
-2. **Contact** — form fields + checklist align to brief asks: Which workflow hurts. Who approves. What the agent may never do. What record you must keep. Name/Email kept. Hit targets ≥44.
-3. **Services** — three offers each nail a non-interchangeable gate or record fact.
-4. **About** — SAY line verbatim: `One painful workflow. One agent. A human gate.` Legal/geography kept; no founder; no 机羽云 move.
-5. **Soft** — dead `.lab-loop` button remap dropped; `.btn-primary` text `#fff`. Pulse notice hide kept (still used).
+Synthesized from Apple / UX / Vision post-V3-14 KEEP/KILL/ADD (non-blocking ADD).
+
+1. **DRY BRIEF_ASKS** — one shared English constant imported by HomeScenes H6, ContactForm, and `app/contact/page.tsx`. Strings stay exact.
+2. **Four-chapter still / beat density** — raise readable DNA on Concierge / Ledger / Morning / Exception chapter stills and beat modules without changing locked score lines. Prefer concrete facts already in `docs/scroll-score-v3.md` (abilities, gate, record, refusal) visible in still chrome; no chatbot chrome; no new pins; no isomorphic re-merge.
+3. **Soft (same slice if cheap)** — H2 hire-still may add Propose→Approve→Record microchips beside Human gate lamp.
 
 ## Hard bans (unchanged)
 
 - No English-products market claims; no founder name; no CumuLabs/outsourcing; no Lenis/normalizeScroll/body lock; H3-only pin with pinOk; locked copy verbatim.
 - Do not move 机羽云 or the refuse list.
-- No `/demo` marketing CTAs; no long pins; no new isomorphic six-clone film.
+- No `/demo` marketing CTAs; no long pins; no six-clone film.
