@@ -1,101 +1,86 @@
-# TASK R0
+# TASK R1
 
-TASK ID: R0
+TASK ID: R1
 REPO: remexstudio/remex-atelier
-GOAL: Lock English copy and home/product scroll scores as constitution docs only. No app pages. No new components. Personal site out of scope. No founder name.
+GOAL: Rebuild `/` as six full-viewport pinned product scenes per `docs/scroll-score.md`, with copy locked to `docs/copy-locks.md`. Apple-style scroll film. Marketing stills only.
 
 ALLOWED FILES:
-- docs/copy-locks.md (new)
-- docs/scroll-score.md (new)
-- ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md (handoff only)
+- `app/page.tsx`
+- `app/layout.tsx` (nav/footer chrome only as needed)
+- `app/globals.css`
+- `components/SiteChrome.tsx` or equivalent layout/nav/footer (sticky translucent nav ~44–48px)
+- `components/HomeScenes.tsx` (or similarly named HomeScenes client component)
+- `package.json` / `pnpm-lock.yaml` (add GSAP + ScrollTrigger; optional Lenis)
+- `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md` (handoff only)
 
 OUT OF SCOPE:
-- app/** pages, components, styles
-- personal site (justin-jia)
-- starting R1 or any product scroll implementation
-- paraphrasing SAY / DO NOT SAY / approved headlines
+- `/demo/*` rebuild
+- personal site
+- product story routes (`/work/atelier-concierge` etc.) — S4 may **link** to future paths but do not build those pages this slice
+- new slogans / paraphrasing locked copy
+- purple mesh, Inter-template slop, chatbot UI
+- fake checkout / live refunds / auto-publish
 
-SKILLS TO USE (read before write):
+SKILLS TO USE (read before code):
+- apple-design
 - apple-design-web
-- writing-guidelines
+- apple-design-motion
+- emil-design-eng
+- gsap-scrolltrigger
+- gsap-timeline
+- gsap-react
 - cinematic-scroll-storytelling
-- Also keep campaign invokes available: apple-design, apple-design-motion, emil-design-eng (docs tone only this slice)
+- zero-jank-scroll
+- gsap-web
 
-COMMIT MESSAGE: docs(site): lock copy and scroll score
+COMMIT MESSAGE: feat(home): add pinned product scenes
 
-## docs/copy-locks.md — required content (verbatim)
+## Spec
 
-### SAY (verbatim)
+### Scenes (from docs/scroll-score.md)
 
-- Remex Studio designs custom AI agents as products.
-- One painful workflow. One agent. A human gate.
-- The agent proposes. A person approves. The record stays.
-- Agents, built to the brief.
-- Seattle studio. Global clients.
+Six full-viewport scenes with pin ids `#home-s1` … `#home-s6`:
 
-### DO NOT SAY (verbatim)
+| ID | Visual | Headline (exact) | Support (exact) |
+| --- | --- | --- | --- |
+| S1 | Silent product frame | Agents, built to the brief. | One workflow. One agent. A human still decides. |
+| S2 | Job title lights up | Most tools answer. | Ours is hired for one job. |
+| S3 | Propose then Approve | The agent proposes. | A person approves. The record stays. |
+| S4 | Four stills → four stories | Four jobs we know how to hire an agent for. | Atelier Concierge. Ledger Clerk. Morning Remex. Exception Copilot. |
+| S5 | Three method beats | Design the job. | Build the gate. Keep the record. (three lines sequential) |
+| S6 | Close CTA | Start a brief. | Tell us the painful workflow. We design the agent and the gate. |
 
-- We build English products / English-language software / English-first AI
-- Cloud migration factory / outsourcing / body shop
-- Chatbot widget / ChatGPT for X
-- Fake percentages, fake logos, founder legal name, school list
-- Employment at Lumen / Northline / Kite / Paperline
-- We replace your team
+S6 CTA should route to `/contact` (or existing brief entry) — label exact **Start a brief.**
 
-### Approved headlines (verbatim — do not paraphrase)
+### Motion / craft
 
-- Agents, built to the brief.
-- One workflow. One agent. A human still decides.
-- We design the job an agent is allowed to do — and the gate it cannot cross.
-- Start a brief.
+- Each scene: `pin: true`, `scrub: 1`
+- Animate **only** `transform` and `opacity`
+- Light canvas `#ffffff` / gutter `#f5f5f7`
+- **One** accent color on CTA only
+- Large display type; negative tracking on headlines
+- Sticky translucent nav ~44–48px
+- `prefers-reduced-motion`: **no pin theater**; crossfade only
+- Preserve native scroll; avoid layout thrashing / per-frame React state (zero-jank)
 
-Also document: English is a build constraint (code/commits/UI language), not a market claim. Positioning: global studio. Never claim “English-first markets” on site.
+### Copy
 
-## docs/scroll-score.md — required content
-
-### Home — six pinned scenes
-
-For each scene: pin target, visual on stage, exact headline, exact supporting line.
-
-| Scene | Pin target | Visual on stage | Headline (exact) | Supporting line (exact) |
-| --- | --- | --- | --- | --- |
-| S1 Promise | `#home-s1` (or documented pin id) | silent product frame | Agents, built to the brief. | One workflow. One agent. A human still decides. |
-| S2 The job | `#home-s2` | the job title lights up | Most tools answer. | Ours is hired for one job. |
-| S3 The gate | `#home-s3` | Propose then Approve | The agent proposes. | A person approves. The record stays. |
-| S4 Four jobs | `#home-s4` | four stills linking to the four stories | Four jobs we know how to hire an agent for. | (supporting line: short pointer to the four stories; keep specific, no market English claim) |
-| S5 Method | `#home-s5` | three method beats | Design the job. | Build the gate. / Keep the record. (three lines as specified: Design the job. Build the gate. Keep the record.) |
-| S6 Close | `#home-s6` | close CTA | Start a brief. | (CTA support; no fake metrics) |
-
-S5 Method must carry three lines exactly: Design the job. Build the gate. Keep the record.
-
-### Four product stories — five scenes each, same grammar
-
-Routes (use these paths in the score; note slug fix):
-
-1. `/work/atelier-concierge` (Atelier Concierge / former Lumen study lineage — anonymized product story)
-2. `/work/ledger-clerk`
-3. `/work/morning-remex`
-4. `/work/exception-copilot` (slug **exception-copilot**, not exception-copier)
-
-Each story: five scenes —
-
-1. pain
-2. agent appears
-3. human gate
-4. record
-5. Start a brief
-
-Each scene: one sentence pain or action. No live widgets. Marketing stills only.
+- Match `docs/copy-locks.md` and scroll-score lines **exactly**
+- Strip any remaining “English-first / English products / English-language software” language from home if present
+- No founder name; no DO NOT SAY phrases
 
 ## Acceptance
 
-- [ ] `docs/copy-locks.md` contains SAY / DO NOT SAY / Approved headlines **verbatim**
-- [ ] `docs/scroll-score.md` has Home S1–S6 with pin, visual, exact headline, exact support as specified
-- [ ] Four product stories × five scenes; slug `exception-copilot`
-- [ ] No app/** changes; no personal site; no founder name
-- [ ] Commit message exact: `docs(site): lock copy and scroll score`
-- [ ] HANDOFF lists skills used; DEV PASS or DEV REWORK
+- [ ] `/` presents six full-viewport scenes with pin targets `#home-s1`…`#home-s6`
+- [ ] Headlines/supports match scroll-score exactly (including S5 three lines)
+- [ ] GSAP ScrollTrigger pins with scrub:1; only transform/opacity
+- [ ] Canvas/gutter colors; one accent on CTA; sticky translucent nav 44–48px
+- [ ] No purple mesh / Inter-slop / chatbot; no English-first claims
+- [ ] `prefers-reduced-motion` disables pin theater (crossfade only)
+- [ ] `pnpm build` passes
+- [ ] Commit: `feat(home): add pinned product scenes`
+- [ ] HANDOFF lists all skills used + reduced-motion note + preview URL or blocker
 
 ## Stop
 
-Do **not** start R1. Dual PASS closes R0 only. Wait for owner’s next prompt before any R1 ticket.
+Both PASS closes R1. Do not start R2 until owner sends the next prompt.
