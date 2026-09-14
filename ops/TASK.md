@@ -1,42 +1,44 @@
-# TASK R4
+# TASK R4 — REWORK
 
 TASK ID: R4
 REPO: remexstudio/remex-atelier
+MODE: REWORK (same TASK ID; no scope expansion)
 
-SKILLS TO USE (invoke before coding):
-/review-animations /apple-design-motion /gsap-performance /zero-jank-scroll /web-design-guidelines
+SKILLS TO USE (invoke BEFORE touching files):
+/apple-design-web /review-animations /gsap-scrolltrigger
 
 GOAL:
-Final polish pass. Audit every pinned scene (home + four product stories). Kill jank, layout thrash, and scroll hijack that breaks reading. Remove leftover “English-first” / “English products” (and similar market claims) from the whole repo **UI**. Keep `/demo/*` unlinked from primary navigation if demo files remain. Verify 404, metadata, 375 and 1280 layouts, visible focus, labeled form, and `prefers-reduced-motion`.
+Make `/` and the four product stories feel like apple.com product chapters: pinned stage, one idea per scene, copy already locked in docs/scroll-score.md and docs/copy-locks.md. Fix only the defects listed in ops/REVIEW.md.
 
-ALLOWED (as needed to meet acceptance):
-- components/HomeScenes.tsx, components/StoryScenes.tsx
-- app/page.tsx, app/work/** (index + four story routes), app/globals.css
-- components/SiteChrome.tsx, components/ContactForm.tsx
-- app/layout.tsx, app/not-found.tsx, metadata on existing routes
-- Any other UI file that still prints forbidden English-market claims
+ALLOWED:
+- components/HomeScenes.tsx
+- components/StoryScenes.tsx
+- app/globals.css (film/chapter typography and layout only)
+- app/work/{atelier-concierge,ledger-clerk,morning-remex,exception-copilot}/page.tsx (only if needed to pass props / remove kicker)
 - ops/HANDOFF.md, ops/STATUS.md, ops/BACKLOG.md
 
 OUT OF SCOPE:
-- New product pages or new slogans outside copy-locks / scroll-score
-- Rebuilding `/demo/*` as the product
-- Personal site / founder bio
-- Deleting demo routes is optional; if they remain they must stay out of primary nav and work index
+- New pages or routes
+- Paraphrasing locked copy
+- /demo rebuild
+- Personal / founder content
+
+DEFECTS TO FIX:
+1. Stories: one pinned stage + five scrubbing copy beats (not five separate full pins)
+2. Home: longer pin runway (~140–160%) with readable hold
+3. No blank-slide autoAlpha:0 blackouts — stage stays present
+4. S2: replace literal “Job title” with lit job-name still
+5. S5: headline vs support hierarchy for three method lines
+6. Story beat A: copy column = locked pain line only (no productName kicker)
 
 ACCEPTANCE:
-- [ ] Audit every pinned scene (`#home-s1`…`#home-s6`, `#story-s1`…`#story-s5` on all four stories): no layout thrash; no scroll hijack that breaks reading; transform/opacity only; ScrollTrigger pin/scrub healthy
-- [ ] Jank / performance: no per-frame React setState; refresh after fonts; avoid unnecessary will-change leaks; `gsap-performance` / zero-jank guidance applied
-- [ ] Repo UI purged of “English-first”, “English products”, “English-language software”, “English-speaking markets” and similar market claims (docs/copy-locks.md DO NOT SAY list may remain as the constitution — do not print those phrases in rendered UI)
-- [ ] Primary nav: no `/demo/*` links; work index: no toy Open demo buttons
-- [ ] `app/not-found.tsx` present and on-brand
-- [ ] Metadata sane on key routes (home, work, stories, approach, contact)
-- [ ] Layouts readable at ~375 and ~1280
-- [ ] Visible `:focus-visible`; contact form fields labeled
-- [ ] `prefers-reduced-motion`: no pin theater on home and stories (verified)
-- [ ] `pnpm build` PASS
-- [ ] Commit: `feat(site): motion a11y and copy cleanup`
+- [ ] Re-read docs/copy-locks.md + docs/scroll-score.md; all locked lines still exact
+- [ ] Skills invoked before edits
+- [ ] Story pages: single pin + five scrub copy beats; stage morphs; transform/opacity only
+- [ ] Home: six chapter pins with longer runway; one idea per scene; no blank slides
+- [ ] S2 / S5 / story kicker defects cleared
+- [ ] prefers-reduced-motion: no pin theater
+- [ ] pnpm build PASS
+- [ ] Commit: `fix(site): apple chapter pin and scrub feel` (or `feat(site):` if preferred; one commit)
 
-COMMIT MESSAGE: feat(site): motion a11y and copy cleanup
-
-After push: write ops/HANDOFF.md, declare DEV PASS or DEV REWORK.
-When both PASS, **stop** — no further slices until owner says otherwise.
+After push: HANDOFF + DEV PASS or DEV REWORK. Both bots PASS again. Then stop.

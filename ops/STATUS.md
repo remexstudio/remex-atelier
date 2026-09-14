@@ -1,8 +1,8 @@
 # Status
 
-- Phase: Atelier v2 — R4 closed (motion a11y + copy cleanup); **STOPPED**
-- Closed: R0 (91b0afd), R1 (70a6e4c), R2 (7836383), R3 (780233b), R4 (596aa52)
-- Open: none
+- Phase: Atelier v2 — R4 REWORK open (apple chapter pin/scrub feel)
+- Closed pending rework: R4 delivery 596aa52 (LEADER REWORK)
+- Prior closed: R0–R3
+- Open: R4 REWORK
 - Repo: https://github.com/remexstudio/remex-atelier
-- Live: https://remex-atelier.vercel.app
-- Rule: dual PASS then stop — awaiting owner only
+- Rule: same TASK ID; dual PASS then stop

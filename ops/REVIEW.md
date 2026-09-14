@@ -1,27 +1,41 @@
-# Review R4
+# Review R4 — REWORK
 
-- TASK ID: R4
-- Delivery SHA: 596aa52 (`feat(site): motion a11y and copy cleanup`)
-- Handoff tip: ec86862
-- Preview: https://remex-atelier.vercel.app (Git auto-deploy may lag; CLI refresh if needed)
+- TASK ID: R4 (same ID; no new pages)
+- Prior delivery SHA: 596aa52
+- Verdict: **LEADER: REWORK**
 
-## Checks
+## Defects (must fix)
 
-- [x] Home `#home-s1`…`#home-s6` + stories `#story-s1`…`#story-s5`: matchMedia skips reduce / short viewport; `pin` + `scrub: 1`; transform/opacity only; `fonts.ready` refresh; no Lenis / normalizeScroll; no per-frame setState
-- [x] UI purged of English-first / English products / English only / outsourcing claims in `app/` + `components/` (docs/copy-locks constitution retained)
-- [x] Primary nav: no `/demo/*`; `/work` index: no Open demo
-- [x] `not-found.tsx` on-brand; metadata on key routes; `:focus-visible`; ContactForm labels
-- [x] `prefers-reduced-motion` + CSS floors for ~375 / ~1280
-- [x] `pnpm build` PASS
+1. **Story film grammar is wrong for Apple product chapters.**  
+   Score + owner: one **pinned product stage** + **five copy scenes that scrub in**.  
+   Current: five independent full-viewport pins, each fading its own still.  
+   Fix: per story route, **one** ScrollTrigger pin on a persistent stage; scrub five copy beats (A–E); stage still morphs pain → agent → gate → record → CTA via transform/opacity only. No new routes.
 
-## Notes
+2. **Home pin runway too short (`end: "+=90%"`).**  
+   Chapters feel rushed, not apple.com breath.  
+   Fix: longer pin distance (≈ `+=140%`–`+=160%`) with a readable hold; one idea per scene must linger. Keep scrub:1; no Lenis/normalizeScroll.
 
-- Legacy study pages may still link into `/demo/*` (allowed; out of primary nav + work index).
-- Runtime FPS / pin feel not browser-profiled — accepted with residual risk noted.
-- Production alias may lag Git until a CLI or Git-linked deploy lands.
+3. **Blank-slide entrances.**  
+   `gsap.set(..., autoAlpha: 0)` on stage+copy at each pin start → empty frames.  
+   Fix: keep stage present; evolve stage state + crossfade copy. Do not black out the chapter.
 
-## Verdict
+4. **S2 stage shows literal “Job title”.**  
+   Looks like a placeholder, not “the job title lights up.”  
+   Fix: light up a concrete job-name still (craft visual). No new slogans; no paraphrasing locked headlines.
 
-**LEADER: PASS**
+5. **S5 method hierarchy vs scroll-score.**  
+   Score: line 1 = headline; lines 2–3 = supporting sequential beats.  
+   Current: three equal display headlines.  
+   Fix: typographic hierarchy (headline vs support) while keeping the three exact lines and sequential scrub.
 
-R4 closed. **Stop.** No further slices until owner says otherwise.
+6. **Story scene-1 productName kicker dilutes one idea per scene.**  
+   Pain beat must be the locked sentence alone in the copy column.  
+   Fix: move product name to stage/chrome/metadata; copy column = locked line (+ CTA only on beat E).
+
+## Skills required before edits
+
+`/apple-design-web` `/review-animations` `/gsap-scrolltrigger`
+
+## Out of scope
+
+New pages, new routes, new slogans, /demo rebuild, personal site.
