@@ -1,6 +1,23 @@
 # Handoff V3-18
 
-- Status: issued — await Dev
-- Prior closed: V3-17 PASS (`71d8fef` / merge `b3aefea` / tip `65402f3`)
+- Status: delivered
+- Content SHA: `f72a158`
+- Base: `5a89e93` on main
 - Preview: https://remex-atelier.vercel.app
-- Notes: See `ops/TASK.md`. Decorative register/ribbon chips only. No V3-19 until PASS.
+- Deploy: coordinator `vercel deploy --prod` after merge (not this slice)
+- Files (ALLOWED only):
+  - `components/AtelierConciergeChapter.tsx` — ribbon chips: Skin / Fit note / Held; LUM-1042 kept
+  - `components/LedgerClerkChapter.tsx` — register chips: §12.4 / Month-end; Corpus cite kept
+  - `components/MorningRemexChapter.tsx` — packet chips: Overnight / Two tones; Human before send kept
+  - `components/ExceptionCopilotChapter.tsx` — spine chips: §4.2; Policy cite / Refund hold kept
+  - `app/globals.css` — 375 register/ribbon/packet/spine nowrap + balance helpers; spine 3-col; no type shrink
+  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
+- Acceptance:
+  - [x] Remaining long decorative chips shortened or wrap cleanly at 375
+  - [x] Locked ability×3 / gate / record / refusal / CTA / footer unchanged
+  - [x] DNA identity markers retained; no 机羽云/refuse move
+  - [x] CTA ≥44; `.still-fact` ≥ 0.8125rem
+  - [x] `pnpm build` PASS
+  - [ ] `vercel deploy --prod` — coordinator after merge
+- Skills: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
+- Blockers: None. Await three PM + Leader. No V3-19 until PASS.
