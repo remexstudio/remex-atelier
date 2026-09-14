@@ -1,7 +1,7 @@
 # Handoff V3-2 (nine module home)
 
-- Status: delivered (uncommitted — parent commits)
-- SHA: pending
+- Status: delivered
+- SHA: e45869e
 - Preview: https://remex-atelier.vercel.app
 - Commit message (parent): `feat(home): add v3 nine module film`
 
@@ -57,7 +57,7 @@ hero · shallow-deep · pin-stage · horizontal rail · bento · specs cluster �
 - [x] Job cards + CTA ≥44px; no “Open demo”
 - [x] Canvas `#ffffff` / gutter `#f5f5f7`
 - [x] `pnpm build` PASS
-- [ ] Commit/push by parent — SHA pending
+- [x] Commit: `feat(home): add v3 nine module film`
 
 ## DEV: PASS
 Await Apple + UX + Vision + Leader re-PASS. Do not open V3-3 until PASS.
