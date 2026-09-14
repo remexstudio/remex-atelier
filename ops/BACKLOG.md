@@ -4,7 +4,7 @@
 - [x] V3-1 tokens/nav/type
 - [x] V3-2 nine module home
 - [x] V3-3 Atelier Concierge unique chapter (d7a232f)
-- [ ] V3-4 Ledger Clerk unique chapter
+- [x] V3-4 Ledger Clerk unique chapter (pending parent commit)
 - [ ] V3-5 Morning Remex unique chapter
 - [ ] V3-6 Exception Copilot unique chapter
 - [ ] V3-7 approach + contact
