@@ -13,13 +13,18 @@ type SiteChromeProps = {
 
 /**
  * Primary nav — marketing routes only. Never link /demo/* here.
- * Services / About stay off-primary. Lab is Prototype-labeled.
+ * Services / About stay off-primary (footer secondary). Lab is Prototype-labeled.
  */
 const NAV = [
   { href: "/work", label: "Work" },
   { href: "/approach", label: "Approach" },
   { href: "/lab", label: "Lab" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+const FOOTER_SECONDARY = [
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
 ] as const;
 
 /** Home film chapter map — targets land with V3-2 nine modules. */
@@ -67,6 +72,9 @@ export function SiteChrome({
                   key={item.href}
                   href={item.href}
                   className="text-muted no-underline"
+                  aria-label={
+                    item.href === "/lab" ? "Lab prototypes" : undefined
+                  }
                 >
                   {item.label}
                 </Link>
@@ -98,7 +106,16 @@ export function SiteChrome({
             : "site-footer site-footer--default"
         }
       >
-        <p className="type-meta">{footerLine}</p>
+        <div className="site-footer__row">
+          <p className="type-meta">{footerLine}</p>
+          <nav aria-label="Secondary" className="site-footer__links">
+            {FOOTER_SECONDARY.map((item) => (
+              <Link key={item.href} href={item.href} className="no-underline">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </footer>
     </div>
   );
