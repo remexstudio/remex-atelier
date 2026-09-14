@@ -6,30 +6,57 @@ import { PulseLoop } from "@/components/lab/PulseLoop";
 export const metadata: Metadata = {
   title: "Pulse",
   description:
-    "Pulse prototype: see metric, notify roster, log event, follow up rest.",
+    "Pulse prototype: see metric, notify roster, log event, follow up rest. Not a client engagement.",
+  openGraph: {
+    title: "Pulse · Remex Studio",
+    description:
+      "Pulse prototype: see metric, notify roster, log event, follow up rest. Not a client engagement.",
+    url: "/lab/pulse",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Pulse · Remex Studio",
+    description:
+      "Pulse prototype: see metric, notify roster, log event, follow up rest. Not a client engagement.",
+  },
 };
 
 export default function PulsePage() {
   return (
-    <SiteChrome>
-      <main id="main">
-        <p className="type-meta mt-14 sm:mt-16">Lab</p>
-        <h1 className="type-display mt-3 text-4xl text-accent sm:text-5xl">
-          Pulse
-        </h1>
-        <p className="type-body mt-4 max-w-prose text-muted">
-          A four-step loop for internal attention. Labeled clearly as a
-          prototype.
-        </p>
-        <div className="mt-10">
-          <PulseLoop />
-        </div>
-        <Link
-          href="/lab"
-          className="mt-12 inline-flex text-sm font-medium text-accent no-underline"
+    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+      <main id="main" className="film-page lab-page lab-page--pulse">
+        <aside className="film-panel lab-banner" aria-label="Prototype notice">
+          <p className="film-kicker">Lab · Pulse</p>
+          <p className="lab-banner__mark">
+            Prototype · not a client engagement
+          </p>
+          <p className="film-lede">
+            A four-step loop for internal attention. This is a prototype, not a
+            client study.
+          </p>
+        </aside>
+
+        <header className="film-panel">
+          <p className="film-kicker">Prototype</p>
+          <h1 className="film-title">Pulse</h1>
+          <p className="film-lede">
+            See a metric, notify a roster, log the event, follow up the rest.
+          </p>
+        </header>
+
+        <section
+          className="film-panel lab-loop"
+          aria-label="Pulse prototype loop"
         >
-          Back to Lab
-        </Link>
+          <PulseLoop />
+        </section>
+
+        <p className="film-panel film-actions">
+          <Link href="/lab" className="film-text-link">
+            Back to Lab
+          </Link>
+        </p>
       </main>
     </SiteChrome>
   );

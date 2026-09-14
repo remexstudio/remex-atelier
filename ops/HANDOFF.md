@@ -1,30 +1,32 @@
-# Handoff V3-11
+# Handoff V3-12
 
 - Status: delivered
-- SHA: 0247605 (content); merge tip 6fab6cd on main; handoff tip follow-up
+- SHA: 147025d (rebased on main `2f300b7`)
 - Preview / Production: https://remex-atelier.vercel.app
-- Deploy: `dpl_9Bdy1KEMxunfWT6mUwexwN6vD5Ny` → aliased https://remex-atelier.vercel.app
+- PR: https://github.com/remexstudio/remex-atelier/pull/4
+- Deploy: coordinator `vercel deploy --prod` after merge (CLI logged out on this runner)
 - Files changed (ALLOWED only):
-  - `components/AtelierConciergeChapter.tsx` — horizontal merchandising runway + overlapping try-on stack
-  - `components/LedgerClerkChapter.tsx` — cite stack + Propose ≠ Execute table
-  - `components/MorningRemexChapter.tsx` — P/W/N triage lanes + dual-tone draft columns
-  - `components/ExceptionCopilotChapter.tsx` — ranked exception queue + policy sidebar dock
-  - `app/globals.css` — `.cq-*` `.lc-*` `.mr-*` `.ec-*` grammar CSS only
+  - `app/services/page.tsx` — film SiteChrome; Agent Apps / Agent Ops / Advisory; Start a brief → `/contact`; Read the approach → `/approach`
+  - `app/lab/page.tsx` — film canvas; large `Prototype · not a client engagement` banner
+  - `app/lab/pulse/page.tsx` — same banner; Pulse stays a prototype, not a client study
+  - `app/about/page.tsx` — `Jiyuyun Studio LLC` + `Seattle studio. Global clients.`; no Chinese glyphs; no refuse list; no founder name
+  - `app/globals.css` — `.film-*` / `.svc-*` / `.lab-*` / `.about-*` only; PulseLoop `bg-paper` remapped / buried stub hidden
+  - `components/SiteChrome.tsx` — comment only
+  - Deleted unused `components/{lumen,kite,northline,paperline}/**`
   - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
+- PM board align:
+  - [x] Kill Tailwind stub / `bg-paper` on these routes; film `#fff` / `#f5f5f7`; negative tracking; hairlines
+  - [x] Lab + Pulse: `Prototype · not a client engagement` unmistakable (page banner, not a paper caption)
+  - [x] 机羽云 etymology only on `/approach`; About echoes LLC / Seattle / global only; no second refuse list; no Chinese glyphs
+  - [x] Shallow readable; no pin/hijack; 375 wraps full facts; CTA ≥44; no English-products; no empty slogan pages
 - Acceptance self-check:
-  - [x] Each chapter ≥2 unique layout grammars
-  - [x] Concierge: pipeline runway + try-on stack
-  - [x] Ledger: cite stack + Propose ≠ Execute table
-  - [x] Morning: dual-tone columns + P/W/N triage
-  - [x] Exception: queue + policy sidebar
-  - [x] Locked score / chapter strings verbatim
-  - [x] No StoryScenes; no long pin; once-reveal; no Lenis
-  - [x] Canvas `#fff`/`#f5f5f7`; CTA ≥44; 375 + RM full facts
-  - [x] Home stills / SiteChrome / redirects untouched
+  - [x] Four routes `SiteChrome variant="film"`
+  - [x] Services substance + `/approach` + `/contact`
+  - [x] Home / work / chapter CSS not rewritten
   - [x] `pnpm build` green
-  - [x] `vercel deploy --prod` — production alias refreshed
-- Skills used: apple-design, apple-design-web, apple-design-motion, emil-design-eng, cinematic-scroll-storytelling, zero-jank-scroll, review-animations, react-best-practices, writing-guidelines
+  - [ ] `vercel deploy --prod` — coordinator after merge
+- Skills used: apple-design, apple-design-web, emil-design-eng, writing-guidelines, web-design-guidelines
 - Risks:
-  - Shared still atoms stay for home/work cards — chapter layouts wrap them.
+  - `components/lab/PulseLoop.tsx` is outside ALLOWED; film CSS remaps its paper utilities and hides the buried caption.
 - Blockers:
-  - None. Await three PM + Leader. No V3-12 until PASS.
+  - None. Await three PM + Leader. No next circle until PASS.

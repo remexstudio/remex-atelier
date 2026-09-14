@@ -6,85 +6,72 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Remex Studio: a Seattle atelier for agents built to the brief. Jiyuyun Studio LLC.",
+  openGraph: {
+    title: "About · Remex Studio",
+    description:
+      "Remex Studio: a Seattle atelier for agents built to the brief. Jiyuyun Studio LLC.",
+    url: "/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "About · Remex Studio",
+    description:
+      "Remex Studio: a Seattle atelier for agents built to the brief. Jiyuyun Studio LLC.",
+  },
 };
-
-const meanings = [
-  {
-    title: "Remex",
-    body: "The pinion feather that gives lift. Molting is iteration; each brief sheds what no longer flies.",
-  },
-  {
-    title: "Cloud",
-    body: "Where agents run and memory accumulates: the place the work continues between human sessions.",
-  },
-  {
-    title: "Studio",
-    body: "An atelier. One brief at a time. Editorial craft with production discipline.",
-  },
-] as const;
 
 export default function AboutPage() {
   return (
-    <SiteChrome>
-      <main id="main">
-        <p className="type-meta mt-14 sm:mt-16">About</p>
-        <h1 className="type-display mt-3 text-4xl text-accent sm:text-5xl">
-          Remex Studio
-        </h1>
-        <p className="type-body mt-4 text-lg text-muted">
-          Agents, built to the brief.
-        </p>
-        <p className="type-body mt-6 max-w-prose text-muted">
-          We turn one painful workflow into a working agent, then keep molting
-          it. A Seattle atelier — one brief at a time, with craft and a human
-          gate. Not a foundation-model company, not a speech lab.
-        </p>
+    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+      <main id="main" className="film-page about-page">
+        <header className="film-panel">
+          <p className="film-kicker">About</p>
+          <h1 className="film-title">Remex Studio</h1>
+          <p className="film-lede">Agents, built to the brief.</p>
+          <p className="film-place">Seattle studio. Global clients.</p>
+        </header>
 
-        <section className="mt-14" aria-labelledby="name">
-          <h2
-            id="name"
-            className="type-display border-t border-rule pt-5 text-2xl text-accent"
-          >
-            What the name holds
-          </h2>
-          <ul className="mt-8 space-y-6">
-            {meanings.map((item) => (
-              <li key={item.title} className="border-t border-rule pt-5">
-                <h3 className="type-display text-lg text-accent">{item.title}</h3>
-                <p className="type-body mt-2 text-sm text-muted">{item.body}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="mt-14" aria-labelledby="legal">
-          <h2
-            id="legal"
-            className="type-display border-t border-rule pt-5 text-2xl text-accent"
-          >
+        <section className="film-panel" aria-labelledby="about-legal-h">
+          <h2 id="about-legal-h" className="film-section-title">
             Studio details
           </h2>
-          <dl className="mt-6 space-y-4 text-sm">
-            <div>
-              <dt className="font-medium text-accent">Geography</dt>
-              <dd className="type-body mt-1 text-muted">A Seattle studio.</dd>
+          <p className="film-lede">
+            We turn one painful workflow into a working agent, then keep molting
+            it. One brief at a time, with craft and a human gate.
+          </p>
+          <dl className="about-facts">
+            <div className="about-fact">
+              <dt>Legal</dt>
+              <dd>Jiyuyun Studio LLC</dd>
             </div>
-            <div>
-              <dt className="font-medium text-accent">Legal</dt>
-              <dd className="type-body mt-1 text-muted">Jiyuyun Studio LLC</dd>
+            <div className="about-fact">
+              <dt>Geography</dt>
+              <dd>Seattle studio. Global clients.</dd>
             </div>
-            <div>
-              <dt className="font-medium text-accent">Wordmark</dt>
-              <dd className="type-body mt-1 text-muted">REMEX STUDIO</dd>
+            <div className="about-fact">
+              <dt>Wordmark</dt>
+              <dd translate="no">REMEX STUDIO</dd>
             </div>
           </dl>
         </section>
 
-        <p className="mt-14">
-          <Link href="/contact" className="btn-primary no-underline">
+        <section
+          className="film-panel film-close"
+          aria-labelledby="about-close-h"
+        >
+          <h2 id="about-close-h" className="film-close-title">
             Start a brief.
-          </Link>
-        </p>
+          </h2>
+          <p className="film-lede">
+            Tell us the painful workflow. We design the agent and the gate.
+          </p>
+          <p className="film-actions">
+            <Link href="/contact" className="film-cta">
+              Start a brief.
+            </Link>
+          </p>
+        </section>
       </main>
     </SiteChrome>
   );

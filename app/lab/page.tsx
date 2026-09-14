@@ -6,29 +6,56 @@ export const metadata: Metadata = {
   title: "Lab",
   description:
     "Remex Studio lab: prototypes that are not client engagements.",
+  openGraph: {
+    title: "Lab · Remex Studio",
+    description:
+      "Remex Studio lab: prototypes that are not client engagements.",
+    url: "/lab",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Lab · Remex Studio",
+    description:
+      "Remex Studio lab: prototypes that are not client engagements.",
+  },
 };
+
+const PULSE_STEPS = ["See", "Notify", "Log", "Follow"] as const;
 
 export default function LabPage() {
   return (
-    <SiteChrome>
-      <main id="main">
-        <p className="type-meta mt-14 sm:mt-16">Lab</p>
-        <h1 className="type-display mt-3 text-4xl text-accent sm:text-5xl">
-          Prototypes
-        </h1>
-        <p className="type-body mt-4 max-w-prose text-muted">
-          Small loops we run to test craft. Not client work. Not studies.
-        </p>
+    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+      <main id="main" className="film-page lab-page">
+        <aside className="film-panel lab-banner" aria-label="Prototype notice">
+          <p className="film-kicker">Lab</p>
+          <p className="lab-banner__mark">
+            Prototype · not a client engagement
+          </p>
+          <p className="film-lede">
+            Small loops we run to test craft. Not client work. Not studies.
+          </p>
+        </aside>
 
-        <article className="mt-12 border border-rule bg-paper/50 px-6 py-6">
-          <p className="type-meta">Prototype · not a client engagement</p>
-          <h2 className="type-display mt-3 text-2xl text-accent">Pulse</h2>
-          <p className="type-body mt-3 text-sm text-muted">
+        <article className="film-panel lab-card">
+          <p className="lab-card__flag">Prototype · not a client engagement</p>
+          <h1 className="film-title">Prototypes</h1>
+          <h2 className="lab-card__name">Pulse</h2>
+          <p className="film-lede">
             See a metric, notify a roster, log the event, follow up the rest.
           </p>
-          <Link href="/lab/pulse" className="btn-primary mt-6 no-underline">
-            Open Pulse
-          </Link>
+          <div className="lab-still" aria-hidden="true">
+            {PULSE_STEPS.map((step) => (
+              <span key={step} className="lab-still__chip">
+                {step}
+              </span>
+            ))}
+          </div>
+          <p className="film-actions">
+            <Link href="/lab/pulse" className="film-cta">
+              Open Pulse
+            </Link>
+          </p>
         </article>
       </main>
     </SiteChrome>

@@ -13,7 +13,7 @@ type SiteChromeProps = {
 
 /**
  * Primary nav — marketing routes only. Never link /demo/* here.
- * Services / About stay as thin stubs off-primary (V3-12). Lab is Prototype-labeled.
+ * Services / About stay off-primary. Lab is Prototype-labeled.
  */
 const NAV = [
   { href: "/work", label: "Work" },
