@@ -1,6 +1,6 @@
 # Status
 
-- Phase: Atelier V3 overnight loop 2 — V3-17 delivered (375 short still-fact labels)
-- Closed: V3-0…V3-16 (visual polish; content `04c535d`; merge `a4626d2`; tip `1992f62`)
-- Open: V3-17 — Dev delivered (`71d8fef`); await three PM + Leader. No V3-18 until PASS.
+- Phase: Atelier V3 overnight loop 2 — V3-18 open (register/ribbon short decorative labels)
+- Closed: V3-0…V3-17 (375 short chips; content `71d8fef`; merge `b3aefea`; tip `65402f3`)
+- Open: V3-18 — await Dev delivery + three PM + Leader
 - Preview: https://remex-atelier.vercel.app

@@ -1,10 +1,10 @@
-# Review V3-16
+# Review V3-17
 
-- TASK ID: V3-16
-- Content SHA: `04c535d`
-- Merge: `a4626d2`
-- HANDOFF tip: `1992f62`
-- Prod: https://remex-atelier.vercel.app (`dpl_4YVPC1JksBhx5WjvcFp9oe3r7Zfm`)
+- TASK ID: V3-17
+- Content SHA: `71d8fef`
+- Merge: `b3aefea`
+- HANDOFF tip: `65402f3`
+- Prod: https://remex-atelier.vercel.app (`dpl_8nFLfyt3mA1FyVM5B7SsL5hpPDMJ`)
 
 ## Verdicts
 
@@ -18,16 +18,16 @@
 
 ## Checks
 
-- `.still-fact` 0.8125rem (375) / 0.875rem (≥720); hierarchy under titles.
-- Four chapters quieter; `chapter-cta` / `.home-cta` ≥44 + focus-visible; no gray-bar return.
-- Locked ability×3 / gate / record / refusal unchanged; BRIEF_ASKS single-source; no 机羽云/refuse move.
-- No chapter pins / Lenis; build + prod green.
+- Decorative pipeline chips shortened; DNA markers kept (LUM-1042 / Never Execute / Human before send / Policy cite).
+- Locked ability×3 / gate / record / refusal / CTA / footer verbatim.
+- 375 nowrap + balance helpers; CTA ≥44; no gray-bar / pin / Lenis regression.
+- Build + prod green.
 
-## Non-blocking ADD → V3-17
+## Non-blocking ADD → V3-18
 
-- Apple: after still-fact bump, 375 pipeline may wrap — prefer short still-fact labels.
-- Vision: payload mainline closed; residual craft only, do not move locked copy.
+- UX: register / ribbon decorative rows still longer (`Month-end question`, `§12.4 · Close pack`); shorten same way if they wrap.
+- Vision/Apple: payload + craft mainline stable; do not touch locked copy.
 
 ## Decision
 
-Close V3-16. Issue V3-17. Continuous overnight loop continues.
+Close V3-17. Issue V3-18. Continuous overnight loop continues.
