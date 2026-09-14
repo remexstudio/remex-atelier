@@ -1,22 +1,6 @@
-# Handoff V3-20
+# Handoff
 
-- Status: delivered
-- Content SHA: f5cc649 (follow-up chip fix 4d130de)
-- Merge tip: 7b8be91 on main (HANDOFF stamp follows)
-- Preview / Production: https://remex-atelier.vercel.app
-- Deploy: dpl_G7gsRPgouuAmG8i24vv5GpQfKpd7 READY
-- Files changed:
-  - Four `*Chapter.tsx` — CTA finales de-iso with unique DNA stills
-  - `app/work/page.tsx` — product wall
-  - `app/globals.css` — CTA grammars + work wall; drop html scroll-padding
-  - ops stamps
-- Acceptance:
-  - [x] Four CTA finales visually non-isomorphic with unique DNA stills
-  - [x] `/work` reads as product wall, not thin brochure grid
-  - [x] Locked score lines + Start a brief + DNA markers intact
-  - [x] CTA ≥44; no Lenis; no gray-bar return; no 机羽云/refuse move
-  - [x] `pnpm build` PASS
-  - [x] `vercel deploy --prod` dpl_G7gsRPgouuAmG8i24vv5GpQfKpd7
-- Skills used: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines, review-animations
-- Risks: Ledger overlay CTA 375 stack; work stills reuse chapter atoms
-- Blockers: Await three PM + Leader. No V3-21 until PASS.
+- Status: V3-20 closed PASS — await next board KEEP/KILL/ADD
+- Last content: `f5cc649` + `4d130de` / tip `8a36213`
+- Preview: https://remex-atelier.vercel.app
+- Notes: No V3-21 until Leader issues TASK.

@@ -1,13 +1,16 @@
-# Iteration after V3-20 delivery
+# Iteration after V3-20 PASS
 
 Live preview: https://remex-atelier.vercel.app
-Prior closed: V3-19 `bd45df8` / tip `ae6f870`.
+V3-20 closed: `f5cc649` + `4d130de` / tip `8a36213`. Unanimous PM + Leader PASS.
 
-## V3-20 shipped (this loop)
+## Closed in V3-20
 
-1. **CTA de-iso** — Concierge split pay/bag still; Ledger overlay Never Execute registry; Morning P/W/N rail; Exception ticket stack. Locked `Start a brief.` kept. DNA markers stay on their chapters.
-2. **`/work` wall** — larger stills, less card chrome, one DNA cue per card (LUM-1042 / Never Execute / Human before send / Refund hold). 375 stacks.
-3. **Scroll offset** — removed `html { scroll-padding-top }`; kept module `scroll-margin-top`.
-4. Hard stay: locked score lines; no Lenis; no new pins; no 机羽云/refuse move; no prod deploy from Dev.
+1. Four chapter CTA finales de-isomorphic with unique DNA stills.
+2. `/work` product wall; four slugs unchanged.
+3. Sticky double-offset softened (html scroll-padding cleared).
 
-Await three PM + Leader. No V3-21 until PASS.
+## Next loop (V3-21+)
+
+Vision: payload/visual mainline closed. Leader requests fresh KEEP/KILL/ADD before issuing V3-21.
+Soft candidates only if board confirms: mid-chapter full-bleed DNA stage (Apple); MR CTA stack <400 (UX).
+Hard bans unchanged.

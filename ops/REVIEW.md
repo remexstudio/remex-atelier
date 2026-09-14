@@ -1,9 +1,9 @@
-# Review V3-19
+# Review V3-20
 
-- TASK ID: V3-19
-- Content SHA: `bd45df8`
-- Merge tip: `ae6f870` (after `31e624f`)
-- Prod: https://remex-atelier.vercel.app (`dpl_Ehz6Ro1EqCJFp6JcB4v8HmMBAqq7`)
+- TASK ID: V3-20
+- Content SHA: `f5cc649` + chip fix `4d130de`
+- Merge tip: `8a36213` (after `7b8be91`)
+- Prod: https://remex-atelier.vercel.app (`dpl_G7gsRPgouuAmG8i24vv5GpQfKpd7`)
 
 ## Verdicts
 
@@ -17,16 +17,17 @@
 
 ## Checks
 
-- Default footerLine: `Seattle studio. Global clients.`
-- `.site-nav__mark` film-only ≥44; scroll-margin on home + chapter mods.
-- Four chapter job H1s at `--size-display`; refuse DRY via `lib/refuse.ts` (home + approach only).
-- Locked copy / 机羽云 / DNA / pinOk / no Lenis; build + prod green.
+- CTA de-iso: Concierge split / Ledger overlay / Morning P·W·N rail / Exception ticket stack.
+- DNA markers + `Start a brief.` verbatim; ability×3/gate/record/refusal intact.
+- `/work` product wall with DNA stills; four slugs unchanged.
+- scroll-padding stack cleared; CTA ≥44; no Lenis / gray-bar / 机羽云 move.
 
-## Non-blocking ADD → V3-20
+## Non-blocking ADD
 
-- Soft: simplify stacked `scroll-padding-top` + `scroll-margin` (~92px) if empty head feels large.
-- Main: chapter CTA curtain de-isomorphism + `/work` product wall (board hold from V3-19).
+- Apple soft: mid-chapter primary DNA still → near full-bleed product stage.
+- UX soft: Morning CTA 3-col may stack below ~400px.
+- Vision: payload/visual mainline closed; do not move locked landings.
 
 ## Decision
 
-Close V3-19. Issue V3-20.
+Close V3-20. Request board KEEP/KILL/ADD before V3-21.
