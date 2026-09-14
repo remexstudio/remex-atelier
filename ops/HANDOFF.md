@@ -1,14 +1,13 @@
 # Handoff R0
 
 - Status: delivered
-- SHA: 06b1dc8
+- SHA: 91b0afd
 - Preview: n/a (docs only; no deploy required)
 - Files changed:
   - docs/copy-locks.md (new)
   - docs/scroll-score.md (new)
   - ops/HANDOFF.md
   - ops/STATUS.md
-  - ops/BACKLOG.md
 - Acceptance self-check:
   - [x] copy-locks SAY / DO NOT SAY / Approved headlines verbatim
   - [x] scroll-score Home S1–S6 pin, visual, exact headline, exact support
