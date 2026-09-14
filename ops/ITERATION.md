@@ -17,6 +17,10 @@ Synthesized from Apple / UX / Vision post-V3-16 KEEP/KILL/ADD.
 2. **Residual craft** — spacing / wrap on chapter still bands only; no new modules; no payload relocation.
 3. Vision stay: payload mainline closed; no 机羽云/refuse move; BRIEF_ASKS stays single-source.
 
+## V3-17 delivery
+
+Dev shortened decorative flow/pipeline chips at 375 (Hero / Try-on / Bag / Human; Corpus / Cite; Needs ops / Operator; Policy / Restock / Draft). DNA kept: Never Execute, Human before send, Policy cite, LUM-1042. CSS wrap helpers: nowrap on short chips; balanced wrap on two-word DNA. Locked score lines verbatim. Coordinator: `vercel deploy --prod` after merge. No V3-18 until PASS.
+
 ## Hard bans (unchanged)
 
 - No English-products market claims; no founder name; no CumuLabs/outsourcing; no Lenis/normalizeScroll/body lock; H3-only pin with pinOk; locked copy verbatim.

@@ -182,7 +182,7 @@ export function MorningRemexChapter() {
               <span className="mr-triage__lane mr-triage__lane--pri">P</span>
               <p className="mr-pwn__name">Priority</p>
               <div className="mr-thread mr-thread--a">
-                <span className="still-fact">Needs operator</span>
+                <span className="still-fact">Needs ops</span>
               </div>
               <div className="mr-thread mr-thread--b">
                 <span className="still-fact still-fact--muted">Escalate</span>
@@ -227,7 +227,7 @@ export function MorningRemexChapter() {
             <div className="mr-dual__col mr-dual__col--a" data-mr-reveal>
               <span className="mr-operator__tag">Tone A</span>
               <span className="mr-tones__card mr-tones__card--a">Tone A</span>
-              <p className="still-fact still-fact--muted">Operator chooses</p>
+              <p className="still-fact still-fact--muted">Operator</p>
             </div>
             <div className="mr-dual__col mr-dual__col--b" data-mr-reveal>
               <span className="mr-operator__tag">Tone B</span>

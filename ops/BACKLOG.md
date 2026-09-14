@@ -10,4 +10,4 @@
 - [x] V3-14 Home H2/H7 density + Contact brief asks + Services offer nails + About SAY echo
 - [x] V3-15 BRIEF_ASKS single source + four-chapter still/beat density
 - [x] V3-16 visual polish — still-fact type + chapter noise/CTA (`04c535d` / merge `a4626d2` / tip `1992f62`)
-- [ ] V3-17 375 short still-fact labels + residual craft (issued)
+- [x] V3-17 375 short still-fact labels + residual craft (delivered; await PM + Leader)

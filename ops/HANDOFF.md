@@ -1,6 +1,22 @@
 # Handoff V3-17
 
-- Status: issued — await Dev
-- Prior closed: V3-16 PASS (`04c535d` / merge `a4626d2` / tip `1992f62`)
+- Status: delivered
+- Content SHA: `71d8fef`
+- Base: `0c1a5a9` on main
 - Preview: https://remex-atelier.vercel.app
-- Notes: See `ops/TASK.md`. Short decorative chips only. No V3-18 until PASS.
+- Deploy: coordinator `vercel deploy --prod` after merge (not this slice)
+- Files (ALLOWED only):
+  - `components/AtelierConciergeChapter.tsx` — flow/stack chips: Hero / Try-on / Bag / Human
+  - `components/LedgerClerkChapter.tsx` — flow chips: Corpus / Cite; Never Execute kept
+  - `components/MorningRemexChapter.tsx` — flow chips: Needs ops / Operator; Human before send kept
+  - `components/ExceptionCopilotChapter.tsx` — flow chips: Policy / Restock / Draft; Policy cite kept
+  - `app/globals.css` — 375 still-fact / flow still wrap helpers only (nowrap or balanced DNA wrap; no type shrink)
+  - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`, `ops/ITERATION.md`
+- Acceptance:
+  - [x] 375 pipeline still-facts shortened or wrap cleanly
+  - [x] Locked ability×3 / gate / record / refusal / CTA / footer unchanged
+  - [x] CTA ≥44; no gray-bar return; no 机羽云/refuse move
+  - [x] `pnpm build` PASS
+  - [ ] `vercel deploy --prod` — coordinator after merge
+- Skills: apple-design, apple-design-web, emil-design-eng, web-design-guidelines, writing-guidelines
+- Blockers: None. Await three PM + Leader. No V3-18 until PASS.
