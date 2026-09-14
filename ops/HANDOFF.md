@@ -1,46 +1,42 @@
-# Handoff R4 REWORK
+# Handoff V3-0
 
 - Status: delivered
-- SHA: 59cdfc6
-- Commit message (ready): `fix(site): apple chapter pin and scrub feel`
-- Preview: https://remex-atelier.vercel.app (after deploy)
-- Local build: `pnpm build` PASS (Next.js 16.3.5)
-
-## Skills used
-- apple-design-web (invoked by parent before edits)
-- review-animations (invoked by parent before edits)
-- gsap-scrolltrigger (invoked by parent before edits)
-
-## Defects fixed
-1. **StoryScenes — one pinned stage + five scrub copy beats.** Replaced five separate `pin:true` sections with a single `.story-chapter` ScrollTrigger (`end: "+=420%"`, `scrub:1`). Copy beats `#story-s1`…`#story-s5` absolute-stack and crossfade; five stage stills morph pain→agent→gate→record→cta via opacity/transform only. Stage shell never `autoAlpha:0`.
-2. **Home pin runway longer.** Per-chapter `end` changed `+=90%` → `+=150%`; longer end hold (`duration: 0.55`) so one idea lingers. Still `pin:true`, `scrub:1` on `#home-s1`…`#home-s6`.
-3. **No blank slides on home.** Removed `gsap.set(stage+copy, autoAlpha:0)`. Stage starts `autoAlpha:1` with soft `y`/`scale` lift only; copy crossfades in.
-4. **S2 job-name still.** Replaced literal “Job title” with lit **Atelier Concierge** (`data-job-title` dim→full). Removed competing “One brief. One seat.” Locked headlines unchanged.
-5. **S5 hierarchy.** “Design the job.” = `home-headline` (h2); “Build the gate.” / “Keep the record.” = `home-support` sequential scrub reveals.
-6. **Story kicker removed.** `productName` no longer in copy column; shown as stage chrome frame label. Beat A copy = locked pain line only. Beat E = “Start a brief.” + CTA `/contact`.
-
-## Architecture summary
-- **Home:** six chaptered pins; longer runway; stage always present; transform/opacity only; matchMedia skip when `prefers-reduced-motion` or height &lt; 520px.
-- **Stories:** one chapter pin per route; persistent stage + five scrubbing copy beats; default CSS = readable static stack; `.story-film--motion` opts into absolute scrub layers. No Lenis / no `normalizeScroll`.
+- SHA: pending
+- Preview: n/a (docs only)
+- Cite: `ops/pm/V3-0-REJECT.md` (Apple / UX / Vision reject of live draft)
 
 ## Files changed
-- `components/HomeScenes.tsx`
-- `components/StoryScenes.tsx`
-- `app/globals.css` (film/chapter typography + story chapter layout only)
+- `docs/copy-locks.md` (extended SAY / DO NOT SAY / mechanism / refuse / name meaning / CumuLabs ban)
+- `docs/ia-v3.md` (NEW — routes, nine home modules, product uniqueness, Vision checklist map, canvas tokens)
+- `docs/scroll-score-v3.md` (NEW — per-module grammar + pin/end/375/RM annotations; four non-interchangeable product scores)
 - `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/BACKLOG.md`
 
-## Acceptance
-- [x] Locked copy exact (re-read copy-locks + scroll-score)
-- [x] Skills invoked before edits (parent)
-- [x] Story: single pin + five scrub beats; stage morphs; transform/opacity only
-- [x] Home: six pins, longer runway, no blank slides; S2/S5 fixed
-- [x] Story beat A: no productName kicker
-- [x] prefers-reduced-motion / short viewport: no pin; static stack
-- [x] `pnpm build` PASS
-- [x] Commit: `fix(site): apple chapter pin and scrub feel`
+## App code
+- No `app/` or `components/` changes
 
-## DEV
-PASS
+## Hard aligns locked in docs
+1. Vision: each product ability×3 + unique gate + unique record + unique refusal (Concierge / Ledger / Morning / Exception per REJECT)
+2. UX: every home module annotates pin allowed?, end ceiling, 375 stack, reduced-motion full-facts; default shallow scroll
+3. Apple: ban six isomorphic pins; canvas `#ffffff` / gutter `#f5f5f7`
 
-## Stop
-R4 REWORK complete on disk — awaiting commit/push + dual PASS.
+## Acceptance self-check
+- [x] Three PM reject doc present and cited
+- [x] Three English files as specified
+- [x] Vision payload checklist mapped to routes/modules
+- [x] Four products non-interchangeable copy plans
+- [x] No app code changed
+- [x] Commit: `docs(site): lock v3 ia copy and scroll score`
+
+## Skills used
+- apple-design-web
+- writing-guidelines
+- cinematic-scroll-storytelling
+- emil-design-eng
+
+## Risks
+- `docs/scroll-score.md` kept as historical; implementers must use `scroll-score-v3.md`
+- Vision PASS was on workspace draft; board still needs Leader + Apple + UX PASS before V3-1
+
+## Blockers: none
+- DEV: PASS
+- Do not start V3-1 until Leader + PM board PASS

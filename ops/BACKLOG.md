@@ -10,3 +10,4 @@
 - [ ] V3-7 approach + contact
 - [ ] V3-8 motion + a11y
 - [ ] Then next review loop (more information + variety; never clone prior section)
+- [ ] V3-0 board PASS (Leader + Apple + UX + Vision) — then V3-1

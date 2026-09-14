@@ -7,3 +7,9 @@
 - Live: https://remex-atelier.vercel.app (fail draft until V3 ships)
 - Board: Remex Apple PM / UX PM / Vision PM + Remex Dev
 - Rule: three PM written reviews before Dev build; dual PASS then next slice; no idle
+
+## V3-0 — Docs lock
+
+- State: DEV PASS (awaiting Leader + PM board)
+- Scope: docs/copy-locks.md, docs/ia-v3.md, docs/scroll-score-v3.md
+- Stop: no V3-1 until board PASS
