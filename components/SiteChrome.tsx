@@ -28,22 +28,12 @@ const FOOTER_SECONDARY = [
   { href: "/about", label: "About" },
 ] as const;
 
-/** Home film chapter map — V5-3 services-first module ids. */
-const CHAPTERS = [
-  { href: "/#home-services", label: "Services" },
-  { href: "/#home-method", label: "Method" },
-  { href: "/#home-examples", label: "Examples" },
-  { href: "/#home-brief", label: "Brief" },
-  { href: "/#home-roadmap", label: "Roadmap" },
-] as const;
-
 export function SiteChrome({
   children,
   variant = "default",
   footerLine,
 }: SiteChromeProps) {
   const pathname = usePathname();
-  const showHomeChapters = pathname === "/";
   const isFilm = variant === "film";
 
   return (
@@ -51,10 +41,7 @@ export function SiteChrome({
       className={[
         "site-shell",
         isFilm ? "site-shell--film" : "site-shell--default",
-        showHomeChapters ? "site-shell--home-chapters" : "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      ].join(" ")}
     >
       <header className="site-nav">
         <div className="site-nav__inner">
@@ -76,22 +63,8 @@ export function SiteChrome({
                 </Link>
               ))}
             </nav>
-            {showHomeChapters ? (
-              <nav aria-label="Home chapters" className="site-nav__chapters-wrap">
-                <ul className="site-nav__chapters">
-                  {CHAPTERS.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href}>{item.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            ) : null}
           </div>
-          <SiteNavMenu
-            primary={NAV}
-            chapters={showHomeChapters ? CHAPTERS : undefined}
-          />
+          <SiteNavMenu primary={NAV} />
         </div>
       </header>
 

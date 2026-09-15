@@ -17,14 +17,13 @@ export function isPrimaryCurrent(pathname: string, href: string) {
 
 type SiteNavMenuProps = {
   primary: readonly SiteNavItem[];
-  chapters?: readonly SiteNavItem[];
 };
 
 /**
  * Narrow primary nav — disclosure panel, no body overflow lock, no Lenis.
  * Desktop (≥900px) hides this control; inline links stay in SiteChrome.
  */
-export function SiteNavMenu({ primary, chapters }: SiteNavMenuProps) {
+export function SiteNavMenu({ primary }: SiteNavMenuProps) {
   const pathname = usePathname();
   const reactId = useId();
   const panelId = `site-nav-panel-${reactId.replace(/:/g, "")}`;
@@ -135,28 +134,6 @@ export function SiteNavMenu({ primary, chapters }: SiteNavMenuProps) {
             ))}
           </ul>
         </nav>
-        {chapters && chapters.length > 0 ? (
-          <nav
-            aria-label="On this page"
-            className="site-nav__panel-chapters"
-          >
-            <p className="site-nav__panel-label" id={`${panelId}-chapters`}>
-              On this page
-            </p>
-            <ul
-              className="site-nav__panel-list"
-              aria-labelledby={`${panelId}-chapters`}
-            >
-              {chapters.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} onClick={() => setOpen(false)}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        ) : null}
       </div>
     </div>
   );
