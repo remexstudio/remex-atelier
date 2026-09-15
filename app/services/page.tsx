@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+    <SiteChrome variant="film">
       <main id="main" className="svc-page">
         <header className="svc-hero">
           <div className="svc-band svc-band--narrow">

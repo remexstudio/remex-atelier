@@ -2,7 +2,7 @@
 
 **Agents, built to the brief.**
 
-A Seattle studio. Legal entity: Jiyuyun Studio LLC.
+Legal entity: Jiyuyun Studio LLC.
 
 Repository: [remexstudio/remex-atelier](https://github.com/remexstudio/remex-atelier).
 
@@ -82,5 +82,4 @@ GitHub `main` is the source of truth. Confirm the production alias points at the
 
 ## Legal
 
-- Geography: A Seattle studio.
 - Entity: Jiyuyun Studio LLC.

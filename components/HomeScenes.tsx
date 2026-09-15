@@ -414,9 +414,6 @@ export function HomeScenes() {
             <h2 id="home-close-h" className="home-headline" data-reveal>
               Start a brief.
             </h2>
-            <p className="home-support" data-reveal>
-              Seattle studio. Global clients.
-            </p>
             <p className="home-cta-wrap" data-reveal>
               <Link href="/contact" className="home-cta">
                 Start a brief.

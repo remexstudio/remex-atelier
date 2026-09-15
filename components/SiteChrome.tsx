@@ -8,7 +8,7 @@ type SiteChromeProps = {
   children: React.ReactNode;
   /** Full-bleed marketing film shell for `/` and product stories. */
   variant?: "default" | "film";
-  /** Optional footer line (e.g. story pages). Defaults to studio mark. */
+  /** Optional footer line (e.g. study disclaimer). Omit when empty — no location slogan. */
   footerLine?: string;
 };
 
@@ -40,7 +40,7 @@ const CHAPTERS = [
 export function SiteChrome({
   children,
   variant = "default",
-  footerLine = "Seattle studio. Global clients.",
+  footerLine,
 }: SiteChromeProps) {
   const pathname = usePathname();
   const showHomeChapters = pathname === "/";
@@ -107,7 +107,7 @@ export function SiteChrome({
         }
       >
         <div className="site-footer__row">
-          <p className="type-meta">{footerLine}</p>
+          {footerLine ? <p className="type-meta">{footerLine}</p> : null}
           <nav aria-label="Secondary" className="site-footer__links">
             {FOOTER_SECONDARY.map((item) => (
               <Link

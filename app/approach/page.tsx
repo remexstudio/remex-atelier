@@ -87,7 +87,7 @@ const NAME_MEANING = [
 
 export default function ApproachPage() {
   return (
-    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+    <SiteChrome variant="film">
       <main id="main" className="approach-page">
         <header className="approach-hero">
           <p className="approach-kicker">Approach</p>
@@ -98,7 +98,6 @@ export default function ApproachPage() {
             Remex Studio designs custom AI agents as products. One workflow.
             One agent. A human still decides.
           </p>
-          <p className="approach-place">Seattle studio. Global clients.</p>
         </header>
 
         <section
@@ -183,10 +182,6 @@ export default function ApproachPage() {
             <div className="approach-studio__fact">
               <dt>Legal</dt>
               <dd>Jiyuyun Studio LLC</dd>
-            </div>
-            <div className="approach-studio__fact">
-              <dt>Place</dt>
-              <dd>Seattle studio. Global clients.</dd>
             </div>
           </dl>
         </section>
