@@ -1,7 +1,26 @@
-# Review V6-3 — CLOSED PASS
+# Review V6-4 — CLOSED PASS
 
-- Content: `b046352` / tip `a327326`
-- Prod: https://remex-atelier.vercel.app · dpl_HovGGdwsfqMTbhWAeFpSeyD9xDvx
+- TASK ID: V6-4
+- Content SHA: `46c0b2a`
+- Tip: `3863258`
+- Prod: https://remex-atelier.vercel.app · `dpl_97xWn96FxQSqs9bkRJSgLejAoeHT`
+- Verdicts: Apple **PASS** · UX **PASS** · Vision **PASS** · Leader **PASS**
 - Verdict: **PASS** (unanimous)
 
-Soft: residual `42rem` as reading measure (not stage island) OK unless 1440 still feels narrow
+## KEEP
+
+- `/work` + home: short teasers + verbatim `Read the full example →`
+- Four `/work/[desk]/story`: layered essay + ask → recommend → gate → record stills
+- Desk landings: `permanentRedirect` 308 → story
+- Closer / study / `Start a brief.` locked (`EXAMPLE_CLOSER`)
+- DNA distinct per desk
+- No essay-on-card
+- No pin / Lenis
+
+## Soft (non-blocking)
+
+UX — still kickers are desk dialect; optional later label Ask → Recommend → Gate → Record.
+
+## Outcome
+
+V6-4 **CLOSED**. V6-5 issued.
