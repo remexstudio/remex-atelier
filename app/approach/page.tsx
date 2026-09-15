@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
 import { REFUSE } from "@/lib/refuse";
+import { TRUST_STANCE } from "@/lib/services-catalog";
 
 export const metadata: Metadata = {
   title: "Approach",
@@ -66,9 +67,9 @@ const ROADMAP = [
   },
   {
     label: "Next",
-    base: "Deepen records and chapter wayfinding across the four jobs.",
+    base: "Repeated modules become internal tools / small products.",
     detail:
-      "Tighten audit trails, still DNA, and chapter jumps across Atelier Concierge, Ledger Clerk, Morning Remex, and Exception Copilot so each gate and record stays scannable.",
+      "Direction only. Tighten the first seat's evals, gates, and records before a second seat opens.",
   },
   {
     label: "Later",
@@ -94,8 +95,8 @@ export default function ApproachPage() {
             Design the job. Build the gate. Keep the record.
           </h1>
           <p className="approach-lede">
-            Remex Studio designs custom AI agents as products. One painful
-            workflow. One agent. A human gate.
+            Remex Studio designs custom AI agents as products. One workflow.
+            One agent. A human still decides.
           </p>
           <p className="approach-place">Seattle studio. Global clients.</p>
         </header>
@@ -222,6 +223,16 @@ export default function ApproachPage() {
               </li>
             ))}
           </ol>
+        </section>
+
+        <section
+          className="approach-section approach-trust"
+          aria-labelledby="approach-trust-h"
+        >
+          <h2 id="approach-trust-h" className="approach-section__title">
+            Trust
+          </h2>
+          <p className="approach-trust__p">{TRUST_STANCE}</p>
         </section>
 
         <section

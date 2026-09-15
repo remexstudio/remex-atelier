@@ -81,58 +81,40 @@ function ExampleStill({
 }) {
   if (still === "still-a") {
     return (
-      <div
-        className="home-ex__still still-dna still-dna--cq still-dna--facts"
-        aria-hidden="true"
-      >
-        <p className="still-dna__fact">Before pay</p>
-        <p className="still-dna__sub">skin → hero → try-on → bag</p>
+      <div className="home-ex__still media-stage media-stage--cq" aria-hidden="true">
+        <p className="media-stage__kicker">Gate</p>
+        <p className="media-stage__fact">Human before pay</p>
+        <p className="media-stage__sub">skin → hero → try-on → bag</p>
       </div>
     );
   }
 
   if (still === "still-b") {
     return (
-      <div
-        className="home-ex__still still-dna still-dna--lc still-dna--facts"
-        aria-hidden="true"
-      >
-        <p className="still-dna__fact">Propose ≠ Execute</p>
-        <p className="still-dna__sub">cite stays with the ask</p>
-        <span className="lc-controller__cite">§12.4 · Close pack</span>
+      <div className="home-ex__still media-stage media-stage--lc" aria-hidden="true">
+        <p className="media-stage__kicker">Gate</p>
+        <p className="media-stage__fact">Propose ≠ Execute</p>
+        <p className="media-stage__sub">cite stays with the ask</p>
+        <p className="media-stage__cite">§12.4 · Close pack</p>
       </div>
     );
   }
 
   if (still === "still-c") {
     return (
-      <div
-        className="home-ex__still still-dna still-dna--mr still-dna--facts"
-        aria-hidden="true"
-      >
-        <p className="still-dna__fact">P · W · N</p>
-        <div className="mr-triage" aria-hidden="true">
-          <span className="mr-triage__lane mr-triage__lane--pri">P</span>
-          <span className="mr-triage__lane mr-triage__lane--watch">W</span>
-          <span className="mr-triage__lane mr-triage__lane--noise">N</span>
-        </div>
-        <p className="still-dna__sub">Priority · Watch · Noise</p>
+      <div className="home-ex__still media-stage media-stage--mr" aria-hidden="true">
+        <p className="media-stage__kicker">Triage</p>
+        <p className="media-stage__fact">Priority · Watch · Noise</p>
+        <p className="media-stage__sub">Human before send</p>
       </div>
     );
   }
 
   return (
-    <div
-      className="home-ex__still still-dna still-dna--ec still-dna--facts"
-      aria-hidden="true"
-    >
-      <p className="still-dna__fact">queue · policy</p>
-      <div className="ec-desk">
-        <span className="ec-desk__chip ec-desk__chip--u1">U1</span>
-        <span className="ec-desk__chip ec-desk__chip--u2">U2</span>
-        <span className="ec-desk__chip ec-desk__chip--u3">U3</span>
-        <span className="ec-desk__chip ec-desk__chip--policy">Policy</span>
-      </div>
+    <div className="home-ex__still media-stage media-stage--ec" aria-hidden="true">
+      <p className="media-stage__kicker">Queue</p>
+      <p className="media-stage__fact">Human before money</p>
+      <p className="media-stage__sub">queue · policy · case note</p>
     </div>
   );
 }

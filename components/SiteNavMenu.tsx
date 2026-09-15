@@ -51,6 +51,14 @@ export function SiteNavMenu({ primary, chapters }: SiteNavMenuProps) {
     const root = rootRef.current;
     if (!root) return;
 
+    const focusFirstPanelLink = () => {
+      const firstLink = root.querySelector<HTMLAnchorElement>(
+        ".site-nav__panel a[href]",
+      );
+      firstLink?.focus({ preventScroll: true });
+    };
+    const frame = window.requestAnimationFrame(focusFirstPanelLink);
+
     const focusables = () =>
       Array.from(
         root.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"),
@@ -86,6 +94,7 @@ export function SiteNavMenu({ primary, chapters }: SiteNavMenuProps) {
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("pointerdown", onPointerDown);
     return () => {
+      window.cancelAnimationFrame(frame);
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("pointerdown", onPointerDown);
     };

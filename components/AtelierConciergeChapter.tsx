@@ -149,11 +149,27 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="cq-scatter-field cq-scatter-field--ex">
-                  <div className="cq-note cq-note--a">Skin</div>
-                  <div className="cq-note cq-note--b">Occasion</div>
-                  <div className="cq-note cq-note--c">Fit</div>
-                  <div className="cq-note cq-note--d">Hold</div>
+                <div className="media-stage media-stage--cq">
+                  <p className="media-stage__kicker">Desk notes</p>
+                  <p className="media-stage__fact">Skin, occasion, fit</p>
+                  <ol className="media-stage__lanes">
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">01</span>
+                      <span>Skin</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">02</span>
+                      <span>Occasion</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">03</span>
+                      <span>Fit</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">04</span>
+                      <span>Hold</span>
+                    </li>
+                  </ol>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -164,9 +180,10 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="cq-sku">
-                  <p className="still-fact">Hero</p>
-                  <p className="still-fact still-fact--muted">One SKU</p>
+                <div className="media-stage media-stage--cq">
+                  <p className="media-stage__kicker">Occasion</p>
+                  <p className="media-stage__fact">One hero</p>
+                  <p className="media-stage__sub">Map the note. Do not invent SKUs.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -177,11 +194,11 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="cq-tryon">
-                  <span className="cq-tryon__figure" />
-                  <span className="cq-tryon__frame" />
+                <div className="media-stage media-stage--cq">
+                  <p className="media-stage__kicker">Stage</p>
+                  <p className="media-stage__fact">Try-on still</p>
+                  <p className="media-stage__sub">A frame the stylist can refuse.</p>
                 </div>
-                <p className="still-fact">Try-on</p>
               </div>
               <figcaption className="ex-still__caption">
                 {DEMAND.stills[2].caption}
@@ -191,24 +208,10 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="cq-pay">
-                  <div className="cq-pay__bag">
-                    <p className="still-fact still-fact--kicker">
-                      Bag · before pay
-                    </p>
-                    <p className="still-fact still-fact--muted">Stylist gate</p>
-                  </div>
-                  <div className="cq-pay__gate">
-                    <span className="cq-pay__chip">Propose</span>
-                    <span className="cq-pay__arrow" />
-                    <span className="cq-pay__chip cq-pay__chip--approve">
-                      Stylist
-                    </span>
-                    <span className="cq-pay__arrow" />
-                    <span className="cq-pay__chip cq-pay__chip--hold">
-                      Pay held
-                    </span>
-                  </div>
+                <div className="media-stage media-stage--cq">
+                  <p className="media-stage__kicker">Bag · before pay</p>
+                  <p className="media-stage__fact">Stylist gate</p>
+                  <p className="media-stage__sub">Propose. Approve. Pay held.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -219,18 +222,11 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="cq-ticket cq-ticket--ribbon">
-                  <p className="still-fact still-fact--kicker">Consult thread</p>
-                  <p className="cq-ticket__id">LUM-1042</p>
-                  <div className="cq-ticket__thread">
-                    <span className="still-fact">Skin</span>
-                  </div>
-                  <div className="cq-ticket__thread">
-                    <span className="still-fact still-fact--muted">Fit note</span>
-                  </div>
-                  <div className="cq-ticket__thread">
-                    <span className="still-fact">Held</span>
-                  </div>
+                <div className="media-stage media-stage--cq">
+                  <p className="media-stage__kicker">Record</p>
+                  <p className="media-stage__fact">Consult + ticket</p>
+                  <p className="media-stage__cite">LUM-1042</p>
+                  <p className="media-stage__sub">Skin · fit note · held</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">

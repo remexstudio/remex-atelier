@@ -149,19 +149,10 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="mr-mail-stack">
-                  <div className="mr-thread mr-thread--a">
-                    <span className="still-fact">Overnight</span>
-                  </div>
-                  <div className="mr-thread mr-thread--b">
-                    <span className="still-fact still-fact--muted">No brief</span>
-                  </div>
-                  <div className="mr-thread mr-thread--c">
-                    <span className="still-fact still-fact--muted">Unread</span>
-                  </div>
-                  <div className="mr-thread mr-thread--d">
-                    <span className="still-fact still-fact--muted">Noise</span>
-                  </div>
+                <div className="media-stage media-stage--mr">
+                  <p className="media-stage__kicker">Overnight</p>
+                  <p className="media-stage__fact">No single brief</p>
+                  <p className="media-stage__sub">Unread threads arrive without a packet.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -172,25 +163,23 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="mr-cta-rail__lanes">
-                  <div className="mr-cta-rail__lane mr-cta-rail__lane--pri">
-                    <span className="mr-triage__lane mr-triage__lane--pri">
-                      P
-                    </span>
-                    <p className="mr-pwn__name">Priority</p>
-                  </div>
-                  <div className="mr-cta-rail__lane mr-cta-rail__lane--watch">
-                    <span className="mr-triage__lane mr-triage__lane--watch">
-                      W
-                    </span>
-                    <p className="mr-pwn__name">Watch</p>
-                  </div>
-                  <div className="mr-cta-rail__lane mr-cta-rail__lane--noise">
-                    <span className="mr-triage__lane mr-triage__lane--noise">
-                      N
-                    </span>
-                    <p className="mr-pwn__name">Noise</p>
-                  </div>
+                <div className="media-stage media-stage--mr">
+                  <p className="media-stage__kicker">Triage</p>
+                  <p className="media-stage__fact">Priority · Watch · Noise</p>
+                  <ol className="media-stage__lanes">
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">P</span>
+                      <span>Priority</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">W</span>
+                      <span>Watch</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">N</span>
+                      <span>Noise</span>
+                    </li>
+                  </ol>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -201,19 +190,10 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="mr-dual">
-                  <div className="mr-dual__col mr-dual__col--a">
-                    <span className="mr-operator__tag">Tone A</span>
-                    <span className="mr-tones__card mr-tones__card--a">
-                      Tone A
-                    </span>
-                  </div>
-                  <div className="mr-dual__col mr-dual__col--b">
-                    <span className="mr-operator__tag">Tone B</span>
-                    <span className="mr-tones__card mr-tones__card--b">
-                      Tone B
-                    </span>
-                  </div>
+                <div className="media-stage media-stage--mr">
+                  <p className="media-stage__kicker">Draft</p>
+                  <p className="media-stage__fact">Two tones</p>
+                  <p className="media-stage__sub">Tone A and Tone B. Neither sends.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -224,13 +204,10 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="mr-escalate">
-                  <span className="mr-escalate__flag">Escalate</span>
-                  <p className="still-fact">Human before send</p>
-                </div>
-                <div className="mr-hold">
-                  <span className="mr-hold__lock" />
-                  <span className="mr-hold__label">Held</span>
+                <div className="media-stage media-stage--mr">
+                  <p className="media-stage__kicker">Escalate</p>
+                  <p className="media-stage__fact">Human before send</p>
+                  <p className="media-stage__sub">Held until a person posts.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -241,26 +218,10 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="mr-packet mr-packet--linked">
-                  <p className="mr-packet__title">Morning packet</p>
-                  <div className="mr-packet__beads">
-                    <div className="mr-packet__row">
-                      <span className="mr-packet__key">Brief</span>
-                      <span className="still-fact">Overnight</span>
-                    </div>
-                    <div className="mr-packet__row">
-                      <span className="mr-packet__key">Draft</span>
-                      <span className="still-fact">Two tones</span>
-                    </div>
-                    <div className="mr-packet__row">
-                      <span className="mr-packet__key mr-packet__key--ink">
-                        Escalate
-                      </span>
-                      <span className="still-fact still-fact--ink">
-                        Human before send
-                      </span>
-                    </div>
-                  </div>
+                <div className="media-stage media-stage--mr">
+                  <p className="media-stage__kicker">Record</p>
+                  <p className="media-stage__fact">Brief + draft + escalate</p>
+                  <p className="media-stage__sub">Overnight. Two tones. Human before send.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">

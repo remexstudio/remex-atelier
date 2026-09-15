@@ -1,5 +1,6 @@
 # Status
 
-- Phase: **V5 commercial rebuild** — V5-4 PASS; **V5-5 final polish in progress**
-- V5-4: `43fb415`+`02f6de9` / tip `a41037b`
+- Phase: **V5 commercial rebuild** — V5-5 delivered (DEV PASS); await PM + Leader
+- V5-5: Apple / motion polish — still media stages + film chrome
 - Preview: https://remex-atelier.vercel.app
+- Blockers: Await three PM + Leader. Do not invent V5-6.
