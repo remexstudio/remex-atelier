@@ -1,7 +1,5 @@
-# Overnight craft closed
+# V5 iteration
 
-Live: https://remex-atelier.vercel.app
-Last content: `f5cc649` + `4d130de`. Ops tip at board close: `334e0eb`.
-
-Vision / Apple / UX unanimous: no further hard craft knives. Soft items stay in backlog until owner asks.
-Hard bans remain in force for any future ticket.
+Owner: buyer showcase + serious studio surface. Not four-SKU shop. Not personal site.
+Services catalog first; examples prove method; Now/Next/Later as direction only.
+After each PASS, Leader issues next slice immediately.

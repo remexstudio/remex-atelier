@@ -1,7 +1,9 @@
-# Backlog (Atelier V3)
+# Backlog (Atelier V5)
 
-- [x] V3-0…V3-20 overnight craft loop
-- [x] Board close — Vision / Apple / UX unanimous (no hard V3-21)
-- [ ] Soft (unissued): docs/design.md film wording; kill unused default paper shell CSS
-- [ ] Soft (unissued): Morning CTA rail stack on narrow widths if true-device squeeze
-- [ ] Soft (unissued): mid-chapter near full-bleed DNA stage
+- [ ] V5-0 docs/ia-v5.md + docs/copy-locks.md
+- [ ] V5-1 /services full catalog + FAQ + engagement
+- [ ] V5-2 four long example cases + /work Selected examples
+- [ ] V5-3 home: services → examples → roadmap
+- [ ] V5-4 375 + reduced-motion on primary routes
+- [ ] V5-5 Apple/motion: kill chip-as-page, stills, type/nav
+- Soft V3 leftovers (optional): docs/design.md film wording; default paper CSS kill; Morning CTA narrow stack
