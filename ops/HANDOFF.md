@@ -1,8 +1,8 @@
 # Handoff V6-0
 
 - Status: delivered — DEV PASS
-- Content SHA: 5777055
-- Merge tip: 5777055 on main
+- Content SHA: c52d11e
+- Merge tip: b6a13fd on main
 - Files: docs/ia-v6.md, docs/copy-locks.md, ops
 - Acceptance:
   - [x] docs/ia-v6.md covers nav, teaser/story, geo kill, desktop, home, roadmap, slices V6-0…V6-6, bans
