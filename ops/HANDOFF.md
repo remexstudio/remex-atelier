@@ -1,37 +1,16 @@
 # Handoff V6-4
 
 - Status: delivered — DEV PASS
-- TASK: V6-4 — short `/work` teasers + `/work/[desk]/story` long + stills
-- Base: `6fe2d5a` on main
-- Commit: `feat(work): split teasers from story pages with still sequences`
-- Preview / Production: https://remex-atelier.vercel.app (coordinator deploys)
-- Files:
-  - `lib/selected-examples.ts`
-  - `app/work/page.tsx`
-  - `app/work/*/page.tsx` (permanentRedirect)
-  - `app/work/*/story/page.tsx` (create)
-  - `components/AtelierConciergeChapter.tsx`
-  - `components/LedgerClerkChapter.tsx`
-  - `components/MorningRemexChapter.tsx`
-  - `components/ExceptionCopilotChapter.tsx`
-  - `components/HomeScenes.tsx` (example teasers only)
-  - `app/globals.css` (teaser / story typography)
-  - `ops/HANDOFF.md`, `ops/STATUS.md`
-- Extra helper: none. Desk landings use `permanentRedirect` from `next/navigation` (ALLOWED). Did not touch `next.config.ts`; legacy aliases (`/work/lumen-atelier` etc.) still 301 to `/work/[desk]`, then 308 to `/story`.
-- Notes:
-  - `/work` is teaser index only: `Selected examples`, desk display name, short `description` (1–2 sentences), optional media-stage still, verbatim `Read the full example →` → `/work/[desk]/story`. Other-seats band kept (method fits, not SKUs). No essay on the card. No Open demo.
-  - Four story routes move the existing Chapter + SiteChrome + STUDY_FOOTER payload. Essay uses existing narrative with structural subheads. Stills stay DNA-distinct media-stage frames, captioned Ask → One recommendation → Gate → Record (five frames). Closer `This is one seat. The next brief will be a different job.` Study footer + `Start a brief.` → `/contact`.
-  - Home `#home-examples` uses the same short teaser + verbatim entry; hrefs now `/work/.../story`. Did not reorder first viewport (V6-5).
-  - `READ_FULL_EXAMPLE` added. `EXAMPLES[].href` points at `/story`. Narrative / stills / EXAMPLE_CLOSER / STUDY_FOOTER / START_A_BRIEF kept. No invented customers or metrics. Desk display names unchanged.
-  - Did not vercel deploy (cloud). Dev will deploy Vercel after Leader PASS. Did not open V6-5.
+- Content SHA: 46c0b2a (impl); tip before stamp aadb068 / merge 3611e26
+- Merge tip: 3611e26 on main (HANDOFF stamp follows)
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: dpl_97xWn96FxQSqs9bkRJSgLejAoeHT READY
 - Acceptance:
-  - [x] `/work` is short teasers + `Read the full example →` only
-  - [x] Four `/work/[desk]/story` pages: layered essay + ask→recommend→gate→record stills + locked closer
-  - [x] Old `/work/[desk]` does not keep a duplicate full essay (`permanentRedirect` → `/story`)
-  - [x] No essay-on-teaser-card; DNA distinct; film stills
-  - [x] Home examples use short + `Read the full example →`
-  - [x] `pnpm build` PASS (story routes prerendered; desk landings are redirect pages)
-  - [x] Local smoke: `/work` 200 teasers; four `/work/[desk]` → 308 `/story`; four `/story` 200; home + work each print four `Read the full example →`; no long narrative on `/work` HTML
-  - [ ] `vercel deploy --prod` — coordinator; Dev did not deploy
+  - [x] `/work` short teasers + verbatim `Read the full example →`
+  - [x] Four `/work/[desk]/story`: essay + ask→recommend→gate→record stills + locked closer
+  - [x] `/work/[desk]` permanentRedirect 308 → story
+  - [x] Home examples short + same entry; no essay-on-card
+  - [x] pnpm build PASS; prod smoke desk 308 / story 200
+  - [x] vercel deploy --prod dpl_97xWn96FxQSqs9bkRJSgLejAoeHT
 - Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
-- Blockers: Await Leader REVIEW. Do not invent V6-5.
+- Blockers: Await three PM + Leader. No V6-5 until PASS.
