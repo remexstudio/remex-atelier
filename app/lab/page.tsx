@@ -25,7 +25,7 @@ const PULSE_STEPS = ["See", "Notify", "Log", "Follow"] as const;
 
 export default function LabPage() {
   return (
-    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+    <SiteChrome variant="film">
       <main id="main" className="film-page lab-page">
         <aside className="film-panel lab-banner" aria-label="Prototype notice">
           <p className="film-kicker">Lab</p>

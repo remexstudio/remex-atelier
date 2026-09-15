@@ -5,11 +5,11 @@ import { SiteChrome } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Remex Studio: a Seattle atelier for agents built to the brief. Jiyuyun Studio LLC.",
+    "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
   openGraph: {
     title: "About · Remex Studio",
     description:
-      "Remex Studio: a Seattle atelier for agents built to the brief. Jiyuyun Studio LLC.",
+      "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
     url: "/about",
     type: "website",
   },
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     card: "summary",
     title: "About · Remex Studio",
     description:
-      "Remex Studio: a Seattle atelier for agents built to the brief. Jiyuyun Studio LLC.",
+      "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
   },
 };
 
 export default function AboutPage() {
   return (
-    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+    <SiteChrome variant="film">
       <main id="main" className="film-page about-page">
         <header className="film-panel">
           <p className="film-kicker">About</p>
@@ -32,7 +32,6 @@ export default function AboutPage() {
           <p className="film-lede about-say">
             One painful workflow. One agent. A human gate.
           </p>
-          <p className="film-place">Seattle studio. Global clients.</p>
         </header>
 
         <section className="film-panel" aria-labelledby="about-legal-h">
@@ -47,10 +46,6 @@ export default function AboutPage() {
             <div className="about-fact">
               <dt>Legal</dt>
               <dd>Jiyuyun Studio LLC</dd>
-            </div>
-            <div className="about-fact">
-              <dt>Geography</dt>
-              <dd>Seattle studio. Global clients.</dd>
             </div>
             <div className="about-fact">
               <dt>Wordmark</dt>

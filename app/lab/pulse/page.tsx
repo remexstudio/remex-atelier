@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function PulsePage() {
   return (
-    <SiteChrome variant="film" footerLine="Seattle studio. Global clients.">
+    <SiteChrome variant="film">
       <main id="main" className="film-page lab-page lab-page--pulse">
         <aside className="film-panel lab-banner" aria-label="Prototype notice">
           <p className="film-kicker">Lab · Pulse</p>

@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     default: "Remex Studio",
     template: "%s · Remex Studio",
   },
-  description: "Agents, built to the brief. A Seattle studio.",
+  description: "Agents, built to the brief.",
   openGraph: {
     title: "Remex Studio",
-    description: "Agents, built to the brief. A Seattle studio.",
+    description: "Agents, built to the brief.",
     url: "/",
     siteName: "Remex Studio",
     locale: "en_US",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Remex Studio",
-    description: "Agents, built to the brief. A Seattle studio.",
+    description: "Agents, built to the brief.",
   },
 };
 
