@@ -8,6 +8,7 @@ import {
   OTHER_SEATS,
   OTHER_SEATS_HEADING,
   OTHER_SEATS_NOTE,
+  READ_FULL_EXAMPLE,
 } from "@/lib/selected-examples";
 
 export const metadata: Metadata = {
@@ -106,13 +107,16 @@ export default function WorkPage() {
         <ul className="work-index__grid">
           {EXAMPLES.map((example) => (
             <li key={example.href}>
-              <Link href={example.href} className="work-story-card">
+              <article className="work-story-card">
                 <WorkStill still={example.still} />
-                <span className="work-story-card__body">
-                  <span className="work-story-card__name">{example.display}</span>
-                  <span className="work-story-card__line">{example.gateFact}</span>
-                </span>
-              </Link>
+                <div className="work-story-card__body">
+                  <h2 className="work-story-card__name">{example.display}</h2>
+                  <p className="work-story-card__line">{example.description}</p>
+                  <Link href={example.href} className="work-story-card__read">
+                    {READ_FULL_EXAMPLE}
+                  </Link>
+                </div>
+              </article>
             </li>
           ))}
         </ul>

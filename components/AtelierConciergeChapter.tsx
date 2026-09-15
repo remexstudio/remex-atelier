@@ -10,6 +10,7 @@ import {
   EXAMPLE_CLOSER,
   INDEX_LABEL,
   START_A_BRIEF,
+  STILL_BEAT_LABEL,
   STUDY_FOOTER,
 } from "@/lib/selected-examples";
 
@@ -129,10 +130,13 @@ export function AtelierConciergeChapter() {
         className="ex-narrative"
         aria-label="Case"
       >
-        {DEMAND.narrative.map((paragraph) => (
-          <p key={paragraph.slice(0, 48)} data-ex-reveal>
-            {paragraph}
-          </p>
+        {DEMAND.narrative.map((paragraph, i) => (
+          <div key={paragraph.slice(0, 48)} className="ex-narrative__block" data-ex-reveal>
+            {DEMAND.headings[i] ? (
+              <h2 className="ex-narrative__h">{DEMAND.headings[i]}</h2>
+            ) : null}
+            <p>{paragraph}</p>
+          </div>
         ))}
       </article>
 
@@ -173,6 +177,9 @@ export function AtelierConciergeChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[DEMAND.stills[0].beat]}
+                </span>
                 {DEMAND.stills[0].caption}
               </figcaption>
             </figure>
@@ -187,6 +194,9 @@ export function AtelierConciergeChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[DEMAND.stills[1].beat]}
+                </span>
                 {DEMAND.stills[1].caption}
               </figcaption>
             </figure>
@@ -201,6 +211,9 @@ export function AtelierConciergeChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[DEMAND.stills[2].beat]}
+                </span>
                 {DEMAND.stills[2].caption}
               </figcaption>
             </figure>
@@ -215,6 +228,9 @@ export function AtelierConciergeChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[DEMAND.stills[3].beat]}
+                </span>
                 {DEMAND.stills[3].caption}
               </figcaption>
             </figure>
@@ -230,6 +246,9 @@ export function AtelierConciergeChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[DEMAND.stills[4].beat]}
+                </span>
                 {DEMAND.stills[4].caption}
               </figcaption>
             </figure>

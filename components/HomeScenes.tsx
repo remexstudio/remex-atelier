@@ -10,6 +10,7 @@ import {
   EXAMPLES,
   INDEX_LABEL,
   INDEX_LEDE,
+  READ_FULL_EXAMPLE,
 } from "@/lib/selected-examples";
 import { CATALOG_LINES } from "@/lib/services-catalog";
 
@@ -338,13 +339,16 @@ export function HomeScenes() {
           <ul className="home-ex">
             {EXAMPLES.map((example) => (
               <li key={example.slug} className="home-ex__row" data-ex-row>
-                <Link href={example.href} className="home-ex__link">
+                <article className="home-ex__link">
                   <ExampleStill still={example.still} />
-                  <span className="home-ex__copy">
-                    <span className="home-ex__name">{example.display}</span>
-                    <span className="home-ex__gate">{example.gateFact}</span>
-                  </span>
-                </Link>
+                  <div className="home-ex__copy">
+                    <h3 className="home-ex__name">{example.display}</h3>
+                    <p className="home-ex__gate">{example.description}</p>
+                    <Link href={example.href} className="home-ex__read">
+                      {READ_FULL_EXAMPLE}
+                    </Link>
+                  </div>
+                </article>
               </li>
             ))}
           </ul>

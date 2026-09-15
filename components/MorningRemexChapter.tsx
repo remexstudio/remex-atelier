@@ -10,6 +10,7 @@ import {
   EXAMPLE_CLOSER,
   INDEX_LABEL,
   START_A_BRIEF,
+  STILL_BEAT_LABEL,
   STUDY_FOOTER,
 } from "@/lib/selected-examples";
 
@@ -129,10 +130,13 @@ export function MorningRemexChapter() {
         className="ex-narrative"
         aria-label="Case"
       >
-        {ATTENTION.narrative.map((paragraph) => (
-          <p key={paragraph.slice(0, 48)} data-ex-reveal>
-            {paragraph}
-          </p>
+        {ATTENTION.narrative.map((paragraph, i) => (
+          <div key={paragraph.slice(0, 48)} className="ex-narrative__block" data-ex-reveal>
+            {ATTENTION.headings[i] ? (
+              <h2 className="ex-narrative__h">{ATTENTION.headings[i]}</h2>
+            ) : null}
+            <p>{paragraph}</p>
+          </div>
         ))}
       </article>
 
@@ -156,6 +160,9 @@ export function MorningRemexChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[ATTENTION.stills[0].beat]}
+                </span>
                 {ATTENTION.stills[0].caption}
               </figcaption>
             </figure>
@@ -183,6 +190,9 @@ export function MorningRemexChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[ATTENTION.stills[1].beat]}
+                </span>
                 {ATTENTION.stills[1].caption}
               </figcaption>
             </figure>
@@ -197,6 +207,9 @@ export function MorningRemexChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[ATTENTION.stills[2].beat]}
+                </span>
                 {ATTENTION.stills[2].caption}
               </figcaption>
             </figure>
@@ -211,6 +224,9 @@ export function MorningRemexChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[ATTENTION.stills[3].beat]}
+                </span>
                 {ATTENTION.stills[3].caption}
               </figcaption>
             </figure>
@@ -225,6 +241,9 @@ export function MorningRemexChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[ATTENTION.stills[4].beat]}
+                </span>
                 {ATTENTION.stills[4].caption}
               </figcaption>
             </figure>
