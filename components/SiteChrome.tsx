@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isPrimaryCurrent, SiteNavMenu } from "@/components/SiteNavMenu";
 
 type SiteChromeProps = {
   children: React.ReactNode;
@@ -57,22 +58,19 @@ export function SiteChrome({
     >
       <header className="site-nav">
         <div className="site-nav__inner">
-          <Link
-            href="/"
-            className="site-nav__mark"
-          >
+          <Link href="/" className="site-nav__mark">
             REMEX STUDIO
           </Link>
           <div className="site-nav__cluster">
-            <nav
-              aria-label="Primary"
-              className="type-meta site-nav__links"
-            >
+            <nav aria-label="Primary" className="type-meta site-nav__links">
               {NAV.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className="text-muted no-underline"
+                  aria-current={
+                    isPrimaryCurrent(pathname, item.href) ? "page" : undefined
+                  }
                 >
                   {item.label}
                 </Link>
@@ -90,6 +88,10 @@ export function SiteChrome({
               </nav>
             ) : null}
           </div>
+          <SiteNavMenu
+            primary={NAV}
+            chapters={showHomeChapters ? CHAPTERS : undefined}
+          />
         </div>
       </header>
 
