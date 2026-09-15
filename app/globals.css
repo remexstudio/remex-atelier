@@ -21,6 +21,10 @@
   --nav-height: 46px;
   --hit-target-min: 44px;
 
+  /* V6-3 shared marketing stage — 1280 / 1440 first-class measure */
+  --stage-max: 68rem;
+  --stage-pad-x: 1.25rem;
+
   /* Display type tokens (V3-2 ready) — large sizes want negative tracking */
   --tracking-display: -0.025em;
   --tracking-display-tight: -0.03em;
@@ -34,6 +38,12 @@
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --duration-press: 160ms;
   --duration-ui: 200ms;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --stage-pad-x: 2rem;
+  }
 }
 
 @theme inline {
@@ -629,21 +639,14 @@ button:active {
 }
 
 .home-mod__inner {
-  width: min(100%, 68rem);
+  width: min(100%, var(--stage-max));
   margin-inline: auto;
-  padding: calc(var(--nav-height) + 1.5rem) 1rem 3rem;
+  padding: calc(var(--nav-height) + 1.5rem) var(--stage-pad-x) 3rem;
   min-width: 0;
-}
-
-@media (min-width: 375px) {
-  .home-mod__inner {
-    padding-inline: 1.25rem;
-  }
 }
 
 @media (min-width: 900px) {
   .home-mod__inner {
-    padding-inline: 2rem;
     padding-block: calc(var(--nav-height) + 2.5rem) 4rem;
   }
 }
@@ -712,7 +715,6 @@ button:active {
   gap: 2.5rem;
   justify-items: center;
   align-items: center;
-  width: min(100%, 48rem);
 }
 
 .hero-still {
@@ -847,8 +849,8 @@ button:active {
 
 @media (min-width: 900px) {
   .home-mod__inner--split {
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 3.5rem;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 3rem;
   }
 }
 
@@ -859,7 +861,8 @@ button:active {
 .home-method__sheet {
   display: grid;
   gap: 0.35rem;
-  max-width: 28rem;
+  width: 100%;
+  max-width: none;
   padding: 1.5rem 1.35rem;
   background: var(--gutter);
   border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
@@ -997,7 +1000,6 @@ button:active {
 .home-mod__inner--specs {
   display: grid;
   gap: 1.5rem;
-  width: min(100%, 44rem);
 }
 
 .home-specs {
@@ -1048,7 +1050,6 @@ button:active {
 .home-mod__inner--timeline {
   display: grid;
   gap: 1.5rem;
-  width: min(100%, 48rem);
 }
 
 .home-timeline {
@@ -1106,7 +1107,6 @@ button:active {
 .home-mod__inner--close {
   display: grid;
   gap: 2.5rem;
-  width: min(100%, 40rem);
   padding-block: calc(var(--nav-height) + 2.5rem) 4rem;
 }
 
@@ -4981,7 +4981,8 @@ button:active {
   border: 0;
   border-bottom: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
   border-radius: 0;
-  padding: 2.5rem max(1.25rem, calc((100% - 42rem) / 2)) 2.75rem;
+  padding: 2.5rem max(var(--stage-pad-x), calc((100% - var(--stage-max)) / 2))
+    2.75rem;
 }
 
 .contact-panel {
@@ -4996,11 +4997,18 @@ button:active {
 @media (min-width: 640px) {
   .approach-hero,
   .approach-section {
-    padding: 2.75rem 0 3rem;
+    padding-block: 2.75rem 3rem;
   }
 
   .contact-panel {
     padding: 2.5rem 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .approach-hero,
+  .approach-section {
+    padding-block: 3.25rem 3.75rem;
   }
 }
 
@@ -5033,20 +5041,12 @@ button:active {
 .approach-lede,
 .contact-lede {
   margin: 1rem 0 0;
-  max-width: 36rem;
+  max-width: 42rem;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.55;
   color: color-mix(in srgb, var(--muted) 55%, var(--ink));
   text-wrap: pretty;
-}
-
-.approach-place {
-  margin: 1.15rem 0 0;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--ink);
 }
 
 .approach-section__title {
@@ -5159,6 +5159,7 @@ button:active {
 
 .approach-name__intro {
   margin: 1rem 0 0;
+  max-width: 42rem;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.02rem;
   line-height: 1.55;
@@ -5214,6 +5215,7 @@ button:active {
 
 .approach-studio__facts {
   margin: 1.25rem 0 0;
+  max-width: 42rem;
   display: grid;
   gap: 0.85rem;
 }
@@ -5299,9 +5301,17 @@ button:active {
 
 @media (min-width: 640px) {
   .approach-roadmap__row {
-    grid-template-columns: 5rem 1fr;
-    gap: 1.15rem;
-    padding: 1.25rem 1.15rem;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .approach-roadmap__row {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.35rem 0;
   }
 }
 
@@ -5705,13 +5715,9 @@ button:active {
 
 .svc-band {
   width: 100%;
-  max-width: 68rem;
+  max-width: var(--stage-max);
   margin-inline: auto;
-  padding: 2.5rem 1.25rem 3rem;
-}
-
-.svc-band--narrow {
-  max-width: 42rem;
+  padding: 2.5rem var(--stage-pad-x) 3rem;
 }
 
 .svc-band--split {
@@ -5720,20 +5726,13 @@ button:active {
   align-items: start;
 }
 
-@media (min-width: 640px) {
-  .svc-band {
-    padding-inline: 2rem;
-  }
-}
-
 @media (min-width: 900px) {
   .svc-band {
-    padding-inline: 2.5rem;
     padding-block: 3.25rem 3.75rem;
   }
 
   .svc-band--split {
-    grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     gap: 3rem;
     align-items: stretch;
   }
@@ -5769,7 +5768,7 @@ button:active {
 .svc-scope,
 .svc-trust__p {
   margin: 1rem 0 0;
-  max-width: 36rem;
+  max-width: 42rem;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.6;
@@ -6054,7 +6053,7 @@ button:active {
 }
 
 .svc-trust__p {
-  max-width: 38rem;
+  max-width: 42rem;
   color: var(--ink);
 }
 
@@ -6065,6 +6064,7 @@ button:active {
 
 .svc-faq__list {
   margin: 1.5rem 0 0;
+  max-width: 52rem;
   display: grid;
   gap: 0;
 }
@@ -6098,6 +6098,7 @@ button:active {
   list-style: none;
   margin: 1rem 0 0;
   padding: 0;
+  max-width: 52rem;
   display: grid;
   gap: 0;
 }
@@ -7113,7 +7114,7 @@ button:active {
 
 .approach-trust__p {
   margin: 1.15rem 0 0;
-  max-width: 36rem;
+  max-width: 42rem;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.05rem;
   line-height: 1.6;

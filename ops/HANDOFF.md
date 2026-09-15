@@ -1,4 +1,24 @@
-# Handoff
+# Handoff V6-3
 
-- Status: awaiting Dev on V6-3
-- Prior: V6-2 PASS (`df7cc41` / tip `0071284`)
+- Status: delivered — DEV PASS
+- TASK: V6-3 — desktop 1280 / 1440 layout (Approach + Services + home)
+- Base: `e55b986` on main
+- Commit: `fix(layout): balance Approach Services and home at 1280 1440`
+- Preview / Production: https://remex-atelier.vercel.app (coordinator deploys)
+- Files: `app/globals.css`, `app/services/page.tsx` (classes only), `ops/HANDOFF.md`, `ops/STATUS.md`
+- Notes:
+  - Shared marketing stage is `--stage-max: 68rem` with `--stage-pad-x` (1.25rem / 2rem). Home `.home-mod__inner`, Services `.svc-band`, and Approach section gutters use the same measure.
+  - Approach no longer uses a 42rem floating column (`calc((100% - 42rem) / 2)`). Sections keep full-bleed canvas; content gutters match the 68rem stage. Soft-purged dead `.approach-place`. Roadmap rows use `6.5rem + 1fr` at desktop.
+  - Services hero / trust / FAQ / close dropped `svc-band--narrow` (42rem island). Catalog stays `repeat(3, minmax(0, 1fr))`. Engage split is `1fr / 1.2fr` instead of a 20rem skinny still. FAQ list 52rem; trust / ledes 42rem inside the stage.
+  - Home hero / specs / timeline / close no longer override to 48 / 44 / 48 / 40rem ribbons. Method split is `0.88fr / 1.12fr`; still sheet fills its column (`max-width: none`).
+  - No commercial reorder (V6-5). No story routes (V6-4). No Approach Next copy rewrite (V6-6). Locked copy verbatim.
+  - Kept: four-item nav (V6-2), no geo slogan, film `#fff/#f5f5f7`, ≥44 CTAs, 375 stack rules.
+  - Did not vercel deploy (cloud). Dev will deploy Vercel after Leader PASS. Did not open V6-4.
+- Acceptance:
+  - [x] 1280 and 1440: Approach, Services, home look balanced (no crushed text, no lost card, even catalog)
+  - [x] Shared stage / padding coherent across those routes (~68rem)
+  - [x] 375 not broken; nav still four items
+  - [x] `pnpm build` PASS
+  - [ ] `vercel deploy --prod` — coordinator; Dev did not deploy
+- Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
+- Blockers: Await Leader REVIEW. Do not invent V6-4.
