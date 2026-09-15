@@ -1,8 +1,8 @@
-# Review V5-2 — CLOSED PASS
+# Review V5-3 — CLOSED PASS
 
-- Content: `9ad06c3` / tip `32f8825`
-- Prod: https://remex-atelier.vercel.app · dpl_5WMznAcLTUpUoEXU1VncShxAbjMT
+- Content: `bc7b312` / tip `d809e6b`
+- Prod: https://remex-atelier.vercel.app · dpl_2ZkUegxPZ11ubJ5PzKaVxcJhfSww
 - Verdict: **PASS** (unanimous)
 
-Soft → V5-4: 375 nav collapse; `[data-ex-mod]` scroll-margin-top
-Soft → V5-5: still media stage polish
+Soft → V5-4: 375 primary + chapter nav collapse
+Soft → V5-5: example still media stage
