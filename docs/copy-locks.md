@@ -2,11 +2,11 @@
 
 Constitution for site English. Do not paraphrase locked lines in implementation tickets.
 
-English is a **build constraint** (source language, commits, UI strings): not a market claim. Positioning: **global studio**. Never print “English-first,” “English products,” “English-speaking markets,” or similar on the site.
+English is a **build constraint** (source language, commits, UI strings): not a market claim. Do not claim geography or “global clients” as marketing. Studio base is mobile. Do not invent a new location slogan. Never print “English-first,” “English products,” “English-speaking markets,” or similar on the site.
 
 Chinese characters appear **only** in the Approach name-meaning section as etymology. Site UI is otherwise English.
 
-V5 supersedes V3 locks that framed Remex as a four-SKU shop or used “One painful workflow. One agent. A human gate.” as the primary wayfinding line. Mechanism language, legal lines, and the study footer stay.
+V6 supersedes the V5 geo footer SAY (`Seattle studio. Global clients.`). That line is now **DO NOT SAY**. V5 commercial thesis (boutique, Layer A services, Layer B examples as proof) still holds unless `docs/ia-v6.md` overrides it. Mechanism language, legal lines, and the study footer stay.
 
 ## SAY (verbatim)
 
@@ -14,9 +14,9 @@ V5 supersedes V3 locks that framed Remex as a four-SKU shop or used “One painf
 - One workflow. One agent. A human still decides.
 - We design the job an agent is allowed to do — and the gate it cannot cross.
 - Remex Studio designs custom AI agents as products.
-- Seattle studio. Global clients.
 - Start a brief.
 - Legal: Jiyuyun Studio LLC
+- Read the full example →
 
 ### Mechanism — Propose / Approve / Record (verbatim bullets)
 
@@ -42,9 +42,17 @@ Print as those four labels. Do not rename to “sprint,” “retainer,” or a 
 - Agent build
 - Agent operations
 
-Do not print Agent Apps / Agent Ops / Advisory as the V5 catalog.
+First-viewport short labels (home): Design / Build / Operations. Do not print Agent Apps / Agent Ops / Advisory as the catalog.
 
-### Example closer (verbatim — every `/work/*`)
+### Example teaser entry (verbatim)
+
+Every `/work` card and every home examples-chapter teaser:
+
+- Read the full example →
+
+Short description only on the teaser. The long article lives on `/work/[desk]/story` (or equivalent). Do not put an essay on the teaser card.
+
+### Example closer (verbatim — every story)
 
 - This is one seat. The next brief will be a different job.
 
@@ -76,8 +84,14 @@ Use as chapter wayfinding. Not the only copy on the page.
 - We design the job an agent is allowed to do — and the gate it cannot cross.
 - Start a brief.
 
+### Footer (not a location slogan)
+
+Do not print a geography or “global clients” line in the footer, metadata, or body. Studio base is mobile — do not invent a replacement location slogan. Legal entity stays: Jiyuyun Studio LLC. Study stories keep the study footer below.
+
 ## DO NOT SAY (expand; never print)
 
+- Seattle studio. Global clients.
+- Any replacement geography / “global clients” / “mobile studio” slogan
 - English-first / English products / English-speaking markets / we build English products
 - We only build these four agents / our four products / our four agents (as SKUs)
 - Products / Our agents (as the `/work` index label)
@@ -95,6 +109,7 @@ Use as chapter wayfinding. Not the only copy on the page.
 - Four jobs we know how to hire an agent for.
 - Atelier Concierge / Ledger Clerk / Morning Remex / Exception Copilot as shop SKU titles (see desk display names)
 - Coming-soon SaaS / shipped platform / model lab
+- Deepen the four named desks / go deeper on Demand / Knowledge / Attention / Exception (as Approach Next)
 
 ## Desk display names
 
@@ -136,9 +151,13 @@ Chinese glyphs appear **only** in this Approach name-meaning section. Everywhere
 
 Home: three-beat summary. `/approach`: detail. No dates. No store.
 
-- **Now**: scoped custom agents (services revenue)
-- **Next**: repeated modules become internal tools / small products
-- **Later**: studio-owned products that still ship with a gate
+V6 rewrite — Next is method reuse on a new seat, not deepen the four named desks.
+
+- **Now**: ship one gated seat
+- **Next**: reuse the method (job spec + gate + record) on a new seat
+- **Later**: modules / studio products that still ship with a gate
+
+Do not write Next as “tighten these four jobs,” “deepen Demand / Knowledge / Attention / Exception,” or a four-SKU roadmap.
 
 ## Other seats this method fits (optional `/work` band)
 
