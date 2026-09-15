@@ -31,6 +31,7 @@
   - [x] No essay-on-teaser-card; DNA distinct; film stills
   - [x] Home examples use short + `Read the full example →`
   - [x] `pnpm build` PASS (story routes prerendered; desk landings are redirect pages)
+  - [x] Local smoke: `/work` 200 teasers; four `/work/[desk]` → 308 `/story`; four `/story` 200; home + work each print four `Read the full example →`; no long narrative on `/work` HTML
   - [ ] `vercel deploy --prod` — coordinator; Dev did not deploy
 - Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
 - Blockers: Await Leader REVIEW. Do not invent V6-5.
