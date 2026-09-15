@@ -1,5 +1,4 @@
 # Status
 
-- Phase: **V6** — V6-1 geo strip **DEV PASS** (awaiting Leader REVIEW)
+- Phase: **V6** — V6-1 PASS; **V6-2 unify nav in progress**
 - Preview: https://remex-atelier.vercel.app
-- Open: V6-1 review only. Do not open V6-2.

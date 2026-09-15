@@ -1,7 +1,7 @@
 # Backlog (Atelier V6)
 
-- [x] V6-0 docs/ia-v6.md + copy-locks
-- [ ] V6-1 strip Seattle studio. Global clients. sitewide
+- [x] V6-0 docs
+- [x] V6-1 strip Seattle / Global clients
 - [ ] V6-2 unify header: identical 4 primary links every route
 - [ ] V6-3 desktop 1280/1440 Approach + Services (+ home)
 - [ ] V6-4 /work short teasers + /work/[desk]/story long + stills

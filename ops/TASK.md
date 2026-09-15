@@ -1,44 +1,45 @@
-# TASK V6-1 — strip geo slogan sitewide
+# TASK V6-2 — unify primary nav (four items every route)
 
-TASK ID: V6-1
+TASK ID: V6-2
 REPO: remexstudio/remex-atelier
-BASE: tip after V6-0 PASS (`e32be58` or newer main)
-GOAL: Delete `Seattle studio. Global clients.` (and near-equivalents like `A Seattle studio.`) from the **entire product surface**. Studio base is mobile. Do **not** invent a replacement location slogan. Legal `Jiyuyun Studio LLC` may remain where appropriate.
+BASE: tip after V6-1 PASS (`6673d11` or newer main)
+GOAL: One primary nav everywhere: **Work · Services · Approach · Contact**. Kill the home-only chapter row that makes Home look like a 9-item bar and other routes look like a 4-item bar. Per `docs/ia-v6.md` §2.
 
-## Must remove / rewrite
+## Must ship
 
-Known hits (verify with repo search; catch any remaining):
+1. **Primary chrome identical on every route**
+   - Same four links, same order, same treatment on `/`, `/work`, `/services`, `/approach`, `/contact`, stories, lab/about
+   - Desktop: **no** `site-nav__chapters` (or equivalent) beside primary links on Home
+   - Remove `site-shell--home-chapters` behavior that grows the bar only on `/`
 
-- `components/SiteChrome.tsx` — default `footerLine`
-- `components/HomeScenes.tsx`
-- `app/services/page.tsx`, `app/approach/page.tsx`, `app/contact/page.tsx`, `app/about/page.tsx`, `app/lab/page.tsx`, `app/lab/pulse/page.tsx` (footerLine / place lines / dd)
-- `app/layout.tsx` metadata descriptions containing `A Seattle studio.`
-- Any `/work` or chapter chrome still printing the line
-- `README.md` geography lines (English docs for the repo — remove or neutralize; do not invent a new place slogan)
+2. **Home chapters = in-page only**
+   - Allowed: anchors in the **page body** (existing `home-close-map` / equivalent band below the nav — not inside the sticky primary bar)
+   - Forbidden: a slim chapter row in the sticky header that appears only on `/` and disappears on other routes
+   - Mobile `SiteNavMenu`: primary four always. **Do not** inject a home-only “On this page” block that recreates route-dependent chrome. Prefer body anchors (or a home body “On this page” list). UX soft preference: avoid sticky dual row.
 
-## Rules
+3. **Keep**
+   - V5-4 collapse Menu/Close ≥44, aria, Escape, focus trap
+   - Frosted 44–48px film nav
+   - No `/demo` in primary; Lab stays footer Prototype
 
-- Do **not** replace with another city / “global clients” / “worldwide” marketing line
-- Footer may omit the place line, or keep only non-geo studio framing already locked (e.g. study disclaimer on examples). Prefer empty/omit over a new slogan
-- Keep: Agents, built to the brief. / legal LLC where already used / Start a brief.
-- Do not change nav chrome (V6-2), desktop grids (V6-3), story routes (V6-4), or home first viewport (V6-5)
+4. **Do not**
+   - Change copy locks, geo (already stripped), story routes (V6-4), home first viewport services (V6-5), desktop grids (V6-3)
 
 ## ALLOWED FILES
 
-- Any file that still prints the banned geo line (app/, components/, lib/, README.md)
+- `components/SiteChrome.tsx`
+- `components/SiteNavMenu.tsx`
+- `app/globals.css` (nav chrome only)
+- `components/HomeScenes.tsx` (body chapter map only if needed so Home still has in-page jump targets)
 - `ops/HANDOFF.md`, `ops/STATUS.md`
-
-## OUT OF SCOPE
-
-- Nav unification, 1280 layout, teaser/story split, Approach Next rewrite
-- Inventing new footer geography
 
 ## ACCEPTANCE
 
-- [ ] `rg "Seattle studio|Global clients|A Seattle studio"` returns **zero** hits in app/, components/, lib/ (and README neutralized)
-- [ ] No replacement location slogan
-- [ ] Site still builds; prefer `vercel deploy --prod`
-- [ ] HANDOFF; DEV PASS; do not open V6-2
+- [ ] Every primary route shows the same four nav items; Home no longer adds five chapter links into the sticky bar
+- [ ] Home chapter targets still reachable via in-page body links (not route-dependent sticky row)
+- [ ] 375 Menu still works; ≥44; no Lenis/body lock
+- [ ] `pnpm build` PASS; prefer `vercel deploy --prod`
+- [ ] HANDOFF; DEV PASS; do not open V6-3
 
 ## SKILLS TO USE
 
@@ -46,4 +47,4 @@ Known hits (verify with repo search; catch any remaining):
 
 ## COMMIT MESSAGE
 
-`fix(copy): remove Seattle and global-clients slogan sitewide`
+`fix(nav): unify four-item primary chrome on every route`
