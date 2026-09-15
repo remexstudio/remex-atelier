@@ -1,7 +1,7 @@
-# Review V5-0 — CLOSED PASS
+# Review V5-1 — CLOSED PASS
 
-- Content: `179d75c` (ia-v5 + copy-locks) + REWORK `17dbc25` (§6 align)
-- Merge tip: `d4d7088`
+- Content: `f17302f` + polish `8d28b37` / tip `e46a3b6`
+- Prod: https://remex-atelier.vercel.app · dpl_BdQRmCq91apdibsyyADn9LSot8Uf
 - Verdict: **PASS** (unanimous)
 
 | Role | Verdict |
@@ -11,4 +11,4 @@
 | Vision PM | PASS |
 | Leader | PASS |
 
-Soft carry (not blocking): skill gate on UI tickets; per-module pin/end/375/RM before home (V5-3/V5-4).
+Soft → V5-4: collapse 375 primary nav (four-link nowrap may horizontal-scroll).

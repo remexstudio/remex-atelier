@@ -1,24 +1,4 @@
-# Handoff V5-1
+# Handoff
 
-- Status: delivered — DEV PASS
-- Content SHA: f17302f (brief-asks polish 8d28b37)
-- Merge tip: dd724f8 on main (HANDOFF stamp follows)
-- Preview / Production: https://remex-atelier.vercel.app
-- Deploy: dpl_BdQRmCq91apdibsyyADn9LSot8Uf READY
-- Files:
-  - `app/services/page.tsx`
-  - `app/globals.css` (services-only)
-  - `components/SiteChrome.tsx` (primary Work / Services / Approach / Contact; Lab Prototype; no /demo)
-  - `lib/services-catalog.ts`
-  - ops stamps
-- Acceptance:
-  - [x] Three catalog lines with who/deliverable/refuse/done
-  - [x] Engagement labels verbatim
-  - [x] For/Not for + trust locked + FAQ + Start a brief CTA
-  - [x] No four-SKU / Agent Apps·Ops·Advisory catalog
-  - [x] Film canvas; 375 stacked; no chip-as-page
-  - [x] `pnpm build` PASS
-  - [x] `vercel deploy --prod` dpl_BdQRmCq91apdibsyyADn9LSot8Uf
-- Skills: apple-design, apple-design-web, apple-design-motion, emil-design-eng, gsap-scrolltrigger, gsap-react, cinematic-scroll-storytelling, zero-jank-scroll, review-animations
-- Risks: 375 primary nav four-link nowrap may need horizontal scroll until V5-4 collapse
-- Blockers: Await three PM + Leader. No V5-2 until PASS.
+- Status: awaiting Dev on V5-2
+- Prior: V5-1 PASS (`f17302f`+`8d28b37` / tip `e46a3b6`)
