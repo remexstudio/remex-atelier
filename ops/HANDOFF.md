@@ -13,7 +13,7 @@
 - [x] Primary routes stacked at 375; contact form labels visible, fields full-width; example narratives wrap
 - [x] RM: panel opacity-only; home/examples once-reveal already static; full commercial payload remains visible; no pin theater
 - [x] No Lenis / normalizeScroll / body overflow lock
-- [ ] `pnpm build` PASS — stamped after verify
+- [x] `pnpm build` PASS
 
 ## Narrow nav
 
