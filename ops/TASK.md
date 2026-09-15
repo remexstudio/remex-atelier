@@ -1,69 +1,48 @@
-# TASK V6-4 — short /work teasers + /work/[desk]/story long + stills
+# TASK V6-5 — home first viewport three services
 
-TASK ID: V6-4
+TASK ID: V6-5
 REPO: remexstudio/remex-atelier
-BASE: tip after V6-3 PASS (`a327326` or newer main)
-GOAL: Split examples into two surfaces per `docs/ia-v6.md` §3 and `docs/copy-locks.md`. Teasers stay short. Long essay + demo stills live on `/work/[desk]/story`. Forbidden: essay dumped on the index card.
+BASE: tip after V6-4 PASS (`3863258` or newer main after this ops stamp)
+GOAL: First viewport of `/` must show the locked promise AND three buyable services (Design / Build / Operations). JOB/GATE may support; it cannot be the only object under the headline. Examples stay after services. Per `docs/ia-v6.md` §4.1 and §6.
 
-## Display names (unchanged)
+## Required layout (first viewport)
 
-| URL slug | Display |
-| --- | --- |
-| atelier-concierge | Demand desk |
-| ledger-clerk | Knowledge desk |
-| morning-remex | Attention desk |
-| exception-copilot | Exception desk |
+1. Locked promise: `Agents, built to the brief.` (+ allowed support lines from copy-locks)
+2. Three buyable services visible without scrolling on a typical 1280×800 / 1440 desktop first screen — Design / Build / Operations mapping to Agent product design, Agent build, Agent operations (reuse `CATALOG_LINES` / existing short who+done; do not invent pricing or weeks)
+3. JOB/GATE hero still may sit beside or under the three services as supporting media — not alone under the headline
 
-## `/work` — teaser index only
+## Module order (unchanged after first viewport)
 
-- Title: Selected examples
-- Each card: desk display name + **short** description (≈1–3 sentences / gate one-liner) + still thumbnail optional
-- Clear entry link verbatim: **`Read the full example →`** → `/work/[desk]/story`
-- Optional other-seats band: method fits, not shipped products
-- No 500–800w narrative on the card; no Open demo
+services (in first viewport) → method → example teasers (short + `Read the full example →`) → brief → Now/Next/Later → CTA
 
-## `/work/[desk]/story` — long-form
+Do not pull Selected examples into the first viewport. Do not reopen four-SKU shop.
 
-- Layered essay: narrow reading measure, real paragraphs, subheads (reuse existing narrative payload from `lib/selected-examples.ts` / chapters — do not invent named customers or %)
-- Under the essay: **demo still sequence** captioned to the story beat: **ask → one recommendation → gate → record** (4–6 frames OK; DNA distinct per desk)
-- Closer verbatim: `This is one seat. The next brief will be a different job.`
-- Study footer + `Start a brief.` → `/contact`
-- Film canvas; media-stage stills (not chip-as-page)
+## Desktop
 
-## `/work/[desk]` (landing)
-
-- Either 301 (or Next redirect) to `/work/[desk]/story`, **or** a short landing that immediately offers `Read the full example →` / auto-forwards
-- Must not remain a second full essay surface that duplicates the story
-
-## Home examples chapter
-
-- If home still links teasers: same short + `Read the full example →` pattern (full first-viewport services reorder is **V6-5** — here only ensure home example entries do not dump long essays)
+1280 and 1440: balanced columns for the three services in the hero band; no crushed text; no single JOB/GATE card floating in empty space as the offer.
 
 ## ALLOWED FILES
 
-- `app/work/page.tsx`
-- `app/work/*/page.tsx` (redirects / short landings)
-- `app/work/*/story/page.tsx` (create)
-- `components/*Chapter.tsx` (move/adapt for story route)
-- `lib/selected-examples.ts` (teaser short vs narrative split helpers)
-- `components/HomeScenes.tsx` (example teaser links/copy only)
-- `app/globals.css` (teaser / story typography)
+- `components/HomeScenes.tsx`
+- `app/globals.css` (home hero / first-viewport only)
+- `lib/*` only if needed to share catalog short lines already used on home
 - `ops/HANDOFF.md`, `ops/STATUS.md`
 
 ## OUT OF SCOPE
 
-- V6-5 home first-viewport three services reorder
 - V6-6 Approach Next rewrite
-- Changing desk DNA facts or inventing metrics
+- Changing `/work` story pages
+- Nav chrome changes
+- Geo slogans (already killed)
 
 ## ACCEPTANCE
 
-- [ ] `/work` is short teasers + `Read the full example →` only
-- [ ] Four `/work/[desk]/story` pages: layered essay + ask→recommend→gate→record stills + locked closer
-- [ ] Old `/work/[desk]` does not keep a duplicate full essay (redirect or short landing)
-- [ ] No essay-on-teaser-card; DNA distinct; film stills
-- [ ] `pnpm build` PASS; prefer `vercel deploy --prod` + smoke story URLs
-- [ ] HANDOFF; DEV PASS; do not open V6-5
+- [ ] First viewport shows promise + Design / Build / Operations (buyable offer readable without scrolling on 1280 desktop)
+- [ ] JOB/GATE is not the sole object under the headline
+- [ ] Examples remain after services
+- [ ] Film canvas / frosted nav / 4-item primary nav unchanged
+- [ ] `pnpm build` PASS; prefer `vercel deploy --prod` + smoke `/`
+- [ ] HANDOFF; DEV PASS; do not open V6-6
 
 ## SKILLS TO USE
 
@@ -71,4 +50,4 @@ GOAL: Split examples into two surfaces per `docs/ia-v6.md` §3 and `docs/copy-lo
 
 ## COMMIT MESSAGE
 
-`feat(work): split teasers from story pages with still sequences`
+`feat(home): put three services in the first viewport`
