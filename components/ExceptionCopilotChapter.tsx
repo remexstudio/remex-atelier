@@ -149,19 +149,10 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="ec-still--pile">
-                  <div className="ec-ticket ec-ticket--a">
-                    <span className="ec-ticket__badge">EX-441</span>
-                    <span className="still-fact">Refund hold</span>
-                  </div>
-                  <div className="ec-ticket ec-ticket--b">
-                    <span className="ec-ticket__badge">EX-438</span>
-                    <span className="still-fact still-fact--muted">Restock</span>
-                  </div>
-                  <div className="ec-ticket ec-ticket--c">
-                    <span className="ec-ticket__badge">EX-429</span>
-                    <span className="still-fact still-fact--muted">Policy</span>
-                  </div>
+                <div className="media-stage media-stage--ec">
+                  <p className="media-stage__kicker">Pile</p>
+                  <p className="media-stage__fact">Exceptions arrive faster</p>
+                  <p className="media-stage__sub">EX-441 refund hold. EX-438 restock. EX-429 policy.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -172,28 +163,20 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <ol className="ec-queue ec-queue--ex">
-                  <li className="ec-queue__item ec-queue__item--hot">
-                    <span className="ec-queue__rank ec-rank__row ec-rank__row--hot">
-                      1
-                    </span>
-                    <div className="ec-ticket ec-ticket--a">
-                      <span className="ec-ticket__badge">EX-441</span>
-                      <span className="still-fact">Refund hold</span>
-                    </div>
-                  </li>
-                  <li className="ec-queue__item">
-                    <span className="ec-queue__rank ec-rank__row ec-rank__row--mid">
-                      2
-                    </span>
-                    <div className="ec-ticket ec-ticket--b">
-                      <span className="ec-ticket__badge">EX-438</span>
-                      <span className="still-fact still-fact--muted">
-                        Restock
-                      </span>
-                    </div>
-                  </li>
-                </ol>
+                <div className="media-stage media-stage--ec">
+                  <p className="media-stage__kicker">Queue</p>
+                  <p className="media-stage__fact">Rank the desk</p>
+                  <ol className="media-stage__lanes">
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">1</span>
+                      <span>EX-441 · Refund hold</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">2</span>
+                      <span>EX-438 · Restock</span>
+                    </li>
+                  </ol>
+                </div>
               </div>
               <figcaption className="ex-still__caption">
                 {EXCEPTION.stills[1].caption}
@@ -203,14 +186,11 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="ec-cite">
-                  <span className="ec-cite__mark">§4.2</span>
-                  <p className="still-fact">Restock</p>
-                </div>
-                <div className="ec-lead__disposition">
-                  <span className="ec-lead__cite">§4.2 · Restock window</span>
-                  <p className="still-fact">Policy cite</p>
-                  <span className="ec-lead__amount">Refund held</span>
+                <div className="media-stage media-stage--ec">
+                  <p className="media-stage__kicker">Policy</p>
+                  <p className="media-stage__fact">Cite, then hold</p>
+                  <p className="media-stage__cite">§4.2 · Restock window</p>
+                  <p className="media-stage__sub">Refund held until a person moves money.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -221,13 +201,10 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="ec-note">
-                  <span className="ec-note__label">Case note</span>
-                  <p className="still-fact">Draft</p>
-                </div>
-                <div className="ec-money">
-                  <span className="ec-money__lock" />
-                  <span className="ec-money__label">Human</span>
+                <div className="media-stage media-stage--ec">
+                  <p className="media-stage__kicker">Case note</p>
+                  <p className="media-stage__fact">Human before money</p>
+                  <p className="media-stage__sub">Draft the note. Do not issue the refund.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -238,25 +215,10 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="ec-spine">
-                  <p className="ec-timeline__title">Case timeline</p>
-                  <div className="ec-spine__row">
-                    <span className="ec-timeline__dot" />
-                    <span className="ec-timeline__key">Policy cite</span>
-                    <span className="still-fact">§4.2</span>
-                  </div>
-                  <div className="ec-spine__row">
-                    <span className="ec-timeline__dot" />
-                    <span className="ec-timeline__key">Disposition</span>
-                    <span className="still-fact">Refund held</span>
-                  </div>
-                  <div className="ec-spine__row">
-                    <span className="ec-timeline__dot ec-timeline__dot--ink" />
-                    <span className="ec-timeline__key ec-timeline__key--ink">
-                      Decision
-                    </span>
-                    <span className="still-fact still-fact--ink">Ops lead</span>
-                  </div>
+                <div className="media-stage media-stage--ec">
+                  <p className="media-stage__kicker">Timeline</p>
+                  <p className="media-stage__fact">Cite · disposition · decision</p>
+                  <p className="media-stage__sub">§4.2. Refund held. Ops lead.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">

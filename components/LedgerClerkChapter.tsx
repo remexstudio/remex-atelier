@@ -149,24 +149,28 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <ol className="lc-cite-stack lc-cite-stack--sources lc-cite-stack--ex">
-                  <li className="lc-cite-stack__item">
-                    <span className="lc-cite-stack__ref">§</span>
-                    <div className="lc-sheet lc-sheet--a">GL extract</div>
-                  </li>
-                  <li className="lc-cite-stack__item">
-                    <span className="lc-cite-stack__ref">§</span>
-                    <div className="lc-sheet lc-sheet--b">Trial balance</div>
-                  </li>
-                  <li className="lc-cite-stack__item">
-                    <span className="lc-cite-stack__ref">§</span>
-                    <div className="lc-sheet lc-sheet--c">Close memo</div>
-                  </li>
-                  <li className="lc-cite-stack__item">
-                    <span className="lc-cite-stack__ref">§</span>
-                    <div className="lc-sheet lc-sheet--d">Prior cite</div>
-                  </li>
-                </ol>
+                <div className="media-stage media-stage--lc">
+                  <p className="media-stage__kicker">Source hunt</p>
+                  <p className="media-stage__fact">Same close, same hunt</p>
+                  <ol className="media-stage__lanes">
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">§</span>
+                      <span>GL extract</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">§</span>
+                      <span>Trial balance</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">§</span>
+                      <span>Close memo</span>
+                    </li>
+                    <li className="media-stage__lane">
+                      <span className="media-stage__mark">§</span>
+                      <span>Prior cite</span>
+                    </li>
+                  </ol>
+                </div>
               </div>
               <figcaption className="ex-still__caption">
                 {KNOWLEDGE.stills[0].caption}
@@ -176,12 +180,10 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="lc-corpus">
-                  <span className="lc-corpus__spine" />
-                  <div className="lc-corpus__pages">
-                    <p className="still-fact">Corpus</p>
-                    <p className="still-fact still-fact--muted">Cite</p>
-                  </div>
+                <div className="media-stage media-stage--lc">
+                  <p className="media-stage__kicker">Corpus</p>
+                  <p className="media-stage__fact">Answer from the book</p>
+                  <p className="media-stage__sub">Citations stay with the ask.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -192,9 +194,10 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="lc-propose">
-                  <span className="lc-propose__mark">Propose</span>
-                  <p className="still-fact">Never Execute</p>
+                <div className="media-stage media-stage--lc">
+                  <p className="media-stage__kicker">Package</p>
+                  <p className="media-stage__fact">Propose ≠ Execute</p>
+                  <p className="media-stage__sub">A draft the controller can reopen.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -205,20 +208,10 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="lc-controller__gate">
-                  <span className="lc-controller__chip">Propose</span>
-                  <span className="lc-controller__arrow" />
-                  <span className="lc-controller__chip lc-controller__chip--name">
-                    Controller
-                  </span>
-                </div>
-                <div className="lc-gate-pair">
-                  <span className="lc-gate-pair__btn lc-gate-pair__btn--ok">
-                    Approve
-                  </span>
-                  <span className="lc-gate-pair__btn lc-gate-pair__btn--no">
-                    Reject
-                  </span>
+                <div className="media-stage media-stage--lc">
+                  <p className="media-stage__kicker">Controller</p>
+                  <p className="media-stage__fact">Human before execute</p>
+                  <p className="media-stage__sub">Approve or reject. Never silent write.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">
@@ -229,23 +222,11 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <div className="lc-register">
-                  <p className="lc-log__title">Audit log</p>
-                  <p className="still-fact still-fact--muted">§12.4</p>
-                  <div className="lc-register__row">
-                    <span className="lc-log__key">Ask</span>
-                    <span className="still-fact">Month-end</span>
-                  </div>
-                  <div className="lc-register__row">
-                    <span className="lc-log__key">Citation</span>
-                    <span className="still-fact">Corpus cite</span>
-                  </div>
-                  <div className="lc-register__row">
-                    <span className="lc-log__key lc-log__key--ink">Decision</span>
-                    <span className="still-fact still-fact--ink">
-                      Approve / Reject
-                    </span>
-                  </div>
+                <div className="media-stage media-stage--lc">
+                  <p className="media-stage__kicker">Audit log</p>
+                  <p className="media-stage__fact">Ask · cite · decision</p>
+                  <p className="media-stage__cite">§12.4</p>
+                  <p className="media-stage__sub">Month-end. Corpus cite. Approve / Reject.</p>
                 </div>
               </div>
               <figcaption className="ex-still__caption">

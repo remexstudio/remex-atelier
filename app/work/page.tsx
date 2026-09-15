@@ -30,23 +30,13 @@ function WorkStill({ still }: { still: (typeof EXAMPLES)[number]["still"] }) {
   if (still === "still-a") {
     return (
       <div
-        className="work-story-card__still work-story-card__still--still-a still-dna still-dna--cq still-dna--facts"
+        className="work-story-card__still work-story-card__still--still-a media-stage media-stage--cq"
         aria-hidden="true"
       >
-        <div className="cq-pay cq-pay--wall">
-          <div className="cq-pay__bag">
-            <p className="still-fact still-fact--kicker">Bag · before pay</p>
-            <p className="cq-ticket__id">LUM-1042</p>
-            <p className="still-fact still-fact--muted">
-              skin → hero → try-on → bag → pay
-            </p>
-          </div>
-          <div className="cq-pay__gate">
-            <span className="cq-pay__chip">Propose</span>
-            <span className="cq-pay__arrow" />
-            <span className="cq-pay__chip cq-pay__chip--approve">Approve</span>
-          </div>
-        </div>
+        <p className="media-stage__kicker">Bag · before pay</p>
+        <p className="media-stage__fact">Human before pay</p>
+        <p className="media-stage__sub">skin → hero → try-on → bag</p>
+        <p className="media-stage__cite">LUM-1042</p>
       </div>
     );
   }
@@ -54,14 +44,13 @@ function WorkStill({ still }: { still: (typeof EXAMPLES)[number]["still"] }) {
   if (still === "still-b") {
     return (
       <div
-        className="work-story-card__still work-story-card__still--still-b still-dna still-dna--lc still-dna--facts"
+        className="work-story-card__still work-story-card__still--still-b media-stage media-stage--lc"
         aria-hidden="true"
       >
-        <div className="lc-cta-still__mark lc-cta-still__mark--wall">
-          <span className="lc-propose__mark">Propose</span>
-          <p className="work-wall__never">Never Execute</p>
-          <span className="lc-controller__cite">§12.4 · Close pack</span>
-        </div>
+        <p className="media-stage__kicker">Corpus</p>
+        <p className="media-stage__fact">Propose ≠ Execute</p>
+        <p className="media-stage__sub">cite stays with the ask</p>
+        <p className="media-stage__cite">§12.4 · Close pack</p>
       </div>
     );
   }
@@ -69,43 +58,37 @@ function WorkStill({ still }: { still: (typeof EXAMPLES)[number]["still"] }) {
   if (still === "still-c") {
     return (
       <div
-        className="work-story-card__still work-story-card__still--still-c still-dna still-dna--mr still-dna--facts"
+        className="work-story-card__still work-story-card__still--still-c media-stage media-stage--mr"
         aria-hidden="true"
       >
-        <div className="mr-cta-rail__lanes mr-cta-rail__lanes--wall">
-          <div className="mr-cta-rail__lane mr-cta-rail__lane--pri">
-            <span className="mr-triage__lane mr-triage__lane--pri">P</span>
-            <p className="mr-pwn__name">Priority</p>
-          </div>
-          <div className="mr-cta-rail__lane mr-cta-rail__lane--watch">
-            <span className="mr-triage__lane mr-triage__lane--watch">W</span>
-            <p className="mr-pwn__name">Watch</p>
-          </div>
-          <div className="mr-cta-rail__lane mr-cta-rail__lane--noise">
-            <span className="mr-triage__lane mr-triage__lane--noise">N</span>
-            <p className="mr-pwn__name">Noise</p>
-          </div>
-        </div>
-        <p className="still-dna__sub">Human before send</p>
+        <p className="media-stage__kicker">Morning packet</p>
+        <p className="media-stage__fact">Human before send</p>
+        <ol className="media-stage__lanes">
+          <li className="media-stage__lane">
+            <span className="media-stage__mark">P</span>
+            <span>Priority</span>
+          </li>
+          <li className="media-stage__lane">
+            <span className="media-stage__mark">W</span>
+            <span>Watch</span>
+          </li>
+          <li className="media-stage__lane">
+            <span className="media-stage__mark">N</span>
+            <span>Noise</span>
+          </li>
+        </ol>
       </div>
     );
   }
 
   return (
     <div
-      className="work-story-card__still work-story-card__still--still-d still-dna still-dna--ec still-dna--facts"
+      className="work-story-card__still work-story-card__still--still-d media-stage media-stage--ec"
       aria-hidden="true"
     >
-      <div className="ec-cta-stack ec-cta-stack--wall">
-        <div className="ec-ticket ec-ticket--a">
-          <span className="ec-ticket__badge">EX-441</span>
-          <span className="still-fact">Refund hold</span>
-        </div>
-        <div className="ec-ticket ec-ticket--b">
-          <span className="ec-cite__mark">§4.2</span>
-          <span className="still-fact">Policy cite</span>
-        </div>
-      </div>
+      <p className="media-stage__kicker">Exception</p>
+      <p className="media-stage__fact">Human before money</p>
+      <p className="media-stage__sub">EX-441 · refund hold · §4.2</p>
     </div>
   );
 }
