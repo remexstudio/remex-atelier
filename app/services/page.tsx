@@ -38,7 +38,7 @@ export default function ServicesPage() {
     <SiteChrome variant="film">
       <main id="main" className="svc-page">
         <header className="svc-hero">
-          <div className="svc-band svc-band--narrow">
+          <div className="svc-band">
             <p className="svc-kicker">Services</p>
             <h1 className="svc-display">Agents, built to the brief.</h1>
             <p className="svc-lede">
@@ -176,7 +176,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="svc-trust" aria-labelledby="svc-trust-h">
-          <div className="svc-band svc-band--narrow">
+          <div className="svc-band">
             <h2 id="svc-trust-h" className="svc-section-title">
               Trust stance
             </h2>
@@ -185,7 +185,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="svc-faq" aria-labelledby="svc-faq-h">
-          <div className="svc-band svc-band--narrow">
+          <div className="svc-band">
             <h2 id="svc-faq-h" className="svc-section-title">
               FAQ
             </h2>
@@ -201,7 +201,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="svc-close" aria-labelledby="svc-close-h">
-          <div className="svc-band svc-band--narrow">
+          <div className="svc-band">
             <h2 id="svc-close-h" className="svc-display svc-display--close">
               Start a brief.
             </h2>
