@@ -1,9 +1,9 @@
-# Backlog (Atelier V5)
+# Backlog (Atelier V6)
 
-- [x] V5-0 docs/ia-v5.md + docs/copy-locks.md
-- [x] V5-1 /services
-- [x] V5-2 Selected examples + four long cases
-- [x] V5-3 home services-first
-- [x] V5-4 375 + reduced-motion
-- [x] V5-5 still media + film chrome — **DoD green**
-- [ ] Soft (unissued): purge obsolete desk-chip shrink rules in globals
+- [ ] V6-0 docs/ia-v6.md + copy-locks (nav / teaser-story / kill geo)
+- [ ] V6-1 strip Seattle studio. Global clients. sitewide
+- [ ] V6-2 unify header: identical 4 primary links every route
+- [ ] V6-3 desktop 1280/1440 Approach + Services (+ home)
+- [ ] V6-4 /work short teasers + /work/[desk]/story long + stills
+- [ ] V6-5 home first viewport three services; examples after
+- [ ] V6-6 Approach roadmap rewrite; 375 regression

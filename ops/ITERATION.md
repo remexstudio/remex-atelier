@@ -1,7 +1,4 @@
-# V5 closed
+# V6 iteration
 
-Live: https://remex-atelier.vercel.app
-Last content: `0c28f83`. Ops close tip follows this stamp.
-
-Buyer showcase + serious studio surface. Services catalog first; Selected examples prove method; Now/Next/Later direction only.
-Hard bans remain for any future ticket. No V5-6 invented.
+Owner: kill geo slogan; teaser vs story; unify 4-item nav; fix 1280/1440; home services in first viewport; Approach Next = method reuse not four-job deepen.
+After each PASS, Leader issues next slice immediately.

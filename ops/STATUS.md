@@ -1,8 +1,5 @@
 # Status
 
-- Phase: **Atelier V5 commercial rebuild CLOSED** (DoD green)
-- Closed: V5-0…V5-5
-- Last content: `0c28f83` / tip `1f8f3ae`
-- Prod: https://remex-atelier.vercel.app
-- Board: Vision / Apple / UX unanimous — commercial showcase line closed
-- Open: none. Soft leftover only (obsolete desk-chip CSS). Dev standby.
+- Phase: **V6 chrome + story split** — V6-0 docs in progress
+- Prior: V5 commercial DoD green (`0c28f83` / tip `512816a`)
+- Preview: https://remex-atelier.vercel.app
