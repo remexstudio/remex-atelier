@@ -10,6 +10,7 @@ import {
   INDEX_LABEL,
   KNOWLEDGE,
   START_A_BRIEF,
+  STILL_BEAT_LABEL,
   STUDY_FOOTER,
 } from "@/lib/selected-examples";
 
@@ -129,10 +130,13 @@ export function LedgerClerkChapter() {
         className="ex-narrative"
         aria-label="Case"
       >
-        {KNOWLEDGE.narrative.map((paragraph) => (
-          <p key={paragraph.slice(0, 48)} data-ex-reveal>
-            {paragraph}
-          </p>
+        {KNOWLEDGE.narrative.map((paragraph, i) => (
+          <div key={paragraph.slice(0, 48)} className="ex-narrative__block" data-ex-reveal>
+            {KNOWLEDGE.headings[i] ? (
+              <h2 className="ex-narrative__h">{KNOWLEDGE.headings[i]}</h2>
+            ) : null}
+            <p>{paragraph}</p>
+          </div>
         ))}
       </article>
 
@@ -173,6 +177,9 @@ export function LedgerClerkChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[KNOWLEDGE.stills[0].beat]}
+                </span>
                 {KNOWLEDGE.stills[0].caption}
               </figcaption>
             </figure>
@@ -187,6 +194,9 @@ export function LedgerClerkChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[KNOWLEDGE.stills[1].beat]}
+                </span>
                 {KNOWLEDGE.stills[1].caption}
               </figcaption>
             </figure>
@@ -201,6 +211,9 @@ export function LedgerClerkChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[KNOWLEDGE.stills[2].beat]}
+                </span>
                 {KNOWLEDGE.stills[2].caption}
               </figcaption>
             </figure>
@@ -215,6 +228,9 @@ export function LedgerClerkChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[KNOWLEDGE.stills[3].beat]}
+                </span>
                 {KNOWLEDGE.stills[3].caption}
               </figcaption>
             </figure>
@@ -230,6 +246,9 @@ export function LedgerClerkChapter() {
                 </div>
               </div>
               <figcaption className="ex-still__caption">
+                <span className="ex-still__beat">
+                  {STILL_BEAT_LABEL[KNOWLEDGE.stills[4].beat]}
+                </span>
                 {KNOWLEDGE.stills[4].caption}
               </figcaption>
             </figure>

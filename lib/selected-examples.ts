@@ -1,4 +1,4 @@
-/** V5 Selected examples — English locks from docs/ia-v5.md §3 and docs/copy-locks.md. */
+/** V6 Selected examples — teasers vs stories. Locks from docs/ia-v6.md §3 and docs/copy-locks.md. */
 
 export const INDEX_LABEL = "Selected examples";
 
@@ -8,6 +8,8 @@ export const EXAMPLE_CLOSER =
 export const STUDY_FOOTER = "Studio study. Client identity anonymized.";
 
 export const START_A_BRIEF = "Start a brief.";
+
+export const READ_FULL_EXAMPLE = "Read the full example →";
 
 export const OTHER_SEATS_HEADING = "Other seats this method fits";
 
@@ -21,36 +23,14 @@ export const OTHER_SEATS = [
   "Internal policy Q&A",
 ] as const;
 
-export const EXAMPLES = [
-  {
-    slug: "atelier-concierge",
-    href: "/work/atelier-concierge",
-    display: "Demand desk",
-    gateFact: "Human before pay",
-    still: "still-a" as const,
-  },
-  {
-    slug: "ledger-clerk",
-    href: "/work/ledger-clerk",
-    display: "Knowledge desk",
-    gateFact: "Human before execute corpus change",
-    still: "still-b" as const,
-  },
-  {
-    slug: "morning-remex",
-    href: "/work/morning-remex",
-    display: "Attention desk",
-    gateFact: "Priority / Watch / Noise; human before send",
-    still: "still-c" as const,
-  },
-  {
-    slug: "exception-copilot",
-    href: "/work/exception-copilot",
-    display: "Exception desk",
-    gateFact: "Human before money moves",
-    still: "still-d" as const,
-  },
-] as const;
+export type StillBeat = "ask" | "recommend" | "gate" | "record";
+
+export const STILL_BEAT_LABEL: Record<StillBeat, string> = {
+  ask: "Ask",
+  recommend: "One recommendation",
+  gate: "Gate",
+  record: "Record",
+};
 
 export const INDEX_LEDE =
   "Proof of method. Four seats, each with a distinct job, gate, and record — not a catalog of products.";
@@ -62,6 +42,14 @@ export const DEMAND = {
     "Skin, occasion, and fit notes scatter across fittings, holds, and aftercare.",
   description:
     "A high-touch demand desk: occasion maps to one hero, a try-on still, and a drafted bag. A human stands before pay.",
+  headings: [
+    "The seat",
+    "One next step",
+    "The mapping",
+    "The stop at pay",
+    "What we refused",
+    "The record",
+  ] as const,
   narrative: [
     "The demand desk is the high-touch seat that greets a client who already knows the house and who expects the next step to be one garment, not a rack of options. The person in the chair is a stylist or concierge lead. The buyer who hired the seat is usually a founder or general manager who already feels the floor break: fittings run long, holds go stale, and aftercare notes never return to the next appointment. The constraint is not taste. The constraint is scatter. Skin notes live in one book. Occasion notes live in another. Fit lives in a third place that only the person who took the last appointment can reconstruct. When a client sits down, the desk rebuilds the next step from fragments.",
     "We designed the job as a single next step, not as a search. A platform assistant would retrieve options and leave the stylist to choose among them. This seat is not allowed a pile. Occasion maps to one hero. The agent may read the consult thread, the last hold, and the aftercare note, then name one piece that fits the person in the chair. It may stage a try-on still so the stylist sees a garment rather than a sentence. It may draft the bag — the set of items the house would actually place on the counter — and stop there. Those three abilities are the whole permission. They do not retrieve a fixed corpus, sort overnight mail, or rank a refund queue. They belong to demand, and only to demand.",
@@ -74,28 +62,33 @@ export const DEMAND = {
   stills: [
     {
       id: "scatter",
+      beat: "ask" as const,
       caption:
-        "Pain still — skin, occasion, fit, and hold notes as scattered media, not a product chip wall.",
+        "Skin, occasion, fit, and hold notes as scattered media, not a product chip wall.",
     },
     {
       id: "hero",
+      beat: "recommend" as const,
       caption:
-        "Ability — occasion maps to one hero the house already carries. No invented SKUs.",
+        "Occasion maps to one hero the house already carries. No invented SKUs.",
     },
     {
       id: "tryon",
+      beat: "recommend" as const,
       caption:
-        "Ability — a staged try-on still for the stylist desk. Media, not a live fitting.",
+        "A staged try-on still for the stylist desk. Media, not a live fitting.",
     },
     {
       id: "bag",
+      beat: "gate" as const,
       caption:
-        "Gate — bag draft held before pay. Propose reaches the stylist; charge does not.",
+        "Bag draft held before pay. Propose reaches the stylist; charge does not.",
     },
     {
       id: "ticket",
+      beat: "record" as const,
       caption:
-        "Record — consult thread stays with the ticket so a later desk can reopen the same conversation.",
+        "Consult thread stays with the ticket so a later desk can reopen the same conversation.",
     },
   ],
 } as const;
@@ -106,6 +99,14 @@ export const KNOWLEDGE = {
   constraint: "The same source hunt buries the team every close.",
   description:
     "A controller desk that answers from a fixed corpus, attaches citations, and drafts a Propose package. A human stands before any corpus change.",
+  headings: [
+    "The seat",
+    "A cite, not an oracle",
+    "Corpus only",
+    "The stop before a write",
+    "What we refused",
+    "The record",
+  ] as const,
   narrative: [
     "The knowledge desk is the controller seat that answers month-end questions from a fixed corpus. The person in the chair is a controller or a close lead who already knows the books and still cannot afford another hunt through the same sources. The buyer who hired the seat is usually a founder, ops lead, or general manager who watches the close stall on questions the house has already answered. The constraint is not a missing model. The constraint is the hunt. The general ledger extract, the trial balance, the close memo, and the prior cite are all in the house. Every close, the team walks the same path to find them again.",
     "We designed the job as a cite, not as an oracle. A platform assistant would answer from the open web and leave the controller to verify later. This seat is not allowed that luxury. The agent may answer from the corpus only. It may attach citations before the answer is shown. It may draft a Propose package — a written next step the controller can accept, edit, or reject — and stop there. Those three abilities are the whole permission. They do not map an occasion to a hero, sort overnight mail, or suggest a refund. They belong to knowledge, and only to knowledge.",
@@ -118,28 +119,33 @@ export const KNOWLEDGE = {
   stills: [
     {
       id: "sources",
+      beat: "ask" as const,
       caption:
-        "Pain still — the same source hunt as hanging slips. Close after close, the path does not change.",
+        "The same source hunt as hanging slips. Close after close, the path does not change.",
     },
     {
       id: "corpus",
+      beat: "recommend" as const,
       caption:
-        "Ability — answer from the corpus only. A missing cite ends the sentence.",
+        "Answer from the corpus only. A missing cite ends the sentence.",
     },
     {
       id: "propose",
+      beat: "recommend" as const,
       caption:
-        "Ability — a Propose package. Never Execute. The write is not in the permission.",
+        "A Propose package. Never Execute. The write is not in the permission.",
     },
     {
       id: "gate",
+      beat: "gate" as const,
       caption:
-        "Gate — Approve or Reject by a named controller before books or corpus move.",
+        "Approve or Reject by a named controller before books or corpus move.",
     },
     {
       id: "audit",
+      beat: "record" as const,
       caption:
-        "Record — ask, citation, and decision in one audit log the close can reopen.",
+        "Ask, citation, and decision in one audit log the close can reopen.",
     },
   ],
 } as const;
@@ -150,6 +156,14 @@ export const ATTENTION = {
   constraint: "Overnight mail arrives without a single readable brief.",
   description:
     "An operator desk that sorts Priority / Watch / Noise, drafts in two tones, and escalates. A human stands before send.",
+  headings: [
+    "The seat",
+    "A packet, not a publisher",
+    "Priority, Watch, Noise",
+    "The stop before send",
+    "What we refused",
+    "The record",
+  ] as const,
   narrative: [
     "The attention desk is the operator seat that turns overnight threads into one morning packet. The person in the chair is a desk lead who already knows which senders matter and still cannot start the day from a pile. The buyer who hired the seat is usually a founder or ops lead who watches the morning open on unread mail instead of on a brief. The constraint is not volume as a boast. The constraint is the missing packet. Overnight threads arrive. They are not ranked. They are not drafted. They are not marked for a human. The operator rebuilds a morning from scratch.",
     "We designed the job as a packet, not as a publisher. A platform assistant would summarize everything and post a digest. This seat is not allowed that luxury. The agent may sort threads into Priority, Watch, and Noise. It may draft in two tones so the operator can choose a voice instead of inventing one under time. It may escalate the threads that need a human before anything goes out. Those three abilities are the whole permission. They do not name a hero SKU, cite a close pack, or hold a refund. They belong to attention, and only to attention.",
@@ -162,28 +176,31 @@ export const ATTENTION = {
   stills: [
     {
       id: "mail",
-      caption:
-        "Pain still — overnight threads stacked without a readable brief.",
+      beat: "ask" as const,
+      caption: "Overnight threads stacked without a readable brief.",
     },
     {
       id: "lanes",
+      beat: "recommend" as const,
       caption:
-        "Ability — Priority / Watch / Noise as separate lanes. Loud is not the same as first.",
+        "Priority / Watch / Noise as separate lanes. Loud is not the same as first.",
     },
     {
       id: "tones",
+      beat: "recommend" as const,
       caption:
-        "Ability — two draft tones for the operator to choose. Neither tone is a send.",
+        "Two draft tones for the operator to choose. Neither tone is a send.",
     },
     {
       id: "hold",
-      caption:
-        "Gate — escalate and send held. A human edits before anything goes out.",
+      beat: "gate" as const,
+      caption: "Escalate and send held. A human edits before anything goes out.",
     },
     {
       id: "packet",
+      beat: "record" as const,
       caption:
-        "Record — brief, draft, and escalate decision linked in one morning packet.",
+        "Brief, draft, and escalate decision linked in one morning packet.",
     },
   ],
 } as const;
@@ -194,6 +211,14 @@ export const EXCEPTION = {
   constraint: "Exceptions pile faster than policy can be reread.",
   description:
     "An ops desk that ranks the exception queue, suggests a policy disposition, and drafts the case note. A human stands before money moves.",
+  headings: [
+    "The seat",
+    "A ranked case",
+    "Rank, cite, note",
+    "The stop before money",
+    "What we refused",
+    "The record",
+  ] as const,
   narrative: [
     "The exception desk is the operations seat that clears a queue against written policy. The person in the chair is an ops or CX lead who already knows the refund window and still cannot reread the book for every ticket. The buyer who hired the seat is usually a founder or general manager who watches exceptions pile while the same policy sits unused beside the queue. The constraint is not a missing rule. The constraint is time against the pile. Tickets arrive faster than a person can open §4.2, or whichever section the house actually filed, and still write a case note that another lead can defend.",
     "We designed the job as a ranked case, not as a payout engine. A platform assistant would settle the ticket. This seat is not allowed that luxury. The agent may rank the queue by urgency and policy fit. It may suggest a policy disposition with the cite attached. It may draft the case note for the lead. Those three abilities are the whole permission. They do not name a hero garment, answer a close question from a corpus, or publish a morning digest. They belong to exceptions, and only to exceptions.",
@@ -206,28 +231,65 @@ export const EXCEPTION = {
   stills: [
     {
       id: "pile",
-      caption:
-        "Pain still — exception tickets piled faster than policy can be reread.",
+      beat: "ask" as const,
+      caption: "Exception tickets piled faster than policy can be reread.",
     },
     {
       id: "queue",
+      beat: "recommend" as const,
       caption:
-        "Ability — rank the queue by urgency and policy fit. Rank is not a payout.",
+        "Rank the queue by urgency and policy fit. Rank is not a payout.",
     },
     {
       id: "policy",
+      beat: "recommend" as const,
       caption:
-        "Ability — suggest a policy disposition with the cite attached. Missing cite ends the suggestion.",
+        "Suggest a policy disposition with the cite attached. Missing cite ends the suggestion.",
     },
     {
       id: "note",
-      caption:
-        "Gate — case note drafted; refund and money held for a named lead.",
+      beat: "gate" as const,
+      caption: "Case note drafted; refund and money held for a named lead.",
     },
     {
       id: "timeline",
-      caption:
-        "Record — case timeline keeps policy cite and decision on one spine.",
+      beat: "record" as const,
+      caption: "Case timeline keeps policy cite and decision on one spine.",
     },
   ],
 } as const;
+
+export const EXAMPLES = [
+  {
+    slug: "atelier-concierge",
+    href: "/work/atelier-concierge/story",
+    display: DEMAND.display,
+    gateFact: "Human before pay",
+    description: DEMAND.description,
+    still: "still-a" as const,
+  },
+  {
+    slug: "ledger-clerk",
+    href: "/work/ledger-clerk/story",
+    display: KNOWLEDGE.display,
+    gateFact: "Human before execute corpus change",
+    description: KNOWLEDGE.description,
+    still: "still-b" as const,
+  },
+  {
+    slug: "morning-remex",
+    href: "/work/morning-remex/story",
+    display: ATTENTION.display,
+    gateFact: "Priority / Watch / Noise; human before send",
+    description: ATTENTION.description,
+    still: "still-c" as const,
+  },
+  {
+    slug: "exception-copilot",
+    href: "/work/exception-copilot/story",
+    display: EXCEPTION.display,
+    gateFact: "Human before money moves",
+    description: EXCEPTION.description,
+    still: "still-d" as const,
+  },
+] as const;
