@@ -1,6 +1,6 @@
 # Status
 
-- Phase: **V5 commercial rebuild** — V5-0 REWORK delivered (await PASS)
-- Content base: `179d75c` (ia-v5 + copy-locks); §6 slice map aligned to owner order
-- Board: Apple / UX / Vision / Leader unanimous REWORK on §6 only — Dev delivered
-- Preview: https://remex-atelier.vercel.app (pre-V5 UI)
+- Phase: **V5 commercial rebuild** — V5-0 PASS; **V5-1 /services in progress**
+- V5-0 content: `179d75c` + REWORK `17dbc25` / tip `d4d7088`
+- Open: V5-1
+- Preview: https://remex-atelier.vercel.app
