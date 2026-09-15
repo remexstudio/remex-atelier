@@ -1,8 +1,8 @@
 # Handoff V5-0
 
 - Status: delivered — DEV PASS
-- Content SHA: 94d88f1422c7b7be7f6f49e58b898fdf7986f802
-- Tip: 94d88f1422c7b7be7f6f49e58b898fdf7986f802
+- Content SHA: 179d75ca1a31dee02e29aa2c6c52deb740eea3e1
+- Tip: 179d75ca1a31dee02e29aa2c6c52deb740eea3e1
 - Files: docs/ia-v5.md, docs/copy-locks.md, ops/HANDOFF.md, ops/STATUS.md
 - Acceptance self-check
   - [x] docs/ia-v5.md exists and covers Why V5, Layer A (catalog / engagement / for-not-for / trust), Layer B (four desks, page shape, optional other seats), routes, visual/mobile, planned slice map V5-0…V5-5, hard bans
