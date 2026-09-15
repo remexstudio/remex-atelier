@@ -5,29 +5,24 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import {
+  ATTENTION,
+  EXAMPLE_CLOSER,
+  INDEX_LABEL,
+  START_A_BRIEF,
+  STUDY_FOOTER,
+} from "@/lib/selected-examples";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-/* Product chapter motion: once-reveal only. No pin / no long scrub runway.
- * prefers-reduced-motion → showStatic; all module facts stay visible. */
-
-const REVEAL_SEL = "[data-mr-reveal]";
+const REVEAL_SEL = "[data-ex-reveal]";
 
 function showStatic(root: HTMLElement) {
-  root.classList.remove("mr-film--motion");
+  root.classList.remove("ex-case--motion");
   gsap.set(root.querySelectorAll(REVEAL_SEL), {
     clearProps: "transform,opacity,visibility",
     autoAlpha: 1,
   });
-  gsap.set(
-    root.querySelectorAll(
-      ".mr-still, .mr-mail-stack, .mr-pwn, .mr-pwn__lane, .mr-dual, .mr-dual__col, .mr-packet, .mr-cta-rail",
-    ),
-    {
-      clearProps: "transform,opacity,visibility",
-      autoAlpha: 1,
-    },
-  );
 }
 
 export function MorningRemexChapter() {
@@ -56,25 +51,25 @@ export function MorningRemexChapter() {
             return;
           }
 
-          root.classList.add("mr-film--motion");
+          root.classList.add("ex-case--motion");
 
           gsap.utils
-            .toArray<HTMLElement>(root.querySelectorAll("[data-mr-mod]"))
+            .toArray<HTMLElement>(root.querySelectorAll("[data-ex-mod]"))
             .forEach((mod) => {
               const items = mod.querySelectorAll<HTMLElement>(REVEAL_SEL);
               if (!items.length) return;
 
-              gsap.set(items, { autoAlpha: 0, y: 22 });
+              gsap.set(items, { autoAlpha: 0, y: 14 });
 
               gsap.to(items, {
                 autoAlpha: 1,
                 y: 0,
-                duration: 0.75,
+                duration: 0.48,
                 ease: "power3.out",
-                stagger: 0.07,
+                stagger: 0.05,
                 scrollTrigger: {
                   trigger: mod,
-                  start: "top 78%",
+                  start: "top 82%",
                   once: true,
                   invalidateOnRefresh: true,
                 },
@@ -89,7 +84,7 @@ export function MorningRemexChapter() {
 
           return () => {
             window.removeEventListener("load", refresh);
-            root.classList.remove("mr-film--motion");
+            root.classList.remove("ex-case--motion");
           };
         },
       );
@@ -105,269 +100,194 @@ export function MorningRemexChapter() {
     <main
       id="main"
       ref={rootRef}
-      className="mr-film"
-      aria-label="Morning Remex"
+      className="ex-case"
+      aria-label={ATTENTION.display}
     >
-      {/* Job + user */}
-      <section
-        id="mr-job"
-        data-mr-mod
-        className="mr-mod mr-mod--job"
-        aria-labelledby="mr-job-h"
+      <header
+        id="ex-context"
+        data-ex-mod
+        className="ex-context"
+        aria-labelledby="ex-h"
       >
-        <div className="mr-mod__inner mr-mod__inner--job">
-          <p className="mr-kicker" data-mr-reveal>
-            Morning Remex
+        <p className="ex-kicker" data-ex-reveal>
+          {INDEX_LABEL}
+        </p>
+        <h1 id="ex-h" className="ex-display" data-ex-reveal>
+          {ATTENTION.display}
+        </h1>
+        <p className="ex-seat" data-ex-reveal>
+          {ATTENTION.seat}
+        </p>
+        <p className="ex-constraint" data-ex-reveal>
+          {ATTENTION.constraint}
+        </p>
+      </header>
+
+      <article
+        id="ex-narrative"
+        data-ex-mod
+        className="ex-narrative"
+        aria-label="Case"
+      >
+        {ATTENTION.narrative.map((paragraph) => (
+          <p key={paragraph.slice(0, 48)} data-ex-reveal>
+            {paragraph}
           </p>
-          <h1 id="mr-job-h" className="mr-headline" data-mr-reveal>
-            Operator desk turning overnight threads into one morning packet.
-          </h1>
-          <div className="mr-still mr-still--desk" data-mr-reveal aria-hidden="true">
-            <div className="mr-desk">
-              <span className="mr-desk__chip mr-desk__chip--pri">Priority</span>
-              <span className="mr-desk__chip mr-desk__chip--watch">Watch</span>
-              <span className="mr-desk__chip mr-desk__chip--noise">Noise</span>
-              <span className="mr-desk__chip mr-desk__chip--ink">Packet</span>
-              <span className="mr-desk__chip">Never auto-publish</span>
-            </div>
-          </div>
-        </div>
+        ))}
+      </article>
+
+      <section
+        id="ex-stills"
+        data-ex-mod
+        className="ex-stills"
+        aria-labelledby="ex-stills-h"
+      >
+        <h2 id="ex-stills-h" className="ex-stills__title" data-ex-reveal>
+          Stills
+        </h2>
+        <ol className="ex-stills__list">
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="mr-mail-stack">
+                  <div className="mr-thread mr-thread--a">
+                    <span className="still-fact">Overnight</span>
+                  </div>
+                  <div className="mr-thread mr-thread--b">
+                    <span className="still-fact still-fact--muted">No brief</span>
+                  </div>
+                  <div className="mr-thread mr-thread--c">
+                    <span className="still-fact still-fact--muted">Unread</span>
+                  </div>
+                  <div className="mr-thread mr-thread--d">
+                    <span className="still-fact still-fact--muted">Noise</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {ATTENTION.stills[0].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="mr-cta-rail__lanes">
+                  <div className="mr-cta-rail__lane mr-cta-rail__lane--pri">
+                    <span className="mr-triage__lane mr-triage__lane--pri">
+                      P
+                    </span>
+                    <p className="mr-pwn__name">Priority</p>
+                  </div>
+                  <div className="mr-cta-rail__lane mr-cta-rail__lane--watch">
+                    <span className="mr-triage__lane mr-triage__lane--watch">
+                      W
+                    </span>
+                    <p className="mr-pwn__name">Watch</p>
+                  </div>
+                  <div className="mr-cta-rail__lane mr-cta-rail__lane--noise">
+                    <span className="mr-triage__lane mr-triage__lane--noise">
+                      N
+                    </span>
+                    <p className="mr-pwn__name">Noise</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {ATTENTION.stills[1].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="mr-dual">
+                  <div className="mr-dual__col mr-dual__col--a">
+                    <span className="mr-operator__tag">Tone A</span>
+                    <span className="mr-tones__card mr-tones__card--a">
+                      Tone A
+                    </span>
+                  </div>
+                  <div className="mr-dual__col mr-dual__col--b">
+                    <span className="mr-operator__tag">Tone B</span>
+                    <span className="mr-tones__card mr-tones__card--b">
+                      Tone B
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {ATTENTION.stills[2].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="mr-escalate">
+                  <span className="mr-escalate__flag">Escalate</span>
+                  <p className="still-fact">Human before send</p>
+                </div>
+                <div className="mr-hold">
+                  <span className="mr-hold__lock" />
+                  <span className="mr-hold__label">Held</span>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {ATTENTION.stills[3].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="mr-packet mr-packet--linked">
+                  <p className="mr-packet__title">Morning packet</p>
+                  <div className="mr-packet__beads">
+                    <div className="mr-packet__row">
+                      <span className="mr-packet__key">Brief</span>
+                      <span className="still-fact">Overnight</span>
+                    </div>
+                    <div className="mr-packet__row">
+                      <span className="mr-packet__key">Draft</span>
+                      <span className="still-fact">Two tones</span>
+                    </div>
+                    <div className="mr-packet__row">
+                      <span className="mr-packet__key mr-packet__key--ink">
+                        Escalate
+                      </span>
+                      <span className="still-fact still-fact--ink">
+                        Human before send
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {ATTENTION.stills[4].caption}
+              </figcaption>
+            </figure>
+          </li>
+        </ol>
       </section>
 
-      {/* Pain — overnight mail stack, not a split */}
       <section
-        id="mr-pain"
-        data-mr-mod
-        className="mr-mod mr-mod--pain"
-        aria-labelledby="mr-pain-h"
+        id="ex-close"
+        data-ex-mod
+        className="ex-close"
+        aria-labelledby="ex-close-h"
       >
-        <div className="mr-mod__inner mr-mod__inner--mail">
-          <h2 id="mr-pain-h" className="mr-headline mr-headline--sm" data-mr-reveal>
-            Overnight mail arrives without a single readable brief.
-          </h2>
-          <div className="mr-mail-stack" data-mr-reveal aria-hidden="true">
-            <div className="mr-thread mr-thread--a">
-              <span className="still-fact">Overnight</span>
-            </div>
-            <div className="mr-thread mr-thread--b">
-              <span className="still-fact still-fact--muted">No brief</span>
-            </div>
-            <div className="mr-thread mr-thread--c">
-              <span className="still-fact still-fact--muted">Unread</span>
-            </div>
-            <div className="mr-thread mr-thread--d">
-              <span className="still-fact still-fact--muted">Noise</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Grammar 1: P / W / N triage lanes */}
-      <section
-        id="mr-flow"
-        data-mr-mod
-        className="mr-mod mr-mod--flow"
-        aria-labelledby="mr-flow-h"
-      >
-        <div className="mr-mod__inner mr-mod__inner--pwn">
-          <h2 id="mr-flow-h" className="mr-eyebrow" data-mr-reveal>
-            Triage before send
-          </h2>
-          <p className="mr-flow__label mr-flow__label--lead" data-mr-reveal>
-            Priority / Watch / Noise
-          </p>
-
-          <div className="mr-pwn" aria-label="Morning Remex triage">
-            <div className="mr-pwn__lane mr-pwn__lane--pri" data-mr-reveal>
-              <span className="mr-triage__lane mr-triage__lane--pri">P</span>
-              <p className="mr-pwn__name">Priority</p>
-              <div className="mr-thread mr-thread--a">
-                <span className="still-fact">Needs ops</span>
-              </div>
-              <div className="mr-thread mr-thread--b">
-                <span className="still-fact still-fact--muted">Escalate</span>
-              </div>
-            </div>
-            <div className="mr-pwn__lane mr-pwn__lane--watch" data-mr-reveal>
-              <span className="mr-triage__lane mr-triage__lane--watch">W</span>
-              <p className="mr-pwn__name">Watch</p>
-              <div className="mr-thread mr-thread--c">
-                <span className="still-fact still-fact--muted">Hold</span>
-              </div>
-            </div>
-            <div className="mr-pwn__lane mr-pwn__lane--noise" data-mr-reveal>
-              <span className="mr-triage__lane mr-triage__lane--noise">N</span>
-              <p className="mr-pwn__name">Noise</p>
-              <div className="mr-thread mr-thread--d">
-                <span className="still-fact still-fact--muted">Archive</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mr-pwn__ability" data-mr-reveal>
-            <span className="mr-abilities__n">01</span>
-            <p>Sort threads into Priority, Watch, and Noise.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Grammar 2: dual-tone draft columns */}
-      <section
-        id="mr-gate"
-        data-mr-mod
-        className="mr-mod mr-mod--gate"
-        aria-labelledby="mr-gate-h"
-      >
-        <div className="mr-mod__inner mr-mod__inner--dual">
-          <p className="mr-flow__label mr-flow__label--lead" data-mr-reveal>
-            Two-tone drafts
-          </p>
-
-          <div className="mr-dual">
-            <div className="mr-dual__col mr-dual__col--a" data-mr-reveal>
-              <span className="mr-operator__tag">Tone A</span>
-              <span className="mr-tones__card mr-tones__card--a">Tone A</span>
-              <p className="still-fact still-fact--muted">Operator</p>
-            </div>
-            <div className="mr-dual__col mr-dual__col--b" data-mr-reveal>
-              <span className="mr-operator__tag">Tone B</span>
-              <span className="mr-tones__card mr-tones__card--b">Tone B</span>
-              <p className="still-fact still-fact--muted">Send held</p>
-            </div>
-          </div>
-
-          <div className="mr-dual__ability" data-mr-reveal>
-            <span className="mr-abilities__n">02</span>
-            <p>Draft in two tones for the operator to choose.</p>
-          </div>
-
-          <div className="mr-pwn__flags" data-mr-reveal>
-            <div className="mr-escalate">
-              <span className="mr-escalate__flag">Escalate</span>
-              <p className="still-fact">Human before send</p>
-            </div>
-            <p className="mr-flow__label">Escalate</p>
-            <div className="mr-hold">
-              <span className="mr-hold__lock" />
-              <span className="mr-hold__label">Held</span>
-            </div>
-            <p className="mr-flow__label">Never auto-publish</p>
-          </div>
-
-          <div className="mr-dual__ability" data-mr-reveal>
-            <span className="mr-abilities__n">03</span>
-            <p>Escalate threads that need a human before send.</p>
-          </div>
-
-          <h2 id="mr-gate-h" className="mr-headline mr-headline--sm" data-mr-reveal>
-            Never auto-publish. An operator edits before anything goes out.
-          </h2>
-
-          <div className="mr-operator__gate" data-mr-reveal aria-hidden="true">
-            <span className="mr-operator__chip">Draft</span>
-            <span className="mr-operator__arrow" />
-            <span className="mr-operator__chip mr-operator__chip--name">
-              Operator
-            </span>
-            <span className="mr-operator__arrow" />
-            <span className="mr-operator__chip mr-operator__chip--hold">
-              Send held
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Record — linked morning packet strip */}
-      <section
-        id="mr-record"
-        data-mr-mod
-        className="mr-mod mr-mod--record"
-        aria-labelledby="mr-record-h"
-      >
-        <div className="mr-mod__inner mr-mod__inner--packet">
-          <h2 id="mr-record-h" className="mr-headline mr-headline--sm" data-mr-reveal>
-            Brief, draft, and escalate decision stay linked.
-          </h2>
-          <div className="mr-packet mr-packet--linked" data-mr-reveal aria-hidden="true">
-            <p className="mr-packet__title">Morning packet</p>
-            <div className="mr-packet__beads">
-              <div className="mr-packet__row">
-                <span className="mr-packet__key">Brief</span>
-                <span className="still-fact">Overnight</span>
-              </div>
-              <div className="mr-packet__row">
-                <span className="mr-packet__key">Draft</span>
-                <span className="still-fact">Two tones</span>
-              </div>
-              <div className="mr-packet__row">
-                <span className="mr-packet__key mr-packet__key--ink">Escalate</span>
-                <span className="still-fact still-fact--ink">Human before send</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Refusal */}
-      <section
-        id="mr-refusal"
-        data-mr-mod
-        className="mr-mod mr-mod--refusal"
-        aria-labelledby="mr-refusal-h"
-      >
-        <div className="mr-mod__inner mr-mod__inner--refusal">
-          <h2 id="mr-refusal-h" className="mr-eyebrow" data-mr-reveal>
-            Refusal
-          </h2>
-          <p className="mr-headline mr-headline--sm" data-mr-reveal>
-            Will not auto-publish digests or posts.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA — horizontal triage rail + CTA; never auto-publish */}
-      <section
-        id="mr-cta"
-        data-mr-mod
-        className="mr-mod mr-mod--cta"
-        aria-labelledby="mr-cta-h"
-      >
-        <div className="mr-mod__inner mr-mod__inner--cta-rail">
-          <div className="mr-cta-rail" data-mr-reveal aria-hidden="true">
-            <div className="mr-cta-rail__lanes">
-              <div className="mr-cta-rail__lane mr-cta-rail__lane--pri">
-                <span className="mr-triage__lane mr-triage__lane--pri">P</span>
-                <p className="mr-pwn__name">Priority</p>
-                <p className="still-fact">Drafts</p>
-              </div>
-              <div className="mr-cta-rail__lane mr-cta-rail__lane--watch">
-                <span className="mr-triage__lane mr-triage__lane--watch">W</span>
-                <p className="mr-pwn__name">Watch</p>
-                <p className="still-fact still-fact--muted">Hold</p>
-              </div>
-              <div className="mr-cta-rail__lane mr-cta-rail__lane--noise">
-                <span className="mr-triage__lane mr-triage__lane--noise">N</span>
-                <p className="mr-pwn__name">Noise</p>
-                <p className="still-fact still-fact--muted">Archive</p>
-              </div>
-            </div>
-            <div className="mr-escalate mr-cta-rail__flag">
-              <span className="mr-escalate__flag">Escalate</span>
-              <p className="still-fact">Human before send</p>
-              <p className="still-fact still-fact--muted">Never auto-publish</p>
-            </div>
-          </div>
-          <div className="mr-cta-copy">
-            <h2 id="mr-cta-h" className="mr-headline" data-mr-reveal>
-              Start a brief.
-            </h2>
-            <p className="mr-cta-wrap chapter-cta" data-mr-reveal>
-              <Link href="/contact" className="home-cta">
-                Start a brief.
-              </Link>
-            </p>
-          </div>
-        </div>
+        <p id="ex-close-h" className="ex-close__line" data-ex-reveal>
+          {EXAMPLE_CLOSER}
+        </p>
+        <p className="ex-study" data-ex-reveal>
+          {STUDY_FOOTER}
+        </p>
+        <p className="ex-cta chapter-cta" data-ex-reveal>
+          <Link href="/contact" className="home-cta">
+            {START_A_BRIEF}
+          </Link>
+        </p>
       </section>
     </main>
   );

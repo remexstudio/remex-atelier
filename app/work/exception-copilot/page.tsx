@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
 import { ExceptionCopilotChapter } from "@/components/ExceptionCopilotChapter";
 import { SiteChrome } from "@/components/SiteChrome";
+import { EXCEPTION, STUDY_FOOTER } from "@/lib/selected-examples";
 
 export const metadata: Metadata = {
-  title: "Exception Copilot",
-  description:
-    "Product story: Exception Copilot — queue rank, policy cite disposition, case note, human for refunds, case timeline.",
+  title: EXCEPTION.display,
+  description: EXCEPTION.description,
   openGraph: {
-    title: "Exception Copilot · Remex Studio",
-    description:
-      "Product story: Exception Copilot — queue rank, policy cite disposition, case note, human for refunds, case timeline.",
+    title: `${EXCEPTION.display} · Remex Studio`,
+    description: EXCEPTION.description,
     url: "/work/exception-copilot",
     type: "article",
   },
   twitter: {
     card: "summary",
-    title: "Exception Copilot · Remex Studio",
-    description:
-      "Product story: Exception Copilot — queue rank, policy cite disposition, case note, human for refunds, case timeline.",
+    title: `${EXCEPTION.display} · Remex Studio`,
+    description: EXCEPTION.description,
   },
 };
 
 export default function ExceptionCopilotStoryPage() {
   return (
-    <SiteChrome
-      variant="film"
-      footerLine="Studio study. Client identity anonymized."
-    >
+    <SiteChrome variant="film" footerLine={STUDY_FOOTER}>
       <ExceptionCopilotChapter />
     </SiteChrome>
   );

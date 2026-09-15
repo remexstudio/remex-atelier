@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
 import { MorningRemexChapter } from "@/components/MorningRemexChapter";
 import { SiteChrome } from "@/components/SiteChrome";
+import { ATTENTION, STUDY_FOOTER } from "@/lib/selected-examples";
 
 export const metadata: Metadata = {
-  title: "Morning Remex",
-  description:
-    "Product story: Morning Remex — Priority/Watch/Noise triage, two-tone drafts, escalate, never auto-publish.",
+  title: ATTENTION.display,
+  description: ATTENTION.description,
   openGraph: {
-    title: "Morning Remex · Remex Studio",
-    description:
-      "Product story: Morning Remex — Priority/Watch/Noise triage, two-tone drafts, escalate, never auto-publish.",
+    title: `${ATTENTION.display} · Remex Studio`,
+    description: ATTENTION.description,
     url: "/work/morning-remex",
     type: "article",
   },
   twitter: {
     card: "summary",
-    title: "Morning Remex · Remex Studio",
-    description:
-      "Product story: Morning Remex — Priority/Watch/Noise triage, two-tone drafts, escalate, never auto-publish.",
+    title: `${ATTENTION.display} · Remex Studio`,
+    description: ATTENTION.description,
   },
 };
 
 export default function MorningRemexStoryPage() {
   return (
-    <SiteChrome
-      variant="film"
-      footerLine="Studio study. Client identity anonymized."
-    >
+    <SiteChrome variant="film" footerLine={STUDY_FOOTER}>
       <MorningRemexChapter />
     </SiteChrome>
   );
