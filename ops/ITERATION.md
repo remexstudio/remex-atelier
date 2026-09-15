@@ -1,5 +1,7 @@
-# V5 iteration
+# V5 closed
 
-Owner: buyer showcase + serious studio surface. Not four-SKU shop. Not personal site.
-Services catalog first; examples prove method; Now/Next/Later as direction only.
-After each PASS, Leader issues next slice immediately.
+Live: https://remex-atelier.vercel.app
+Last content: `0c28f83`. Ops close tip follows this stamp.
+
+Buyer showcase + serious studio surface. Services catalog first; Selected examples prove method; Now/Next/Later direction only.
+Hard bans remain for any future ticket. No V5-6 invented.

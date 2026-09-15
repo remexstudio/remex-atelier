@@ -1,6 +1,8 @@
 # Status
 
-- Phase: **V5 commercial rebuild** — V5-5 delivered (DEV PASS); await PM + Leader
-- V5-5: Apple / motion polish — still media stages + film chrome
-- Preview: https://remex-atelier.vercel.app
-- Blockers: Await three PM + Leader. Do not invent V5-6.
+- Phase: **Atelier V5 commercial rebuild CLOSED** (DoD green)
+- Closed: V5-0…V5-5
+- Last content: `0c28f83` / tip `1f8f3ae`
+- Prod: https://remex-atelier.vercel.app
+- Board: Vision / Apple / UX unanimous — commercial showcase line closed
+- Open: none. Soft leftover only (obsolete desk-chip CSS). Dev standby.
