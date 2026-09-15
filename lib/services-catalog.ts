@@ -59,7 +59,7 @@ export const CATALOG_LINES = [
     refuse:
       "A vague assistant for everything. A seat with no named approver. Work that should not be an agent.",
     done: "Job and gate agreed. The brief is ready to build. No silent execution.",
-    note: "Design happens before tools enter the room. If a smaller tool is honest, we say so and walk away.",
+    note: "Design happens before tools enter the room. If a smaller tool is honest, say so and walk away.",
   },
   {
     id: "build",
@@ -77,7 +77,7 @@ export const CATALOG_LINES = [
     name: "Agent operations",
     who: "The same desk after the first seat ships.",
     deliverable:
-      "Evals against the job — not a generic model scoreboard — a tighter gate where the desk still flinches, and a record a proposal can reopen.",
+      "Evals against the job, not against a generic model scoreboard. Tighten the gate where the desk still flinches. Improve the record so a proposal can be reopened.",
     refuse:
       "An hours factory or staffed body shop. A next seat before the first gate holds.",
     done: "The first gate holds. A next seat opens only then.",
@@ -120,6 +120,6 @@ export const SERVICES_FAQ = [
   },
   {
     q: "How do we start?",
-    a: "Start a brief. Name which workflow hurts, who approves, what the agent may never do, and what record you must keep.",
+    a: "Start a brief. Which workflow hurts. Who approves. What the agent may never do. What record you must keep.",
   },
 ] as const;

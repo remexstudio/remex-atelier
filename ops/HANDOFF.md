@@ -1,7 +1,7 @@
 # Handoff V5-1
 
 - Status: delivered — DEV PASS
-- Content SHA / Tip: this commit on `cursor/v5-1-services-catalog-a156`; base `1fdbfc8`
+- Content SHA / Tip: `f17302f` + copy polish on `cursor/v5-1-services-catalog-a156`; base `1fdbfc8`
 - Files:
   - `app/services/page.tsx`
   - `app/globals.css` (services-only tokens/classes)

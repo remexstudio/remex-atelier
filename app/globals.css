@@ -5837,6 +5837,29 @@ button:active {
   border-top: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
 }
 
+.svc-asks {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.svc-asks li {
+  margin: 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
+}
+
+.svc-asks li:last-child {
+  padding-bottom: 0;
+}
+
 .svc-actions {
   display: flex;
   flex-wrap: wrap;

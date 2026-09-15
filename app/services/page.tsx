@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
+import { BRIEF_ASKS } from "@/lib/brief-asks";
 import {
   CATALOG_LINES,
   CATALOG_MAY,
@@ -56,9 +57,9 @@ export default function ServicesPage() {
               Catalog
             </h2>
             <p className="svc-section-lede">
-              Remex designs, ships, and tightens custom AI agents for one
-              painful company workflow at a time — with a human gate as the
-              product surface.
+              Remex is a boutique that designs, ships, and tightens custom AI
+              agents for one painful company workflow at a time — with a
+              human gate as the product surface.
             </p>
             <ol className="svc-lines">
               {CATALOG_LINES.map((line) => (
@@ -204,10 +205,11 @@ export default function ServicesPage() {
             <h2 id="svc-close-h" className="svc-display svc-display--close">
               Start a brief.
             </h2>
-            <p className="svc-lede">
-              Name which workflow hurts, who approves, what the agent may
-              never do, and what record you must keep.
-            </p>
+            <ul className="svc-asks">
+              {BRIEF_ASKS.map((ask) => (
+                <li key={ask}>{ask}</li>
+              ))}
+            </ul>
             <div className="svc-actions">
               <Link href="/contact" className="film-cta">
                 Start a brief.
