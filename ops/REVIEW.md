@@ -1,5 +1,7 @@
-# Review V6-2 — CLOSED PASS
+# Review V6-3 — CLOSED PASS
 
-- Content: `df7cc41` / tip `0071284`
-- Prod: https://remex-atelier.vercel.app · dpl_rY6NtV3CoDtkjKMZtofCu2ZvLe91
+- Content: `b046352` / tip `a327326`
+- Prod: https://remex-atelier.vercel.app · dpl_HovGGdwsfqMTbhWAeFpSeyD9xDvx
 - Verdict: **PASS** (unanimous)
+
+Soft: residual `42rem` as reading measure (not stage island) OK unless 1440 still feels narrow

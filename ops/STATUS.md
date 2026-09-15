@@ -1,4 +1,4 @@
 # Status
 
-- Phase: **V6** — V6-2 PASS; **V6-3 desktop 1280/1440 delivered — await Leader REVIEW**
+- Phase: **V6** — V6-3 PASS; **V6-4 teaser/story split in progress**
 - Preview: https://remex-atelier.vercel.app
