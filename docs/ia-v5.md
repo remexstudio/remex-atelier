@@ -354,14 +354,14 @@ Planned map for later Leader tickets. **Not issued except V5-0.** Do not start V
 
 | ID | Slice | Intent |
 | --- | --- | --- |
-| **V5-0** | Docs | This file + `docs/copy-locks.md`. No `app/` / `components/` / `lib/` / CSS. |
-| **V5-1** | Chrome / IA shell | Primary nav and route chrome: Services on the commercial path; Lab secondary Prototype; `/demo` off primary nav; chapter map restaged to services-first home ids. Shell only — do not rewrite case narratives here unless the TASK allows it. |
-| **V5-2** | Home, services-first | Implement `/` module order in §4.1. Offer before examples. Varied grammars. No four-SKU hero. |
-| **V5-3** | Services + contact | `/services` catalog + engagement + for/not-for + trust + FAQ. `/contact` brief fields (workflow / who approves / never-do / record). |
-| **V5-4** | Work / examples rewrite | `/work` Selected examples. Four long cases with desk display names, 500–800w narrative, 4–6 captioned stills, locked closer. Optional other-seats band. |
-| **V5-5** | Approach + polish | `/approach` method + name meaning once + refuse + extensibility. Visual/mobile polish against §5. Kill remaining chip-as-page and paper-primary leaks. |
+| V5-0 | Docs | `docs/ia-v5.md` + `docs/copy-locks.md` (this ticket) |
+| V5-1 | `/services` | Full catalog + FAQ + engagement shape + for/not-for + trust |
+| V5-2 | Examples | Four long cases + `/work` relabeled Selected examples (+ optional other-seats) |
+| V5-3 | Home | Services first → examples → roadmap (Now/Next/Later) → Start a brief |
+| V5-4 | Mobile / RM | 375 + reduced-motion on every primary route |
+| V5-5 | Apple / motion | Kill chip-as-page; add still media; type/nav tokens |
 
-`ops/BACKLOG.md` may list a different issue order. The table above is the **planned commercial rebuild**. Leader’s issued TASK always wins for the active slice.
+`ops/BACKLOG.md` may list a different issue order. The table above is the **planned commercial rebuild**. Leader’s issued TASK always wins for the active slice. Do not start next until PASS.
 
 ---
 
