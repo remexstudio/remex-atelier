@@ -1,31 +1,24 @@
 # Handoff V5-1
 
 - Status: delivered — DEV PASS
-- Content SHA / Tip: `f17302f` + copy polish on `cursor/v5-1-services-catalog-a156`; base `1fdbfc8`
+- Content SHA: f17302f (brief-asks polish 8d28b37)
+- Merge tip: dd724f8 on main (HANDOFF stamp follows)
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: dpl_BdQRmCq91apdibsyyADn9LSot8Uf READY
 - Files:
   - `app/services/page.tsx`
-  - `app/globals.css` (services-only tokens/classes)
-  - `components/SiteChrome.tsx` (primary: Work / Services / Approach / Contact; Lab footer Prototype; no `/demo`)
+  - `app/globals.css` (services-only)
+  - `components/SiteChrome.tsx` (primary Work / Services / Approach / Contact; Lab Prototype; no /demo)
   - `lib/services-catalog.ts`
-  - `ops/HANDOFF.md`
-  - `ops/STATUS.md`
-- Acceptance self-check:
-  - [x] `/services` shows three catalog lines (Agent product design / Agent build / Agent operations) with who / deliverable / refuse / done paragraphs from ia-v5 §2
-  - [x] Agent build prints Propose → Approve → Record; may draft/retrieve/route/classify/queue; may not silently move money/publish/delete
-  - [x] Agent operations: evals, tighter gates, better records; next seat only when first gate holds
-  - [x] Engagement shape labels verbatim in order: Start a brief → Design job+gate → Ship first seat → Operate / decide second seat
-  - [x] For / Not for from ia-v5 + locked refuse list
-  - [x] Trust stance locked paragraph verbatim
-  - [x] FAQ: How is this different from a platform?; Do you sell four agents?; What happens after the first seat?; How is risk held?; How do we start?
-  - [x] CTA Start a brief. → `/contact` (≥44, focus-visible via `.film-cta`)
-  - [x] Optional: first seats narrowly scoped; no invented week counts or prices
-  - [x] Film canvas `#ffffff` / gutter `#f5f5f7`; large negative-tracking sans display; hairlines
-  - [x] ≥2 layout grammars: hero + method columns + split still+copy + FAQ stack
-  - [x] Not chip-as-page, not horizontal chip rail, not Agent Apps / Agent Ops / Advisory catalog
-  - [x] 375 stacked ≥44; RM: full catalog + FAQ + trust visible (no pin traps)
-  - [x] No Lenis / normalizeScroll / body scroll lock
-  - [x] Metadata title/description no longer Agent Apps/Ops/Advisory
-  - [x] Services reaches `/services` in primary nav; `/demo` not primary; Lab secondary Prototype
+  - ops stamps
+- Acceptance:
+  - [x] Three catalog lines with who/deliverable/refuse/done
+  - [x] Engagement labels verbatim
+  - [x] For/Not for + trust locked + FAQ + Start a brief CTA
+  - [x] No four-SKU / Agent Apps·Ops·Advisory catalog
+  - [x] Film canvas; 375 stacked; no chip-as-page
   - [x] `pnpm build` PASS
+  - [x] `vercel deploy --prod` dpl_BdQRmCq91apdibsyyADn9LSot8Uf
 - Skills: apple-design, apple-design-web, apple-design-motion, emil-design-eng, gsap-scrolltrigger, gsap-react, cinematic-scroll-storytelling, zero-jank-scroll, review-animations
+- Risks: 375 primary nav four-link nowrap may need horizontal scroll until V5-4 collapse
 - Blockers: Await three PM + Leader. No V5-2 until PASS.
