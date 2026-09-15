@@ -1,11 +1,15 @@
-# Handoff
+# Handoff V6-1
 
-- Status: **DEV PASS**
-- TASK: V6-1 — strip geo slogan sitewide
-- Commit: `fix(copy): remove Seattle and global-clients slogan sitewide`
-- Notes:
-  - Removed `Seattle studio. Global clients.` / `A Seattle studio.` / `a Seattle atelier` from product surface (chrome default, home close, services/approach/contact/about/lab/pulse, metadata, README).
-  - Footer omits the place line. Study pages keep `Studio study. Client identity anonymized.` Legal `Jiyuyun Studio LLC` stays on About / Approach.
-  - No replacement city / global-clients / worldwide / mobile-studio slogan.
-  - `rg "Seattle studio|Global clients|A Seattle studio"` is zero in `app/`, `components/`, `lib/`; README neutralized.
-  - Did not vercel deploy (coordinator). Did not open V6-2.
+- Status: delivered — DEV PASS
+- Content SHA: 9f21d17
+- Merge tip: 9680f39 on main (HANDOFF stamp follows)
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: dpl_JDhDPsWyfoyh8pUkKuXcnqfA6iMw READY
+- Acceptance:
+  - [x] rg Seattle studio|Global clients|A Seattle studio → zero in app/, components/, lib/
+  - [x] README neutralized; no replacement location slogan
+  - [x] LLC kept where appropriate
+  - [x] pnpm build PASS
+  - [x] vercel deploy --prod dpl_JDhDPsWyfoyh8pUkKuXcnqfA6iMw
+- Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
+- Blockers: Await three PM + Leader. No V6-2 until PASS.
