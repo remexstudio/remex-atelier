@@ -1,45 +1,56 @@
-# TASK V6-2 — unify primary nav (four items every route)
+# TASK V6-3 — desktop 1280 / 1440 layout (Approach + Services + home)
 
-TASK ID: V6-2
+TASK ID: V6-3
 REPO: remexstudio/remex-atelier
-BASE: tip after V6-1 PASS (`6673d11` or newer main)
-GOAL: One primary nav everywhere: **Work · Services · Approach · Contact**. Kill the home-only chapter row that makes Home look like a 9-item bar and other routes look like a 4-item bar. Per `docs/ia-v6.md` §2.
+BASE: tip after V6-2 PASS (`0071284` or newer main)
+GOAL: Fix first-class desktop measure at **1280** and **1440** on `/approach`, `/services`, and `/` per `docs/ia-v6.md` §5. No crushed text, no single card lost in empty side fields, no uneven three-column catalog.
 
 ## Must ship
 
-1. **Primary chrome identical on every route**
-   - Same four links, same order, same treatment on `/`, `/work`, `/services`, `/approach`, `/contact`, stories, lab/about
-   - Desktop: **no** `site-nav__chapters` (or equivalent) beside primary links on Home
-   - Remove `site-shell--home-chapters` behavior that grows the bar only on `/`
+1. **Shared stage measure**
+   - Marketing shells at 1280/1440 use a coherent max-width + horizontal padding (do not leave a ~42rem column floating in a wide stage; do not stretch one lonely card edge-to-edge)
+   - Prefer aligning film pages to a common stage (~68–72rem or documented equivalent) with balanced gutters
 
-2. **Home chapters = in-page only**
-   - Allowed: anchors in the **page body** (existing `home-close-map` / equivalent band below the nav — not inside the sticky primary bar)
-   - Forbidden: a slim chapter row in the sticky header that appears only on `/` and disappears on other routes
-   - Mobile `SiteNavMenu`: primary four always. **Do not** inject a home-only “On this page” block that recreates route-dependent chrome. Prefer body anchors (or a home body “On this page” list). UX soft preference: avoid sticky dual row.
+2. **`/services`**
+   - Three catalog lines: even columns / stack rules that stay aligned at 1280/1440
+   - Engage split + fit grid: no collapse that leaves huge empty fields or crushed copy
+   - FAQ / trust bands: readable measure, not ultra-narrow ribbon in a wide viewport
 
-3. **Keep**
-   - V5-4 collapse Menu/Close ≥44, aria, Escape, focus trap
-   - Frosted 44–48px film nav
-   - No `/demo` in primary; Lab stays footer Prototype
+3. **`/approach`**
+   - Proportions: method / etymology / refuse / roadmap / trust blocks balanced
+   - Kill leftover empty place anchors if any; optional soft purge `.approach-place` dead CSS
 
-4. **Do not**
-   - Change copy locks, geo (already stripped), story routes (V6-4), home first viewport services (V6-5), desktop grids (V6-3)
+4. **`/` home**
+   - Hero / services / method / examples / brief / roadmap / close: stage widths consistent at 1280/1440
+   - Services module columns even; method split not “tiny copy + huge empty still”
+   - Do **not** yet force three services into first viewport (that is V6-5) — only desktop measure
+
+5. **Keep**
+   - Four-item unified nav (V6-2)
+   - No geo slogan
+   - 375 still usable (no regression into horizontal traps)
+   - Film canvas `#fff/#f5f5f7`; ≥44 CTAs
 
 ## ALLOWED FILES
 
-- `components/SiteChrome.tsx`
-- `components/SiteNavMenu.tsx`
-- `app/globals.css` (nav chrome only)
-- `components/HomeScenes.tsx` (body chapter map only if needed so Home still has in-page jump targets)
+- `app/globals.css`
+- `app/approach/page.tsx` (structure/class only if needed)
+- `app/services/page.tsx` (structure/class only if needed)
+- `components/HomeScenes.tsx` (layout classes only — no commercial reorder)
 - `ops/HANDOFF.md`, `ops/STATUS.md`
+
+## OUT OF SCOPE
+
+- V6-4 story routes, V6-5 first-viewport services reorder, V6-6 Approach Next copy rewrite
+- Inventing new slogans
 
 ## ACCEPTANCE
 
-- [ ] Every primary route shows the same four nav items; Home no longer adds five chapter links into the sticky bar
-- [ ] Home chapter targets still reachable via in-page body links (not route-dependent sticky row)
-- [ ] 375 Menu still works; ≥44; no Lenis/body lock
+- [ ] 1280 and 1440: Approach, Services, home look balanced (no crushed text, no lost card, even catalog)
+- [ ] Shared stage / padding coherent across those routes
+- [ ] 375 not broken; nav still four items
 - [ ] `pnpm build` PASS; prefer `vercel deploy --prod`
-- [ ] HANDOFF; DEV PASS; do not open V6-3
+- [ ] HANDOFF; DEV PASS; do not open V6-4
 
 ## SKILLS TO USE
 
@@ -47,4 +58,4 @@ GOAL: One primary nav everywhere: **Work · Services · Approach · Contact**. K
 
 ## COMMIT MESSAGE
 
-`fix(nav): unify four-item primary chrome on every route`
+`fix(layout): balance Approach Services and home at 1280 1440`

@@ -1,7 +1,5 @@
-# Review V6-1 — CLOSED PASS
+# Review V6-2 — CLOSED PASS
 
-- Content: `9f21d17` / tip `6673d11`
-- Prod: https://remex-atelier.vercel.app · dpl_JDhDPsWyfoyh8pUkKuXcnqfA6iMw
+- Content: `df7cc41` / tip `0071284`
+- Prod: https://remex-atelier.vercel.app · dpl_rY6NtV3CoDtkjKMZtofCu2ZvLe91
 - Verdict: **PASS** (unanimous)
-
-Soft leftover: dead CSS `.approach-place`

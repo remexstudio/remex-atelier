@@ -1,5 +1,4 @@
 # Status
 
-- Phase: **V6** — V6-2 unify nav **DEV PASS** (awaiting Leader REVIEW)
+- Phase: **V6** — V6-2 PASS; **V6-3 desktop layout in progress**
 - Preview: https://remex-atelier.vercel.app
-- Open: V6-2 review only. Do not open V6-3.
