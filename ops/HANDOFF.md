@@ -1,24 +1,15 @@
 # Handoff V6-2
 
 - Status: delivered — DEV PASS
-- TASK: V6-2 — unify four-item primary chrome on every route
-- Base: `4fe9725` on main
-- Commit: `fix(nav): unify four-item primary chrome on every route`
-- Preview / Production: https://remex-atelier.vercel.app (coordinator deploys)
-- Files: `components/SiteChrome.tsx`, `components/SiteNavMenu.tsx`, `app/globals.css` (nav chrome only), ops
-- Notes:
-  - Sticky primary is Work · Services · Approach · Contact on every route. Home no longer injects a five-link chapter row into the 46px bar.
-  - Deleted `CHAPTERS`, `showHomeChapters`, `site-nav__chapters*`, and `site-shell--home-chapters`.
-  - `SiteNavMenu` no longer accepts `chapters` or renders an “On this page” panel. Mobile Menu is the same four primaries on `/` and `/work`.
-  - Home chapter jumps stay in-page via existing `home-close-map` (`#home-services` `#home-method` `#home-examples` `#home-brief` `#home-roadmap`). Not in sticky nav.
-  - Kept: V5-4 Menu/Close ≥44, `aria-expanded` / `aria-controls`, Escape, focus trap; frosted 44–48px film nav; footer Prototype; no `/demo` in primary.
-  - Did not change copy locks, geo, story routes, home first-viewport services layout, or desktop grids.
-  - Did not vercel deploy (cloud). Did not open V6-3.
+- Content SHA: df7cc41
+- Merge tip: ee831bf on main (HANDOFF stamp follows)
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: dpl_rY6NtV3CoDtkjKMZtofCu2ZvLe91 READY
 - Acceptance:
-  - [x] Every primary route shows the same four nav items; Home no longer adds five chapter links into the sticky bar
-  - [x] Home chapter targets still reachable via in-page body links (`home-close-map` — not a route-dependent sticky row)
-  - [x] 375 Menu still works; ≥44; no Lenis/body lock
-  - [x] `pnpm build` PASS
-  - [ ] `vercel deploy --prod` — coordinator; Dev did not deploy
+  - [x] Same four primary nav items on every route; Home sticky no longer adds five chapter links
+  - [x] Home chapters via body `home-close-map` (#home-services/method/examples/brief/roadmap)
+  - [x] 375 Menu/Close ≥44; aria; no Lenis/body lock
+  - [x] pnpm build PASS
+  - [x] vercel deploy --prod dpl_rY6NtV3CoDtkjKMZtofCu2ZvLe91
 - Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
-- Blockers: Await Leader REVIEW. Do not invent V6-3.
+- Blockers: Await three PM + Leader. No V6-3 until PASS.
