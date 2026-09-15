@@ -1,8 +1,8 @@
 # Backlog (Atelier V5)
 
-- [x] V5-0 docs/ia-v5.md + docs/copy-locks.md
-- [x] V5-1 /services full catalog + FAQ + engagement
-- [ ] V5-2 four long cases + /work Selected examples
+- [x] V5-0 docs
+- [x] V5-1 /services
+- [x] V5-2 Selected examples + four long cases
 - [ ] V5-3 home: services → examples → roadmap
-- [ ] V5-4 375 + reduced-motion on primary routes (incl. nav collapse)
-- [ ] V5-5 Apple/motion: kill chip-as-page, stills, type/nav
+- [ ] V5-4 375 + reduced-motion (nav collapse + scroll-margin)
+- [ ] V5-5 Apple/motion polish (still media stage)

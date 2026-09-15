@@ -1,14 +1,8 @@
-# Review V5-1 — CLOSED PASS
+# Review V5-2 — CLOSED PASS
 
-- Content: `f17302f` + polish `8d28b37` / tip `e46a3b6`
-- Prod: https://remex-atelier.vercel.app · dpl_BdQRmCq91apdibsyyADn9LSot8Uf
+- Content: `9ad06c3` / tip `32f8825`
+- Prod: https://remex-atelier.vercel.app · dpl_5WMznAcLTUpUoEXU1VncShxAbjMT
 - Verdict: **PASS** (unanimous)
 
-| Role | Verdict |
-| --- | --- |
-| Apple PM | PASS |
-| UX PM | PASS |
-| Vision PM | PASS |
-| Leader | PASS |
-
-Soft → V5-4: collapse 375 primary nav (four-link nowrap may horizontal-scroll).
+Soft → V5-4: 375 nav collapse; `[data-ex-mod]` scroll-margin-top
+Soft → V5-5: still media stage polish

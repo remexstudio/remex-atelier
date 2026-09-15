@@ -1,89 +1,65 @@
-# TASK V5-2 — Selected examples + four long cases
+# TASK V5-3 — home services-first rebuild
 
-TASK ID: V5-2
+TASK ID: V5-3
 REPO: remexstudio/remex-atelier
-BASE: tip after V5-1 PASS (`e46a3b6` or newer main)
-GOAL: Relabel `/work` as **Selected examples** (proof of method, not SKUs). Rewrite four chapter pages as long written cases + captioned stills per `docs/ia-v5.md` §3 and `docs/copy-locks.md`. Keep URL slugs. Change **display names** only.
+BASE: tip after V5-2 PASS (`32f8825` or newer main)
+GOAL: Rebuild `/` per `docs/ia-v5.md` §4.1. **Services before examples.** Not a four-SKU shop. Not six isomorphic pins. Film canvas.
 
-## Display names (locked)
+## Required home module order
 
-| URL slug (keep) | Display |
-| --- | --- |
-| `/work/atelier-concierge` | Demand desk |
-| `/work/ledger-clerk` | Knowledge desk |
-| `/work/morning-remex` | Attention desk |
-| `/work/exception-copilot` | Exception desk |
+| # | Module | Must carry |
+| --- | --- | --- |
+| 1 | Hero | Locked promise: Agents, built to the brief. / We design the job… / One workflow. One agent. A human still decides. |
+| 2 | Services | Layer A three beats: Agent product design / Agent build / Agent operations (short who+done or deliverable; link to `/services`) — **not** a product grid of four desks |
+| 3 | Method / gate | Job + gate + Propose → Approve → Record; human still decides. At most **one** short pin **only if** it reveals a new fact; else shallow |
+| 4 | Example teasers | Four desks as **Selected examples** proof (Demand / Knowledge / Attention / Exception) + gate one-liners → `/work/*`. Not “our four products” |
+| 5 | How a brief starts | BRIEF_ASKS four questions |
+| 6 | Now / Next / Later | Extensibility **direction only** — not shipped SaaS |
+| 7 | Start a brief | CTA → `/contact` |
 
-Never print Atelier Concierge / Ledger Clerk / Morning Remex / Exception Copilot as shop SKU titles.
-Index label: **Selected examples** (not Products / Our agents / Work as product wall).
+≥3 distinct layout grammars. Ban chip-as-page hero. Ban horizontal chip rails as home hero. Ban Lenis / normalizeScroll / body lock.
 
-## `/work` index
+Reuse constants from `lib/services-catalog.ts`, `lib/selected-examples.ts`, `lib/brief-asks.ts` where possible (DRY).
 
-- Title / H1 framing: Selected examples
-- Cards use desk display names + one-line method proof (gate fact), not product SKU chrome
-- Optional band: **Other seats this method fits** — Support triage; Vendor onboarding; Invoice exceptions; Sales follow-up; Internal policy Q&A — labeled method fits, **not shipped products**
-- No “Open demo”; no four-SKU shop language
-- Film canvas; stills as media; 375 stacked; ≥44 targets
+## Kill from current home
 
-## Each `/work/*` page shape (required)
-
-1. **Context** — seat + constraint (desk DNA from ia-v5 §3.2)
-2. **Narrative** — 500–800 English words: pain, design choices, what the agent may do, the gate, the record, what we refused. Unique abilities / gate / record / refusal — not interchangeable across desks.
-3. **Stills** — 4–6 captioned stills under the article (media frames, not chip-as-page heroes)
-4. **Closer (verbatim):** This is one seat. The next brief will be a different job.
-5. Footer pattern: Studio study. Client identity anonymized.
-6. CTA: Start a brief. → `/contact`
-
-### Desk DNA (must stay distinct)
-
-**Demand desk** — human before pay; may map occasion→one hero / stage try-on / draft bag; refuse invent SKUs / charge without approval; record consult+ticket
-
-**Knowledge desk** — human before execute corpus change; corpus-only + citations + Propose package; refuse answer outside corpus / Execute writes; record audit log
-
-**Attention desk** — Priority/Watch/Noise + two draft tones; human before send; refuse auto-publish; record brief+draft+escalate
-
-**Exception desk** — queue + policy suggestion + case note; human before money moves; refuse refunds/money without human; record case timeline
+- Framing that sells four named agents as the catalog / hire wall
+- “Jobs we hire” / product-shop rail as the primary commercial surface before services
+- Warm-paper / chip-as-page leftovers
 
 ## Visual / UX
 
-- Film `#fff/#f5f5f7`; large negative-tracking display for desk H1; hairlines; shallow scroll (no long pin traps; no Lenis)
-- Kill chip-as-page as the primary chapter grammar; stills under article
-- 375: stacked narrative + stills; no horizontal chip rails; full text readable under reduced-motion
-- Nav label may stay “Work” in primary chrome (route `/work`) while page title is Selected examples — or soft-label “Examples” only if it does not confuse; do not invent new primary routes
+- `#fff/#f5f5f7`; large negative-tracking display; frosted nav; hairlines; CTA-only accent
+- 375: stacked modules; stills above copy where split; ≥44 targets; full payload under RM
+- Chapter map / in-page anchors may restage to new module ids
+- Soft: if easy, add `scroll-margin-top: var(--nav-height)` on new home module ids (full 375 nav collapse stays V5-4)
 
 ## ALLOWED FILES
 
-- `app/work/page.tsx`
-- `app/work/atelier-concierge/page.tsx`
-- `app/work/ledger-clerk/page.tsx`
-- `app/work/morning-remex/page.tsx`
-- `app/work/exception-copilot/page.tsx`
-- `components/AtelierConciergeChapter.tsx`
-- `components/LedgerClerkChapter.tsx`
-- `components/MorningRemexChapter.tsx`
-- `components/ExceptionCopilotChapter.tsx`
-- `app/globals.css` (work/example-only classes)
-- `lib/` for shared example constants (English)
-- `components/SiteChrome.tsx` only if index/nav microcopy needs Selected examples alignment
+- `components/HomeScenes.tsx`
+- `app/page.tsx` (metadata only if needed)
+- `app/globals.css` (home modules)
+- `components/SiteChrome.tsx` (chapter map / home anchors only)
+- `lib/` shared constants only if needed for home
 - `ops/HANDOFF.md`, `ops/STATUS.md`
 
 ## OUT OF SCOPE
 
-- Home rebuild (V5-3)
-- `/services` rewrite (already PASS)
-- Approach rewrite, contact form schema beyond CTA link
-- 375 nav collapse (V5-4 soft carry)
-- Inventing named customers, quotes, percentages, prices, week counts
-- Renaming URL slugs
+- Rewriting `/services` or four long cases (PASS)
+- Approach full rewrite (can soft-link Now/Next/Later detail to `/approach`)
+- V5-4 nav collapse / full primary-route RM audit
+- V5-5 still media stage polish
+- Inventing prices, weeks, SOC2, named customers
 
 ## ACCEPTANCE
 
-- [ ] `/work` is Selected examples; cards use desk display names; optional other-seats band labeled method-fits
-- [ ] Four chapters: context + 500–800w unique narrative + 4–6 captioned stills + locked closer + study footer + Start a brief CTA
-- [ ] DNA distinct; no interchangeable copy; no four-SKU shop framing
-- [ ] Film canvas; no chip-as-page hero; no Lenis; 375 readable
-- [ ] `pnpm build` PASS; prefer `vercel deploy --prod` + smoke
-- [ ] HANDOFF; DEV PASS; do not open V5-3
+- [ ] Home order: services → method → example teasers → brief asks → Now/Next/Later → CTA
+- [ ] Services module is Layer A catalog, not four desks
+- [ ] Example teasers use desk display names + Selected examples framing
+- [ ] Locked SAY lines where used; no four-SKU / English-products language
+- [ ] ≥3 grammars; no six isomorphic pins; no Lenis; RM keeps full commercial payload
+- [ ] `pnpm build` PASS; prefer `vercel deploy --prod`
+- [ ] HANDOFF; DEV PASS; do not open V5-4
 
 ## SKILLS TO USE
 
@@ -92,4 +68,4 @@ Index label: **Selected examples** (not Products / Our agents / Work as product 
 
 ## COMMIT MESSAGE
 
-`feat(work): rewrite selected examples as long cases with stills`
+`feat(home): restage services-first commercial home`
