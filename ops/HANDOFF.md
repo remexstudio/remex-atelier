@@ -1,4 +1,31 @@
-# Handoff
+# Handoff V5-1
 
-- Status: awaiting Dev on V5-1
-- Prior: V5-0 PASS (`17dbc25` / tip `d4d7088`)
+- Status: delivered — DEV PASS
+- Content SHA / Tip: this commit on `cursor/v5-1-services-catalog-a156`; base `1fdbfc8`
+- Files:
+  - `app/services/page.tsx`
+  - `app/globals.css` (services-only tokens/classes)
+  - `components/SiteChrome.tsx` (primary: Work / Services / Approach / Contact; Lab footer Prototype; no `/demo`)
+  - `lib/services-catalog.ts`
+  - `ops/HANDOFF.md`
+  - `ops/STATUS.md`
+- Acceptance self-check:
+  - [x] `/services` shows three catalog lines (Agent product design / Agent build / Agent operations) with who / deliverable / refuse / done paragraphs from ia-v5 §2
+  - [x] Agent build prints Propose → Approve → Record; may draft/retrieve/route/classify/queue; may not silently move money/publish/delete
+  - [x] Agent operations: evals, tighter gates, better records; next seat only when first gate holds
+  - [x] Engagement shape labels verbatim in order: Start a brief → Design job+gate → Ship first seat → Operate / decide second seat
+  - [x] For / Not for from ia-v5 + locked refuse list
+  - [x] Trust stance locked paragraph verbatim
+  - [x] FAQ: How is this different from a platform?; Do you sell four agents?; What happens after the first seat?; How is risk held?; How do we start?
+  - [x] CTA Start a brief. → `/contact` (≥44, focus-visible via `.film-cta`)
+  - [x] Optional: first seats narrowly scoped; no invented week counts or prices
+  - [x] Film canvas `#ffffff` / gutter `#f5f5f7`; large negative-tracking sans display; hairlines
+  - [x] ≥2 layout grammars: hero + method columns + split still+copy + FAQ stack
+  - [x] Not chip-as-page, not horizontal chip rail, not Agent Apps / Agent Ops / Advisory catalog
+  - [x] 375 stacked ≥44; RM: full catalog + FAQ + trust visible (no pin traps)
+  - [x] No Lenis / normalizeScroll / body scroll lock
+  - [x] Metadata title/description no longer Agent Apps/Ops/Advisory
+  - [x] Services reaches `/services` in primary nav; `/demo` not primary; Lab secondary Prototype
+  - [x] `pnpm build` PASS
+- Skills: apple-design, apple-design-web, apple-design-motion, emil-design-eng, gsap-scrolltrigger, gsap-react, cinematic-scroll-storytelling, zero-jank-scroll, review-animations
+- Blockers: Await three PM + Leader. No V5-2 until PASS.
