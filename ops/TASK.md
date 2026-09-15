@@ -1,66 +1,62 @@
-# TASK V5-4 — 375 + reduced-motion on primary routes
+# TASK V5-5 — Apple / motion polish (final V5 craft knife)
 
-TASK ID: V5-4
+TASK ID: V5-5
 REPO: remexstudio/remex-atelier
-BASE: tip after V5-3 PASS (`d809e6b` or newer main)
-GOAL: Make every primary commercial route usable at **375** and complete under **`prefers-reduced-motion`**. Collapse narrow nav. No Lenis. No long pin traps.
-
-## Primary routes in scope
-
-`/` `/services` `/work` `/work/*` `/approach` `/contact` (+ shared `SiteChrome` nav/footer)
+BASE: tip after V5-4 PASS (`a41037b` or newer main)
+GOAL: Final commercial craft pass. Kill remaining chip-as-page feel. Elevate Selected examples stills to **product-page media stages**. Tighten type / frosted nav tokens. Do **not** dilute V5 thesis or rewrite long case narratives.
 
 ## Must ship
 
-1. **375 primary nav collapse**
-   - Work / Services / Approach / Contact must **not** force horizontal scroll as a four-link nowrap row
-   - Pattern: menu button (≥44px) + open panel/drawer/list with labeled links + focus trap or escape; `aria-expanded` / `aria-controls`
-   - Home chapter map (Services/Method/Examples/Brief/Roadmap) on narrow: collapse into the same menu, a secondary disclosure, or stacked — **no** hairline horizontal chip rail as the only way to jump
+1. **Still media stage (examples + home teasers)**
+   - `/work/*` stills and home example teasers: larger, calmer product frames (media), not DNA mini-chip stacks as the page hero
+   - Keep captions; keep distinct desk DNA facts inside frames
+   - 375: single column, no horizontal chip rails; overflow contained
 
-2. **scroll-margin**
-   - Home `.home-mod[id]` keep `scroll-margin-top: var(--nav-height)`
-   - Example chapters: `[data-ex-mod]` (and any in-page anchors) get the same — fix UX soft ADD from V5-2
+2. **Kill chip-as-page leftovers**
+   - Audit primary routes for pill/tag/chip rails used as the main visual
+   - Decorative chips only where they support a still — never the whole chapter grammar
 
-3. **375 layout audit**
-   - Stacked modules; no horizontal chip rails as page heroes
-   - Hit targets ≥44px (nav, CTA, cards, form controls)
-   - `/contact` form: labels visible, fields full-width, usable on 375
-   - Long example narratives + stills readable without horizontal overflow
+3. **Type + nav tokens**
+   - Confirm `#ffffff` / `#f5f5f7`, SF-like sans, large negative-tracking display on hero/desk H1
+   - Frosted sticky nav 44–48px; hairlines; CTA-only accent
+   - Soft from UX: on Menu open, move focus into first panel link (optional if ≤ small change)
 
-4. **`prefers-reduced-motion`**
-   - Full commercial payload still visible (offer / path / proof / risk / start on home; catalog on services; narratives on examples)
-   - Motion = transform/opacity only; once-reveal may become static; no scrub-required facts
-   - No pin theater required to read
+4. **Motion**
+   - transform/opacity only; RM full payload; no Lenis / normalizeScroll / body lock
+   - No new long pins; no six-isomorphic home return
 
-5. **Hard bans remain**
-   - No Lenis / normalizeScroll / body overflow lock
-   - No inventing prices/weeks/SOC2/named customers
+5. **Approach polish (light)**
+   - Ensure `/approach` still carries method + name meaning once + refuse + Now/Next/Later detail + trust if missing — film grammar aligned; **no** Chinese outside etymology glyphs
+
+## Do not
+
+- Change desk display names, locked SAY, trust paragraph, engagement labels, example closer
+- Invent prices / weeks / SOC2 / named customers / four-SKU framing
+- Open personal site or founder name
 
 ## ALLOWED FILES
 
-- `components/SiteChrome.tsx`
 - `app/globals.css`
-- `components/HomeScenes.tsx` (only if chapter map / scroll-margin / narrow layout needs it)
-- `components/ContactForm.tsx` / `app/contact/page.tsx` (375 form only)
-- `components/*Chapter.tsx` (scroll-margin / narrow still stack only — no narrative rewrite)
-- `app/approach/page.tsx` (narrow/RM only if broken)
-- Small helper under `components/` for mobile nav if needed
+- `components/*Chapter.tsx` (still markup/CSS hooks only)
+- `components/HomeScenes.tsx` (teaser stills only)
+- `app/work/page.tsx` (index still presentation)
+- `components/SiteChrome.tsx` / `components/SiteNavMenu.tsx` (focus-into-panel soft)
+- `app/approach/page.tsx` (light film/align only)
 - `ops/HANDOFF.md`, `ops/STATUS.md`
 
 ## OUT OF SCOPE
 
-- V5-5 still media stage polish / type token restage beyond nav
-- Rewriting services/examples/home commercial copy
-- Personal site
+- New routes; services/catalog rewrite; narrative word-count rewrite
+- Soft backlog beyond this knife
 
 ## ACCEPTANCE
 
-- [ ] 375: primary nav collapsed (no four-link nowrap horizontal trap); chapter links not a chip rail
-- [ ] Menu controls ≥44px; keyboard + `aria-*` sane; focus-visible
-- [ ] `[data-ex-mod]` (and home mods) have `scroll-margin-top: var(--nav-height)`
-- [ ] Primary routes readable at 375; contact form usable
-- [ ] RM: full payload without scrub/pin
-- [ ] No Lenis; `pnpm build` PASS; prefer `vercel deploy --prod`
-- [ ] HANDOFF; DEV PASS; do not open V5-5
+- [ ] Example stills read as media stages, not chip pages (desktop + 375)
+- [ ] No chip-as-page primary grammar on primary routes
+- [ ] Type/nav tokens film-locked; CTA ≥44
+- [ ] RM + no Lenis; commercial locks untouched
+- [ ] `pnpm build` PASS; `vercel deploy --prod` + smoke
+- [ ] HANDOFF; DEV PASS; do not invent V5-6
 
 ## SKILLS TO USE
 
@@ -69,4 +65,4 @@ GOAL: Make every primary commercial route usable at **375** and complete under *
 
 ## COMMIT MESSAGE
 
-`fix(a11y): collapse 375 nav and harden reduced-motion routes`
+`feat(site): elevate still media and polish film chrome`
