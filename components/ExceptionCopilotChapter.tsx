@@ -5,29 +5,24 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import {
+  EXAMPLE_CLOSER,
+  EXCEPTION,
+  INDEX_LABEL,
+  START_A_BRIEF,
+  STUDY_FOOTER,
+} from "@/lib/selected-examples";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-/* Product chapter motion: once-reveal only. No pin / no long scrub runway.
- * prefers-reduced-motion → showStatic; all module facts stay visible. */
-
-const REVEAL_SEL = "[data-ec-reveal]";
+const REVEAL_SEL = "[data-ex-reveal]";
 
 function showStatic(root: HTMLElement) {
-  root.classList.remove("ec-film--motion");
+  root.classList.remove("ex-case--motion");
   gsap.set(root.querySelectorAll(REVEAL_SEL), {
     clearProps: "transform,opacity,visibility",
     autoAlpha: 1,
   });
-  gsap.set(
-    root.querySelectorAll(
-      ".ec-still, .ec-queue, .ec-queue__item, .ec-dock, .ec-dock__policy, .ec-spine, .ec-cta-stack",
-    ),
-    {
-      clearProps: "transform,opacity,visibility",
-      autoAlpha: 1,
-    },
-  );
 }
 
 export function ExceptionCopilotChapter() {
@@ -56,25 +51,25 @@ export function ExceptionCopilotChapter() {
             return;
           }
 
-          root.classList.add("ec-film--motion");
+          root.classList.add("ex-case--motion");
 
           gsap.utils
-            .toArray<HTMLElement>(root.querySelectorAll("[data-ec-mod]"))
+            .toArray<HTMLElement>(root.querySelectorAll("[data-ex-mod]"))
             .forEach((mod) => {
               const items = mod.querySelectorAll<HTMLElement>(REVEAL_SEL);
               if (!items.length) return;
 
-              gsap.set(items, { autoAlpha: 0, y: 22 });
+              gsap.set(items, { autoAlpha: 0, y: 14 });
 
               gsap.to(items, {
                 autoAlpha: 1,
                 y: 0,
-                duration: 0.75,
+                duration: 0.48,
                 ease: "power3.out",
-                stagger: 0.07,
+                stagger: 0.05,
                 scrollTrigger: {
                   trigger: mod,
-                  start: "top 78%",
+                  start: "top 82%",
                   once: true,
                   invalidateOnRefresh: true,
                 },
@@ -89,7 +84,7 @@ export function ExceptionCopilotChapter() {
 
           return () => {
             window.removeEventListener("load", refresh);
-            root.classList.remove("ec-film--motion");
+            root.classList.remove("ex-case--motion");
           };
         },
       );
@@ -105,267 +100,190 @@ export function ExceptionCopilotChapter() {
     <main
       id="main"
       ref={rootRef}
-      className="ec-film"
-      aria-label="Exception Copilot"
+      className="ex-case"
+      aria-label={EXCEPTION.display}
     >
-      {/* Job + user */}
-      <section
-        id="ec-job"
-        data-ec-mod
-        className="ec-mod ec-mod--job"
-        aria-labelledby="ec-job-h"
+      <header
+        id="ex-context"
+        data-ex-mod
+        className="ex-context"
+        aria-labelledby="ex-h"
       >
-        <div className="ec-mod__inner ec-mod__inner--job">
-          <p className="ec-kicker" data-ec-reveal>
-            Exception Copilot
+        <p className="ex-kicker" data-ex-reveal>
+          {INDEX_LABEL}
+        </p>
+        <h1 id="ex-h" className="ex-display" data-ex-reveal>
+          {EXCEPTION.display}
+        </h1>
+        <p className="ex-seat" data-ex-reveal>
+          {EXCEPTION.seat}
+        </p>
+        <p className="ex-constraint" data-ex-reveal>
+          {EXCEPTION.constraint}
+        </p>
+      </header>
+
+      <article
+        id="ex-narrative"
+        data-ex-mod
+        className="ex-narrative"
+        aria-label="Case"
+      >
+        {EXCEPTION.narrative.map((paragraph) => (
+          <p key={paragraph.slice(0, 48)} data-ex-reveal>
+            {paragraph}
           </p>
-          <h1 id="ec-job-h" className="ec-headline" data-ec-reveal>
-            Ops lead clearing exception queues against written policy.
-          </h1>
-          <div className="ec-still ec-still--desk" data-ec-reveal aria-hidden="true">
-            <div className="ec-desk">
-              <span className="ec-desk__chip ec-desk__chip--u1">U1</span>
-              <span className="ec-desk__chip ec-desk__chip--u2">U2</span>
-              <span className="ec-desk__chip ec-desk__chip--u3">U3</span>
-              <span className="ec-desk__chip ec-desk__chip--policy">Policy</span>
-              <span className="ec-desk__chip ec-desk__chip--ink">Ops lead</span>
-            </div>
-          </div>
-        </div>
+        ))}
+      </article>
+
+      <section
+        id="ex-stills"
+        data-ex-mod
+        className="ex-stills"
+        aria-labelledby="ex-stills-h"
+      >
+        <h2 id="ex-stills-h" className="ex-stills__title" data-ex-reveal>
+          Stills
+        </h2>
+        <ol className="ex-stills__list">
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="ec-still--pile">
+                  <div className="ec-ticket ec-ticket--a">
+                    <span className="ec-ticket__badge">EX-441</span>
+                    <span className="still-fact">Refund hold</span>
+                  </div>
+                  <div className="ec-ticket ec-ticket--b">
+                    <span className="ec-ticket__badge">EX-438</span>
+                    <span className="still-fact still-fact--muted">Restock</span>
+                  </div>
+                  <div className="ec-ticket ec-ticket--c">
+                    <span className="ec-ticket__badge">EX-429</span>
+                    <span className="still-fact still-fact--muted">Policy</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {EXCEPTION.stills[0].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <ol className="ec-queue ec-queue--ex">
+                  <li className="ec-queue__item ec-queue__item--hot">
+                    <span className="ec-queue__rank ec-rank__row ec-rank__row--hot">
+                      1
+                    </span>
+                    <div className="ec-ticket ec-ticket--a">
+                      <span className="ec-ticket__badge">EX-441</span>
+                      <span className="still-fact">Refund hold</span>
+                    </div>
+                  </li>
+                  <li className="ec-queue__item">
+                    <span className="ec-queue__rank ec-rank__row ec-rank__row--mid">
+                      2
+                    </span>
+                    <div className="ec-ticket ec-ticket--b">
+                      <span className="ec-ticket__badge">EX-438</span>
+                      <span className="still-fact still-fact--muted">
+                        Restock
+                      </span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <figcaption className="ex-still__caption">
+                {EXCEPTION.stills[1].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="ec-cite">
+                  <span className="ec-cite__mark">§4.2</span>
+                  <p className="still-fact">Restock</p>
+                </div>
+                <div className="ec-lead__disposition">
+                  <span className="ec-lead__cite">§4.2 · Restock window</span>
+                  <p className="still-fact">Policy cite</p>
+                  <span className="ec-lead__amount">Refund held</span>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {EXCEPTION.stills[2].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="ec-note">
+                  <span className="ec-note__label">Case note</span>
+                  <p className="still-fact">Draft</p>
+                </div>
+                <div className="ec-money">
+                  <span className="ec-money__lock" />
+                  <span className="ec-money__label">Human</span>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {EXCEPTION.stills[3].caption}
+              </figcaption>
+            </figure>
+          </li>
+          <li data-ex-reveal>
+            <figure className="ex-still">
+              <div className="ex-still__frame" aria-hidden="true">
+                <div className="ec-spine">
+                  <p className="ec-timeline__title">Case timeline</p>
+                  <div className="ec-spine__row">
+                    <span className="ec-timeline__dot" />
+                    <span className="ec-timeline__key">Policy cite</span>
+                    <span className="still-fact">§4.2</span>
+                  </div>
+                  <div className="ec-spine__row">
+                    <span className="ec-timeline__dot" />
+                    <span className="ec-timeline__key">Disposition</span>
+                    <span className="still-fact">Refund held</span>
+                  </div>
+                  <div className="ec-spine__row">
+                    <span className="ec-timeline__dot ec-timeline__dot--ink" />
+                    <span className="ec-timeline__key ec-timeline__key--ink">
+                      Decision
+                    </span>
+                    <span className="still-fact still-fact--ink">Ops lead</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="ex-still__caption">
+                {EXCEPTION.stills[4].caption}
+              </figcaption>
+            </figure>
+          </li>
+        </ol>
       </section>
 
-      {/* Pain — pile as the head of the queue, not a split */}
       <section
-        id="ec-pain"
-        data-ec-mod
-        className="ec-mod ec-mod--pain"
-        aria-labelledby="ec-pain-h"
+        id="ex-close"
+        data-ex-mod
+        className="ex-close"
+        aria-labelledby="ex-close-h"
       >
-        <div className="ec-mod__inner ec-mod__inner--queue">
-          <h2 id="ec-pain-h" className="ec-headline ec-headline--sm" data-ec-reveal>
-            Exceptions pile faster than policy can be reread.
-          </h2>
-          <div className="ec-still--pile" data-ec-reveal aria-hidden="true">
-            <div className="ec-ticket ec-ticket--a">
-              <span className="ec-ticket__badge">EX-441</span>
-              <span className="still-fact">Refund hold</span>
-            </div>
-            <div className="ec-ticket ec-ticket--b">
-              <span className="ec-ticket__badge">EX-438</span>
-              <span className="still-fact still-fact--muted">Restock</span>
-            </div>
-            <div className="ec-ticket ec-ticket--c">
-              <span className="ec-ticket__badge">EX-429</span>
-              <span className="still-fact still-fact--muted">Policy</span>
-            </div>
-            <div className="ec-ticket ec-ticket--d">
-              <span className="ec-ticket__badge">EX-417</span>
-              <span className="still-fact still-fact--muted">Queue</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Grammar 1: ranked exception queue */}
-      <section
-        id="ec-flow"
-        data-ec-mod
-        className="ec-mod ec-mod--flow"
-        aria-labelledby="ec-flow-h"
-      >
-        <div className="ec-mod__inner ec-mod__inner--queue">
-          <h2 id="ec-flow-h" className="ec-eyebrow" data-ec-reveal>
-            Rank before money moves
-          </h2>
-          <p className="ec-flow__label ec-flow__label--lead" data-ec-reveal>
-            Queue rank
-          </p>
-
-          <ol className="ec-queue" aria-label="Exception Copilot queue">
-            <li className="ec-queue__item ec-queue__item--hot" data-ec-reveal>
-              <span className="ec-queue__rank ec-rank__row ec-rank__row--hot">1</span>
-              <div className="ec-ticket ec-ticket--a">
-                <span className="ec-ticket__badge">EX-441</span>
-                <span className="still-fact">Refund hold</span>
-              </div>
-              <span className="ec-desk__chip ec-desk__chip--u1">U1</span>
-            </li>
-            <li className="ec-queue__item" data-ec-reveal>
-              <span className="ec-queue__rank ec-rank__row ec-rank__row--mid">2</span>
-              <div className="ec-ticket ec-ticket--b">
-                <span className="ec-ticket__badge">EX-438</span>
-                <span className="still-fact still-fact--muted">Restock</span>
-              </div>
-              <span className="ec-desk__chip ec-desk__chip--u2">U2</span>
-            </li>
-            <li className="ec-queue__item" data-ec-reveal>
-              <span className="ec-queue__rank ec-rank__row">3</span>
-              <div className="ec-ticket ec-ticket--c">
-                <span className="ec-ticket__badge">EX-429</span>
-                <span className="still-fact still-fact--muted">Policy</span>
-              </div>
-              <span className="ec-desk__chip ec-desk__chip--u3">U3</span>
-            </li>
-          </ol>
-
-          <div className="ec-queue__ability" data-ec-reveal>
-            <span className="ec-abilities__n">01</span>
-            <p>Rank the exception queue by urgency and policy fit.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Grammar 2: policy sidebar + case workspace */}
-      <section
-        id="ec-gate"
-        data-ec-mod
-        className="ec-mod ec-mod--gate"
-        aria-labelledby="ec-gate-h"
-      >
-        <div className="ec-mod__inner ec-mod__inner--dock">
-          <div className="ec-dock">
-            <aside className="ec-dock__policy" aria-label="Policy">
-              <p className="ec-flow__label" data-ec-reveal>
-                Policy cite disposition
-              </p>
-              <div className="ec-cite" data-ec-reveal aria-hidden="true">
-                <span className="ec-cite__mark">§4.2</span>
-                <p className="still-fact">Restock</p>
-              </div>
-              <div className="ec-lead__disposition" data-ec-reveal aria-hidden="true">
-                <span className="ec-lead__cite">§4.2 · Restock window</span>
-                <p className="still-fact">Policy cite</p>
-                <span className="ec-lead__amount">Refund held</span>
-              </div>
-              <div className="ec-dock__ability" data-ec-reveal>
-                <span className="ec-abilities__n">02</span>
-                <p>Suggest a policy disposition with the cite attached.</p>
-              </div>
-            </aside>
-
-            <div className="ec-dock__main">
-              <p className="ec-flow__label" data-ec-reveal>
-                Case note
-              </p>
-              <div className="ec-note" data-ec-reveal aria-hidden="true">
-                <span className="ec-note__label">Case note</span>
-                <p className="still-fact">Draft</p>
-              </div>
-              <div className="ec-dock__ability" data-ec-reveal>
-                <span className="ec-abilities__n">03</span>
-                <p>Draft the case note for the lead.</p>
-              </div>
-              <h2 id="ec-gate-h" className="ec-headline ec-headline--sm" data-ec-reveal>
-                A human handles refunds and irreversible money moves.
-              </h2>
-              <div className="ec-money" data-ec-reveal aria-hidden="true">
-                <span className="ec-money__lock" />
-                <span className="ec-money__label">Human</span>
-              </div>
-              <p className="ec-flow__label" data-ec-reveal>
-                Human for refunds
-              </p>
-              <div className="ec-lead__gate" data-ec-reveal aria-hidden="true">
-                <span className="ec-lead__chip">Disposition</span>
-                <span className="ec-lead__arrow" />
-                <span className="ec-lead__chip ec-lead__chip--name">Ops lead</span>
-                <span className="ec-lead__arrow" />
-                <span className="ec-lead__chip ec-lead__chip--hold">Money held</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Record — case timeline spine */}
-      <section
-        id="ec-record"
-        data-ec-mod
-        className="ec-mod ec-mod--record"
-        aria-labelledby="ec-record-h"
-      >
-        <div className="ec-mod__inner ec-mod__inner--spine">
-          <h2 id="ec-record-h" className="ec-headline ec-headline--sm" data-ec-reveal>
-            Case timeline keeps policy cite and decision together.
-          </h2>
-          <div className="ec-spine" data-ec-reveal aria-hidden="true">
-            <p className="ec-timeline__title">Case timeline</p>
-            <div className="ec-spine__row">
-              <span className="ec-timeline__dot" />
-              <span className="ec-timeline__key">Policy cite</span>
-              <span className="still-fact">§4.2</span>
-            </div>
-            <div className="ec-spine__row">
-              <span className="ec-timeline__dot" />
-              <span className="ec-timeline__key">Disposition</span>
-              <span className="still-fact">Refund held</span>
-            </div>
-            <div className="ec-spine__row">
-              <span className="ec-timeline__dot ec-timeline__dot--ink" />
-              <span className="ec-timeline__key ec-timeline__key--ink">Decision</span>
-              <span className="still-fact still-fact--ink">Ops lead</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Refusal */}
-      <section
-        id="ec-refusal"
-        data-ec-mod
-        className="ec-mod ec-mod--refusal"
-        aria-labelledby="ec-refusal-h"
-      >
-        <div className="ec-mod__inner ec-mod__inner--refusal">
-          <h2 id="ec-refusal-h" className="ec-eyebrow" data-ec-reveal>
-            Refusal
-          </h2>
-          <p className="ec-headline ec-headline--sm" data-ec-reveal>
-            Will not issue refunds or move money without a human.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA — ticket stack + CTA; queue rank → policy cite → refund hold */}
-      <section
-        id="ec-cta"
-        data-ec-mod
-        className="ec-mod ec-mod--cta"
-        aria-labelledby="ec-cta-h"
-      >
-        <div className="ec-mod__inner ec-mod__inner--cta-stack">
-          <div className="ec-cta-stack" data-ec-reveal aria-hidden="true">
-            <div className="ec-ticket ec-ticket--a">
-              <span className="ec-queue__rank ec-rank__row ec-rank__row--hot">
-                1
-              </span>
-              <span className="ec-ticket__badge">EX-441</span>
-              <span className="still-fact">Refund hold</span>
-            </div>
-            <div className="ec-ticket ec-ticket--b">
-              <span className="ec-queue__rank ec-rank__row ec-rank__row--mid">
-                2
-              </span>
-              <span className="ec-cite__mark">§4.2</span>
-              <span className="still-fact">Policy cite</span>
-            </div>
-            <div className="ec-ticket ec-ticket--c">
-              <span className="ec-queue__rank ec-rank__row">3</span>
-              <span className="ec-ticket__badge">EX-429</span>
-              <span className="still-fact still-fact--muted">Case note</span>
-            </div>
-          </div>
-          <div className="ec-cta-copy">
-            <h2 id="ec-cta-h" className="ec-headline" data-ec-reveal>
-              Start a brief.
-            </h2>
-            <p className="ec-cta-wrap chapter-cta" data-ec-reveal>
-              <Link href="/contact" className="home-cta">
-                Start a brief.
-              </Link>
-            </p>
-          </div>
-        </div>
+        <p id="ex-close-h" className="ex-close__line" data-ex-reveal>
+          {EXAMPLE_CLOSER}
+        </p>
+        <p className="ex-study" data-ex-reveal>
+          {STUDY_FOOTER}
+        </p>
+        <p className="ex-cta chapter-cta" data-ex-reveal>
+          <Link href="/contact" className="home-cta">
+            {START_A_BRIEF}
+          </Link>
+        </p>
       </section>
     </main>
   );

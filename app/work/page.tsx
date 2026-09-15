@@ -1,54 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
+import {
+  EXAMPLES,
+  INDEX_LABEL,
+  INDEX_LEDE,
+  OTHER_SEATS,
+  OTHER_SEATS_HEADING,
+  OTHER_SEATS_NOTE,
+} from "@/lib/selected-examples";
 
 export const metadata: Metadata = {
-  title: "Work",
-  description:
-    "Four product stories from Remex Studio — agents built to the brief.",
+  title: INDEX_LABEL,
+  description: INDEX_LEDE,
   openGraph: {
-    title: "Work · Remex Studio",
-    description:
-      "Four product stories from Remex Studio — agents built to the brief.",
+    title: `${INDEX_LABEL} · Remex Studio`,
+    description: INDEX_LEDE,
     url: "/work",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Work · Remex Studio",
-    description:
-      "Four product stories from Remex Studio — agents built to the brief.",
+    title: `${INDEX_LABEL} · Remex Studio`,
+    description: INDEX_LEDE,
   },
 };
 
-const STORIES = [
-  {
-    href: "/work/atelier-concierge",
-    name: "Atelier Concierge",
-    still: "still-a" as const,
-    dna: "LUM-1042",
-  },
-  {
-    href: "/work/ledger-clerk",
-    name: "Ledger Clerk",
-    still: "still-b" as const,
-    dna: "Never Execute",
-  },
-  {
-    href: "/work/morning-remex",
-    name: "Morning Remex",
-    still: "still-c" as const,
-    dna: "Human before send",
-  },
-  {
-    href: "/work/exception-copilot",
-    name: "Exception Copilot",
-    still: "still-d" as const,
-    dna: "Refund hold",
-  },
-] as const;
-
-function WorkStill({ still }: { still: (typeof STORIES)[number]["still"] }) {
+function WorkStill({ still }: { still: (typeof EXAMPLES)[number]["still"] }) {
   if (still === "still-a") {
     return (
       <div
@@ -138,26 +116,35 @@ export default function WorkPage() {
       <main id="main" className="work-index">
         <div className="work-index__intro">
           <p className="type-meta">Work</p>
-          <h1 className="work-index__title">Product stories</h1>
-          <p className="work-index__lede">
-            Four jobs we know how to hire an agent for. Marketing stills —
-            scroll each story for the gate and the record.
-          </p>
+          <h1 className="work-index__title">{INDEX_LABEL}</h1>
+          <p className="work-index__lede">{INDEX_LEDE}</p>
         </div>
 
         <ul className="work-index__grid">
-          {STORIES.map((story) => (
-            <li key={story.href}>
-              <Link href={story.href} className="work-story-card">
-                <WorkStill still={story.still} />
+          {EXAMPLES.map((example) => (
+            <li key={example.href}>
+              <Link href={example.href} className="work-story-card">
+                <WorkStill still={example.still} />
                 <span className="work-story-card__body">
-                  <span className="work-story-card__name">{story.name}</span>
-                  <span className="work-story-card__line">{story.dna}</span>
+                  <span className="work-story-card__name">{example.display}</span>
+                  <span className="work-story-card__line">{example.gateFact}</span>
                 </span>
               </Link>
             </li>
           ))}
         </ul>
+
+        <section className="work-fits" aria-labelledby="work-fits-h">
+          <h2 id="work-fits-h" className="work-fits__title">
+            {OTHER_SEATS_HEADING}
+          </h2>
+          <p className="work-fits__note">{OTHER_SEATS_NOTE}</p>
+          <ul className="work-fits__list">
+            {OTHER_SEATS.map((seat) => (
+              <li key={seat}>{seat}</li>
+            ))}
+          </ul>
+        </section>
       </main>
     </SiteChrome>
   );

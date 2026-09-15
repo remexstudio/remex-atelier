@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
 import { LedgerClerkChapter } from "@/components/LedgerClerkChapter";
 import { SiteChrome } from "@/components/SiteChrome";
+import { KNOWLEDGE, STUDY_FOOTER } from "@/lib/selected-examples";
 
 export const metadata: Metadata = {
-  title: "Ledger Clerk",
-  description:
-    "Product story: Ledger Clerk — corpus cite, Propose never Execute, controller gate, audit log.",
+  title: KNOWLEDGE.display,
+  description: KNOWLEDGE.description,
   openGraph: {
-    title: "Ledger Clerk · Remex Studio",
-    description:
-      "Product story: Ledger Clerk — corpus cite, Propose never Execute, controller gate, audit log.",
+    title: `${KNOWLEDGE.display} · Remex Studio`,
+    description: KNOWLEDGE.description,
     url: "/work/ledger-clerk",
     type: "article",
   },
   twitter: {
     card: "summary",
-    title: "Ledger Clerk · Remex Studio",
-    description:
-      "Product story: Ledger Clerk — corpus cite, Propose never Execute, controller gate, audit log.",
+    title: `${KNOWLEDGE.display} · Remex Studio`,
+    description: KNOWLEDGE.description,
   },
 };
 
 export default function LedgerClerkStoryPage() {
   return (
-    <SiteChrome
-      variant="film"
-      footerLine="Studio study. Client identity anonymized."
-    >
+    <SiteChrome variant="film" footerLine={STUDY_FOOTER}>
       <LedgerClerkChapter />
     </SiteChrome>
   );
