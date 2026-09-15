@@ -27,10 +27,11 @@ const FOOTER_SECONDARY = [
   { href: "/about", label: "About" },
 ] as const;
 
-/** Home film chapter map — targets land with V3-2 nine modules. */
+/** Home film chapter map — V5-3 services-first module ids. */
 const CHAPTERS = [
-  { href: "/#home-gate", label: "Gate" },
-  { href: "/#home-jobs", label: "Jobs" },
+  { href: "/#home-services", label: "Services" },
+  { href: "/#home-method", label: "Method" },
+  { href: "/#home-examples", label: "Examples" },
   { href: "/#home-brief", label: "Brief" },
   { href: "/#home-roadmap", label: "Roadmap" },
 ] as const;
