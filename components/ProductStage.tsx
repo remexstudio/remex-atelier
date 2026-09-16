@@ -183,7 +183,7 @@ export function ProductStage({ variant = "light" }: ProductStageProps) {
         </p>
       </div>
       <div className="product-stage__desk">
-        <ol className="product-stage__rail">
+        <ol className="product-stage__rail" aria-label="Stage beats">
           {STEPS.map((step) => (
             <li
               key={step.id}
