@@ -107,6 +107,7 @@ export function SiteNavMenu({ primary }: SiteNavMenuProps) {
         className="site-nav__toggle"
         aria-expanded={open}
         aria-controls={panelId}
+        aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen((value) => !value)}
       >
         {open ? "Close" : "Menu"}
