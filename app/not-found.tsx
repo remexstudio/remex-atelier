@@ -24,7 +24,7 @@ export default function NotFound() {
               Back home
             </Link>
             <Link href="/work" className="btn-secondary no-underline">
-              Browse work
+              Open Work
             </Link>
           </div>
         </header>
