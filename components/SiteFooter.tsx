@@ -45,7 +45,7 @@ export function SiteFooter({ links, pathname, footerLine }: SiteFooterProps) {
             ))}
           </ul>
         </nav>
-        <nav aria-label="Secondary" className="site-footer__quiet">
+        <nav aria-label="Lab and About" className="site-footer__quiet">
           {QUIET.map((item) => (
             <Link
               key={item.href}
