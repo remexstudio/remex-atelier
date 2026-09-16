@@ -15,7 +15,7 @@ type SiteChromeProps = {
 
 /**
  * Primary nav — marketing routes only. Never link /demo/* here.
- * Work / Services / Approach / Contact. Prototype and About stay quiet in the footer.
+ * Work / Services / Approach / Contact. Lab and About stay quiet in the footer.
  */
 const NAV = [
   { href: "/work", label: "Work" },
