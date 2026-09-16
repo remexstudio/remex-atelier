@@ -41,7 +41,7 @@ export function SiteChrome({
     >
       <header className="site-nav">
         <div className="site-nav__inner">
-          <Link href="/" className="site-nav__mark">
+          <Link href="/" className="site-nav__mark" translate="no">
             REMEX STUDIO
           </Link>
           <div className="site-nav__cluster">
