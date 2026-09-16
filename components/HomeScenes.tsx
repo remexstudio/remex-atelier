@@ -459,7 +459,7 @@ export function HomeScenes() {
               </Link>
             </p>
           </div>
-          <nav className="home-close-map" data-close-map aria-label="Home chapters">
+          <nav className="home-close-map" data-close-map aria-label="On this page">
             <ul>
               {CLOSE_CHAPTERS.map((item) => (
                 <li key={item.href}>
