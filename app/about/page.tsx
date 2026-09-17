@@ -45,7 +45,7 @@ export default function AboutPage() {
           <dl className="about-facts">
             <div className="about-fact">
               <dt>Legal</dt>
-              <dd>Jiyuyun Studio LLC</dd>
+              <dd translate="no">Jiyuyun Studio LLC</dd>
             </div>
             <div className="about-fact">
               <dt>Wordmark</dt>
