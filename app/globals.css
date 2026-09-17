@@ -601,7 +601,7 @@ button:active {
 
 .site-nav__panel-list a:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: -2px;
+  outline-offset: 3px;
 }
 
 .site-shell--default .site-nav {
