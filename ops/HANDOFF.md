@@ -2,8 +2,10 @@
 
 - Status: delivered — DEV PASS
 - TASK ID: V7-1
+- Content SHA: `8b98b83`
 - Base: V7-0 PASS tip `9a49584` / ops close `9b3977b`
-- Preview: pending this slice deploy (prod still V7-0: https://remex-atelier.vercel.app)
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: `dpl_Aq8uyjjA2A4q9MZQ12BoprY1NSg6` READY
 - Acceptance:
   - [x] Inner pages do not reuse home hero + product stage as their title block
   - [x] /services three large rows (Design / Build / Operations) with small product-stage stills

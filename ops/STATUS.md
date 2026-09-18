@@ -6,4 +6,4 @@
 - Active: **V7-1** inner pages restyle — **DEV PASS**, awaiting Leader
 - Remaining after Leader PASS: V7-2 polish 375 / 1440 if needed
 - Preview: https://remex-atelier.vercel.app
-- Tip: this V7-1 slice (after V7-0 PASS ops stamp `9b3977b`)
+- Tip: this V7-1 slice `8b98b83` · prod `dpl_Aq8uyjjA2A4q9MZQ12BoprY1NSg6`
