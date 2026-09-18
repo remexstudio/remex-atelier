@@ -1,15 +1,17 @@
-# Handoff V7-0
+# Handoff V7-1
 
 - Status: delivered — DEV PASS
-- Content SHA: 71546a0
-- Merge tip: 1baa652 on main (ops park stamp 407bccf)
-- Preview / Production: https://remex-atelier.vercel.app
-- Deploy: dpl_C9vGGaqH9DpbTDe1SQkfCqXVnVkX READY
+- TASK ID: V7-1
+- Base: V7-0 PASS tip `9a49584` / ops close `9b3977b`
+- Preview: pending this slice deploy (prod still V7-0: https://remex-atelier.vercel.app)
 - Acceptance:
-  - [x] First viewport: promise + black-pill CTA + product STAGE (Propose→Approve→Record ≥520) + Design/Build/Operations strip
-  - [x] Not title + gray JOB/GATE card alone
-  - [x] Display tokens: Geist/system 600, -0.03em; canvas #fff/#f5f5f7; ink #1d1d1f; kill #1d4ed8
-  - [x] Nav still four items; offers/routes/thesis unchanged; no geo slogan
-  - [x] pnpm build PASS; vercel prod live
-- Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines (repo skill files absent; followed docs/design.md + locks)
-- Blockers: Await three PM + Leader. No V7-1 until PASS. V6-5/V6-6 remain PARKED.
+  - [x] Inner pages do not reuse home hero + product stage as their title block
+  - [x] /services three large rows (Design / Build / Operations) with small product-stage stills
+  - [x] /work still + short + `Read the full example →`; no giant empty gray
+  - [x] /story reading column max-width 680px + stage-language stills (ask → recommend → gate → record chrome restyle)
+  - [x] /approach full-width method bands, not white cards floating in gray
+  - [x] /contact one hairline sheet + black submit pill (≥44px)
+  - [x] Copy / routes / offers / thesis unchanged; four-link nav; no Seattle / Global clients; no founder; `/demo` not revived
+  - [x] `pnpm build` PASS
+- Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines (repo skill files absent; followed docs/design.md + copy-locks + V7-0 tokens)
+- Blockers: Await Leader PASS. Do not open V7-2. V6-5 / V6-6 remain PARKED.

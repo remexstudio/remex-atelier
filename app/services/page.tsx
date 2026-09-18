@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ServiceStageStill } from "@/components/StageStill";
 import { SiteChrome } from "@/components/SiteChrome";
 import { BRIEF_ASKS } from "@/lib/brief-asks";
 import {
@@ -33,15 +34,21 @@ export const metadata: Metadata = {
   },
 };
 
+const ROW_LABEL: Record<(typeof CATALOG_LINES)[number]["id"], string> = {
+  design: "Design",
+  build: "Build",
+  operations: "Operations",
+};
+
 export default function ServicesPage() {
   return (
     <SiteChrome variant="film">
       <main id="main" className="svc-page">
         <header className="svc-hero">
           <div className="svc-band">
-            <p className="svc-kicker">Services</p>
-            <h1 className="svc-display">Agents, built to the brief.</h1>
-            <p className="svc-lede">
+            <h1 className="svc-title">Services</h1>
+            <p className="svc-lede">Agents, built to the brief.</p>
+            <p className="svc-support">
               We design the job an agent is allowed to do — and the gate it
               cannot cross.
             </p>
@@ -63,45 +70,49 @@ export default function ServicesPage() {
             </p>
             <ol className="svc-lines">
               {CATALOG_LINES.map((line) => (
-                <li key={line.id} className="svc-line">
-                  <h3 className="svc-line__name">{line.name}</h3>
-                  <p className="svc-line__p">
-                    <span className="svc-line__label">Who.</span> {line.who}
-                  </p>
-                  <p className="svc-line__p">
-                    <span className="svc-line__label">Deliverable.</span>{" "}
-                    {line.deliverable}
-                  </p>
-                  <p className="svc-line__p">
-                    <span className="svc-line__label">Refuse.</span>{" "}
-                    {line.refuse}
-                  </p>
-                  <p className="svc-line__p">
-                    <span className="svc-line__label">Done.</span> {line.done}
-                  </p>
-                  {line.note ? (
-                    <p className="svc-line__note">{line.note}</p>
-                  ) : null}
-                  {line.id === "build" ? (
-                    <div className="svc-may">
-                      <div>
-                        <h4 className="svc-may__h">May</h4>
-                        <ul className="svc-may__list">
-                          {CATALOG_MAY.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
+                <li key={line.id} className="svc-row" id={line.id}>
+                  <ServiceStageStill id={line.id} />
+                  <div className="svc-row__copy">
+                    <p className="svc-row__label">{ROW_LABEL[line.id]}</p>
+                    <h3 className="svc-line__name">{line.name}</h3>
+                    <p className="svc-line__p">
+                      <span className="svc-line__label">Who.</span> {line.who}
+                    </p>
+                    <p className="svc-line__p">
+                      <span className="svc-line__label">Deliverable.</span>{" "}
+                      {line.deliverable}
+                    </p>
+                    <p className="svc-line__p">
+                      <span className="svc-line__label">Refuse.</span>{" "}
+                      {line.refuse}
+                    </p>
+                    <p className="svc-line__p">
+                      <span className="svc-line__label">Done.</span> {line.done}
+                    </p>
+                    {line.note ? (
+                      <p className="svc-line__note">{line.note}</p>
+                    ) : null}
+                    {line.id === "build" ? (
+                      <div className="svc-may">
+                        <div>
+                          <h4 className="svc-may__h">May</h4>
+                          <ul className="svc-may__list">
+                            {CATALOG_MAY.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="svc-may__h">May not</h4>
+                          <ul className="svc-may__list">
+                            {CATALOG_MAY_NOT.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="svc-may__h">May not</h4>
-                        <ul className="svc-may__list">
-                          {CATALOG_MAY_NOT.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  ) : null}
+                    ) : null}
+                  </div>
                 </li>
               ))}
             </ol>

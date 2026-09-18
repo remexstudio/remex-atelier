@@ -23,7 +23,7 @@ export default function ContactPage() {
   return (
     <SiteChrome variant="film">
       <main id="main" className="contact-page">
-        <div className="contact-panel">
+        <div className="contact-sheet">
           <p className="contact-kicker">Contact</p>
           <h1 className="contact-title">Start a brief.</h1>
           <p className="contact-lede">What a brief asks.</p>

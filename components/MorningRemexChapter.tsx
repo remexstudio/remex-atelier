@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import { StageStill } from "@/components/StageStill";
 import {
   ATTENTION,
   EXAMPLE_CLOSER,
@@ -153,11 +154,13 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
+                <StageStill seat="Attention desk">
                 <div className="media-stage media-stage--mr">
                   <p className="media-stage__kicker">Overnight</p>
                   <p className="media-stage__fact">No single brief</p>
                   <p className="media-stage__sub">Unread threads arrive without a packet.</p>
                 </div>
+                </StageStill>
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -170,6 +173,7 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
+                <StageStill seat="Attention desk">
                 <div className="media-stage media-stage--mr">
                   <p className="media-stage__kicker">Triage</p>
                   <p className="media-stage__fact">Priority · Watch · Noise</p>
@@ -188,6 +192,7 @@ export function MorningRemexChapter() {
                     </li>
                   </ol>
                 </div>
+                </StageStill>
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -200,11 +205,13 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
+                <StageStill seat="Attention desk">
                 <div className="media-stage media-stage--mr">
                   <p className="media-stage__kicker">Draft</p>
                   <p className="media-stage__fact">Two tones</p>
                   <p className="media-stage__sub">Tone A and Tone B. Neither sends.</p>
                 </div>
+                </StageStill>
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -217,11 +224,13 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
+                <StageStill seat="Attention desk">
                 <div className="media-stage media-stage--mr">
                   <p className="media-stage__kicker">Escalate</p>
                   <p className="media-stage__fact">Human before send</p>
                   <p className="media-stage__sub">Held until a person posts.</p>
                 </div>
+                </StageStill>
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -234,11 +243,13 @@ export function MorningRemexChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
+                <StageStill seat="Attention desk">
                 <div className="media-stage media-stage--mr">
                   <p className="media-stage__kicker">Record</p>
                   <p className="media-stage__fact">Brief + draft + escalate</p>
                   <p className="media-stage__sub">Overnight. Two tones. Human before send.</p>
                 </div>
+                </StageStill>
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
