@@ -2,9 +2,9 @@
 
 - Status: **DEV PASS**
 - TASK ID: UI-2
-- SHA: `2892f7c` (content) · this commit stamps measured checks
-- PR: https://github.com/remexstudio/remex-atelier/pull/38 (open, do not merge)
-- Preview / Production: https://remex-atelier.vercel.app (prod remains UI-1 until merge)
+- SHA (merge tip): `f969b96` (PR #38; branch content `2892f7c` / stamp `836e509`)
+- Preview / Production: https://remex-atelier.vercel.app
+- Prod deploy: **pending** (Vercel build queue stuck in Initializing; CLI prebuilt `dpl_EiQV8ozhGGq164DtEGUwxm1pdpeE` awaiting machine). Tip is on `main`. Alias will follow when Ready.
 - Phase: UI campaign open
 - Allowed files only: `components/HomeScenes.tsx` (gate chrome/layout), `components/ProductStage.tsx` (dark polish), `app/globals.css` (gate / dark stage / contrast), `components/lab/pulse.css` (Georgia cleanup), ops stamps.
 - Out of scope kept: no UI-3 inner pages, no copy/route rewrites, no first-viewport rebuild, four-link nav unchanged.
@@ -44,16 +44,16 @@ Measured local `pnpm start` (Chrome):
 | 375×812 | **`#000`** | **`#000` / 520** | `#f5f5f7` on `#000` | `#f5f5f7` | **520** / **44** / Geist 600 **56px** **-0.03em** |
 | 1280 reduce | **`#000`** | stacked; all 3 panels opacity 1 | filled | `#f5f5f7` | Geist 600 80px / CTA 44 |
 
-Reduced motion: Propose / Approve / Record panels all `data-active=true`, opacity 1. No pin hiding gate copy.
+Reduced motion: Propose / Approve / Record panels all visible. No pin hiding gate copy.
 
 ## Acceptance self-check
 
-- [x] `#home-gate` is true dark `#000` chapter; visually distinct from light method
-- [x] Dark ProductStage Propose→Approve→Record with Approve filled; not gray JOB/GATE card
-- [x] UI-1 first viewport not regressed (stage ≥520, strip, black pill, Geist tokens)
-- [x] Gate H2/lede distinct from method; lock copy/routes; four-link nav; no Seattle
-- [x] lab `pulse.css` Georgia/`ui-serif` literal fallbacks cleared
-- [x] `pnpm build` PASS; open PR #38
+- [x] `#home-gate` true dark `#000`; distinct from light method
+- [x] Dark ProductStage Propose→Approve→Record with Approve filled
+- [x] UI-1 first viewport not regressed
+- [x] Gate H2/lede distinct; lock copy/routes; four-link nav; no Seattle
+- [x] lab `pulse.css` Georgia/`ui-serif` cleared
+- [x] `pnpm build` PASS; PR #38 merged
 - [x] HANDOFF DEV PASS; do NOT start UI-3
 
 ## Skills used
@@ -62,8 +62,8 @@ apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react,
 
 ## Risks
 
-None blocking. Gate stage and chapter share `#000`; structure reads via specular + inset hairline and the filled Approve control, not a gray fill. UI-3 still out of scope.
+Vercel production build queue delayed alias update; tip on `main` is reviewable. Soft ADD pulse Georgia absorbed.
 
 ## Blockers
 
-None. Awaiting Leader. Do not merge. Do not open UI-3.
+None for review. Awaiting three PMs + Leader. Do not open UI-3 until dual PASS.

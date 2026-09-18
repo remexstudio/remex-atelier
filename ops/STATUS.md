@@ -1,12 +1,11 @@
 # Status
 
 - Phase: **UI CAMPAIGN OPEN**
-- Closed: **V7 appearance closed** (superseded) · **UI-0 PASS** · **UI-1 PASS** (first-viewport product stage, tip `ff8a3ae`)
-- Active: **UI-2** dark gate rebuild — DEV PASS, PR open for Leader
+- Closed: **V7 appearance closed** (superseded) · **UI-0 PASS** · **UI-1 PASS** (first-viewport, tip `ff8a3ae`)
+- Active: **UI-2** dark gate rebuild — **DEV PASS**, awaiting three PMs + Leader
 - Next: **UI-3** inner pages — do not start until UI-2 Leader PASS
 - Parked: none
-- Soft ADD: lab `pulse.css` Georgia / `ui-serif` literal fallbacks — cleared in this slice
+- Soft ADD absorbed: lab `pulse.css` Georgia / `ui-serif`
 - Preview / Production: https://remex-atelier.vercel.app
-- Tip: UI-2 `2892f7c` on `cursor/ui-2-dark-gate-003b` (base `999c483`); PR #38 open
-
-- Prod (UI-1): `dpl_BajZ9YiRPeKz2SijNgx7NUsjfBdS`
+- Tip: `f969b96` (UI-2 DEV PASS, PR #38)
+- Prod: pending Vercel queue (prebuilt `dpl_EiQV8ozhGGq164DtEGUwxm1pdpeE`); last Ready UI-1 `dpl_BajZ9YiRPeKz2SijNgx7NUsjfBdS`
