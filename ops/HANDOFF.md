@@ -3,7 +3,7 @@
 - Status: **DEV PASS**
 - TASK ID: UI-4
 - SHA: `38906ce`
-- PR: pending
+- PR: https://github.com/remexstudio/remex-atelier/pull/40
 - Phase: UI campaign open
 - Allowed files only: `app/globals.css`, ops stamps.
 - Out of scope kept: no UI-5, no copy/route rewrites, no ProductStage redesign, no dark-gate rewrite, HomeScenes / ProductStage TSX untouched.

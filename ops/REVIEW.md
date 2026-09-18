@@ -11,6 +11,6 @@
 # REVIEW — UI-4
 
 - Slice: UI-4 375 / 1280 / 1440 layout hold
-- DEV: **awaiting** (this slice)
+- DEV: **PASS** (`38906ce`, PR #40)
 - Apple / UX / Vision / Leader: **awaiting**
 - Do not open UI-5 until dual PASS
