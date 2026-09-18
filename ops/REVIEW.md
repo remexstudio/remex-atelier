@@ -1,3 +1,12 @@
+# REVIEW — UI-1
+
+- Slice: UI-1 home first viewport product stage
+- DEV: **PASS** (`ff8a3ae`, prod `dpl_BajZ9YiRPeKz2SijNgx7NUsjfBdS`)
+- Apple / UX / Vision / Leader: **awaiting**
+- Do not open UI-2 until dual PASS
+
+---
+
 # Review UI-1 — pending Leader
 
 - TASK ID: UI-1
