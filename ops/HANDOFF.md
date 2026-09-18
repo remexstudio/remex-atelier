@@ -1,69 +1,63 @@
-# Handoff UI-2
+# Handoff UI-3
 
 - Status: **DEV PASS**
-- TASK ID: UI-2
-- SHA (merge tip): `f969b96` (PR #38; branch content `2892f7c` / stamp `836e509`)
-- Preview / Production: https://remex-atelier.vercel.app
-- Prod deploy: **pending** (Vercel build queue stuck in Initializing; CLI prebuilt `dpl_EiQV8ozhGGq164DtEGUwxm1pdpeE` awaiting machine). Tip is on `main`. Alias will follow when Ready.
+- TASK ID: UI-3
+- SHA: `e8da48f`
+- PR: https://github.com/remexstudio/remex-atelier/pull/39
+- Preview: https://remex-atelier-git-cursor-ui-3-inner-pages-62b7-qinlinj-projects.vercel.app (`dpl_3yR2dWhC3wdfFRgfwD1oNoJFP64F`)
+- Production: https://remex-atelier.vercel.app (remains UI-2 / prior tip until merge)
 - Phase: UI campaign open
-- Allowed files only: `components/HomeScenes.tsx` (gate chrome/layout), `components/ProductStage.tsx` (dark polish), `app/globals.css` (gate / dark stage / contrast), `components/lab/pulse.css` (Georgia cleanup), ops stamps.
-- Out of scope kept: no UI-3 inner pages, no copy/route rewrites, no first-viewport rebuild, four-link nav unchanged.
-- Do not start UI-3.
+- Allowed files only: `app/services/page.tsx`, `app/work/page.tsx`, `app/approach/page.tsx`, `app/contact/page.tsx`, inner-page classes in `app/globals.css`, ops stamps.
+- Out of scope kept: no UI-4 polish, no copy/route rewrites, no new offers, HomeScenes / ProductStage / `#home-gate` untouched, four-link nav unchanged.
+- Do not start UI-4.
 
-## Gate chapter
+## UI-2 closed
 
-- Canvas: `#home-gate` true black `#000`; type `#f5f5f7` / muted `rgba(245, 245, 247, 0.72)`
-- Distinct from `#home-method` light `--gutter` (`#f5f5f7`) canvas
-- Locked H2: `A human still decides.`
-- Locked lede: `Irreversible actions stay behind a named person.`
-- Dark `ProductStage`: Propose → Approve → Record; Approve filled (`#f5f5f7` on `#000`); specular catch-light + inset hairline; desk/canvas stay `#000` (not gray `#111` / `#1d1d1f` JOB/GATE card)
-- Stage min-height 520 in `.home-gate__stage`
-- No pin. No Lenis / body lock. Transform/opacity only.
+Unanimous PASS (Apple / UX / Vision / Leader) at tip `f969b96` on `main`.
 
-## UI-1 first viewport (unchanged)
+## Inner skeleton
 
-- Headline: `Agents, built to the brief.`
-- Support: `We design the job an agent is allowed to do — and the gate it cannot cross.`
-- Black pill `Start a brief.` → `/contact`
-- Light ProductStage ≥520; Design / Build / Operations strip
-- Geist tokens; no first-viewport CSS token undo
+- `/services` — page title `Services`; three large Design / Build / Operations rows; small `ServiceStageStill` beside each (200×209); no `.product-stage`. Catalog grammar.
+- `/work` — still (184) + locked short teaser + `Read the full example →` at 44px. Hrefs stay `/work/[desk]/story`.
+- `/work/[desk]/story` — reading column 680px; five stacked stills under body (Ask → One recommendation → One recommendation → Gate → Record). Display 44px, not home 80.
+- `/approach` — three full-width 1280 bands: method (`#fff`) / refuse (`#f5f5f7`) / Now-Next-Later path (`#fff`). Name meaning + `Jiyuyun Studio LLC` stay in the method band.
+- `/contact` — one hairline sheet (radius 22px); labeled fields; near-black submit 44px; success state `Brief received` kept.
 
-## Soft ADD
-
-Literal `Georgia` / `ui-serif` fallbacks cleared in `components/lab/pulse.css`. Lab titles use Geist/system. Do not import Chinese UI.
-
-## Verify
-
-`pnpm build` PASS. Local smoke `/` `/work` `/services` `/approach` `/contact` HTTP 200. CTA click → `/contact`. See services → `#home-services`. No Seattle. No `#1d4ed8`. Four-link nav.
+## Home UI-1 / UI-2 (unchanged)
 
 Measured local `pnpm start` (Chrome):
 
-| Surface | Gate canvas | Gate stage | Approve filled | Method canvas | Hero stage / CTA / h1 |
-| --- | --- | --- | --- | --- | --- |
-| 1280×800 | **`#000`** / type `#f5f5f7` | **`#000` / 520** | `#f5f5f7` on `#000` | `#f5f5f7` | **520** / **44** / `#1d1d1f` / Geist 600 **80px** **-0.03em**; strip top 748 / bottom 799 |
-| 375×812 | **`#000`** | **`#000` / 520** | `#f5f5f7` on `#000` | `#f5f5f7` | **520** / **44** / Geist 600 **56px** **-0.03em** |
-| 1280 reduce | **`#000`** | stacked; all 3 panels opacity 1 | filled | `#f5f5f7` | Geist 600 80px / CTA 44 |
+| Surface | h1 | CTA | Stage | Strip / gate |
+| --- | --- | --- | --- | --- |
+| 1280×800 | Geist 600 **80px** **-0.03em**; `Agents, built to the brief.` | **44** / `#1d1d1f` | **520** | DESIGN / BUILD / OPERATIONS; `#home-gate` **`#000`** |
+| 375×812 | Geist 600 **56px** **-0.03em** | **44** | **520** | — |
 
-Reduced motion: Propose / Approve / Record panels all visible. No pin hiding gate copy.
+Nav: Work · Services · Approach · Contact. No Seattle. `--cta` `#1d1d1f` (not `#1d4ed8`).
+
+## Verify
+
+`pnpm build` PASS. Local smoke `/` `/services` `/work` `/work/atelier-concierge/story` `/approach` `/contact` HTTP 200. Contact submit → Brief received. Reduced-motion story: 27 reveal/text nodes opacity 1. No Lenis / body lock.
 
 ## Acceptance self-check
 
-- [x] `#home-gate` true dark `#000`; distinct from light method
-- [x] Dark ProductStage Propose→Approve→Record with Approve filled
-- [x] UI-1 first viewport not regressed
-- [x] Gate H2/lede distinct; lock copy/routes; four-link nav; no Seattle
-- [x] lab `pulse.css` Georgia/`ui-serif` cleared
-- [x] `pnpm build` PASS; PR #38 merged
-- [x] HANDOFF DEV PASS; do NOT start UI-3
+- [x] Inner pages do not clone home hero pattern
+- [x] `/services` three large rows + small stills
+- [x] `/work` short + still + Read the full example
+- [x] `/story` narrow ~680 reading + still sequence
+- [x] `/approach` full-width bands
+- [x] `/contact` hairline sheet + black submit
+- [x] Home UI-1/UI-2 not regressed; four-link nav; no Seattle; lock copy
+- [x] `pnpm build` PASS; open PR #39
+- [x] HANDOFF DEV PASS; UI-2 CLOSED in REVIEW; STATUS Active=UI-3 awaiting PMs
 
 ## Skills used
 
-apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
+apple-design, apple-design-web, emil-design-eng, web-design-guidelines, zero-jank-scroll (no new motion; existing story reveals kept, transform/opacity only)
 
 ## Risks
 
-Vercel production build queue delayed alias update; tip on `main` is reviewable. Soft ADD pulse Georgia absorbed.
+Services / work stills share `StageStill` chrome; sized down on those routes only. Home `ProductStage` untouched. Preview deploy is branch-only — do not promote until PM PASS.
 
 ## Blockers
 
-None for review. Awaiting three PMs + Leader. Do not open UI-3 until dual PASS.
+None. Awaiting PMs. Do not start UI-4.

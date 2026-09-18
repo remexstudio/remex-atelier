@@ -1,49 +1,58 @@
-# TASK — UI-2
+# TASK — UI-3
 
-TASK ID: UI-2
+TASK ID: UI-3
 REPO: remexstudio/remex-atelier
-BASE: main tip `f4dad76` (or newer; after UI-1 CLOSED `ff8a3ae`)
-GOAL: Rebuild HOME GATE chapter appearance only — true dark #000 stage with ProductStage dark (Approve filled), clearly distinct from the light method chapter. Do not regress UI-1 first viewport. Do not rewrite thesis/offers/routes.
+BASE: main tip after UI-2 CLOSED (`f969b96` or newer on main)
 
 ## Owner
 
-UI-1 CLOSED (full PASS). Continuous UI campaign. Gate chapter must read as apple.com product-page dark module, not a gray band.
+UI campaign APPEARANCE ONLY. UI-0 / UI-1 / UI-2 are CLOSED (unanimous PASS). Do NOT regress home first viewport (Geist 600, ProductStage ≥520, Design/Build/Operations strip, black pill) or dark `#home-gate`. Do NOT rewrite offers, thesis sentences, or routes. English only in git. No Seattle / Global clients. No founder name. No English-first. No `#1d4ed8`.
 
-## Required
+## GOAL
 
-1. `#home-gate` chapter canvas is true black `#000` (or near-black locked token), light type `#f5f5f7` / muted rgba — distinct from `#home-method` light/`--gutter` canvas.
-2. Gate uses `ProductStage variant="dark"` with Propose → Approve → Record, Approve filled, specular + inset hairline language matching UI-1 stage quality (not a gray JOB/GATE card).
-3. Keep distinct gate H2 + lede already on tip (`A human still decides.` / irreversible-actions line) — do not rewrite locked copy; do not steal method H2.
-4. UI-1 first viewport unchanged: headline, black pill, light ProductStage ≥520, Design/Build/Operations strip, tokens.
-5. prefers-reduced-motion: gate panels/text fully visible; transform/opacity only if motion; no Lenis / body lock; no pin that hides gate content.
-6. Soft debt from UI-1 review: clear literal `Georgia` / `ui-serif` fallbacks in `components/lab/pulse.css` (lab only; do not import Chinese UI).
+Restyle INNER pages so they stop cloning the home hero (giant headline + gray lede + pale card). Keep locked copy; change skeleton / chrome / media grammar only.
+
+## Required per route
+
+1. `/services` — page title "Services"; three LARGE service rows (Design / Build / Operations) with small product stills beside each; NOT a second home hero with ProductStage as sole media. Catalog grammar.
+2. `/work` — still + short teaser line + "Read the full example →" (≥44px); NO long body on cards; keep href to `/work/[desk]/story`.
+3. `/work/[desk]/story` — narrow reading column max-width ~680px; stacked UI stills under body (ask→recommend→gate→record sequence already present — polish chrome only); not home-hero clone.
+4. `/approach` — three FULL-WIDTH bands (method / refuse / Now-Next-Later path), not a stack of pale cards mimicking home.
+5. `/contact` — one hairline sheet form + black/near-black submit pill (≥44); labeled fields; success state kept.
+6. Four-link nav Work · Services · Approach · Contact identical everywhere (do not add chapter spam on inner pages).
+7. Tokens: `#fff` / `#f5f5f7` / `#1d1d1f` / `#6e6e73`; Geist/system; display 600 + ~-0.03em where display used; hairlines; no drop shadows; module radius 18–28px; CTA near-black pill.
+8. `prefers-reduced-motion`: all text visible; transform/opacity only; no Lenis / body overflow lock / scroll hijack.
+9. Soft: clear any remaining literal Georgia/ui-serif fallbacks if still present outside remapped tokens.
 
 ## ALLOWED FILES
 
-- `components/HomeScenes.tsx` (gate chapter chrome/layout only)
-- `components/ProductStage.tsx` (dark variant polish only)
-- `app/globals.css` (gate / dark stage / contrast only; do not undo UI-1 hero tokens)
-- `components/lab/pulse.css` (Georgia soft cleanup only)
-- `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/TASK.md`, `ops/ITERATION.md`, `ops/BACKLOG.md`, `ops/REVIEW.md` as needed
+- `app/services/**`, `app/work/**`, `app/approach/**`, `app/contact/**` (and related page.tsx / layout)
+- components used by those routes (e.g. work cards, story chrome, approach bands, contact form) — NOT HomeScenes first-viewport / gate rebuild unless a shared chrome bug
+- `app/globals.css` (inner-page classes only; do not undo UI-1/UI-2 home tokens)
+- `ops/TASK.md`, `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/REVIEW.md`, `ops/ITERATION.md`, `ops/BACKLOG.md`
 
 ## OUT OF SCOPE
 
-UI-3 inner pages, copy rewrites of locked lines, nav chrome, first-viewport rebuild, route changes, new offers.
+New offers, copy rewrites of locked thesis, route changes, UI-4/UI-5 polish beyond skeleton, `/demo` as product, personal site.
 
 ## ACCEPTANCE
 
-- [ ] `#home-gate` is true dark `#000` chapter; visually distinct from light method
-- [ ] Dark ProductStage Propose→Approve→Record with Approve filled; not gray JOB/GATE card
-- [ ] UI-1 first viewport not regressed (stage ≥520, strip, black pill, Geist tokens)
-- [ ] Gate H2/lede distinct from method; lock copy/routes; four-link nav; no Seattle
-- [ ] lab `pulse.css` Georgia/`ui-serif` literal fallbacks cleared
-- [ ] `pnpm build` PASS; open PR
-- [ ] HANDOFF DEV PASS; do NOT start UI-3; prefer open PR for merge
+- [ ] Inner pages do not clone home hero pattern
+- [ ] `/services` three large rows + small stills
+- [ ] `/work` short + still + Read the full example
+- [ ] `/story` narrow ~680 reading + still sequence
+- [ ] `/approach` full-width bands
+- [ ] `/contact` hairline sheet + black submit
+- [ ] Home UI-1/UI-2 not regressed; four-link nav; no Seattle; lock copy
+- [ ] `pnpm build` PASS; open PR; merge when ready or leave ready-for-review
+- [ ] Write `ops/HANDOFF.md` DEV PASS; update ops/STATUS Active=UI-3 DEV PASS awaiting PMs; stamp UI-2 CLOSED in `ops/REVIEW.md` with Apple/UX/Vision/Leader PASS (tips `f969b96`)
 
 ## COMMIT
 
-feat(home): rebuild dark gate stage for UI-2
+feat(site): restyle inner pages skeleton for UI-3
 
 ## SKILLS TO USE
 
-apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
+apple-design, apple-design-web, emil-design-eng, web-design-guidelines, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations (only if motion touched).
+
+Do not start UI-4.

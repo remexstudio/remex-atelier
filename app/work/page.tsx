@@ -96,7 +96,6 @@ export default function WorkPage() {
     <SiteChrome variant="film">
       <main id="main" className="work-index">
         <div className="work-index__intro">
-          <p className="type-meta">Work</p>
           <h1 className="work-index__title">{INDEX_LABEL}</h1>
           <p className="work-index__lede">{INDEX_LEDE}</p>
         </div>
