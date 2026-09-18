@@ -11,10 +11,14 @@
 ## Parked (superseded by owner visual restyle)
 
 - [ ] V6-5 home first viewport three services — **PARKED**
-- [ ] V6-6 Approach roadmap rewrite; 375 regression — **PARKED** (Next lock + 375 land in V7-2)
+- [ ] V6-6 Approach roadmap rewrite; 375 regression — **PARKED**
 
 ## V7 appearance
 
 - [x] V7-0 tokens + home first-viewport product STAGE — **PASS**
 - [x] V7-1 inner pages restyle — **PASS**
-- [ ] V7-2 finish appearance — **ACTIVE**
+- [x] V7-2 finish appearance — **PASS**
+
+## Soft (not issued)
+
+- [ ] Optional distinct `#home-gate` chapter fact (H2 + lede currently shared with `#home-method`) — **SOFT**, not issued
