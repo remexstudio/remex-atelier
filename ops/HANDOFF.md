@@ -2,7 +2,7 @@
 
 - TASK ID: V7-0
 - Status: **DEV PASS**
-- Content SHA: (this commit)
+- Content SHA: `71546a0`
 - Build: `pnpm build` PASS (Next.js 16.3.5, 19 static routes)
 - Local smoke: `next start` `/` `/services` `/work` `/approach` `/contact` → 200
 - Browser: 1280 first viewport shows promise + black-pill CTA + product STAGE (Approve filled, 520.8px) + Design / Build / Operations strip. Nav still Work · Services · Approach · Contact. No Seattle / Global clients. No `#1d4ed8`.
