@@ -7,5 +7,5 @@
 - Parked: none
 - Soft ADD: Georgia / `ui-serif` fallbacks remapped to Geist/system (absorbed in UI-1)
 - Preview / Production: https://remex-atelier.vercel.app
-- Tip: `5004f76` + this UI-1 slice
+- Tip: `066c747` (UI-1 DEV PASS, PR #37)
 - Prod (UI-0): `dpl_FBrAqT1q8cnRu2K2RFg2f8iXqERK`
