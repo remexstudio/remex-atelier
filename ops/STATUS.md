@@ -1,10 +1,13 @@
 # Status
 
-- Phase: **UI CAMPAIGN — DoD VERIFY**
-- Closed: **UI-0…UI-5 PASS** (UI-5 merge tip `11406c3`)
-- Active: **Appearance DoD** on production (Leader cloud bc-2573aa88 triggered deploy; Dev confirmed Ready)
-- Next: Leader DoD PASS → campaign close · hard FAIL → UI-6 only
-- Soft ADD backlog: compact `desk-ui__fact` ~1rem; StageStill `aria-hidden` DNA parity
+- Phase: **UI CAMPAIGN APPEARANCE CLOSED**
+- Closed: **UI-0 PASS** · **UI-1 PASS** · **UI-2 PASS** · **UI-3 PASS** · **UI-4 PASS** · **UI-5 PASS** (merge tip `11406c3`)
+- Active: none
+- Next: **Dev standby** — do not invent UI-6
+- Parked: none
+- Soft backlog (not FAIL): StageStill `aria-hidden` DNA via adjacent copy; compact `desk-ui__fact` ~1rem
 - Preview / Production: https://remex-atelier.vercel.app
 - Tip: `11406c3`
-- Prod: `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe` (Ready; HTML has ProductStage + strip + gate)
+- Prod: `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe` READY (alias `remex-atelier.vercel.app`)
+
+Leader DoD (Chrome / Playwright, 375×812 + 1440×900) **PASS**. First viewport is ProductStage + strip + near-black pill, not title + gray card.
