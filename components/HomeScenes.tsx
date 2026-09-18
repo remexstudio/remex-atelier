@@ -147,13 +147,11 @@ export function HomeScenes() {
         {
           reduce: "(prefers-reduced-motion: reduce)",
           motionOk: "(prefers-reduced-motion: no-preference)",
-          desktop: "(min-width: 900px)",
         },
         (context) => {
-          const { reduce, motionOk, desktop } = context.conditions as {
+          const { reduce, motionOk } = context.conditions as {
             reduce: boolean;
             motionOk: boolean;
-            desktop: boolean;
           };
 
           const stage = document.querySelector<HTMLElement>("[data-product-stage]");
@@ -187,28 +185,34 @@ export function HomeScenes() {
             });
           });
 
-          if (desktop && stage) {
+          /*
+           * V7-0: pin+scrub is allowed only on this stage, but pinning at
+           * load stole the first viewport (Approve → Propose, strip below fold).
+           * Keep Approve filled. Optional short transform/opacity scrub only
+           * after the hero has left the first screen.
+           */
+          if (stage) {
             const pin = stage.closest<HTMLElement>("[data-product-pin]") || stage;
             const steps = ["propose", "approve", "record"] as const;
 
-            gsap.timeline({
-              defaults: { ease: "none" },
-              scrollTrigger: {
-                trigger: pin,
-                start: "top 16%",
-                end: "+=80%",
-                pin: stage,
-                scrub: 0.65,
-                invalidateOnRefresh: true,
-                anticipatePin: 1,
-                onUpdate: (self) => {
-                  const idx = Math.min(
-                    steps.length - 1,
-                    Math.floor(self.progress * steps.length),
-                  );
-                  setStageStep(stage, steps[idx]);
-                },
+            ScrollTrigger.create({
+              trigger: pin,
+              start: "top top",
+              end: "+=80%",
+              scrub: 0.65,
+              invalidateOnRefresh: true,
+              onUpdate: (self) => {
+                if (self.progress === 0) {
+                  setStageStep(stage, "approve");
+                  return;
+                }
+                const idx = Math.min(
+                  steps.length - 1,
+                  Math.floor(self.progress * steps.length),
+                );
+                setStageStep(stage, steps[idx]);
               },
+              onLeaveBack: () => setStageStep(stage, "approve"),
             });
           }
 

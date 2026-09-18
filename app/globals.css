@@ -714,7 +714,7 @@ button:active {
 
 /* 1 hero — display + product STAGE + services strip in the first viewport */
 .home-mod--hero {
-  min-height: 100svh;
+  min-height: calc(100svh - var(--nav-height));
   display: flex;
   flex-direction: column;
   background: var(--canvas);
@@ -723,16 +723,34 @@ button:active {
 .home-mod__inner--hero {
   flex: 1 1 auto;
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
-  padding-block: calc(var(--nav-height) + 1.25rem) 1rem;
+  padding-block: 1rem 0.75rem;
 }
 
 @media (min-width: 1080px) {
+  .home-mod--hero {
+    height: calc(100svh - var(--nav-height));
+    max-height: calc(100svh - var(--nav-height));
+  }
+
   .home-mod__inner--hero {
     grid-template-columns: minmax(18rem, 0.88fr) minmax(28rem, 1.12fr);
-    gap: 3rem;
+    gap: 2.5rem;
     align-items: center;
+    min-height: 0;
+    padding-block: 0.85rem 0.5rem;
+  }
+
+  .home-hero__pin {
+    align-self: stretch;
+    display: flex;
+  }
+
+  .home-hero__pin .product-stage {
+    flex: 1 1 auto;
+    height: auto;
+    max-height: none;
   }
 }
 
