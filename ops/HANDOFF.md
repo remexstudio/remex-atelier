@@ -1,12 +1,15 @@
-# Handoff
+# Handoff V7-0
 
-- TASK ID: V7-0
-- Status: **DEV PASS**
-- Content SHA: `71546a0`
-- Build: `pnpm build` PASS (Next.js 16.3.5, 19 static routes)
-- Local smoke: `next start` `/` `/services` `/work` `/approach` `/contact` → 200
-- Browser: 1280 first viewport shows promise + black-pill CTA + product STAGE (Approve filled, 520.8px) + Design / Build / Operations strip. Nav still Work · Services · Approach · Contact. No Seattle / Global clients. No `#1d4ed8`.
-- Prod: `dpl_C9vGGaqH9DpbTDe1SQkfCqXVnVkX` · https://remex-atelier.vercel.app (SHA `71546a0`)
-- Offers, routes, and thesis sentences unchanged
-- Parked: V6-5 / V6-6
-- Do not start V7-1 until Leader PASS
+- Status: delivered — DEV PASS
+- Content SHA: 71546a0
+- Merge tip: 1baa652 on main (ops park stamp 407bccf)
+- Preview / Production: https://remex-atelier.vercel.app
+- Deploy: dpl_C9vGGaqH9DpbTDe1SQkfCqXVnVkX READY
+- Acceptance:
+  - [x] First viewport: promise + black-pill CTA + product STAGE (Propose→Approve→Record ≥520) + Design/Build/Operations strip
+  - [x] Not title + gray JOB/GATE card alone
+  - [x] Display tokens: Geist/system 600, -0.03em; canvas #fff/#f5f5f7; ink #1d1d1f; kill #1d4ed8
+  - [x] Nav still four items; offers/routes/thesis unchanged; no geo slogan
+  - [x] pnpm build PASS; vercel prod live
+- Skills: apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines (repo skill files absent; followed docs/design.md + locks)
+- Blockers: Await three PM + Leader. No V7-1 until PASS. V6-5/V6-6 remain PARKED.
