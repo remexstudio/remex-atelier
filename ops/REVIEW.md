@@ -1,26 +1,17 @@
-# Review V6-4 — CLOSED PASS
+# Review — campaign switch (not a V6-5 verdict)
 
-- TASK ID: V6-4
-- Content SHA: `46c0b2a`
-- Tip: `3863258`
-- Prod: https://remex-atelier.vercel.app · `dpl_97xWn96FxQSqs9bkRJSgLejAoeHT`
-- Verdicts: Apple **PASS** · UX **PASS** · Vision **PASS** · Leader **PASS**
-- Verdict: **PASS** (unanimous)
+- Owner restyle brief received (2026-09-17): **APPEARANCE ONLY**
+- **V6-5 was not delivered.** First viewport is still headline + gray JOB/GATE card.
+- **V6-6 is not opened.** Approach Next rewrite stays parked.
+- Campaign switched from unfinished V6 home/approach tickets to **appearance-only V7**.
+- Do not change offers, routes, or thesis sentences.
+- Do not add Seattle / Global clients, a founder page, or revive `/demo` as product.
 
-## KEEP
+## Parked
 
-- `/work` + home: short teasers + verbatim `Read the full example →`
-- Four `/work/[desk]/story`: layered essay + ask → recommend → gate → record stills
-- Desk landings: `permanentRedirect` 308 → story
-- Closer / study / `Start a brief.` locked (`EXAMPLE_CLOSER`)
-- DNA distinct per desk
-- No essay-on-card
-- No pin / Lenis
+- V6-5 home first viewport three services (who/done cards) — superseded by V7-0 quiet strip + product STAGE
+- V6-6 Approach roadmap rewrite + 375 regression — superseded; inner/polish moves to V7-1 / V7-2
 
-## Soft (non-blocking)
+## Next
 
-UX — still kickers are desk dialect; optional later label Ask → Recommend → Gate → Record.
-
-## Outcome
-
-V6-4 **CLOSED**. V6-5 issued.
+V7-0 issued. Tokens + home first viewport product stage. Leader PASS required before V7-1.
