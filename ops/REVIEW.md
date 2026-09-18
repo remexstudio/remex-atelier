@@ -4,22 +4,22 @@
 - Content SHA: `2318f91`
 - Tip: this close commit
 - Prod: https://remex-atelier.vercel.app · `dpl_ByFLvJ8bQ8fRiVfn1P2RHNKxFdpr`
-- Verdict: **PASS** (Leader)
+- Verdicts: Apple **PASS** · UX **PASS** · Vision **PASS** · Leader **PASS**
+- Verdict: **PASS** (unanimous)
 
 ## KEEP
 
-- Distinct `#home-gate` fact: **A human still decides.** / **Irreversible actions stay behind a named person.**
+- Distinct `#home-gate` H2 + lede: **A human still decides.** / **Irreversible actions stay behind a named person.**
 - Method unchanged on `#f5f5f7` (Propose → Approve → Record)
 - Dark ProductStage in the gate chapter
-- Close-map Gate + `scroll-margin-top: 46px`
-- Owner DONE WHEN 1–8 evidenced in HANDOFF
+- DONE WHEN 8/8 verified
 - V6-5 / V6-6 **ABSORBED/CLOSED** (not PARKED)
 - Offers / routes / thesis elsewhere unchanged; no Seattle / Global clients; no founder page; `/demo` not revived as product
 
 ## Soft ADD
 
-None issued. Do not invent V7-4.
+None. Soft backlog empty. Do not invent V7-4.
 
 ## Outcome
 
-V7-3 **CLOSED**. **V7 APPEARANCE CLOSED**. Dev standby.
+V7-3 **CLOSED**. **V7 APPEARANCE TRULY CLOSED**. No V7-4. Dev standby.
