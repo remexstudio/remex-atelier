@@ -1,7 +1,8 @@
-# Review UI-0 — pending Leader
+# Review UI-1 — pending Leader
 
-- TASK ID: UI-0
+- TASK ID: UI-1
 - Verdict: awaiting Leader **PASS** / **REWORK**
 - Dev: HANDOFF **DEV PASS**
-- Owner: live first screen still **FAIL** on stage grammar (UI-1). Tokens are this slice only.
-- Do not start UI-1 until Leader PASS.
+- UI-0: **PASS** (closed)
+- Soft ADD: Georgia fallback remap absorbed
+- Do not start UI-2 until Leader PASS.

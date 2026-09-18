@@ -9,13 +9,15 @@ V7 appearance closed and superseded by owner continuous UI FAIL. Appearance only
 
 ## UI campaign
 
-- [x] UI-0 tokens (Geist display, owner palette, frosted nav, near-black pill) — **DEV PASS**, awaiting Leader PASS
-- [ ] UI-1 first-viewport stage composition (apple.com product-page grammar)
+- [x] UI-0 tokens (Geist display, owner palette, frosted nav, near-black pill) — **PASS**
+- [ ] UI-1 first-viewport stage composition (apple.com product-page grammar) — **DEV in flight**
 - [ ] UI-2 dark gate rebuild
 - [ ] UI-3 inner page skeletons
 - [ ] UI-4 appearance polish
 - [ ] UI-5 appearance DoD verify
 
-## Soft (not issued)
+## Soft (absorbed)
 
-Empty. Do not invent pages.
+- [x] Replace literal `Georgia` / `ui-serif` fallbacks with Geist/system — **ABSORBED in UI-1**
+
+Do not invent pages.
