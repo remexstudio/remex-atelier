@@ -12,9 +12,9 @@ V7 appearance closed and superseded by owner continuous UI FAIL. Appearance only
 - [x] UI-0 tokens (Geist display, owner palette, frosted nav, near-black pill) — **PASS**
 - [x] UI-1 first-viewport stage composition (apple.com product-page grammar) — **PASS** (`ff8a3ae`)
 - [x] UI-2 dark gate rebuild — **PASS** (`f969b96`)
-- [ ] UI-3 inner page skeletons — **DEV PASS**, awaiting PMs (`e8da48f`, PR #39)
-- [ ] UI-4 appearance polish
-- [ ] UI-5 appearance DoD verify
+- [x] UI-3 inner page skeletons — **PASS** (`5531561`)
+- [ ] UI-4 hold 375 and 1280/1440 layout — **DEV PASS**, PR #40
+- [ ] UI-5 appearance DoD verify — do not start until UI-4 PASS
 
 ## Soft (absorbed)
 
