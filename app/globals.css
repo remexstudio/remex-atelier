@@ -3,15 +3,17 @@
 :root {
   /* Surfaces — editorial default (inner pages) */
   --paper: #f4f0e8;
-  --ink: #1c1917;
-  --muted: #78716c;
-  --rule: #e5dfd4;
-  --accent: #292524;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --rule: rgba(0, 0, 0, 0.08);
+  --accent: #1d1d1f;
+  --hairline: rgba(0, 0, 0, 0.08);
 
-  /* Product / film shell defaults (V3) — Apple PM locked */
+  /* Product / film shell (V7 appearance) */
   --canvas: #ffffff; /* product stage / page canvas */
   --gutter: #f5f5f7; /* section gutters, rails, soft bands */
-  --cta: #1d4ed8; /* restrained blue — CTA only; never as page wash */
+  --cta: #1d1d1f; /* near-black pill — kill SaaS blue #1d4ed8 */
+  --radius-stage: 22px;
 
   /* Aliases for theme wiring — root locked to film canvas, not legacy paper */
   --background: var(--canvas);
@@ -25,13 +27,15 @@
   --stage-max: 68rem;
   --stage-pad-x: 1.25rem;
 
-  /* Display type tokens (V3-2 ready) — large sizes want negative tracking */
-  --tracking-display: -0.025em;
+  /* Display type — Geist/system, weight 600, tight tracking at 56–80px */
+  --tracking-display: -0.03em;
   --tracking-display-tight: -0.03em;
   --leading-display: 1.05;
-  --size-display: clamp(2.25rem, 6vw, 4.5rem);
-  --size-display-lg: clamp(2.75rem, 7vw, 5.5rem);
+  --size-display: clamp(2.25rem, 5vw, 3.5rem);
+  --size-display-lg: clamp(3.5rem, 6.4vw, 5rem);
   --size-display-sm: clamp(1.75rem, 4vw, 3rem);
+  --size-body: clamp(1.0625rem, 1.15vw, 1.3125rem);
+  --size-eyebrow: 0.75rem;
 
   /* Motion — Emil strong ease-out; Apple press feedback */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -77,31 +81,36 @@ body {
 
 /* Type roles */
 .type-display {
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
   font-optical-sizing: auto;
   font-size: var(--size-display);
+  font-weight: 600;
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
   text-wrap: balance;
 }
 
 .type-display-lg {
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
   font-optical-sizing: auto;
   font-size: var(--size-display-lg);
+  font-weight: 600;
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display-tight);
   text-wrap: balance;
 }
 
 .type-body {
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-optical-sizing: auto;
+  font-size: var(--size-body);
+  line-height: 1.55;
   letter-spacing: 0;
+  color: var(--ink);
 }
 
 .type-meta {
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 0.875rem;
   line-height: 1.5;
   letter-spacing: 0.01em;
@@ -179,7 +188,7 @@ button:active {
   }
 
   .home-cta:hover {
-    background-color: color-mix(in srgb, var(--cta) 88%, black);
+    background-color: #000;
     text-decoration-line: none;
   }
 
@@ -332,7 +341,7 @@ button:active {
   background: color-mix(in srgb, var(--canvas) 72%, transparent);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent);
+  border-bottom: 1px solid var(--hairline);
 }
 
 
@@ -652,9 +661,10 @@ button:active {
 }
 
 .home-headline {
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
   font-optical-sizing: auto;
   font-size: var(--size-display);
+  font-weight: 600;
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
   color: var(--ink);
@@ -676,7 +686,7 @@ button:active {
 .home-support {
   margin: 1rem 0 0;
   max-width: 32rem;
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-size: var(--size-body);
   line-height: 1.45;
   color: var(--muted);
   text-wrap: pretty;
@@ -702,61 +712,295 @@ button:active {
   width: 100%;
 }
 
-/* 1 hero — large negative-tracking display on #ffffff */
+/* 1 hero — display + product STAGE + services strip in the first viewport */
 .home-mod--hero {
-  min-height: min(100svh, 56rem);
+  min-height: calc(100svh - var(--nav-height));
   display: flex;
-  align-items: center;
+  flex-direction: column;
   background: var(--canvas);
 }
 
 .home-mod__inner--hero {
+  flex: 1 1 auto;
   display: grid;
-  gap: 2.5rem;
-  justify-items: center;
+  gap: 1.5rem;
   align-items: center;
+  padding-block: 1rem 0.75rem;
 }
 
-.hero-still {
-  width: 100%;
-  max-width: 28rem;
-  margin-inline: auto;
-  display: grid;
-  gap: 1.15rem;
-  padding: 1.5rem 1.35rem;
-  background: var(--gutter);
-  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
+@media (min-width: 1080px) {
+  .home-mod--hero {
+    height: calc(100svh - var(--nav-height));
+    max-height: calc(100svh - var(--nav-height));
+  }
+
+  .home-mod__inner--hero {
+    grid-template-columns: minmax(18rem, 0.88fr) minmax(28rem, 1.12fr);
+    gap: 2.5rem;
+    align-items: center;
+    min-height: 0;
+    padding-block: 0.85rem 0.5rem;
+  }
+
+  .home-hero__pin {
+    align-self: stretch;
+    display: flex;
+  }
+
+  .home-hero__pin .product-stage {
+    flex: 1 1 auto;
+    height: auto;
+    max-height: none;
+  }
 }
 
-.hero-still__row {
-  display: grid;
-  gap: 0.4rem;
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.35rem;
+  margin-top: 1.75rem;
 }
 
-.hero-still__kicker {
+.home-hero__actions .home-cta-wrap,
+.home-hero__actions .home-cta {
   margin: 0;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+}
+
+.home-hero__pin {
+  width: 100%;
+  min-width: 0;
+}
+
+.home-hero__strip {
+  list-style: none;
+  width: min(100%, var(--stage-max));
+  margin: 0 auto;
+  padding: 0.85rem var(--stage-pad-x) 1.15rem;
+  display: grid;
+  gap: 0.85rem 1.5rem;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--hairline);
+}
+
+@media (min-width: 720px) {
+  .home-hero__strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.home-hero__svc {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.home-hero__svc-short {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--size-eyebrow);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
-.hero-still__line {
-  margin: 0;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(1.35rem, 3.2vw, 1.75rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+.home-hero__svc-name {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--size-body);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
   color: var(--ink);
 }
 
-.hero-still__rule {
-  height: 1px;
-  background: color-mix(in srgb, #d2d2d7 80%, white);
+/* Product STAGE — fabricated Propose → Approve → Record UI */
+.product-stage {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-height: 520px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-stage);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 18%),
+    var(--gutter);
+  box-shadow: inset 0 0 0 1px var(--hairline);
 }
 
-/* 2 services — method columns, not a four-desk grid */
+.product-stage__specular {
+  pointer-events: none;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.95) 22%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+}
+
+.product-stage__chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 2.75rem;
+  padding: 0.85rem 1.15rem 0.55rem;
+}
+
+.product-stage__lights {
+  width: 2.35rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 0.28rem 50%, #d2d2d7 0.22rem, transparent 0.24rem),
+    radial-gradient(circle at 1.05rem 50%, #d2d2d7 0.22rem, transparent 0.24rem),
+    radial-gradient(circle at 1.82rem 50%, #d2d2d7 0.22rem, transparent 0.24rem);
+}
+
+.product-stage__seat {
+  margin: 0;
+  font-size: var(--size-eyebrow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.product-stage__rail {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.35rem 1.1rem 0.85rem;
+}
+
+.product-stage__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  letter-spacing: -0.015em;
+  color: var(--muted);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.product-stage__step[data-active="true"] {
+  color: #fff;
+  background: var(--cta);
+  box-shadow: inset 0 0 0 1px #000;
+}
+
+.product-stage__panels {
+  position: relative;
+  min-height: 0;
+  padding: 0 1.1rem 1.15rem;
+}
+
+.product-stage__panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border-radius: calc(var(--radius-stage) - 8px);
+  background: var(--canvas);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+  opacity: 0;
+}
+
+.product-stage__panel[data-active="true"] {
+  opacity: 1;
+}
+
+.product-stage__kicker {
+  margin: 0;
+  font-size: var(--size-eyebrow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.product-stage__line {
+  margin: 0;
+  max-width: 28rem;
+  font-size: var(--size-body);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.product-stage__action {
+  margin-top: 0.85rem;
+}
+
+.product-stage__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: var(--gutter);
+  color: var(--ink);
+  font-size: 0.875rem;
+  letter-spacing: -0.01em;
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
+
+.product-stage[data-active-step="approve"] .product-stage__panel[data-panel="approve"] .product-stage__pill {
+  background: #000;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px #000;
+}
+
+/* Optional later dark gate chapter */
+.gate-stage {
+  background: #000;
+  color: #f5f5f7;
+  border-radius: var(--radius-stage);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-stage {
+    min-height: 520px;
+    height: auto;
+  }
+
+  .product-stage__panels {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .product-stage__panel {
+    position: static;
+    inset: auto;
+    opacity: 1;
+  }
+
+  .product-stage__step {
+    color: var(--ink);
+    background: transparent;
+    box-shadow: inset 0 0 0 1px var(--hairline);
+  }
+
+  .product-stage__step[data-active="true"] {
+    color: #fff;
+    background: #000;
+  }
+}
+
+/* 2 services — quiet strip now lives in the first viewport */
 .home-mod--services {
   background: var(--gutter);
 }
@@ -836,9 +1080,16 @@ button:active {
   color: var(--muted);
 }
 
-/* 3 method / gate — shallow-deep split; still above copy on 375 */
-.home-mod--method {
-  background: var(--canvas);
+/* 3 method / hire — #f5f5f7, no card */
+.home-mod--method,
+.home-mod--hire {
+  background: var(--gutter);
+}
+
+.home-mod__inner--hire {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 42rem;
 }
 
 .home-mod__inner--split {
@@ -1152,12 +1403,12 @@ button:active {
   background: var(--cta);
   color: #fff;
   border: 1px solid var(--cta);
-  padding: 0.7rem 1.25rem;
+  padding: 0.7rem 1.35rem;
   font-size: 1rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-decoration: none;
-  border-radius: 0.35rem;
+  border-radius: 999px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -6956,6 +7207,12 @@ button:active {
   .home-headline,
   .home-support,
   .home-cta-wrap,
+  .home-hero__strip,
+  .home-hero__svc,
+  .product-stage,
+  .product-stage__step,
+  .product-stage__panel,
+  .product-stage__line,
   .home-svc__col,
   .home-ex__link,
   .home-method__steps li,

@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import { ProductStage } from "@/components/ProductStage";
 import { BRIEF_ASKS } from "@/lib/brief-asks";
 import {
   EXAMPLES,
@@ -12,16 +13,21 @@ import {
   INDEX_LEDE,
   READ_FULL_EXAMPLE,
 } from "@/lib/selected-examples";
-import { CATALOG_LINES } from "@/lib/services-catalog";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 /*
  * HARD BAN (scroll stack): no Lenis, no ScrollTrigger.normalizeScroll(),
  * no body/html overflow lock while pinned — native scroll only (zero-jank).
- * V5-3: shallow default. No home pin. Prefer once-reveal (transform/opacity).
+ * V7-0: pin+scrub only on the home product STAGE. Transform/opacity only.
  * Reduced motion / JS-off: full commercial payload stays readable.
  */
+
+const SERVICE_STRIP = [
+  { id: "design", short: "Design", name: "Agent product design" },
+  { id: "build", short: "Build", name: "Agent build" },
+  { id: "operations", short: "Operations", name: "Agent operations" },
+] as const;
 
 const MECHANISM = [
   {
@@ -62,16 +68,26 @@ const CLOSE_CHAPTERS = [
 ] as const;
 
 const STATIC_SEL =
-  "[data-reveal], [data-svc-col], [data-ex-row], [data-spec-row], [data-road-row], [data-close-map] a";
+  "[data-reveal], [data-svc-col], [data-ex-row], [data-spec-row], [data-road-row], [data-close-map] a, [data-step], [data-panel]";
 
 function showStatic() {
   gsap.set(STATIC_SEL, {
     clearProps: "transform,opacity,visibility,filter",
     autoAlpha: 1,
   });
-  gsap.set(".home-mod__stage, .home-method__still, .home-ex", {
+  gsap.set(".home-mod__stage, .product-stage, .product-stage__panel", {
     clearProps: "transform,opacity,visibility",
     autoAlpha: 1,
+  });
+}
+
+function setStageStep(root: HTMLElement, step: "propose" | "approve" | "record") {
+  root.setAttribute("data-active-step", step);
+  root.querySelectorAll<HTMLElement>("[data-step]").forEach((el) => {
+    el.setAttribute("data-active", el.dataset.step === step ? "true" : "false");
+  });
+  root.querySelectorAll<HTMLElement>("[data-panel]").forEach((el) => {
+    el.setAttribute("data-active", el.dataset.panel === step ? "true" : "false");
   });
 }
 
@@ -138,6 +154,9 @@ export function HomeScenes() {
             motionOk: boolean;
           };
 
+          const stage = document.querySelector<HTMLElement>("[data-product-stage]");
+          if (stage) setStageStep(stage, "approve");
+
           if (reduce || !motionOk) {
             showStatic();
             return;
@@ -166,25 +185,36 @@ export function HomeScenes() {
             });
           });
 
-          gsap.utils
-            .toArray<HTMLElement>(".home-mod__stage[data-parallax]")
-            .forEach((stage) => {
-              gsap.fromTo(
-                stage,
-                { y: 18 },
-                {
-                  y: 0,
-                  ease: "none",
-                  scrollTrigger: {
-                    trigger: stage.closest("[data-mod]") || stage,
-                    start: "top bottom",
-                    end: "top 35%",
-                    scrub: 1,
-                    invalidateOnRefresh: true,
-                  },
-                },
-              );
+          /*
+           * V7-0: pin+scrub is allowed only on this stage, but pinning at
+           * load stole the first viewport (Approve → Propose, strip below fold).
+           * Keep Approve filled. Optional short transform/opacity scrub only
+           * after the hero has left the first screen.
+           */
+          if (stage) {
+            const pin = stage.closest<HTMLElement>("[data-product-pin]") || stage;
+            const steps = ["propose", "approve", "record"] as const;
+
+            ScrollTrigger.create({
+              trigger: pin,
+              start: "top top",
+              end: "+=80%",
+              scrub: 0.65,
+              invalidateOnRefresh: true,
+              onUpdate: (self) => {
+                if (self.progress === 0) {
+                  setStageStep(stage, "approve");
+                  return;
+                }
+                const idx = Math.min(
+                  steps.length - 1,
+                  Math.floor(self.progress * steps.length),
+                );
+                setStageStep(stage, steps[idx]);
+              },
+              onLeaveBack: () => setStageStep(stage, "approve"),
             });
+          }
 
           const refresh = () => ScrollTrigger.refresh();
           window.addEventListener("load", refresh);
@@ -194,6 +224,7 @@ export function HomeScenes() {
 
           return () => {
             window.removeEventListener("load", refresh);
+            if (stage) setStageStep(stage, "approve");
           };
         },
       );
@@ -214,7 +245,7 @@ export function HomeScenes() {
         aria-labelledby="home-hero-h"
       >
         <div className="home-mod__inner home-mod__inner--hero">
-          <div className="home-mod__copy home-mod__copy--center">
+          <div className="home-mod__copy">
             <h1 id="home-hero-h" className="home-headline home-headline--lg" data-reveal>
               Agents, built to the brief.
             </h1>
@@ -222,93 +253,46 @@ export function HomeScenes() {
               We design the job an agent is allowed to do — and the gate it
               cannot cross.
             </p>
-            <p className="home-support" data-reveal>
-              One workflow. One agent. A human still decides.
-            </p>
-          </div>
-          <div className="home-mod__stage" data-parallax aria-hidden="true">
-            <div className="hero-still">
-              <div className="hero-still__row">
-                <p className="hero-still__kicker">Job</p>
-                <p className="hero-still__line">One workflow. One seat.</p>
-              </div>
-              <div className="hero-still__rule" />
-              <div className="hero-still__row">
-                <p className="hero-still__kicker">Gate</p>
-                <p className="hero-still__line">A human still decides.</p>
-              </div>
+            <div className="home-hero__actions" data-reveal>
+              <Link href="/contact" className="home-cta">
+                Start a brief.
+              </Link>
+              <Link href="/services" className="home-text-link">
+                See services
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section
-        id="home-services"
-        data-mod
-        className="home-mod home-mod--services"
-        aria-labelledby="home-services-h"
-      >
-        <div className="home-mod__inner home-mod__inner--services">
-          <div className="home-mod__copy">
-            <h2 id="home-services-h" className="home-headline" data-reveal>
-              Agent product design. Agent build. Agent operations.
-            </h2>
-            <p className="home-support" data-reveal>
-              Remex Studio designs custom AI agents as products.
-            </p>
+          <div className="home-hero__pin" data-product-pin>
+            <ProductStage />
           </div>
-          <ol className="home-svc">
-            {CATALOG_LINES.map((line) => (
-              <li key={line.id} className="home-svc__col" data-svc-col>
-                <h3 className="home-svc__name">{line.name}</h3>
-                <p className="home-svc__p">
-                  <span className="home-svc__label">Who.</span> {line.who}
-                </p>
-                <p className="home-svc__p">
-                  <span className="home-svc__label">Done.</span> {line.done}
-                </p>
-              </li>
-            ))}
-          </ol>
-          <p className="home-cta-wrap" data-reveal>
-            <Link href="/services" className="home-text-link">
-              Services
-            </Link>
-          </p>
         </div>
+        <ol
+          id="home-services"
+          className="home-hero__strip"
+          aria-label="Services"
+        >
+          {SERVICE_STRIP.map((line) => (
+            <li key={line.id} className="home-hero__svc" data-svc-col>
+              <span className="home-hero__svc-short">{line.short}</span>
+              <span className="home-hero__svc-name">{line.name}</span>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section
         id="home-method"
         data-mod
-        className="home-mod home-mod--method"
+        className="home-mod home-mod--method home-mod--hire"
         aria-labelledby="home-method-h"
       >
-        <div className="home-mod__inner home-mod__inner--split">
-          <div className="home-mod__stage" data-parallax aria-hidden="true">
-            <div className="home-method__still">
-              <div className="home-method__sheet">
-                <p className="home-method__kicker">Job</p>
-                <p className="home-method__fact">
-                  Who sits in the seat. What done looks like.
-                </p>
-                <p className="home-method__kicker">Gate</p>
-                <p className="home-method__fact">
-                  The line the agent cannot cross.
-                </p>
-                <p className="home-method__kicker">Record</p>
-                <p className="home-method__fact">
-                  Propose. Approve. Reopen later.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="home-mod__inner home-mod__inner--hire">
           <div className="home-mod__copy">
             <h2 id="home-method-h" className="home-headline" data-reveal>
               The agent proposes. A person approves. The record stays.
             </h2>
             <p className="home-support" data-reveal>
-              A human still decides.
+              One workflow. One agent. A human still decides.
             </p>
             <ol className="home-method__steps">
               {MECHANISM.map((step) => (

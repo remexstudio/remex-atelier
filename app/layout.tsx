@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Newsreader, Source_Sans_3 } from "next/font/google";
+import { Geist, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const serif = Newsreader({
-  variable: "--font-serif",
+const geist = Geist({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const sans = Source_Sans_3({
-  variable: "--font-sans",
+const serif = Newsreader({
+  variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
 });
@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${serif.variable} ${sans.variable} h-full`}
+      className={`${serif.variable} ${geist.variable} h-full`}
     >
       <body className="type-body min-h-full bg-gutter text-ink antialiased [scroll-padding-top:var(--nav-height)]">
         <a href="#main" className="skip-link">
