@@ -13,8 +13,8 @@
 - [ ] V6-5 home first viewport three services — **PARKED**
 - [ ] V6-6 Approach roadmap rewrite; 375 regression — **PARKED**
 
-## V7 appearance (active)
+## V7 appearance
 
-- [ ] V7-0 tokens + home first-viewport product STAGE
-- [ ] V7-1 inner pages restyle
-- [ ] V7-2 polish 375 / 1440
+- [x] V7-0 tokens + home first-viewport product STAGE — **PASS**
+- [ ] V7-1 inner pages restyle — **ACTIVE**
+- [ ] V7-2 polish 375 / 1440 — **PENDING**

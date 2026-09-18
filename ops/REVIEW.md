@@ -1,17 +1,24 @@
-# Review — campaign switch (not a V6-5 verdict)
+# Review V7-0 — CLOSED PASS
 
-- Owner restyle brief received (2026-09-17): **APPEARANCE ONLY**
-- **V6-5 was not delivered.** First viewport is still headline + gray JOB/GATE card.
-- **V6-6 is not opened.** Approach Next rewrite stays parked.
-- Campaign switched from unfinished V6 home/approach tickets to **appearance-only V7**.
-- Do not change offers, routes, or thesis sentences.
-- Do not add Seattle / Global clients, a founder page, or revive `/demo` as product.
+- TASK ID: V7-0
+- Content SHA: `71546a0`
+- Tip: `9a49584`
+- Prod: https://remex-atelier.vercel.app · `dpl_C9vGGaqH9DpbTDe1SQkfCqXVnVkX`
+- Verdicts: Apple **PASS** · UX **PASS** · Vision **PASS** · Leader **PASS**
+- Verdict: **PASS** (unanimous)
 
-## Parked
+## KEEP
 
-- V6-5 home first viewport three services (who/done cards) — superseded by V7-0 quiet strip + product STAGE
-- V6-6 Approach roadmap rewrite + 375 regression — superseded; inner/polish moves to V7-1 / V7-2
+- Home first viewport: promise + black-pill CTA + product STAGE (Propose → Approve → Record ≥520) + Design / Build / Operations strip
+- Display tokens: Geist / system 600, tracking ~-0.03em; canvas `#fff` / gutter `#f5f5f7`; ink `#1d1d1f`; hairline; radius-stage
+- CTA near-black pill; SaaS blue `#1d4ed8` killed
+- Nav still four items (Work · Services · Approach · Contact)
+- Offers / routes / thesis unchanged; no Seattle / Global clients; no founder page; `/demo` not revived as product
 
-## Next
+## Soft (non-blocking)
 
-V7-0 issued. Tokens + home first viewport product stage. Leader PASS required before V7-1.
+ProductStage `aria-hidden` (optional later). Non-blocking.
+
+## Outcome
+
+V7-0 **CLOSED**. V7-1 issued.

@@ -1,62 +1,72 @@
-# TASK V7-0 — tokens + home first viewport product STAGE
+# TASK V7-1 — inner pages appearance restyle
 
-TASK ID: V7-0
+TASK ID: V7-1
 REPO: remexstudio/remex-atelier
-BASE: tip after this ops stamp (park V6-5/6; issue V7-0)
-GOAL: Tokens + home first viewport product STAGE. Appearance only. Keep all thesis copy.
+BASE: tip after V7-0 PASS (`9a49584` or newer main after this ops stamp)
+GOAL: Restyle inner pages to apple.com product-page grammar using V7-0 tokens (Geist 600, `#fff` / `#f5f5f7` / `#1d1d1f`, hairline, black pill CTA, radius-stage). Keep all copy and routes. No second home hero on inner pages.
 
-Owner override 2026-09-17: **APPEARANCE ONLY** restyle. Park unfinished V6-5 and V6-6. Do not change offers, routes, or thesis sentences. No Seattle/Global clients. No founder page. Do not revive `/demo` as product.
+Owner override 2026-09-17: **APPEARANCE ONLY**. Do not change offers, routes, or thesis sentences. No Seattle / Global clients. No founder page. Do not revive `/demo` as product.
 
-## Visual system (tokens in globals / layout)
+## /services
 
-- Type: Geist (`next/font`) or system-ui with optical sizing. Display weight 600, tracking ~-0.03em at 56–80px. Body 17–21px `#1d1d1f`. Eyebrows 12px `#6e6e73`.
-- Color: `#ffffff` / `#f5f5f7` / `#1d1d1f` / `#6e6e73` / hairline `rgba(0,0,0,0.08)`. Optional one `#000` gate chapter later (may stub class). CTA near-black pill. Kill SaaS blue `#1d4ed8` if present.
-- Nav already 4 links — keep. Frosted 44–48px. No extra home banner links in primary nav.
-- Radius 18–28px on stages. Almost no drop shadow.
+- Title “Services” (or existing catalog title) — no giant home-style hero with product stage
+- Three large rows (Design / Build / Operations), small still each in product-stage language (fabricated UI vignette, not chip stack)
+- Keep existing service copy; restyle layout only
 
-## Home first viewport (REQUIRED)
+## /work
 
-Keep the words. Change the medium.
+- Still thumbnail + short line + `Read the full example →`
+- Kill giant empty gray field / sparse ocean of gray
+- Teasers stay short (V6-4 contract intact)
 
-1. Headline `Agents, built to the brief.` + ONE support line (keep an existing allowed line; do not invent a new thesis).
-2. CTAs: Start a brief (black pill → `/contact`) + See services (text/link → `/services` or `#home-services`).
-3. A product STAGE ≥520px tall: fabricated UI module showing Propose → Approve → Record with Approve filled, specular edge, inset hairline — **NOT** a rounded gray JOB/GATE text card.
-4. Three services as a quiet strip IN the first viewport (Design / Build / Operations), one line each, visible without long scroll on 1280.
-5. GSAP pin+scrub ONLY on this stage if motion is added. Transform/opacity only. `prefers-reduced-motion`: all text visible, no missing content.
+## /work/[desk]/story
 
-Then restyle subsequent home chapters toward (can be partial in V7-0 if time; minimum is first viewport + tokens):
+- Reading column max-width ~680px
+- UI still sequence under essay in same stage language as ProductStage (ask → recommend → gate → record already exist — restyle chrome)
 
-- hire on `#f5f5f7` with no card
-- gate as dark stage (optional in V7-0 if first viewport done)
-- Keep module order: services in first viewport → method → examples teasers → brief → roadmap → CTA
-- Do **NOT** rewrite thesis sentences or change routes.
+## /approach
+
+- Three full-width bands (method beats), not stacked white cards floating in gray
+- Keep Now / Next / Later content as-is (do not rewrite Next thesis — appearance only)
+
+## /contact
+
+- One hairline sheet form
+- Black / near-black submit pill (≥44px)
+- Keep form fields and success copy
+
+## Sitewide constraints
+
+- Nav: Work · Services · Approach · Contact identical every route (already)
+- Tokens from V7-0; kill any leftover SaaS blue
+- 375: Menu with four links; 44px targets; readable
+- 1280 / 1440: no crushed columns, no tiny card in ocean of gray
 
 ## ALLOWED FILES
 
-- `app/globals.css`
-- `app/layout.tsx` (font only)
-- `components/HomeScenes.tsx`
-- `components/*` chrome/nav only if CTA pill / type tokens need it
-- any tiny new component for ProductStage / GateStage under `components/`
+- `app/services/page.tsx`, `app/work/page.tsx`, `app/work/*/story/page.tsx`, `app/approach/page.tsx`, `app/contact/page.tsx` (and related contact components)
+- `components/*Chapter.tsx`, SiteChrome, form components as needed for styling
+- `app/globals.css` (inner-page modules only; do not regress home V7-0)
+- tiny new still/row components under `components/` if needed
 - `ops/HANDOFF.md`, `ops/STATUS.md`
 
 ## OUT OF SCOPE
 
-- Changing service offers, story essays, Approach Next rewrite (V6-6)
-- Copy rewrites of locked lines
-- Inner page deep restyle (that is V7-1)
-- Adding geography slogans, founder, `/demo` as product
+- Rewriting thesis / Approach Next meaning
+- Changing service offers or story essays
+- Home first-viewport redesign (already V7-0)
+- Soft ADD aria-hidden on ProductStage (optional tiny fix OK if zero risk, not required)
 
 ## ACCEPTANCE
 
-- [ ] First viewport is no longer title + gray JOB/GATE card alone
-- [ ] Product stage ≥520px with Propose→Approve→Record UI language exists on home
-- [ ] Display type engineered sans (Geist/system), weight 600, tight tracking
-- [ ] CTA is black/near-black pill
-- [ ] Three service names visible in first viewport on 1280
-- [ ] Nav still four links; copy/routes unchanged
-- [ ] `pnpm build` PASS; `vercel deploy --prod` preferred; smoke `/`
-- [ ] HANDOFF; DEV PASS; do not start V7-1 until Leader PASS
+- [ ] Inner pages do not reuse home hero + product stage as their title block
+- [ ] /services three large rows with small stills
+- [ ] /work still + short + Read the full example; no giant empty gray
+- [ ] /story reading ≤680px + stage-language stills
+- [ ] /approach full-width bands not white card stack
+- [ ] /contact hairline sheet + black submit pill
+- [ ] Copy/routes unchanged; four-link nav; `pnpm build` PASS; `vercel deploy --prod` preferred
+- [ ] HANDOFF; DEV PASS; do not open V7-2 until Leader PASS
 
 ## SKILLS TO USE
 
@@ -66,4 +76,4 @@ Also read `docs/ia-v3.md`, `docs/scroll-score-v3.md`, `docs/design.md`, and chro
 
 ## COMMIT MESSAGE
 
-`feat(home): add product stage and display tokens for V7-0`
+`feat(site): restyle inner pages to product-stage grammar`
