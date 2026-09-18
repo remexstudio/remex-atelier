@@ -1,41 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  /* Surfaces — editorial default (inner pages) */
-  --paper: #f4f0e8;
+  /* Owner palette — UI-0. Kill SaaS blue #1d4ed8. */
+  --bg: #ffffff;
+  --gutter: #f5f5f7;
   --ink: #1d1d1f;
-  --muted: #6e6e73;
-  --rule: rgba(0, 0, 0, 0.08);
-  --accent: #1d1d1f;
-  --hairline: rgba(0, 0, 0, 0.08);
+  --secondary: #6e6e73;
+  --line: rgba(0, 0, 0, 0.08);
+  --dark: #000000;
+  --dark-ink: #f5f5f7;
+  --cta: #1d1d1f; /* near-black pill */
 
-  /* Product / film shell (V7 appearance) */
-  --canvas: #ffffff; /* product stage / page canvas */
-  --gutter: #f5f5f7; /* section gutters, rails, soft bands */
-  --cta: #1d1d1f; /* near-black pill — kill SaaS blue #1d4ed8 */
-  --radius-stage: 22px;
-
-  /* Aliases for theme wiring — root locked to film canvas, not legacy paper */
-  --background: var(--canvas);
+  /* Aliases — keep existing class wiring */
+  --canvas: var(--bg);
+  --paper: var(--bg);
+  --muted: var(--secondary);
+  --rule: var(--line);
+  --accent: var(--ink);
+  --hairline: var(--line);
+  --background: var(--bg);
   --foreground: var(--ink);
 
-  /* Chrome — sticky frosted nav (Apple ~44–48px) */
-  --nav-height: 46px;
-  --hit-target-min: 44px;
+  /* Residual serif slot remapped to Geist/system — no Newsreader/Georgia posters */
+  --font-serif: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* V6-3 shared marketing stage — 1280 / 1440 first-class measure */
+  /* Chrome — sticky frosted nav (Apple 44–48px) */
+  --nav-height: 46px;
+  --nav-frost: rgba(255, 255, 255, 0.72);
+  --hit-target-min: 44px;
+  --radius-stage: 22px; /* 18–28px stages */
+  --radius-pill: 999px;
+
+  /* Shared marketing stage — 1280 / 1440 first-class measure */
   --stage-max: 68rem;
   --stage-pad-x: 1.25rem;
 
-  /* Display type — Geist/system, weight 600, tight tracking at 56–80px */
-  --tracking-display: -0.03em;
+  /* Display — weight 600; tracking ~-0.03em at 56–80px; tightens with size */
+  --tracking-display: -0.022em;
   --tracking-display-tight: -0.03em;
   --leading-display: 1.05;
+  --leading-body: 1.47;
+  --tracking-body: 0;
   --size-display: clamp(2.25rem, 5vw, 3.5rem);
-  --size-display-lg: clamp(3.5rem, 6.4vw, 5rem);
+  --size-display-lg: clamp(3.5rem, 6.4vw, 5rem); /* 56–80px */
   --size-display-sm: clamp(1.75rem, 4vw, 3rem);
-  --size-body: clamp(1.0625rem, 1.15vw, 1.3125rem);
-  --size-eyebrow: 0.75rem;
+  --size-body: clamp(1.0625rem, 1.15vw, 1.3125rem); /* 17–21px */
+  --size-eyebrow: 12px;
+  --tracking-eyebrow: 0.04em;
 
   /* Motion — Emil strong ease-out; Apple press feedback */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -61,6 +73,11 @@
   --color-canvas: var(--canvas);
   --color-gutter: var(--gutter);
   --color-cta: var(--cta);
+  --color-bg: var(--bg);
+  --color-secondary: var(--secondary);
+  --color-line: var(--line);
+  --color-dark: var(--dark);
+  --color-dark-ink: var(--dark-ink);
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
   --ease-out: var(--ease-out);
@@ -81,7 +98,7 @@ body {
 
 /* Type roles */
 .type-display {
-  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: var(--size-display);
   font-weight: 600;
@@ -91,7 +108,7 @@ body {
 }
 
 .type-display-lg {
-  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: var(--size-display-lg);
   font-weight: 600;
@@ -104,17 +121,37 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
   font-optical-sizing: auto;
   font-size: var(--size-body);
-  line-height: 1.55;
-  letter-spacing: 0;
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
   color: var(--ink);
 }
 
+.type-eyebrow,
 .type-meta {
   font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  color: var(--muted);
+  font-size: var(--size-eyebrow);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--secondary);
+}
+
+/* UI-0: kill soft weight-400 posters + residual serif on display */
+h1,
+.type-display,
+.type-display-lg,
+.home-headline,
+.film-title,
+.film-section-title,
+.approach-title,
+.contact-title,
+.work-index__title,
+.ex-display,
+.svc-title,
+.home-ex__name,
+.work-story-card__name {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
 }
 
 :focus-visible {
@@ -189,7 +226,7 @@ button:active {
 
   .home-cta:hover,
   .cta-pill:hover {
-    background-color: #000;
+    background-color: var(--dark);
     text-decoration-line: none;
   }
 
@@ -209,13 +246,14 @@ button:active {
   align-items: center;
   justify-content: center;
   min-height: var(--hit-target-min);
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: #fff;
+  border: 1px solid var(--cta);
+  background: var(--cta);
+  color: var(--dark-ink);
   padding: 0.625rem 1.125rem;
   font-size: 0.9375rem;
   line-height: 1.25;
   text-decoration: none;
+  border-radius: var(--radius-pill);
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -339,10 +377,17 @@ button:active {
   display: flex;
   align-items: center;
   overflow: visible;
-  background: color-mix(in srgb, var(--canvas) 72%, transparent);
-  backdrop-filter: blur(20px) saturate(180%);
+  background: var(--nav-frost);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid var(--hairline);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--line);
+}
+
+@supports ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+  .site-nav {
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
 }
 
 
@@ -663,7 +708,7 @@ button:active {
 }
 
 .home-headline {
-  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: var(--size-display);
   font-weight: 600;
@@ -801,9 +846,9 @@ button:active {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: var(--size-eyebrow);
   line-height: 1.2;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
 .home-hero__svc-name {
@@ -1327,12 +1372,12 @@ button:active {
 
 .home-ex__name {
   margin: 0;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.8vw, 1.75rem);
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--ink);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .home-ex__gate {
@@ -1499,15 +1544,15 @@ button:active {
   align-items: center;
   justify-content: center;
   min-height: var(--hit-target-min);
-  background: #000;
-  color: #fff;
-  border: 1px solid #000;
+  background: var(--cta);
+  color: var(--dark-ink);
+  border: 1px solid var(--dark);
   padding: 0.7rem 1.35rem;
   font-size: 1rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -1576,10 +1621,10 @@ button:active {
 /* Concierge / Gate product still — no chatbot chrome */
 .product-frame {
   background: var(--canvas);
-  border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
-  border-radius: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-stage);
   padding: 0.85rem;
-  box-shadow: 0 18px 40px -28px rgb(0 0 0 / 0.35);
+  box-shadow: none;
   max-width: 28rem;
   width: 100%;
 }
@@ -1596,8 +1641,9 @@ button:active {
 
 .product-frame__id {
   margin: 0;
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 6vw, 2.25rem);
+  font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.05;
   color: var(--ink);
@@ -1991,9 +2037,9 @@ button:active {
 
 .work-story-card__name {
   margin: 0;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.15;
   color: var(--ink);
@@ -5440,18 +5486,19 @@ button:active {
 .contact-kicker {
   margin: 0;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  color: var(--muted);
+  font-size: var(--size-eyebrow);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--secondary);
 }
 
 .approach-title,
 .contact-title {
   margin: 0.65rem 0 0;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(2.35rem, 6vw, 4rem);
+  font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.035em;
   color: var(--ink);
@@ -5792,16 +5839,16 @@ button:active {
   justify-content: center;
   min-height: var(--hit-target-min);
   min-width: var(--hit-target-min);
-  background: #000;
-  color: #fff;
-  border: 1px solid #000;
+  background: var(--cta);
+  color: var(--dark-ink);
+  border: 1px solid var(--dark);
   padding: 0.7rem 1.25rem;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -5827,7 +5874,7 @@ button:active {
   .contact-cta:hover,
   .film-cta:hover,
   .cta-pill:hover {
-    background-color: #000;
+    background-color: var(--dark);
     text-decoration-line: none;
   }
 }
@@ -6044,30 +6091,32 @@ button:active {
 .film-kicker {
   margin: 0;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  color: var(--muted);
+  font-size: var(--size-eyebrow);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--secondary);
 }
 
 .film-title {
   margin: 0.65rem 0 0;
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(2.1rem, 5.2vw, 3.35rem);
+  font-weight: 600;
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-display);
   color: var(--ink);
   text-wrap: balance;
 }
 
 .film-section-title {
   margin: 0;
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(1.55rem, 3.4vw, 2.1rem);
+  font-weight: 600;
   line-height: 1.12;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-display);
   color: var(--ink);
   text-wrap: balance;
 }
@@ -8237,11 +8286,11 @@ button:active {
 
 .contact-cta,
 .contact-success .contact-cta {
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   min-height: var(--hit-target-min);
-  background: #000;
-  border-color: #000;
-  color: #fff;
+  background: var(--cta);
+  border-color: var(--dark);
+  color: var(--dark-ink);
 }
 
 .contact-input {
