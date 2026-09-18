@@ -1,52 +1,49 @@
-# Handoff UI-1
+# Handoff UI-2
 
 - Status: **DEV PASS**
-- TASK ID: UI-1
-- SHA (content / tip): `ff8a3ae` (PR #37 squash merge; branch tip was `b0eb3a6`)
-- Preview / Production: https://remex-atelier.vercel.app
-- Prod deploy: `dpl_BajZ9YiRPeKz2SijNgx7NUsjfBdS`
+- TASK ID: UI-2
+- SHA: see this commit
+- Preview / Production: https://remex-atelier.vercel.app (prod remains UI-1 until merge)
 - Phase: UI campaign open
-- Allowed files only: `components/HomeScenes.tsx`, `components/ProductStage.tsx`, `app/globals.css` (first viewport / stage / Georgia soft ADD), ops stamps.
-- Out of scope kept: no dark gate rebuild (UI-2), no inner IA (UI-3), no copy/route rewrites, four-link nav unchanged.
-- Do not start UI-2.
+- Allowed files only: `components/HomeScenes.tsx` (gate chrome/layout), `components/ProductStage.tsx` (dark polish), `app/globals.css` (gate / dark stage / contrast), `components/lab/pulse.css` (Georgia cleanup), ops stamps.
+- Out of scope kept: no UI-3 inner pages, no copy/route rewrites, no first-viewport rebuild, four-link nav unchanged.
+- Do not start UI-3.
 
-## First viewport
+## Gate chapter
 
-- Headline locked: `Agents, built to the brief.`
-- One existing support line: `We design the job an agent is allowed to do — and the gate it cannot cross.`
-- Pill CTA `Start a brief.` → `/contact` (min-height 44 / `--hit-target-min`)
-- Text link `See services` → `#home-services`
-- Product STAGE: fabricated Propose → Approve → Record console, Approve filled, specular edge, inset hairline, min-height 520px
-- Quiet strip in the same section: Design / Build / Operations (one line each)
-- No pin at load. Approve stays filled. Optional scrub only after the hero leaves. No Lenis / body lock.
-- Reduced motion: all three panels visible; transform dropped
+- Canvas: `#home-gate` true black `#000`; type `#f5f5f7` / muted `rgba(245, 245, 247, 0.72)`
+- Distinct from `#home-method` light `--gutter` (`#f5f5f7`) canvas
+- Locked H2: `A human still decides.`
+- Locked lede: `Irreversible actions stay behind a named person.`
+- Dark `ProductStage`: Propose → Approve → Record; Approve filled (`#f5f5f7` on `#000`); specular catch-light + inset hairline; desk/canvas stay `#000` (not gray `#111` / `#1d1d1f` JOB/GATE card)
+- Stage min-height 520 in `.home-gate__stage`
+- No pin. No Lenis / body lock. Transform/opacity only.
+
+## UI-1 first viewport (unchanged)
+
+- Headline: `Agents, built to the brief.`
+- Support: `We design the job an agent is allowed to do — and the gate it cannot cross.`
+- Black pill `Start a brief.` → `/contact`
+- Light ProductStage ≥520; Design / Build / Operations strip
+- Geist tokens; no first-viewport CSS token undo
 
 ## Soft ADD
 
-Literal `Georgia` / `ui-serif` fallbacks in `app/globals.css` replaced with Geist/system. Approach name glyphs keep Songti / Noto Serif CJK. Do not reintroduce serif posters.
+Literal `Georgia` / `ui-serif` fallbacks cleared in `components/lab/pulse.css`. Lab titles use Geist/system. Do not import Chinese UI.
 
 ## Verify
 
-`pnpm build` PASS. Local smoke `/` `/work` `/services` `/approach` `/contact` HTTP 200. Production HTML contains `product-stage`, `home-hero__strip`, Design / Build / Operations, Propose → Approve → Record.
-
-Measured first viewport (production `next start` / cloud smoke):
-
-| Surface | Stage h | CTA h | Strip in 1280 first view | h1 |
-| --- | --- | --- | --- | --- |
-| 1280×800 | **520** | **44** / `#1d1d1f` / 999px | yes (top 748 / bottom 799) | Geist 600 / 80px / **-0.03em** |
-| 375×812 | **520** | **44** | n/a (1280 contract) | Geist 600 / 56px / **-0.03em** |
-
-CTA click → `/contact` (`Start a brief.`). See services → `#home-services`. Approve filled. No Seattle. No `#1d4ed8`. Four-link nav. Reduced motion shows Propose / Approve / Record panels.
+`pnpm build` PASS. Reduced motion: gate panels/text forced visible (`transform`/`opacity` cleared); all three product-stage panels stack. No Seattle. No `#1d4ed8`. Four-link nav.
 
 ## Acceptance self-check
 
-- [x] First viewport is NOT title + gray JOB/GATE card alone
-- [x] Product stage ≥520px with Propose→Approve→Record UI language
-- [x] Design / Build / Operations visible in first viewport on 1280
-- [x] Black pill CTA ≥44; UI-0 tokens kept
-- [x] Copy/routes unchanged; four-link nav; no Seattle
-- [x] `pnpm build` PASS; PR #37 merged
-- [x] HANDOFF DEV PASS; do NOT start UI-2
+- [x] `#home-gate` is true dark `#000` chapter; visually distinct from light method
+- [x] Dark ProductStage Propose→Approve→Record with Approve filled; not gray JOB/GATE card
+- [x] UI-1 first viewport not regressed (stage ≥520, strip, black pill, Geist tokens)
+- [x] Gate H2/lede distinct from method; lock copy/routes; four-link nav; no Seattle
+- [x] lab `pulse.css` Georgia/`ui-serif` literal fallbacks cleared
+- [x] `pnpm build` PASS; open PR
+- [x] HANDOFF DEV PASS; do NOT start UI-3
 
 ## Skills used
 
@@ -54,8 +51,8 @@ apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react,
 
 ## Risks
 
-None blocking. Soft ADD Georgia cleanup absorbed. UI-2 dark gate still out of scope.
+None blocking. Gate stage and chapter share `#000`; structure reads via specular + inset hairline, not a gray fill. UI-3 still out of scope.
 
 ## Blockers
 
-None. Awaiting three PMs + Leader. Do not open UI-2 until dual PASS.
+None. Awaiting Leader. Do not merge. Do not open UI-3.

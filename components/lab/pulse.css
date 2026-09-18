@@ -39,7 +39,7 @@
 
 .pulse-step-title {
   margin: 0;
-  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
   font-optical-sizing: auto;
   font-size: clamp(1.55rem, 3.4vw, 2.1rem);
   line-height: 1.12;
