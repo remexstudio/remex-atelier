@@ -24,4 +24,15 @@ Literal `Georgia` / `ui-serif` fallbacks in `app/globals.css` replaced with Geis
 
 ## Verify
 
-`pnpm build` PASS. Screenshots at 1280 / 375 for stage height, strip, and CTA measure.
+`pnpm build` PASS. Local smoke `/` `/work` `/services` `/approach` `/contact` HTTP 200.
+
+Measured first viewport (production `next start`):
+
+| Surface | Stage h | CTA h | Strip in 1280 first view | h1 |
+| --- | --- | --- | --- | --- |
+| 1280×800 | **520** | **44** / `#1d1d1f` / 999px | yes (top 748 / bottom 799) | Geist 600 / 80px / **-0.03em** |
+| 375×812 | **520** | **44** | n/a (1280 contract) | Geist 600 / 56px / **-0.03em** |
+
+CTA click → `/contact` (`Start a brief.`). See services → `#home-services`. Approve filled. No Seattle. No `#1d4ed8`. Four-link nav. Reduced motion shows Propose / Approve / Record panels.
+
+Cloud cannot `vercel login` here — Dev deploys after merge. Do not start UI-2.
