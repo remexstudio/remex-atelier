@@ -16,3 +16,7 @@
 - [x] V7-1 inner pages restyle — **PASS**
 - [x] V7-2 finish appearance — **PASS**
 - [x] V7-3 Distinct `#home-gate` chapter fact + appearance DONE WHEN verify — **PASS**
+
+## Soft (not issued)
+
+Empty. No V7-4.
