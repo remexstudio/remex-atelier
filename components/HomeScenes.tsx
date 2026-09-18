@@ -318,10 +318,10 @@ export function HomeScenes() {
         <div className="home-mod__inner home-mod__inner--gate">
           <div className="home-mod__copy">
             <h2 id="home-gate-h" className="home-headline" data-reveal>
-              The agent proposes. A person approves. The record stays.
+              A human still decides.
             </h2>
             <p className="home-support" data-reveal>
-              One workflow. One agent. A human still decides.
+              Irreversible actions stay behind a named person.
             </p>
           </div>
           <ProductStage variant="dark" />
