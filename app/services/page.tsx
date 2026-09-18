@@ -44,17 +44,9 @@ export default function ServicesPage() {
   return (
     <SiteChrome variant="film">
       <main id="main" className="svc-page">
-        <header className="svc-hero">
+        <header className="svc-mast">
           <div className="svc-band">
             <h1 className="svc-title">Services</h1>
-            <p className="svc-lede">Agents, built to the brief.</p>
-            <p className="svc-support">
-              We design the job an agent is allowed to do — and the gate it
-              cannot cross.
-            </p>
-            <p className="svc-support">
-              One workflow. One agent. A human still decides.
-            </p>
           </div>
         </header>
 
@@ -68,10 +60,17 @@ export default function ServicesPage() {
               agents for one painful company workflow at a time — with a
               human gate as the product surface.
             </p>
+            <p className="svc-lock">Agents, built to the brief.</p>
+            <p className="svc-lock svc-lock--muted">
+              We design the job an agent is allowed to do — and the gate it
+              cannot cross.
+            </p>
+            <p className="svc-lock svc-lock--muted">
+              One workflow. One agent. A human still decides.
+            </p>
             <ol className="svc-lines">
               {CATALOG_LINES.map((line) => (
                 <li key={line.id} className="svc-row" id={line.id}>
-                  <ServiceStageStill id={line.id} />
                   <div className="svc-row__copy">
                     <p className="svc-row__label">{ROW_LABEL[line.id]}</p>
                     <h3 className="svc-line__name">{line.name}</h3>
@@ -113,6 +112,7 @@ export default function ServicesPage() {
                       </div>
                     ) : null}
                   </div>
+                  <ServiceStageStill id={line.id} />
                 </li>
               ))}
             </ol>

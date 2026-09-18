@@ -69,127 +69,108 @@ export default function ApproachPage() {
   return (
     <SiteChrome variant="film">
       <main id="main" className="approach-page">
-        <header className="approach-hero">
+        <section
+          className="approach-band approach-band--method"
+          aria-labelledby="approach-h"
+        >
           <div className="approach-band__inner">
             <p className="approach-kicker">Approach</p>
-            <h1 className="approach-title">
+            <h1 id="approach-h" className="approach-title">
               Design the job. Build the gate. Keep the record.
             </h1>
             <p className="approach-lede">
               Remex Studio designs custom AI agents as products. One workflow.
               One agent. A human still decides.
             </p>
-          </div>
-        </header>
 
-        <section
-          className="approach-band approach-band--gutter"
-          aria-labelledby="approach-methods-h"
-        >
-          <div className="approach-band__inner">
             <h2 id="approach-methods-h" className="approach-section__title">
               How we hire an agent
             </h2>
-          </div>
-        </section>
+            <ol className="approach-method-list">
+              {METHODS.map((method, index) => (
+                <li
+                  key={method.id}
+                  id={method.id}
+                  className="approach-method"
+                >
+                  <p className="approach-method__n" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <div className="approach-method__body">
+                    <h3 id={`${method.id}-h`} className="approach-method__title">
+                      {method.title}
+                    </h3>
+                    <p className="approach-method__lead">{method.lead}</p>
+                    <p className="approach-method__copy">{method.body}</p>
+                    {"mechanism" in method && method.mechanism ? (
+                      <ul className="approach-mechanism">
+                        {method.mechanism.map((step) => (
+                          <li
+                            key={step.label}
+                            className="approach-mechanism__item"
+                          >
+                            <span className="approach-mechanism__label">
+                              {step.label}
+                            </span>
+                            <p className="approach-mechanism__text">
+                              {step.text}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ol>
 
-        {METHODS.map((method, index) => (
-          <section
-            key={method.id}
-            id={method.id}
-            className={[
-              "approach-band",
-              "approach-method-band",
-              index % 2 === 0
-                ? "approach-band--canvas"
-                : "approach-band--gutter",
-            ].join(" ")}
-            aria-labelledby={`${method.id}-h`}
-          >
-            <div className="approach-band__inner approach-method">
-              <p className="approach-method__n" aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
+            <div className="approach-band__foot">
+              <h2 id="approach-name-h" className="approach-section__title">
+                Name meaning
+              </h2>
+              <p className="approach-name__intro">
+                Remex Studio takes its name from the remiges — the flight
+                feathers that steer the wing. The Chinese mark behind the
+                studio reads as machine, feather, and cloud.
               </p>
-              <div className="approach-method__body">
-                <h3 id={`${method.id}-h`} className="approach-method__title">
-                  {method.title}
-                </h3>
-                <p className="approach-method__lead">{method.lead}</p>
-                <p className="approach-method__copy">{method.body}</p>
-                {"mechanism" in method && method.mechanism ? (
-                  <ul className="approach-mechanism">
-                    {method.mechanism.map((step) => (
-                      <li key={step.label} className="approach-mechanism__item">
-                        <span className="approach-mechanism__label">
-                          {step.label}
-                        </span>
-                        <p className="approach-mechanism__text">{step.text}</p>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            </div>
-          </section>
-        ))}
-
-        <section
-          className="approach-band approach-band--canvas"
-          aria-labelledby="approach-name-h"
-        >
-          <div className="approach-band__inner">
-            <h2 id="approach-name-h" className="approach-section__title">
-              Name meaning
-            </h2>
-            <p className="approach-name__intro">
-              Remex Studio takes its name from the remiges — the flight feathers
-              that steer the wing. The Chinese mark behind the studio reads as
-              machine, feather, and cloud.
-            </p>
-            <ul className="approach-name__list">
-              {NAME_MEANING.map((item) => (
-                <li key={item.glyph} className="approach-name__row">
-                  <span className="approach-name__glyph" lang="zh-Hans">
-                    {item.glyph}
+              <ul className="approach-name__list">
+                {NAME_MEANING.map((item) => (
+                  <li key={item.glyph} className="approach-name__row">
+                    <span className="approach-name__glyph" lang="zh-Hans">
+                      {item.glyph}
+                    </span>
+                    <span className="approach-name__eq" aria-hidden="true">
+                      =
+                    </span>
+                    <span className="approach-name__gloss">{item.gloss}</span>
+                  </li>
+                ))}
+                <li className="approach-name__row">
+                  <span className="approach-name__glyph approach-name__glyph--latin">
+                    Remex
                   </span>
                   <span className="approach-name__eq" aria-hidden="true">
                     =
                   </span>
-                  <span className="approach-name__gloss">{item.gloss}</span>
+                  <span className="approach-name__gloss">remiges</span>
                 </li>
-              ))}
-              <li className="approach-name__row">
-                <span className="approach-name__glyph approach-name__glyph--latin">
-                  Remex
-                </span>
-                <span className="approach-name__eq" aria-hidden="true">
-                  =
-                </span>
-                <span className="approach-name__gloss">remiges</span>
-              </li>
-            </ul>
+              </ul>
+
+              <h2 id="approach-studio-h" className="approach-section__title">
+                Studio
+              </h2>
+              <dl className="approach-studio__facts">
+                <div className="approach-studio__fact">
+                  <dt>Legal</dt>
+                  <dd>Jiyuyun Studio LLC</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </section>
 
         <section
-          className="approach-band approach-band--gutter"
-          aria-labelledby="approach-studio-h"
-        >
-          <div className="approach-band__inner">
-            <h2 id="approach-studio-h" className="approach-section__title">
-              Studio
-            </h2>
-            <dl className="approach-studio__facts">
-              <div className="approach-studio__fact">
-                <dt>Legal</dt>
-                <dd>Jiyuyun Studio LLC</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-
-        <section
-          className="approach-band approach-band--canvas"
+          className="approach-band approach-band--refuse"
           aria-labelledby="approach-refuse-h"
         >
           <div className="approach-band__inner">
@@ -201,11 +182,15 @@ export default function ApproachPage() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+            <h2 id="approach-trust-h" className="approach-section__title">
+              Trust
+            </h2>
+            <p className="approach-trust__p">{TRUST_STANCE}</p>
           </div>
         </section>
 
         <section
-          className="approach-band approach-band--gutter"
+          className="approach-band approach-band--path"
           aria-labelledby="approach-roadmap-h"
         >
           <div className="approach-band__inner">
@@ -223,37 +208,19 @@ export default function ApproachPage() {
                 </li>
               ))}
             </ol>
-          </div>
-        </section>
-
-        <section
-          className="approach-band approach-band--canvas"
-          aria-labelledby="approach-trust-h"
-        >
-          <div className="approach-band__inner">
-            <h2 id="approach-trust-h" className="approach-section__title">
-              Trust
-            </h2>
-            <p className="approach-trust__p">{TRUST_STANCE}</p>
-          </div>
-        </section>
-
-        <section
-          className="approach-band approach-band--gutter approach-close"
-          aria-labelledby="approach-close-h"
-        >
-          <div className="approach-band__inner">
-            <h2 id="approach-close-h" className="approach-close__title">
-              Start a brief.
-            </h2>
-            <p className="approach-close__lede">
-              Tell us the painful workflow. We design the agent and the gate.
-            </p>
-            <p className="approach-close__cta-wrap">
-              <Link href="/contact" className="approach-cta cta-pill">
+            <div className="approach-close">
+              <h2 id="approach-close-h" className="approach-close__title">
                 Start a brief.
-              </Link>
-            </p>
+              </h2>
+              <p className="approach-close__lede">
+                Tell us the painful workflow. We design the agent and the gate.
+              </p>
+              <p className="approach-close__cta-wrap">
+                <Link href="/contact" className="approach-cta cta-pill">
+                  Start a brief.
+                </Link>
+              </p>
+            </div>
           </div>
         </section>
       </main>

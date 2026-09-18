@@ -37,9 +37,7 @@ export default function ContactPage() {
             Or write{" "}
             <a href="mailto:hello@remexstudio.com">hello@remexstudio.com</a>.
           </p>
-          <div className="contact-form-wrap">
-            <ContactForm />
-          </div>
+          <ContactForm />
         </div>
       </main>
     </SiteChrome>

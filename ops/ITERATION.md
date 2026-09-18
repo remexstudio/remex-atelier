@@ -8,15 +8,19 @@ Hard bans: no Seattle/Global; no founder; no /demo as product; do not rewrite th
 
 - UI-0 **PASS**: Geist display tokens (weight 600, tracking `-0.03em` at 56–80px); owner palette; frosted 46px nav; near-black pill; no `#1d4ed8`.
 - UI-1 **PASS**: first-viewport product stage (tip `ff8a3ae`).
+- UI-2 **PASS**: dark `#home-gate` ProductStage (tip `f969b96`). Apple / UX / Vision / Leader unanimous.
 
-## This loop — UI-2
+## This loop — UI-3
 
-- Rebuild HOME GATE chapter appearance only.
-- True dark `#000` canvas; light type `#f5f5f7` / muted rgba — distinct from light method / `--gutter`.
-- `ProductStage variant="dark"` Propose → Approve → Record, Approve filled, specular + inset hairline (not a gray JOB/GATE card).
-- Keep locked gate H2/lede. Do not regress UI-1 first viewport.
-- Soft ADD: clear literal `Georgia` / `ui-serif` fallbacks in `components/lab/pulse.css`.
+- Restyle INNER pages so they stop cloning the home hero (giant headline + gray lede + pale card).
+- Keep locked copy; change skeleton / chrome / media grammar only.
+- `/services` catalog: title + three LARGE Design / Build / Operations rows with small stills.
+- `/work` still + short teaser + Read the full example →.
+- `/work/[desk]/story` ~680 reading column + stacked still sequence.
+- `/approach` three full-width bands (method / refuse / path).
+- `/contact` one hairline sheet + near-black submit pill.
+- Do not regress UI-1 first viewport or UI-2 dark gate.
 
 ## Next
 
-- UI-3 inner pages — do not start until UI-2 Leader PASS.
+- UI-4 appearance polish — do not start until UI-3 PASS.

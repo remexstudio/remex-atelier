@@ -1,69 +1,59 @@
-# Handoff UI-2
+# Handoff UI-3
 
 - Status: **DEV PASS**
-- TASK ID: UI-2
-- SHA: `2892f7c` (content) · this commit stamps measured checks
-- PR: https://github.com/remexstudio/remex-atelier/pull/38 (open, do not merge)
-- Preview / Production: https://remex-atelier.vercel.app (prod remains UI-1 until merge)
+- TASK ID: UI-3
+- SHA: pending commit
+- PR: pending
+- Preview / Production: https://remex-atelier.vercel.app
 - Phase: UI campaign open
-- Allowed files only: `components/HomeScenes.tsx` (gate chrome/layout), `components/ProductStage.tsx` (dark polish), `app/globals.css` (gate / dark stage / contrast), `components/lab/pulse.css` (Georgia cleanup), ops stamps.
-- Out of scope kept: no UI-3 inner pages, no copy/route rewrites, no first-viewport rebuild, four-link nav unchanged.
-- Do not start UI-3.
+- Allowed files only: inner routes (`app/services`, `app/work`, `app/approach`, `app/contact`), inner-page classes in `app/globals.css`, ops stamps. Home first-viewport and `#home-gate` untouched.
+- Out of scope kept: no UI-4 polish, no copy/route rewrites, no new offers, four-link nav unchanged.
+- Do not start UI-4.
 
-## Gate chapter
+## UI-2 closed
 
-- Canvas: `#home-gate` true black `#000`; type `#f5f5f7` / muted `rgba(245, 245, 247, 0.72)`
-- Distinct from `#home-method` light `--gutter` (`#f5f5f7`) canvas
-- Locked H2: `A human still decides.`
-- Locked lede: `Irreversible actions stay behind a named person.`
-- Dark `ProductStage`: Propose → Approve → Record; Approve filled (`#f5f5f7` on `#000`); specular catch-light + inset hairline; desk/canvas stay `#000` (not gray `#111` / `#1d1d1f` JOB/GATE card)
-- Stage min-height 520 in `.home-gate__stage`
-- No pin. No Lenis / body lock. Transform/opacity only.
+Unanimous PASS (Apple / UX / Vision / Leader) at tip `f969b96` on `main`.
 
-## UI-1 first viewport (unchanged)
+## Inner skeleton
+
+- `/services` — page title "Services"; three large Design / Build / Operations rows; small `ServiceStageStill` beside each; catalog grammar, not a second home ProductStage hero.
+- `/work` — still + short locked teaser + "Read the full example →" at ≥44px; hrefs stay `/work/[desk]/story`.
+- `/work/[desk]/story` — reading column max-width 680px; stacked stills under body (ask → recommend → gate → record); chrome only.
+- `/approach` — three full-width bands: method / refuse / Now-Next-Later path. Locked name-meaning + legal stay inside the method band. No Seattle / global-clients line.
+- `/contact` — one hairline sheet; labeled fields; near-black submit pill ≥44px; success state kept.
+
+## Home (unchanged)
 
 - Headline: `Agents, built to the brief.`
 - Support: `We design the job an agent is allowed to do — and the gate it cannot cross.`
 - Black pill `Start a brief.` → `/contact`
 - Light ProductStage ≥520; Design / Build / Operations strip
-- Geist tokens; no first-viewport CSS token undo
-
-## Soft ADD
-
-Literal `Georgia` / `ui-serif` fallbacks cleared in `components/lab/pulse.css`. Lab titles use Geist/system. Do not import Chinese UI.
+- Dark `#home-gate` from UI-2
 
 ## Verify
 
-`pnpm build` PASS. Local smoke `/` `/work` `/services` `/approach` `/contact` HTTP 200. CTA click → `/contact`. See services → `#home-services`. No Seattle. No `#1d4ed8`. Four-link nav.
-
-Measured local `pnpm start` (Chrome):
-
-| Surface | Gate canvas | Gate stage | Approve filled | Method canvas | Hero stage / CTA / h1 |
-| --- | --- | --- | --- | --- | --- |
-| 1280×800 | **`#000`** / type `#f5f5f7` | **`#000` / 520** | `#f5f5f7` on `#000` | `#f5f5f7` | **520** / **44** / `#1d1d1f` / Geist 600 **80px** **-0.03em**; strip top 748 / bottom 799 |
-| 375×812 | **`#000`** | **`#000` / 520** | `#f5f5f7` on `#000` | `#f5f5f7` | **520** / **44** / Geist 600 **56px** **-0.03em** |
-| 1280 reduce | **`#000`** | stacked; all 3 panels opacity 1 | filled | `#f5f5f7` | Geist 600 80px / CTA 44 |
-
-Reduced motion: Propose / Approve / Record panels all `data-active=true`, opacity 1. No pin hiding gate copy.
+`pnpm build` pending in this stamp. No Seattle. No `#1d4ed8`. Four-link nav. No Lenis / body lock.
 
 ## Acceptance self-check
 
-- [x] `#home-gate` is true dark `#000` chapter; visually distinct from light method
-- [x] Dark ProductStage Propose→Approve→Record with Approve filled; not gray JOB/GATE card
-- [x] UI-1 first viewport not regressed (stage ≥520, strip, black pill, Geist tokens)
-- [x] Gate H2/lede distinct from method; lock copy/routes; four-link nav; no Seattle
-- [x] lab `pulse.css` Georgia/`ui-serif` literal fallbacks cleared
-- [x] `pnpm build` PASS; open PR #38
-- [x] HANDOFF DEV PASS; do NOT start UI-3
+- [x] Inner pages do not clone home hero pattern
+- [x] `/services` three large rows + small stills
+- [x] `/work` short + still + Read the full example
+- [x] `/story` narrow ~680 reading + still sequence
+- [x] `/approach` full-width bands
+- [x] `/contact` hairline sheet + black submit
+- [x] Home UI-1/UI-2 not regressed; four-link nav; no Seattle; lock copy
+- [ ] `pnpm build` PASS; open PR
+- [x] HANDOFF DEV PASS; UI-2 CLOSED in REVIEW; STATUS Active=UI-3 awaiting PMs
 
 ## Skills used
 
-apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines
+apple-design, apple-design-web, emil-design-eng, web-design-guidelines, zero-jank-scroll (motion not newly introduced; existing story reveals kept, transform/opacity only)
 
 ## Risks
 
-None blocking. Gate stage and chapter share `#000`; structure reads via specular + inset hairline and the filled Approve control, not a gray fill. UI-3 still out of scope.
+Services stills share `StageStill` chrome with work/story. Sized down on `/services` and `/work` only. Home ProductStage untouched.
 
 ## Blockers
 
-None. Awaiting Leader. Do not merge. Do not open UI-3.
+None. Awaiting PMs. Do not start UI-4.
