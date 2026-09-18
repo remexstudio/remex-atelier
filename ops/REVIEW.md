@@ -1,25 +1,25 @@
-# Review V7-2 — CLOSED PASS
+# Review V7-3 — CLOSED PASS
 
-- TASK ID: V7-2
-- Content SHA: `e36f059`
+- TASK ID: V7-3
+- Content SHA: `2318f91`
 - Tip: this close commit
-- Prod: https://remex-atelier.vercel.app · `dpl_37qMmcCT5YXVDzHYKKzssJXxaokP`
-- Verdicts: Apple **PASS** · UX **PASS** · Vision **PASS** · Leader **PASS**
-- Verdict: **PASS** (unanimous)
+- Prod: https://remex-atelier.vercel.app · `dpl_ByFLvJ8bQ8fRiVfn1P2RHNKxFdpr`
+- Verdict: **PASS** (Leader)
 
 ## KEEP
 
-- Dark `#home-gate` after method; ProductStage dark; Propose → Approve → Record
-- SR mechanism line (ProductStage decorative `aria-hidden` removed)
-- `.stage-still` included in `prefers-reduced-motion` forced-visible path
-- Next lock: Reuse the method on a new seat (home + `/approach`)
-- 375 / 1440 hold (menu, stage, measure; no gray ocean)
+- Distinct `#home-gate` fact: **A human still decides.** / **Irreversible actions stay behind a named person.**
+- Method unchanged on `#f5f5f7` (Propose → Approve → Record)
+- Dark ProductStage in the gate chapter
+- Close-map Gate + `scroll-margin-top: 46px`
+- Owner DONE WHEN 1–8 evidenced in HANDOFF
+- V6-5 / V6-6 **ABSORBED/CLOSED** (not PARKED)
 - Offers / routes / thesis elsewhere unchanged; no Seattle / Global clients; no founder page; `/demo` not revived as product
 
-## Soft ADD (non-blocking)
+## Soft ADD
 
-`#home-method` and `#home-gate` share H2 + lede — optional distinct gate chapter fact later. Not issued. No V7-3.
+None issued. Do not invent V7-4.
 
 ## Outcome
 
-V7-2 **CLOSED**. **V7 APPEARANCE CLOSED**. No V7-3. Dev standby.
+V7-3 **CLOSED**. **V7 APPEARANCE CLOSED**. Dev standby.

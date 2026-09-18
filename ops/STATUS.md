@@ -1,9 +1,8 @@
 # Status
 
-- Phase: **V7 APPEARANCE REOPEN** for V7-3 soft ADD + verify
-- Closed: **V6-0…V6-4 PASS** · **V7-0 PASS** · **V7-1 PASS** · **V7-2 PASS**
-- Absorb after V7-3 verify (not PARKED): **V6-5** absorbed by V7-0 (three services in first viewport); **V6-6** absorbed by V7-2 Next lock
-- Active: **V7-3** — distinct `#home-gate` chapter fact + owner appearance DONE WHEN verify
-- Soft ADD issued: `#home-gate` gets its own H2 + lede (no longer shared with `#home-method`)
+- Phase: **V7 APPEARANCE CLOSED** (reopen was V7-3 only)
+- Closed: **V6-0…V6-4 PASS** · **V6-5 ABSORBED/CLOSED** (V7-0) · **V6-6 ABSORBED/CLOSED** (V7-2) · **V7-0 PASS** · **V7-1 PASS** · **V7-2 PASS** · **V7-3 PASS**
+- Parked: none
+- Active: none — Dev standby
 - Preview: https://remex-atelier.vercel.app
-- Tip: this issue commit · prod `dpl_37qMmcCT5YXVDzHYKKzssJXxaokP`
+- Tip: this close commit · prod `dpl_ByFLvJ8bQ8fRiVfn1P2RHNKxFdpr`
