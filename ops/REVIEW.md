@@ -1,3 +1,13 @@
+# REVIEW — UI DoD (prod)
+
+- Tip: `11406c3`
+- Prod: `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe` → https://remex-atelier.vercel.app
+- Smoke (HTML): ProductStage present; Design/Build/Operations strip; `#home-gate`; Propose → Approve → Record
+- Leader DoD verdict: **awaiting**
+- Soft ADD: compact desk fact / StageStill aria — backlog only
+
+---
+
 # REVIEW — UI-4 CLOSED
 
 - Slice: UI-4 375 / 1280 / 1440 layout hold
