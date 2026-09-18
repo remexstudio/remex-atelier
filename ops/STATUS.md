@@ -1,9 +1,10 @@
 # Status
 
-- Phase: **V7 APPEARANCE CLOSED** (final)
-- Closed: **V6-0…V6-6** (V6-5 / V6-6 **ABSORBED** by V7) · **V7-0 PASS** · **V7-1 PASS** · **V7-2 PASS** · **V7-3 PASS**
+- Phase: **UI CAMPAIGN OPEN**
+- Closed: **V7 appearance closed** — superseded by owner continuous UI FAIL
+- Active: **UI-0** delivered (DEV PASS) — awaiting Leader PASS
+- Next: **UI-1** first-viewport stage (do not start until Leader PASS)
 - Parked: none
-- Active: none — Dev standby, awaiting owner
-- Soft backlog: empty
+- Owner: live first screen **FAIL** (soft poster type and/or brochure grammar)
 - Preview: https://remex-atelier.vercel.app
-- Tip: this close commit · prod `dpl_ByFLvJ8bQ8fRiVfn1P2RHNKxFdpr`
+- Tip: this slice commit · prod pending stamp

@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Newsreader } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({
   variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const serif = Newsreader({
-  variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
 });
@@ -44,10 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${serif.variable} ${geist.variable} h-full`}
-    >
+    <html lang="en" className={`${geist.variable} h-full`}>
       <body className="type-body min-h-full bg-gutter text-ink antialiased [scroll-padding-top:var(--nav-height)]">
         <a href="#main" className="skip-link">
           Skip to content
