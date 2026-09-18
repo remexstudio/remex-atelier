@@ -63,7 +63,7 @@ function showStatic() {
     autoAlpha: 1,
   });
   gsap.set(
-    ".home-mod__stage, .home-hero__stage, .product-stage, .product-stage__panel, .product-stage__ticket, .stage-still, .stage-still__panel, .ex-still__frame, .ex-still__frame .stage-still",
+    ".home-mod__stage, .home-hero__stage, .home-gate__stage, .product-stage, .product-stage__panel, .product-stage__ticket, .stage-still, .stage-still__panel, .ex-still__frame, .ex-still__frame .stage-still",
     {
       clearProps: "transform,opacity,visibility",
       autoAlpha: 1,
@@ -323,7 +323,9 @@ export function HomeScenes() {
               Irreversible actions stay behind a named person.
             </p>
           </div>
-          <ProductStage variant="dark" />
+          <div className="home-gate__stage">
+            <ProductStage variant="dark" />
+          </div>
         </div>
       </section>
 

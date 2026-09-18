@@ -1165,9 +1165,33 @@ button:active {
 
 .product-stage--dark {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 20%),
-    #111;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 16%),
+    #000;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.product-stage--dark .product-stage__specular {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.62) 18%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+}
+
+.product-stage--dark .product-stage__inset {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.product-stage--dark .product-stage__lights {
+  background:
+    radial-gradient(circle at 0.28rem 50%, rgba(245, 245, 247, 0.3) 0.22rem, transparent 0.24rem),
+    radial-gradient(circle at 1.05rem 50%, rgba(245, 245, 247, 0.3) 0.22rem, transparent 0.24rem),
+    radial-gradient(circle at 1.82rem 50%, rgba(245, 245, 247, 0.3) 0.22rem, transparent 0.24rem);
 }
 
 .product-stage--dark .product-stage__seat,
@@ -1186,33 +1210,34 @@ button:active {
 }
 
 .product-stage--dark .product-stage__desk,
-.product-stage--dark .product-stage__fields {
-  background: #1d1d1f;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-}
-
+.product-stage--dark .product-stage__fields,
 .product-stage--dark .product-stage__canvas {
-  background: #1d1d1f;
+  background: #000;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 
 .product-stage--dark .product-stage__rail,
 .product-stage--dark .product-stage__field {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .product-stage--dark .product-stage__step[data-active="true"] {
-  color: #fff;
+  color: #000;
+  background: #f5f5f7;
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.product-stage--dark .product-stage__step[data-active="true"] .product-stage__step-mark {
   background: #000;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
 
 .product-stage--dark .product-stage__ghost {
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
 }
 
 .product-stage--dark .product-stage__pill {
-  background: #000;
-  color: #fff;
+  background: transparent;
+  color: #f5f5f7;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
 }
 
@@ -1220,20 +1245,19 @@ button:active {
   .product-stage__panel[data-panel="approve"]
   .product-stage__pill,
 .product-stage--dark .product-stage__pill[data-filled="true"] {
-  background: #000;
-  color: #fff;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  background: #f5f5f7;
+  color: #000;
+  box-shadow: inset 0 0 0 1px #fff;
 }
 
-/* Dark gate chapter — #000 stage after hire */
+/* Dark gate chapter — true #000, distinct from light method / --gutter */
 .home-mod--gate {
   background: #000;
   color: #f5f5f7;
   border-bottom-color: #000;
 }
 
-.home-mod--gate .home-headline,
-.home-mod--gate .home-support {
+.home-mod--gate .home-headline {
   color: #f5f5f7;
 }
 
@@ -1243,8 +1267,17 @@ button:active {
 
 .home-mod__inner--gate {
   display: grid;
-  gap: 1.75rem;
+  gap: 2rem;
   align-items: center;
+}
+
+.home-gate__stage {
+  width: 100%;
+  min-width: 0;
+}
+
+.home-gate__stage .product-stage {
+  min-height: 520px;
 }
 
 @media (min-width: 900px) {
@@ -1289,17 +1322,18 @@ button:active {
   }
 
   .product-stage--dark .product-stage__step {
-    color: #f5f5f7;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+    color: rgba(245, 245, 247, 0.72);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
   }
 
   .product-stage--dark .product-stage__step[data-active="true"] {
-    color: #fff;
-    background: #000;
+    color: #000;
+    background: #f5f5f7;
+    box-shadow: inset 0 0 0 1px #fff;
   }
 
   .product-stage--dark .product-stage__ticket {
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
   }
 }
 
@@ -7530,6 +7564,7 @@ button:active {
   .home-hero__strip,
   .home-hero__svc,
   .home-hero__stage,
+  .home-gate__stage,
   .product-stage,
   .product-stage__step,
   .product-stage__panel,
@@ -7787,7 +7822,7 @@ button:active {
   }
 
   .home-hero__stage,
-  .home-mod--gate .product-stage {
+  .home-gate__stage {
     order: 2;
   }
 

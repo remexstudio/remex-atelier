@@ -97,6 +97,9 @@ export function ProductStage({ variant = "light" }: ProductStageProps) {
       aria-labelledby={mechanismId}
     >
       <div className="product-stage__specular" aria-hidden="true" />
+      {variant === "dark" ? (
+        <div className="product-stage__inset" aria-hidden="true" />
+      ) : null}
       <div className="product-stage__chrome">
         <span className="product-stage__lights" aria-hidden="true" />
         <p className="product-stage__seat">One seat</p>

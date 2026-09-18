@@ -1,17 +1,17 @@
-# REVIEW — UI-1
+# REVIEW — UI-2
 
-- Slice: UI-1 home first viewport product stage
-- DEV: **PASS** (`ff8a3ae`, prod `dpl_BajZ9YiRPeKz2SijNgx7NUsjfBdS`)
+- Slice: UI-2 home dark gate rebuild
+- DEV: **PASS** (`2892f7c`, PR #38)
 - Apple / UX / Vision / Leader: **awaiting**
-- Do not open UI-2 until dual PASS
+- Do not open UI-3 until dual PASS
 
 ---
 
-# Review UI-1 — pending Leader
+# Review UI-2 — pending Leader
 
-- TASK ID: UI-1
+- TASK ID: UI-2
 - Verdict: awaiting Leader **PASS** / **REWORK**
 - Dev: HANDOFF **DEV PASS**
-- UI-0: **PASS** (closed)
-- Soft ADD: Georgia fallback remap absorbed
-- Do not start UI-2 until Leader PASS.
+- UI-1: **PASS** (closed)
+- Soft ADD: pulse.css Georgia / `ui-serif` fallbacks cleared
+- Do not start UI-3 until Leader PASS.
