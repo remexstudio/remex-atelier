@@ -7,6 +7,6 @@
 - Parked: none
 - Soft ADD: leftover Georgia / `ui-serif` literals in `components/lab/pulse.css` — already cleared in UI-2; none remain
 - Preview / Production: https://remex-atelier.vercel.app
-- Tip: UI-4 `5e2f9be` on `cursor/ui-4-layout-hold-c2ee` (base `5531561`)
+- Tip: UI-4 `38906ce` on `cursor/ui-4-layout-hold-c2ee` (base `5531561`)
 
 - Prod (pending UI-3 promote): see Vercel
