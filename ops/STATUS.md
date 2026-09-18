@@ -7,6 +7,6 @@
 - Parked: none
 - Soft ADD: still kickers may label Ask→Recommend→Gate→Record — absorbed on desk stills
 - Preview / Production: https://remex-atelier.vercel.app
-- Tip: UI-5 on `cursor/ui-5-still-fidelity-388f` (base `d375f98`)
+- Tip: UI-5 `50ef17c` on `cursor/ui-5-still-fidelity-388f` (base `d375f98`); PR #41 open
 
 - Prod (pending UI-4 promote): see Vercel
