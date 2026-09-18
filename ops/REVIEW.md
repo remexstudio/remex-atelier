@@ -1,3 +1,13 @@
+# REVIEW — UI appearance DoD CLOSED
+
+- Tip: `11406c3`
+- Prod: `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`
+- DoD: **7/7 PASS** (Leader)
+- UI-6: **do not open**
+- Soft ADD: backlog only
+
+---
+
 # REVIEW — UI-5 CLOSED
 
 - Slice: UI-5 still fidelity + appearance DoD on production
