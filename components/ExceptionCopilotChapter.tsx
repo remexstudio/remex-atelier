@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
-import { StageStill } from "@/components/StageStill";
+import { StoryDeskStill } from "@/components/StageStill";
 import {
   EXAMPLE_CLOSER,
   EXCEPTION,
@@ -159,13 +159,7 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Exception desk">
-                <div className="media-stage media-stage--ec">
-                  <p className="media-stage__kicker">Pile</p>
-                  <p className="media-stage__fact">Exceptions arrive faster</p>
-                  <p className="media-stage__sub">EX-441 refund hold. EX-438 restock. EX-429 policy.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="exception" id="pile" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -178,22 +172,7 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Exception desk">
-                <div className="media-stage media-stage--ec">
-                  <p className="media-stage__kicker">Queue</p>
-                  <p className="media-stage__fact">Rank the desk</p>
-                  <ol className="media-stage__lanes">
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">1</span>
-                      <span>EX-441 · Refund hold</span>
-                    </li>
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">2</span>
-                      <span>EX-438 · Restock</span>
-                    </li>
-                  </ol>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="exception" id="queue" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -206,14 +185,7 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Exception desk">
-                <div className="media-stage media-stage--ec">
-                  <p className="media-stage__kicker">Policy</p>
-                  <p className="media-stage__fact">Cite, then hold</p>
-                  <p className="media-stage__cite">§4.2 · Restock window</p>
-                  <p className="media-stage__sub">Refund held until a person moves money.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="exception" id="policy" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -226,13 +198,7 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Exception desk">
-                <div className="media-stage media-stage--ec">
-                  <p className="media-stage__kicker">Case note</p>
-                  <p className="media-stage__fact">Human before money</p>
-                  <p className="media-stage__sub">Draft the note. Do not issue the refund.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="exception" id="note" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -245,13 +211,7 @@ export function ExceptionCopilotChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Exception desk">
-                <div className="media-stage media-stage--ec">
-                  <p className="media-stage__kicker">Timeline</p>
-                  <p className="media-stage__fact">Cite · disposition · decision</p>
-                  <p className="media-stage__sub">§4.2. Refund held. Ops lead.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="exception" id="timeline" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">

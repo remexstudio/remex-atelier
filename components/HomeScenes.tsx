@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
 import { ProductStage } from "@/components/ProductStage";
+import { DeskTeaserStill } from "@/components/StageStill";
 import { BRIEF_ASKS } from "@/lib/brief-asks";
 import { ROADMAP } from "@/lib/roadmap";
 import {
@@ -63,7 +64,7 @@ function showStatic() {
     autoAlpha: 1,
   });
   gsap.set(
-    ".home-mod__stage, .home-hero__stage, .home-gate__stage, .product-stage, .product-stage__panel, .product-stage__ticket, .stage-still, .stage-still__panel, .ex-still__frame, .ex-still__frame .stage-still",
+    ".home-mod__stage, .home-hero__stage, .home-gate__stage, .product-stage, .product-stage__panel, .product-stage__ticket, .stage-still, .stage-still__panel, .desk-ui, .ex-still__frame, .ex-still__frame .stage-still",
     {
       clearProps: "transform,opacity,visibility",
       autoAlpha: 1,
@@ -89,44 +90,7 @@ function ExampleStill({
 }: {
   still: (typeof EXAMPLES)[number]["still"];
 }) {
-  if (still === "still-a") {
-    return (
-      <div className="home-ex__still media-stage media-stage--cq" aria-hidden="true">
-        <p className="media-stage__kicker">Gate</p>
-        <p className="media-stage__fact">Human before pay</p>
-        <p className="media-stage__sub">skin → hero → try-on → bag</p>
-      </div>
-    );
-  }
-
-  if (still === "still-b") {
-    return (
-      <div className="home-ex__still media-stage media-stage--lc" aria-hidden="true">
-        <p className="media-stage__kicker">Gate</p>
-        <p className="media-stage__fact">Propose ≠ Execute</p>
-        <p className="media-stage__sub">cite stays with the ask</p>
-        <p className="media-stage__cite">§12.4 · Close pack</p>
-      </div>
-    );
-  }
-
-  if (still === "still-c") {
-    return (
-      <div className="home-ex__still media-stage media-stage--mr" aria-hidden="true">
-        <p className="media-stage__kicker">Triage</p>
-        <p className="media-stage__fact">Priority · Watch · Noise</p>
-        <p className="media-stage__sub">Human before send</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="home-ex__still media-stage media-stage--ec" aria-hidden="true">
-      <p className="media-stage__kicker">Queue</p>
-      <p className="media-stage__fact">Human before money</p>
-      <p className="media-stage__sub">queue · policy · case note</p>
-    </div>
-  );
+  return <DeskTeaserStill still={still} className="home-ex__still" />;
 }
 
 export function HomeScenes() {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
-import { StageStill } from "@/components/StageStill";
+import { DeskTeaserStill } from "@/components/StageStill";
 import {
   EXAMPLES,
   INDEX_LABEL,
@@ -29,66 +29,7 @@ export const metadata: Metadata = {
 };
 
 function WorkStill({ still }: { still: (typeof EXAMPLES)[number]["still"] }) {
-  if (still === "still-a") {
-    return (
-      <StageStill seat="Demand desk" compact className="work-teaser__still">
-        <div className="media-stage media-stage--cq">
-          <p className="media-stage__kicker">Bag · before pay</p>
-          <p className="media-stage__fact">Human before pay</p>
-          <p className="media-stage__sub">skin → hero → try-on → bag</p>
-          <p className="media-stage__cite">LUM-1042</p>
-        </div>
-      </StageStill>
-    );
-  }
-
-  if (still === "still-b") {
-    return (
-      <StageStill seat="Knowledge desk" compact className="work-teaser__still">
-        <div className="media-stage media-stage--lc">
-          <p className="media-stage__kicker">Corpus</p>
-          <p className="media-stage__fact">Propose ≠ Execute</p>
-          <p className="media-stage__sub">cite stays with the ask</p>
-          <p className="media-stage__cite">§12.4 · Close pack</p>
-        </div>
-      </StageStill>
-    );
-  }
-
-  if (still === "still-c") {
-    return (
-      <StageStill seat="Attention desk" compact className="work-teaser__still">
-        <div className="media-stage media-stage--mr">
-          <p className="media-stage__kicker">Morning packet</p>
-          <p className="media-stage__fact">Human before send</p>
-          <ol className="media-stage__lanes">
-            <li className="media-stage__lane">
-              <span className="media-stage__mark">P</span>
-              <span>Priority</span>
-            </li>
-            <li className="media-stage__lane">
-              <span className="media-stage__mark">W</span>
-              <span>Watch</span>
-            </li>
-            <li className="media-stage__lane">
-              <span className="media-stage__mark">N</span>
-              <span>Noise</span>
-            </li>
-          </ol>
-        </div>
-      </StageStill>
-    );
-  }
-
-  return (
-    <StageStill seat="Exception desk" compact className="work-teaser__still">
-      <div className="media-stage media-stage--ec">
-        <p className="media-stage__kicker">Exception</p>
-        <p className="media-stage__fact">Human before money</p>
-        <p className="media-stage__sub">EX-441 · refund hold · §4.2</p>
-      </div>
-    </StageStill>
-  );
+  return <DeskTeaserStill still={still} className="work-teaser__still" />;
 }
 
 export default function WorkPage() {

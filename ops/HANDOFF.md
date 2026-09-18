@@ -1,67 +1,65 @@
-# Handoff UI-4
+# Handoff UI-5
 
 - Status: **DEV PASS**
-- TASK ID: UI-4
-- SHA: `38906ce`
-- PR: https://github.com/remexstudio/remex-atelier/pull/40
+- TASK ID: UI-5
+- SHA: `50ef17c` (content) · tip after this stamp
+- PR: https://github.com/remexstudio/remex-atelier/pull/41
 - Phase: UI campaign open
-- Allowed files only: `app/globals.css`, ops stamps.
-- Out of scope kept: no UI-5, no copy/route rewrites, no ProductStage redesign, no dark-gate rewrite, HomeScenes / ProductStage TSX untouched.
-- Do not start UI-5.
+- Allowed files only: ProductStage, StageStill / ServiceStageStill / desk stills, HomeScenes still wiring, chapter still chrome, `app/globals.css` still/stage chrome, ops stamps.
+- Out of scope kept: no UI-6, no copy/route rewrites, no UI-4 layout-grid rebuild, no new offers.
+- Do not invent UI-6.
 
-## UI-3 closed
+## UI-4 closed
 
-Unanimous PASS (Apple / UX / Vision / Leader) at merge tip `5531561` on `main`.
+Unanimous PASS (Apple / UX / Vision / Leader) at merge tip `d375f98` on `main`.
 
-## Layout hold
+## Still fidelity
 
-- **375 home** — Menu disclosure (Work · Services · Approach · Contact, 48px); type then stage (not beside); Design / Build / Operations strip 1-col; CTA / nav / menu ≥44.
-- **1280 / 1440 home** — first viewport packs headline + support + ProductStage 520 + three-service strip; type+stage share one product-page row (no gray-ocean orphan column).
-- **Inner** — services three stacked rows (still after type at 375; copy+200 still at 1440); work teasers full stage-max; story 680 centered; approach bands full-bleed with stage-max inner; contact hairline sheet centered, inputs 48 / CTA 44.
-- **Nav** — frosted 46px (44–48 band) on every route; mobile menu ≥44 + focus-visible.
-- **Motion** — no Lenis / normalizeScroll / body lock. Reduced-motion: text visible; transform/opacity only. (RM stacks ProductStage panels so all three facts remain readable; default motion keeps stage at 520 in the first viewport.)
-- **Soft ADD** — no leftover Georgia / `ui-serif` literals in `components/lab/pulse.css` (cleared in UI-2; rechecked).
+- **ProductStage** — light + dark: specular edge + inset hairline; inner ticket on a desk (not a JOB/GATE text card); Approve filled near-black; Propose = draft ticket + outline pill; Record = linked log rows + quiet pill.
+- **ServiceStageStill** — Design = spec sheet (Seat / Inputs / Done); Build = Propose→Approve→Record with Approve filled; Operations = Evals / Gate / Record + Hold. Hairline, radius 22, no drop shadow.
+- **Desk DNA** — Demand: Human before pay · LUM-1042; Knowledge: Propose ≠ Execute · corpus; Attention: Priority / Watch / Noise · Human before send; Exception: Human before money · refund hold.
+- **Story** — Ask → Recommend → Gate → Record kickers on stills; locked captions / body copy untouched.
+- **Home examples** — same teaser still grammar as `/work` (short + entry).
+- **Motion** — no new motion; no Lenis / normalizeScroll / body lock. Reduced-motion: stills and text stay visible (transform/opacity only).
 
 ## Measured (local `pnpm start`, Chrome, `prefers-reduced-motion: no-preference`)
 
-| Surface | Nav | h1 | Stage | Strip / other | First viewport |
-| --- | --- | --- | --- | --- | --- |
-| Home 375×812 | 46; Menu 44; panel Work/Services/Approach/Contact **48** | Geist 600 **56px** **-0.03em** (`Agents, built to the brief.`); type top 60, stage top 323 (under) | **520** × 335 | 1-col 335; CTA **44** / `#1d1d1f` | stage under type (strip below fold — expected) |
-| Home 1280×800 | 46; four inline 44 | Geist 600 **80px** **-0.03em** | **520** × 526; left 626 (beside type at 128) | 3-col; strip bottom **799** / 800 | **fits** (hero 754 = 800 − 46) |
-| Home 1440×900 | 46; four inline 44 | Geist 600 **80px** **-0.03em** | **520** × 526; left 706 (beside type at 208) | 3-col; strip bottom **899** / 900 | **fits** (hero 854 = 900 − 46) |
-| Services 375 | 46 + Menu | Services 36 | rows 1-col, still after type | — | hold |
-| Services 1440 | 46 | Services 56 | three rows `772 + 200` | not 3-col island | hold |
-| Work 375 | 46 + Menu | 36 | teasers 1-col 343; read **44** | — | hold |
-| Work 1440 | 46 | 56 | teasers `184 + 876` = 1088 (stage-max) | not a thin island | hold |
-| Story 1440 | 46 | Demand desk 44 | reading **680** centered | stills under body | hold |
-| Approach 1440 | 46 | 56 | bands 1440 full-bleed; inner 1088 | method `#fff` / refuse `#f5f5f7` / path `#fff` | hold |
-| Contact 375 | 46 + Menu | 36 | sheet 343; inputs **48**; mail/CTA **44** | hairline sheet | hold |
+| Surface | Nav | Stage / still | DNA / notes |
+| --- | --- | --- | --- |
+| Home 1440×900 | four inline Work · Services · Approach · Contact | ProductStage **520 × 526**; Approve filled | first viewport = headline + black pill + stage + Design/Build/Operations strip — not title + gray card |
+| Home 375×812 | Menu + four links | ProductStage **520 × 335**; Approve filled; stage under type | UI-4 hold kept |
+| `#home-gate` 1440 | four inline | dark ProductStage **520**; variant=dark; Approve filled | chapter bg `rgb(0, 0, 0)` |
+| Home examples | — | four `desk-ui` teasers | Human before pay · LUM-1042 / Propose ≠ Execute · corpus / Priority·Watch·Noise · Human before send / Human before money |
+| Services 1440 | four inline | three compact stills, not clones | Design=spec Seat/Inputs/Done; Build=Propose→Approve→Record + Approve; Operations=Evals/Gate/Record + Hold |
+| Work 1440 | four inline | teaser stills 11.5rem | same four DNA facts as examples |
+| Story Demand | four inline | Ask / Recommend / Recommend / Gate / Record | Gate = Human before pay; Record ticket LUM-1042; captions locked |
+| Reduced-motion `/` | — | 6 ProductStage panels visible | Propose + Approve + Record on hero and gate |
 
-Screenshots: `/opt/cursor/artifacts/screenshots/home-375.png`, `home-375-menu.png`, `home-1280.png`, `home-1440.png`, `services-375.png`, `services-1440.png`, `work-1440.png`, `story-1440.png`, `contact-375.png`, `approach-1440.png`.
+`--cta` `#1d1d1f` (not `#1d4ed8`). No Seattle. No Lenis / body lock.
 
-Gate `#home-gate` remains `#000`. `--cta` `#1d1d1f` (not `#1d4ed8`). No Seattle.
+Screenshots: `/opt/cursor/artifacts/screenshots/home-1440-productstage.png`, `home-1440-gate.png`, `services-1440-row.png`, `work-1440-teasers.png`, `story-demand-stills.png`, `home-375-productstage.png`.
 
 ## Verify
 
-`pnpm build` PASS. Local smoke `/` `/services` `/work` `/work/atelier-concierge/story` `/approach` `/contact` HTTP 200. Reduced-motion: reveal/text opacity 1; nav panel transform dropped. No Lenis / body lock.
+`pnpm build` PASS. Local smoke `/` `/services` `/work` `/work/atelier-concierge/story` HTTP 200. Reduced-motion: ProductStage Propose/Approve/Record all visible. No Lenis / body lock.
 
 ## Acceptance self-check
 
-- [x] 375: four-link menu, stage under type, strip vertical, ≥44 everywhere critical
-- [x] 1280/1440: first viewport = headline + stage ≥520 + three services; no gray-ocean orphan column
-- [x] Inner pages hold at both widths without hero-clone regression
-- [x] UI-1/UI-2/UI-3 not regressed; four-link nav; no Seattle; lock copy
+- [x] First screenshot is NOT title + gray card alone — product stage + real still grammar
+- [x] ProductStage light/dark premium; Approve filled; DNA stills distinct across four desks
+- [x] /services stills not identical clones; story Ask→Recommend→Gate→Record readable
+- [x] UI-0…UI-4 not regressed; no Seattle; lock copy/routes; four-link nav
 - [x] `pnpm build` PASS; open PR ready-for-review
-- [x] UI-3 CLOSED in REVIEW (unanimous PASS, merge tip `5531561`); STATUS Active=UI-4; HANDOFF DEV PASS
+- [x] UI-4 CLOSED in REVIEW (unanimous PASS, merge tip `d375f98`); STATUS Active=UI-5; HANDOFF DEV PASS with measured notes
 
 ## Skills used
 
-apple-design, apple-design-web (via apple-design WWDC web mapping), emil-design-eng, web-design-guidelines, zero-jank-scroll (no new motion; no Lenis / normalizeScroll / body lock), gsap-scrolltrigger / gsap-react (read-only; HomeScenes untouched), review-animations (motion not added)
+apple-design, apple-design-web (via apple-design WWDC web mapping), emil-design-eng, web-design-guidelines, zero-jank-scroll (no new motion; no Lenis / normalizeScroll / body lock), review-animations (motion not added), gsap-scrolltrigger / gsap-react (read-only; HomeScenes motion untouched)
 
 ## Risks
 
-375 first viewport cannot hold 56px type + 520 stage + 3-row strip in 812 — strip stacks below, as specified. Reduced-motion still stacks ProductStage panels so all three facts stay readable (stage grows; default motion stays 520 in-viewport). Preview deploy is branch-only — do not promote until PM PASS.
+Compact service / work stills are 11.5–12.5rem — DNA stays readable as short rows + one fact. First-viewport ProductStage height stays 520.
 
 ## Blockers
 
-None. Awaiting PMs. Do not start UI-5.
+None. Awaiting PMs. Do not invent UI-6. Do not merge.

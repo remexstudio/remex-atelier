@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
-import { StageStill } from "@/components/StageStill";
+import { StoryDeskStill } from "@/components/StageStill";
 import {
   EXAMPLE_CLOSER,
   INDEX_LABEL,
@@ -159,30 +159,7 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Knowledge desk">
-                <div className="media-stage media-stage--lc">
-                  <p className="media-stage__kicker">Source hunt</p>
-                  <p className="media-stage__fact">Same close, same hunt</p>
-                  <ol className="media-stage__lanes">
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">§</span>
-                      <span>GL extract</span>
-                    </li>
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">§</span>
-                      <span>Trial balance</span>
-                    </li>
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">§</span>
-                      <span>Close memo</span>
-                    </li>
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">§</span>
-                      <span>Prior cite</span>
-                    </li>
-                  </ol>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="knowledge" id="sources" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -195,13 +172,7 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Knowledge desk">
-                <div className="media-stage media-stage--lc">
-                  <p className="media-stage__kicker">Corpus</p>
-                  <p className="media-stage__fact">Answer from the book</p>
-                  <p className="media-stage__sub">Citations stay with the ask.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="knowledge" id="corpus" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -214,13 +185,7 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Knowledge desk">
-                <div className="media-stage media-stage--lc">
-                  <p className="media-stage__kicker">Package</p>
-                  <p className="media-stage__fact">Propose ≠ Execute</p>
-                  <p className="media-stage__sub">A draft the controller can reopen.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="knowledge" id="propose" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -233,13 +198,7 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Knowledge desk">
-                <div className="media-stage media-stage--lc">
-                  <p className="media-stage__kicker">Controller</p>
-                  <p className="media-stage__fact">Human before execute</p>
-                  <p className="media-stage__sub">Approve or reject. Never silent write.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="knowledge" id="gate" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -252,14 +211,7 @@ export function LedgerClerkChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Knowledge desk">
-                <div className="media-stage media-stage--lc">
-                  <p className="media-stage__kicker">Audit log</p>
-                  <p className="media-stage__fact">Ask · cite · decision</p>
-                  <p className="media-stage__cite">§12.4</p>
-                  <p className="media-stage__sub">Month-end. Corpus cite. Approve / Reject.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="knowledge" id="audit" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
