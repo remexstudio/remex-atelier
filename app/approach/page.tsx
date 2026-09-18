@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome } from "@/components/SiteChrome";
 import { REFUSE } from "@/lib/refuse";
+import { ROADMAP } from "@/lib/roadmap";
 import { TRUST_STANCE } from "@/lib/services-catalog";
 
 export const metadata: Metadata = {
@@ -55,27 +56,6 @@ const METHODS = [
     title: "Keep the record",
     lead: "Link proposal, decision, and outcome so the team can reopen it.",
     body: "Every proposal, approval, and outcome stays on one thread the team can reopen later. The brief, the gate, and the result stay linked — so the desk can explain what happened without hunting across tools.",
-  },
-] as const;
-
-const ROADMAP = [
-  {
-    label: "Now",
-    base: "Ship gated agents for one workflow at a time.",
-    detail:
-      "Each engagement picks one painful seat, draws the human gate, and ships a Propose → Approve → Record loop the desk can trust before the next seat opens.",
-  },
-  {
-    label: "Next",
-    base: "Repeated modules become internal tools / small products.",
-    detail:
-      "Direction only. Tighten the first seat's evals, gates, and records before a second seat opens.",
-  },
-  {
-    label: "Later",
-    base: "Broaden seats only after gates and records hold.",
-    detail:
-      "New seats open only when the human gate and the linked record already hold on the jobs we know. Scope grows after the mechanism proves itself — not before.",
   },
 ] as const;
 
@@ -270,7 +250,7 @@ export default function ApproachPage() {
               Tell us the painful workflow. We design the agent and the gate.
             </p>
             <p className="approach-close__cta-wrap">
-              <Link href="/contact" className="approach-cta">
+              <Link href="/contact" className="approach-cta cta-pill">
                 Start a brief.
               </Link>
             </p>
