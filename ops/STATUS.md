@@ -7,4 +7,5 @@
 - Parked: none
 - Owner: live first screen **FAIL** (soft poster type and/or brochure grammar)
 - Preview: https://remex-atelier.vercel.app
-- Tip: this slice commit · prod pending stamp
+- Measured `/` h1 @1280: Geist weight **600**, 80px, tracking **-0.03em** (-2.4px)
+- Tip: UI-0 branch · prod pending merge deploy
