@@ -11,6 +11,6 @@
 # REVIEW — UI-3
 
 - Slice: UI-3 inner pages skeleton
-- DEV: **in progress**
+- DEV: **PASS** (`e8da48f`, PR #39)
 - Apple / UX / Vision / Leader: **awaiting**
 - Do not open UI-4 until dual PASS

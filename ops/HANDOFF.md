@@ -2,12 +2,13 @@
 
 - Status: **DEV PASS**
 - TASK ID: UI-3
-- SHA: pending commit
-- PR: pending
-- Preview / Production: https://remex-atelier.vercel.app
+- SHA: `e8da48f`
+- PR: https://github.com/remexstudio/remex-atelier/pull/39
+- Preview: https://remex-atelier-git-cursor-ui-3-inner-pages-62b7-qinlinj-projects.vercel.app (`dpl_3yR2dWhC3wdfFRgfwD1oNoJFP64F`)
+- Production: https://remex-atelier.vercel.app (remains UI-2 / prior tip until merge)
 - Phase: UI campaign open
-- Allowed files only: inner routes (`app/services`, `app/work`, `app/approach`, `app/contact`), inner-page classes in `app/globals.css`, ops stamps. Home first-viewport and `#home-gate` untouched.
-- Out of scope kept: no UI-4 polish, no copy/route rewrites, no new offers, four-link nav unchanged.
+- Allowed files only: `app/services/page.tsx`, `app/work/page.tsx`, `app/approach/page.tsx`, `app/contact/page.tsx`, inner-page classes in `app/globals.css`, ops stamps.
+- Out of scope kept: no UI-4 polish, no copy/route rewrites, no new offers, HomeScenes / ProductStage / `#home-gate` untouched, four-link nav unchanged.
 - Do not start UI-4.
 
 ## UI-2 closed
@@ -16,23 +17,26 @@ Unanimous PASS (Apple / UX / Vision / Leader) at tip `f969b96` on `main`.
 
 ## Inner skeleton
 
-- `/services` — page title "Services"; three large Design / Build / Operations rows; small `ServiceStageStill` beside each; catalog grammar, not a second home ProductStage hero.
-- `/work` — still + short locked teaser + "Read the full example →" at ≥44px; hrefs stay `/work/[desk]/story`.
-- `/work/[desk]/story` — reading column max-width 680px; stacked stills under body (ask → recommend → gate → record); chrome only.
-- `/approach` — three full-width bands: method / refuse / Now-Next-Later path. Locked name-meaning + legal stay inside the method band. No Seattle / global-clients line.
-- `/contact` — one hairline sheet; labeled fields; near-black submit pill ≥44px; success state kept.
+- `/services` — page title `Services`; three large Design / Build / Operations rows; small `ServiceStageStill` beside each (200×209); no `.product-stage`. Catalog grammar.
+- `/work` — still (184) + locked short teaser + `Read the full example →` at 44px. Hrefs stay `/work/[desk]/story`.
+- `/work/[desk]/story` — reading column 680px; five stacked stills under body (Ask → One recommendation → One recommendation → Gate → Record). Display 44px, not home 80.
+- `/approach` — three full-width 1280 bands: method (`#fff`) / refuse (`#f5f5f7`) / Now-Next-Later path (`#fff`). Name meaning + `Jiyuyun Studio LLC` stay in the method band.
+- `/contact` — one hairline sheet (radius 22px); labeled fields; near-black submit 44px; success state `Brief received` kept.
 
-## Home (unchanged)
+## Home UI-1 / UI-2 (unchanged)
 
-- Headline: `Agents, built to the brief.`
-- Support: `We design the job an agent is allowed to do — and the gate it cannot cross.`
-- Black pill `Start a brief.` → `/contact`
-- Light ProductStage ≥520; Design / Build / Operations strip
-- Dark `#home-gate` from UI-2
+Measured local `pnpm start` (Chrome):
+
+| Surface | h1 | CTA | Stage | Strip / gate |
+| --- | --- | --- | --- | --- |
+| 1280×800 | Geist 600 **80px** **-0.03em**; `Agents, built to the brief.` | **44** / `#1d1d1f` | **520** | DESIGN / BUILD / OPERATIONS; `#home-gate` **`#000`** |
+| 375×812 | Geist 600 **56px** **-0.03em** | **44** | **520** | — |
+
+Nav: Work · Services · Approach · Contact. No Seattle. `--cta` `#1d1d1f` (not `#1d4ed8`).
 
 ## Verify
 
-`pnpm build` pending in this stamp. No Seattle. No `#1d4ed8`. Four-link nav. No Lenis / body lock.
+`pnpm build` PASS. Local smoke `/` `/services` `/work` `/work/atelier-concierge/story` `/approach` `/contact` HTTP 200. Contact submit → Brief received. Reduced-motion story: 27 reveal/text nodes opacity 1. No Lenis / body lock.
 
 ## Acceptance self-check
 
@@ -43,16 +47,16 @@ Unanimous PASS (Apple / UX / Vision / Leader) at tip `f969b96` on `main`.
 - [x] `/approach` full-width bands
 - [x] `/contact` hairline sheet + black submit
 - [x] Home UI-1/UI-2 not regressed; four-link nav; no Seattle; lock copy
-- [ ] `pnpm build` PASS; open PR
+- [x] `pnpm build` PASS; open PR #39
 - [x] HANDOFF DEV PASS; UI-2 CLOSED in REVIEW; STATUS Active=UI-3 awaiting PMs
 
 ## Skills used
 
-apple-design, apple-design-web, emil-design-eng, web-design-guidelines, zero-jank-scroll (motion not newly introduced; existing story reveals kept, transform/opacity only)
+apple-design, apple-design-web, emil-design-eng, web-design-guidelines, zero-jank-scroll (no new motion; existing story reveals kept, transform/opacity only)
 
 ## Risks
 
-Services stills share `StageStill` chrome with work/story. Sized down on `/services` and `/work` only. Home ProductStage untouched.
+Services / work stills share `StageStill` chrome; sized down on those routes only. Home `ProductStage` untouched. Preview deploy is branch-only — do not promote until PM PASS.
 
 ## Blockers
 

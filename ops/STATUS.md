@@ -6,7 +6,8 @@
 - Next: **UI-4** appearance polish — do not start until UI-3 PASS
 - Parked: none
 - Soft ADD: literal Georgia / `ui-serif` fallbacks — cleared (tokens remapped; no remaining literals)
-- Preview / Production: https://remex-atelier.vercel.app
-- Tip: UI-2 `f969b96` on `main` (PR #38 merged)
+- Preview: https://remex-atelier-git-cursor-ui-3-inner-pages-62b7-qinlinj-projects.vercel.app
+- Production: https://remex-atelier.vercel.app
+- Tip: UI-3 `e8da48f` on `cursor/ui-3-inner-pages-62b7` (base `f969b96`); PR #39
 
-- Prod (UI-2): pending this slice deploy
+- Prod (prior): remains pre-merge until UI-3 lands
