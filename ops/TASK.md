@@ -1,79 +1,78 @@
-# TASK V7-1 — inner pages appearance restyle
+# TASK V7-2 — finish owner appearance DoD
 
-TASK ID: V7-1
+TASK ID: V7-2
 REPO: remexstudio/remex-atelier
-BASE: tip after V7-0 PASS (`9a49584` or newer main after this ops stamp)
-GOAL: Restyle inner pages to apple.com product-page grammar using V7-0 tokens (Geist 600, `#fff` / `#f5f5f7` / `#1d1d1f`, hairline, black pill CTA, radius-stage). Keep all copy and routes. No second home hero on inner pages.
+BASE: tip after V7-1 PASS (`7a8b493` or newer main after this ops stamp)
+GOAL: Finish owner DONE WHEN for appearance restyle.
 
-Owner override 2026-09-17: **APPEARANCE ONLY**. Do not change offers, routes, or thesis sentences. No Seattle / Global clients. No founder page. Do not revive `/demo` as product.
+Owner override: **APPEARANCE FIRST**. One approved copy fix for Approach / home Next. No Seattle / Global. No founder. No `/demo` as product. Do not change offers or routes.
 
-## /services
+## 1. Home dark gate chapter (REQUIRED)
 
-- Title “Services” (or existing catalog title) — no giant home-style hero with product stage
-- Three large rows (Design / Build / Operations), small still each in product-stage language (fabricated UI vignette, not chip stack)
-- Keep existing service copy; restyle layout only
+Owner: "gate as a dark stage" and "A product stage exists on home and on the gate chapter."
 
-## /work
+Add one `#000` / near-black gate chapter on `/` AFTER method (hire on `#f5f5f7`) and BEFORE or after examples — recommend after method: dark stage with Propose → Approve → Record product-stage language (can reuse ProductStage variant dark). Keep existing thesis sentences; do not invent slogans.
 
-- Still thumbnail + short line + `Read the full example →`
-- Kill giant empty gray field / sparse ocean of gray
-- Teasers stay short (V6-4 contract intact)
+## 2. Soft ADDs from V7-0 / V7-1 reviews
 
-## /work/[desk]/story
+- ProductStage: remove decorative `aria-hidden` OR expose one visible mechanism line for SR (UX / Vision soft ADD)
+- `.stage-still` / story stills: include in `prefers-reduced-motion` forced-visible path like product-stage
 
-- Reading column max-width ~680px
-- UI still sequence under essay in same stage language as ProductStage (ask → recommend → gate → record already exist — restyle chrome)
+## 3. Home chapters polish (appearance)
 
-## /approach
+- Brief (`#home-brief`): more compact instrument (tight rows, hairlines) — keep the four brief asks text
+- Close: black pill already — ensure consistent `.home-cta` / `.cta-pill`
+- Examples: still thumbnails stay; ensure not sparse gray ocean on 1440
 
-- Three full-width bands (method beats), not stacked white cards floating in gray
-- Keep Now / Next / Later content as-is (do not rewrite Next thesis — appearance only)
+## 4. 375 / 1440 regression
 
-## /contact
+- 375: Menu four links; stage under type; ≥44 targets; first viewport readable (headline + stage or strip)
+- 1440: first viewport still shows headline + stage + three service names; no tiny card in gray ocean on home / services / approach / work / contact
 
-- One hairline sheet form
-- Black / near-black submit pill (≥44px)
-- Keep form fields and success copy
+## 5. Approach Next copy fix (approved content lock from V6)
 
-## Sitewide constraints
+On home roadmap AND `/approach`, Next must mean: reuse the method (job spec + gate + record) on a **new** seat — NOT deepen the four named desks, NOT "Repeated modules become internal tools" as the Next beat if that conflicts.
 
-- Nav: Work · Services · Approach · Contact identical every route (already)
-- Tokens from V7-0; kill any leftover SaaS blue
-- 375: Menu with four links; 44px targets; readable
-- 1280 / 1440: no crushed columns, no tiny card in ocean of gray
+Use direction from `docs/ia-v6.md` §7:
+
+- Now: Ship one gated seat
+- Next: Reuse method on a new seat
+- Later: Modules / studio-owned gated products
+
+Do not invent dates / pricing. Keep English. Appearance bands stay.
 
 ## ALLOWED FILES
 
-- `app/services/page.tsx`, `app/work/page.tsx`, `app/work/*/story/page.tsx`, `app/approach/page.tsx`, `app/contact/page.tsx` (and related contact components)
-- `components/*Chapter.tsx`, SiteChrome, form components as needed for styling
-- `app/globals.css` (inner-page modules only; do not regress home V7-0)
-- tiny new still/row components under `components/` if needed
+- `components/HomeScenes.tsx`, `ProductStage.tsx` (+ dark variant)
+- `components/*Chapter*`, story stills, SiteChrome if needed
+- `app/globals.css`
+- `app/approach/page.tsx` (Next copy + bands)
+- `app/work/**`, `app/services`, `app/contact` only for RM / 375 / 1440 polish
+- `lib/*` if roadmap strings live there
 - `ops/HANDOFF.md`, `ops/STATUS.md`
 
 ## OUT OF SCOPE
 
-- Rewriting thesis / Approach Next meaning
-- Changing service offers or story essays
-- Home first-viewport redesign (already V7-0)
-- Soft ADD aria-hidden on ProductStage (optional tiny fix OK if zero risk, not required)
+- New routes, founder, geo slogans, four-SKU shop
+- Rewriting service offers or story essays beyond Next roadmap lock
+- Inventing V7-3
 
 ## ACCEPTANCE
 
-- [ ] Inner pages do not reuse home hero + product stage as their title block
-- [ ] /services three large rows with small stills
-- [ ] /work still + short + Read the full example; no giant empty gray
-- [ ] /story reading ≤680px + stage-language stills
-- [ ] /approach full-width bands not white card stack
-- [ ] /contact hairline sheet + black submit pill
-- [ ] Copy/routes unchanged; four-link nav; `pnpm build` PASS; `vercel deploy --prod` preferred
-- [ ] HANDOFF; DEV PASS; do not open V7-2 until Leader PASS
+- [ ] Dark gate chapter with product stage on home
+- [ ] ProductStage SR soft ADD addressed
+- [ ] stage-still RM visibility
+- [ ] Approach / home Next = method reuse on new seat
+- [ ] 375 + 1440 hold stage / no gray ocean
+- [ ] Copy elsewhere / routes / offers unchanged; `pnpm build` PASS; `vercel deploy --prod`
+- [ ] HANDOFF DEV PASS; do not invent V7-3 unless Leader says
 
 ## SKILLS TO USE
 
-`apple-design` `apple-design-web` `emil-design-eng` `gsap-scrolltrigger` `gsap-react` `zero-jank-scroll` `review-animations` `web-design-guidelines`
+`apple-design` `apple-design-web` `apple-design-motion` `emil-design-eng` `gsap-scrolltrigger` `gsap-timeline` `gsap-react` `cinematic-scroll-storytelling` `zero-jank-scroll` `review-animations`
 
-Also read `docs/ia-v3.md`, `docs/scroll-score-v3.md`, `docs/design.md`, and chrome named above. Skill files may be absent in this environment — apply those principles from `docs/design.md` and the locks in `docs/copy-locks.md`.
+Also read `docs/ia-v3.md`, `docs/ia-v6.md` §7, `docs/scroll-score-v3.md`, `docs/design.md`, `docs/copy-locks.md`. Skill files may be absent in this environment — apply those principles from `docs/design.md` and the locks in `docs/copy-locks.md`.
 
 ## COMMIT MESSAGE
 
-`feat(site): restyle inner pages to product-stage grammar`
+`feat(home): add dark gate stage and finish V7 appearance polish`
