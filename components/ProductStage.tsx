@@ -28,11 +28,109 @@ const FIELDS = [
   { label: "Linked log", value: "Record" },
 ] as const;
 
+const LOG_ROWS = [
+  { mark: "01", label: "Ask", value: "Draft filed" },
+  { mark: "02", label: "Gate", value: "Named person" },
+  { mark: "03", label: "Stay", value: "Linked log" },
+] as const;
+
 const MECHANISM_LINE = "Propose → Approve → Record";
 
 type ProductStageProps = {
   variant?: "light" | "dark";
 };
+
+function ProposeTicket({
+  step,
+}: {
+  step: (typeof STEPS)[number];
+}) {
+  return (
+    <div className="product-stage__ticket product-stage__ticket--draft">
+      <p className="product-stage__kicker">{step.kicker}</p>
+      <p className="product-stage__title">{step.title}</p>
+      <p className="product-stage__line">{step.line}</p>
+      <div className="product-stage__draft">
+        <span className="product-stage__draft-mark" aria-hidden="true" />
+        <p className="product-stage__draft-line">Next action held as a draft.</p>
+      </div>
+      <dl className="product-stage__fields">
+        {FIELDS.map((field) => (
+          <div key={field.label} className="product-stage__field">
+            <dt>{field.label}</dt>
+            <dd data-on={field.value === step.title ? "true" : "false"}>
+              {field.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <div className="product-stage__action">
+        <span className="product-stage__pill" data-state="outline">
+          {step.action}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function ApproveTicket({
+  step,
+}: {
+  step: (typeof STEPS)[number];
+}) {
+  return (
+    <div className="product-stage__ticket product-stage__ticket--gate">
+      <p className="product-stage__kicker">{step.kicker}</p>
+      <p className="product-stage__title">{step.title}</p>
+      <p className="product-stage__line">{step.line}</p>
+      <dl className="product-stage__fields">
+        {FIELDS.map((field) => (
+          <div key={field.label} className="product-stage__field">
+            <dt>{field.label}</dt>
+            <dd data-on={field.value === step.title ? "true" : "false"}>
+              {field.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <div className="product-stage__action">
+        <span className="product-stage__ghost">Edit</span>
+        <span className="product-stage__ghost">Reject</span>
+        <span className="product-stage__pill" data-filled="true">
+          {step.action}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function RecordTicket({
+  step,
+}: {
+  step: (typeof STEPS)[number];
+}) {
+  return (
+    <div className="product-stage__ticket product-stage__ticket--log">
+      <p className="product-stage__kicker">{step.kicker}</p>
+      <p className="product-stage__title">{step.title}</p>
+      <p className="product-stage__line">{step.line}</p>
+      <ol className="product-stage__log">
+        {LOG_ROWS.map((row) => (
+          <li key={row.mark} className="product-stage__log-row">
+            <span className="product-stage__log-mark">{row.mark}</span>
+            <span className="product-stage__log-label">{row.label}</span>
+            <span className="product-stage__log-value">{row.value}</span>
+          </li>
+        ))}
+      </ol>
+      <div className="product-stage__action">
+        <span className="product-stage__pill" data-state="quiet">
+          {step.action}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 function StagePanel({
   step,
@@ -48,34 +146,13 @@ function StagePanel({
       data-active={filled ? "true" : "false"}
       aria-hidden={filled ? undefined : true}
     >
-      <div className="product-stage__ticket">
-        <p className="product-stage__kicker">{step.kicker}</p>
-        <p className="product-stage__title">{step.title}</p>
-        <p className="product-stage__line">{step.line}</p>
-        <dl className="product-stage__fields">
-          {FIELDS.map((field) => (
-            <div key={field.label} className="product-stage__field">
-              <dt>{field.label}</dt>
-              <dd data-on={field.value === step.title ? "true" : "false"}>
-                {field.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
-        <div className="product-stage__action">
-          {filled ? (
-            <>
-              <span className="product-stage__ghost">Edit</span>
-              <span className="product-stage__ghost">Reject</span>
-              <span className="product-stage__pill" data-filled="true">
-                {step.action}
-              </span>
-            </>
-          ) : (
-            <span className="product-stage__pill">{step.action}</span>
-          )}
-        </div>
-      </div>
+      {step.id === "propose" ? (
+        <ProposeTicket step={step} />
+      ) : step.id === "record" ? (
+        <RecordTicket step={step} />
+      ) : (
+        <ApproveTicket step={step} />
+      )}
     </div>
   );
 }
@@ -97,9 +174,7 @@ export function ProductStage({ variant = "light" }: ProductStageProps) {
       aria-labelledby={mechanismId}
     >
       <div className="product-stage__specular" aria-hidden="true" />
-      {variant === "dark" ? (
-        <div className="product-stage__inset" aria-hidden="true" />
-      ) : null}
+      <div className="product-stage__inset" aria-hidden="true" />
       <div className="product-stage__chrome">
         <span className="product-stage__lights" aria-hidden="true" />
         <p className="product-stage__seat">One seat</p>

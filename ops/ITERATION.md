@@ -10,16 +10,17 @@ Hard bans: no Seattle/Global; no founder; no /demo as product; do not rewrite th
 - UI-1 **PASS**: first-viewport product stage (tip `ff8a3ae`).
 - UI-2 **PASS**: dark `#home-gate` ProductStage (tip `f969b96`).
 - UI-3 **PASS**: inner pages skeleton (merge tip `5531561`). Apple / UX / Vision / Leader unanimous.
+- UI-4 **PASS**: hold 375 and 1440 layout (merge tip `d375f98`). Apple / UX / Vision / Leader unanimous.
 
-## This loop — UI-4
+## This loop — UI-5
 
-- Hold layout at 375 and 1280/1440. Appearance polish only.
-- 375: four-link menu; stage under type; strip vertical; ≥44 hit targets.
-- 1280/1440: first viewport = headline + ProductStage ≥520 + three services; no gray-ocean orphan column.
-- Inner pages hold at both widths without hero-clone regression.
-- Do not regress UI-1 first viewport, UI-2 dark gate, or UI-3 skeletons.
+- Raise still fidelity. Appearance only.
+- ProductStage light + dark: specular, inset hairline, Approve filled, Propose/Record distinct.
+- /services stills: spec / build gate / ops tighten — not clones.
+- Four desk DNAs stay non-interchangeable on work teasers, home examples, and story Ask→Recommend→Gate→Record.
+- Do not regress UI-1 first viewport, UI-2 dark gate, UI-3 inner skeletons, or UI-4 375/1440 hold.
 - Do not rewrite offers / thesis / routes.
 
 ## Next
 
-- UI-5 DNA fidelity — do not start until UI-4 PASS.
+- Do not invent UI-6 until UI-5 PASS.

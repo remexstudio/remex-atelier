@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
-import { StageStill } from "@/components/StageStill";
+import { StoryDeskStill } from "@/components/StageStill";
 import {
   DEMAND,
   EXAMPLE_CLOSER,
@@ -159,30 +159,7 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Demand desk">
-                <div className="media-stage media-stage--cq">
-                  <p className="media-stage__kicker">Desk notes</p>
-                  <p className="media-stage__fact">Skin, occasion, fit</p>
-                  <ol className="media-stage__lanes">
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">01</span>
-                      <span>Skin</span>
-                    </li>
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">02</span>
-                      <span>Occasion</span>
-                    </li>
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">03</span>
-                      <span>Fit</span>
-                    </li>
-                    <li className="media-stage__lane">
-                      <span className="media-stage__mark">04</span>
-                      <span>Hold</span>
-                    </li>
-                  </ol>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="demand" id="scatter" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -195,13 +172,7 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Demand desk">
-                <div className="media-stage media-stage--cq">
-                  <p className="media-stage__kicker">Occasion</p>
-                  <p className="media-stage__fact">One hero</p>
-                  <p className="media-stage__sub">Map the note. Do not invent SKUs.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="demand" id="hero" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -214,13 +185,7 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Demand desk">
-                <div className="media-stage media-stage--cq">
-                  <p className="media-stage__kicker">Stage</p>
-                  <p className="media-stage__fact">Try-on still</p>
-                  <p className="media-stage__sub">A frame the stylist can refuse.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="demand" id="tryon" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -233,13 +198,7 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Demand desk">
-                <div className="media-stage media-stage--cq">
-                  <p className="media-stage__kicker">Bag · before pay</p>
-                  <p className="media-stage__fact">Stylist gate</p>
-                  <p className="media-stage__sub">Propose. Approve. Pay held.</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="demand" id="bag" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
@@ -252,14 +211,7 @@ export function AtelierConciergeChapter() {
           <li data-ex-reveal>
             <figure className="ex-still">
               <div className="ex-still__frame" aria-hidden="true">
-                <StageStill seat="Demand desk">
-                <div className="media-stage media-stage--cq">
-                  <p className="media-stage__kicker">Record</p>
-                  <p className="media-stage__fact">Consult + ticket</p>
-                  <p className="media-stage__cite">LUM-1042</p>
-                  <p className="media-stage__sub">Skin · fit note · held</p>
-                </div>
-                </StageStill>
+                <StoryDeskStill desk="demand" id="ticket" />
               </div>
               <figcaption className="ex-still__caption">
                 <span className="ex-still__beat">
