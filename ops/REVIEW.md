@@ -1,7 +1,7 @@
 # REVIEW — UI-2
 
 - Slice: UI-2 home dark gate rebuild
-- DEV: **PASS** (awaiting SHA on this branch)
+- DEV: **PASS** (`2892f7c`, PR #38)
 - Apple / UX / Vision / Leader: **awaiting**
 - Do not open UI-3 until dual PASS
 

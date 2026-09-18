@@ -7,5 +7,6 @@
 - Parked: none
 - Soft ADD: lab `pulse.css` Georgia / `ui-serif` literal fallbacks — cleared in this slice
 - Preview / Production: https://remex-atelier.vercel.app
-- Tip: UI-2 content commit on `cursor/ui-2-dark-gate-003b` (base `999c483`)
+- Tip: UI-2 `2892f7c` on `cursor/ui-2-dark-gate-003b` (base `999c483`); PR #38 open
+
 - Prod (UI-1): `dpl_BajZ9YiRPeKz2SijNgx7NUsjfBdS`

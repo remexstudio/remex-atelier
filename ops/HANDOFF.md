@@ -2,7 +2,8 @@
 
 - Status: **DEV PASS**
 - TASK ID: UI-2
-- SHA: see this commit
+- SHA: `2892f7c` (content) · this commit stamps measured checks
+- PR: https://github.com/remexstudio/remex-atelier/pull/38 (open, do not merge)
 - Preview / Production: https://remex-atelier.vercel.app (prod remains UI-1 until merge)
 - Phase: UI campaign open
 - Allowed files only: `components/HomeScenes.tsx` (gate chrome/layout), `components/ProductStage.tsx` (dark polish), `app/globals.css` (gate / dark stage / contrast), `components/lab/pulse.css` (Georgia cleanup), ops stamps.
@@ -33,7 +34,17 @@ Literal `Georgia` / `ui-serif` fallbacks cleared in `components/lab/pulse.css`. 
 
 ## Verify
 
-`pnpm build` PASS. Reduced motion: gate panels/text forced visible (`transform`/`opacity` cleared); all three product-stage panels stack. No Seattle. No `#1d4ed8`. Four-link nav.
+`pnpm build` PASS. Local smoke `/` `/work` `/services` `/approach` `/contact` HTTP 200. CTA click → `/contact`. See services → `#home-services`. No Seattle. No `#1d4ed8`. Four-link nav.
+
+Measured local `pnpm start` (Chrome):
+
+| Surface | Gate canvas | Gate stage | Approve filled | Method canvas | Hero stage / CTA / h1 |
+| --- | --- | --- | --- | --- | --- |
+| 1280×800 | **`#000`** / type `#f5f5f7` | **`#000` / 520** | `#f5f5f7` on `#000` | `#f5f5f7` | **520** / **44** / `#1d1d1f` / Geist 600 **80px** **-0.03em**; strip top 748 / bottom 799 |
+| 375×812 | **`#000`** | **`#000` / 520** | `#f5f5f7` on `#000` | `#f5f5f7` | **520** / **44** / Geist 600 **56px** **-0.03em** |
+| 1280 reduce | **`#000`** | stacked; all 3 panels opacity 1 | filled | `#f5f5f7` | Geist 600 80px / CTA 44 |
+
+Reduced motion: Propose / Approve / Record panels all `data-active=true`, opacity 1. No pin hiding gate copy.
 
 ## Acceptance self-check
 
@@ -42,7 +53,7 @@ Literal `Georgia` / `ui-serif` fallbacks cleared in `components/lab/pulse.css`. 
 - [x] UI-1 first viewport not regressed (stage ≥520, strip, black pill, Geist tokens)
 - [x] Gate H2/lede distinct from method; lock copy/routes; four-link nav; no Seattle
 - [x] lab `pulse.css` Georgia/`ui-serif` literal fallbacks cleared
-- [x] `pnpm build` PASS; open PR
+- [x] `pnpm build` PASS; open PR #38
 - [x] HANDOFF DEV PASS; do NOT start UI-3
 
 ## Skills used
@@ -51,7 +62,7 @@ apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react,
 
 ## Risks
 
-None blocking. Gate stage and chapter share `#000`; structure reads via specular + inset hairline, not a gray fill. UI-3 still out of scope.
+None blocking. Gate stage and chapter share `#000`; structure reads via specular + inset hairline and the filled Approve control, not a gray fill. UI-3 still out of scope.
 
 ## Blockers
 
