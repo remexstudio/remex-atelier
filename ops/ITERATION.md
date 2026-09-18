@@ -8,19 +8,18 @@ Hard bans: no Seattle/Global; no founder; no /demo as product; do not rewrite th
 
 - UI-0 **PASS**: Geist display tokens (weight 600, tracking `-0.03em` at 56–80px); owner palette; frosted 46px nav; near-black pill; no `#1d4ed8`.
 - UI-1 **PASS**: first-viewport product stage (tip `ff8a3ae`).
-- UI-2 **PASS**: dark `#home-gate` ProductStage (tip `f969b96`). Apple / UX / Vision / Leader unanimous.
+- UI-2 **PASS**: dark `#home-gate` ProductStage (tip `f969b96`).
+- UI-3 **PASS**: inner pages skeleton (merge tip `5531561`). Apple / UX / Vision / Leader unanimous.
 
-## This loop — UI-3
+## This loop — UI-4
 
-- Restyle INNER pages so they stop cloning the home hero (giant headline + gray lede + pale card).
-- Keep locked copy; change skeleton / chrome / media grammar only.
-- `/services` catalog: title + three LARGE Design / Build / Operations rows with small stills.
-- `/work` still + short teaser + Read the full example →.
-- `/work/[desk]/story` ~680 reading column + stacked still sequence.
-- `/approach` three full-width bands (method / refuse / path).
-- `/contact` one hairline sheet + near-black submit pill.
-- Do not regress UI-1 first viewport or UI-2 dark gate.
+- Hold layout at 375 and 1280/1440. Appearance polish only.
+- 375: four-link menu; stage under type; strip vertical; ≥44 hit targets.
+- 1280/1440: first viewport = headline + ProductStage ≥520 + three services; no gray-ocean orphan column.
+- Inner pages hold at both widths without hero-clone regression.
+- Do not regress UI-1 first viewport, UI-2 dark gate, or UI-3 skeletons.
+- Do not rewrite offers / thesis / routes.
 
 ## Next
 
-- UI-4 appearance polish — do not start until UI-3 PASS.
+- UI-5 DNA fidelity — do not start until UI-4 PASS.
