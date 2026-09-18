@@ -1,54 +1,51 @@
-# TASK — UI-0
+# TASK — UI-1
 
-TASK ID: UI-0
+TASK ID: UI-1
 REPO: remexstudio/remex-atelier
-GOAL: Lock visual tokens sitewide. Do not rebuild home stage layout yet (UI-1). Do not restyle inner page skeletons yet (UI-3).
+BASE: main tip `5004f76` (or newer)
+GOAL: Rebuild HOME FIRST VIEWPORT only. Appearance only. Do not rewrite thesis/offers/routes.
 
-## Owner FAIL (obey)
+## Owner
 
-Live home still fails apple.com product-page grammar: soft poster type and/or brochure first screen. Fix tokens first (UI-0), then later slices fix stage/inner pages.
+UI-0 PASS. Continuous UI campaign. First viewport of `/` must be apple.com product-page grammar. No Seattle/Global. No founder. No /demo as product.
 
-Continuous UI campaign. Appearance only. Do not ask to stop. No Seattle/Global. No founder. No /demo as product. Do not rewrite thesis/offers/routes.
+## Required first viewport
 
-## Required tokens (globals + layout font)
+1. Locked headline `Agents, built to the brief.` + ONE existing allowed support line
+2. CTAs: black/near-black pill `Start a brief.` → `/contact` (≥44) + text link `See services` → `/services` or `#home-services`
+3. Product STAGE ≥520px: fabricated UI Propose → Approve → Record with Approve filled, specular edge, inset hairline — NOT a rounded gray JOB/GATE text card alone
+4. Three services as a quiet strip IN the first viewport (Design / Build / Operations), one line each, visible without long scroll on 1280
+5. prefers-reduced-motion: all text visible. Transform/opacity only if motion. No Lenis / body lock. No pin-at-load that hides the strip
 
-- Type: Geist (next/font) or system-ui with optical sizing. Kill Source Sans / soft weight-400 display posters / residual serif on display.
-- Display: font-weight 600; tracking ~-0.03em at 56–80px (tracking tightens with size).
-- Body: 17–21px, tracking near 0, line-height ~1.47, color #1d1d1f.
-- Eyebrows: 12px, +0.04em, #6e6e73.
-- Colors: --bg #ffffff; --gutter #f5f5f7; --ink #1d1d1f; --secondary #6e6e73; --line rgba(0,0,0,0.08); --dark #000; --dark-ink #f5f5f7; --cta #1d1d1f near-black pill. KILL #1d4ed8 SaaS blue if present.
-- Nav: 44–48px; rgba(255,255,255,0.72); blur(20px) saturate(180%); four links Work Services Approach Contact identical every route.
-- Radius: 18–28px on stages; pill CTA (~999px). Almost no drop shadow.
+Soft ADD from UI-0: replace literal `Georgia` / `ui-serif` fallbacks with Geist/system where `--font-serif` is already remapped.
+
+Keep module order after first viewport: method → gate → examples teasers → brief → roadmap → CTA.
 
 ## ALLOWED FILES
 
-- app/globals.css
-- app/layout.tsx (font only)
-- components/SiteChrome.tsx / SiteNav* only if needed for nav height/frost/CTA pill class
-- ops/TASK.md, ops/STATUS.md, ops/HANDOFF.md, ops/ITERATION.md, ops/BACKLOG.md, ops/REVIEW.md
+- `components/HomeScenes.tsx`
+- `components/ProductStage.tsx` (and tiny helpers)
+- `app/globals.css` (home first-viewport / stage / soft Georgia cleanup only)
+- `ops/HANDOFF.md`, `ops/STATUS.md`, `ops/TASK.md`, `ops/ITERATION.md`, `ops/BACKLOG.md` as needed
 
 ## OUT OF SCOPE
 
-- Rebuilding first-viewport stage composition (UI-1)
-- Dark gate rebuild (UI-2)
-- Inner page IA (UI-3)
-- Copy rewrites
+UI-2 dark gate rebuild, UI-3 inner pages, copy rewrites of locked lines, nav chrome beyond tokens already set.
 
 ## ACCEPTANCE
 
-- [ ] Display headlines compute weight 600 and ~-0.03em tracking at large sizes
-- [ ] No Source Sans as display; Geist/system-ui in use
-- [ ] No #1d4ed8; CTA uses near-black pill token
-- [ ] Color tokens match owner palette
-- [ ] Nav 44–48 frosted; four links unchanged
-- [ ] pnpm build PASS; vercel deploy --prod preferred; smoke /
-- [ ] Write ops/ITERATION.md noting FAIL first screen + UI-0 delivered + next UI-1
-- [ ] HANDOFF DEV PASS; do not start UI-1 until Leader PASS (but prepare STATUS for next)
+- [ ] First viewport is NOT title + gray JOB/GATE card alone
+- [ ] Product stage ≥520px with Propose→Approve→Record UI language
+- [ ] Design / Build / Operations visible in first viewport on 1280
+- [ ] Black pill CTA ≥44; UI-0 tokens kept (Geist 600, -0.03em, no #1d4ed8)
+- [ ] Copy/routes unchanged; four-link nav; no Seattle
+- [ ] `pnpm build` PASS; open PR
+- [ ] HANDOFF DEV PASS; do NOT start UI-2; do NOT merge unless campaign pattern already merges
 
 ## COMMIT
 
-feat(ui): lock Geist display tokens and kill soft poster type
+feat(home): rebuild first viewport product stage for UI-1
 
 ## SKILLS TO USE
 
-apple-design, apple-design-web, apple-design-motion, emil-design-eng, gsap-scrolltrigger, gsap-timeline, gsap-react, cinematic-scroll-storytelling, zero-jank-scroll, review-animations. Docs: ia-v3, scroll-score-v3, design, SiteChrome.
+apple-design, apple-design-web, emil-design-eng, gsap-scrolltrigger, gsap-react, zero-jank-scroll, review-animations, web-design-guidelines

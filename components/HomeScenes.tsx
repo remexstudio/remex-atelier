@@ -20,14 +20,14 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 /*
  * HARD BAN (scroll stack): no Lenis, no ScrollTrigger.normalizeScroll(),
  * no body/html overflow lock while pinned — native scroll only (zero-jank).
- * V7-0: pin+scrub only on the home product STAGE. Transform/opacity only.
+ * UI-1: no pin at load on the first viewport. Transform/opacity only.
  * Reduced motion / JS-off: full commercial payload stays readable.
  */
 
 const SERVICE_STRIP = [
-  { id: "design", short: "Design", name: "Agent product design" },
-  { id: "build", short: "Build", name: "Agent build" },
-  { id: "operations", short: "Operations", name: "Agent operations" },
+  { id: "design", short: "Design" },
+  { id: "build", short: "Build" },
+  { id: "operations", short: "Operations" },
 ] as const;
 
 const MECHANISM = [
@@ -63,7 +63,7 @@ function showStatic() {
     autoAlpha: 1,
   });
   gsap.set(
-    ".home-mod__stage, .product-stage, .product-stage__panel, .stage-still, .stage-still__panel, .ex-still__frame, .ex-still__frame .stage-still",
+    ".home-mod__stage, .home-hero__stage, .product-stage, .product-stage__panel, .product-stage__ticket, .stage-still, .stage-still__panel, .ex-still__frame, .ex-still__frame .stage-still",
     {
       clearProps: "transform,opacity,visibility",
       autoAlpha: 1,
@@ -151,8 +151,8 @@ export function HomeScenes() {
             "[data-product-stage]",
           );
           stages.forEach((node) => setStageStep(node, "approve"));
-          const stage = document.querySelector<HTMLElement>(
-            "[data-product-pin] [data-product-stage]",
+          const heroStage = document.querySelector<HTMLElement>(
+            "#home-hero [data-product-stage]",
           );
 
           if (reduce || !motionOk) {
@@ -166,57 +166,57 @@ export function HomeScenes() {
             return;
           }
 
-          gsap.utils.toArray<HTMLElement>("[data-mod]").forEach((mod) => {
-            const items = mod.querySelectorAll<HTMLElement>(
-              "[data-reveal], [data-svc-col], [data-ex-row], [data-spec-row], [data-road-row]",
-            );
-            if (!items.length) return;
+          gsap.utils
+            .toArray<HTMLElement>("[data-mod]:not(.home-mod--hero)")
+            .forEach((mod) => {
+              const items = mod.querySelectorAll<HTMLElement>(
+                "[data-reveal], [data-ex-row], [data-spec-row], [data-road-row]",
+              );
+              if (!items.length) return;
 
-            gsap.set(items, { autoAlpha: 0, y: 28 });
+              gsap.set(items, { autoAlpha: 0, y: 28 });
 
-            gsap.to(items, {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.85,
-              ease: "power3.out",
-              stagger: 0.08,
-              scrollTrigger: {
-                trigger: mod,
-                start: "top 78%",
-                once: true,
-                invalidateOnRefresh: true,
-              },
+              gsap.to(items, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.85,
+                ease: "power3.out",
+                stagger: 0.08,
+                scrollTrigger: {
+                  trigger: mod,
+                  start: "top 78%",
+                  once: true,
+                  invalidateOnRefresh: true,
+                },
+              });
             });
-          });
 
           /*
-           * V7-0: pin+scrub is allowed only on this stage, but pinning at
-           * load stole the first viewport (Approve → Propose, strip below fold).
-           * Keep Approve filled. Optional short transform/opacity scrub only
-           * after the hero has left the first screen.
+           * UI-1: no pin at load (V7 crush: strip dropped, Approve flipped).
+           * Keep Approve filled in the first viewport. Optional transform/
+           * opacity scrub only after the hero has left the screen.
            */
-          if (stage) {
-            const pin = stage.closest<HTMLElement>("[data-product-pin]") || stage;
+          if (heroStage) {
             const steps = ["propose", "approve", "record"] as const;
+            const hero = heroStage.closest<HTMLElement>("#home-hero") || heroStage;
 
             ScrollTrigger.create({
-              trigger: pin,
-              start: "top top",
+              trigger: hero,
+              start: "bottom top",
               end: "+=80%",
               scrub: 0.65,
               invalidateOnRefresh: true,
               onUpdate: (self) => {
-                if (self.progress === 0) {
-                  setStageStep(stage, "approve");
-                  return;
-                }
                 const idx = Math.min(
                   steps.length - 1,
                   Math.floor(self.progress * steps.length),
                 );
-                setStageStep(stage, steps[idx]);
+                setStageStep(heroStage, steps[idx]);
               },
-              onLeaveBack: () => setStageStep(stage, "approve"),
+              onLeaveBack: () => setStageStep(heroStage, "approve"),
+              onRefresh: (self) => {
+                if (self.progress === 0) setStageStep(heroStage, "approve");
+              },
             });
           }
 
@@ -228,7 +228,7 @@ export function HomeScenes() {
 
           return () => {
             window.removeEventListener("load", refresh);
-            if (stage) setStageStep(stage, "approve");
+            if (heroStage) setStageStep(heroStage, "approve");
           };
         },
       );
@@ -249,24 +249,24 @@ export function HomeScenes() {
         aria-labelledby="home-hero-h"
       >
         <div className="home-mod__inner home-mod__inner--hero">
-          <div className="home-mod__copy">
-            <h1 id="home-hero-h" className="home-headline home-headline--lg" data-reveal>
+          <div className="home-mod__copy home-mod__copy--hero">
+            <h1 id="home-hero-h" className="home-headline home-headline--lg">
               Agents, built to the brief.
             </h1>
-            <p className="home-support" data-reveal>
+            <p className="home-support">
               We design the job an agent is allowed to do — and the gate it
               cannot cross.
             </p>
-            <div className="home-hero__actions" data-reveal>
+            <div className="home-hero__actions">
               <Link href="/contact" className="home-cta cta-pill">
                 Start a brief.
               </Link>
-              <Link href="/services" className="home-text-link">
+              <Link href="#home-services" className="home-text-link">
                 See services
               </Link>
             </div>
           </div>
-          <div className="home-hero__pin" data-product-pin>
+          <div className="home-hero__stage">
             <ProductStage />
           </div>
         </div>
@@ -276,9 +276,8 @@ export function HomeScenes() {
           aria-label="Services"
         >
           {SERVICE_STRIP.map((line) => (
-            <li key={line.id} className="home-hero__svc" data-svc-col>
-              <span className="home-hero__svc-short">{line.short}</span>
-              <span className="home-hero__svc-name">{line.name}</span>
+            <li key={line.id} className="home-hero__svc">
+              <span className="home-hero__svc-line">{line.short}</span>
             </li>
           ))}
         </ol>
