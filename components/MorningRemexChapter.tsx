@@ -21,10 +21,15 @@ const REVEAL_SEL = "[data-ex-reveal]";
 
 function showStatic(root: HTMLElement) {
   root.classList.remove("ex-case--motion");
-  gsap.set(root.querySelectorAll(REVEAL_SEL), {
-    clearProps: "transform,opacity,visibility",
-    autoAlpha: 1,
-  });
+  gsap.set(
+    root.querySelectorAll(
+      `${REVEAL_SEL}, .stage-still, .stage-still__panel, .ex-still__frame`,
+    ),
+    {
+      clearProps: "transform,opacity,visibility",
+      autoAlpha: 1,
+    },
+  );
 }
 
 export function MorningRemexChapter() {
@@ -275,7 +280,7 @@ export function MorningRemexChapter() {
           {STUDY_FOOTER}
         </p>
         <p className="ex-cta chapter-cta" data-ex-reveal>
-          <Link href="/contact" className="home-cta">
+          <Link href="/contact" className="home-cta cta-pill">
             {START_A_BRIEF}
           </Link>
         </p>

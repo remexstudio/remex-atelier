@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { ProductStage } from "@/components/ProductStage";
 import { BRIEF_ASKS } from "@/lib/brief-asks";
+import { ROADMAP } from "@/lib/roadmap";
 import {
   EXAMPLES,
   INDEX_LABEL,
@@ -44,24 +45,10 @@ const MECHANISM = [
   },
 ] as const;
 
-const ROADMAP = [
-  {
-    label: "Now",
-    body: "Scoped custom agents. One workflow. One seat. A human still decides.",
-  },
-  {
-    label: "Next",
-    body: "Repeated modules become internal tools / small products. Direction only.",
-  },
-  {
-    label: "Later",
-    body: "Studio-owned products that still ship with a gate. Direction only.",
-  },
-] as const;
-
 const CLOSE_CHAPTERS = [
   { href: "#home-services", label: "Services" },
   { href: "#home-method", label: "Method" },
+  { href: "#home-gate", label: "Gate" },
   { href: "#home-examples", label: "Examples" },
   { href: "#home-brief", label: "Brief" },
   { href: "#home-roadmap", label: "Roadmap" },
@@ -75,10 +62,13 @@ function showStatic() {
     clearProps: "transform,opacity,visibility,filter",
     autoAlpha: 1,
   });
-  gsap.set(".home-mod__stage, .product-stage, .product-stage__panel", {
-    clearProps: "transform,opacity,visibility",
-    autoAlpha: 1,
-  });
+  gsap.set(
+    ".home-mod__stage, .product-stage, .product-stage__panel, .stage-still, .stage-still__panel, .ex-still__frame, .ex-still__frame .stage-still",
+    {
+      clearProps: "transform,opacity,visibility",
+      autoAlpha: 1,
+    },
+  );
 }
 
 function setStageStep(root: HTMLElement, step: "propose" | "approve" | "record") {
@@ -87,7 +77,10 @@ function setStageStep(root: HTMLElement, step: "propose" | "approve" | "record")
     el.setAttribute("data-active", el.dataset.step === step ? "true" : "false");
   });
   root.querySelectorAll<HTMLElement>("[data-panel]").forEach((el) => {
-    el.setAttribute("data-active", el.dataset.panel === step ? "true" : "false");
+    const active = el.dataset.panel === step;
+    el.setAttribute("data-active", active ? "true" : "false");
+    if (active) el.removeAttribute("aria-hidden");
+    else el.setAttribute("aria-hidden", "true");
   });
 }
 
@@ -154,11 +147,22 @@ export function HomeScenes() {
             motionOk: boolean;
           };
 
-          const stage = document.querySelector<HTMLElement>("[data-product-stage]");
-          if (stage) setStageStep(stage, "approve");
+          const stages = document.querySelectorAll<HTMLElement>(
+            "[data-product-stage]",
+          );
+          stages.forEach((node) => setStageStep(node, "approve"));
+          const stage = document.querySelector<HTMLElement>(
+            "[data-product-pin] [data-product-stage]",
+          );
 
           if (reduce || !motionOk) {
             showStatic();
+            stages.forEach((node) => {
+              node.querySelectorAll<HTMLElement>("[data-panel]").forEach((el) => {
+                el.removeAttribute("aria-hidden");
+                el.setAttribute("data-active", "true");
+              });
+            });
             return;
           }
 
@@ -254,7 +258,7 @@ export function HomeScenes() {
               cannot cross.
             </p>
             <div className="home-hero__actions" data-reveal>
-              <Link href="/contact" className="home-cta">
+              <Link href="/contact" className="home-cta cta-pill">
                 Start a brief.
               </Link>
               <Link href="/services" className="home-text-link">
@@ -302,6 +306,25 @@ export function HomeScenes() {
               ))}
             </ol>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="home-gate"
+        data-mod
+        className="home-mod home-mod--gate"
+        aria-labelledby="home-gate-h"
+      >
+        <div className="home-mod__inner home-mod__inner--gate">
+          <div className="home-mod__copy">
+            <h2 id="home-gate-h" className="home-headline" data-reveal>
+              The agent proposes. A person approves. The record stays.
+            </h2>
+            <p className="home-support" data-reveal>
+              One workflow. One agent. A human still decides.
+            </p>
+          </div>
+          <ProductStage variant="dark" />
         </div>
       </section>
 
@@ -379,7 +402,7 @@ export function HomeScenes() {
             {ROADMAP.map((row) => (
               <li key={row.label} className="home-timeline__row" data-road-row>
                 <span className="home-timeline__label">{row.label}</span>
-                <p className="home-timeline__body">{row.body}</p>
+                <p className="home-timeline__body">{row.summary}</p>
               </li>
             ))}
           </ol>
@@ -403,7 +426,7 @@ export function HomeScenes() {
               Start a brief.
             </h2>
             <p className="home-cta-wrap" data-reveal>
-              <Link href="/contact" className="home-cta">
+              <Link href="/contact" className="home-cta cta-pill">
                 Start a brief.
               </Link>
             </p>

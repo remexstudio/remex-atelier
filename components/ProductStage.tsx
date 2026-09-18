@@ -19,19 +19,36 @@ const STEPS = [
   },
 ] as const;
 
-export function ProductStage() {
+const MECHANISM_LINE = "Propose → Approve → Record";
+
+type ProductStageProps = {
+  variant?: "light" | "dark";
+};
+
+export function ProductStage({ variant = "light" }: ProductStageProps) {
+  const mechanismId =
+    variant === "dark" ? "product-stage-gate-mech" : "product-stage-hero-mech";
+
   return (
     <div
-      className="product-stage"
+      className={
+        variant === "dark"
+          ? "product-stage product-stage--dark"
+          : "product-stage"
+      }
       data-product-stage
+      data-stage-variant={variant}
       data-active-step="approve"
-      aria-hidden="true"
+      aria-labelledby={mechanismId}
     >
-      <div className="product-stage__specular" />
+      <div className="product-stage__specular" aria-hidden="true" />
       <div className="product-stage__chrome">
-        <span className="product-stage__lights" />
+        <span className="product-stage__lights" aria-hidden="true" />
         <p className="product-stage__seat">One seat</p>
       </div>
+      <p id={mechanismId} className="product-stage__mechanism">
+        {MECHANISM_LINE}
+      </p>
       <ol className="product-stage__rail">
         {STEPS.map((step) => (
           <li
@@ -51,6 +68,7 @@ export function ProductStage() {
             className="product-stage__panel"
             data-panel={step.id}
             data-active={step.id === "approve" ? "true" : "false"}
+            aria-hidden={step.id === "approve" ? undefined : true}
           >
             <p className="product-stage__kicker">{step.kicker}</p>
             <p className="product-stage__line">{step.line}</p>

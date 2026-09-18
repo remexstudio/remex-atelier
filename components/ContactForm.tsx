@@ -75,7 +75,7 @@ export function ContactForm() {
         </p>
         <button
           type="button"
-          className="contact-cta"
+          className="contact-cta cta-pill"
           onClick={() => setStatus("idle")}
         >
           Send another brief
@@ -149,7 +149,7 @@ export function ContactForm() {
         );
       })}
       <div className="contact-actions">
-        <button type="submit" className="contact-cta">
+        <button type="submit" className="contact-cta cta-pill">
           Send brief
         </button>
       </div>

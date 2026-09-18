@@ -222,7 +222,7 @@ export default function ServicesPage() {
               ))}
             </ul>
             <div className="svc-actions">
-              <Link href="/contact" className="film-cta">
+              <Link href="/contact" className="film-cta cta-pill">
                 Start a brief.
               </Link>
             </div>
