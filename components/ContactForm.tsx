@@ -120,6 +120,7 @@ export function ContactForm() {
           name="email"
           type="email"
           autoComplete="email"
+          autoCapitalize="none"
           inputMode="email"
           required
           spellCheck={false}
