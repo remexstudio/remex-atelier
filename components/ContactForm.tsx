@@ -32,7 +32,7 @@ const BRIEF_FIELDS = [
     label: BRIEF_ASKS[3],
     kind: "area",
     autoComplete: "off",
-    placeholder: "Proposal, decision, and outcome stay linked…",
+    placeholder: "Where the proposal and the decision should live.",
   },
 ] as const;
 
