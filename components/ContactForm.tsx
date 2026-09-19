@@ -18,7 +18,7 @@ const BRIEF_FIELDS = [
     label: BRIEF_ASKS[1],
     kind: "text",
     autoComplete: "off",
-    placeholder: "Named person on the client side…",
+    placeholder: "The person who approves.",
   },
   {
     name: "never",
