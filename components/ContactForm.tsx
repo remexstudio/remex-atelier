@@ -25,7 +25,7 @@ const BRIEF_FIELDS = [
     label: BRIEF_ASKS[2],
     kind: "area",
     autoComplete: "off",
-    placeholder: "Charge, post, execute, refund…",
+    placeholder: "Posting, charging, deleting, or moving money…",
   },
   {
     name: "record",
