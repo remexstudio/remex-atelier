@@ -87,7 +87,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate={false}>
+    <form className="contact-form" onSubmit={handleSubmit}>
       <div className="contact-field">
         <label htmlFor={nameId} className="contact-label">
           Name
