@@ -73,7 +73,7 @@ export function ContactForm() {
           Thanks. We&rsquo;ll read it and reply when a fit is clear.
         </p>
         <p className="contact-success__meta">
-          This is a studio mock — no message was sent.
+          Studio preview. Nothing was sent.
         </p>
         <button
           type="button"
