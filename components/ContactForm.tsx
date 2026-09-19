@@ -80,7 +80,7 @@ export function ContactForm() {
           className="contact-cta cta-pill"
           onClick={() => setStatus("idle")}
         >
-          Send another brief
+          Write another brief
         </button>
       </div>
     );
