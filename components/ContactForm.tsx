@@ -68,7 +68,7 @@ export function ContactForm() {
         id={successId}
         tabIndex={-1}
       >
-        <h2 className="contact-success__title">Brief received</h2>
+        <h2 className="contact-success__title">Brief noted</h2>
         <p className="contact-success__body">
           Thanks. We&rsquo;ll read it and reply when a fit is clear.
         </p>
