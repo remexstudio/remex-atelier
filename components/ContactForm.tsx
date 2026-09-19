@@ -100,6 +100,7 @@ export function ContactForm() {
           name="name"
           type="text"
           autoComplete="name"
+          autoCapitalize="words"
           required
           spellCheck={false}
           className="contact-input"
