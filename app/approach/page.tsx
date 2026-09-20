@@ -227,7 +227,7 @@ export default function ApproachPage() {
                 Start a brief.
               </h2>
               <p className="approach-close__lede">
-                Tell us the painful workflow. We design the agent and the gate.
+                Tell us the painful workflow and the gate.
               </p>
               <p className="approach-close__cta-wrap">
                 <Link href="/contact" className="approach-cta cta-pill">
