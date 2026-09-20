@@ -39,7 +39,7 @@ export default function LabPage() {
 
         <article className="film-panel lab-card">
           <p className="lab-card__flag">Prototype · not a client engagement</p>
-          <h1 className="film-title">Prototypes</h1>
+          <h1 className="film-title">Lab</h1>
           <h2 className="lab-card__name">Pulse</h2>
           <p className="film-lede">
             See a metric, notify a roster, log the event, follow up the rest.
