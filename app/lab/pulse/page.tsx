@@ -38,7 +38,7 @@ export default function PulsePage() {
         </aside>
 
         <header className="film-panel">
-          <p className="film-kicker">Prototype</p>
+          <p className="film-kicker">Loop</p>
           <h1 className="film-title">Pulse</h1>
           <p className="film-lede">
             See a metric, notify a roster, log the event, follow up the rest.
