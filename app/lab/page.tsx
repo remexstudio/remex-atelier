@@ -33,7 +33,7 @@ export default function LabPage() {
             Prototype · not a client engagement
           </p>
           <p className="film-lede">
-            Small loops we run to test craft. Not client work. Not studies.
+            Small loops for testing craft. Not client work.
           </p>
         </aside>
 
