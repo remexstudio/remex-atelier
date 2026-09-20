@@ -5,11 +5,11 @@ import { SiteChrome } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
+    "Agents, built to the brief. Legal entity: Jiyuyun Studio LLC.",
   openGraph: {
     title: "About · Remex Studio",
     description:
-      "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
+      "Agents, built to the brief. Legal entity: Jiyuyun Studio LLC.",
     url: "/about",
     type: "website",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "About · Remex Studio",
     description:
-      "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
+      "Agents, built to the brief. Legal entity: Jiyuyun Studio LLC.",
   },
 };
 
