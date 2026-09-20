@@ -11,7 +11,7 @@ const BRIEF_FIELDS = [
     label: BRIEF_ASKS[0],
     kind: "area",
     autoComplete: "off",
-    placeholder: "The weekly close, overnight mail, exception queue…",
+    placeholder: "The close, the inbox, or the exception queue…",
   },
   {
     name: "approver",
