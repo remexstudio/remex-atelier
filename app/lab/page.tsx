@@ -5,11 +5,11 @@ import { SiteChrome } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   title: "Lab",
   description:
-    "Remex Studio lab: prototypes that are not client engagements.",
+    "Lab prototypes. Not client engagements.",
   openGraph: {
     title: "Lab · Remex Studio",
     description:
-      "Remex Studio lab: prototypes that are not client engagements.",
+      "Lab prototypes. Not client engagements.",
     url: "/lab",
     type: "website",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Lab · Remex Studio",
     description:
-      "Remex Studio lab: prototypes that are not client engagements.",
+      "Lab prototypes. Not client engagements.",
   },
 };
 
