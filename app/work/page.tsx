@@ -12,7 +12,7 @@ import {
 } from "@/lib/selected-examples";
 
 const WORK_LEDE =
-  "Proof of method. Each example is one seat — a job, a gate, and a record — not a catalog.";
+  "Proof of method. Each example is one seat: a job, a gate, and a record.";
 
 export const metadata: Metadata = {
   title: INDEX_LABEL,
