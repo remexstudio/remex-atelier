@@ -27,7 +27,7 @@ export default function LabPage() {
   return (
     <SiteChrome variant="film">
       <main id="main" className="film-page lab-page">
-        <aside className="film-panel lab-banner" aria-label="Prototype notice">
+        <aside className="film-panel lab-banner" aria-label="Lab notice">
           <p className="film-kicker">Lab</p>
           <p className="lab-banner__mark">
             Prototype · not a client engagement
