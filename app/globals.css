@@ -6656,7 +6656,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.875rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .contact-success .contact-cta {
