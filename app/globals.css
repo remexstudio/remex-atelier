@@ -2761,6 +2761,10 @@ button:active {
   color: var(--muted);
 }
 
+.ex-study {
+  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
+}
+
 .ex-display {
   margin: 0.7rem 0 0;
   max-width: 18ch;
