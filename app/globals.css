@@ -2292,7 +2292,7 @@ button:active {
   max-width: 34rem;
   font-size: 1.0625rem;
   line-height: 1.5;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
   text-wrap: pretty;
 }
 
@@ -8691,7 +8691,7 @@ button:active {
   max-width: 36rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .work-index__list {
