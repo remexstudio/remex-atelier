@@ -694,6 +694,7 @@ button:active {
 
 .site-footer__legal {
   margin-bottom: 0.65rem;
+  letter-spacing: 0;
 }
 
 .site-footer__note {
