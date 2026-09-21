@@ -6708,7 +6708,7 @@ button:active {
   font-size: var(--size-eyebrow);
   line-height: 1.3;
   letter-spacing: var(--tracking-eyebrow);
-  color: var(--secondary);
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
 }
 
 .film-title {
