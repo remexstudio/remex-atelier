@@ -699,6 +699,7 @@ button:active {
 .site-footer__note {
   margin-top: -0.35rem;
   margin-bottom: 0.65rem;
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .site-footer__nav {
