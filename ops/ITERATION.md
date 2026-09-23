@@ -1,10 +1,22 @@
-# UI campaign iteration
+# Canon cycle
+
+Owner doctrine for names, offer, and how the site is built. Continuous until C0–C5 match `docs/CANON.md`.
+
+Previous UI campaign appearance is **CLOSED**. Do not invent UI-6. That record is kept below.
+
+Hard bans: no Seattle shop geography slogan; no “global clients” slogan; no founder legal name on the marketing site; no English-first market claim; no only-four-agents; no four desks as SKUs.
+
+## This loop
+
+**ACTIVE: C0.** `docs/CANON.md` is the company spirit and construction doctrine. Docs and ops only. No `app/` or `components/` edits. No live copy rewrite.
+
+## Next
+
+C1 product footer, only after Leader REVIEW of C0. Do not start C1 in the C0 PR.
+
+## Closed — UI campaign
 
 Owner FAIL (pre-UI-0): live home first screen failed apple.com product-page grammar. Continuous until appearance DoD green.
-
-Hard bans: no Seattle/Global; no founder; no /demo as product; do not rewrite thesis/offers/routes.
-
-## Closed
 
 - UI-0 **PASS**: Geist display tokens (weight 600, tracking `-0.03em` at 56–80px); owner palette; frosted 46px nav; near-black pill; no `#1d4ed8`.
 - UI-1 **PASS**: first-viewport product stage (tip `ff8a3ae`).
@@ -14,10 +26,4 @@ Hard bans: no Seattle/Global; no founder; no /demo as product; do not rewrite th
 - UI-5 **PASS**: still fidelity (merge tip `11406c3`).
 - Appearance DoD **PASS** on prod `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`.
 
-## This loop
-
-**CLOSED.** First live screenshot is ProductStage + strip + near-black pill, not title + gray card.
-
-## Next
-
-Dev standby. Soft backlog only. Do not invent UI-6.
+That loop is **CLOSED**. First live screenshot of that campaign is ProductStage + strip + near-black pill, not title + gray card. Soft backlog only from that campaign. Do not invent UI-6.
