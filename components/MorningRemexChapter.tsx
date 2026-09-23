@@ -158,7 +158,7 @@ export function MorningRemexChapter() {
         <ol className="ex-stills__list">
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="attention" id="mail" />
               </div>
               <figcaption className="ex-still__caption">
@@ -171,7 +171,7 @@ export function MorningRemexChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="attention" id="lanes" />
               </div>
               <figcaption className="ex-still__caption">
@@ -184,7 +184,7 @@ export function MorningRemexChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="attention" id="tones" />
               </div>
               <figcaption className="ex-still__caption">
@@ -197,7 +197,7 @@ export function MorningRemexChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="attention" id="hold" />
               </div>
               <figcaption className="ex-still__caption">
@@ -210,7 +210,7 @@ export function MorningRemexChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="attention" id="packet" />
               </div>
               <figcaption className="ex-still__caption">

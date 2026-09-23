@@ -158,7 +158,7 @@ export function LedgerClerkChapter() {
         <ol className="ex-stills__list">
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="knowledge" id="sources" />
               </div>
               <figcaption className="ex-still__caption">
@@ -171,7 +171,7 @@ export function LedgerClerkChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="knowledge" id="corpus" />
               </div>
               <figcaption className="ex-still__caption">
@@ -184,7 +184,7 @@ export function LedgerClerkChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="knowledge" id="propose" />
               </div>
               <figcaption className="ex-still__caption">
@@ -197,7 +197,7 @@ export function LedgerClerkChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="knowledge" id="gate" />
               </div>
               <figcaption className="ex-still__caption">
@@ -210,7 +210,7 @@ export function LedgerClerkChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="knowledge" id="audit" />
               </div>
               <figcaption className="ex-still__caption">
