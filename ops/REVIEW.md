@@ -1,3 +1,13 @@
+# REVIEW — C1 CLOSED
+
+- Slice: C1 product footer
+- Canon: **PASS**
+- Commit: `c86afe0` (`feat(site): replace lab footer with product footer for C1`)
+- Merge: `963df8d` on `main` (`Merge pull request #44 from remexstudio/cursor/c1-product-footer-2e54`)
+- C1 CLOSED. Canon Cycle continues at C2.
+
+---
+
 # REVIEW — C0 CLOSED
 
 - Slice: C0 `docs/CANON.md`

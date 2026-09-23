@@ -125,6 +125,30 @@ export default function ApproachPage() {
             </ol>
 
             <div className="approach-band__foot">
+              <h2 id="approach-studio-h" className="approach-section__title">
+                Studio
+              </h2>
+              <p className="approach-studio__line" translate="no">
+                Remex Studio · <span lang="zh">机羽云 Studio</span> · Jiyuyun
+                Studio LLC
+              </p>
+              <dl className="approach-studio__facts">
+                <div className="approach-studio__fact">
+                  <dt>English</dt>
+                  <dd translate="no">Remex Studio</dd>
+                </div>
+                <div className="approach-studio__fact">
+                  <dt>Chinese</dt>
+                  <dd lang="zh" translate="no">
+                    机羽云 Studio
+                  </dd>
+                </div>
+                <div className="approach-studio__fact">
+                  <dt>Legal</dt>
+                  <dd translate="no">Jiyuyun Studio LLC</dd>
+                </div>
+              </dl>
+
               <h2 id="approach-name-h" className="approach-section__title">
                 Name meaning
               </h2>
@@ -155,16 +179,6 @@ export default function ApproachPage() {
                   <span className="approach-name__gloss">remiges</span>
                 </li>
               </ul>
-
-              <h2 id="approach-studio-h" className="approach-section__title">
-                Studio
-              </h2>
-              <dl className="approach-studio__facts">
-                <div className="approach-studio__fact">
-                  <dt>Legal</dt>
-                  <dd>Jiyuyun Studio LLC</dd>
-                </div>
-              </dl>
             </div>
           </div>
         </section>
