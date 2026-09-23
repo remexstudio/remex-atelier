@@ -1,46 +1,38 @@
-# Handoff C5
+# Handoff C-DoD
 
-- Status: **DEV COMPLETE** — awaiting Leader REVIEW
-- TASK ID: C5
-- Commit: `feat(site): inner pages canon polish for C5`
-- Base: `0038290` (`main`, C4 merge)
-- Phase: **CANON CYCLE — ACTIVE C5**
-- Previous: C4 **CLOSED** — Canon PASS `ad1afd3` / merge `0038290`
-- Next: do not invent C6 in this PR. Do not merge this PR from Dev.
+- Status: **CLOSED** — live Canon DoD **11/11 PASS**
+- TASK ID: C-DoD
+- Tip: `ff9fab7` (`Merge pull request #48 from remexstudio/cursor/c5-inner-canon-polish-2e15`)
+- C5 commit: `c00477d` (`feat(site): inner pages canon polish for C5`)
+- Prod: `dpl_B7pChHN78p1pBgLzV9hEgemw2yKA` **READY**
+- URL: https://remex-atelier.vercel.app
+- Phase: **CANON CYCLE CLOSED**
+- Previous: C5 **CLOSED** — Canon PASS `c00477d` / merge `ff9fab7`
+- Next: do not invent C6. Dev standby. Leader opens a polish slice only if the owner wants the loop to continue.
 
-## What shipped
+## Deploy
 
-`/services` opens as a catalog: title Services, lede Design, Build, and Operations, then three large rows with small stills (200px). The home headline stack is not reprinted there, and the page does not mount a ProductStage. The Build still is a first-seat spec, not a Propose → Approve → Record wallpaper of the home stage.
+The production alias was still UI-5 (`11406c3`, `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`). A production deployment of `main` @ `ff9fab77dad6dc4bef5d69f3371aa039d4dafb47` was created. It reached READY and took `remex-atelier.vercel.app`.
 
-`/work` keeps a still, a short teaser, and Read the full example → at 44px. The index lede does not sell four seats as the catalog. Home still uses the shared examples lede.
+## What was measured
 
-Story reading measures 680px at 1440. Stills stay in a sequence under that column (Demand desk still height 234, not the 520 home stage). Approach still prints the three names on three bands and has no stage. Contact is a 1px hairline sheet and a `#1d1d1f` pill at 44px.
+Headless Chrome against the live alias, viewports 1440×900 and 375×812, motion and `prefers-reduced-motion: reduce`.
 
-## Scope held
+Routes: `/` `/services` `/work` `/approach` `/contact` `/work/atelier-concierge/story`.
 
-Every checked main route renders one C1 product footer: lockup Remex Studio, legal row Remex Studio · 机羽云 Studio · Jiyuyun Studio LLC, wayfinding Work · Services · Approach · Contact. Desktop primary nav is those four links. No Seattle. No English-first.
-
-Home C3/C4 held: one `[data-product-stage]`, height 520, headline “Agents, built to the brief.”, mechanism Propose → Approve → Record, opening beat Propose.
-
-## Soft ADD
-
-Propose-first default on the home stage is **accepted**. Do not reopen unless that beat is broken.
-
-## Verify
-
-- `pnpm build` PASS
-- Headless Chrome, 1440 and 375: `/` `/services` `/work` `/approach` `/contact` `/work/atelier-concierge/story`
-- Services: zero product stages; rows Design, Build, Operations; stills 200px
-- Work: teaser lengths 114 / 142 / 117 / 135; read target 44; click opens `/work/atelier-concierge/story`
-- Story: narrative width 680 at 1440 (343 at 375, under the 680 cap); five stills; no product stage
-- Approach: three names; three bands; no product stage
-- Contact: sheet border 1px; pill `rgb(29, 29, 31)` / 44; submit reaches “Brief received”
-- Home: one stage, 520, active step Propose
+- One home ProductStage. Scrub steps Propose → Approve → Record on that pin only. Approve pill `rgb(29, 29, 31)`.
+- Reduced motion: three static frames, mechanism lines have height, zero pins, scroll reaches the document end, overflow stays `visible`.
+- Catalog names are 32px (1440) / 24px (375), weight 600, ink.
+- Selected examples are short cards (114 / 142 / 117 / 135) with “Read the full example →”.
+- No Seattle, no “global clients”, no English-first. Services FAQ asks “Do you sell four agents?” and answers No.
+- Header is the four links. Footer is the product close. Prototype / About are transparent text, not a gray slab.
+- Approach prints Remex Studio · 机羽云 Studio · Jiyuyun Studio LLC together.
+- `/services` has zero product stages. Story reading is 680px at 1440 and 343px at 375, with five stills under 240px.
 
 ## Acceptance
 
-- [x] No home-hero clone on `/services`
-- [x] Work short + story entry; story narrow + stills
-- [x] Product footer everywhere; Approach three names held
-- [x] Home C3/C4 not regressed; pnpm build PASS; PR open; not merged
-- [x] C4 CLOSED stamped in REVIEW (Canon PASS `ad1afd3` / merge `0038290`)
+- [x] Prod READY on tip `ff9fab7` (`dpl_B7pChHN78p1pBgLzV9hEgemw2yKA`)
+- [x] Checklist 1–11 PASS at 375 and 1440
+- [x] No C6 ticket
+- [x] C0–C5 marked CLOSED
+- [x] Soft polish left on the backlog
