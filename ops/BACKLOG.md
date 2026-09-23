@@ -9,7 +9,10 @@ UI-0…UI-5 appearance campaign stays **CLOSED**. Do not invent UI-6. No Seattle
 - [x] C2 — **CLOSED** — Canon PASS `45e6761` / merge `a5139cc`
 - [x] C3 — **CLOSED** — Canon PASS `ff610e4` / merge `7953363`
 - [x] C4 — **CLOSED** — Canon PASS `ad1afd3` / merge `0038290`. Soft ADD accepted: Propose-first default. Do not reopen unless broken.
-- [ ] C5 — **ACTIVE** — inner pages. DEV COMPLETE. Awaiting Leader REVIEW. Do not invent C6 in this PR.
+- [x] C5 — **CLOSED** — Canon PASS `c00477d` / merge `ff9fab7`.
+- [x] C-DoD — **CLOSED** — live **11/11 PASS**. Tip `ff9fab7`. Prod `dpl_B7pChHN78p1pBgLzV9hEgemw2yKA`. Do not invent C6.
+
+Canon planned map **C0–C5 CLOSED**. Dev standby. Leader opens the next polish slice only if the owner wants the loop to continue.
 
 ## Closed UI campaign
 
@@ -25,11 +28,18 @@ V7 appearance closed and superseded by owner continuous UI FAIL. UI-0…UI-5 app
 - [x] UI-5 still fidelity — **PASS** (`11406c3`)
 - [x] Appearance DoD on prod `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe` — **PASS**. Campaign CLOSED. Do not invent UI-6.
 
+## Soft polish (parked — not a slice)
+
+Dev standby. These are not hard FAILs and do not open C6.
+
+- [ ] StageStill `aria-hidden` DNA via adjacent copy — **SOFT**; DNA readable next to stills
+- [ ] Compact `desk-ui__fact` (~1rem) — **SOFT**; readable
+- [x] Propose-first default on the home stage — **accepted**. Do not reopen unless broken.
+- Record-beat pill uses gutter `rgb(245, 245, 247)`. Approve stays the filled beat `rgb(29, 29, 31)`. Not a Canon FAIL.
+
 ## Soft (absorbed / parked)
 
 - [x] Replace literal `Georgia` / `ui-serif` fallbacks with Geist/system — **ABSORBED in UI-1** (`globals.css`) and **UI-2** (`components/lab/pulse.css`)
 - [x] Still kickers may label Ask→Recommend→Gate→Record — **ABSORBED in UI-5** (`desk-ui__kicker` on story / teaser stills)
-- [ ] StageStill `aria-hidden` DNA via adjacent copy — **SOFT**; DNA readable next to stills; no hard FAIL
-- [ ] Compact `desk-ui__fact` (~1rem) — **SOFT**; readable; no hard FAIL
 
-Do not invent pages.
+Open soft items live in the section above. Do not invent pages.

@@ -1,6 +1,6 @@
 # Canon cycle
 
-Owner doctrine for names, offer, and how the site is built. Continuous until C0–C5 match `docs/CANON.md`.
+Owner doctrine for names, offer, and how the site is built. C0–C5 match `docs/CANON.md` on live production. Cycle **CLOSED**.
 
 Previous UI campaign appearance is **CLOSED**. Do not invent UI-6. That record is kept below.
 
@@ -8,13 +8,13 @@ Hard bans: no Seattle shop geography slogan; no “global clients” slogan; no 
 
 ## This loop
 
-**ACTIVE: C5.** Inner pages use the product footer and catalog grammar. `/services` is not a second home stage. C4 is **CLOSED** (Canon PASS `ad1afd3`, merge `0038290`).
+**CLOSED.** Live DoD **11/11 PASS** at tip `ff9fab7`, prod `dpl_B7pChHN78p1pBgLzV9hEgemw2yKA`. C0–C5 are CLOSED. Do not invent C6.
 
 Soft ADD, accepted: the home stage opens on Propose. Do not reopen unless that beat is broken.
 
 ## Next
 
-Leader REVIEW of C5. Do not invent C6 in the C5 PR.
+Dev standby. Leader opens the next polish slice only if the owner wants the loop to continue. Soft polish stays in `ops/BACKLOG.md`.
 
 ## Closed — UI campaign
 
