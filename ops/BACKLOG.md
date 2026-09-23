@@ -5,8 +5,8 @@
 UI-0…UI-5 appearance campaign stays **CLOSED**. Do not invent UI-6. No Seattle / global-clients slogan. No founder legal name on the marketing site. No English-first market claim. Four desks are examples, not SKUs.
 
 - [x] C0 — **CLOSED** — Canon PASS `b25bc43` / merge `9015ee1`
-- [ ] C1 — **ACTIVE** — product footer. DEV COMPLETE. Awaiting Leader REVIEW. Do not start C2 in this PR.
-- [ ] C2 — Approach legal
+- [x] C1 — **CLOSED** — Canon PASS `c86afe0` / merge `963df8d`
+- [ ] C2 — **ACTIVE** — Approach legal. DEV COMPLETE. Awaiting Leader REVIEW. Do not start C3 in this PR.
 - [ ] C3 — home, one stage, one loop
 - [ ] C4 — stage scroll motion
 - [ ] C5 — inner pages

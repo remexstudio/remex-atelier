@@ -1,42 +1,37 @@
-# Handoff C1
+# Handoff C2
 
 - Status: **DEV COMPLETE** — awaiting Leader REVIEW
-- TASK ID: C1
-- Commit: `feat(site): replace lab footer with product footer for C1`
-- Base: `9015ee1` (`main`, C0 merge)
-- Phase: **CANON CYCLE — ACTIVE C1**
-- Previous: C0 **CLOSED** — Canon PASS `b25bc43` / merge `9015ee1`
-- Next: C2 Approach legal. Do not start C2 in this PR. Do not merge this PR from Dev.
+- TASK ID: C2
+- Commit: `feat(approach): print three studio names for C2`
+- Base: `963df8d` (`main`, C1 merge)
+- Phase: **CANON CYCLE — ACTIVE C2**
+- Previous: C1 **CLOSED** — Canon PASS `c86afe0` / merge `963df8d`
+- Next: C3 home, one stage, one loop. Do not start C3 in this PR. Do not merge this PR from Dev.
 
 ## What shipped
 
-- Product footer on every `SiteChrome` route: lockup **Remex Studio**, legal row **Remex Studio · 机羽云 Studio · Jiyuyun Studio LLC**, wayfinding **Work · Services · Approach · Contact**.
-- Prototype and About remain quiet text links (`#6e6e73`), not a second chrome system.
-- Removed `site-footer--film` / `site-footer--default` inset slab. Footer is full-bleed `#fff` with a hairline, no drop shadow.
-- Study line `Studio study. Client identity anonymized.` stays quiet text on story routes.
-- Header four-link nav unchanged.
+- Approach Studio block prints the three names together: **Remex Studio · 机羽云 Studio · Jiyuyun Studio LLC**.
+- Labeled rows under that line: English Remex Studio, Chinese 机羽云 Studio, Legal Jiyuyun Studio LLC. The legal entity is not the only name in the block. No second company.
+- Name meaning stays once on Approach, after the three names (Remex = remiges; 机 / 羽 / 云). It is not repeated on other routes.
+- Now / Next / Later unchanged: one gated seat / reuse the method on a new seat / modules still gated.
+- C1 product footer untouched: lockup Remex Studio, legal row with the same three names, four wayfinding links, quiet Prototype / About.
 
-## Before / after
+## Dead CSS
 
-- Before: after “Start a brief.”, a gray film band held a white max-width slab whose only links were Prototype and About.
-- After: the footer continues the white product surface. Hairline, lockup, three-name legal row, four nav links, then quiet Prototype / About. No gray inset bar.
+Scanned `app/globals.css` for leftover film-footer selectors (`.site-footer--film`, `.site-footer--default`, `.site-footer__row`, `.site-footer__links`). C1 already removed them. None remain. No footer CSS deleted in this slice. Added only `.approach-studio__line`.
 
 ## Scope held
 
-Approach body still prints the legal entity alone (C2). Home stage and chapter map untouched (C3/C4). No four-desk copy changes. No new offers.
+Home stage and chapters untouched (C3/C4). No footer redesign. No new offers. No Seattle, global-clients, English-first, or founder name.
 
 ## Verify
 
-- `pnpm exec tsc --noEmit` PASS
-- `pnpm exec eslint components/SiteFooter.tsx components/SiteChrome.tsx` PASS
 - `pnpm build` PASS
-- Headless Chrome at 375 and 1440 on `/`, `/services`, `/work`, `/approach`, `/contact`, `/work/atelier-concierge/story`: footer full-bleed `#fff`, shadow none, hairline `rgba(0,0,0,0.08)`, no horizontal overflow, nav links height 44, focus ring `#1d1d1f` 2px, footer Services link navigates to `/services`. No Seattle / Global clients in body text. No `site-footer--film`.
+- Approach body contains the Canon name line and the three labeled rows. Footer on `/approach` still the C1 product close.
 
 ## Acceptance
 
-- [x] Gray Prototype/About slab gone site-wide
-- [x] Product footer: Remex Studio + legal row with three names + four nav links
-- [x] Prototype/About only quiet text
-- [x] No Seattle; routes locked; four-link header nav unchanged
-- [x] `pnpm build` PASS
-- [x] PR ready for review; not merged; C2 not started
+- [x] Approach shows Remex Studio + 机羽云 Studio + Jiyuyun Studio LLC together
+- [x] LLC not alone; no Seattle; C1 footer not regressed
+- [x] `pnpm build` PASS; PR open; not merged; C3 not started
+- [x] C1 CLOSED stamped in REVIEW (Canon PASS `c86afe0` / merge `963df8d`)

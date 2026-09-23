@@ -6177,6 +6177,18 @@ button:active {
   color: var(--ink);
 }
 
+.approach-studio__line {
+  margin: 1rem 0 0;
+  max-width: 40rem;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  letter-spacing: -0.011em;
+  color: var(--ink);
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
 .approach-studio__facts {
   margin: 1.25rem 0 0;
   max-width: 42rem;

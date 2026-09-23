@@ -8,11 +8,11 @@ Hard bans: no Seattle shop geography slogan; no “global clients” slogan; no 
 
 ## This loop
 
-**ACTIVE: C1.** Product footer is the product close. C0 is **CLOSED** (Canon PASS `b25bc43`, merge `9015ee1`).
+**ACTIVE: C2.** Approach prints Remex Studio, 机羽云 Studio, and Jiyuyun Studio LLC together. C1 is **CLOSED** (Canon PASS `c86afe0`, merge `963df8d`).
 
 ## Next
 
-C2 Approach legal, only after Leader REVIEW of C1. Do not start C2 in the C1 PR.
+C3 home, one stage, one loop, only after Leader REVIEW of C2. Do not start C3 in the C2 PR.
 
 ## Closed — UI campaign
 
