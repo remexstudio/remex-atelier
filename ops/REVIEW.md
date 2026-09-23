@@ -1,3 +1,13 @@
+# REVIEW — C0 CLOSED
+
+- Slice: C0 `docs/CANON.md`
+- Canon: **PASS**
+- Commit: `b25bc43` (`docs(canon): add CANON.md for C0`)
+- Merge: `9015ee1` on `main` (`Merge pull request #43 from remexstudio/cursor/canon-c0-065a`)
+- C0 CLOSED. Canon Cycle continues at C1.
+
+---
+
 # REVIEW — UI appearance DoD CLOSED
 
 - Tip: `11406c3`

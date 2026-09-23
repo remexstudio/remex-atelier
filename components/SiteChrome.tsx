@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SiteFooter } from "@/components/SiteFooter";
 import { isPrimaryCurrent, SiteNavMenu } from "@/components/SiteNavMenu";
 
 type SiteChromeProps = {
@@ -14,18 +15,13 @@ type SiteChromeProps = {
 
 /**
  * Primary nav — marketing routes only. Never link /demo/* here.
- * Work / Services / Approach / Contact. Lab is Prototype-labeled in footer.
+ * Work / Services / Approach / Contact. Prototype and About stay quiet in the footer.
  */
 const NAV = [
   { href: "/work", label: "Work" },
   { href: "/services", label: "Services" },
   { href: "/approach", label: "Approach" },
   { href: "/contact", label: "Contact" },
-] as const;
-
-const FOOTER_SECONDARY = [
-  { href: "/lab", label: "Prototype" },
-  { href: "/about", label: "About" },
 ] as const;
 
 export function SiteChrome({
@@ -72,31 +68,7 @@ export function SiteChrome({
         {children}
       </div>
 
-      <footer
-        className={
-          isFilm
-            ? "site-footer site-footer--film"
-            : "site-footer site-footer--default"
-        }
-      >
-        <div className="site-footer__row">
-          {footerLine ? <p className="type-meta">{footerLine}</p> : null}
-          <nav aria-label="Secondary" className="site-footer__links">
-            {FOOTER_SECONDARY.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="no-underline"
-                aria-label={
-                  item.href === "/lab" ? "Lab prototypes" : undefined
-                }
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter links={NAV} pathname={pathname} footerLine={footerLine} />
     </div>
   );
 }

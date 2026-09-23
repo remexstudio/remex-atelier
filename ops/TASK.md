@@ -1,34 +1,46 @@
-# TASK — C0
+# TASK — C1
 
-TASK ID: C0
+TASK ID: C1
 REPO: remexstudio/remex-atelier
-BASE: main tip `b8af298` (UI appearance campaign CLOSED)
-GOAL: Create `docs/CANON.md` — English company spirit and site construction doctrine. Docs only. No app/ UI changes. No live copy rewrites (those are C1–C5).
+BASE: main tip after C0 merge (`9015ee1`)
+GOAL: Replace the site-wide footer with a product footer. Kill the gray Prototype/About slab (`site-footer--film` leftover lab chrome). Appearance and product close only.
 
 ## Cycle
 
-**Canon Cycle — ACTIVE C0.** Previous UI campaign (UI-0…UI-5, appearance DoD) stays **CLOSED**. Do not invent UI-6. Do not start C1 in this PR.
+**Canon Cycle — ACTIVE C1.** C0 is CLOSED (Canon PASS `b25bc43` / merge `9015ee1`). Do not start C2 in this PR.
 
 ## Required
 
-`docs/CANON.md` covers company spirit, what the site is for, construction tests, and the C0–C5 slice map. English only.
+Same product footer on every main route:
+
+1. Product lockup: Remex Studio
+2. Quiet legal row: Remex Studio · 机羽云 Studio · Jiyuyun Studio LLC
+3. Four links: Work · Services · Approach · Contact (≥44 hit targets; focus-visible)
+4. Prototype and About only as quiet text links
+5. Footer reads as the product close after the CTA
+6. Tokens: #fff / #f5f5f7 / #1d1d1f / #6e6e73; hairlines; no #1d4ed8; no drop shadows
+7. 375 and 1440 stack cleanly; no horizontal overflow
 
 ## ALLOWED FILES
 
-- `docs/CANON.md`
+- `components/SiteFooter.tsx`
+- `components/SiteChrome.tsx`
+- `app/globals.css` (footer classes only)
 - `ops/*`
 
 ## OUT OF SCOPE
 
-`app/`, `components/`, footer UI (C1), Approach page edit (C2), live copy rewrites.
+C2 Approach body legal rewrite. C3 home dedupe. C4 motion. Four-desk copy. New offers.
 
 ## ACCEPTANCE
 
-- [x] `docs/CANON.md` exists, English, complete canon
-- [x] ops stamped Active C0
-- [x] `pnpm build` still PASS (no code change expected)
-- [x] PR ready for review; do not merge; do not start C1 in this PR
+- [x] Gray Prototype/About slab gone site-wide
+- [x] Product footer: Remex Studio + legal row with three names + four nav links
+- [x] Prototype/About only quiet text
+- [x] No Seattle; routes locked; four-link header nav unchanged
+- [x] `pnpm build` PASS
+- [x] PR ready for review; not merged; C2 not started
 
 ## COMMIT
 
-docs(canon): add CANON.md for C0
+feat(site): replace lab footer with product footer for C1

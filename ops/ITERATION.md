@@ -8,11 +8,11 @@ Hard bans: no Seattle shop geography slogan; no “global clients” slogan; no 
 
 ## This loop
 
-**ACTIVE: C0.** `docs/CANON.md` is the company spirit and construction doctrine. Docs and ops only. No `app/` or `components/` edits. No live copy rewrite.
+**ACTIVE: C1.** Product footer is the product close. C0 is **CLOSED** (Canon PASS `b25bc43`, merge `9015ee1`).
 
 ## Next
 
-C1 product footer, only after Leader REVIEW of C0. Do not start C1 in the C0 PR.
+C2 Approach legal, only after Leader REVIEW of C1. Do not start C2 in the C1 PR.
 
 ## Closed — UI campaign
 
