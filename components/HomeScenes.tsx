@@ -22,9 +22,19 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 /*
  * HARD BAN (scroll stack): no Lenis, no ScrollTrigger.normalizeScroll(),
  * no body/html overflow lock while pinned — native scroll only (zero-jank).
- * UI-1: no pin at load on the first viewport. Transform/opacity only.
- * Reduced motion / JS-off: full commercial payload stays readable.
+ * C4: pin+scrub the one home ProductStage only. Transform/opacity on its
+ * panels. Do not pin the headline. End ceiling +=80% (scroll-score cap).
+ * Reduced motion: no pin. Three static frames, all text visible.
  */
+
+const STAGE_STEPS = ["propose", "approve", "record"] as const;
+type StageStep = (typeof STAGE_STEPS)[number];
+
+function stageStepAt(progress: number): StageStep {
+  if (progress < 0.35) return "propose";
+  if (progress < 0.67) return "approve";
+  return "record";
+}
 
 const SERVICE_STRIP = [
   { id: "design", short: "Design" },
@@ -106,24 +116,34 @@ export function HomeScenes() {
             motionOk: boolean;
           };
 
-          const stages = document.querySelectorAll<HTMLElement>(
+          const root = rootRef.current;
+          const pinEl = root?.querySelector<HTMLElement>(
+            "#home-hero [data-stage-pin]",
+          );
+          const heroStage = pinEl?.querySelector<HTMLElement>(
             "[data-product-stage]",
           );
-          stages.forEach((node) => setStageStep(node, "approve"));
-          const heroStage = document.querySelector<HTMLElement>(
-            "#home-hero [data-product-stage]",
+          const panels = STAGE_STEPS.map((id) =>
+            heroStage?.querySelector<HTMLElement>(`[data-panel="${id}"]`),
           );
 
           if (reduce || !motionOk) {
             showStatic();
-            stages.forEach((node) => {
-              node.querySelectorAll<HTMLElement>("[data-panel]").forEach((el) => {
+            heroStage?.querySelectorAll<HTMLElement>("[data-panel]").forEach(
+              (el) => {
                 el.removeAttribute("aria-hidden");
                 el.setAttribute("data-active", "true");
-              });
-            });
+              },
+            );
+            heroStage?.querySelectorAll<HTMLElement>("[data-step]").forEach(
+              (el) => {
+                el.setAttribute("data-active", "false");
+              },
+            );
             return;
           }
+
+          if (heroStage) setStageStep(heroStage, "propose");
 
           gsap.utils
             .toArray<HTMLElement>("[data-mod]:not(.home-mod--hero)")
@@ -151,33 +171,61 @@ export function HomeScenes() {
             });
 
           /*
-           * C3: one stage. No pin on the first viewport.
-           * Approve stays filled while the hero is on screen.
-           * C4 owns the full three-state scrub; this hook only steps the
-           * same stage after the hero has left, transform/opacity only.
+           * One pin, on the stage module only. The headline is not a pin
+           * target. Scrub is 1:1 with native scroll (no catch-up lag).
+           * Holds keep each beat readable; crossfades are opacity only.
            */
-          if (heroStage) {
-            const steps = ["propose", "approve", "record"] as const;
-            const hero = heroStage.closest<HTMLElement>("#home-hero") || heroStage;
+          if (
+            pinEl &&
+            heroStage &&
+            panels[0] &&
+            panels[1] &&
+            panels[2]
+          ) {
+            const [proposePanel, approvePanel, recordPanel] = panels as [
+              HTMLElement,
+              HTMLElement,
+              HTMLElement,
+            ];
+            let active: StageStep = "propose";
 
-            ScrollTrigger.create({
-              trigger: hero,
-              start: "bottom top",
-              end: "+=80%",
-              scrub: 0.65,
-              invalidateOnRefresh: true,
-              onUpdate: (self) => {
-                const idx = Math.min(
-                  steps.length - 1,
-                  Math.floor(self.progress * steps.length),
-                );
-                setStageStep(heroStage, steps[idx]);
-              },
-              onLeaveBack: () => setStageStep(heroStage, "approve"),
-              onRefresh: (self) => {
-                if (self.progress === 0) setStageStep(heroStage, "approve");
+            const applyStep = (next: StageStep) => {
+              if (next === active) return;
+              active = next;
+              setStageStep(heroStage, next);
+            };
+
+            gsap.set([proposePanel, approvePanel, recordPanel], {
+              autoAlpha: 0,
+            });
+            gsap.set(proposePanel, { autoAlpha: 1 });
+
+            const tl = gsap.timeline({
+              defaults: { ease: "none" },
+              scrollTrigger: {
+                id: "home-product-stage",
+                trigger: pinEl,
+                start: "clamp(top 72px)",
+                end: "+=80%",
+                pin: true,
+                pinSpacing: true,
+                pinType: "fixed",
+                scrub: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+                onUpdate: (self) => applyStep(stageStepAt(self.progress)),
+                onRefresh: (self) => {
+                  active = stageStepAt(self.progress);
+                  setStageStep(heroStage, active);
+                },
               },
             });
+
+            tl.to(proposePanel, { autoAlpha: 0, duration: 0.1 }, 0.3)
+              .to(approvePanel, { autoAlpha: 1, duration: 0.1 }, 0.3)
+              .to(approvePanel, { autoAlpha: 0, duration: 0.1 }, 0.62)
+              .to(recordPanel, { autoAlpha: 1, duration: 0.1 }, 0.62)
+              .to(recordPanel, { autoAlpha: 1, duration: 0.28 }, 0.72);
           }
 
           const refresh = () => ScrollTrigger.refresh();
@@ -188,7 +236,7 @@ export function HomeScenes() {
 
           return () => {
             window.removeEventListener("load", refresh);
-            if (heroStage) setStageStep(heroStage, "approve");
+            if (heroStage) setStageStep(heroStage, "propose");
           };
         },
       );
@@ -230,7 +278,7 @@ export function HomeScenes() {
               </Link>
             </div>
           </div>
-          <div className="home-hero__stage">
+          <div className="home-hero__stage" data-stage-pin>
             <ProductStage />
           </div>
         </div>
@@ -248,7 +296,7 @@ export function HomeScenes() {
               Services
             </h2>
             <p className="home-support" data-reveal>
-              Agent product design, Agent build, and Agent operations.
+              Design, Build, and Operations.
             </p>
             <p className="home-svc__for" data-reveal>
               <span className="home-svc__label">For</span>

@@ -926,8 +926,17 @@ button:active {
 }
 
 .home-hero__stage {
+  position: relative;
+  z-index: 1;
   width: 100%;
   min-width: 0;
+}
+
+/* Pin spacer stays a grid/flex item. The stage pins; the headline does not. */
+.home-mod__inner--hero > .pin-spacer {
+  min-width: 0;
+  max-width: 100%;
+  z-index: 1;
 }
 
 .home-hero__stage .product-stage {
@@ -982,7 +991,7 @@ button:active {
   .home-mod__inner--hero {
     display: grid;
     grid-template-columns: minmax(22rem, 1fr) minmax(30rem, 1.15fr);
-    align-items: center;
+    align-items: start;
     gap: 1.5rem 2.25rem;
     padding-block: 0.6rem 0.4rem;
     flex: 1 1 auto;
@@ -1590,21 +1599,35 @@ button:active {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .home-hero__stage,
+  .product-stage,
+  .product-stage__desk,
+  .product-stage__canvas {
+    height: auto;
+    overflow: visible;
+  }
+
   .product-stage {
     min-height: 520px;
-    height: auto;
+    grid-template-rows: auto auto;
+  }
+
+  .product-stage__desk {
+    grid-template-rows: auto auto;
   }
 
   .product-stage__canvas {
     display: grid;
     gap: 0.75rem;
     padding: 0.75rem;
+    min-height: 0;
   }
 
   .product-stage__panel {
     position: static;
     inset: auto;
     opacity: 1;
+    visibility: visible;
   }
 
   .product-stage__ticket {
@@ -7917,9 +7940,12 @@ button:active {
   .home-hero__stage,
   .home-gate__stage,
   .product-stage,
+  .product-stage__desk,
+  .product-stage__canvas,
   .product-stage__step,
   .product-stage__panel,
   .product-stage__ticket,
+  .product-stage__title,
   .product-stage__line,
   .product-stage__mechanism,
   .stage-still,
@@ -9101,7 +9127,7 @@ button:active {
   .home-mod__inner--hero {
     display: grid;
     grid-template-columns: minmax(24rem, 1fr) minmax(32rem, 1.15fr);
-    align-items: center;
+    align-items: start;
     gap: 1.35rem 2.5rem;
     flex: 1 1 auto;
     min-height: 520px;
@@ -9112,6 +9138,7 @@ button:active {
   .home-mod__copy--hero {
     text-align: left;
     align-items: flex-start;
+    align-self: start;
     max-width: none;
     min-width: 0;
   }
