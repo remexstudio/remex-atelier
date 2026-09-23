@@ -10,9 +10,10 @@ UI-0…UI-5 appearance campaign stays **CLOSED**. Do not invent UI-6. No Seattle
 - [x] C3 — **CLOSED** — Canon PASS `ff610e4` / merge `7953363`
 - [x] C4 — **CLOSED** — Canon PASS `ad1afd3` / merge `0038290`. Soft ADD accepted: Propose-first default. Do not reopen unless broken.
 - [x] C5 — **CLOSED** — Canon PASS `c00477d` / merge `ff9fab7`.
-- [x] C-DoD — **CLOSED** — live **11/11 PASS**. Tip `ff9fab7`. Prod `dpl_B7pChHN78p1pBgLzV9hEgemw2yKA`. Do not invent C6.
+- [x] C-DoD — **CLOSED** — live **11/11 PASS**. Tip `ff9fab7`. Prod `dpl_B7pChHN78p1pBgLzV9hEgemw2yKA`.
+- [ ] C6 — **ACTIVE** — soft still craft polish. Do not invent C7 in this PR.
 
-Canon planned map **C0–C5 CLOSED**. Dev standby. Leader opens the next polish slice only if the owner wants the loop to continue.
+Canon planned map **C0–C5 CLOSED**. Active slice is C6 only.
 
 ## Closed UI campaign
 
@@ -28,14 +29,15 @@ V7 appearance closed and superseded by owner continuous UI FAIL. UI-0…UI-5 app
 - [x] UI-5 still fidelity — **PASS** (`11406c3`)
 - [x] Appearance DoD on prod `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe` — **PASS**. Campaign CLOSED. Do not invent UI-6.
 
-## Soft polish (parked — not a slice)
+## Soft polish (C6)
 
-Dev standby. These are not hard FAILs and do not open C6.
+Owner opened C6 for these. Not a new thesis.
 
-- [ ] StageStill `aria-hidden` DNA via adjacent copy — **SOFT**; DNA readable next to stills
-- [ ] Compact `desk-ui__fact` (~1rem) — **SOFT**; readable
-- [x] Propose-first default on the home stage — **accepted**. Do not reopen unless broken.
-- Record-beat pill uses gutter `rgb(245, 245, 247)`. Approve stays the filled beat `rgb(29, 29, 31)`. Not a Canon FAIL.
+- [ ] StageStill `aria-hidden` DNA via adjacent copy — in C6 (`stage-still__read` outside the shell)
+- [ ] Compact fact type on small stills — in C6 (larger negative tracking)
+- [x] Propose-first default on the home stage — **accepted**. Held. Do not force an Approve-first poster.
+- Record beat contrast — in C6. Approve stays the filled beat `rgb(29, 29, 31)`.
+- Narrow pin — in C6. Pin only from 720px. 375 stays shallow.
 
 ## Soft (absorbed / parked)
 

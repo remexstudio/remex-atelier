@@ -1,3 +1,12 @@
+# REVIEW — C6 opened
+
+- Slice: C6 soft still craft polish
+- Planned map C0–C5: **CLOSED** (this stamp does not reopen them)
+- Active: **C6**. Leader REVIEW not written yet. Do not invent C7.
+- Prior DoD below stays **11/11 PASS**.
+
+---
+
 # REVIEW — Canon DoD CLOSED
 
 - Slice: C-DoD live production check of the owner defects that opened the Canon Cycle

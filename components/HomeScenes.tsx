@@ -25,6 +25,8 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
  * C4: pin+scrub the one home ProductStage only. Transform/opacity on its
  * panels. Do not pin the headline. End ceiling +=80% (scroll-score cap).
  * Reduced motion: no pin. Three static frames, all text visible.
+ * C6: pin only from 720px up. Narrow viewports stay Propose-first and
+ * scroll through without a pin trap.
  */
 
 const STAGE_STEPS = ["propose", "approve", "record"] as const;
@@ -98,6 +100,33 @@ function ExampleStill({
   return <DeskTeaserStill still={still} className="home-ex__still" />;
 }
 
+function bindChapterReveals() {
+  gsap.utils
+    .toArray<HTMLElement>("[data-mod]:not(.home-mod--hero)")
+    .forEach((mod) => {
+      const items = mod.querySelectorAll<HTMLElement>(
+        "[data-reveal], [data-ex-row], [data-spec-row], [data-road-row]",
+      );
+      if (!items.length) return;
+
+      gsap.set(items, { autoAlpha: 0, y: 28 });
+
+      gsap.to(items, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.85,
+        ease: "power3.out",
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: mod,
+          start: "top 78%",
+          once: true,
+          invalidateOnRefresh: true,
+        },
+      });
+    });
+}
+
 export function HomeScenes() {
   const rootRef = useRef<HTMLElement>(null);
 
@@ -105,83 +134,73 @@ export function HomeScenes() {
     () => {
       const mm = gsap.matchMedia();
 
+      const heroBits = () => {
+        const root = rootRef.current;
+        const pinEl = root?.querySelector<HTMLElement>(
+          "#home-hero [data-stage-pin]",
+        );
+        const heroStage = pinEl?.querySelector<HTMLElement>(
+          "[data-product-stage]",
+        );
+        const panels = STAGE_STEPS.map((id) =>
+          heroStage?.querySelector<HTMLElement>(`[data-panel="${id}"]`),
+        );
+        return { pinEl, heroStage, panels };
+      };
+
+      const watchRefresh = () => {
+        const refresh = () => ScrollTrigger.refresh();
+        window.addEventListener("load", refresh);
+        if (document.fonts?.ready) {
+          void document.fonts.ready.then(refresh);
+        }
+        return () => window.removeEventListener("load", refresh);
+      };
+
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        const { heroStage } = heroBits();
+        showStatic();
+        heroStage?.querySelectorAll<HTMLElement>("[data-panel]").forEach(
+          (el) => {
+            el.removeAttribute("aria-hidden");
+            el.setAttribute("data-active", "true");
+          },
+        );
+        heroStage?.querySelectorAll<HTMLElement>("[data-step]").forEach(
+          (el) => {
+            el.setAttribute("data-active", "false");
+          },
+        );
+      });
+
       mm.add(
-        {
-          reduce: "(prefers-reduced-motion: reduce)",
-          motionOk: "(prefers-reduced-motion: no-preference)",
-        },
-        (context) => {
-          const { reduce, motionOk } = context.conditions as {
-            reduce: boolean;
-            motionOk: boolean;
-          };
-
-          const root = rootRef.current;
-          const pinEl = root?.querySelector<HTMLElement>(
-            "#home-hero [data-stage-pin]",
-          );
-          const heroStage = pinEl?.querySelector<HTMLElement>(
-            "[data-product-stage]",
-          );
-          const panels = STAGE_STEPS.map((id) =>
-            heroStage?.querySelector<HTMLElement>(`[data-panel="${id}"]`),
-          );
-
-          if (reduce || !motionOk) {
-            showStatic();
-            heroStage?.querySelectorAll<HTMLElement>("[data-panel]").forEach(
-              (el) => {
-                el.removeAttribute("aria-hidden");
-                el.setAttribute("data-active", "true");
-              },
-            );
-            heroStage?.querySelectorAll<HTMLElement>("[data-step]").forEach(
-              (el) => {
-                el.setAttribute("data-active", "false");
-              },
-            );
-            return;
-          }
-
+        "(max-width: 719px) and (prefers-reduced-motion: no-preference)",
+        () => {
+          const { heroStage } = heroBits();
           if (heroStage) setStageStep(heroStage, "propose");
+          bindChapterReveals();
+          const stop = watchRefresh();
+          return () => {
+            stop();
+            if (heroStage) setStageStep(heroStage, "propose");
+          };
+        },
+      );
 
-          gsap.utils
-            .toArray<HTMLElement>("[data-mod]:not(.home-mod--hero)")
-            .forEach((mod) => {
-              const items = mod.querySelectorAll<HTMLElement>(
-                "[data-reveal], [data-ex-row], [data-spec-row], [data-road-row]",
-              );
-              if (!items.length) return;
-
-              gsap.set(items, { autoAlpha: 0, y: 28 });
-
-              gsap.to(items, {
-                autoAlpha: 1,
-                y: 0,
-                duration: 0.85,
-                ease: "power3.out",
-                stagger: 0.08,
-                scrollTrigger: {
-                  trigger: mod,
-                  start: "top 78%",
-                  once: true,
-                  invalidateOnRefresh: true,
-                },
-              });
-            });
+      mm.add(
+        "(min-width: 720px) and (prefers-reduced-motion: no-preference)",
+        () => {
+          const { pinEl, heroStage, panels } = heroBits();
+          if (heroStage) setStageStep(heroStage, "propose");
+          bindChapterReveals();
 
           /*
-           * One pin, on the stage module only. The headline is not a pin
-           * target. Scrub is 1:1 with native scroll (no catch-up lag).
-           * Holds keep each beat readable; crossfades are opacity only.
+           * One pin, on the stage module only, and only when the viewport
+           * is wide enough to scrub. The headline is not a pin target.
+           * Scrub is 1:1 with native scroll. Crossfades are opacity only.
+           * Opens on Propose.
            */
-          if (
-            pinEl &&
-            heroStage &&
-            panels[0] &&
-            panels[1] &&
-            panels[2]
-          ) {
+          if (pinEl && heroStage && panels[0] && panels[1] && panels[2]) {
             const [proposePanel, approvePanel, recordPanel] = panels as [
               HTMLElement,
               HTMLElement,
@@ -228,14 +247,9 @@ export function HomeScenes() {
               .to(recordPanel, { autoAlpha: 1, duration: 0.28 }, 0.72);
           }
 
-          const refresh = () => ScrollTrigger.refresh();
-          window.addEventListener("load", refresh);
-          if (document.fonts?.ready) {
-            void document.fonts.ready.then(refresh);
-          }
-
+          const stop = watchRefresh();
           return () => {
-            window.removeEventListener("load", refresh);
+            stop();
             if (heroStage) setStageStep(heroStage, "propose");
           };
         },

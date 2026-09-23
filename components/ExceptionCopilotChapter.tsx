@@ -158,7 +158,7 @@ export function ExceptionCopilotChapter() {
         <ol className="ex-stills__list">
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="exception" id="pile" />
               </div>
               <figcaption className="ex-still__caption">
@@ -171,7 +171,7 @@ export function ExceptionCopilotChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="exception" id="queue" />
               </div>
               <figcaption className="ex-still__caption">
@@ -184,7 +184,7 @@ export function ExceptionCopilotChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="exception" id="policy" />
               </div>
               <figcaption className="ex-still__caption">
@@ -197,7 +197,7 @@ export function ExceptionCopilotChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="exception" id="note" />
               </div>
               <figcaption className="ex-still__caption">
@@ -210,7 +210,7 @@ export function ExceptionCopilotChapter() {
           </li>
           <li data-ex-reveal>
             <figure className="ex-still">
-              <div className="ex-still__frame" aria-hidden="true">
+              <div className="ex-still__frame">
                 <StoryDeskStill desk="exception" id="timeline" />
               </div>
               <figcaption className="ex-still__caption">

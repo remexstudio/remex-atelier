@@ -4,6 +4,8 @@ type StageStillProps = {
   children: React.ReactNode;
   className?: string;
   compact?: boolean;
+  /** DNA fact outside the decorative shell so it stays readable. */
+  read?: string;
 };
 
 /** Fabricated product-stage chrome for inner-page stills. Not a live widget. */
@@ -13,6 +15,7 @@ export function StageStill({
   children,
   className,
   compact = false,
+  read,
 }: StageStillProps) {
   return (
     <div
@@ -23,16 +26,18 @@ export function StageStill({
       ]
         .filter(Boolean)
         .join(" ")}
-      aria-hidden="true"
     >
-      <div className="stage-still__specular" />
-      <div className="stage-still__inset" />
-      <div className="stage-still__chrome">
-        <span className="stage-still__lights" />
-        <p className="stage-still__seat">{seat}</p>
-        {beat ? <p className="stage-still__beat">{beat}</p> : null}
+      <div className="stage-still__media" aria-hidden="true">
+        <div className="stage-still__specular" />
+        <div className="stage-still__inset" />
+        <div className="stage-still__chrome">
+          <span className="stage-still__lights" />
+          <p className="stage-still__seat">{seat}</p>
+          {beat ? <p className="stage-still__beat">{beat}</p> : null}
+        </div>
+        <div className="stage-still__body">{children}</div>
       </div>
-      <div className="stage-still__body">{children}</div>
+      {read ? <p className="stage-still__read">{read}</p> : null}
     </div>
   );
 }
@@ -117,7 +122,11 @@ export function ServiceStageStill({
   const Inner = still.Still;
 
   return (
-    <StageStill seat={still.seat} compact className={`svc-row__still svc-row__still--${id}`}>
+    <StageStill
+      seat={still.seat}
+      compact
+      className={`svc-row__still svc-row__still--${id}`}
+    >
       <Inner />
     </StageStill>
   );
@@ -131,8 +140,6 @@ function DemandTeaser() {
         <SpecRow label="Bag" value="Held" />
         <SpecRow label="Pay" value="Human" on />
       </div>
-      <p className="desk-ui__fact">Human before pay</p>
-      <p className="desk-ui__cite">LUM-1042</p>
     </div>
   );
 }
@@ -145,7 +152,6 @@ function KnowledgeTeaser() {
         <span data-on="true">Propose</span>
         <span data-off="true">Execute</span>
       </div>
-      <p className="desk-ui__fact">Propose ≠ Execute</p>
       <p className="desk-ui__cite">Corpus · §12.4</p>
     </div>
   );
@@ -160,7 +166,6 @@ function AttentionTeaser() {
         <li data-lane="w">Watch</li>
         <li data-lane="n">Noise</li>
       </ol>
-      <p className="desk-ui__fact">Human before send</p>
     </div>
   );
 }
@@ -173,16 +178,31 @@ function ExceptionTeaser() {
         <SpecRow label="EX-441" value="Refund hold" on />
         <SpecRow label="§4.2" value="Held" />
       </div>
-      <p className="desk-ui__fact">Human before money</p>
     </div>
   );
 }
 
 const TEASERS = {
-  "still-a": { seat: "Demand desk", Inner: DemandTeaser },
-  "still-b": { seat: "Knowledge desk", Inner: KnowledgeTeaser },
-  "still-c": { seat: "Attention desk", Inner: AttentionTeaser },
-  "still-d": { seat: "Exception desk", Inner: ExceptionTeaser },
+  "still-a": {
+    seat: "Demand desk",
+    read: "LUM-1042 · Human before pay",
+    Inner: DemandTeaser,
+  },
+  "still-b": {
+    seat: "Knowledge desk",
+    read: "Propose ≠ Execute",
+    Inner: KnowledgeTeaser,
+  },
+  "still-c": {
+    seat: "Attention desk",
+    read: "Priority · Watch · Noise. Human before send.",
+    Inner: AttentionTeaser,
+  },
+  "still-d": {
+    seat: "Exception desk",
+    read: "Refund hold. Human before money.",
+    Inner: ExceptionTeaser,
+  },
 } as const;
 
 export function DeskTeaserStill({
@@ -196,7 +216,7 @@ export function DeskTeaserStill({
   const Inner = teaser.Inner;
 
   return (
-    <StageStill seat={teaser.seat} compact className={className}>
+    <StageStill seat={teaser.seat} compact read={teaser.read} className={className}>
       <Inner />
     </StageStill>
   );
@@ -213,7 +233,6 @@ function DemandStory({ id }: { id: string }) {
           <span>Fit</span>
           <span>Hold</span>
         </div>
-        <p className="desk-ui__fact">Notes before a next step</p>
       </div>
     );
   }
@@ -252,7 +271,6 @@ function DemandStory({ id }: { id: string }) {
           <SpecRow label="Bag" value="Draft" />
           <SpecRow label="Pay" value="Held" on />
         </div>
-        <p className="desk-ui__fact">Human before pay</p>
         <span className="desk-ui__pill" data-filled="true">
           Hold
         </span>
@@ -290,7 +308,6 @@ function KnowledgeStory({ id }: { id: string }) {
     return (
       <div className="desk-ui desk-ui--knowledge">
         <p className="desk-ui__kicker">Recommend</p>
-        <p className="desk-ui__fact">Answer from the book</p>
         <p className="desk-ui__cite">Cite stays with the ask</p>
       </div>
     );
@@ -304,7 +321,6 @@ function KnowledgeStory({ id }: { id: string }) {
           <span data-on="true">Propose</span>
           <span data-off="true">Execute</span>
         </div>
-        <p className="desk-ui__fact">Propose ≠ Execute</p>
       </div>
     );
   }
@@ -346,7 +362,6 @@ function AttentionStory({ id }: { id: string }) {
           <span />
           <span />
         </div>
-        <p className="desk-ui__fact">No single brief</p>
       </div>
     );
   }
@@ -381,7 +396,6 @@ function AttentionStory({ id }: { id: string }) {
     return (
       <div className="desk-ui desk-ui--attention">
         <p className="desk-ui__kicker">Gate</p>
-        <p className="desk-ui__fact">Human before send</p>
         <span className="desk-ui__pill" data-filled="true">
           Hold
         </span>
@@ -431,7 +445,6 @@ function ExceptionStory({ id }: { id: string }) {
     return (
       <div className="desk-ui desk-ui--exception">
         <p className="desk-ui__kicker">Recommend</p>
-        <p className="desk-ui__fact">Cite, then hold</p>
         <p className="desk-ui__cite">§4.2 · Restock window</p>
       </div>
     );
@@ -441,7 +454,6 @@ function ExceptionStory({ id }: { id: string }) {
     return (
       <div className="desk-ui desk-ui--exception">
         <p className="desk-ui__kicker">Gate</p>
-        <p className="desk-ui__fact">Human before money</p>
         <span className="desk-ui__pill" data-filled="true">
           Refund hold
         </span>
@@ -484,6 +496,27 @@ const STORY = {
   },
 } as const;
 
+const STORY_READ: Record<keyof typeof STORY, Partial<Record<string, string>>> = {
+  demand: {
+    scatter: "Notes before a next step",
+    bag: "Human before pay",
+    ticket: "LUM-1042",
+  },
+  knowledge: {
+    corpus: "Answer from the book",
+    propose: "Propose ≠ Execute",
+  },
+  attention: {
+    mail: "No single brief",
+    lanes: "Priority · Watch · Noise",
+    hold: "Human before send",
+  },
+  exception: {
+    policy: "Cite, then hold",
+    note: "Refund hold. Human before money.",
+  },
+};
+
 export function StoryDeskStill({
   desk,
   id,
@@ -495,7 +528,7 @@ export function StoryDeskStill({
   const Inner = story.Inner;
 
   return (
-    <StageStill seat={story.seat}>
+    <StageStill seat={story.seat} read={STORY_READ[desk][id]}>
       <Inner id={id} />
     </StageStill>
   );

@@ -8,13 +8,15 @@ Hard bans: no Seattle shop geography slogan; no “global clients” slogan; no 
 
 ## This loop
 
-**CLOSED.** Live DoD **11/11 PASS** at tip `ff9fab7`, prod `dpl_B7pChHN78p1pBgLzV9hEgemw2yKA`. C0–C5 are CLOSED. Do not invent C6.
+**C0–C5 CLOSED.** Live DoD **11/11 PASS** at tip `ff9fab7`, prod `dpl_B7pChHN78p1pBgLzV9hEgemw2yKA`.
 
-Soft ADD, accepted: the home stage opens on Propose. Do not reopen unless that beat is broken.
+**ACTIVE C6** — soft still craft polish on that closed map. Do not invent C7.
+
+Soft ADD, accepted: the home stage opens on Propose. Held in C6. Do not force an Approve-first poster.
 
 ## Next
 
-Dev standby. Leader opens the next polish slice only if the owner wants the loop to continue. Soft polish stays in `ops/BACKLOG.md`.
+Leader REVIEW of C6. Do not start another slice in this PR.
 
 ## Closed — UI campaign
 
