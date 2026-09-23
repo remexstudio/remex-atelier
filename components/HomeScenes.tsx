@@ -15,6 +15,7 @@ import {
   INDEX_LEDE,
   READ_FULL_EXAMPLE,
 } from "@/lib/selected-examples";
+import { CATALOG_LINES, FOR_WHOM } from "@/lib/services-catalog";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -31,24 +32,18 @@ const SERVICE_STRIP = [
   { id: "operations", short: "Operations" },
 ] as const;
 
-const MECHANISM = [
-  {
-    title: "Propose",
-    body: "The agent drafts the next action, recommendation, or disposition. It does not execute irreversible work on its own.",
-  },
-  {
-    title: "Approve",
-    body: "A named person on the client side accepts, edits, or rejects before anything ships, posts, charges, or moves money.",
-  },
-  {
-    title: "Record",
-    body: "The proposal, decision, and outcome stay linked in an auditable log the team can reopen later.",
-  },
-] as const;
+/**
+ * One fact per offer. Build uses the ship outcome, not a second
+ * Propose → Approve → Record bullet list (that loop lives on the stage).
+ */
+const OFFER_FACT: Record<(typeof CATALOG_LINES)[number]["id"], string> = {
+  design: CATALOG_LINES[0].deliverable,
+  build: CATALOG_LINES[1].done,
+  operations: CATALOG_LINES[2].deliverable,
+};
 
 const CLOSE_CHAPTERS = [
   { href: "#home-services", label: "Services" },
-  { href: "#home-method", label: "Method" },
   { href: "#home-gate", label: "Gate" },
   { href: "#home-examples", label: "Examples" },
   { href: "#home-brief", label: "Brief" },
@@ -156,9 +151,10 @@ export function HomeScenes() {
             });
 
           /*
-           * UI-1: no pin at load (V7 crush: strip dropped, Approve flipped).
-           * Keep Approve filled in the first viewport. Optional transform/
-           * opacity scrub only after the hero has left the screen.
+           * C3: one stage. No pin on the first viewport.
+           * Approve stays filled while the hero is on screen.
+           * C4 owns the full three-state scrub; this hook only steps the
+           * same stage after the hero has left, transform/opacity only.
            */
           if (heroStage) {
             const steps = ["propose", "approve", "record"] as const;
@@ -221,12 +217,16 @@ export function HomeScenes() {
               We design the job an agent is allowed to do — and the gate it
               cannot cross.
             </p>
+            <ul className="home-hero__catalog" aria-label="Services">
+              {SERVICE_STRIP.map((line) => (
+                <li key={line.id}>
+                  <a href={`#${line.id}`}>{line.short}</a>
+                </li>
+              ))}
+            </ul>
             <div className="home-hero__actions">
               <Link href="/contact" className="home-cta cta-pill">
                 Start a brief.
-              </Link>
-              <Link href="#home-services" className="home-text-link">
-                See services
               </Link>
             </div>
           </div>
@@ -234,41 +234,43 @@ export function HomeScenes() {
             <ProductStage />
           </div>
         </div>
-        <ol
-          id="home-services"
-          className="home-hero__strip"
-          aria-label="Services"
-        >
-          {SERVICE_STRIP.map((line) => (
-            <li key={line.id} className="home-hero__svc">
-              <span className="home-hero__svc-line">{line.short}</span>
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section
-        id="home-method"
+        id="home-services"
         data-mod
-        className="home-mod home-mod--method home-mod--hire"
-        aria-labelledby="home-method-h"
+        className="home-mod home-mod--services"
+        aria-labelledby="home-services-h"
       >
-        <div className="home-mod__inner home-mod__inner--hire">
+        <div className="home-mod__inner home-mod__inner--services">
           <div className="home-mod__copy">
-            <h2 id="home-method-h" className="home-headline" data-reveal>
-              The agent proposes. A person approves. The record stays.
+            <h2 id="home-services-h" className="home-headline" data-reveal>
+              Services
             </h2>
             <p className="home-support" data-reveal>
-              One workflow. One agent. A human still decides.
+              Agent product design, Agent build, and Agent operations.
             </p>
-            <ol className="home-method__steps">
-              {MECHANISM.map((step) => (
-                <li key={step.title} data-reveal>
-                  <strong>{step.title}.</strong> {step.body}
-                </li>
-              ))}
-            </ol>
+            <p className="home-svc__for" data-reveal>
+              <span className="home-svc__label">For</span>
+              <span>{FOR_WHOM[0]}</span>
+            </p>
           </div>
+          <ol className="home-svc">
+            {CATALOG_LINES.map((line) => (
+              <li
+                key={line.id}
+                id={line.id}
+                className="home-svc__col"
+                data-reveal
+              >
+                <p className="home-svc__label">
+                  {SERVICE_STRIP.find((item) => item.id === line.id)?.short}
+                </p>
+                <h3 className="home-svc__name">{line.name}</h3>
+                <p className="home-svc__p">{OFFER_FACT[line.id]}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -279,17 +281,12 @@ export function HomeScenes() {
         aria-labelledby="home-gate-h"
       >
         <div className="home-mod__inner home-mod__inner--gate">
-          <div className="home-mod__copy">
-            <h2 id="home-gate-h" className="home-headline" data-reveal>
-              A human still decides.
-            </h2>
-            <p className="home-support" data-reveal>
-              Irreversible actions stay behind a named person.
-            </p>
-          </div>
-          <div className="home-gate__stage">
-            <ProductStage variant="dark" />
-          </div>
+          <h2 id="home-gate-h" className="home-headline" data-reveal>
+            A human still decides.
+          </h2>
+          <p className="home-support" data-reveal>
+            Irreversible actions stay behind a named person.
+          </p>
         </div>
       </section>
 
