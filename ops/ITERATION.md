@@ -8,11 +8,13 @@ Hard bans: no Seattle shop geography slogan; no “global clients” slogan; no 
 
 ## This loop
 
-**ACTIVE: C2.** Approach prints Remex Studio, 机羽云 Studio, and Jiyuyun Studio LLC together. C1 is **CLOSED** (Canon PASS `c86afe0`, merge `963df8d`).
+**ACTIVE: C5.** Inner pages use the product footer and catalog grammar. `/services` is not a second home stage. C4 is **CLOSED** (Canon PASS `ad1afd3`, merge `0038290`).
+
+Soft ADD, accepted: the home stage opens on Propose. Do not reopen unless that beat is broken.
 
 ## Next
 
-C3 home, one stage, one loop, only after Leader REVIEW of C2. Do not start C3 in the C2 PR.
+Leader REVIEW of C5. Do not invent C6 in the C5 PR.
 
 ## Closed — UI campaign
 
