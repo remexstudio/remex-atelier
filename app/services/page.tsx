@@ -46,34 +46,21 @@ export default function ServicesPage() {
       <main id="main" className="svc-page">
         <header className="svc-mast">
           <div className="svc-band">
-            <h1 className="svc-title">Services</h1>
+            <h1 id="svc-title" className="svc-title">
+              Services
+            </h1>
+            <p className="svc-section-lede">Design, Build, and Operations.</p>
           </div>
         </header>
 
-        <section className="svc-catalog" aria-labelledby="svc-catalog-h">
+        <section className="svc-catalog" aria-labelledby="svc-title">
           <div className="svc-band">
-            <h2 id="svc-catalog-h" className="svc-section-title">
-              Catalog
-            </h2>
-            <p className="svc-section-lede">
-              Remex is a boutique that designs, ships, and tightens custom AI
-              agents for one painful company workflow at a time — with a
-              human gate as the product surface.
-            </p>
-            <p className="svc-lock">Agents, built to the brief.</p>
-            <p className="svc-lock svc-lock--muted">
-              We design the job an agent is allowed to do — and the gate it
-              cannot cross.
-            </p>
-            <p className="svc-lock svc-lock--muted">
-              One workflow. One agent. A human still decides.
-            </p>
             <ol className="svc-lines">
               {CATALOG_LINES.map((line) => (
                 <li key={line.id} className="svc-row" id={line.id}>
                   <div className="svc-row__copy">
-                    <p className="svc-row__label">{ROW_LABEL[line.id]}</p>
-                    <h3 className="svc-line__name">{line.name}</h3>
+                    <h2 className="svc-row__label">{ROW_LABEL[line.id]}</h2>
+                    <p className="svc-line__name">{line.name}</p>
                     <p className="svc-line__p">
                       <span className="svc-line__label">Who.</span> {line.who}
                     </p>
@@ -94,7 +81,7 @@ export default function ServicesPage() {
                     {line.id === "build" ? (
                       <div className="svc-may">
                         <div>
-                          <h4 className="svc-may__h">May</h4>
+                          <h3 className="svc-may__h">May</h3>
                           <ul className="svc-may__list">
                             {CATALOG_MAY.map((item) => (
                               <li key={item}>{item}</li>
@@ -102,7 +89,7 @@ export default function ServicesPage() {
                           </ul>
                         </div>
                         <div>
-                          <h4 className="svc-may__h">May not</h4>
+                          <h3 className="svc-may__h">May not</h3>
                           <ul className="svc-may__list">
                             {CATALOG_MAY_NOT.map((item) => (
                               <li key={item}>{item}</li>

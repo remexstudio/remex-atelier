@@ -6,10 +6,10 @@ UI-0…UI-5 appearance campaign stays **CLOSED**. Do not invent UI-6. No Seattle
 
 - [x] C0 — **CLOSED** — Canon PASS `b25bc43` / merge `9015ee1`
 - [x] C1 — **CLOSED** — Canon PASS `c86afe0` / merge `963df8d`
-- [ ] C2 — **ACTIVE** — Approach legal. DEV COMPLETE. Awaiting Leader REVIEW. Do not start C3 in this PR.
-- [ ] C3 — home, one stage, one loop
-- [ ] C4 — stage scroll motion
-- [ ] C5 — inner pages
+- [x] C2 — **CLOSED** — Canon PASS `45e6761` / merge `a5139cc`
+- [x] C3 — **CLOSED** — Canon PASS `ff610e4` / merge `7953363`
+- [x] C4 — **CLOSED** — Canon PASS `ad1afd3` / merge `0038290`. Soft ADD accepted: Propose-first default. Do not reopen unless broken.
+- [ ] C5 — **ACTIVE** — inner pages. DEV COMPLETE. Awaiting Leader REVIEW. Do not invent C6 in this PR.
 
 ## Closed UI campaign
 

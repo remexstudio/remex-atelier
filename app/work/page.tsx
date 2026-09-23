@@ -5,26 +5,28 @@ import { DeskTeaserStill } from "@/components/StageStill";
 import {
   EXAMPLES,
   INDEX_LABEL,
-  INDEX_LEDE,
   OTHER_SEATS,
   OTHER_SEATS_HEADING,
   OTHER_SEATS_NOTE,
   READ_FULL_EXAMPLE,
 } from "@/lib/selected-examples";
 
+const WORK_LEDE =
+  "Proof of method. Each example is one seat — a job, a gate, and a record — not a catalog.";
+
 export const metadata: Metadata = {
   title: INDEX_LABEL,
-  description: INDEX_LEDE,
+  description: WORK_LEDE,
   openGraph: {
     title: `${INDEX_LABEL} · Remex Studio`,
-    description: INDEX_LEDE,
+    description: WORK_LEDE,
     url: "/work",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: `${INDEX_LABEL} · Remex Studio`,
-    description: INDEX_LEDE,
+    description: WORK_LEDE,
   },
 };
 
@@ -38,7 +40,7 @@ export default function WorkPage() {
       <main id="main" className="work-index">
         <div className="work-index__intro">
           <h1 className="work-index__title">{INDEX_LABEL}</h1>
-          <p className="work-index__lede">{INDEX_LEDE}</p>
+          <p className="work-index__lede">{WORK_LEDE}</p>
         </div>
 
         <ul className="work-index__list">

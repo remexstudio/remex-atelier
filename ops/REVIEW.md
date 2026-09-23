@@ -1,3 +1,15 @@
+# REVIEW — C4 CLOSED
+
+- Slice: C4 stage scroll motion
+- Canon: **PASS**
+- Commit: `ad1afd3` (`fix(home): keep hero copy at the top of the stage pin`)
+- Merge: `0038290` on `main` (`Merge pull request #47 from remexstudio/cursor/c4-scrub-stage-states-ed2f`)
+- C4 CLOSED. Canon Cycle continues at C5.
+
+Soft ADD (accepted, do not reopen unless broken): Propose-first default. The home stage opens on Propose and still scrubs Propose → Approve → Record.
+
+---
+
 # REVIEW — C3 CLOSED
 
 - Slice: C3 home, one stage, one loop

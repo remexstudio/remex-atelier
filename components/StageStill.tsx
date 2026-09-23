@@ -73,15 +73,14 @@ function ServiceDesignStill() {
 function ServiceBuildStill() {
   return (
     <div className="desk-ui desk-ui--gate">
-      <ol className="desk-ui__rail">
-        <li>Propose</li>
-        <li data-active="true">Approve</li>
-        <li>Record</li>
-      </ol>
-      <p className="desk-ui__kicker">Named person</p>
-      <p className="desk-ui__fact">A human still decides.</p>
+      <p className="desk-ui__kicker">First seat</p>
+      <div className="desk-ui__sheet">
+        <SpecRow label="Seat" value="One job" />
+        <SpecRow label="Gate" value="Named person" on />
+        <SpecRow label="Ship" value="This desk" />
+      </div>
       <span className="desk-ui__pill" data-filled="true">
-        Approve
+        Build
       </span>
     </div>
   );
