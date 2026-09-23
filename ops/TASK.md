@@ -31,10 +31,10 @@ C5 inner pages. Footer. Approach. Re-adding deleted wallpaper chapters.
 
 ## ACCEPTANCE
 
-- [ ] Scroll drives Propose→Approve→Record on the one stage
-- [ ] RM: three frames + all text; no scroll trap
-- [ ] One stage only; C3 structure held; pnpm build PASS; PR open; not merged; C5 not started
-- [ ] C3 CLOSED stamped in REVIEW (Canon PASS `ff610e4` / merge `7953363`)
+- [x] Scroll drives Propose→Approve→Record on the one stage
+- [x] RM: three frames + all text; no scroll trap
+- [x] One stage only; C3 structure held; pnpm build PASS; PR open; not merged; C5 not started
+- [x] C3 CLOSED stamped in REVIEW (Canon PASS `ff610e4` / merge `7953363`)
 
 ## COMMIT
 

@@ -9127,7 +9127,7 @@ button:active {
   .home-mod__inner--hero {
     display: grid;
     grid-template-columns: minmax(24rem, 1fr) minmax(32rem, 1.15fr);
-    align-items: center;
+    align-items: start;
     gap: 1.35rem 2.5rem;
     flex: 1 1 auto;
     min-height: 520px;
@@ -9138,6 +9138,7 @@ button:active {
   .home-mod__copy--hero {
     text-align: left;
     align-items: flex-start;
+    align-self: start;
     max-width: none;
     min-width: 0;
   }

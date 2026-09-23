@@ -23,12 +23,14 @@ C3 chapters unchanged: one stage, services catalog, one loop inside that stage, 
 ## Verify
 
 - `pnpm build` PASS
-- Motion: one `[data-product-stage]`, one pin (`home-product-stage`) on `[data-stage-pin]`. Scroll progress moves `data-active-step` propose → approve → record. Approve rail and pill fill on the approve beat. `document.body` overflow stays visible.
-- Reduced motion: zero pins. Three panel texts visible (Propose, Approve, Record lines). Page scroll is native.
+- Motion, 1440×900, headless Chrome: one `[data-product-stage]`, one `.pin-spacer` on `[data-stage-pin]`. Headline stays `position: static`. Scroll moves the stage Propose (rail filled) → Approve (rail filled, panel opacity 1, pill `rgb(29, 29, 31)`) → Record (rail filled, panel opacity 1), then the pin releases. `document.body` / `html` overflow stays `visible`. No horizontal overflow.
+- 375×812 motion: same three steps, pin releases, body overflow `visible`.
+- Reduced motion, 1440 and 375: zero pins. Three panels `position: static`, opacity 1, each mechanism line has a real height. Scroll reaches the document end.
+- `#home-gate` has no second stage. Services lede is Design, Build, and Operations. Footer still prints Jiyuyun Studio LLC.
 
 ## Acceptance
 
-- [ ] Scroll drives Propose→Approve→Record on the one stage
-- [ ] RM: three frames + all text; no scroll trap
-- [ ] One stage only; C3 structure held; pnpm build PASS; PR open; not merged; C5 not started
+- [x] Scroll drives Propose→Approve→Record on the one stage
+- [x] RM: three frames + all text; no scroll trap
+- [x] One stage only; C3 structure held; pnpm build PASS; PR open; not merged; C5 not started
 - [x] C3 CLOSED stamped in REVIEW (Canon PASS `ff610e4` / merge `7953363`)
