@@ -27,7 +27,9 @@ Home stage and chapters untouched (C3/C4). No footer redesign. No new offers. No
 ## Verify
 
 - `pnpm build` PASS
-- Approach body contains the Canon name line and the three labeled rows. Footer on `/approach` still the C1 product close.
+- Headless Chrome on `/approach` at 1440 and 375: Studio line reads `Remex Studio · 机羽云 Studio · Jiyuyun Studio LLC`. Labeled rows: English Remex Studio, Chinese 机羽云 Studio, Legal Jiyuyun Studio LLC. Name meaning is one H2 on Approach only. Now / Next / Later bases stay one gated seat / reuse the method on a new seat / modules still gated. No Seattle / Global clients / English-first. No horizontal overflow (1440 scrollWidth 1425, 375 scrollWidth 375). Name line wraps to two lines at 375.
+- Footer on `/approach` and `/` still the C1 product close: lockup Remex Studio, legal row with the three names, Work · Services · Approach · Contact at height 44, quiet Prototype / About. No `.site-footer--film`.
+- Footer Services link on `/approach` navigates to `/services`. Etymology block is not on the home page.
 
 ## Acceptance
 
