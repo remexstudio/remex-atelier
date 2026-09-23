@@ -887,13 +887,37 @@ button:active {
   max-width: 34rem;
 }
 
+.home-hero__catalog {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem 1.35rem;
+  margin: 1.05rem 0 0;
+  padding: 0;
+}
+
+.home-hero__catalog a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hit-target-min);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
 .home-hero__actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 0.65rem 1.25rem;
-  margin-top: 1.15rem;
+  margin-top: 0.85rem;
 }
 
 .home-hero__actions .home-cta-wrap,
@@ -978,9 +1002,13 @@ button:active {
     max-width: 34rem;
   }
 
+  .home-mod__copy--hero .home-hero__catalog {
+    justify-content: flex-start;
+  }
+
   .home-hero__actions {
     justify-content: flex-start;
-    margin-top: 1rem;
+    margin-top: 0.65rem;
   }
 
   .home-hero__strip {
@@ -1541,28 +1569,23 @@ button:active {
 }
 
 .home-mod--gate .home-support {
+  max-width: 28rem;
+  margin-top: 0;
   color: rgba(245, 245, 247, 0.72);
 }
 
 .home-mod__inner--gate {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
-
-.home-gate__stage {
-  width: 100%;
-  min-width: 0;
-}
-
-.home-gate__stage .product-stage {
-  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 22rem;
+  padding-block: calc(var(--nav-height) + 4.5rem) 5rem;
 }
 
 @media (min-width: 900px) {
   .home-mod__inner--gate {
-    grid-template-columns: minmax(0, 0.82fr) minmax(26rem, 1.18fr);
-    gap: 3rem;
+    min-height: 26rem;
   }
 }
 
@@ -1671,12 +1694,34 @@ button:active {
   }
 }
 
+#design,
+#build,
+#operations {
+  scroll-margin-top: calc(var(--nav-height) + 1.25rem);
+}
+
+.home-svc__for {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1.25rem 0 0;
+  max-width: 36rem;
+}
+
+.home-svc__for span:last-child {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--size-body);
+  line-height: 1.45;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
 .home-svc__name {
   margin: 0 0 0.15rem;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(1.35rem, 2.6vw, 1.6rem);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
 

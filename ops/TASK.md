@@ -1,41 +1,43 @@
-# TASK — C2
+# TASK — C3
 
-TASK ID: C2
+TASK ID: C3
 REPO: remexstudio/remex-atelier
-BASE: main tip after C1 merge (`963df8d`)
-GOAL: On Approach, print the Studio / Legal block with all three valid names together. Owner lock.
+BASE: main tip after C2 merge (`a5139cc`)
+GOAL: Home teaches one gate loop and sells three services. Not wallpaper of the same Propose → Approve → Record UI.
 
 ## Cycle
 
-**Canon Cycle — ACTIVE C2.** C1 is CLOSED (Canon PASS `c86afe0` / merge `963df8d`). Do not start C3 in this PR.
+**Canon Cycle — ACTIVE C3.** C2 is CLOSED (Canon PASS `45e6761` / merge `a5139cc`). Do not start C4 in this PR.
 
 ## Required
 
-1. Approach Studio / Legal prints Remex Studio, 机羽云 Studio, and Jiyuyun Studio LLC together.
-2. Prefer the Canon form: Remex Studio · 机羽云 Studio · Jiyuyun Studio LLC, with labeled rows. Do not print only Jiyuyun Studio LLC. Do not invent a second company.
-3. Etymology appears once on Approach with the three names. It is not a second headline on every page.
-4. Pathway Now / Next / Later stays one gated seat / reuse the method on a new seat / modules still gated.
-5. No Seattle, global clients, English-first, or founder name.
-6. Remove leftover unused film footer CSS in `app/globals.css` if still present. Dead CSS only. Do not regress the C1 product footer.
+1. First viewport: headline + one gate ProductStage (≥520) + Design / Build / Operations + Start a brief.
+2. One explanation of the Propose → Approve → Record loop.
+3. Delete duplicate stage instances and recycled three-step sentences.
+4. Services read as the catalog. Four desks stay selected examples.
+5. Dark `#home-gate` may keep one distinct fact without a second ProductStage.
+6. No Seattle / Global clients / English-first / four SKUs. Do not regress C1 footer or C2 Approach names.
 
 ## ALLOWED FILES
 
-- `app/approach/**`
-- Components used only by Approach for the legal / name block
-- `app/globals.css` (dead footer CSS cleanup + Approach styles only)
+- `components/HomeScenes.tsx`
+- `components/ProductStage.tsx` (wiring only if needed)
+- `app/globals.css` (home chapters only)
 - `ops/*`
 
 ## OUT OF SCOPE
 
-C3 home dedupe. C4 motion. Footer redesign (already C1). New offers.
+C4 full GSAP three-state scrub. C5 inner pages. Footer redesign. Approach legal rewrite.
 
 ## ACCEPTANCE
 
-- [x] Approach shows Remex Studio + 机羽云 Studio + Jiyuyun Studio LLC together
-- [x] LLC not alone; no Seattle; C1 footer not regressed
-- [x] `pnpm build` PASS; PR open; not merged; C3 not started
-- [x] C1 CLOSED stamped in REVIEW (Canon PASS `c86afe0` / merge `963df8d`)
+- [x] One primary PAR stage on home (not duplicated)
+- [x] One clear loop explanation; no recycled three-sentence wallpaper
+- [x] Services catalog readable as what we sell in first viewport / near it
+- [x] Examples stay short method proof, not SKUs
+- [x] C1/C2 not regressed; `pnpm build` PASS; PR open; not merged; C4 not started
+- [x] C2 CLOSED stamped in REVIEW (Canon PASS `45e6761` / merge `a5139cc`)
 
 ## COMMIT
 
-feat(approach): print three studio names for C2
+feat(home): one stage one loop for C3
