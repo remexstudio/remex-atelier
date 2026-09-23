@@ -1,40 +1,29 @@
-# Handoff UI-DoD
+# Handoff C0
 
-- Status: **LEADER PASS**
-- TASK ID: UI-DoD
-- SHA / tip: `11406c3`
-- Prod: `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe` → https://remex-atelier.vercel.app
-- Phase: **UI CAMPAIGN APPEARANCE CLOSED**
-- Dev: **standby**. Do not invent UI-6.
+- Status: **DEV COMPLETE** — awaiting Leader REVIEW
+- TASK ID: C0
+- Commit: `docs(canon): add CANON.md for C0`
+- Base: `b8af298` (`main`, UI appearance campaign CLOSED)
+- Phase: **CANON CYCLE — ACTIVE C0**
+- Previous: UI-0…UI-5 appearance DoD **CLOSED**. Do not invent UI-6.
+- Next: C1 product footer. Do not start C1 in this PR. Do not merge this PR from Dev.
 
-## UI-5 closed
+## What shipped
 
-Unanimous PM PASS. Leader appearance DoD **PASS** on live production after deploy caught tip `11406c3`.
+- `docs/CANON.md` — company spirit (names, etymology, product = job + gate, positioning, Now / Next / Later, bans), what the site is for, four construction tests, C0–C5 slice map.
+- Ops stamped Active C0. Closed UI campaign note retained in STATUS, BACKLOG, and ITERATION.
 
-## Measured (prod, Playwright Chromium, `prefers-reduced-motion: no-preference`)
+## Scope held
 
-| Surface | Nav | Type / stage | Notes |
-| --- | --- | --- | --- |
-| Home 1440×900 | 46; Work · Services · Approach · Contact; frost | Geist 600 **80px** **-0.03em**; ProductStage **520**; Approve filled `#1d1d1f`; strip in-viewport; CTA **44** / `#1d1d1f` | First viewport ≠ title + gray card |
-| Home 375×812 | 46; Menu + four links | Geist 600 **56px** **-0.03em**; ProductStage **520** under type; Approve filled; CTA **44** | Strip below fold (UI-4 hold) |
-| `#home-gate` | 46 | bg `#000`; dark ProductStage **520**; distinct H2/lede | — |
-| Services 1440 / 375 | 46 identical | 3 rows + stills | not a home-hero clone |
-| Work 1440 / 375 | 46 identical | 4 short teasers + entry | DNA stills distinct |
-| Story Demand 1440 | 46 identical | reading **680** + still seq | Ask → Recommend → Gate → Record |
-| Approach 1440 / 375 | 46 identical | method / refuse / path bands | — |
-| Contact 1440 / 375 | 46 identical | hairline inset sheet; pill **44** `#1d1d1f` | — |
-
-No Seattle / Global clients / English-first / `#1d4ed8`. Routes locked.
-
-Soft → BACKLOG: StageStill `aria-hidden` DNA via adjacent copy; compact `desk-ui__fact`.
+No edits under `app/` or `components/`. Footer UI left for C1. Approach page left for C2. No live copy rewrite.
 
 ## Verify
 
-Prod Ready for `11406c3`. Smoke `/` `/services` `/work` `/approach` `/contact` `/work/atelier-concierge/story` HTTP 200. Pixel measure + first-viewport screenshots.
+`pnpm build` — PASS. No application code change. Docs and ops only.
 
 ## Acceptance
 
-- [x] All seven Done When bullets PASS on prod
-- [x] UI-5 CLOSED in REVIEW
-- [x] STATUS: UI CAMPAIGN APPEARANCE CLOSED; Dev standby
-- [x] Soft ADDs listed in BACKLOG only
+- [x] `docs/CANON.md` exists, English, complete canon
+- [x] ops stamped Active C0
+- [x] `pnpm build` PASS
+- [x] PR ready for review; not merged; C1 not started

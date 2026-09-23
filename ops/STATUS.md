@@ -1,10 +1,9 @@
 # Status
 
-- Phase: **UI CAMPAIGN APPEARANCE CLOSED**
-- Closed: **UI-0…UI-5 PASS** · **DoD 7/7 PASS** (tip `11406c3`, prod `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`)
-- Active: none — Dev standby for next Leader ticket
-- Next: do **not** invent UI-6
-- Soft ADD backlog: compact `desk-ui__fact` ~1rem; StageStill `aria-hidden` DNA parity
+- Phase: **CANON CYCLE**
+- Active: **C0** — `docs/CANON.md` (company spirit + site construction doctrine)
+- Previous: **UI CAMPAIGN APPEARANCE CLOSED** — UI-0…UI-5 PASS · DoD 7/7 PASS (tip `11406c3`, prod `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`). Do not invent UI-6.
+- Next: **C1** product footer — do not start until Leader REVIEW of C0. Do not start C1 in the C0 PR.
+- Base: `b8af298` on `main`
 - Preview / Production: https://remex-atelier.vercel.app
-- Tip: `11406c3` (+ ops stamp `3727031` if present)
-- Prod: `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`
+- Prod (closed UI campaign): `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`

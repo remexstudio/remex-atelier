@@ -1,35 +1,34 @@
-# TASK — STANDBY
+# TASK — C0
 
-TASK ID: none
+TASK ID: C0
 REPO: remexstudio/remex-atelier
-BASE: main tip `11406c3` (UI-5 merge) + prod `dpl_boxRtYBsw4QApNXGYxA5CjdAGhbe`
-GOAL: No active UI ticket. Appearance DoD is green. Dev standby.
+BASE: main tip `b8af298` (UI appearance campaign CLOSED)
+GOAL: Create `docs/CANON.md` — English company spirit and site construction doctrine. Docs only. No app/ UI changes. No live copy rewrites (those are C1–C5).
 
-## Owner
+## Cycle
 
-UI-0…UI-5 CLOSED. Leader appearance DoD **PASS** on live production. Do **not** invent UI-6.
+**Canon Cycle — ACTIVE C0.** Previous UI campaign (UI-0…UI-5, appearance DoD) stays **CLOSED**. Do not invent UI-6. Do not start C1 in this PR.
 
 ## Required
 
-None. Soft backlog only (see `ops/BACKLOG.md`):
-
-- StageStill `aria-hidden` DNA via adjacent copy
-- Compact `desk-ui__fact` size
+`docs/CANON.md` covers company spirit, what the site is for, construction tests, and the C0–C5 slice map. English only.
 
 ## ALLOWED FILES
 
-None until a new TASK ID is issued.
+- `docs/CANON.md`
+- `ops/*`
 
 ## OUT OF SCOPE
 
-New pages, copy/route rewrites, Seattle/Global, `#1d4ed8`, UI-6 unless a later hard FAIL reopens the campaign.
+`app/`, `components/`, footer UI (C1), Approach page edit (C2), live copy rewrites.
 
 ## ACCEPTANCE
 
-- [x] UI-5 CLOSED
-- [x] Appearance DoD PASS on https://remex-atelier.vercel.app
-- [x] Campaign CLOSED; Dev standby
+- [x] `docs/CANON.md` exists, English, complete canon
+- [x] ops stamped Active C0
+- [x] `pnpm build` still PASS (no code change expected)
+- [x] PR ready for review; do not merge; do not start C1 in this PR
 
 ## COMMIT
 
-docs(ops): stamp UI-5 CLOSED and appearance DoD PASS
+docs(canon): add CANON.md for C0
