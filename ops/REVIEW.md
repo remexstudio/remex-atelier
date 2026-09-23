@@ -1,3 +1,13 @@
+# REVIEW — C3 CLOSED
+
+- Slice: C3 home, one stage, one loop
+- Canon: **PASS**
+- Commit: `ff610e4` (`feat(home): one stage one loop for C3`)
+- Merge: `7953363` on `main` (`Merge pull request #46 from remexstudio/cursor/c3-one-stage-one-loop-9c1d`)
+- C3 CLOSED. Canon Cycle continues at C4.
+
+---
+
 # REVIEW — C2 CLOSED
 
 - Slice: C2 Approach legal

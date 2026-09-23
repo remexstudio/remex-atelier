@@ -1,43 +1,41 @@
-# TASK — C3
+# TASK — C4
 
-TASK ID: C3
+TASK ID: C4
 REPO: remexstudio/remex-atelier
-BASE: main tip after C2 merge (`a5139cc`)
-GOAL: Home teaches one gate loop and sells three services. Not wallpaper of the same Propose → Approve → Record UI.
+BASE: main tip after C3 merge (`7953363`)
+GOAL: The one home ProductStage scrubs Propose → Approve → Record as the visitor scrolls. Not a static Approve poster.
 
 ## Cycle
 
-**Canon Cycle — ACTIVE C3.** C2 is CLOSED (Canon PASS `45e6761` / merge `a5139cc`). Do not start C4 in this PR.
+**Canon Cycle — ACTIVE C4.** C3 is CLOSED (Canon PASS `ff610e4` / merge `7953363`). Do not start C5 in this PR.
 
 ## Required
 
-1. First viewport: headline + one gate ProductStage (≥520) + Design / Build / Operations + Start a brief.
-2. One explanation of the Propose → Approve → Record loop.
-3. Delete duplicate stage instances and recycled three-step sentences.
-4. Services read as the catalog. Four desks stay selected examples.
-5. Dark `#home-gate` may keep one distinct fact without a second ProductStage.
-6. No Seattle / Global clients / English-first / four SKUs. Do not regress C1 footer or C2 Approach names.
+1. Pin+scrub only the single home ProductStage module. Transform/opacity only.
+2. Scroll progresses Propose → Approve → Record. Approve is filled on the Approve beat.
+3. Do not pin the headline six times. Do not add a second ProductStage.
+4. prefers-reduced-motion: no pin. Three static frames, all text visible.
+5. No Lenis, no normalizeScroll, no body overflow lock during pin.
+6. Keep C3 structure: services catalog, one loop, dark gate chapter without a second stage, C1 footer, C2 Approach names.
 
 ## ALLOWED FILES
 
+- `components/ProductStage.tsx`
 - `components/HomeScenes.tsx`
-- `components/ProductStage.tsx` (wiring only if needed)
-- `app/globals.css` (home chapters only)
+- `app/globals.css` (stage motion only)
 - `ops/*`
 
 ## OUT OF SCOPE
 
-C4 full GSAP three-state scrub. C5 inner pages. Footer redesign. Approach legal rewrite.
+C5 inner pages. Footer. Approach. Re-adding deleted wallpaper chapters.
 
 ## ACCEPTANCE
 
-- [x] One primary PAR stage on home (not duplicated)
-- [x] One clear loop explanation; no recycled three-sentence wallpaper
-- [x] Services catalog readable as what we sell in first viewport / near it
-- [x] Examples stay short method proof, not SKUs
-- [x] C1/C2 not regressed; `pnpm build` PASS; PR open; not merged; C4 not started
-- [x] C2 CLOSED stamped in REVIEW (Canon PASS `45e6761` / merge `a5139cc`)
+- [ ] Scroll drives Propose→Approve→Record on the one stage
+- [ ] RM: three frames + all text; no scroll trap
+- [ ] One stage only; C3 structure held; pnpm build PASS; PR open; not merged; C5 not started
+- [ ] C3 CLOSED stamped in REVIEW (Canon PASS `ff610e4` / merge `7953363`)
 
 ## COMMIT
 
-feat(home): one stage one loop for C3
+feat(home): scrub stage states for C4

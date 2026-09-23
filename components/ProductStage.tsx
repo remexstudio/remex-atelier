@@ -137,14 +137,14 @@ function StagePanel({
 }: {
   step: (typeof STEPS)[number];
 }) {
-  const filled = step.id === "approve";
+  const active = step.id === "propose";
 
   return (
     <div
       className="product-stage__panel"
       data-panel={step.id}
-      data-active={filled ? "true" : "false"}
-      aria-hidden={filled ? undefined : true}
+      data-active={active ? "true" : "false"}
+      aria-hidden={active ? undefined : true}
     >
       {step.id === "propose" ? (
         <ProposeTicket step={step} />
@@ -170,7 +170,7 @@ export function ProductStage({ variant = "light" }: ProductStageProps) {
       }
       data-product-stage
       data-stage-variant={variant}
-      data-active-step="approve"
+      data-active-step="propose"
       aria-labelledby={mechanismId}
     >
       <div className="product-stage__specular" aria-hidden="true" />
@@ -189,7 +189,7 @@ export function ProductStage({ variant = "light" }: ProductStageProps) {
               key={step.id}
               className="product-stage__step"
               data-step={step.id}
-              data-active={step.id === "approve" ? "true" : "false"}
+              data-active={step.id === "propose" ? "true" : "false"}
             >
               <span className="product-stage__step-mark" aria-hidden="true" />
               {step.title}
