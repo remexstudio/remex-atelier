@@ -9,7 +9,7 @@ export const pulseLoop: PulseStep[] = [
     id: "see",
     title: "See metric",
     detail:
-      "Watch a single prototype signal: latency on a mock roster ping. No client SLA claims.",
+      "Watch one prototype signal: a mock roster ping. No client SLA.",
   },
   {
     id: "notify",
