@@ -27,7 +27,7 @@ export const pulseLoop: PulseStep[] = [
     id: "follow",
     title: "Follow up rest",
     detail:
-      "Schedule a rest follow-up for anyone who did not acknowledge. Still a prototype path.",
+      "A rest follow-up for anyone who did not acknowledge. Still a prototype.",
   },
 ];
 
