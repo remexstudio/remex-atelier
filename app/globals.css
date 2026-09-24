@@ -7248,7 +7248,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.9375rem;
   line-height: 1.45;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   color: var(--ink);
   padding: 0.85rem 1rem;
   border-radius: 0.65rem;
