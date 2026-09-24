@@ -21,7 +21,7 @@ export const pulseLoop: PulseStep[] = [
     id: "log",
     title: "Log event",
     detail:
-      "Append an event to the local pulse log with a timestamp and who was notified.",
+      "Append the step to the local log, with a timestamp and who was notified.",
   },
   {
     id: "follow",
