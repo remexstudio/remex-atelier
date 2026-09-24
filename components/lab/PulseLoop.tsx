@@ -98,6 +98,9 @@ export function PulseLoop() {
             const state = active ? "active" : done ? "done" : "idle";
             return (
               <li key={item.id} className={`pulse-chip pulse-chip--${state}`}>
+                <span className="sr-only">
+                  {active ? "Current. " : done ? "Done. " : "Waiting. "}
+                </span>
                 {item.title}
               </li>
             );
