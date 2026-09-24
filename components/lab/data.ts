@@ -15,7 +15,7 @@ export const pulseLoop: PulseStep[] = [
     id: "notify",
     title: "Notify roster",
     detail:
-      "Fan out a quiet note to an internal roster of three seats. Demo only: no SMS or email provider.",
+      "A quiet note to an internal roster. Demo only: no SMS or email is sent.",
   },
   {
     id: "log",
