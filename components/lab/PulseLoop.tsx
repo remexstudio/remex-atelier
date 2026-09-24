@@ -14,11 +14,13 @@ function makeId(): string {
 }
 
 function formatEventTime(iso: string): string {
-  return new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: "UTC",
-  }).format(new Date(iso));
+  return (
+    new Intl.DateTimeFormat("en-US", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "UTC",
+    }).format(new Date(iso)) + " UTC"
+  );
 }
 
 export function PulseLoop() {
