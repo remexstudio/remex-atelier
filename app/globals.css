@@ -1783,7 +1783,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: color-mix(in srgb, var(--muted) 36%, var(--ink));
+  color: color-mix(in srgb, var(--muted) 22%, var(--ink));
   text-wrap: pretty;
 }
 
