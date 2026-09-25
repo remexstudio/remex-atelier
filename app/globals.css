@@ -2106,7 +2106,7 @@ button:active {
   margin: 0;
   font-size: 1.0625rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
   text-wrap: pretty;
 }
 
