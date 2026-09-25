@@ -8745,7 +8745,7 @@ button:active {
 
 .work-teaser__body {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.55rem;
   align-content: center;
   min-width: 0;
 }
