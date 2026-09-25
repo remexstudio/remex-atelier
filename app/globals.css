@@ -6631,7 +6631,7 @@ button:active {
 }
 
 .contact-input::placeholder {
-  color: color-mix(in srgb, var(--muted) 75%, white);
+  color: var(--secondary);
 }
 
 .contact-actions {
