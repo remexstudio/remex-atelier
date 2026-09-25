@@ -59,7 +59,7 @@ export const CATALOG_LINES = [
     refuse:
       "A vague assistant for everything. A seat with no named approver. Work that should not be an agent.",
     done: "Job and gate agreed. The brief is ready to build. No silent execution.",
-    note: "Design happens before tools enter the room. If a smaller tool is honest, say so and walk away.",
+    note: "Design happens before tools enter the room. If a smaller tool is the honest answer, say so.",
   },
   {
     id: "build",

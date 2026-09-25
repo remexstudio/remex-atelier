@@ -37,7 +37,12 @@ export function StageStill({
         </div>
         <div className="stage-still__body">{children}</div>
       </div>
-      {read ? <p className="stage-still__read">{read}</p> : null}
+      {read ? (
+        <p className="stage-still__read">
+          <span className="sr-only">{seat}. </span>
+          {read}
+        </p>
+      ) : null}
     </div>
   );
 }

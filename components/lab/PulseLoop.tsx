@@ -14,11 +14,13 @@ function makeId(): string {
 }
 
 function formatEventTime(iso: string): string {
-  return new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: "UTC",
-  }).format(new Date(iso));
+  return (
+    new Intl.DateTimeFormat("en-US", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "UTC",
+    }).format(new Date(iso)) + " UTC"
+  );
 }
 
 export function PulseLoop() {
@@ -98,6 +100,9 @@ export function PulseLoop() {
             const state = active ? "active" : done ? "done" : "idle";
             return (
               <li key={item.id} className={`pulse-chip pulse-chip--${state}`}>
+                <span className="sr-only">
+                  {active ? "Current. " : done ? "Done. " : "Waiting. "}
+                </span>
                 {item.title}
               </li>
             );

@@ -5,11 +5,11 @@ import { SiteChrome } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   title: "Lab",
   description:
-    "Remex Studio lab: prototypes that are not client engagements.",
+    "Lab prototypes. Not client engagements.",
   openGraph: {
     title: "Lab · Remex Studio",
     description:
-      "Remex Studio lab: prototypes that are not client engagements.",
+      "Lab prototypes. Not client engagements.",
     url: "/lab",
     type: "website",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Lab · Remex Studio",
     description:
-      "Remex Studio lab: prototypes that are not client engagements.",
+      "Lab prototypes. Not client engagements.",
   },
 };
 
@@ -27,19 +27,19 @@ export default function LabPage() {
   return (
     <SiteChrome variant="film">
       <main id="main" className="film-page lab-page">
-        <aside className="film-panel lab-banner" aria-label="Prototype notice">
+        <aside className="film-panel lab-banner" aria-label="Lab notice">
           <p className="film-kicker">Lab</p>
           <p className="lab-banner__mark">
             Prototype · not a client engagement
           </p>
           <p className="film-lede">
-            Small loops we run to test craft. Not client work. Not studies.
+            Small loops for testing craft. Not client work.
           </p>
         </aside>
 
         <article className="film-panel lab-card">
           <p className="lab-card__flag">Prototype · not a client engagement</p>
-          <h1 className="film-title">Prototypes</h1>
+          <h1 className="film-title">Lab</h1>
           <h2 className="lab-card__name">Pulse</h2>
           <p className="film-lede">
             See a metric, notify a roster, log the event, follow up the rest.

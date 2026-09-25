@@ -173,6 +173,18 @@ summary:focus-visible,
   outline-offset: 3px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -420,7 +432,7 @@ button:active {
 
 .site-nav__links a:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .site-nav__mark {
@@ -444,7 +456,7 @@ button:active {
 
 .site-nav__mark:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 /* Desktop: primary four share ONE 46px sticky row */
@@ -512,7 +524,7 @@ button:active {
 
 .site-nav__toggle:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .site-nav__panel {
@@ -589,7 +601,7 @@ button:active {
 
 .site-nav__panel-list a:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: -2px;
+  outline-offset: 3px;
 }
 
 .site-shell--default .site-nav {
@@ -682,11 +694,13 @@ button:active {
 
 .site-footer__legal {
   margin-bottom: 0.65rem;
+  letter-spacing: 0;
 }
 
 .site-footer__note {
   margin-top: -0.35rem;
   margin-bottom: 0.65rem;
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .site-footer__nav {
@@ -748,6 +762,11 @@ button:active {
   font-size: 0.8125rem;
   letter-spacing: 0.01em;
   line-height: 1.3;
+}
+
+.site-footer__quiet a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .site-footer a:focus-visible {
@@ -1765,7 +1784,7 @@ button:active {
 
 .home-svc__label {
   font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -2275,7 +2294,7 @@ button:active {
   max-width: 34rem;
   font-size: 1.0625rem;
   line-height: 1.5;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
   text-wrap: pretty;
 }
 
@@ -2670,7 +2689,7 @@ button:active {
   margin: 0.45rem 0 0;
   font-size: 0.9375rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .work-fits__list {
@@ -2742,6 +2761,10 @@ button:active {
   line-height: 1.5;
   letter-spacing: 0.01em;
   color: var(--muted);
+}
+
+.ex-study {
+  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
 }
 
 .ex-display {
@@ -2871,13 +2894,13 @@ button:active {
   max-width: 36rem;
   font-size: 0.9375rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
 }
 
 .ex-still__beat {
   font-size: 0.75rem;
   line-height: 1.3;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink);
 }
@@ -6549,6 +6572,14 @@ button:active {
   color: var(--ink);
 }
 
+.contact-hint {
+  margin: -0.1rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
+}
+
 @media (max-width: 479px) {
   .contact-page {
     padding-inline: 1rem;
@@ -6631,7 +6662,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.875rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .contact-success .contact-cta {
@@ -6677,7 +6708,7 @@ button:active {
   font-size: var(--size-eyebrow);
   line-height: 1.3;
   letter-spacing: var(--tracking-eyebrow);
-  color: var(--secondary);
+  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
 }
 
 .film-title {
@@ -6951,7 +6982,7 @@ button:active {
 
 .svc-line__note {
   margin-top: 0.25rem;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .svc-scope {
@@ -7217,7 +7248,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.9375rem;
   line-height: 1.45;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   color: var(--ink);
   padding: 0.85rem 1rem;
   border-radius: 0.65rem;
@@ -8646,6 +8677,10 @@ button:active {
   margin-bottom: 1.1rem;
 }
 
+.work-index__kicker {
+  margin: 0 0 0.55rem;
+}
+
 .work-index__title {
   margin: 0;
   font-family: var(--font-display);
@@ -8662,7 +8697,7 @@ button:active {
   max-width: 36rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .work-index__list {
@@ -8913,7 +8948,7 @@ button:active {
   max-width: 40rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
 }
 
 .approach-page .approach-section__title {
@@ -9318,7 +9353,7 @@ button:active {
   margin: 0;
   font-size: 0.75rem;
   letter-spacing: 0.01em;
-  color: var(--secondary);
+  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
 }
 
 .desk-ui__sheet {

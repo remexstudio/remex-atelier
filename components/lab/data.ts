@@ -9,25 +9,25 @@ export const pulseLoop: PulseStep[] = [
     id: "see",
     title: "See metric",
     detail:
-      "Watch a single prototype signal: latency on a mock roster ping. No client SLA claims.",
+      "Watch one prototype signal: a mock roster ping. No client SLA.",
   },
   {
     id: "notify",
     title: "Notify roster",
     detail:
-      "Fan out a quiet note to an internal roster of three seats. Demo only: no SMS or email provider.",
+      "A quiet note to an internal roster. Demo only: no SMS or email is sent.",
   },
   {
     id: "log",
     title: "Log event",
     detail:
-      "Append an event to the local pulse log with a timestamp and who was notified.",
+      "Append the step to the local log, with a timestamp and who was notified.",
   },
   {
     id: "follow",
     title: "Follow up rest",
     detail:
-      "Schedule a rest follow-up for anyone who did not acknowledge. Still a prototype path.",
+      "A rest follow-up for anyone who did not acknowledge. Still a prototype.",
   },
 ];
 

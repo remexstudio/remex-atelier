@@ -15,7 +15,7 @@ type SiteChromeProps = {
 
 /**
  * Primary nav — marketing routes only. Never link /demo/* here.
- * Work / Services / Approach / Contact. Prototype and About stay quiet in the footer.
+ * Work / Services / Approach / Contact. Lab and About stay quiet in the footer.
  */
 const NAV = [
   { href: "/work", label: "Work" },
@@ -41,7 +41,7 @@ export function SiteChrome({
     >
       <header className="site-nav">
         <div className="site-nav__inner">
-          <Link href="/" className="site-nav__mark">
+          <Link href="/" className="site-nav__mark" translate="no">
             REMEX STUDIO
           </Link>
           <div className="site-nav__cluster">

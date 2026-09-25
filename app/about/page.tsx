@@ -5,11 +5,11 @@ import { SiteChrome } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
+    "Agents, built to the brief. Legal entity: Jiyuyun Studio LLC.",
   openGraph: {
     title: "About · Remex Studio",
     description:
-      "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
+      "Agents, built to the brief. Legal entity: Jiyuyun Studio LLC.",
     url: "/about",
     type: "website",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "About · Remex Studio",
     description:
-      "Remex Studio: agents built to the brief. Jiyuyun Studio LLC.",
+      "Agents, built to the brief. Legal entity: Jiyuyun Studio LLC.",
   },
 };
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
           <h1 className="film-title">Remex Studio</h1>
           <p className="film-lede">Agents, built to the brief.</p>
           <p className="film-lede about-say">
-            One painful workflow. One agent. A human gate.
+            One workflow. One agent. A human still decides.
           </p>
         </header>
 
@@ -40,12 +40,12 @@ export default function AboutPage() {
           </h2>
           <p className="film-lede">
             We turn one painful workflow into a working agent, then keep molting
-            it. One brief at a time, with craft and a human gate.
+            it. One brief at a time. A human still decides.
           </p>
           <dl className="about-facts">
             <div className="about-fact">
               <dt>Legal</dt>
-              <dd>Jiyuyun Studio LLC</dd>
+              <dd translate="no">Jiyuyun Studio LLC</dd>
             </div>
             <div className="about-fact">
               <dt>Wordmark</dt>

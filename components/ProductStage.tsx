@@ -183,13 +183,14 @@ export function ProductStage({ variant = "light" }: ProductStageProps) {
         </p>
       </div>
       <div className="product-stage__desk">
-        <ol className="product-stage__rail">
+        <ol className="product-stage__rail" aria-label="Stage beats">
           {STEPS.map((step) => (
             <li
               key={step.id}
               className="product-stage__step"
               data-step={step.id}
               data-active={step.id === "propose" ? "true" : "false"}
+              aria-current={step.id === "propose" ? "step" : undefined}
             >
               <span className="product-stage__step-mark" aria-hidden="true" />
               {step.title}

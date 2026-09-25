@@ -26,19 +26,19 @@ export default function PulsePage() {
   return (
     <SiteChrome variant="film">
       <main id="main" className="film-page lab-page lab-page--pulse">
-        <aside className="film-panel lab-banner" aria-label="Prototype notice">
+        <aside className="film-panel lab-banner" aria-label="Pulse notice">
           <p className="film-kicker">Lab · Pulse</p>
           <p className="lab-banner__mark">
             Prototype · not a client engagement
           </p>
           <p className="film-lede">
-            A four-step loop for internal attention. This is a prototype, not a
-            client study.
+            A loop for internal attention. This is a prototype, not a client
+            engagement.
           </p>
         </aside>
 
         <header className="film-panel">
-          <p className="film-kicker">Prototype</p>
+          <p className="film-kicker">Loop</p>
           <h1 className="film-title">Pulse</h1>
           <p className="film-lede">
             See a metric, notify a roster, log the event, follow up the rest.

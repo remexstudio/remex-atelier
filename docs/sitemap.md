@@ -1,6 +1,6 @@
 # Sitemap (Atelier V3)
 
-Shipped marketing routes after V3-9. Legacy dual work pages are gone; old work URLs 301 to unique product chapters. Demo families 301 to `/lab` (Prototype).
+Shipped marketing routes after V3-9. Legacy dual work pages are gone; old work URLs 301 to unique product chapters. Demo families 301 to `/lab`.
 
 ## Marketing
 
@@ -14,7 +14,7 @@ Shipped marketing routes after V3-9. Legacy dual work pages are gone; old work U
 | `/work/exception-copilot` | Unique product chapter |
 | `/services` | Offers |
 | `/approach` | Methods + name meaning + refuse + roadmap |
-| `/lab` | Prototype index |
+| `/lab` | Lab index |
 | `/lab/pulse` | Pulse prototype (not a client engagement) |
 | `/about` | Studio + legal |
 | `/contact` | Start a brief |

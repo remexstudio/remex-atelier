@@ -12,7 +12,7 @@ import {
 } from "@/lib/selected-examples";
 
 const WORK_LEDE =
-  "Proof of method. Each example is one seat — a job, a gate, and a record — not a catalog.";
+  "Proof of method. Each example is one seat: a job, a gate, and a record.";
 
 export const metadata: Metadata = {
   title: INDEX_LABEL,
@@ -39,6 +39,7 @@ export default function WorkPage() {
     <SiteChrome variant="film">
       <main id="main" className="work-index">
         <div className="work-index__intro">
+          <p className="film-kicker work-index__kicker">Work</p>
           <h1 className="work-index__title">{INDEX_LABEL}</h1>
           <p className="work-index__lede">{WORK_LEDE}</p>
         </div>

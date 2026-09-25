@@ -11,28 +11,28 @@ const BRIEF_FIELDS = [
     label: BRIEF_ASKS[0],
     kind: "area",
     autoComplete: "off",
-    placeholder: "The weekly close, overnight mail, exception queue…",
+    placeholder: "The close, the inbox, or the exception queue…",
   },
   {
     name: "approver",
     label: BRIEF_ASKS[1],
     kind: "text",
     autoComplete: "off",
-    placeholder: "Named person on the client side…",
+    placeholder: "The person who approves.",
   },
   {
     name: "never",
     label: BRIEF_ASKS[2],
     kind: "area",
     autoComplete: "off",
-    placeholder: "Charge, post, execute, refund…",
+    placeholder: "Posting, charging, deleting, or moving money…",
   },
   {
     name: "record",
     label: BRIEF_ASKS[3],
     kind: "area",
     autoComplete: "off",
-    placeholder: "Proposal, decision, and outcome stay linked…",
+    placeholder: "Where the proposal and the decision should live.",
   },
 ] as const;
 
@@ -40,6 +40,8 @@ export function ContactForm() {
   const formId = useId();
   const nameId = `${formId}-name`;
   const emailId = `${formId}-email`;
+  const nameHintId = `${formId}-name-hint`;
+  const emailHintId = `${formId}-email-hint`;
   const successId = `${formId}-success`;
   const successRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<Status>("idle");
@@ -66,38 +68,43 @@ export function ContactForm() {
         id={successId}
         tabIndex={-1}
       >
-        <h2 className="contact-success__title">Brief received</h2>
+        <h2 className="contact-success__title">Brief noted</h2>
         <p className="contact-success__body">
           Thanks. We&rsquo;ll read it and reply when a fit is clear.
         </p>
         <p className="contact-success__meta">
-          This is a studio mock — no message was sent.
+          Studio preview. Nothing was sent.
         </p>
         <button
           type="button"
           className="contact-cta cta-pill"
           onClick={() => setStatus("idle")}
         >
-          Send another brief
+          Write another brief
         </button>
       </div>
     );
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate={false}>
+    <form className="contact-form" onSubmit={handleSubmit}>
       <div className="contact-field">
         <label htmlFor={nameId} className="contact-label">
           Name
         </label>
+        <p id={nameHintId} className="contact-hint">
+          Who is sending the brief.
+        </p>
         <input
           id={nameId}
           name="name"
           type="text"
           autoComplete="name"
+          autoCapitalize="words"
           required
           spellCheck={false}
           className="contact-input"
+          aria-describedby={nameHintId}
           placeholder="Alex Rivera…"
         />
       </div>
@@ -105,15 +112,20 @@ export function ContactForm() {
         <label htmlFor={emailId} className="contact-label">
           Email
         </label>
+        <p id={emailHintId} className="contact-hint">
+          Where a reply should go.
+        </p>
         <input
           id={emailId}
           name="email"
           type="email"
           autoComplete="email"
+          autoCapitalize="none"
           inputMode="email"
           required
           spellCheck={false}
           className="contact-input"
+          aria-describedby={emailHintId}
           placeholder="alex@studio.example…"
         />
       </div>

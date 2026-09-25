@@ -45,13 +45,13 @@ const SERVICE_STRIP = [
 ] as const;
 
 /**
- * One fact per offer. Build uses the ship outcome, not a second
- * Propose → Approve → Record bullet list (that loop lives on the stage).
+ * One short fact per offer on the home strip. The services page keeps
+ * the full desk copy. Build does not repeat the stage loop.
  */
 const OFFER_FACT: Record<(typeof CATALOG_LINES)[number]["id"], string> = {
-  design: CATALOG_LINES[0].deliverable,
-  build: CATALOG_LINES[1].done,
-  operations: CATALOG_LINES[2].deliverable,
+  design: "A written job, and the gate the agent cannot cross.",
+  build: "The first seat ships. A human still decides.",
+  operations: "Evals against this job. The first gate has to hold.",
 };
 
 const CLOSE_CHAPTERS = [
@@ -82,7 +82,10 @@ function showStatic() {
 function setStageStep(root: HTMLElement, step: "propose" | "approve" | "record") {
   root.setAttribute("data-active-step", step);
   root.querySelectorAll<HTMLElement>("[data-step]").forEach((el) => {
-    el.setAttribute("data-active", el.dataset.step === step ? "true" : "false");
+    const on = el.dataset.step === step;
+    el.setAttribute("data-active", on ? "true" : "false");
+    if (on) el.setAttribute("aria-current", "step");
+    else el.removeAttribute("aria-current");
   });
   root.querySelectorAll<HTMLElement>("[data-panel]").forEach((el) => {
     const active = el.dataset.panel === step;
@@ -169,6 +172,7 @@ export function HomeScenes() {
         heroStage?.querySelectorAll<HTMLElement>("[data-step]").forEach(
           (el) => {
             el.setAttribute("data-active", "false");
+            el.removeAttribute("aria-current");
           },
         );
       });
@@ -455,7 +459,7 @@ export function HomeScenes() {
               </Link>
             </p>
           </div>
-          <nav className="home-close-map" data-close-map aria-label="Home chapters">
+          <nav className="home-close-map" data-close-map aria-label="On this page">
             <ul>
               {CLOSE_CHAPTERS.map((item) => (
                 <li key={item.href}>

@@ -104,7 +104,7 @@ export default function ServicesPage() {
               ))}
             </ol>
             <p className="svc-scope">
-              First seats are narrowly scoped. One workflow. One agent. A
+              Each first seat stays narrow. One workflow. One agent. A
               human still decides.
             </p>
           </div>

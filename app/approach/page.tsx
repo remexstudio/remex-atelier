@@ -55,7 +55,7 @@ const METHODS = [
     id: "keep-the-record",
     title: "Keep the record",
     lead: "Link proposal, decision, and outcome so the team can reopen it.",
-    body: "Every proposal, approval, and outcome stays on one thread the team can reopen later. The brief, the gate, and the result stay linked — so the desk can explain what happened without hunting across tools.",
+    body: "The brief, the gate, and the result stay on one thread, so the desk can explain what happened without hunting across tools.",
   },
 ] as const;
 
@@ -227,7 +227,7 @@ export default function ApproachPage() {
                 Start a brief.
               </h2>
               <p className="approach-close__lede">
-                Tell us the painful workflow. We design the agent and the gate.
+                Tell us the painful workflow and the gate.
               </p>
               <p className="approach-close__cta-wrap">
                 <Link href="/contact" className="approach-cta cta-pill">
