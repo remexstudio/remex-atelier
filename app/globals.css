@@ -6626,7 +6626,7 @@ button:active {
 
 .contact-input:focus-visible {
   outline: 2px solid var(--cta);
-  outline-offset: 2px;
+  outline-offset: 3px;
   border-color: var(--cta);
 }
 
