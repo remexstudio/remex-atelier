@@ -8765,7 +8765,7 @@ button:active {
   max-width: 36rem;
   font-size: 0.9875rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
   text-wrap: pretty;
 }
 
