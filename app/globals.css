@@ -7322,7 +7322,7 @@ button:active {
   font-size: 0.8125rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
 }
 
 .about-fact dd {
