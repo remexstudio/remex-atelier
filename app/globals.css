@@ -1837,7 +1837,7 @@ button:active {
   margin: 0.85rem 0 0;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
 }
