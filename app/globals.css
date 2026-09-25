@@ -435,6 +435,11 @@ button:active {
   outline-offset: 3px;
 }
 
+.site-nav__links a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .site-nav__mark {
   display: inline-flex;
   align-items: center;
