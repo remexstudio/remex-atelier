@@ -8671,6 +8671,10 @@ button:active {
   margin-bottom: 1.1rem;
 }
 
+.work-index__kicker {
+  margin: 0 0 0.55rem;
+}
+
 .work-index__title {
   margin: 0;
   font-family: var(--font-display);
