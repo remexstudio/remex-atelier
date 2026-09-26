@@ -2,7 +2,7 @@ import Link from "next/link";
 import { isPrimaryCurrent, type SiteNavItem } from "@/components/SiteNavMenu";
 
 const QUIET = [
-  { href: "/lab", label: "Prototype" },
+  { href: "/lab", label: "Lab" },
   { href: "/about", label: "About" },
 ] as const;
 
@@ -15,7 +15,7 @@ type SiteFooterProps = {
 
 /**
  * Product close. Same on every main route.
- * Lockup, three-name legal row, primary four, then quiet Prototype / About text.
+ * Lockup, three-name legal row, primary four, then quiet Lab / About text.
  */
 export function SiteFooter({ links, pathname, footerLine }: SiteFooterProps) {
   return (
