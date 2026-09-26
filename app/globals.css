@@ -432,7 +432,7 @@ button:active {
 
 .site-nav__links a:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .site-nav__mark {
@@ -456,7 +456,7 @@ button:active {
 
 .site-nav__mark:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 /* Desktop: primary four share ONE 46px sticky row */
@@ -524,7 +524,7 @@ button:active {
 
 .site-nav__toggle:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .site-nav__panel {
