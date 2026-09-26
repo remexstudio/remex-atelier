@@ -5,17 +5,20 @@ import { BRIEF_ASKS } from "@/lib/brief-asks";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Start a brief with Remex Studio.",
+  description:
+    "Start a brief with Remex Studio. Name the workflow, who approves, and the record you must keep.",
   openGraph: {
     title: "Contact · Remex Studio",
-    description: "Start a brief with Remex Studio.",
+    description:
+      "Start a brief with Remex Studio. Name the workflow, who approves, and the record you must keep.",
     url: "/contact",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "Contact · Remex Studio",
-    description: "Start a brief with Remex Studio.",
+    description:
+      "Start a brief with Remex Studio. Name the workflow, who approves, and the record you must keep.",
   },
 };
 
