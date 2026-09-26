@@ -82,7 +82,10 @@ function showStatic() {
 function setStageStep(root: HTMLElement, step: "propose" | "approve" | "record") {
   root.setAttribute("data-active-step", step);
   root.querySelectorAll<HTMLElement>("[data-step]").forEach((el) => {
-    el.setAttribute("data-active", el.dataset.step === step ? "true" : "false");
+    const on = el.dataset.step === step;
+    el.setAttribute("data-active", on ? "true" : "false");
+    if (on) el.setAttribute("aria-current", "step");
+    else el.removeAttribute("aria-current");
   });
   root.querySelectorAll<HTMLElement>("[data-panel]").forEach((el) => {
     const active = el.dataset.panel === step;
@@ -169,6 +172,7 @@ export function HomeScenes() {
         heroStage?.querySelectorAll<HTMLElement>("[data-step]").forEach(
           (el) => {
             el.setAttribute("data-active", "false");
+            el.removeAttribute("aria-current");
           },
         );
       });

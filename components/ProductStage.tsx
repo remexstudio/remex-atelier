@@ -190,6 +190,7 @@ export function ProductStage({ variant = "light" }: ProductStageProps) {
               className="product-stage__step"
               data-step={step.id}
               data-active={step.id === "propose" ? "true" : "false"}
+              aria-current={step.id === "propose" ? "step" : undefined}
             >
               <span className="product-stage__step-mark" aria-hidden="true" />
               {step.title}
