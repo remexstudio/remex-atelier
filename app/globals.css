@@ -6566,6 +6566,14 @@ button:active {
   color: var(--ink);
 }
 
+.contact-hint {
+  margin: -0.1rem 0 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
+}
+
 @media (max-width: 479px) {
   .contact-page {
     padding-inline: 1rem;

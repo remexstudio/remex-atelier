@@ -40,6 +40,8 @@ export function ContactForm() {
   const formId = useId();
   const nameId = `${formId}-name`;
   const emailId = `${formId}-email`;
+  const nameHintId = `${formId}-name-hint`;
+  const emailHintId = `${formId}-email-hint`;
   const successId = `${formId}-success`;
   const successRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<Status>("idle");
@@ -90,6 +92,9 @@ export function ContactForm() {
         <label htmlFor={nameId} className="contact-label">
           Name
         </label>
+        <p id={nameHintId} className="contact-hint">
+          Who is sending the brief.
+        </p>
         <input
           id={nameId}
           name="name"
@@ -98,6 +103,7 @@ export function ContactForm() {
           required
           spellCheck={false}
           className="contact-input"
+          aria-describedby={nameHintId}
           placeholder="Alex Rivera…"
         />
       </div>
@@ -105,6 +111,9 @@ export function ContactForm() {
         <label htmlFor={emailId} className="contact-label">
           Email
         </label>
+        <p id={emailHintId} className="contact-hint">
+          Where a reply should go.
+        </p>
         <input
           id={emailId}
           name="email"
@@ -114,6 +123,7 @@ export function ContactForm() {
           required
           spellCheck={false}
           className="contact-input"
+          aria-describedby={emailHintId}
           placeholder="alex@studio.example…"
         />
       </div>
