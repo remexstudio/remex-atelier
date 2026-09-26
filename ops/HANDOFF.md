@@ -1,12 +1,15 @@
 # Handoff — overnight UI and copy maintenance
 
-- Status: **DELIVERED** — 18 commits on the branch. PR open. Not merged.
-- Batch: Owner maintenance, Sep 24–25 PT. Not a Canon cycle.
+- Status: **DELIVERED** — PR open. Not merged.
+- PR: https://github.com/remexstudio/remex-atelier/pull/51
+- Batch: Owner maintenance, Sep 24–25 PT, plus heatmap backfill. Not a Canon cycle.
 - Branch: `cursor/m-night-ui-copy-20260925-e79c`
 - Base: `955309b` on `main` (Merge pull request #50, C6)
-- Tip: this commit. Prior polish tip `0198aea`.
+- Authorship: every commit on this branch uses author and committer `remexstudio <remexstudio.dev@gmail.com>`. No Cursor Agent email.
+- Night window: the original 18 commits are dated 2026-09-25 23:30 PT through 2026-09-26 01:30 PT.
+- Backfill: 10 real commits on each of 2026-09-16, 2026-09-19, 2026-09-20, 2026-09-21, and 2026-09-24 (America/Los_Angeles, daytime).
 - Planned map: **C0–C6 stay closed**. Do not invent C7. Propose-first default unchanged.
-- Build: `pnpm build` PASS (Next.js 16.3.5, 19 static routes) before this docs commit.
+- Build: `pnpm build` PASS (Next.js 16.3.5, 19 static routes) on the pre-backfill tree.
 
 ## What changed
 
@@ -35,9 +38,10 @@ Commits landed about 2 minutes 15 seconds to 2 minutes 45 seconds apart (author 
 
 ## Acceptance
 
-- [x] 18 commits, one concern each, not squashed
-- [x] Spaced on the remote by a 150s wait between push and the next edit
-- [x] `pnpm build` PASS
+- [x] Original 18 commits kept separate, then rewritten in place (not squashed)
+- [x] Author and committer are `remexstudio.dev@gmail.com` on every commit ahead of main
+- [x] Backfill: 10 commits each on Sep 16, 19, 20, 21, and 24 PT
+- [x] `pnpm build` PASS before the backfill commits
 - [x] C0–C6 not reopened; C7 not invented
 - [x] English copy; brand lockup unchanged (Remex Studio · Jiyuyun Studio LLC, with the Chinese mark only where it already lived)
 - [ ] Leader review. Not merged.
@@ -59,6 +63,13 @@ Commits landed about 2 minutes 15 seconds to 2 minutes 45 seconds apart (author 
 - `lib/services-catalog.ts`
 - `ops/HANDOFF.md`
 - `ops/STATUS.md`
+- `app/layout.tsx`
+- `app/lab/page.tsx`
+- `components/lab/PulseLoop.tsx`
+- `components/lab/data.ts`
+- `components/SiteChrome.tsx`
+- `components/SiteNavMenu.tsx`
+- `docs/sitemap.md`
 
 ## Skills
 
@@ -74,5 +85,7 @@ Applied from `docs/design.md`, `docs/brand.md`, and `docs/copy-locks.md`, which 
 - The hidden desk name is announced on every still that has a read line, including story stills, not only the home teasers.
 - Footer “Prototype” is now “Lab”. The prototype banner on `/lab` and `/lab/pulse` is unchanged.
 - Approach page lede was not shortened. It is a locked pair of sentences.
-- Header focus rings sit 1px farther out. The mobile panel’s inset ring was left as-is.
+- Header and mobile-menu focus rings use a 3px offset.
+- Lab’s visible page title is now “Lab”. The prototype banner still says it is not a client engagement.
+- Backfill author dates are earlier than their parent commits. GitHub counts the author date.
 - Reduced motion shows all three stage panels and clears `aria-current`, so no single beat is “current” in that mode.
