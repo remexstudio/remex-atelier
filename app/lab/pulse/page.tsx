@@ -32,8 +32,8 @@ export default function PulsePage() {
             Prototype · not a client engagement
           </p>
           <p className="film-lede">
-            A four-step loop for internal attention. This is a prototype, not a
-            client study.
+            A loop for internal attention. This is a prototype, not a client
+            engagement.
           </p>
         </aside>
 
