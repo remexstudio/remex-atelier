@@ -47,7 +47,13 @@ export function SiteFooter({ links, pathname, footerLine }: SiteFooterProps) {
         </nav>
         <nav aria-label="Secondary" className="site-footer__quiet">
           {QUIET.map((item) => (
-            <Link key={item.href} href={item.href}>
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={
+                isPrimaryCurrent(pathname, item.href) ? "page" : undefined
+              }
+            >
               {item.label}
             </Link>
           ))}
