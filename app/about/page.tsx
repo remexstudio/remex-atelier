@@ -30,7 +30,7 @@ export default function AboutPage() {
           <h1 className="film-title">Remex Studio</h1>
           <p className="film-lede">Agents, built to the brief.</p>
           <p className="film-lede about-say">
-            One painful workflow. One agent. A human gate.
+            One workflow. One agent. A human still decides.
           </p>
         </header>
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
           </h2>
           <p className="film-lede">
             We turn one painful workflow into a working agent, then keep molting
-            it. One brief at a time, with craft and a human gate.
+            it. One brief at a time. A human still decides.
           </p>
           <dl className="about-facts">
             <div className="about-fact">
