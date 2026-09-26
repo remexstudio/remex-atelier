@@ -55,7 +55,7 @@ const METHODS = [
     id: "keep-the-record",
     title: "Keep the record",
     lead: "Link proposal, decision, and outcome so the team can reopen it.",
-    body: "Every proposal, approval, and outcome stays on one thread the team can reopen later. The brief, the gate, and the result stay linked — so the desk can explain what happened without hunting across tools.",
+    body: "The brief, the gate, and the result stay on one thread, so the desk can explain what happened without hunting across tools.",
   },
 ] as const;
 
