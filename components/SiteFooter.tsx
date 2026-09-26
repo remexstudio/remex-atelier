@@ -25,8 +25,8 @@ export function SiteFooter({ links, pathname, footerLine }: SiteFooterProps) {
           Remex Studio
         </Link>
         <p className="site-footer__legal" translate="no">
-          Remex Studio · <span lang="zh">机羽云 Studio</span> · Jiyuyun Studio
-          LLC
+          Remex Studio · <span lang="zh">机羽云 Studio</span> · Jiyuyun
+          Studio&nbsp;LLC
         </p>
         {footerLine ? <p className="site-footer__note">{footerLine}</p> : null}
         <nav aria-label="Footer" className="site-footer__nav">
