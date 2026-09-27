@@ -7323,7 +7323,7 @@ button:active {
   margin: 0;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8125rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--muted) 35%, var(--ink));
 }
