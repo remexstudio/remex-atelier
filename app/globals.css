@@ -700,6 +700,7 @@ button:active {
 .site-footer__legal {
   margin-bottom: 0.65rem;
   letter-spacing: 0;
+  color: color-mix(in srgb, var(--secondary) 62%, var(--ink));
 }
 
 .site-footer__note {
