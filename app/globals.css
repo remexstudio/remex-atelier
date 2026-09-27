@@ -202,6 +202,8 @@ summary:focus-visible,
 
 .skip-link:focus-visible {
   transform: translateY(0);
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
 }
 
 /* Pressable — Emil active scale; Apple instant press feedback */
