@@ -764,7 +764,7 @@ button:active {
 }
 
 .site-footer__quiet a {
-  color: var(--secondary);
+  color: color-mix(in srgb, var(--secondary) 58%, var(--ink));
   font-size: 0.8125rem;
   letter-spacing: 0.01em;
   line-height: 1.3;
