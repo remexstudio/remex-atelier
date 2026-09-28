@@ -523,7 +523,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8125rem;
   line-height: 1;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
