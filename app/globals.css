@@ -6645,7 +6645,7 @@ button:active {
   border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
   background: var(--gutter);
   border-radius: 0.75rem;
-  padding: 1.35rem 1.25rem;
+  padding: 1.5rem 1.35rem;
 }
 
 .contact-success__title {
