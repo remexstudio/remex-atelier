@@ -6585,7 +6585,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
+  color: color-mix(in srgb, var(--muted) 18%, var(--ink));
 }
 
 @media (max-width: 479px) {
