@@ -6715,7 +6715,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: var(--size-eyebrow);
   line-height: 1.3;
-  letter-spacing: var(--tracking-eyebrow);
+  letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--muted) 45%, var(--ink));
 }
 
