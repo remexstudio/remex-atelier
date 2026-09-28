@@ -285,7 +285,7 @@ button:active {
   box-sizing: border-box;
   min-height: var(--hit-target-min);
   min-width: var(--hit-target-min);
-  border: 1px solid var(--rule);
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, var(--rule));
   background: transparent;
   color: var(--accent);
   padding: 0.625rem 1.125rem;
