@@ -7258,7 +7258,7 @@ button:active {
   line-height: 1.45;
   letter-spacing: 0;
   color: var(--ink);
-  padding: 0.85rem 1rem;
+  padding: 1rem 1.1rem;
   border-radius: 0.65rem;
   background: var(--gutter);
   border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
