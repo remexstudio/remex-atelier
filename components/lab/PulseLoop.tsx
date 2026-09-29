@@ -93,7 +93,7 @@ export function PulseLoop() {
             {step.detail}
           </p>
         </div>
-        <ol className="pulse-chips">
+        <ol className="pulse-chips" aria-label="Loop steps">
           {pulseLoop.map((item, i) => {
             const active = i === index && !completed;
             const done = completed || i < index;

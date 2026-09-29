@@ -35,7 +35,7 @@ export default function ContactPage() {
               <li key={ask}>{ask}</li>
             ))}
           </ol>
-          <p className="contact-lede">We reply when there is a fit.</p>
+          <p className="contact-lede">We reply when the fit is clear.</p>
           <p className="contact-mail">
             Or write{" "}
             <a href="mailto:hello@remexstudio.com">hello@remexstudio.com</a>.

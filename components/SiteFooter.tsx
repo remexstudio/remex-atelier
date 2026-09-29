@@ -21,7 +21,12 @@ export function SiteFooter({ links, pathname, footerLine }: SiteFooterProps) {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
-        <Link href="/" className="site-footer__lockup" translate="no">
+        <Link
+          href="/"
+          className="site-footer__lockup"
+          translate="no"
+          aria-label="Remex Studio home"
+        >
           Remex Studio
         </Link>
         <p className="site-footer__legal" translate="no">

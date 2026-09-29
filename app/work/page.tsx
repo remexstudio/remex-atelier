@@ -40,11 +40,13 @@ export default function WorkPage() {
       <main id="main" className="work-index">
         <div className="work-index__intro">
           <p className="film-kicker work-index__kicker">Work</p>
-          <h1 className="work-index__title">{INDEX_LABEL}</h1>
+          <h1 id="work-index-h" className="work-index__title">
+            {INDEX_LABEL}
+          </h1>
           <p className="work-index__lede">{WORK_LEDE}</p>
         </div>
 
-        <ul className="work-index__list">
+        <ul className="work-index__list" aria-labelledby="work-index-h">
           {EXAMPLES.map((example) => (
             <li key={example.href}>
               <article className="work-teaser">

@@ -70,7 +70,7 @@ export function ContactForm() {
       >
         <h2 className="contact-success__title">Brief noted</h2>
         <p className="contact-success__body">
-          Thanks. We&rsquo;ll read it and reply when a fit is clear.
+          Thanks. We read it and reply when the fit is clear.
         </p>
         <p className="contact-success__meta">
           Studio preview. Nothing was sent.

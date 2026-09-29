@@ -202,6 +202,8 @@ summary:focus-visible,
 
 .skip-link:focus-visible {
   transform: translateY(0);
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
 }
 
 /* Pressable — Emil active scale; Apple instant press feedback */
@@ -283,7 +285,7 @@ button:active {
   box-sizing: border-box;
   min-height: var(--hit-target-min);
   min-width: var(--hit-target-min);
-  border: 1px solid var(--rule);
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, var(--rule));
   background: transparent;
   color: var(--accent);
   padding: 0.625rem 1.125rem;
@@ -521,7 +523,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8125rem;
   line-height: 1;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -647,7 +649,7 @@ button:active {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
   box-shadow: none;
   overflow-x: clip;
   padding: 2.75rem var(--stage-pad-x)
@@ -661,7 +663,7 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.15rem;
+  gap: 0.4rem;
 }
 
 .site-footer__lockup {
@@ -700,6 +702,7 @@ button:active {
 .site-footer__legal {
   margin-bottom: 0.65rem;
   letter-spacing: 0;
+  color: color-mix(in srgb, var(--secondary) 62%, var(--ink));
 }
 
 .site-footer__note {
@@ -763,7 +766,7 @@ button:active {
 }
 
 .site-footer__quiet a {
-  color: var(--secondary);
+  color: color-mix(in srgb, var(--secondary) 58%, var(--ink));
   font-size: 0.8125rem;
   letter-spacing: 0.01em;
   line-height: 1.3;
@@ -6499,7 +6502,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: color-mix(in srgb, var(--muted) 45%, var(--ink));
+  color: color-mix(in srgb, var(--muted) 28%, var(--ink));
 }
 
 .contact-mail a {
@@ -6582,7 +6585,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: color-mix(in srgb, var(--muted) 35%, var(--ink));
+  color: color-mix(in srgb, var(--muted) 18%, var(--ink));
 }
 
 @media (max-width: 479px) {
@@ -6642,7 +6645,7 @@ button:active {
   border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
   background: var(--gutter);
   border-radius: 0.75rem;
-  padding: 1.35rem 1.25rem;
+  padding: 1.5rem 1.35rem;
 }
 
 .contact-success__title {
@@ -6667,7 +6670,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.875rem;
   line-height: 1.45;
-  color: color-mix(in srgb, var(--muted) 40%, var(--ink));
+  color: color-mix(in srgb, var(--muted) 22%, var(--ink));
 }
 
 .contact-success .contact-cta {
@@ -6712,12 +6715,12 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: var(--size-eyebrow);
   line-height: 1.3;
-  letter-spacing: var(--tracking-eyebrow);
+  letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--muted) 45%, var(--ink));
 }
 
 .film-title {
-  margin: 0.65rem 0 0;
+  margin: 0.85rem 0 0;
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(2.1rem, 5.2vw, 3.35rem);
@@ -6746,7 +6749,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.55;
-  color: color-mix(in srgb, var(--muted) 55%, var(--ink));
+  color: color-mix(in srgb, var(--muted) 38%, var(--ink));
   text-wrap: pretty;
 }
 
@@ -6773,7 +6776,7 @@ button:active {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1.15rem;
+  gap: 0.85rem 1.4rem;
   margin: 1.5rem 0 0;
 }
 
@@ -7242,7 +7245,7 @@ button:active {
   font-optical-sizing: auto;
   font-size: clamp(1.85rem, 6vw, 3.15rem);
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.022em;
   color: var(--ink);
   text-wrap: balance;
   overflow-wrap: break-word;
@@ -7255,7 +7258,7 @@ button:active {
   line-height: 1.45;
   letter-spacing: 0;
   color: var(--ink);
-  padding: 0.85rem 1rem;
+  padding: 1rem 1.1rem;
   border-radius: 0.65rem;
   background: var(--gutter);
   border: 1px solid color-mix(in srgb, #d2d2d7 70%, white);
@@ -7273,7 +7276,7 @@ button:active {
 .lab-still {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.7rem;
   margin: 1.35rem 0 0;
   padding: 1rem;
   border-radius: 0.75rem;
@@ -7320,7 +7323,7 @@ button:active {
   margin: 0;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8125rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--muted) 35%, var(--ink));
 }
@@ -8698,7 +8701,7 @@ button:active {
 }
 
 .work-index__lede {
-  margin: 0.65rem 0 0;
+  margin: 0.9rem 0 0;
   max-width: 36rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -8976,7 +8979,7 @@ button:active {
   display: grid;
   gap: 0.55rem;
   margin: 0;
-  padding: 1.45rem 0;
+  padding: 1.7rem 0;
   border: 0;
   border-top: 1px solid var(--hairline);
   border-radius: 0;
