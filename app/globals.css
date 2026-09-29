@@ -649,7 +649,7 @@ button:active {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
   box-shadow: none;
   overflow-x: clip;
   padding: 2.75rem var(--stage-pad-x)
