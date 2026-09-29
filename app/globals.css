@@ -6749,7 +6749,7 @@ button:active {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.55;
-  color: color-mix(in srgb, var(--muted) 55%, var(--ink));
+  color: color-mix(in srgb, var(--muted) 38%, var(--ink));
   text-wrap: pretty;
 }
 
