@@ -62,7 +62,7 @@ export default function AboutPage() {
             Start a brief.
           </h2>
           <p className="film-lede">
-            Tell us the painful workflow. We design the agent and the gate.
+            Name the workflow that hurts. We design the job and the gate.
           </p>
           <p className="film-actions">
             <Link href="/contact" className="film-cta">

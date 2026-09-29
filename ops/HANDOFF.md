@@ -1,91 +1,58 @@
-# Handoff — overnight UI and copy maintenance
+# Handoff — day-2 UI and copy maintenance
 
-- Status: **DELIVERED** — PR open. Not merged.
-- PR: https://github.com/remexstudio/remex-atelier/pull/51
-- Batch: Owner maintenance, Sep 24–25 PT, plus heatmap backfill. Not a Canon cycle.
-- Branch: `cursor/m-night-ui-copy-20260925-e79c`
-- Base: `955309b` on `main` (Merge pull request #50, C6)
-- Authorship: every commit on this branch uses author and committer `remexstudio <remexstudio.dev@gmail.com>`. No Cursor Agent email.
-- Night window: the original 18 commits are dated 2026-09-25 23:30 PT through 2026-09-26 01:30 PT.
-- Backfill: 10 real commits on each of 2026-09-16, 2026-09-19, 2026-09-20, 2026-09-21, and 2026-09-24 (America/Los_Angeles, daytime).
+- Status: **DELIVERED** — PR open. Not merged. Not squashed.
+- PR: https://github.com/remexstudio/remex-atelier/pull/52
+- Batch: Owner maintenance, day 2 (2026-09-25, America/Los_Angeles). Not a Canon cycle.
+- Branch: `cursor/day2-maintenance-polish-1854`
+- Base: `06b9f5b` on `main` (Merge pull request #51)
+- Commit count: **18** (17 polish commits plus this handoff)
+- Parent of this handoff: `ebb9f88ff01e42c94baf000291a57c5f085ae898`
+- Tip SHA: this handoff commit, one commit after `ebb9f88ff01e42c94baf000291a57c5f085ae898`. Confirm with `git rev-parse HEAD` on the branch.
+- Authorship email: **remexstudio.dev@gmail.com**
+- Author and committer on every commit: `remexstudio <remexstudio.dev@gmail.com>`
+- `cursoragent@cursor.com`: **none**. `git log origin/main..HEAD --format='%an <%ae> | %cn <%ce>'` shows only that identity on both sides.
 - Planned map: **C0–C6 stay closed**. Do not invent C7. Propose-first default unchanged.
-- Build: `pnpm build` PASS (Next.js 16.3.5, 19 static routes) on the pre-backfill tree.
+- Build: `pnpm build` PASS (Next.js 16.3.5, 19 static routes) at parent `ebb9f88`.
 
 ## What changed
 
-One concern per commit. English UI only. No new routes, no motion system, no Lenis, no Seattle, no four-SKU claim, no founder name, no hero clone, no PAR wallpaper.
+One concern per commit. English UI only. No new routes, no new brand names, no component library, no motion system.
 
-1. `bce03c5` — Home services column facts shortened. Full desk copy stays on `/services`.
-2. `60c39ed` — Still reads keep their DNA line. A visually hidden desk name sits beside that line because the seat label lives in the `aria-hidden` shell.
-3. `8934043` — Quiet footer links (Lab, About) expose `aria-current="page"`, same as the primary footer row.
-4. `e15d581` — Approach “Keep the record” chapter body shortened. The page lede was left verbatim (copy lock).
-5. `2ffc92f` — Design desk note only. Build and Operations blurbs untouched.
-6. `e847e49` — About one-liner replaced the retired “human gate” line with “One workflow. One agent. A human still decides.”
-7. `b5ba91b` — Contact Name and Email gained helper text and `aria-describedby`. Brief-ask labels unchanged.
-8. `8587fea` — `/work` index kicker reads “Work”, matching the nav label. Title stays “Selected examples”.
-9. `0c0cec1` — Pulse aside says “not a client engagement”, matching the prototype label.
-10. `73acc72` — `/contact` metadata description names the workflow, the approver, and the record.
-11. `deb75fe` — Header wordmark, primary links, and menu toggle focus offset is 3px, matching the site ring.
-12. `3a82116` — Example still beat labels track at `0.06em` instead of `0.12em`.
-13. `e87ee8f` — 404 copy no longer calls the work index “product stories”.
-14. `cf96ba4` — Footer quiet link label is “Lab”, matching the route title and “Back to Lab”.
-15. `693cc18` — Footer legal row keeps three names. A non-breaking space holds “Studio LLC” together.
-16. `aa0d914` — Active home-stage beat sets `aria-current="step"`. Reduced motion clears it when every panel is shown.
-17. `0198aea` — Example still captions mix muted toward ink.
-18. This commit — handoff and status note.
+1. `5af4cd5` — Desktop primary nav marks the current page in ink, semibold.
+2. `886b4fb` — Contact placeholders use secondary ink instead of a wash toward white.
+3. `0972c15` — Contact field focus offset is 3px, matching the site ring.
+4. `ec9b57d` — Header wordmark tracking eased from 0.12em to 0.08em.
+5. `2684870` — Work teaser descriptions mix secondary ink toward ink.
+6. `6779397` — Home support copy mixes secondary ink toward ink.
+7. `07be454` — Home timeline body mixes secondary ink toward ink.
+8. `f7f1b3a` — Method kickers track at 0.06em.
+9. `ec831a8` — Timeline labels track at 0.06em.
+10. `12fd793` — Chapter kickers track at 0.06em.
+11. `1e7ced1` — Chapter eyebrows track at 0.06em.
+12. `32f805e` — Home service blurbs use a darker ink mix.
+13. `86099dc` — About fact labels mix secondary ink toward ink on the gutter chip.
+14. `441171c` — Work teaser stacks open from 0.35rem to 0.55rem.
+15. `d89be8d` — The contact form has an accessible name: Brief.
+16. `4eee8fc` — About close names the workflow and the job.
+17. `ebb9f88` — Lab index lede says “not a client engagement”.
+18. This commit — handoff.
 
-Commits landed about 2 minutes 15 seconds to 2 minutes 45 seconds apart (author timestamps, UTC).
+Pushes landed about 150 seconds apart on 2026-09-25 (America/Los_Angeles daytime).
 
 ## Acceptance
 
-- [x] Original 18 commits kept separate, then rewritten in place (not squashed)
-- [x] Author and committer are `remexstudio.dev@gmail.com` on every commit ahead of main
-- [x] Backfill: 10 commits each on Sep 16, 19, 20, 21, and 24 PT
-- [x] `pnpm build` PASS before the backfill commits
+- [x] 18 commits on one branch, not squashed
+- [x] Author and committer are `remexstudio <remexstudio.dev@gmail.com>` on every commit ahead of main
+- [x] No `cursoragent@cursor.com` on the branch
+- [x] `pnpm build` PASS
 - [x] C0–C6 not reopened; C7 not invented
-- [x] English copy; brand lockup unchanged (Remex Studio · Jiyuyun Studio LLC, with the Chinese mark only where it already lived)
-- [ ] Leader review. Not merged.
+- [x] PR left open. Not merged.
+- [ ] Leader review
 
 ## Files
 
-- `components/HomeScenes.tsx`
-- `components/StageStill.tsx`
-- `components/SiteFooter.tsx`
-- `components/ContactForm.tsx`
-- `components/ProductStage.tsx`
 - `app/globals.css`
-- `app/approach/page.tsx`
 - `app/about/page.tsx`
-- `app/work/page.tsx`
-- `app/contact/page.tsx`
-- `app/not-found.tsx`
-- `app/lab/pulse/page.tsx`
-- `lib/services-catalog.ts`
-- `ops/HANDOFF.md`
-- `ops/STATUS.md`
-- `app/layout.tsx`
 - `app/lab/page.tsx`
-- `components/lab/PulseLoop.tsx`
-- `components/lab/data.ts`
-- `components/SiteChrome.tsx`
-- `components/SiteNavMenu.tsx`
-- `docs/sitemap.md`
-
-## Skills
-
-Applied from `docs/design.md`, `docs/brand.md`, and `docs/copy-locks.md`, which lock the Apple and Emil rules used on this site:
-
-- `apple-design` — clarity, short specific copy, visible focus, secondary text that still reads
-- `emil-design-eng` — no new motion; existing press scale and ease-out left alone; tracking and contrast kept quiet
-
-`apple-design` and `emil-design-eng` skill files were not installed in this environment. GSAP, Lenis, and scroll-story skills were not used. This batch does not change the motion system.
-
-## Risks
-
-- The hidden desk name is announced on every still that has a read line, including story stills, not only the home teasers.
-- Footer “Prototype” is now “Lab”. The prototype banner on `/lab` and `/lab/pulse` is unchanged.
-- Approach page lede was not shortened. It is a locked pair of sentences.
-- Header and mobile-menu focus rings use a 3px offset.
-- Lab’s visible page title is now “Lab”. The prototype banner still says it is not a client engagement.
-- Backfill author dates are earlier than their parent commits. GitHub counts the author date.
-- Reduced motion shows all three stage panels and clears `aria-current`, so no single beat is “current” in that mode.
+- `components/ContactForm.tsx`
+- `ops/HANDOFF.md`

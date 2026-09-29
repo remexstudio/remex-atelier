@@ -87,7 +87,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form className="contact-form" aria-label="Brief" onSubmit={handleSubmit}>
       <div className="contact-field">
         <label htmlFor={nameId} className="contact-label">
           Name
